@@ -1,0 +1,29 @@
+@import '~web/sass/color';
+
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  font-size: 1rem;
+  border-radius: 3px;
+
+  &.main {
+    color: $main;
+  }
+
+  &.success {
+    background-color: $success;
+    color: $white;
+  }
+
+  &.error {
+    background-color: #FFBABA;
+    color: white;
+  }
+
+  &.warn {
+    background-color: $warn;
+    color: $white;
+  }
+}

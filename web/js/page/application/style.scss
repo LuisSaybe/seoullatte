@@ -1,0 +1,12 @@
+@import '~web/sass/media';
+
+.root {
+  h1, h2, h3, h4, h5, h6, p, span, a, div, button, label {
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
+.spinner {
+  font-size: 2rem;
+  margin-top: 32px;
+}

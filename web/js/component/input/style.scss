@@ -1,0 +1,24 @@
+@import '~web/sass/color';
+
+.input {
+  padding: 8px;
+  background-color: $fieldBackground;
+  border: 1px solid $fieldBorder;
+  border-radius: 3px;
+  color: $text;
+  font-size: 1rem;
+
+  input:not([type=checkbox]):not([type=radio]) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  &.error {
+    border-color: $error;
+  }
+}
+
+.label {
+  padding: 0;
+}

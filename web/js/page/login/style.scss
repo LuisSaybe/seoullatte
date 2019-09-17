@@ -1,0 +1,15 @@
+@import '~web/sass/mixin';
+
+.root {
+  @include defaultLayout();
+}
+
+.vertical-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  > *:not(:first-child) {
+    margin-top: 1rem;
+  }
+}

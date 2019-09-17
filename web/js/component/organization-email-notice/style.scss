@@ -1,0 +1,7 @@
+@import '~web/sass/color';
+@import '~web/sass/mixin';
+
+.email-note {
+  @include note();
+  margin: 5px 0 0 10px;
+}

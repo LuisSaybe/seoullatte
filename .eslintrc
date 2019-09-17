@@ -1,0 +1,50 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "babel",
+    "react-hooks",
+    "jsx-a11y"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "modules": true,
+      "classes": true,
+      "jsx": true
+    }
+  },
+  "globals": {
+    "Set": true,
+    "console": true,
+    "setInterval": true,
+    "clearInterval": true,
+    "document": true,
+    "window": true,
+    "location": true,
+    "URLSearchParams": true,
+    "Promise": true,
+    "localStorage": true,
+    "FileReader": true,
+    "File": true,
+    "Blob": true,
+    "Headers": true,
+    "Stripe": true
+  },
+  "settings": {
+    "react": {
+      "version": "16.8.2"
+    }
+  },
+  "rules": {
+    "no-console": 0,
+    "babel/semi": 1
+  }
+}

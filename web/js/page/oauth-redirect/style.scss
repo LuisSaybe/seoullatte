@@ -1,0 +1,12 @@
+@import '~web/sass/mixin';
+
+.root {
+  @include defaultLayout();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > * {
+    margin-top: 16px;
+  }
+}

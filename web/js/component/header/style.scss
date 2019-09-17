@@ -1,0 +1,49 @@
+@import '~web/sass/color';
+@import '~web/sass/media';
+
+.actions {
+  > *:not(:first-child) {
+    margin-left: 6px;
+  }
+}
+
+.title-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  > *:not(:first-child) {
+    margin-left: 10px;
+  }
+}
+
+.login {
+  font-size: 1.5rem;
+  color: $anchor;
+}
+
+.logo {
+  border-radius: 25%;
+  width: 50px;
+}
+
+.title {
+  color: $logo;
+
+  @include phone() {
+    display: none;
+  }
+}
+
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+@include not_phone() {
+  .root {
+    padding: 15px 30px;
+  }
+}

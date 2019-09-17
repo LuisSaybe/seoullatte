@@ -1,0 +1,36 @@
+import packageJson from 'packageJson';
+
+export const settings = {
+  admins: [],
+  port: 9000,
+  http: {
+    origins: ['http://127.0.0.1', 'https://joseon.com']
+  },
+  sentry: {
+    dsn: 'https://ba5965b777a14e419b1440f4ebb5da39@sentry.io/1729840',
+    environment: 'development',
+    debug: true,
+    release: packageJson.version
+  },
+  digitalocean: {
+    spaces: {
+      key: '',
+      secret: '',
+      endpoint: 'nyc3.digitaloceanspaces.com',
+      region: 'nyc3',
+      bucket: 'joseon-development'
+    }
+  },
+  sendinblue: {
+    key: ''
+  },
+  stripe: {
+    secret: ''
+  },
+  mongo: {
+    url: 'mongodb://mongo:27017'
+  },
+  web: {
+    origin: 'http://127.0.0.1'
+  }
+};

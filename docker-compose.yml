@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  web:
+    image: luissaybe/joseon
+    command: nginx -c /root/project/docker/nginx.conf
+    ports:
+      - "80:80"
+    volumes:
+      - .:/root/project
+  api:
+    image: luissaybe/joseon
+    command: node server.js
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/root/project
+    networks:
+      - backend
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:4.1.3
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge

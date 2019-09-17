@@ -1,0 +1,49 @@
+@import '~web/sass/color';
+@import '~web/sass/mixin';
+
+.check-circle {
+  color: grey;
+  font-size: 1.5rem;
+
+  &.success {
+    color: $success;
+  }
+
+  &.warn {
+    color: $warn;
+  }
+
+  &.error {
+    color: $error;
+  }
+}
+
+
+.check-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.logged-in {
+  color: $title;
+  font-size: 2rem;
+}
+
+.email-row {
+  display: flex;
+  align-items: center;
+}
+
+.root {
+  @include defaultLayout();
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  > *:not(:first-child) {
+    margin-top: 1rem;
+  }
+}
