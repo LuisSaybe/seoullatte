@@ -1,9 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { Link }from 'react-router-dom';
 
 import { T } from 'common/i18n';
 
-import { routes } from 'web/js/routes';
 import { ApplicationContext } from 'web/js/context';
 import { Button } from 'web/js/component/button';
 import { Input } from 'web/js/component/input';
@@ -57,9 +55,6 @@ export function ForgotPassword() {
         <span>
           {T('You are already logged in')}
         </span>
-        <Link to={routes.myTransactions(userId)}>
-          {T('Go to my transactions')}
-        </Link>
       </>
     );
   }

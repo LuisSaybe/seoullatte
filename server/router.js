@@ -1,12 +1,10 @@
 import Ajv from 'ajv';
 import jwt from 'jsonwebtoken';
-import mongodb from 'mongodb';
 import stripe from 'stripe';
 import jwtkeysecret from 'server/extra/jwt/jwt.key';
 
 import { Routes } from 'common/routes';
 
-import { OrganizationCollection, UserCollection } from 'server/database';
 import { settings } from 'server/settings';
 
 export const DEFAULT_LIMIT = 100;
@@ -16,12 +14,6 @@ export class Require {
   static Authenticated = 'authenticated';
   static Page = 'page';
 }
-
-export class Permission {
-  static READ = 0;
-  static WRITE = 1;
-}
-
 const PAGINATION_ERROR = { error: 'pagination' };
 
 const decodedJWTFromRequest = (req) => {
@@ -77,9 +69,7 @@ export class Router {
 
     method(endpoint.path, async (req, res, next) => {
       const requires = endpoint.requires ? endpoint.requires : [];
-      const accessRules = endpoint.accessRules ? endpoint.accessRules : [];
       let passesAuthentication = true;
-      let passesAccessRules = false;
       let notFound = false;
 
       if (requires.includes(Require.Authenticated)) {
@@ -87,17 +77,9 @@ export class Router {
         passesAuthentication = decodedJWT !== null;
       }
 
-      if (accessRules.length === 0) {
-        passesAccessRules = true;
-      } else if (passesAuthentication) {
-        const result = await this.hasAccessRules(accessRules, req);
-        notFound = result.notFound;
-        passesAccessRules = result.hasAccess;
-      }
-
       if (notFound) {
         res.status(404).end();
-      } else if (!passesAuthentication || !passesAccessRules) {
+      } else if (!passesAuthentication) {
         res.status(401).end();
       } else if (endpoint.on) {
         let decodedJwt = null;
@@ -220,82 +202,5 @@ export class Router {
     }
 
     return { passes, validate };
-  }
-
-  async hasAccess(read, write, collection, _id, userId) {
-    const document = await this.db.collection(collection).findOne({ _id });
-    const result = {
-      hasAccess: false,
-      notFound: false
-    };
-
-    if (document === null) {
-      result.notFound = true;
-      return result;
-    }
-
-    if (collection === UserCollection) {
-      result.hasAccess = userId.equals(document._id);
-      return result;
-    }
-
-    if (collection === OrganizationCollection) {
-      const passesRead = !read || document.read.some(objectId => objectId.equals(userId));
-      const passesWrite = !write || document.write.some(objectId => objectId.equals(userId));
-      result.hasAccess = passesRead && passesWrite;
-      return result;
-    }
-
-    if (document.organizationId) {
-      const organization = await this.db.collection(OrganizationCollection)
-        .findOne({ _id: document.organizationId });
-
-      if (organization === null) {
-        this.sentry.captureMessage(`has access check with bad organization id ${document.organizationId} from ${collection} ${_id}` );
-        result.hasAccess = false;
-        return result;
-      }
-
-      const passesRead = !read || organization.read.some(objectId => objectId.equals(userId));
-      const passesWrite = !write || organization.write.some(objectId => objectId.equals(userId));
-      result.hasAccess = passesRead && passesWrite;
-      return result;
-    }
-
-    return result;
-  }
-
-  async hasAccessRules(accessRules, req) {
-    const decodedJWT = await decodedJWTFromRequest(req);
-
-    if (decodedJWT === null) {
-      return accessRules.length === 0;
-    }
-
-    for (const { permission, collection, param } of accessRules) {
-      const read = permission === Permission.READ;
-      const write = permission === Permission.WRITE;
-
-      try {
-        const objectId = new mongodb.ObjectID(req.params[param]);
-        const userId = new mongodb.ObjectID(decodedJWT.sub);
-        const result = await this.hasAccess(read, write, collection, objectId, userId);
-
-        if (result.notFound || !result.hasAccess) {
-          return result;
-        }
-      } catch (e) {
-        console.error(e);
-        return {
-          hasAccess: false,
-          notFound: false
-        };
-      }
-    }
-
-    return {
-      hasAccess: true,
-      notFound: false
-    };
   }
 }

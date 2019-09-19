@@ -4,6 +4,7 @@ export default {
   },
   sentry: {
     dsn: '$SENTRY_WEB_DSN',
+    environment: 'production'
   },
   digitalocean: {
     spaces: {

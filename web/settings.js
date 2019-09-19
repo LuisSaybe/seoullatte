@@ -3,7 +3,7 @@ export default {
     url: 'http://127.0.0.1:9000'
   },
   sentry: {
-    dsn: 'https://ba5965b777a14e419b1440f4ebb5da39@sentry.io/1729840',
+    dsn: null,
     debug: true,
     environment: 'development'
   },

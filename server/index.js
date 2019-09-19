@@ -6,14 +6,7 @@ import bodyParser from 'body-parser';
 
 import { MAXIMUM_IMAGE_UPLOAD_BYTES } from 'common/schema';
 
-import {
-  getDatabase,
-  OrganizationCollection,
-  ItemCollection,
-  EventCollection,
-  UserCollection
-} from 'server/database';
-import { getAvatarRoute } from 'server/helper/avatar';
+import { getDatabase } from 'server/database';
 import { settings } from 'server/settings';
 import { Router } from 'server/router';
 import { T } from 'common/i18n';
@@ -24,8 +17,7 @@ import {
   GET_USER,
   USER_BY_EMAIL,
   UPDATE_USER,
-  PASSWORD_RECOVERY,
-  GET_USER_ORGANIZATIONS
+  PASSWORD_RECOVERY
 } from 'server/route/user';
 
 import {
@@ -81,7 +73,6 @@ export const run = () => {
     const routes = [
       USER_BY_EMAIL,  /* must appear before GET_USER */
       PASSWORD_RECOVERY, /* must appear before GET_USER */
-      GET_USER_ORGANIZATIONS, /* must appear before GET_USER */
       CREATE_ACCOUNT,
       GET_USER,
       GET_TOKEN,
@@ -89,11 +80,6 @@ export const run = () => {
       UPDATE_USER,
 
       GET_CHECKOUT_SESSION,
-
-      getAvatarRoute(OrganizationCollection),
-      getAvatarRoute(ItemCollection),
-      getAvatarRoute(EventCollection),
-      getAvatarRoute(UserCollection),
     ];
 
     for (const route of routes) {

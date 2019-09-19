@@ -36,7 +36,9 @@
     "File": true,
     "Blob": true,
     "Headers": true,
-    "Stripe": true
+    "Stripe": true,
+    "SpeechSynthesisUtterance": true,
+    "speechSynthesis": true,
   },
   "settings": {
     "react": {

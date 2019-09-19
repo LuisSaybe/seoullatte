@@ -26,7 +26,6 @@ import {
   UserContext
 } from 'web/js/context';
 import {
-  GET_USER_ORGANIZATIONS,
   UPDATE_USER,
   SEARCH_EMAIL,
   GET_USER
@@ -79,22 +78,6 @@ export function Account() {
       </MessageBlock>
     );
   }
-
-  useEffect(() => {
-    dispatchFetch(
-      [USER_ORGANIZATIONS_PATH, applicationState.userId],
-      {
-        query: {
-          page: 0
-        }
-      },
-      GET_USER_ORGANIZATIONS
-    );
-
-    return () => {
-      dispatchFetchDelete([GET_USER_ORGANIZATIONS, UPDATE_USER, SEARCH_EMAIL, GET_USER]);
-    };
-  }, []);
 
   useEffect(() => {
     if (!safe(() => updateUserState.response.ok)) {

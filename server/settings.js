@@ -7,7 +7,7 @@ export const settings = {
     origins: ['http://127.0.0.1', 'https://joseon.com']
   },
   sentry: {
-    dsn: 'https://ba5965b777a14e419b1440f4ebb5da39@sentry.io/1729840',
+    dsn: '',
     environment: 'development',
     debug: true,
     release: packageJson.version

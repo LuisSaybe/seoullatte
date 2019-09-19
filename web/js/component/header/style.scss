@@ -22,17 +22,8 @@
   color: $anchor;
 }
 
-.logo {
-  border-radius: 25%;
-  width: 50px;
-}
-
 .title {
   color: $logo;
-
-  @include phone() {
-    display: none;
-  }
 }
 
 .root {

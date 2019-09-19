@@ -6,11 +6,9 @@ import mongodb from 'mongodb';
 import jwtkeysecret from 'server/extra/jwt/jwt.key';
 import { settings } from 'server/settings';
 
-import { Require, Permission } from 'server/router';
+import { Require } from 'server/router';
 import {
-  OrganizationCollection,
   PasswordRecoveryCollection,
-  TransactionCollection,
   UserCollection,
   EMAIL_COLLATION
 } from 'server/database';
@@ -19,14 +17,11 @@ import {
   USER_PATH,
   USER_PASSWORD_RECOVERY_PATH,
   ACCOUNT_PATH,
-  USER_ORGANIZATIONS_PATH,
   USER_EMAIL_PATH,
-  TOKEN_PATH,
-  USER_TRANSACTIONS_PATH
+  TOKEN_PATH
 } from 'common/routes';
 import { USER_SCHEMA } from 'common/schema';
 import { getUserLanguage } from 'common/helpers';
-import { updatePaymentIntent } from 'server/helper/stripe';
 
 const getHashedPassword = (password) => {
   return new Promise((resolve, reject) => {
@@ -49,13 +44,6 @@ const getHashedPassword = (password) => {
 export const GET_USER = {
   method: 'GET',
   path: USER_PATH,
-  accessRules: [
-    {
-      permission: Permission.READ,
-      collection: UserCollection,
-      param: 'userId'
-    }
-  ],
   requires: [ Require.Authenticated ],
   on: async (request, response, { db }) => {
     const user = await db.collection(UserCollection).findOne({ _id: new mongodb.ObjectID(request.params.userId) });
@@ -141,51 +129,9 @@ export const USER_BY_EMAIL = {
   }
 };
 
-export const GET_USER_ORGANIZATIONS = {
-  method: 'GET',
-  path: USER_ORGANIZATIONS_PATH,
-  accessRules: [
-    {
-      permission: Permission.READ,
-      collection: UserCollection,
-      param: 'userId'
-    }
-  ],
-  requires: [ Require.Page ],
-  on: async (request, response, { db, pagination: { skip, limit } }) => {
-    const userId = new mongodb.ObjectID(request.params.userId);
-    const cursor = await db.collection(OrganizationCollection)
-      .find({
-        $or: [
-          { read: userId },
-          { write: userId },
-          { owner: userId }
-        ]
-      })
-      .sort({ lastUserActivity: -1 })
-      .skip(skip)
-      .limit(limit);
-
-    const countFuture = cursor.count();
-    const entityFuture = cursor.toArray();
-
-    response.json({
-      count: await countFuture,
-      entity: await entityFuture
-    });
-  }
-};
-
 export const UPDATE_USER = {
   method: 'POST',
   path: USER_PATH,
-  accessRules: [
-    {
-      permission: Permission.WRITE,
-      collection: UserCollection,
-      param: 'userId'
-    }
-  ],
   bodySchema: {
     ...USER_SCHEMA,
     required: [],
@@ -255,39 +201,6 @@ export const CREATE_ACCOUNT = {
 
     await db.collection(UserCollection).insertOne(user);
     response.status(200).end();
-  }
-};
-
-export const GET_USER_TRANSACTIONS = {
-  method: 'GET',
-  path: USER_TRANSACTIONS_PATH,
-  accessRules: [
-    {
-      permission: Permission.READ,
-      collection: UserCollection,
-      param: 'userId'
-    }
-  ],
-  requires: [
-    Require.Authenticated,
-    Require.Page
-  ],
-  on: async (request, response, { db, pagination: { skip, limit }, stripe }) => {
-    const getCursor = () => db.collection(TransactionCollection)
-      .find({
-        userId: new mongodb.ObjectID(request.params.userId),
-        'paymentIntent.status': 'succeeded'
-      })
-      .skip(skip)
-      .limit(limit);
-    await updatePaymentIntent(db, stripe, await getCursor().toArray());
-
-    const cursor = getCursor();
-
-    response.json({
-      count: await cursor.count(),
-      entity: await cursor.toArray(),
-    });
   }
 };
 
