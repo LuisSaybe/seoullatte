@@ -14,9 +14,10 @@ export function InputAndLabel(props) {
       </label>
       <props.inputFunction id={id} />
     </div>
-);
+  );
+};
 
 InputAndLabel.propTypes = {
   label: PropTypes.node.isRequired,
   inputFunction: PropTypes.func.isRequired
-}
+};

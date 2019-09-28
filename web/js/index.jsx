@@ -6,6 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { Root } from 'web/js/page/root';
 
+import 'common/i18n';
+
 if (!window.URLSearchParams) {
   window.URLSearchParams = URLSearchParams;
 }

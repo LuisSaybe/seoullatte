@@ -1,12 +1,22 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 
-import { isValidEmail, safe } from 'web/js/helper';
-
 import { USER_SCHEMA } from 'common/schema';
-import { T } from 'common/i18n';
+import {
+  ACCOUNT_PATH,
+  TOKEN_PATH,
+  USER_EMAIL_PATH
+} from 'common/routes';
 import { getNavigatorLanguage } from 'common/helpers';
+
+import { isValidEmail, safe } from 'web/js/helper';
+import {
+  SEARCH_EMAIL,
+  CREATE_ACCOUNT,
+  TOKEN_FROM_PASSWORD
+} from 'web/js/reducer/useFetch';
 import { routes } from 'web/js/routes';
 import { MessageBlock } from 'web/js/component/message-block';
 import { EmailSearchIcon } from 'web/js/component/email-search-icon';
@@ -14,21 +24,11 @@ import { ApplicationContext, FetchDispatchContext, FetchStateContext } from 'web
 import { Button } from 'web/js/component/button';
 import { Anchor } from 'web/js/component/anchor';
 import { Input } from 'web/js/component/input';
+
 import './style.scss';
 
-import {
-  ACCOUNT_PATH,
-  TOKEN_PATH,
-  USER_EMAIL_PATH
-} from 'common/routes';
-
-import {
-  SEARCH_EMAIL,
-  CREATE_ACCOUNT,
-  TOKEN_FROM_PASSWORD
-} from 'web/js/reducer/useFetch';
-
 export function SignupComponent({ history }) {
+  const { t } = useTranslation();
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
   const [ passwordConfirm, setPasswordConfirm ] = useState('');
@@ -119,25 +119,25 @@ export function SignupComponent({ history }) {
   }, [email]);
 
   if (commonPasswordError) {
-    errorMessages.push(T('Your password is too common, please choose another password'));
+    errorMessages.push(t('Your password is too common, please choose another password'));
   }
 
   if (passwordLengthError) {
-    errorMessages.push(T('Your password must be at least 8 characters'));
+    errorMessages.push(t('Your password must be at least 8 characters'));
   }
 
   if (didFailToCreateAccount) {
-    errorMessages.push(T('Unable to create your account. Please try again'));
+    errorMessages.push(t('Unable to create your account. Please try again'));
   }
 
   if (emailEqualsPassword) {
-    errorMessages.push(T('Your email and password must be different'));
+    errorMessages.push(t('Your email and password must be different'));
   }
 
   if (emailIsTaken) {
     emailTakenMessage = (
       <MessageBlock key='email-taken'>
-        {T('Sorry, that email already is taken')}
+        {t('Sorry, that email already is taken')}
       </MessageBlock>
     );
   }
@@ -148,7 +148,7 @@ export function SignupComponent({ history }) {
         <Input
           onChange={e => setEmail(e.target.value)}
           value={email}
-          placeholder={T('Email')}
+          placeholder={t('Email')}
           type='email'
           autoComplete='email'
           required
@@ -161,7 +161,7 @@ export function SignupComponent({ history }) {
       <Input
         onChange={e => setPassword(e.target.value)}
         value={password}
-        placeholder={T('Password')}
+        placeholder={t('Password')}
         type='password'
         error={passwordsDoNoMatch}
         autoComplete='new-password'
@@ -171,7 +171,7 @@ export function SignupComponent({ history }) {
       <Input
         onChange={e => setPasswordConfirm(e.target.value)}
         value={passwordConfirm}
-        placeholder={T('Password Confirm')}
+        placeholder={t('Password Confirm')}
         type='password'
         error={passwordsDoNoMatch}
         autoComplete='new-password'
@@ -179,10 +179,10 @@ export function SignupComponent({ history }) {
         required={true}
       />
     <Button loading={isCreatingAccount}>
-        {T('Create Account')}
+        {t('Create Account')}
       </Button>
       <Anchor to={routes.login()}>
-        {T('Already have an account?')}
+        {t('Already have an account?')}
       </Anchor>
       {
         errorMessages.map(message => (

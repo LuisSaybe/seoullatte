@@ -1,17 +1,18 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link }from 'react-router-dom';
-
-import { T } from 'common/i18n';
 
 import { routes } from 'web/js/routes';
 
 import './style.scss';
 
 export function Landing() {
+  const { t } = useTranslation();
+
   return (
     <div styleName='root'>
       <Link to={routes.hangul()}>
-        {T('Hangul')}
+        {t('test')}
       </Link>
     </div>
   );

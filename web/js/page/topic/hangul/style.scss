@@ -1,11 +1,13 @@
 @import '~web/sass/mixin';
-
-.character {
-    font-size: 2rem;
-}
+@import '~web/sass/media';
 
 .consonant {
     margin-right: 12px;
+}
+
+.consonants {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .root {
@@ -17,11 +19,20 @@
 }
 
 .vowels {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    .character {
+        text-align: left;
+    }
 }
 
 .title {
     font-size: 2rem;
+}
+
+@include phone() {
+    .character {
+        font-size: 2rem;
+    }
 }

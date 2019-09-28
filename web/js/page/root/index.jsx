@@ -9,7 +9,7 @@ import {
 } from 'web/js/context';
 
 import { Application } from 'web/js/page/application';
-import { Store } from 'web/js/component//store';
+import { Store } from 'web/js/application-hook/store';
 import { useFetch } from 'web/js/reducer/useFetch';
 import { useLocalStorage } from 'web/js/reducer/useLocalStorage';
 import styles from './style.scss';

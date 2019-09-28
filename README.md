@@ -26,12 +26,6 @@ docker-compose rm
 docker-compose up
 ```
 
-### restart without cleaning database
-
-```sh
-docker-compose restart
-```
-
 ### generate public private keys for jwt signing
 
 ```sh

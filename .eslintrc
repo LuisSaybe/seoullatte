@@ -39,10 +39,11 @@
     "Stripe": true,
     "SpeechSynthesisUtterance": true,
     "speechSynthesis": true,
+    "navigator": true
   },
   "settings": {
     "react": {
-      "version": "16.8.2"
+      "version": "16.9.0"
     }
   },
   "rules": {

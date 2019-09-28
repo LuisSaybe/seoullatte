@@ -1,26 +1,26 @@
 import React, { useState, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { T } from 'common/i18n';
-import { TOKEN_PATH } from 'common/routes'; 
+import { TOKEN_PATH } from 'common/routes';
 
-import { safe } from 'web/js/helper';
 
 import {
   ApplicationContext,
   FetchDispatchContext,
   FetchStateContext
 } from 'web/js/context';
-
+import { TOKEN_FROM_PASSWORD } from 'web/js/reducer/useFetch';
+import { safe } from 'web/js/helper';
 import { routes } from 'web/js/routes';
 import { MessageBlock } from 'web/js/component/message-block';
 import { Anchor } from 'web/js/component/anchor';
 import { Button } from 'web/js/component/button';
 import { Input } from 'web/js/component/input';
+
 import './style.scss';
 
-import { TOKEN_FROM_PASSWORD } from 'web/js/reducer/useFetch';
-
 export function Login() {
+  const { t } = useTranslation();
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
   const { userId } = useContext(ApplicationContext);
@@ -59,7 +59,7 @@ export function Login() {
     if (safe(() => tokenFromPasswordState.response.status === 400)) {
       invalidCredentialsWarning = (
         <MessageBlock>
-          {T('Sorry, invalid email or password')}
+          {t('Sorry, invalid email or password')}
         </MessageBlock>
       );
     }
@@ -67,7 +67,7 @@ export function Login() {
     if (safe(() => tokenFromPasswordState.response.status >= 400)) {
       unableToValidateMessage = (
         <MessageBlock>
-          {T('Sorry, we were not able to log you in, please try again')}
+          {t('Sorry, we were not able to log you in, please try again')}
         </MessageBlock>
       );
     }
@@ -79,27 +79,27 @@ export function Login() {
         <Input
           value={email}
           onChange={onEmailChange}
-          placeholder={T('Email')}
+          placeholder={t('Email')}
           type='email'
           required
           autoComplete='email'
         />
         <Input
           onChange={onPasswordChange}
-          placeholder={T('Password')}
+          placeholder={t('Password')}
           type='password'
           autoComplete='current-password'
           required
           value={password}
         />
         <Button loading={safe(() => tokenFromPasswordState.response.status >= 400)}>
-          {T('Log In')}
+          {t('Log In')}
         </Button>
         <Anchor to={routes.forgotPassword()}>
-          {T('Forgot your password?')}
+          {t('Forgot your password?')}
         </Anchor>
         <Anchor to={routes.signup()}>
-          {T('Create an account')}
+          {t('Create an account')}
         </Anchor>
       </form>
     );
@@ -107,7 +107,7 @@ export function Login() {
     content = (
       <div styleName='vertical-content root'>
         <MessageBlock>
-          {T('You are already logged in')}
+          {t('You are already logged in')}
         </MessageBlock>
       </div>
     );

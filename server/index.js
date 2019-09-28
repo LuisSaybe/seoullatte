@@ -9,7 +9,6 @@ import { MAXIMUM_IMAGE_UPLOAD_BYTES } from 'common/schema';
 import { getDatabase } from 'server/database';
 import { settings } from 'server/settings';
 import { Router } from 'server/router';
-import { T } from 'common/i18n';
 
 import {
   CREATE_ACCOUNT,
@@ -66,7 +65,7 @@ application.use((err, req, res, next) => {
 export const run = () => {
   getDatabase().then((db) => {
     SibApiV3Sdk.ApiClient.instance.authentications['api-key'].apiKey = settings.sendinblue.key;
-    return new Router(application, Sentry, db, SibApiV3Sdk, T);
+    return new Router(application, Sentry, db, SibApiV3Sdk);
   }, (e) => {
     Sentry.captureException(e);
   }).then((router) => {

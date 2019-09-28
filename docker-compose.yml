@@ -10,7 +10,7 @@ services:
       - .:/root/project
   api:
     image: luissaybe/joseon
-    command: node server.js
+    command: node -e 'require("./server-dist/server").run()'
     ports:
       - "9000:9000"
     volumes:

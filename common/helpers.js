@@ -1,16 +1,4 @@
-import { Language } from 'common/models';
-import { T } from 'common/i18n';
-
-import { Currency } from 'common/models';
-
-export const CURRENCY_AND_LABELS = [
-  [ T('US Dollar'), Currency.USD ],
-  [ T('Canadian Dollar'), Currency.CAD ],
-  [ T('British Pounds'), Currency.GBP ],
-  [ T('Euro'), Currency.EUR ],
-  [ T('Japanese Yen'), Currency.JPY ],
-  [ T('Korean Won'), Currency.KRW ]
-].map(([ label, id ]) => ({ label, id }));
+import { Currency, Language } from 'common/models';
 
 export const getMinimumChargeAmount = (currency) => {
   if (currency === Currency.KRW) {

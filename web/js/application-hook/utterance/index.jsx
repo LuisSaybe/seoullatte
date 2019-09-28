@@ -3,9 +3,9 @@ import PropTypes from  'prop-types';
 
 import './style.scss';
 
-export function Utterance({ className, text }) {
+export function Utterance({ text, children, className }) {
   const onClick = () => {
-    const utterance = new SpeechSynthesisUtterance(text);
+    const utterance = new SpeechSynthesisUtterance(typeof text === 'undefined' ? children : text);
     const voice = speechSynthesis
       .getVoices()
       .find(voice => voice.lang.includes('ko'));
@@ -20,12 +20,13 @@ export function Utterance({ className, text }) {
 
   return (
     <button className={className} onClick={onClick} styleName='root'>
-        {text}
+        {children}
     </button>
   );
 }
 
 Utterance.propTypes = {
-  className:  PropTypes.string,
+  children: PropTypes.node.isRequired,
   text: PropTypes.string.isRequired,
+  className:  PropTypes.string,
 };

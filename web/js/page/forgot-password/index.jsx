@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react';
-
-import { T } from 'common/i18n';
+import { useTranslation } from 'react-i18next';
 
 import { ApplicationContext } from 'web/js/context';
 import { Button } from 'web/js/component/button';
 import { Input } from 'web/js/component/input';
+
 import './style.scss';
 
 export function ForgotPassword() {
+  const { t } = useTranslation();
   const [ displayFailure ] = useState(false);
   const { userId } = useContext(ApplicationContext);
 
@@ -20,7 +21,7 @@ export function ForgotPassword() {
     if (displayFailure) {
       failure = (
         <div>
-          {T('Sorry we are not able to recover your password, please try again later')}
+          {t('Sorry we are not able to recover your password, please try again later')}
         </div>
       );
     }
@@ -28,7 +29,7 @@ export function ForgotPassword() {
     if (displayFailure) {
       success = (
         <div>
-          {T('Thanks, we will send you an email as quick as we can')}
+          {t('Thanks, we will send you an email as quick as we can')}
         </div>
       );
     }
@@ -39,12 +40,12 @@ export function ForgotPassword() {
         {success}
         <form styleName='form'>
           <span styleName='title'>
-            {T('Reset Password')}
+            {t('Reset Password')}
           </span>
           <i styleName='fa-key' className='fas fa-key'></i>
-          <Input placeholder={T('Email')} type='email' />
+          <Input placeholder={t('Email')} type='email' />
           <Button>
-            {T('Submit')}
+            {t('Submit')}
           </Button>
         </form>
       </>
@@ -53,7 +54,7 @@ export function ForgotPassword() {
     content = (
       <>
         <span>
-          {T('You are already logged in')}
+          {t('You are already logged in')}
         </span>
       </>
     );

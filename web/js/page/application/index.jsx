@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import React, { useEffect, useState, useContext } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import jwt from 'jsonwebtoken';
@@ -5,6 +6,7 @@ import jwt from 'jsonwebtoken';
 import {
   USER_PATH
 } from 'common/routes';
+import { getUserLanguage } from 'common/helpers';
 
 import { safe } from 'web/js/helper';
 
@@ -15,7 +17,9 @@ import {
   FetchStateContext,
   LocalStorageContext,
   UserContext,
-  LocalStorageDispatchContext
+  LocalStorageDispatchContext,
+  UserInterfaceSettingsContext,
+  DispatchUserInterfaceSettingsContext
 } from 'web/js/context';
 
 import { routes } from 'web/js/routes';
@@ -24,7 +28,6 @@ import { NaturalSpinner } from 'web/js/component/natural-spinner';
 import { NotFound } from 'web/js/page/not-found';
 import { Login } from 'web/js/page/login';
 import { ForgotPassword } from 'web/js/page/forgot-password';
-import { Home } from 'web/js/page/home';
 import { Hangul } from 'web/js/page/topic/hangul';
 
 import {
@@ -38,18 +41,23 @@ import { Signup } from 'web/js/page/signup';
 const DEFAULT_APPLICATION_STATE = { userId: null };
 
 export function Application() {
+  const { i18n } = useTranslation();
   const storage = useContext(LocalStorageContext);
   const dispatchLocalStorage = useContext(LocalStorageDispatchContext);
   const [ dispatchFetch ] = useContext(FetchDispatchContext);
   const usersState = useContext(UserContext);
   const fetchState = useContext(FetchStateContext);
+  const userInterfaceSettings = useContext(UserInterfaceSettingsContext);
+  const dispatchUserInterfaceSettings = useContext(DispatchUserInterfaceSettingsContext);
 
   const fetchTokenState = fetchState[TOKEN_FROM_PASSWORD];
   const getUserState = fetchState[GET_USER];
 
   const [ applicationState, setApplicationState ] = useState(DEFAULT_APPLICATION_STATE);
   const jwtPayload = jwt.decode(storage.token);
-  const loading = safe(() => getUserState.fetching) ||
+  const loading =
+    userInterfaceSettings.language === null ||
+    safe(() => getUserState.fetching) ||
     (applicationState.userId && !usersState[applicationState.userId]);
   const onLogoutClick = e => {
     e.preventDefault();
@@ -57,9 +65,39 @@ export function Application() {
   };
   const authenticatedRoutes = (
     <Switch>
-      <Route path={routes.home()} component={Home} />
     </Switch>
   );
+
+  useEffect(() => {
+    dispatchUserInterfaceSettings({
+      type: 'SET',
+      data: {
+        language: getUserLanguage(null, navigator)
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    if (userInterfaceSettings.language && i18n.language !== userInterfaceSettings.language) {
+      i18n.changeLanguage(userInterfaceSettings.language);
+    }
+  }, [ userInterfaceSettings, i18n ]);
+
+  useEffect(() => {
+    const onLanguageChange = () => {
+      dispatchUserInterfaceSettings({
+        type: 'SET',
+        data: {
+          language: getUserLanguage(null, navigator)
+        }
+      });
+    };
+
+    window.addEventListener('languagechange', onLanguageChange);
+    return () => {
+      window.removeEventListener('languagechange', onLanguageChange);
+    };
+  }, [ dispatchUserInterfaceSettings ]);
 
   useEffect(() => {
     if (!safe(() => fetchTokenState.response.ok)) {
@@ -107,6 +145,7 @@ export function Application() {
   }, [ usersState, storage, applicationState ]);
 
   let content;
+
 
   if (loading) {
     content = <NaturalSpinner styleName='spinner' />;
