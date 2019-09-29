@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
-import { Spinner } from 'web/js/component/spinner';
-import { Avatar } from 'web/js/component/avatar';
-import { EMPTY_IMAGE } from 'web/js/component/avatar';
+import { Spinner } from 'web/js/hook/interface/spinner';
+import { Avatar } from 'web/js/hook/interface/avatar';
+import { EMPTY_IMAGE } from 'web/js/hook/interface/avatar';
 
 import './style.scss';
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 
 import { USER_SCHEMA } from 'common/schema';
 import {
@@ -18,12 +18,12 @@ import {
   TOKEN_FROM_PASSWORD
 } from 'web/js/reducer/useFetch';
 import { routes } from 'web/js/routes';
-import { MessageBlock } from 'web/js/component/message-block';
-import { EmailSearchIcon } from 'web/js/component/email-search-icon';
+import { MessageBlock } from 'web/js/hook/interface/message-block';
+import { EmailSearchIcon } from 'web/js/hook/interface/email-search-icon';
 import { ApplicationContext, FetchDispatchContext, FetchStateContext } from 'web/js/context';
-import { Button } from 'web/js/component/button';
-import { Anchor } from 'web/js/component/anchor';
-import { Input } from 'web/js/component/input';
+import { Button } from 'web/js/hook/interface/button';
+import { Anchor } from 'web/js/hook/interface/anchor';
+import { Input } from 'web/js/hook/interface/input';
 
 import './style.scss';
 

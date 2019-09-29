@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
-import { Spinner } from 'web/js/component/spinner';
+import { Spinner } from 'web/js/hook/interface/spinner';
 
 import './style.scss';
 

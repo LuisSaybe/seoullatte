@@ -1,9 +1,12 @@
 @import '~web/sass/color';
 
-.root {
+button.root {
   color: $main;
-  font-size: 1rem;
   padding: 0;
   border: none;
   background: none;
+}
+
+.root {
+  font-size: 1rem;
 }

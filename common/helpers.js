@@ -1,16 +1,4 @@
-import { Currency, Language } from 'common/models';
-
-export const getMinimumChargeAmount = (currency) => {
-  if (currency === Currency.KRW) {
-    return 3000;
-  }
-
-  if (currency === Currency.JPY) {
-    return 400;
-  }
-
-  return 3;
-};
+import { Language } from 'common/models';
 
 export const OBJECT_ID_REGEX_PORTION = '[a-f0-9]{24}';
 export const getHashSelections = () => {

@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 import './style.scss';
 
-import { Spinner, Color } from 'web/js/component//spinner';
+import { Spinner, Color } from 'web/js/hook/interface//spinner';
 
 export function Button(props) {
   let content;

@@ -1,11 +1,13 @@
 import { useReducer } from 'react';
 
-import { getLocalStorage, writeLocalStorage } from 'web/js/storage';
-
 function reducer(state, action) {
   switch (action.type) {
+    case 'MERGE': {
+      return {  ...state, ...action.data };
+    }
+
     case 'SET': {
-      return{ ...action.data };
+      return { ...action.data };
     }
 
     default:
@@ -14,5 +16,5 @@ function reducer(state, action) {
 }
 
 export function useSpeechSynthesisSettings() {
-  return useReducer(reducer, getLocalStorage());
+  return useReducer(reducer, {});
 }

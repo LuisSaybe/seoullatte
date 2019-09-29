@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Trans } from 'react-i18next';
 
-import { Utterance } from 'web/js/application-hook/utterance';
+import { Utterance } from 'web/js/hook/application/utterance';
 
 import './style.scss';
 
@@ -16,11 +16,11 @@ export function Hangul() {
       </div>
       <section styleName='section'>
         <Trans>
-          <Utterance text='한글'>한글</Utterance> and <Utterance text='조선글'>조선글</Utterance> are the respective names of the contemporary Korean writing system used in South Korea and North Korea.
+          The modern Korean writing system is called <Utterance text='한글'>한글</Utterance> in South Korea while the name is <Utterance text='조선글'>조선글</Utterance> in North Korea.
         </Trans>
         &nbsp;
         <Trans>
-          <Utterance text='훈민정음'>훈민정음</Utterance>, the original name of the writing system, was introduced and promoted in 1446 by Sejong the Great.
+          The writing system was introduced and promoted in 1446 CE by Sejong the Great. The original name was <Utterance text='훈민정음'>훈민정음</Utterance>.
         </Trans>
       </section>
       <section styleName='section'>

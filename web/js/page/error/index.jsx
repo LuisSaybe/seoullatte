@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Button } from 'web/js/component/button';
+import { Button } from 'web/js/hook/interface/button';
 import { T } from 'common/i18n';
 import './style.scss';
 

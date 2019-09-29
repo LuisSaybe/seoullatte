@@ -23,14 +23,4 @@ export class Language {
   static es = 'es';
 }
 
-export const SUPPORTED_LANGUAGE_IDS = [Language.en, Language.fr, Language.ko];
-export const ITEM_PER_EVENT_LIMIT = 300;
-
-export class Currency {
-  static USD = 'usd';
-  static CAD = 'cad';
-  static GBP = 'gbp';
-  static EUR = 'eur';
-  static JPY = 'jpy';
-  static KRW = 'krw';
-}
+export const SUPPORTED_LANGUAGE_IDS = [Language.en, Language.fr];

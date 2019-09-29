@@ -15,7 +15,6 @@ module.exports = {
         },
         trans: {
           component: 'Trans',
-          i18nKey: 'i18nKey',
           defaultsKey: 'defaults',
           extensions: ['.js', '.jsx'],
           fallbackKey: (_, value) => value,

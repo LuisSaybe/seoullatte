@@ -12,10 +12,10 @@ import {
 import { TOKEN_FROM_PASSWORD } from 'web/js/reducer/useFetch';
 import { safe } from 'web/js/helper';
 import { routes } from 'web/js/routes';
-import { MessageBlock } from 'web/js/component/message-block';
-import { Anchor } from 'web/js/component/anchor';
-import { Button } from 'web/js/component/button';
-import { Input } from 'web/js/component/input';
+import { MessageBlock } from 'web/js/hook/interface/message-block';
+import { Anchor } from 'web/js/hook/interface/anchor';
+import { Button } from 'web/js/hook/interface/button';
+import { Input } from 'web/js/hook/interface/input';
 
 import './style.scss';
 

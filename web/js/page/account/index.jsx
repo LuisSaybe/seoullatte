@@ -4,15 +4,14 @@ import { toast } from 'react-toastify';
 import { T } from 'common/i18n';
 import {
   USER_EMAIL_PATH,
-  USER_PATH,
-  USER_ORGANIZATIONS_PATH
+  USER_PATH
 } from 'common/routes';
 import { UPDATE_SUCCESS } from 'web/js/helper/text';
 
-import { Input  } from 'web/js/component/input';
-import { Button  } from 'web/js/component/button';
-import { MessageBlock } from 'web/js/component/message-block';
-import { EmailSearchIcon } from 'web/js/component/email-search-icon';
+import { Input  } from 'web/js/hook/interface/input';
+import { Button  } from 'web/js/hook/interface/button';
+import { MessageBlock } from 'web/js/hook/interface/message-block';
+import { EmailSearchIcon } from 'web/js/hook/interface/email-search-icon';
 
 import './style.scss';
 

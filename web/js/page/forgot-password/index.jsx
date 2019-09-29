@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { ApplicationContext } from 'web/js/context';
-import { Button } from 'web/js/component/button';
-import { Input } from 'web/js/component/input';
+import { Button } from 'web/js/hook/interface/button';
+import { Input } from 'web/js/hook/interface/input';
 
 import './style.scss';
 

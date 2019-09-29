@@ -15,6 +15,10 @@ export class Routes {
     this.prefix = prefix;
   }
 
+  configuration() {
+    return `${this.prefix}/configuration`;
+  }
+
   home() {
     return `${this.prefix}/home`;
   }

@@ -6,7 +6,7 @@ import { Link }from 'react-router-dom';
 import { ApplicationContext } from 'web/js/context';
 import { routes } from 'web/js/routes';
 
-import { Anchor } from 'web/js/component/anchor';
+import { Anchor } from 'web/js/hook/interface/anchor';
 import './style.scss';
 
 export function Header(props) {
@@ -16,9 +16,11 @@ export function Header(props) {
 
   if (userId === null) {
     rightContent = (
-      <Anchor button={true} to={routes.login()}>
-        {t('Login')}
+      <>
+       <Anchor button={true} to={routes.configuration()}>
+         {t('Settings')}
       </Anchor>
+     </>
     );
   } else {
     rightContent = (

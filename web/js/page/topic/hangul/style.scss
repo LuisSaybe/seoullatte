@@ -1,5 +1,4 @@
 @import '~web/sass/mixin';
-@import '~web/sass/media';
 
 .consonant {
     margin-right: 12px;
@@ -29,10 +28,4 @@
 
 .title {
     font-size: 2rem;
-}
-
-@include phone() {
-    .character {
-        font-size: 2rem;
-    }
 }

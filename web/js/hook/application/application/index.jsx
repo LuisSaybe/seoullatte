@@ -19,13 +19,16 @@ import {
   UserContext,
   LocalStorageDispatchContext,
   UserInterfaceSettingsContext,
+  DispatchSpeechSynthesisSettingsContext,
+  SpeechSynthesisSettingsContext,
   DispatchUserInterfaceSettingsContext
 } from 'web/js/context';
 
 import { routes } from 'web/js/routes';
-import { Header } from 'web/js/component/header';
-import { NaturalSpinner } from 'web/js/component/natural-spinner';
+import { Header } from 'web/js/hook/interface/header';
+import { NaturalSpinner } from 'web/js/hook/interface/natural-spinner';
 import { NotFound } from 'web/js/page/not-found';
+import { Configuration } from 'web/js/page/configuration';
 import { Login } from 'web/js/page/login';
 import { ForgotPassword } from 'web/js/page/forgot-password';
 import { Hangul } from 'web/js/page/topic/hangul';
@@ -34,15 +37,19 @@ import {
   TOKEN_FROM_PASSWORD,
   GET_USER
 } from 'web/js/reducer/useFetch';
-import './style.scss';
+
 import { Landing } from 'web/js/page/landing';
 import { Signup } from 'web/js/page/signup';
+
+import './style.scss';
 
 const DEFAULT_APPLICATION_STATE = { userId: null };
 
 export function Application() {
   const { i18n } = useTranslation();
   const storage = useContext(LocalStorageContext);
+  const speechSynthesisSettings = useContext(SpeechSynthesisSettingsContext);
+  const dispatchSpeechSynthesisSettings = useContext(DispatchSpeechSynthesisSettingsContext);
   const dispatchLocalStorage = useContext(LocalStorageDispatchContext);
   const [ dispatchFetch ] = useContext(FetchDispatchContext);
   const usersState = useContext(UserContext);
@@ -56,6 +63,7 @@ export function Application() {
   const [ applicationState, setApplicationState ] = useState(DEFAULT_APPLICATION_STATE);
   const jwtPayload = jwt.decode(storage.token);
   const loading =
+    !i18n.language ||
     userInterfaceSettings.language === null ||
     safe(() => getUserState.fetching) ||
     (applicationState.userId && !usersState[applicationState.userId]);
@@ -75,7 +83,46 @@ export function Application() {
         language: getUserLanguage(null, navigator)
       }
     });
+
+    if (speechSynthesis.onvoiceschanged) {
+      speechSynthesis.getVoices();
+    }
   }, []);
+
+  useEffect(() => {
+    if (!speechSynthesisSettings.voiceURI && speechSynthesisSettings.voices) {
+      const voices = speechSynthesisSettings.voices.filter(voice => voice.lang.includes('ko'));
+
+      if (voices.length > 0) {
+        dispatchSpeechSynthesisSettings({
+          type: 'MERGE',
+          data: {
+            voiceURI: voices[0].voiceURI
+          }
+        });
+      }
+    }
+  }, [ dispatchSpeechSynthesisSettings, speechSynthesisSettings ]);
+
+  useEffect(() => {
+    const voicesChanged = () => {
+      dispatchSpeechSynthesisSettings({
+        type: 'MERGE',
+        data: {
+          voices: speechSynthesis.getVoices()
+        }
+      });
+    };
+
+    if (typeof speechSynthesis.onvoiceschanged === 'undefined') {
+      voicesChanged();
+    } else {
+      speechSynthesis.addEventListener('voiceschanged', voicesChanged);
+      return () => {
+        speechSynthesis.removeEventListener('voiceschanged', voicesChanged);
+      };
+    }
+  }, [ dispatchSpeechSynthesisSettings ]);
 
   useEffect(() => {
     if (userInterfaceSettings.language && i18n.language !== userInterfaceSettings.language) {
@@ -155,6 +202,7 @@ export function Application() {
         <Header onLogoutClick={onLogoutClick} />
         <Switch>
           <Route exact path={routes.landing()} component={Landing} />
+          <Route path={routes.configuration()} component={Configuration} />
           <Route path={routes.hangul()} component={Hangul} />
           <Route path={routes.login()} component={Login} />
           <Route path={routes.signup()} component={Signup} />

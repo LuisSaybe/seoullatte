@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NaturalSpinner } from 'web/js/component/natural-spinner';
+import { NaturalSpinner } from 'web/js/hook/interface/natural-spinner';
 
 import './style.scss';
 
