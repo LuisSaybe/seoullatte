@@ -1,26 +1,26 @@
-@import '~web/sass/mixin';
+@use '~web/sass/mixin';
 
 .buttons {
-    display: flex;
+  display: flex;
 
-    > *:not(:first-child) {
-        margin-left: 12px;
-    }
+  > *:not(:first-child) {
+    margin-left: 12px;
+  }
 }
 
 .field {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    > *:not(:first-child) {
-        margin-top: 12px;
-    }
+  > *:not(:first-child) {
+    margin-top: 12px;
+  }
 }
 
 .root {
-    @include defaultLayout();
+  @include mixin.defaultLayout();
 
-    > *:not(:first-child) {
-        margin-top: 12px;
-    }
+  > *:not(:first-child) {
+    margin-top: 12px;
+  }
 }

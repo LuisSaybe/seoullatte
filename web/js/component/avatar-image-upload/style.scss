@@ -1,0 +1,28 @@
+@use '~web/sass/media';
+
+.avatar {
+  object-fit: cover;
+
+  @include media.phone() {
+    width: 80px;
+    height: 80px;
+  }
+
+  @include media.not_phone() {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.input {
+  display: none;
+}
+
+.root {
+  border: none;
+  background: none;
+}
+
+.spinner {
+  font-size: 3rem;
+}

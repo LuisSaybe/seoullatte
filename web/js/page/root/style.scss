@@ -1,5 +1,5 @@
-@import '~web/sass/color';
+@use '~web/sass/color';
 
 .toast-body {
-  color: $label;
+  color: color.$label;
 }

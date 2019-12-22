@@ -1,0 +1,30 @@
+@use "~web/sass/color";
+@use "~web/sass/mixin";
+
+.children {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.loading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.root {
+  @include mixin.button();
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.main {
+  @include mixin.buttonColors(color.$main);
+}
+
+.error {
+  @include mixin.buttonColors(color.$error);
+}

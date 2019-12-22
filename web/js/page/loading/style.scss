@@ -1,8 +1,8 @@
-@import '~web/sass/mixin';
-@import '~web/sass/media';
+@use '~web/sass/mixin';
+@use "~web/sass/media";
 
 .root {
-  @include defaultLayout();
+  @include mixin.defaultLayout();
 }
 
 .spinner {

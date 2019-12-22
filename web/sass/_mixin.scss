@@ -1,6 +1,6 @@
-@import '~web/sass/color';
-@import '~web/sass/media';
-@import '~web/sass/size';
+@use '~web/sass/color';
+@use "~web/sass/media";
+@use "~web/sass/size";
 
 @mixin breakText() {
   word-break: break-word;
@@ -9,7 +9,7 @@
 
 @mixin button() {
   border-style: solid;
-  color: $white;
+  color: color.$white;
   border-radius: 6px;
   font-size: 1rem;
   border-width: 2px 2px 4px;
@@ -29,11 +29,11 @@
 }
 
 @mixin defaultLayout() {
-  @include phone() {
+  @include media.phone() {
     padding: 15px;
   }
 
-  @include not_phone() {
+  @include media.not_phone() {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
@@ -42,9 +42,8 @@
 
 @mixin note() {
   font-size: 0.8rem;
-  color: $information;
+  color: color.$information;
 }
-
 
 @mixin ellipsisText() {
   white-space: nowrap;
@@ -63,5 +62,5 @@
 }
 
 @mixin label() {
-  color: $label;
+  color: color.$label;
 }

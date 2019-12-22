@@ -1,0 +1,40 @@
+@use '~web/sass/color';
+@use '~web/sass/media';
+
+.actions {
+  > *:not(:first-child) {
+    margin-left: 6px;
+  }
+}
+
+.title-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  > *:not(:first-child) {
+    margin-left: 10px;
+  }
+}
+
+.login {
+  font-size: 1.5rem;
+  color: color.$anchor;
+}
+
+.title {
+  color: color.$logo;
+}
+
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+@include media.not_phone() {
+  .root {
+    padding: 15px 30px;
+  }
+}

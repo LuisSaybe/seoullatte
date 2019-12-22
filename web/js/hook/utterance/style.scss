@@ -1,0 +1,12 @@
+@use '~web/sass/color';
+
+button.root {
+  color: color.$main;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.root {
+  font-size: 1rem;
+}

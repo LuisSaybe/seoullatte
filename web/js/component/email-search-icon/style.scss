@@ -1,0 +1,18 @@
+@use '~web/sass/color';
+
+.check-circle {
+  color: grey;
+  font-size: 1.5rem;
+
+  &.success {
+    color: color.$success;
+  }
+
+  &.warn {
+    color: color.$warn;
+  }
+
+  &.error {
+    color: color.$error;
+  }
+}

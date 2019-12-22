@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "sourceMap": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["react", "react-css-modules"],
+    "typeRoots": ["node_modules/@types"],
+    "plugins": [{ "name": "typescript-tslint-plugin" }]
+  },
+  "exclude": ["node_modules"]
+}

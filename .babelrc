@@ -1,22 +1,18 @@
 {
-  "presets": ["@babel/preset-env", "@babel/preset-react"],
-  "plugins": [
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-transform-regenerator",
-    "@babel/plugin-transform-spread",
-    "@babel/plugin-transform-arrow-functions",
-    [
-      "react-css-modules", {
-        "generateScopedName": "[name]__[local]--[hash:base64:5]",
-        "filetypes": {
-          ".scss": {
-            "syntax": "postcss-scss",
-            "plugins": [
-              "postcss-nested"
-            ]
-          }
-        }
-      }
-    ]
-  ]
+	"presets": [ "@babel/preset-react"],
+	"plugins": [
+		[
+			"react-css-modules", {
+				"generateScopedName": "[name]__[local]___[hash:base64:5]",
+				"filetypes": {
+					".scss": {
+						"syntax": "postcss-scss",
+						"plugins": [
+							"postcss-nested"
+						]
+					}
+				}
+			}
+		]
+	]
 }

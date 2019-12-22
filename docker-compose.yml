@@ -1,4 +1,4 @@
-version: '3.7'
+version: "3.7"
 
 services:
   web:
@@ -8,21 +8,6 @@ services:
       - "80:80"
     volumes:
       - .:/root/project
-  api:
-    image: luissaybe/joseon
-    command: node -e 'require("./server-dist/server").run()'
-    ports:
-      - "9000:9000"
-    volumes:
-      - .:/root/project
-    networks:
-      - backend
-    depends_on:
-      - mongo
-  mongo:
-    image: mongo:4.1.3
-    networks:
-      - backend
 
 networks:
   backend:

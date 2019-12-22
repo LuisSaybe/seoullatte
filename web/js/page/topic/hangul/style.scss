@@ -1,31 +1,31 @@
-@import '~web/sass/mixin';
+@use '~web/sass/mixin';
 
 .consonant {
-    margin-right: 12px;
+  margin-right: 12px;
 }
 
 .consonants {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .root {
-    @include defaultLayout();
+  @include mixin.defaultLayout();
 }
 
 .section {
-    margin-top: 12px;
+  margin-top: 12px;
 }
 
 .vowels {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 
-    .character {
-        text-align: left;
-    }
+  .character {
+    text-align: left;
+  }
 }
 
 .title {
-    font-size: 2rem;
+  font-size: 2rem;
 }
