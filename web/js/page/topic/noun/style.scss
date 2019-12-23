@@ -1,10 +1,9 @@
 @use '~web/sass/layout';
-@use "~web/sass/media";
 
 .root {
   @include layout.defaultLayout();
 }
 
-.spinner {
-  font-size: 3rem;
+.title {
+  font-size: 2rem;
 }

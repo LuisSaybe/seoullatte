@@ -19,10 +19,6 @@ export interface IUserInterface {
   language?: string;
 }
 
-export interface IApplicationState {
-  userId: string;
-}
-
 export interface ISpeechSynthesisSettings {
   voices?: SpeechSynthesisVoice[];
   voiceURI?: SpeechSynthesisVoice["voiceURI"];
@@ -33,8 +29,6 @@ export interface IUser {
   _id: string;
   email: string;
 }
-
-// TODO key is of type DispatchFetchType
 
 export interface IFetchStateType {
   [key: string]: IFetchState;
@@ -72,15 +66,11 @@ export interface ISpeechSynthesisDispatchAction {
 export type DispatchSpeechSynthesisSettingsContext = (
   action: IDispatchSpeechSynthesisAction,
 ) => void;
-export type ApplicationStateContextType = IApplicationState;
 export type LocalStorageContextType = ILocalStorage;
 export type DispatchSpeechSynthesisSettingsContextType = (
   action: ISpeechSynthesisDispatchAction,
 ) => void;
 export type UserContextType = [{ [id: string]: IUser }];
-export type SetApplicationStateSetContextType = Dispatch<
-  SetStateAction<IApplicationState>
->;
 export type UserInterfaceSettingsContextType = IUserInterface;
 export type FetchStateContextType = IFetchStateType;
 export interface IFetchState {
@@ -152,4 +142,9 @@ export interface IFetchDispatchActionDelete {
   data: {
     ids: string[];
   };
+}
+
+export interface ITopic {
+  path: string;
+  component: () => React.ReactNode;
 }

@@ -4,14 +4,16 @@ import { Trans } from "react-i18next";
 
 import { Utterance } from "web/js/hook/utterance";
 
+import { TopicRoute } from "common/routes";
+import { ArticlePage } from "web/js/component/article-page";
+import { NextPreviousAnchors } from "web/js/component/next-previous-anchors";
 import "./style.scss";
 
 export function Hangul() {
   const { t } = useTranslation();
 
   return (
-    <div styleName="root">
-      <div styleName="title">{t("The Korean Writing System")}</div>
+    <ArticlePage articleTitle={t("The Korean Writing System")}>
       <section styleName="section">
         <Trans>
           The modern Korean writing system is called{" "}
@@ -22,7 +24,10 @@ export function Hangul() {
         <Trans>
           The writing system was introduced and promoted in 1446 CE by Sejong
           the Great. The original name was{" "}
-          <Utterance text="훈민정음">훈민정음</Utterance>.
+          <Utterance text="훈민정음">훈민정음</Utterance>. Prior to the
+          widespread usage of 한굴, <Utterance text="한자">한자</Utterance>, a
+          system composed of Chinese characters was used to write Korean
+          language.
         </Trans>
       </section>
       <section styleName="section">
@@ -64,17 +69,30 @@ export function Hangul() {
         )}
       </section>
       <section styleName="section vowels">
-        {["ㅏ", "ㅓ", "ㅗ", "ㅜ", "ㅡ", "ㅣ", "ㅐ", "ㅔ", "ㅚ", "ㅟ"].map(
-          (character) => (
-            <Utterance key={character} text={character} styleName="character">
-              {character}
-            </Utterance>
-          ),
-        )}
+        {[
+          "ㅏ",
+          "ㅓ",
+          "ㅗ",
+          "ㅜ",
+          "ㅡ",
+          "ㅣ",
+          "ㅐ",
+          "ㅔ",
+          "ㅒ",
+          "ㅖ",
+          "ㅚ",
+          "ㅙ",
+          "ㅟ",
+          "ㅞ",
+        ].map((character) => (
+          <Utterance key={character} text={character} styleName="character">
+            {character}
+          </Utterance>
+        ))}
         <Utterance styleName="character" text="으이">
           ㅢ
         </Utterance>
       </section>
-    </div>
+    </ArticlePage>
   );
 }

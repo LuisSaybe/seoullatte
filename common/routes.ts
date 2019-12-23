@@ -25,11 +25,14 @@ export class Routes {
     return `${this.prefix}/home`;
   }
 
-  public hangul() {
-    return `${this.prefix}/hangul`;
-  }
-
   public landing() {
     return `${this.prefix}/`;
   }
+}
+
+export enum TopicRoute {
+  hangul = "/hangul",
+  noun = "/noun",
+  predicate = "/predicate",
+  syllable = "/syllable",
 }

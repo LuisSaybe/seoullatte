@@ -37,7 +37,7 @@ export const getUserLanguage = (user = null, navigator = null) => {
     return result;
   }
 
-  return Language.EN;
+  return Language.en;
 };
 
 export const getNavigatorLanguage = (navigator = null) =>

@@ -1,7 +1,7 @@
-@use "~web/sass/mixin";
+@use "~web/sass/layout";
 
 .root {
   display: flex;
   justify-content: center;
-  @include mixin.defaultLayout();
+  @include layout.defaultLayout();
 }

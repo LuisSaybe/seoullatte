@@ -1,0 +1,9 @@
+@mixin verticalMarginSection() {
+  & > *:not(:first-child) {
+    margin-top: 16px;
+  }
+}
+
+@mixin verticalMarginControl() {
+  margin-top: 26px;
+}

@@ -2,14 +2,18 @@ import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
+import { Language } from "common/model";
+
 import {
   DispatchSpeechSynthesisSettingsContext,
   SpeechSynthesisSettingsContext,
 } from "web/js/context";
 
-import { Button } from "web/js/component/button";
-
 import { SpeechSynthesisDispatchType } from "web/js/interface";
+import { routes } from "web/js/routes";
+
+import { Anchor } from "web/js/component/anchor";
+import { Button } from "web/js/component/button";
 import "./style.scss";
 
 export function Configuration() {
@@ -85,7 +89,7 @@ export function Configuration() {
             onBlur={onVoiceURIChange}
           >
             {speechSynthesisSettings.voices
-              .filter((voice) => voice.lang.includes("ko"))
+              .filter((voice) => voice.lang.includes(Language.ko))
               .map((voice) => (
                 <option key={voice.voiceURI} value={voice.voiceURI}>
                   {voice.name}
@@ -95,7 +99,7 @@ export function Configuration() {
         </div>
       )}
       <div styleName="buttons">
-        <Button onClick={() => history.goBack()}>{t("Go back")}</Button>
+        <Anchor href={routes.home()}>{t("Go back")}</Anchor>
         <Button>{t("Save")}</Button>
       </div>
     </form>

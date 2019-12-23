@@ -1,25 +1,16 @@
 import React from "react";
 
 import {
-  ApplicationStateContextType,
   DispatchLocalStorageContextType,
   DispatchSpeechSynthesisSettingsContextType,
   DispatchUserInterfaceSettingsContextType,
   FetchDispatchContextType,
   FetchStateContextType,
   LocalStorageContextType,
-  SetApplicationStateSetContextType,
   SpeechSynthesisSettingsContextType,
   UserContextType,
   UserInterfaceSettingsContextType,
 } from "web/js/interface";
-
-export const ApplicationContext = React.createContext<
-  ApplicationStateContextType
->(null);
-export const SetApplicationStateContext = React.createContext<
-  SetApplicationStateSetContextType
->(null);
 
 export const UserContext = React.createContext<UserContextType>(null);
 

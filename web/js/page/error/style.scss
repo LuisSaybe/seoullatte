@@ -1,7 +1,7 @@
-@use '~web/sass/mixin';
+@use '~web/sass/layout';
 
 .root {
-  @include mixin.defaultLayout();
+  @include layout.defaultLayout();
 
   display: flex;
   flex-direction: column;

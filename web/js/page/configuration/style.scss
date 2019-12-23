@@ -1,4 +1,4 @@
-@use '~web/sass/mixin';
+@use '~web/sass/layout';
 
 .buttons {
   display: flex;
@@ -18,7 +18,7 @@
 }
 
 .root {
-  @include mixin.defaultLayout();
+  @include layout.defaultLayout();
 
   > *:not(:first-child) {
     margin-top: 12px;

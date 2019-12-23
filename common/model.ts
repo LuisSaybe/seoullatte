@@ -1,8 +1,8 @@
 export enum Language {
-  EN = "EN",
-  FR = "FR",
-  KO = "KO",
-  ES = "ES",
+  en = "en",
+  fr = "fr",
+  ko = "ko",
+  es = "es",
 }
 
-export const SUPPORTED_LANGUAGE_IDS = [Language.EN, Language.FR];
+export const SUPPORTED_LANGUAGE_IDS = [Language.en, Language.fr];

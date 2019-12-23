@@ -1,0 +1,19 @@
+@use "~web/sass/media";
+
+@mixin defaultLayout() {
+  padding: 0 12px;
+
+  @include media.phone() {
+    padding: 15px;
+  }
+
+  @include media.not_phone() {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@mixin pageTitle() {
+  font-size: 1.5rem;
+}

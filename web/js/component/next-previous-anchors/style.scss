@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+
+  &:not(.has-previous) {
+    .next {
+      margin-left: auto;
+    }
+  }
+}

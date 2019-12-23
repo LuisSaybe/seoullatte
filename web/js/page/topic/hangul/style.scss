@@ -1,4 +1,5 @@
-@use '~web/sass/mixin';
+@use '~web/sass/layout';
+@use '~web/sass/page';
 
 .consonant {
   margin-right: 12px;
@@ -10,7 +11,7 @@
 }
 
 .root {
-  @include mixin.defaultLayout();
+  @include layout.defaultLayout();
 }
 
 .section {
@@ -24,8 +25,4 @@
   .character {
     text-align: left;
   }
-}
-
-.title {
-  font-size: 2rem;
 }

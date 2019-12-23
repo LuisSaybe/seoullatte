@@ -1,0 +1,22 @@
+@use '~web/sass/color';
+
+@mixin button() {
+  border-style: solid;
+  color: color.$white;
+  border-radius: 6px;
+  font-size: 1rem;
+  border-width: 2px 2px 4px;
+  padding: 0;
+}
+
+@mixin buttonColors($color) {
+  border-color: darken($color, 10%);
+
+  &:hover {
+    background-color: lighten($color, 10%);
+  }
+
+  &:not(:hover) {
+    background-color: $color;
+  }
+}
