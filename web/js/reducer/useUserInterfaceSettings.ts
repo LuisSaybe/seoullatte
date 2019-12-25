@@ -1,9 +1,14 @@
-import { useReducer } from 'react';
+import { useReducer } from "react";
+import { UserInterfaceDispatchType } from "../interface";
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'SET': {
+    case UserInterfaceDispatchType.SET: {
       return { ...action.data };
+    }
+
+    case UserInterfaceDispatchType.MERGE: {
+      return { ...state, ...action.data };
     }
 
     default:
@@ -12,5 +17,5 @@ function reducer(state, action) {
 }
 
 export function useUserInterfaceSettings() {
-  return useReducer(reducer, { language: null });
+  return useReducer(reducer, { language: null, burgerMenuOpen: false });
 }

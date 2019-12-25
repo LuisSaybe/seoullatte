@@ -17,10 +17,11 @@ export interface ILocalStorage {
 
 export interface IUserInterface {
   language?: string;
+  burgerMenuOpen: boolean;
 }
 
 export interface ISpeechSynthesisSettings {
-  voices?: SpeechSynthesisVoice[];
+  voices: SpeechSynthesisVoice[];
   voiceURI?: SpeechSynthesisVoice["voiceURI"];
   rate?: SpeechSynthesisUtterance["rate"];
 }
@@ -40,6 +41,7 @@ export enum SpeechSynthesisDispatchType {
 }
 
 export enum UserInterfaceDispatchType {
+  MERGE = "MERGE",
   SET = "SET",
 }
 
@@ -59,8 +61,8 @@ export enum DispatchSpeechSynthesisActionType {
 }
 
 export interface ISpeechSynthesisDispatchAction {
+  data: Partial<ISpeechSynthesisSettings>;
   type: SpeechSynthesisDispatchType;
-  data: ISpeechSynthesisSettings;
 }
 
 export type DispatchSpeechSynthesisSettingsContext = (
@@ -84,7 +86,7 @@ export interface IFetchState {
   originalBody?: any;
 }
 export type DispatchUserInterfaceSettingsContextType = (
-  action: IUserInterfaceSetAction,
+  action: IUserInterfaceSeetAction | IUserInterfaceUpdateAction,
 ) => void;
 
 export type FetchDispatchContextType = [DispatchFetch, DispatchFetchDelete];
@@ -93,10 +95,20 @@ export type DispatchLocalStorageContextType = (
   action: ILocalStorageUpdateAction | ILocalStorageResetAction,
 ) => void;
 
-export interface IUserInterfaceSetAction {
+export type DisatchBurgerMenuContextType = ({
+  data: IBurgerMenuSettings,
+}) => void;
+
+export interface IUserInterfaceSeetAction {
   type: UserInterfaceDispatchType.SET;
   data: IUserInterface;
 }
+
+export interface IUserInterfaceUpdateAction {
+  type: UserInterfaceDispatchType.MERGE;
+  data: Partial<IUserInterface>;
+}
+
 export type SpeechSynthesisSettingsContextType = ISpeechSynthesisSettings;
 export interface ILocalStorageUpdateAction {
   type: LocalStorageActionType.UPDATE;
@@ -145,6 +157,7 @@ export interface IFetchDispatchActionDelete {
 }
 
 export interface ITopic {
+  name: string;
   path: string;
   component: () => React.ReactNode;
 }

@@ -1,17 +1,17 @@
 @use '~web/sass/layout';
 
 .anchors {
-  grid-row-start: 2;
-  grid-row-end: 3;
+  margin-top: 24px;
 }
 
-.root {
-  min-height: 100%;
+.content {
   display: grid;
   grid-template-rows: 1fr auto;
   @include layout.defaultLayout();
 }
 
-.title {
-  font-size: 2rem;
+.root {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 60px 1fr;
 }

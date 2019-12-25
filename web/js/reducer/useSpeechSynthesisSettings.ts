@@ -1,12 +1,12 @@
-import { useReducer } from 'react';
+import { useReducer } from "react";
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'MERGE': {
-      return {  ...state, ...action.data };
+    case "MERGE": {
+      return { ...state, ...action.data };
     }
 
-    case 'SET': {
+    case "SET": {
       return { ...action.data };
     }
 

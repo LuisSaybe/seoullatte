@@ -20,13 +20,11 @@ import { routes } from "web/js/routes";
 import { Language } from "common/model";
 import { useTopics } from "web/js/hook/useTopics";
 
-import { Header } from "web/js/component/header";
+import { BurgerMenu } from "web/js/component/burger-menu";
 import { NaturalSpinner } from "web/js/component/natural-spinner";
 import { Configuration } from "web/js/page/configuration";
 import { Landing } from "web/js/page/landing";
 import { NotFound } from "web/js/page/not-found";
-
-import "./style.scss";
 
 export function Application() {
   const { i18n } = useTranslation();
@@ -47,12 +45,8 @@ export function Application() {
       data: {
         language: getUserLanguage(null, navigator),
       },
-      type: UserInterfaceDispatchType.SET,
+      type: UserInterfaceDispatchType.MERGE,
     });
-
-    if (speechSynthesis.onvoiceschanged) {
-      speechSynthesis.getVoices();
-    }
   }, []);
 
   useEffect(() => {
@@ -73,6 +67,10 @@ export function Application() {
   }, [dispatchSpeechSynthesisSettings, speechSynthesisSettings]);
 
   useEffect(() => {
+    if (!speechSynthesis) {
+      return;
+    }
+
     const voicesChanged = () => {
       dispatchSpeechSynthesisSettings({
         data: {
@@ -85,13 +83,13 @@ export function Application() {
     if (typeof speechSynthesis.onvoiceschanged === "undefined") {
       voicesChanged();
     } else {
-      const voiceschanged = "voiceschanged";
-      speechSynthesis.addEventListener(voiceschanged, voicesChanged);
+      speechSynthesis.addEventListener("voiceschanged", voicesChanged);
+      voicesChanged();
       return () => {
-        speechSynthesis.removeEventListener(voiceschanged, voicesChanged);
+        speechSynthesis.removeEventListener("voiceschanged", voicesChanged);
       };
     }
-  }, [dispatchSpeechSynthesisSettings]);
+  }, [dispatchSpeechSynthesisSettings, speechSynthesis]);
 
   useEffect(() => {
     if (
@@ -109,7 +107,7 @@ export function Application() {
         data: {
           language: getUserLanguage(null, navigator),
         },
-        type: UserInterfaceDispatchType.SET,
+        type: UserInterfaceDispatchType.MERGE,
       });
     };
 
@@ -122,11 +120,11 @@ export function Application() {
   let content;
 
   if (loading) {
-    content = <NaturalSpinner styleName="spinner" />;
+    content = <NaturalSpinner />;
   } else {
     content = (
       <>
-        <Header />
+        <BurgerMenu />
         <Switch>
           <Route exact path={routes.landing()} component={Landing} />
           <Route path={routes.configuration()} component={Configuration} />

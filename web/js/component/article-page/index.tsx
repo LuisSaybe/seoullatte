@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import { ArticleSection } from "web/js/component/article-section";
-import { ArticleTitle } from "web/js/component/article-title";
-import { NextPreviousAnchors } from "web/js/component/next-previous-anchors";
 import { useTopics } from "web/js/hook/useTopics";
+
+import { ArticleTitle } from "web/js/component/article-title";
+import { Navigation } from "web/js/component/navigation";
+import { NextPreviousAnchors } from "web/js/component/next-previous-anchors";
 import "./style.scss";
 
 interface IInterface extends React.HTMLAttributes<HTMLElement> {
@@ -16,6 +17,10 @@ export function ArticlePage(props: IInterface) {
   const topics = useTopics();
   const location = useLocation();
   const { children, articleTitle, ...rest } = props;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const topicIndex = topics.findIndex(
     (topic) => topic.path === location.pathname,
@@ -37,16 +42,21 @@ export function ArticlePage(props: IInterface) {
   }
 
   return (
-    <article {...rest} styleName="root">
-      <div>
-        <ArticleTitle styleName="title">{articleTitle}</ArticleTitle>
-        {props.children}
+    <div styleName="root" {...rest}>
+      <Navigation />
+      <div styleName="content">
+        <article>
+          <div>
+            <ArticleTitle>{articleTitle}</ArticleTitle>
+            {props.children}
+          </div>
+        </article>
+        <NextPreviousAnchors
+          styleName="anchors"
+          next={next}
+          previous={previous}
+        ></NextPreviousAnchors>
       </div>
-      <NextPreviousAnchors
-        styleName="anchors"
-        next={next}
-        previous={previous}
-      ></NextPreviousAnchors>
-    </article>
+    </div>
   );
 }

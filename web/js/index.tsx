@@ -12,4 +12,4 @@ if (!window.URLSearchParams) {
   window.URLSearchParams = URLSearchParams;
 }
 
-ReactDOM.render(<Root />, document.querySelector(".projectroot"));
+ReactDOM.render(<Root />, document.querySelector(".project-root"));

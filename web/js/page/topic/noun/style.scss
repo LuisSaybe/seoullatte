@@ -1,9 +1,12 @@
-@use '~web/sass/layout';
+@use '~web/sass/page';
 
-.root {
-  @include layout.defaultLayout();
+.hangul-hanja-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: flex-start;
+  gap: 12px;
 }
 
-.title {
-  font-size: 2rem;
+.table-section {
+  @include page.verticalMarginTopSmall();
 }

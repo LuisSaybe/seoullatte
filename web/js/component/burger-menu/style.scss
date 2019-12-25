@@ -1,0 +1,27 @@
+@use '~web/sass/color';
+@use '~web/sass/page';
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  border: none;
+  background: none;
+  padding: 4px 2px;
+  font-size: 1.2rem;
+}
+
+.hr {
+  @include page.verticalMarginTopSmall();
+}
+
+.link {
+  margin: 6px 0;
+}
+
+.root {
+  background-color: color.$white;
+  padding: 12px;
+}

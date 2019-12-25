@@ -1,11 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { TopicRoute } from "common/routes";
-
 import { ArticlePage } from "web/js/component/article-page";
 import { ArticleSection } from "web/js/component/article-section";
-import { NextPreviousAnchors } from "web/js/component/next-previous-anchors";
+import { Utterance } from "web/js/hook/utterance";
 import "./style.scss";
 
 export function Syllable() {
@@ -22,34 +20,48 @@ export function Syllable() {
       )}
       <ArticleSection>
         <div>&bull; {t("One vowel.")}</div>
-        <div>For example: 웨</div>
+        <div>
+          {t("For example:")} <Utterance text="웨">웨</Utterance>
+        </div>
       </ArticleSection>
       <ArticleSection>
         <div>&bull; {t("A vowel followed by a consonant.")}</div>
-        <div>For example: 안</div>
+        <div>
+          {t("For example:")} <Utterance text="안">안</Utterance>
+        </div>
       </ArticleSection>
       <ArticleSection>
         <div>&bull; {t("A consonant followed by a vowel.")}</div>
-        <div>For example: 코</div>
+        <div>
+          {t("For example:")} <Utterance text="코">코</Utterance>
+        </div>
       </ArticleSection>
       <ArticleSection>
         <div>&bull; {t("A consonant, a vowel and then a consonant.")}</div>
-        <div>For example: 들</div>
+        <div>
+          {t("For example:")} <Utterance text="들">들</Utterance>
+        </div>
       </ArticleSection>
       <ArticleSection>
         <div>
           &bull;{" "}
           {t("A consonant, a vowel, a consonant, and another consonant.")}
         </div>
-        <div>For example: 젊</div>
+        <div>
+          {t("For example:")} <Utterance text="젊">젊</Utterance>
+        </div>
       </ArticleSection>
       <ArticleSection>
         {t(
-          "It is not guaranteed that a syllable is pronunced how it is spelled.",
+          "The order in which a syllable is read is from top to bottom and then left to right.",
         )}
         &nbsp;
+        {t("The syllable 젊 is read ㅈ ㅓ ㄹ ㅁ.")}
+        &nbsp;
+        {t("It is not guaranteed that a syllable pronunced how it is spelled.")}
+        &nbsp;
         {t(
-          "The Korean language has rules for how a syllable is pronounced alone or pronounced when adjacent to another syllable.",
+          "The pronounciation of Korean syllables may change depending on the preceeding syllable, the following syllable, or even based on the word's etymology.",
         )}
       </ArticleSection>
     </ArticlePage>

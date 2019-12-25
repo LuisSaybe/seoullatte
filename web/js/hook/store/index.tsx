@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import React from "react";
 
 import {
@@ -44,7 +43,3 @@ export function Store({ children }) {
     </SpeechSynthesisSettingsContext.Provider>
   );
 }
-
-Store.propTypes = {
-  children: PropTypes.node.isRequired,
-};

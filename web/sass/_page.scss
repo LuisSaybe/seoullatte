@@ -4,6 +4,14 @@
   }
 }
 
-@mixin verticalMarginControl() {
-  margin-top: 26px;
+@mixin topicTitleMedium() {
+  font-size: 1.3rem;
+}
+
+@mixin verticalMarginTopSmall() {
+  margin-top: 12px;
+}
+
+@mixin verticalMarginTopMedium() {
+  margin-top: 124px;
 }

@@ -1,7 +1,16 @@
 html {
   font-size: 16px;
+  height: 100%;
 }
 
 body {
   margin: 0;
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+
+:global {
+  .project-root {
+    height: 100%;
+  }
 }

@@ -12,6 +12,7 @@ import {
 import { SpeechSynthesisDispatchType } from "web/js/interface";
 import { routes } from "web/js/routes";
 
+import { TopicRoute } from "common/routes";
 import { Anchor } from "web/js/component/anchor";
 import { Button } from "web/js/component/button";
 import "./style.scss";
@@ -99,7 +100,9 @@ export function Configuration() {
         </div>
       )}
       <div styleName="buttons">
-        <Anchor href={routes.home()}>{t("Go back")}</Anchor>
+        <Anchor button href={TopicRoute.hangul}>
+          {t("back")}
+        </Anchor>
         <Button>{t("Save")}</Button>
       </div>
     </form>

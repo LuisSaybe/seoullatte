@@ -1,0 +1,6 @@
+@use '~web/sass/color';
+
+.root {
+  background-color: color.$text;
+  height: 2px;
+}

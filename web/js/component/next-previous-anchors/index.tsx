@@ -17,9 +17,13 @@ export function NextPreviousAnchors(props: IInterface) {
 
   return (
     <div styleName={styleName} {...rest}>
-      {previous && <Anchor to={previous}>{t("previous")}</Anchor>}
+      {previous && (
+        <Anchor button to={previous}>
+          {t("previous")}
+        </Anchor>
+      )}
       {next && (
-        <Anchor to={next} styleName="next">
+        <Anchor button to={next} styleName="next">
           {t("next")}
         </Anchor>
       )}
