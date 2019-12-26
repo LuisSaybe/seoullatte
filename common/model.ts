@@ -1,5 +1,7 @@
-import { IPredicate } from "common/interface";
 import * as Hangul from "hangul-js";
+
+import { BRIGHT_VOWELS } from "common/enum";
+import { IPredicate } from "common/interface";
 
 export enum Language {
   en = "en",
@@ -20,7 +22,7 @@ export class Predicate implements IPredicate {
     for (let index = letters.length - 1; index > -1; index--) {
       const letter = letters[0];
 
-      if (BRIGHT_VO) {
+      if (BRIGHT_VOWELS.includes(letter)) {
       }
     }
   }

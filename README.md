@@ -9,13 +9,7 @@ docker build --rm -f docker/Dockerfile -t luissaybe/joseon .
 ### watch for web changes
 
 ```sh
-yarn run watch-web
-```
-
-### watch for server changes
-
-```sh
-yarn run watch-server
+yarn run watch
 ```
 
 ### clean and run project
