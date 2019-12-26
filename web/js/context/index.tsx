@@ -7,6 +7,7 @@ import {
   FetchDispatchContextType,
   FetchStateContextType,
   LocalStorageContextType,
+  LocationsContextType,
   SpeechSynthesisSettingsContextType,
   UserContextType,
   UserInterfaceSettingsContextType,
@@ -24,6 +25,7 @@ export const DispatchUserInterfaceSettingsContext = React.createContext<
 export const SpeechSynthesisSettingsContext = React.createContext<
   SpeechSynthesisSettingsContextType
 >(null);
+export const LocationsContext = React.createContext<LocationsContextType>(null);
 export const DispatchSpeechSynthesisSettingsContext = React.createContext<
   DispatchSpeechSynthesisSettingsContextType
 >(null);

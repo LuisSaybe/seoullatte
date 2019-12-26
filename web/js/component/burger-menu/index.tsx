@@ -1,17 +1,17 @@
-import _ from "lodash";
 import React, { useContext, useEffect, useState } from "react";
 import Menu from "react-burger-menu/lib/menus/slide";
+import { useTranslation } from "react-i18next";
 
 import { useTopics } from "web/js/hook/useTopics";
+import { ITopic, StandardReducerOperation } from "web/js/interface";
 
-import { useTranslation } from "react-i18next";
 import { Anchor } from "web/js/component/anchor";
 import { Hr } from "web/js/component/hr";
+import { Input } from "web/js/component/input";
 import {
   DispatchUserInterfaceSettingsContext,
   UserInterfaceSettingsContext,
 } from "web/js/context";
-import { UserInterfaceDispatchType } from "web/js/interface";
 import styles from "./style.scss";
 
 export function BurgerMenu() {
@@ -27,7 +27,7 @@ export function BurgerMenu() {
       data: {
         burgerMenuOpen: false,
       },
-      type: UserInterfaceDispatchType.MERGE,
+      type: StandardReducerOperation.MERGE,
     });
   };
   const onStateChange = (state) => {
@@ -35,8 +35,18 @@ export function BurgerMenu() {
       data: {
         burgerMenuOpen: state.isOpen,
       },
-      type: UserInterfaceDispatchType.MERGE,
+      type: StandardReducerOperation.MERGE,
     });
+  };
+  const filterTopics = (topic: ITopic) => {
+    const includesName = topic.name
+      .toLocaleLowerCase()
+      .includes(searchValue.toLocaleLowerCase());
+    const includesSearchTerms = topic.searchTerms
+      .toLocaleLowerCase()
+      .includes(searchValue.toLocaleLowerCase());
+
+    return includesName || includesSearchTerms;
   };
 
   useEffect(() => {
@@ -47,6 +57,7 @@ export function BurgerMenu() {
 
   return (
     <Menu
+      disableAutoFocus
       isOpen={burgerMenuOpen}
       onStateChange={onStateChange}
       styleName="root"
@@ -54,29 +65,23 @@ export function BurgerMenu() {
       customCrossIcon={false}
       customBurgerIcon={false}
     >
-      <input
+      <Input
         onChange={(e) => setSearchValue(e.target.value)}
         value={searchValue}
         styleName="input"
         placeholder={t("Search...")}
       />
       <Hr styleName="hr" />
-      {topics
-        .filter((topic) =>
-          topic.name
-            .toLocaleLowerCase()
-            .includes(searchValue.toLocaleLowerCase()),
-        )
-        .map((topic) => (
-          <Anchor
-            onClick={onLinkClick}
-            key={topic.path}
-            styleName="link"
-            to={topic.path}
-          >
-            {topic.name}
-          </Anchor>
-        ))}
+      {topics.filter(filterTopics).map((topic) => (
+        <Anchor
+          onClick={onLinkClick}
+          key={topic.path}
+          styleName="link"
+          to={topic.path}
+        >
+          {topic.name}
+        </Anchor>
+      ))}
     </Menu>
   );
 }

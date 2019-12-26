@@ -12,7 +12,7 @@ module.exports = function() {
       path.resolve(__dirname, "web/sass/index.scss"),
     ],
     output: {
-      path: path.resolve(__dirname, "web-dist"),
+      path: path.resolve(__dirname, "dist"),
       filename: `[name]-${packageJson.version}.js`,
     },
     resolve: {

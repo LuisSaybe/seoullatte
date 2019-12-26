@@ -21,46 +21,55 @@ export function useTopics(): ITopic[] {
       component: Hangul,
       name: t("The Korean Writing System"),
       path: TopicRoute.hangul,
+      searchTerms: "한글 한자",
     },
     {
       component: Syllable,
       name: t("Syllables"),
       path: TopicRoute.syllable,
+      searchTerms: "",
     },
     {
       component: Noun,
       name: t("Nouns"),
       path: TopicRoute.noun,
+      searchTerms: "",
     },
     {
       component: Predicate,
       name: t("Predicates"),
       path: TopicRoute.predicate,
+      searchTerms: "",
     },
     {
       component: SpeechLevel,
       name: t("Speech Level"),
       path: TopicRoute.speechLevel,
+      searchTerms: "",
     },
     {
       component: DeferentialSpeech,
       name: t("The Deferential Speech Level"),
       path: TopicRoute.deferentialSpeech,
+      searchTerms: "",
     },
     {
       component: PoliteSpeech,
       name: t("The Polite Speech Level"),
       path: TopicRoute.politeSpeech,
+      searchTerms: "",
     },
     {
       component: IntimateSpeech,
       name: t("The Intimate Speech Level"),
       path: TopicRoute.intimateSpeech,
+      searchTerms: "",
     },
     {
       component: FamiliarSpeech,
       name: t("The Familiar Speech Level"),
       path: TopicRoute.familiarSpeech,
+      searchTerms: "",
     },
   ];
 }

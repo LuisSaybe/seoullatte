@@ -1,34 +1,33 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import { getUserLanguage } from "common/helpers";
 
 import {
   DispatchSpeechSynthesisSettingsContext,
   DispatchUserInterfaceSettingsContext,
+  LocationsContext,
   SpeechSynthesisSettingsContext,
   UserInterfaceSettingsContext,
 } from "web/js/context";
 
-import {
-  SpeechSynthesisDispatchType,
-  UserInterfaceDispatchType,
-} from "web/js/interface";
+import { StandardReducerOperation } from "web/js/interface";
 import { routes } from "web/js/routes";
 
 import { Language } from "common/model";
-import { useTopics } from "web/js/hook/useTopics";
+import { useArticleRoutes } from "web/js/hook/useArticleRoutes";
+import { useLocations } from "web/js/hook/useLocations";
 
 import { BurgerMenu } from "web/js/component/burger-menu";
 import { NaturalSpinner } from "web/js/component/natural-spinner";
 import { Configuration } from "web/js/page/configuration";
-import { Landing } from "web/js/page/landing";
 import { NotFound } from "web/js/page/not-found";
 
 export function Application() {
   const { i18n } = useTranslation();
-  const topics = useTopics();
+  const locations = useLocations();
+  const articleRoutes = useArticleRoutes();
   const speechSynthesisSettings = useContext(SpeechSynthesisSettingsContext);
   const dispatchSpeechSynthesisSettings = useContext(
     DispatchSpeechSynthesisSettingsContext,
@@ -45,7 +44,7 @@ export function Application() {
       data: {
         language: getUserLanguage(null, navigator),
       },
-      type: UserInterfaceDispatchType.MERGE,
+      type: StandardReducerOperation.MERGE,
     });
   }, []);
 
@@ -60,7 +59,7 @@ export function Application() {
           data: {
             voiceURI: voices[0].voiceURI,
           },
-          type: SpeechSynthesisDispatchType.MERGE,
+          type: StandardReducerOperation.MERGE,
         });
       }
     }
@@ -76,7 +75,7 @@ export function Application() {
         data: {
           voices: speechSynthesis.getVoices(),
         },
-        type: SpeechSynthesisDispatchType.MERGE,
+        type: StandardReducerOperation.MERGE,
       });
     };
 
@@ -107,7 +106,7 @@ export function Application() {
         data: {
           language: getUserLanguage(null, navigator),
         },
-        type: UserInterfaceDispatchType.MERGE,
+        type: StandardReducerOperation.MERGE,
       });
     };
 
@@ -126,20 +125,17 @@ export function Application() {
       <>
         <BurgerMenu />
         <Switch>
-          <Route exact path={routes.landing()} component={Landing} />
           <Route path={routes.configuration()} component={Configuration} />
-          {topics.map((topic) => (
-            <Route
-              key={topic.path}
-              path={topic.path}
-              component={topic.component}
-            />
-          ))}
+          {articleRoutes}
           <Route component={NotFound} />
         </Switch>
       </>
     );
   }
 
-  return <BrowserRouter>{content}</BrowserRouter>;
+  return (
+    <LocationsContext.Provider value={locations}>
+      {content}
+    </LocationsContext.Provider>
+  );
 }

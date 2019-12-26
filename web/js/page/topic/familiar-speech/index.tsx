@@ -8,9 +8,5 @@ import "./style.scss";
 export function FamiliarSpeech() {
   const { t } = useTranslation();
 
-  return (
-    <ArticlePage articleTitle={t("Familiar Speech Level")}>
-      <ArticleSection></ArticleSection>
-    </ArticlePage>
-  );
+  return <ArticleSection></ArticleSection>;
 }

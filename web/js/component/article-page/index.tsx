@@ -10,36 +10,18 @@ import "./style.scss";
 
 interface IInterface extends React.HTMLAttributes<HTMLElement> {
   articleTitle: React.ReactNode;
+  next: string;
+  previous: string;
   styleName?: string;
 }
 
 export function ArticlePage(props: IInterface) {
-  const topics = useTopics();
   const location = useLocation();
-  const { children, articleTitle, ...rest } = props;
+  const { children, articleTitle, next, previous, ...rest } = props;
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
-
-  const topicIndex = topics.findIndex(
-    (topic) => topic.path === location.pathname,
-  );
-  let next;
-  let previous;
-
-  if (topicIndex !== -1) {
-    const previousTopic = topics[topicIndex - 1];
-    const nextTopic = topics[topicIndex + 1];
-
-    if (previousTopic) {
-      previous = previousTopic.path;
-    }
-
-    if (nextTopic) {
-      next = nextTopic.path;
-    }
-  }
 
   return (
     <div styleName="root" {...rest}>

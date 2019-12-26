@@ -1,6 +1,5 @@
 .DS_Store
 .cache
 node_modules
-web-dist
-server-dist
+dist
 yarn-error.log

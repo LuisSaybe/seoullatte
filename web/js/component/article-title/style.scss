@@ -1,3 +1,6 @@
+@use '~web/sass/color';
+
 .root {
+  color: color.$title;
   font-size: 2rem;
 }

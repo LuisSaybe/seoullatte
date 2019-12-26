@@ -1,7 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { ArticlePage } from "web/js/component/article-page";
 import { ArticleSection } from "web/js/component/article-section";
 import { Utterance } from "web/js/hook/utterance";
 import "./style.scss";
@@ -10,7 +9,7 @@ export function Syllable() {
   const { t } = useTranslation();
 
   return (
-    <ArticlePage articleTitle={t("Korean Syllables")}>
+    <>
       {t(
         "There are 5 ways in which 한글 characters can combine to form a syllable.",
       )}
@@ -64,6 +63,6 @@ export function Syllable() {
           "The pronounciation of Korean syllables may change depending on the preceeding syllable, the following syllable, or even based on the word's etymology.",
         )}
       </ArticleSection>
-    </ArticlePage>
+    </>
   );
 }

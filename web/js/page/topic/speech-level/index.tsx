@@ -11,7 +11,7 @@ export function SpeechLevel() {
   const { t } = useTranslation();
 
   return (
-    <ArticlePage articleTitle={t("Speech Level")}>
+    <>
       <ArticleSection>
         {t(
           "Korean sentences exists in one of many speech levels which are used to express the social relationship betwee the speaker and the listener.",
@@ -89,6 +89,6 @@ export function SpeechLevel() {
         <div>&bull;&nbsp;Instructional writing</div>
         <div>&bull;&nbsp;Exclamations</div>
       </ArticleSection>
-    </ArticlePage>
+    </>
   );
 }

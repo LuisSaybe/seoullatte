@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Location } from "react-router-dom";
 
 export enum DispatchFetchType {
   UPDATE_USER = "UPDATE_USER",
@@ -35,12 +35,7 @@ export interface IFetchStateType {
   [key: string]: IFetchState;
 }
 
-export enum SpeechSynthesisDispatchType {
-  MERGE = "MERGE",
-  SET = "SET",
-}
-
-export enum UserInterfaceDispatchType {
+export enum StandardReducerOperation {
   MERGE = "MERGE",
   SET = "SET",
 }
@@ -55,14 +50,9 @@ export enum FetchActionType {
   DELETE = "DELETE",
 }
 
-export enum DispatchSpeechSynthesisActionType {
-  MERGE = "MERGE",
-  SET = "SET",
-}
-
 export interface ISpeechSynthesisDispatchAction {
   data: Partial<ISpeechSynthesisSettings>;
-  type: SpeechSynthesisDispatchType;
+  type: StandardReducerOperation;
 }
 
 export type DispatchSpeechSynthesisSettingsContext = (
@@ -100,16 +90,17 @@ export type DisatchBurgerMenuContextType = ({
 }) => void;
 
 export interface IUserInterfaceSeetAction {
-  type: UserInterfaceDispatchType.SET;
+  type: StandardReducerOperation.SET;
   data: IUserInterface;
 }
 
 export interface IUserInterfaceUpdateAction {
-  type: UserInterfaceDispatchType.MERGE;
+  type: StandardReducerOperation.MERGE;
   data: Partial<IUserInterface>;
 }
 
 export type SpeechSynthesisSettingsContextType = ISpeechSynthesisSettings;
+export type LocationsContextType = Array<{ pathname: string }>;
 export interface ILocalStorageUpdateAction {
   type: LocalStorageActionType.UPDATE;
   data: ILocalStorage;
@@ -140,7 +131,7 @@ export interface IFetchDispatchAction {
 }
 
 export interface IDispatchSpeechSynthesisAction {
-  type: DispatchSpeechSynthesisActionType;
+  type: StandardReducerOperation;
   data: ISpeechSynthesisSettings;
 }
 
@@ -159,5 +150,6 @@ export interface IFetchDispatchActionDelete {
 export interface ITopic {
   name: string;
   path: string;
-  component: () => React.ReactNode;
+  searchTerms: string;
+  component: React.ComponentType;
 }

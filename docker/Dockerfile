@@ -1,7 +1,7 @@
 FROM centos:7
 
 ENV SOURCE_DIRECTORY /root/project
-ADD . $SOURCE_DIRECTORY
+COPY . $SOURCE_DIRECTORY
 WORKDIR $SOURCE_DIRECTORY
 
 RUN \
@@ -12,6 +12,5 @@ RUN \
     curl --silent --location https://rpm.nodesource.com/setup_11.x | bash - && \
     yum -y install nodejs && \
     npm install -g yarn && \
-    cd $SOURCE_DIRECTORY && \
     yarn && \
-    npm run build
+    yarn build

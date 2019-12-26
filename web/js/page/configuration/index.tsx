@@ -1,26 +1,24 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useHistory } from "react-router-dom";
 
 import { Language } from "common/model";
 
 import {
   DispatchSpeechSynthesisSettingsContext,
+  LocationsContext,
   SpeechSynthesisSettingsContext,
 } from "web/js/context";
 
-import { SpeechSynthesisDispatchType } from "web/js/interface";
-import { routes } from "web/js/routes";
-
-import { TopicRoute } from "common/routes";
 import { Anchor } from "web/js/component/anchor";
 import { Button } from "web/js/component/button";
+import { StandardReducerOperation } from "web/js/interface";
+import { routes } from "web/js/routes";
 import "./style.scss";
 
 export function Configuration() {
   const DEFAULT_SPEAKING_RATE = -1;
-  const history = useHistory();
   const { t } = useTranslation();
+  const locations = useContext(LocationsContext);
   const speechSynthesisSettings = useContext(SpeechSynthesisSettingsContext);
   const [rate, setRate] = useState(
     speechSynthesisSettings.rate
@@ -33,7 +31,7 @@ export function Configuration() {
 
   const onChange = (e) => setRate(Number(e.target.value));
   const onVoiceURIChange = (e) => setVoiceURI(e.target.value);
-  const dispatchspeechSynthesisSettings = useContext(
+  const dispatchSpeechSynthesisSettings = useContext(
     DispatchSpeechSynthesisSettingsContext,
   );
   const onSubmit = (e) => {
@@ -50,11 +48,19 @@ export function Configuration() {
       data.rate = rate;
     }
 
-    dispatchspeechSynthesisSettings({
+    dispatchSpeechSynthesisSettings({
       data,
-      type: SpeechSynthesisDispatchType.MERGE,
+      type: StandardReducerOperation.MERGE,
     });
   };
+
+  let backButtonTo;
+
+  if (locations.length > 1) {
+    backButtonTo = locations[locations.length - 2];
+  } else {
+    backButtonTo = routes.landing();
+  }
 
   useEffect(() => {
     if (speechSynthesisSettings.voiceURI) {
@@ -82,9 +88,9 @@ export function Configuration() {
       </div>
       {speechSynthesisSettings.voices && voiceURI && (
         <div styleName="field">
-          <label htmlFor="speaking-rate">{t("Text-to-Speech Voice")}</label>
+          <label htmlFor="voice-uri">{t("Text-to-Speech Voice")}</label>
           <select
-            id="speaking-rate"
+            id="voice-uri"
             value={voiceURI}
             onChange={onVoiceURIChange}
             onBlur={onVoiceURIChange}
@@ -100,7 +106,7 @@ export function Configuration() {
         </div>
       )}
       <div styleName="buttons">
-        <Anchor button href={TopicRoute.hangul}>
+        <Anchor button to={backButtonTo.pathname}>
           {t("back")}
         </Anchor>
         <Button>{t("Save")}</Button>

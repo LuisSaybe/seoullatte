@@ -26,9 +26,14 @@ docker-compose rm
 docker-compose up
 ```
 
-###
-
 Korean Dictionary provided by https://krdict.korean.go.k
+
+### Get Certbot Certs
+
+```sh
+sudo apt-get install python3-certbot-dns-digitalocean
+certbot certonly --dns-digitalocean --dns-digitalocean-credentials ~/digitalocean.ini -d *.seoullatte.com
+```
 
 ### note on docker mongo
 

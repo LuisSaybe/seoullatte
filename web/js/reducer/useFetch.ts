@@ -110,8 +110,8 @@ export function useFetch(
         const contentType = response.headers.get("content-type");
         const nextData = {
           ...data,
-          params: searchParams,
           fetching: false,
+          params: searchParams,
           response,
         };
 
@@ -124,7 +124,6 @@ export function useFetch(
               });
             },
             (error) => {
-              console.warn(error);
               dispatch({
                 data: { ...nextData, error },
                 type: FetchActionType.UPDATE,
@@ -136,13 +135,12 @@ export function useFetch(
         }
       },
       (error) => {
-        console.warn(error);
         dispatch({ type: FetchActionType.UPDATE, data: { ...data, error } });
       },
     );
   };
 
-  const deleteDispatch = (ids) => {
+  const deleteDispatch = (ids: string[]) => {
     dispatch({
       data: { ids },
       type: FetchActionType.DELETE,

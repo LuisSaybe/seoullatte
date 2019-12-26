@@ -20,7 +20,7 @@ export function Noun() {
   const englishVoice = useEnglishVoice();
 
   return (
-    <ArticlePage articleTitle={t("Nouns")}>
+    <>
       <ArticleSection>
         {t("There are 3 types of nouns in the Korean language")}
         <div>
@@ -102,6 +102,6 @@ export function Noun() {
           </div>
         </div>
       </ArticleSection>
-    </ArticlePage>
+    </>
   );
 }

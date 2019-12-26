@@ -11,7 +11,7 @@ export function Predicate() {
   const { t } = useTranslation();
 
   return (
-    <ArticlePage articleTitle={t("Predicates")}>
+    <>
       <ArticleSection>
         {t("Every predicate in Korean is composed of a stem and an ending.")}
         &nbsp;
@@ -49,6 +49,6 @@ export function Predicate() {
           <span>{t("Adjective")}</span>
         </div>
       </div>
-    </ArticlePage>
+    </>
   );
 }

@@ -13,7 +13,7 @@ export function Hangul() {
   const { t } = useTranslation();
 
   return (
-    <ArticlePage articleTitle={t("The Korean Writing System")}>
+    <>
       <section styleName="section">
         <Trans>
           The modern Korean writing system is called{" "}
@@ -93,6 +93,6 @@ export function Hangul() {
           ㅢ
         </Utterance>
       </section>
-    </ArticlePage>
+    </>
   );
 }
