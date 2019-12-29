@@ -57,7 +57,7 @@ export function Configuration() {
   let backButtonTo;
 
   if (locations.length > 1) {
-    backButtonTo = locations[locations.length - 2];
+    backButtonTo = locations[locations.length - 2].pathname;
   } else {
     backButtonTo = routes.landing();
   }
@@ -106,10 +106,10 @@ export function Configuration() {
         </div>
       )}
       <div styleName="buttons">
-        <Anchor button to={backButtonTo.pathname}>
+        <Anchor button to={backButtonTo}>
           {t("back")}
         </Anchor>
-        <Button>{t("Save")}</Button>
+        <Button>{t("save")}</Button>
       </div>
     </form>
   );
