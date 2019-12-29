@@ -14,7 +14,7 @@ export function SpeechLevel() {
     <>
       <ArticleSection>
         {t(
-          "Korean sentences exists in one of many speech levels which are used to express the social relationship betwee the speaker and the listener.",
+          "Korean sentences exists in one of many speech levels which are used to express the social relationship between the speaker and the listener.",
         )}
         &nbsp;
         {t(
