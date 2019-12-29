@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
-import React, { ReactNode, useContext } from "react";
+import React, { useContext } from "react";
 
 import { SpeechSynthesisSettingsContext } from "web/js/context";
-import { ISpeechSynthesisSettings } from "web/js/interface";
 
 import "./style.scss";
 

@@ -1,0 +1,9 @@
+{
+  "ga": {
+    "trackingId": "$GA_TRACKING_ID"
+  },
+  "sentry": {
+    "dsn": "$SENTRY_DSN",
+    "environment": "production"
+  }
+}

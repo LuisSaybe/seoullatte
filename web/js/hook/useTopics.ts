@@ -3,15 +3,14 @@ import { ITopic } from "web/js/interface";
 
 import { useTranslation } from "react-i18next";
 import { DeferentialSpeech } from "web/js/page/topic/deferential-speech";
-import { FamiliarSpeech } from "web/js/page/topic/familiar-speech";
 import { Hangul } from "web/js/page/topic/hangul";
 import { IntimateSpeech } from "web/js/page/topic/intimate-speech";
 import { Noun } from "web/js/page/topic/noun";
 import { PlainSpeech } from "web/js/page/topic/plain-speech";
 import { PoliteSpeech } from "web/js/page/topic/polite-speech";
 import { Predicate } from "web/js/page/topic/predicate";
+import { SpeechLevel } from "web/js/page/topic/speech-level";
 import { Syllable } from "web/js/page/topic/syllable";
-import { SpeechLevel } from "../page/topic/speech-level";
 
 export function useTopics(): ITopic[] {
   const { t } = useTranslation();
@@ -19,56 +18,67 @@ export function useTopics(): ITopic[] {
   return [
     {
       component: Hangul,
+      description: t("Learn about Hangul, Hanja and how to write in Korean"),
       name: t("The Korean Writing System"),
       path: TopicRoute.hangul,
       searchTerms: "한글 한자",
     },
     {
       component: Syllable,
+      description: t("Learn about syllables in Korean are formed"),
       name: t("Syllables"),
       path: TopicRoute.syllable,
       searchTerms: "",
     },
     {
       component: Noun,
+      description: t("Learn about Sino-Korean and native Korean nouns"),
       name: t("Nouns"),
       path: TopicRoute.noun,
       searchTerms: "",
     },
     {
       component: Predicate,
+      description: t("Learn about Korean adjectives, nouns and copulas."),
       name: t("Predicates"),
       path: TopicRoute.predicate,
       searchTerms: "",
     },
     {
       component: SpeechLevel,
+      description: t(
+        "Learn about the different levels of Speech in the Korean language.",
+      ),
       name: t("Speech Level"),
       path: TopicRoute.speechLevel,
       searchTerms: "",
     },
     {
       component: DeferentialSpeech,
+      description: t("Learn about the The Deferential Speech Level in Korean"),
       name: t("The Deferential Speech Level"),
       path: TopicRoute.deferentialSpeech,
       searchTerms: "",
     },
     {
       component: PoliteSpeech,
+      description: t("Learn about the The Polite Speech Level in Korean"),
       name: t("The Polite Speech Level"),
       path: TopicRoute.politeSpeech,
       searchTerms: "",
     },
     {
       component: IntimateSpeech,
+      description: t("Learn about the The Intimate Speech Level in Korean"),
       name: t("The Intimate Speech Level"),
       path: TopicRoute.intimateSpeech,
       searchTerms: "",
     },
     {
-      component: FamiliarSpeech,
-      name: t("The Familiar Speech Level"),
-      path: TopicRoute.familiarSpeech,
+      component: PlainSpeech,
+      description: t("Learn about the The Plain Speech Level in Korean"),
+      name: t("The Plain Speech Level"),
+      path: TopicRoute.plainSpeech,
       searchTerms: "",
     },
   ];

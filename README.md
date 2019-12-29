@@ -26,7 +26,13 @@ Korean Dictionary provided by https://krdict.korean.go.k
 
 ```sh
 sudo apt-get install python3-certbot-dns-digitalocean
-certbot certonly --dns-digitalocean --dns-digitalocean-credentials ~/digitalocean.ini -d *.seoullatte.com
+certbot certonly --dns-digitalocean --dns-digitalocean-credentials ~/digitalocean.ini -d seoullatte.com -d *.seoullatte.com
+```
+
+### run with ssl
+
+```
+docker run -dit -p 80:80 -p 443:443 -v /root/certs:/root/certs luissaybe/joseon nginx -c /root/project/docker/nginx-https.conf
 ```
 
 ### note on docker mongo

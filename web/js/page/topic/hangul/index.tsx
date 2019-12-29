@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Trans } from "react-i18next";
 
-import { Utterance } from "web/js/hook/utterance";
+import { Utterance } from "web/js/component/utterance";
 
 import { TopicRoute } from "common/routes";
 import { ArticlePage } from "web/js/component/article-page";

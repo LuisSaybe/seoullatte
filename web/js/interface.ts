@@ -1,4 +1,13 @@
-import { Location } from "react-router-dom";
+export interface ISettings {
+  ga?: {
+    trackingId: string;
+  };
+  sentry?: {
+    dsn: string;
+    debug: boolean;
+    environment: string;
+  };
+}
 
 export enum DispatchFetchType {
   UPDATE_USER = "UPDATE_USER",
@@ -148,6 +157,7 @@ export interface IFetchDispatchActionDelete {
 }
 
 export interface ITopic {
+  description: string;
   name: string;
   path: string;
   searchTerms: string;

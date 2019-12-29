@@ -1,9 +1,11 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const packageJson = require(path.resolve(__dirname, "package.json"));
 
-module.exports = function() {
+module.exports = (env) => {
+  const settingsPath = path.resolve(__dirname, `web/js/settings-${env.env}`);
+  const settings = require(settingsPath);
+
   return {
     entry: [
       "core-js/stable",
@@ -13,24 +15,23 @@ module.exports = function() {
     ],
     output: {
       path: path.resolve(__dirname, "dist"),
-      filename: `[name]-${packageJson.version}.js`,
     },
     resolve: {
       alias: {
         web: path.resolve(__dirname, "web"),
         common: path.resolve(__dirname, "common"),
+        "web/js/settings": settingsPath,
       },
       extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
     },
     plugins: [
       new HtmlWebpackPlugin({
-        version: packageJson.version,
         template: path.resolve(__dirname, "web/index-template.html"),
-        inject: false,
+        templateParameters: {
+          gaTrackingId: settings.ga && settings.ga.trackingId,
+        },
       }),
-      new MiniCssExtractPlugin({
-        filename: `index-${packageJson.version}.css`,
-      }),
+      new MiniCssExtractPlugin({}),
     ],
     module: {
       rules: [

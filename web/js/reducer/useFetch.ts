@@ -14,7 +14,7 @@ import {
   IRequestInitCustom,
 } from "web/js/interface";
 
-import settings from "web/settings";
+import settings from "web/js/settings";
 
 const PARAM_MATCHER = new RegExp(":[a-zA-Z]+", "ig");
 
@@ -73,9 +73,7 @@ export function useFetch(
 
     data.options.headers = headers;
 
-    const searchParams = new URLSearchParams(
-      new URL(url.toString(), settings.api.url).search,
-    );
+    const searchParams = new URLSearchParams(new URL(url.toString()).search);
 
     let derivedUrl;
 
@@ -105,7 +103,7 @@ export function useFetch(
       type: FetchActionType.UPDATE,
     });
 
-    return fetch(settings.api.url + derivedUrl, data.options).then(
+    return fetch(derivedUrl, data.options).then(
       (response) => {
         const contentType = response.headers.get("content-type");
         const nextData = {

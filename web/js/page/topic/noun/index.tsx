@@ -4,11 +4,11 @@ import { useTranslation } from "react-i18next";
 import { ArticlePage } from "web/js/component/article-page";
 import { ArticleSection } from "web/js/component/article-section";
 import { TopicTitleMedium } from "web/js/component/topic-title-medium";
+import { Utterance } from "web/js/component/utterance";
 import { useChineseVoice } from "web/js/hook/useChineseVoice";
 import { useEnglishVoice } from "web/js/hook/useEnglishVoice";
 import { useFrenchVoice } from "web/js/hook/useFrenchVoice";
 import { useGermanVoice } from "web/js/hook/useGermanVoice";
-import { Utterance } from "web/js/hook/utterance";
 
 import "./style.scss";
 

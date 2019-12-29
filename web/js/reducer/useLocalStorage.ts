@@ -1,17 +1,17 @@
-import { useReducer } from 'react';
+import { useReducer } from "react";
 
-import { getLocalStorage, writeLocalStorage } from 'web/js/storage';
+import { getLocalStorage, writeLocalStorage } from "web/js/storage";
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'UPDATE': {
+    case "UPDATE": {
       const copy = { ...action.data };
       delete copy.type;
       writeLocalStorage(copy);
       return getLocalStorage();
     }
 
-    case 'RESET': {
+    case "RESET": {
       writeLocalStorage();
       return getLocalStorage();
     }

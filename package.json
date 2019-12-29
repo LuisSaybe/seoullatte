@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "description": "joseon",
   "scripts": {
-    "build": "webpack --mode=production",
-    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=production --env.env=production",
+    "watch": "webpack --watch --mode=development --env.env=local",
     "translation-compile": "i18next-scanner --config i18next-scanner.config.js 'web/**/*.{ts,tsx}'"
   },
   "author": "luis@trois.io",

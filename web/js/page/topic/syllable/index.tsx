@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
-import { Utterance } from "web/js/hook/utterance";
+import { Utterance } from "web/js/component/utterance";
 import "./style.scss";
 
 export function Syllable() {

@@ -4,13 +4,10 @@ import { BrowserRouter } from "react-router-dom";
 import {
   DispatchSpeechSynthesisSettingsContext,
   DispatchUserInterfaceSettingsContext,
-  LocationsContext,
   SpeechSynthesisSettingsContext,
-  UserContext,
   UserInterfaceSettingsContext,
 } from "web/js/context";
 
-import { useLocations } from "web/js/hook/useLocations";
 import { useSpeechSynthesisSettings } from "web/js/reducer/useSpeechSynthesisSettings";
 import { useUserInterfaceSettings } from "web/js/reducer/useUserInterfaceSettings";
 

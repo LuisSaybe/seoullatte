@@ -1,0 +1,5 @@
+@use '~web/sass/layout';
+
+.root {
+  @include layout.defaultLayout();
+}

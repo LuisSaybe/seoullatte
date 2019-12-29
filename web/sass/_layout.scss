@@ -1,6 +1,8 @@
 @use "~web/sass/media";
 
 @mixin defaultLayout() {
+  width: 100%;
+
   @include media.phone() {
     padding: 6px 12px;
   }

@@ -11,13 +11,22 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link
-      rel="stylesheet"
-      href="index-<%= htmlWebpackPlugin.options.version %>.css"
-    />
   </head>
   <body>
     <div class="project-root"></div>
-    <script src="main-<%= htmlWebpackPlugin.options.version %>.js"></script>
+    <% if (gaTrackingId) { %>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=<%= gaTrackingId %>"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "<%= gaTrackingId %>");
+    </script>
+    <% } %>
   </body>
 </html>

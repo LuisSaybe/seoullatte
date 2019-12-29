@@ -4,7 +4,7 @@ import { Trans, useTranslation } from "react-i18next";
 import { ArticlePage } from "web/js/component/article-page";
 import { ArticleSection } from "web/js/component/article-section";
 import { TopicTitleMedium } from "web/js/component/topic-title-medium";
-import { Utterance } from "web/js/hook/utterance";
+import { Utterance } from "web/js/component/utterance";
 import "./style.scss";
 
 export function SpeechLevel() {

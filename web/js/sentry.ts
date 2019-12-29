@@ -1,5 +1,6 @@
 import * as Sentry from "@sentry/browser";
+import settings from "web/js/settings";
 
-import settings from "web/settings";
-
-Sentry.init(settings.sentry);
+if (settings.sentry) {
+  Sentry.init(settings.sentry);
+}

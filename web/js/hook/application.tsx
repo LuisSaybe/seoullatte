@@ -17,6 +17,7 @@ import { routes } from "web/js/routes";
 
 import { Language } from "common/model";
 import { useArticleRoutes } from "web/js/hook/useArticleRoutes";
+import { useGoogleAnalyticsPageHit } from "web/js/hook/useGoogleAnalyticsPageHit";
 import { useLocations } from "web/js/hook/useLocations";
 
 import { BurgerMenu } from "web/js/component/burger-menu";
@@ -25,6 +26,7 @@ import { Configuration } from "web/js/page/configuration";
 import { NotFound } from "web/js/page/not-found";
 
 export function Application() {
+  useGoogleAnalyticsPageHit();
   const { i18n } = useTranslation();
   const locations = useLocations();
   const articleRoutes = useArticleRoutes();
@@ -37,7 +39,7 @@ export function Application() {
     DispatchUserInterfaceSettingsContext,
   );
 
-  const loading = !i18n.language || userInterfaceSettings.language === null;
+  const loading = !i18n.language || !userInterfaceSettings.language;
 
   useEffect(() => {
     dispatchUserInterfaceSettings({
