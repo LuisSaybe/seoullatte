@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = (env) => {
-  const settingsPath = path.resolve(__dirname, `web/js/settings-${env.env}`);
+  const settingsPath = path.resolve(__dirname, `web/js/settings/${env.env}`);
   const settings = require(settingsPath);
 
   return {
@@ -20,7 +20,7 @@ module.exports = (env) => {
       alias: {
         web: path.resolve(__dirname, "web"),
         common: path.resolve(__dirname, "common"),
-        "web/js/settings": settingsPath,
+        settings: settingsPath,
       },
       extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
     },

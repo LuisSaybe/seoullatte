@@ -6,21 +6,19 @@ yarn
 docker build --rm -f docker/Dockerfile -t luissaybe/joseon .
 ```
 
-### watch for web changes
+### watch for changes
 
 ```sh
-yarn run watch
+yarn watch
 ```
 
-### clean and run project
+### run project
 
 ```sh
-docker-compose down
-docker-compose rm
-docker-compose up
+docker run -it --rm -p 80:80 -v $(pwd):/root/project luissaybe/joseon
 ```
 
-Korean Dictionary provided by https://krdict.korean.go.k
+Korean Dictionary provided by https://krdict.korean.go.kr/openApi/openApiInfo
 
 ### Get Certbot Certs
 
@@ -33,13 +31,4 @@ certbot certonly --dns-digitalocean --dns-digitalocean-credentials ~/digitalocea
 
 ```
 docker run -dit -p 80:80 -p 443:443 -v /root/certs:/root/certs luissaybe/joseon nginx -c /root/project/docker/nginx-https.conf
-```
-
-### note on docker mongo
-
-The default database in development is not mounted to your file system so you may want to occasionally
-
-```sh
-docker volume prune
-docker system prune
 ```

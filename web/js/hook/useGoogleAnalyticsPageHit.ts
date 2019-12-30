@@ -1,15 +1,16 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+import settings from "settings";
+
 export function useGoogleAnalyticsPageHit() {
   const location = useLocation();
 
   useEffect(() => {
-    const ga = (window as any).ga;
+    const gtag = (window as any).gtag;
 
-    if (ga) {
-      ga("set", "page", location.pathname);
-      ga("send", "pageview");
+    if (gtag) {
+      gtag("config", settings.ga.trackingId, { page_path: location.pathname });
     }
   }, [location.pathname]);
 }

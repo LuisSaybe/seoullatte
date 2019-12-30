@@ -1,7 +1,6 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-import { ArticlePage } from "web/js/component/article-page";
 import { ArticleSection } from "web/js/component/article-section";
 import { TopicTitleMedium } from "web/js/component/topic-title-medium";
 import { Utterance } from "web/js/component/utterance";
@@ -18,18 +17,12 @@ export function SpeechLevel() {
         )}
         &nbsp;
         {t(
-          "We introduce 4 different speech levels which are widely used in modern Korean language.",
+          "The speech level is determined by an ending which is placed at the end of the sentence and combines with a predicate.",
         )}
         &nbsp;
         {t(
-          "Each of the 4 speech levels can be divided into one of 2 categories.",
+          "We introduce 4 different speech levels which are widely used in modern Korean language.",
         )}
-        &nbsp;
-        <Trans>
-          <Utterance text="존댓말">존댓말</Utterance> is honorific speech
-          while&nbsp;
-          <Utterance text="반말">반말</Utterance> is informal speech.
-        </Trans>
       </ArticleSection>
       <ArticleSection>
         <TopicTitleMedium>{t("The Deferential Speech level")}</TopicTitleMedium>

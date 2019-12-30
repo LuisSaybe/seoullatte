@@ -11,7 +11,9 @@ export function DeferentialSpeech() {
   return (
     <ArticleSection>
       <div>
-        {t("The following tables shows how a suffix is added to a predicate.")}
+        {t(
+          "The following suffixes are added to a predicate depending on whether the phrease is declarative, interrogative, imperative or proposotive.",
+        )}
       </div>
       <SectionTitle>{t("For predicates ending in a consonant")}</SectionTitle>
       <div styleName="table">
@@ -44,7 +46,7 @@ export function DeferentialSpeech() {
         <span></span>
         <span>먹다</span>
         <span>먹습니다</span>
-        <span>먹읍니까</span>
+        <span>먹습니까</span>
         <span>먹읍시오</span>
         <span>먹읍시다</span>
         <span>이다</span>

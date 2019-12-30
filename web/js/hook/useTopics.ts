@@ -11,6 +11,7 @@ import { PoliteSpeech } from "web/js/page/topic/polite-speech";
 import { Predicate } from "web/js/page/topic/predicate";
 import { SpeechLevel } from "web/js/page/topic/speech-level";
 import { Syllable } from "web/js/page/topic/syllable";
+import { FormalAndInformalSpeech } from "../page/topic/formal-and-informal-speech";
 
 export function useTopics(): ITopic[] {
   const { t } = useTranslation();
@@ -43,6 +44,13 @@ export function useTopics(): ITopic[] {
       name: t("Predicates"),
       path: TopicRoute.predicate,
       searchTerms: "",
+    },
+    {
+      component: FormalAndInformalSpeech,
+      description: t("The difference between 반말 and 존댓말"),
+      name: t("Formal and Informal Speech"),
+      path: TopicRoute.formalAndInformalSpeech,
+      searchTerms: "존댓말 반말",
     },
     {
       component: SpeechLevel,

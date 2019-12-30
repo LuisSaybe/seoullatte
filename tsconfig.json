@@ -7,6 +7,9 @@
     "lib": ["dom", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
+    "paths": {
+      "settings": ["settings"]
+    },
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "types": ["react", "react-css-modules"],

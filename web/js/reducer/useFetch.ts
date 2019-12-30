@@ -14,7 +14,7 @@ import {
   IRequestInitCustom,
 } from "web/js/interface";
 
-import settings from "web/js/settings";
+import settings from "settings";
 
 const PARAM_MATCHER = new RegExp(":[a-zA-Z]+", "ig");
 
