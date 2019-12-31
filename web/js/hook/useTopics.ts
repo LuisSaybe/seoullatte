@@ -11,7 +11,9 @@ import { PoliteSpeech } from "web/js/page/topic/polite-speech";
 import { Predicate } from "web/js/page/topic/predicate";
 import { SpeechLevel } from "web/js/page/topic/speech-level";
 import { Syllable } from "web/js/page/topic/syllable";
+import { Endings } from "../page/topic/endings";
 import { FormalAndInformalSpeech } from "../page/topic/formal-and-informal-speech";
+import { IrregularPredicate } from "../page/topic/irregular-predicate";
 
 export function useTopics(): ITopic[] {
   const { t } = useTranslation();
@@ -53,6 +55,13 @@ export function useTopics(): ITopic[] {
       searchTerms: "존댓말 반말",
     },
     {
+      component: Endings,
+      description: t("How predicate combine with endings to form a sentence."),
+      name: t("Pre-Final and Final Endings"),
+      path: TopicRoute.ending,
+      searchTerms: "",
+    },
+    {
       component: SpeechLevel,
       description: t(
         "Learn about the different levels of Speech in the Korean language.",
@@ -87,6 +96,13 @@ export function useTopics(): ITopic[] {
       description: t("Learn about the The Plain Speech Level in Korean"),
       name: t("The Plain Speech Level"),
       path: TopicRoute.plainSpeech,
+      searchTerms: "",
+    },
+    {
+      component: IrregularPredicate,
+      description: t("Irregular predicates in Korean"),
+      name: t("Irregular Predicates"),
+      path: TopicRoute.irregularPredicate,
       searchTerms: "",
     },
   ];

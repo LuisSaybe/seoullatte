@@ -34,6 +34,8 @@ export enum TopicRoute {
   hangul = "/hangul",
   noun = "/noun",
   predicate = "/predicate",
+  irregularPredicate = "/irregular-predicate",
+  ending = "/ending",
   formalAndInformalSpeech = "/formal-and-informal-speech",
   deferentialSpeech = "/deferential-speech",
   politeSpeech = "/polite-speech",

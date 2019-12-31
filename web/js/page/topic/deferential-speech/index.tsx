@@ -12,10 +12,12 @@ export function DeferentialSpeech() {
     <ArticleSection>
       <div>
         {t(
-          "The following suffixes are added to a predicate depending on whether the phrease is declarative, interrogative, imperative or proposotive.",
+          "The following endings are added to a predicate depending on whether the clause is declarative, interrogative, imperative or proposotive.",
         )}
       </div>
-      <SectionTitle>{t("For predicates ending in a consonant")}</SectionTitle>
+      <SectionTitle>
+        {t("For predicates stems ending in a consonant")}
+      </SectionTitle>
       <div styleName="table">
         <span>{t("Declarative")}</span>
         <span>{t("Interrogative")}</span>
@@ -26,7 +28,7 @@ export function DeferentialSpeech() {
         <span>십시오</span>
         <span>읍시다</span>
       </div>
-      <SectionTitle>{t("For predicates ending in a vowel")}</SectionTitle>
+      <SectionTitle>{t("For predicates stems ending in a vowel")}</SectionTitle>
       <div styleName="table">
         <span>{t("Declarative")}</span>
         <span>{t("Interrogative")}</span>

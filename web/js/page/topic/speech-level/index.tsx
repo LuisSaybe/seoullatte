@@ -1,6 +1,9 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
+import { TopicRoute } from "common/routes";
+
+import { Anchor } from "web/js/component/anchor";
 import { ArticleSection } from "web/js/component/article-section";
 import { TopicTitleMedium } from "web/js/component/topic-title-medium";
 import { Utterance } from "web/js/component/utterance";
@@ -16,9 +19,10 @@ export function SpeechLevel() {
           "Korean sentences exists in one of many speech levels which are used to express the social relationship between the speaker and the listener.",
         )}
         &nbsp;
-        {t(
-          "The speech level is determined by an ending which is placed at the end of the sentence and combines with a predicate.",
-        )}
+        <Trans>
+          The speech level is determined by a{" "}
+          <Anchor to={TopicRoute.ending}>sentence ending</Anchor>.
+        </Trans>
         &nbsp;
         {t(
           "We introduce 4 different speech levels which are widely used in modern Korean language.",

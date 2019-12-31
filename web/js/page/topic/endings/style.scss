@@ -1,0 +1,18 @@
+@use "~web/sass/color";
+@use "~web/sass/page";
+
+.final-ending {
+  color: color.$main;
+}
+
+.predicate {
+  color: color.$olive;
+}
+
+.pre-final-ending {
+  color: color.$error;
+}
+
+.sentence {
+  @include page.horizontalMarginSmallLeft();
+}

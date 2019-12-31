@@ -52,7 +52,7 @@ export function Syllable() {
       </ArticleSection>
       <ArticleSection>
         {t(
-          "The order in which a syllable is read is from top to bottom and then left to right.",
+          "The order in which a syllable is pronounced is from top to bottom and then left to right.",
         )}
         &nbsp;
         {t("The syllable 젊 is read ㅈ ㅓ ㄹ ㅁ.")}
