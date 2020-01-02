@@ -16,14 +16,10 @@ export const getHashSelections = () => {
   return result;
 };
 
-export const getUserLanguage = (user = null, navigator = null) => {
-  let result = null;
+export const getLanguage = (navigator: Navigator) => {
+  let result;
 
-  if (user !== null && user.lastLanguage !== null) {
-    result = user.lastLanguage;
-  }
-
-  if (navigator !== null && result === null) {
+  if (navigator && !result) {
     if (navigator.languages) {
       result = navigator.languages[0];
     }
@@ -33,12 +29,5 @@ export const getUserLanguage = (user = null, navigator = null) => {
     }
   }
 
-  if (result !== null) {
-    return result;
-  }
-
-  return Language.en;
+  return result || Language.en;
 };
-
-export const getNavigatorLanguage = (navigator = null) =>
-  getUserLanguage(null, navigator);

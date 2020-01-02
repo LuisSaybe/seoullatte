@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Route, Switch } from "react-router-dom";
 
-import { getUserLanguage } from "common/helpers";
+import { getLanguage } from "common/helpers";
 
 import {
   DispatchSpeechSynthesisSettingsContext,
@@ -12,13 +12,13 @@ import {
   UserInterfaceSettingsContext,
 } from "web/js/context";
 
-import { StandardReducerOperation } from "web/js/interface";
-import { routes } from "web/js/routes";
-
 import { Language } from "common/model";
+
 import { useArticleRoutes } from "web/js/hook/useArticleRoutes";
 import { useGoogleAnalyticsPageHit } from "web/js/hook/useGoogleAnalyticsPageHit";
 import { useLocations } from "web/js/hook/useLocations";
+import { StandardReducerOperation } from "web/js/interface";
+import { routes } from "web/js/routes";
 
 import { BurgerMenu } from "web/js/component/burger-menu";
 import { NaturalSpinner } from "web/js/component/natural-spinner";
@@ -42,15 +42,6 @@ export function Application() {
   const loading = !i18n.language || !userInterfaceSettings.language;
 
   useEffect(() => {
-    dispatchUserInterfaceSettings({
-      data: {
-        language: getUserLanguage(null, navigator),
-      },
-      type: StandardReducerOperation.MERGE,
-    });
-  }, []);
-
-  useEffect(() => {
     if (!speechSynthesisSettings.voiceURI && speechSynthesisSettings.voices) {
       const voices = speechSynthesisSettings.voices.filter((voice) =>
         voice.lang.includes(Language.ko),
@@ -68,7 +59,7 @@ export function Application() {
   }, [dispatchSpeechSynthesisSettings, speechSynthesisSettings]);
 
   useEffect(() => {
-    if (!speechSynthesis) {
+    if (!window.speechSynthesis) {
       return;
     }
 
@@ -90,7 +81,7 @@ export function Application() {
         speechSynthesis.removeEventListener("voiceschanged", voicesChanged);
       };
     }
-  }, [dispatchSpeechSynthesisSettings, speechSynthesis]);
+  }, [dispatchSpeechSynthesisSettings]);
 
   useEffect(() => {
     if (
@@ -106,7 +97,7 @@ export function Application() {
     const onLanguageChange = () => {
       dispatchUserInterfaceSettings({
         data: {
-          language: getUserLanguage(null, navigator),
+          language: getLanguage(window.navigator),
         },
         type: StandardReducerOperation.MERGE,
       });
