@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-import { ArticlePage } from "web/js/component/article-page";
-import { ArticleSection } from "web/js/component/article-section";
-import { TopicTitleMedium } from "web/js/component/topic-title-medium";
-import { Utterance } from "web/js/component/utterance";
 import { useChineseVoice } from "web/js/hook/useChineseVoice";
 import { useEnglishVoice } from "web/js/hook/useEnglishVoice";
 import { useFrenchVoice } from "web/js/hook/useFrenchVoice";
 import { useGermanVoice } from "web/js/hook/useGermanVoice";
 
+import { ArticleSection } from "web/js/component/article-section";
+import { DefinitionPopup } from "web/js/component/definition-popup";
+import { TopicTitleMedium } from "web/js/component/topic-title-medium";
+import { Utterance } from "web/js/component/utterance";
 import "./style.scss";
 
 export function Noun() {
@@ -44,21 +44,21 @@ export function Noun() {
             <strong>{t("written in 한글")}</strong>
             <strong>{t("written in Chinese")}</strong>
             <strong>{t("translation")}</strong>
-            <Utterance text="질문">질문</Utterance>
+            <DefinitionPopup q="63663">질문</DefinitionPopup>
             <Utterance voice={chineseVoice} text="質問">
               質問
             </Utterance>
             <span>{t("question")}</span>
-            <Utterance text="도서관">도서관</Utterance>
+            <DefinitionPopup q="40295">도서관</DefinitionPopup>
             <Utterance voice={chineseVoice} text="图书馆">
               图书馆
             </Utterance>
             <span>{t("library")}</span>
-            <Utterance text="동">동</Utterance>
-            <Utterance voice={chineseVoice} text="冬">
+            <DefinitionPopup q="65504">동</DefinitionPopup>
+            <Utterance voice={chineseVoice} text="東">
               冬
             </Utterance>
-            <span>{t("winter")}</span>
+            <span>{t("east")}</span>
           </div>
         </div>
         <div styleName="table-section">
@@ -67,13 +67,13 @@ export function Noun() {
             <strong>{t("written in 한글")}</strong>
             <strong>{t("written in 한자")}</strong>
             <strong>{t("translation")}</strong>
-            <Utterance text="겨울">겨울</Utterance>
+            <DefinitionPopup q="64367">겨울</DefinitionPopup>
             <Utterance text="겨울">冬</Utterance>
             <span>{t("winter")}</span>
-            <Utterance text="거북">거북</Utterance>
+            <DefinitionPopup q="27289">거북</DefinitionPopup>
             <Utterance text="거북">龜</Utterance>
             <span>{t("turtle")}</span>
-            <Utterance text="곧">곧</Utterance>
+            <DefinitionPopup q="26802">곧</DefinitionPopup>
             <Utterance text="곧">卽</Utterance>
             <span>{t("soon, immediately")}</span>
           </div>
@@ -84,17 +84,17 @@ export function Noun() {
             <strong>{t("written in 한글")}</strong>
             <strong>{t("Corresponding foreign word")}</strong>
             <strong>{t("meaning in Korean")}</strong>
-            <Utterance text="아르바이트">아르바이트</Utterance>
+            <DefinitionPopup q="24506">아르바이트</DefinitionPopup>
             <Utterance voice={germanVoice} text="arbeit">
               arbeit
             </Utterance>
             <span>{t("part time job")}</span>
-            <Utterance text="망토">망토</Utterance>
+            <DefinitionPopup q="51329">망토</DefinitionPopup>
             <Utterance voice={frenchVoice} text="monteau">
               monteau
             </Utterance>
             <span>{t("cape")}</span>
-            <Utterance text="치즈">치즈</Utterance>
+            <DefinitionPopup q="72155">치즈</DefinitionPopup>
             <Utterance voice={englishVoice} text="cheese">
               cheese
             </Utterance>

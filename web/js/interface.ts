@@ -1,4 +1,7 @@
 export interface ISettings {
+  api: {
+    uri: string;
+  };
   ga?: {
     trackingId: string;
   };
@@ -9,7 +12,7 @@ export interface ISettings {
   };
 }
 
-export enum DispatchFetchType {
+export enum DispatchFetchId {
   UPDATE_USER = "UPDATE_USER",
   GET_USER = "GET_USER",
   SEARCH_EMAIL = "SEARCH_USER_EMAIL",
@@ -18,6 +21,7 @@ export enum DispatchFetchType {
   CREATE_STRIPE_CHECKOUT_SESSION = "CREATE_STRIPE_CHECKOUT_SESSION",
   GET_STRIPE_SESSION = "GET_STRIPE_SESSION",
   LOGOUT = "LOGOUT",
+  VIEW_WORD = "VIEW_WORD",
 }
 
 export interface ILocalStorage {
@@ -71,14 +75,18 @@ export type LocalStorageContextType = ILocalStorage;
 export type DispatchSpeechSynthesisSettingsContextType = (
   action: ISpeechSynthesisDispatchAction,
 ) => void;
+export type IDefinitionContextType = [{ [id: string]: IDefinition }];
+export type IClickEventContextType = MouseEvent;
 export type UserContextType = [{ [id: string]: IUser }];
 export type UserInterfaceSettingsContextType = IUserInterface;
 export type FetchStateContextType = IFetchStateType;
 export interface IFetchState {
+  id: DispatchFetchId;
   url: DispatchFetchURL;
   options: RequestInit;
   fetching: boolean;
-  params?: URLSearchParams;
+  searchParams?: URLSearchParams;
+  params?: { [id: string]: string };
   response?: Response;
   body?: any;
   error?: any;
@@ -124,7 +132,7 @@ export type DispatchFetchURL = string[] | RequestInfo;
 export type DispatchFetch = (
   url: DispatchFetchURL,
   options: IRequestInitCustom & Omit<RequestInit, "body">,
-  type: DispatchFetchType,
+  id: DispatchFetchId,
 ) => Promise<void>;
 
 export interface IRequestInitCustom {
@@ -162,4 +170,12 @@ export interface ITopic {
   path: string;
   searchTerms: string;
   component: React.ComponentType;
+}
+
+export interface IKoreanDefinitionIdentifier {
+  q: string;
+}
+
+export interface IDefinition {
+  getDefinition(): string;
 }

@@ -2,5 +2,5 @@ import { useVoicesFromLanguage } from "web/js/hook/useVoicesFromLanguage";
 
 export function useChineseVoice() {
   const voices = useVoicesFromLanguage("zh");
-  return voices[0];
+  return voices && voices[0];
 }

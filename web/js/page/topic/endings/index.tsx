@@ -24,7 +24,7 @@ export function Endings() {
       <ArticleSection>
         <SectionTitle>{t("Final Endings")}</SectionTitle>
         {t(
-          "A final ending is placed after any pre-final ending. While a sentence may not contain a pre-final ending, a sentence will always end with this type of ending.",
+          "If a predicate contains a pre-final ending, the final ending is placed after the pre-final ending. Otherwise the final-ending is affixed to the predicate.",
         )}
       </ArticleSection>
       <ArticleSection>

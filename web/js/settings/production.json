@@ -5,5 +5,8 @@
   "sentry": {
     "dsn": "$SENTRY_DSN",
     "environment": "production"
+  },
+  "api": {
+    "uri": "$API_URI"
   }
 }

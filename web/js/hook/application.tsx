@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Route, Switch } from "react-router-dom";
 
@@ -21,7 +21,6 @@ import { StandardReducerOperation } from "web/js/interface";
 import { routes } from "web/js/routes";
 
 import { BurgerMenu } from "web/js/component/burger-menu";
-import { NaturalSpinner } from "web/js/component/natural-spinner";
 import { Configuration } from "web/js/page/configuration";
 import { NotFound } from "web/js/page/not-found";
 
@@ -30,6 +29,7 @@ export function Application() {
   const { i18n } = useTranslation();
   const locations = useLocations();
   const articleRoutes = useArticleRoutes();
+  const articleRoutesRef = useRef(articleRoutes);
   const speechSynthesisSettings = useContext(SpeechSynthesisSettingsContext);
   const dispatchSpeechSynthesisSettings = useContext(
     DispatchSpeechSynthesisSettingsContext,
@@ -38,8 +38,6 @@ export function Application() {
   const dispatchUserInterfaceSettings = useContext(
     DispatchUserInterfaceSettingsContext,
   );
-
-  const loading = !i18n.language || !userInterfaceSettings.language;
 
   useEffect(() => {
     if (!speechSynthesisSettings.voiceURI && speechSynthesisSettings.voices) {
@@ -109,26 +107,14 @@ export function Application() {
     };
   }, [dispatchUserInterfaceSettings]);
 
-  let content;
-
-  if (loading) {
-    content = <NaturalSpinner />;
-  } else {
-    content = (
-      <>
-        <BurgerMenu />
-        <Switch>
-          <Route path={routes.configuration()} component={Configuration} />
-          {articleRoutes}
-          <Route component={NotFound} />
-        </Switch>
-      </>
-    );
-  }
-
   return (
     <LocationsContext.Provider value={locations}>
-      {content}
+      <BurgerMenu />
+      <Switch>
+        <Route path={routes.configuration()} component={Configuration} />
+        {articleRoutesRef.current}
+        <Route component={NotFound} />
+      </Switch>
     </LocationsContext.Provider>
   );
 }

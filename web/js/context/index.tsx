@@ -6,11 +6,13 @@ import {
   DispatchUserInterfaceSettingsContextType,
   FetchDispatchContextType,
   FetchStateContextType,
+  IDefinitionContextType,
   LocalStorageContextType,
   LocationsContextType,
   SpeechSynthesisSettingsContextType,
   UserContextType,
   UserInterfaceSettingsContextType,
+  IClickEventContextType,
 } from "web/js/interface";
 
 export const UserContext = React.createContext<UserContextType>(null);
@@ -43,3 +45,11 @@ export const LocalStorageContext = React.createContext<LocalStorageContextType>(
 export const DispatchLocalStorageContext = React.createContext<
   DispatchLocalStorageContextType
 >(null);
+
+export const DefinitionContext = React.createContext<IDefinitionContextType>(
+  null,
+);
+
+export const ClickEventContext = React.createContext<IClickEventContextType>(
+  null,
+);
