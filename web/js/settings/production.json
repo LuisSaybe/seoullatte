@@ -7,6 +7,6 @@
     "environment": "production"
   },
   "api": {
-    "uri": "$API_URI"
+    "uri": "https://api.seoullatte.com"
   }
 }
