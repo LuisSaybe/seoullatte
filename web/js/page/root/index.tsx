@@ -15,7 +15,6 @@ import { DeviceNotSupported } from "web/js/page/device-not-supported";
 import { useFetch } from "web/js/reducer/useFetch";
 import { useLocalStorage } from "web/js/reducer/useLocalStorage";
 
-import { FetchDispatchContextType } from "web/js/interface";
 import styles from "./style.scss";
 
 export function Root() {

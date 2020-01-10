@@ -2,7 +2,6 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
-import { Hr } from "web/js/component/hr";
 import { Section } from "web/js/component/section";
 
 import { ArticleTitle } from "web/js/component/article-title";
@@ -41,9 +40,7 @@ export function PoliteSpeech() {
         <ArticleTitle>{t("Examples")}</ArticleTitle>
         <Section>
           <div>{t("Predicate")} 끄다</div>
-          <div>
-            {t("1. The predicate 끄다 is irregular so the stem becomes ㄲ")}
-          </div>
+          <div>{t("1. The predicate 끄다 is irregular and becomes ㄲ")}</div>
           <div>
             {t(
               "2. The stem does not contain a vowel, and so 어요 is added to the stem.",
@@ -66,7 +63,7 @@ export function PoliteSpeech() {
         <Section>
           <div>{t("Predicate")} 아름답다</div>
           <div>
-            {t("1. The predicate 아름답다 is irregular and become 아름다우.")}
+            {t("1. The predicate 아름답다 is irregular and becomes 아름다우.")}
           </div>
           <div>
             {t(
@@ -78,7 +75,7 @@ export function PoliteSpeech() {
         <Section>
           <div>{t("Predicate")} 나쁘다</div>
           <div>
-            {t("1. The predicate 나쁘다 is irregular and become 나ㅃ.")}
+            {t("1. The predicate 나쁘다 is irregular and becomes 나ㅃ.")}
           </div>
           <div>
             {t(

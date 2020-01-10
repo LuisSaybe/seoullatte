@@ -1,21 +1,24 @@
 import React from "react";
 
 import {
-  DispatchLocalStorageContextType,
-  DispatchSpeechSynthesisSettingsContextType,
-  DispatchUserInterfaceSettingsContextType,
   FetchDispatchContextType,
   FetchStateContextType,
-  IDefinitionContextType,
-  LocalStorageContextType,
-  LocationsContextType,
+} from "web/js/interface/fetch";
+import {
+  DispatchSpeechSynthesisSettingsContextType,
   SpeechSynthesisSettingsContextType,
-  UserContextType,
-  UserInterfaceSettingsContextType,
+} from "web/js/interface/speech-synthesis";
+import {
+  DispatchUserInterfaceSettingsContextType,
   IClickEventContextType,
-} from "web/js/interface";
-
-export const UserContext = React.createContext<UserContextType>(null);
+  UserInterfaceSettingsContextType,
+} from "web/js/interface/user-interface";
+import { IDefinitionContextType } from "../interface/korean";
+import {
+  DispatchLocalStorageContextType,
+  LocalStorageContextType,
+} from "../interface/local-storage";
+import { LocationsContextType } from "../interface/route";
 
 export const UserInterfaceSettingsContext = React.createContext<
   UserInterfaceSettingsContextType

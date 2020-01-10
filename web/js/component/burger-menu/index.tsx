@@ -3,7 +3,8 @@ import Menu from "react-burger-menu/lib/menus/slide";
 import { useTranslation } from "react-i18next";
 
 import { useTopics } from "web/js/hook/useTopics";
-import { ITopic, StandardReducerOperation } from "web/js/interface";
+import { ITopic } from "web/js/interface/korean";
+import { Operation } from "web/js/interface/reducer";
 
 import { Anchor } from "web/js/component/anchor";
 import { Hr } from "web/js/component/hr";
@@ -27,7 +28,7 @@ export function BurgerMenu() {
       data: {
         burgerMenuOpen: false,
       },
-      type: StandardReducerOperation.MERGE,
+      type: Operation.MERGE,
     });
   };
   const onStateChange = (state) => {
@@ -35,7 +36,7 @@ export function BurgerMenu() {
       data: {
         burgerMenuOpen: state.isOpen,
       },
-      type: StandardReducerOperation.MERGE,
+      type: Operation.MERGE,
     });
   };
   const filterTopics = (topic: ITopic) => {

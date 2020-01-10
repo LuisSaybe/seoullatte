@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { Helmet } from "react-helmet";
 import { Route } from "react-router-dom";
 
@@ -11,32 +11,37 @@ import { routes } from "web/js/routes";
 export function useArticleRoutes() {
   const topics = useTopics();
   const origin = useOrigin();
+  return useMemo(
+    () =>
+      topics.map((topic, index) => {
+        const prevousTopic = topics[index - 1];
+        const nextTopic = topics[index + 1];
+        const component = () => (
+          <ArticlePage
+            articleTitle={topic.name}
+            previous={prevousTopic?.path}
+            next={nextTopic?.path}
+          >
+            <Helmet>
+              <title>{topic.name}</title>
+              {origin && (
+                <link rel="canonical" href={`${origin}${topic.path}`} />
+              )}
+              <meta name="description" content={topic.description} />
+            </Helmet>
+            <topic.component />
+          </ArticlePage>
+        );
 
-  return topics.map((topic, index) => {
-    const prevousTopic = topics[index - 1];
-    const nextTopic = topics[index + 1];
-    const component = () => (
-      <ArticlePage
-        articleTitle={topic.name}
-        previous={prevousTopic?.path}
-        next={nextTopic?.path}
-      >
-        <Helmet>
-          <title>{topic.name}</title>
-          {origin && <link rel="canonical" href={`${origin}${topic.path}`} />}
-          <meta name="description" content={topic.description} />
-        </Helmet>
-        <topic.component />
-      </ArticlePage>
-    );
-
-    return (
-      <Route
-        exact
-        key={topic.path}
-        path={index === 0 ? [topic.path, routes.landing()] : topic.path}
-        component={component}
-      />
-    );
-  });
+        return (
+          <Route
+            exact
+            key={topic.path}
+            path={index === 0 ? [topic.path, routes.landing()] : topic.path}
+            component={component}
+          />
+        );
+      }),
+    [topics, origin],
+  );
 }

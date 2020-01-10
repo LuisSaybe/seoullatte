@@ -1,15 +1,15 @@
 import { Reducer, useContext, useEffect, useReducer } from "react";
 
 import { FetchStateContext } from "web/js/context";
-import { StandardReducerOperation } from "../interface";
+import { Operation } from "web/js/interface/reducer";
 
 export function reducer(state, action) {
   switch (action.type) {
-    case StandardReducerOperation.SET: {
+    case Operation.SET: {
       return { ...action.data };
     }
 
-    case StandardReducerOperation.MERGE: {
+    case Operation.MERGE: {
       return { ...state, ...action.data };
     }
 

@@ -1,6 +1,6 @@
 import { Definition } from "web/js/class/definition";
 import { getEntityStoreHook } from "web/js/helper/reducer";
-import { DispatchFetchId } from "web/js/interface";
+import { DispatchFetchId } from "web/js/interface/fetch";
 
 function reducer(state, action) {
   switch (action.id) {

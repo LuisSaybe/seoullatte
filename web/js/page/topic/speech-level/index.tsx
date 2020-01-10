@@ -1,7 +1,7 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-import { TopicRoute } from "common/routes";
+import { TopicRoute } from "web/js/interface/route";
 
 import { Anchor } from "web/js/component/anchor";
 import { ArticleSection } from "web/js/component/article-section";

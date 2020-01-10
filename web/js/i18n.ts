@@ -1,8 +1,8 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-import fr from "common/i18n/fr/translation.json";
-import { SUPPORTED_LANGUAGE_IDS } from "common/model";
+import fr from "web/i18n/fr/translation.json";
+import { SUPPORTED_LANGUAGE_IDS } from "web/js/helper/language";
 
 i18n.use(initReactI18next).init({
   initImmediate: false,

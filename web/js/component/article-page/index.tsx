@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import { useTopics } from "web/js/hook/useTopics";
-
 import { ArticleTitle } from "web/js/component/article-title";
 import { Navigation } from "web/js/component/navigation";
 import { NextPreviousAnchors } from "web/js/component/next-previous-anchors";

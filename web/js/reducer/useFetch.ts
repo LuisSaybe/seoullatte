@@ -13,7 +13,7 @@ import {
   IFetchState,
   IFetchStateType,
   IRequestInitCustom,
-} from "web/js/interface";
+} from "web/js/interface/fetch";
 
 import settings from "settings";
 

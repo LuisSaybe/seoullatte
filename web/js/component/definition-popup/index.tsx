@@ -2,10 +2,10 @@ import _ from "lodash";
 import React, { useEffect, useRef, useState } from "react";
 import { Manager, Popper, Reference } from "react-popper";
 
-import { IKoreanDefinitionIdentifier } from "web/js/interface";
+import { useDidClickOnElement } from "web/js/hook/useDidClickOnElement";
+import { IKoreanDefinitionIdentifier } from "web/js/interface/korean";
 
 import { Definition } from "web/js/component/definition";
-import { useDidClickOnElement } from "web/js/hook/useDidClickOnElement";
 import "./style.scss";
 
 type Interface = IKoreanDefinitionIdentifier &

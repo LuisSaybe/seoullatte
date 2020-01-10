@@ -1,3 +1,7 @@
+const fs = require("fs");
+const path = require("path");
+const typescript = require("typescript");
+
 module.exports = {
   options: {
     debug: true,
@@ -20,8 +24,41 @@ module.exports = {
       fallbackKey: (_, value) => value,
     },
     resource: {
-      loadPath: "common/i18n/{{lng}}/{{ns}}.json",
-      savePath: "common/i18n/{{lng}}/{{ns}}.json",
+      loadPath: "i18n/{{lng}}/{{ns}}.json",
+      savePath: "i18n/{{lng}}/{{ns}}.json",
     },
+  },
+  transform: function(file, enc, done) {
+    const extension = path.extname(file.path);
+    let content = fs.readFileSync(file.path, enc);
+
+    if (extension == ".ts" || extension == ".tsx") {
+      content = typescript.transpileModule(content, {
+        compilerOptions: {
+          target: "es5",
+          sourceMap: true,
+          jsx: "preserve",
+          baseUrl: ".",
+          lib: ["dom", "esnext"],
+          module: "esnext",
+          moduleResolution: "node",
+          paths: {
+            settings: ["settings"],
+          },
+          resolveJsonModule: true,
+          allowSyntheticDefaultImports: true,
+          types: ["react", "react-css-modules"],
+          typeRoots: ["node_modules/@types"],
+          plugins: [{ name: "typescript-tslint-plugin" }],
+        },
+      }).outputText;
+
+      console.log("output text");
+      console.log(content);
+    }
+
+    this.parser.parseTransFromString(content);
+
+    done();
   },
 };

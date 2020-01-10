@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { Language } from "common/model";
-
 import {
   DispatchSpeechSynthesisSettingsContext,
   LocationsContext,
@@ -11,7 +9,8 @@ import {
 
 import { Anchor } from "web/js/component/anchor";
 import { Button } from "web/js/component/button";
-import { StandardReducerOperation } from "web/js/interface";
+import { Language } from "web/js/helper/language";
+import { Operation } from "web/js/interface/reducer";
 import { routes } from "web/js/routes";
 import "./style.scss";
 
@@ -50,7 +49,7 @@ export function Configuration() {
 
     dispatchSpeechSynthesisSettings({
       data,
-      type: StandardReducerOperation.MERGE,
+      type: Operation.MERGE,
     });
   };
 

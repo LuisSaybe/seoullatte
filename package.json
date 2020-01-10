@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack --mode=production --env.env=production",
     "watch": "webpack --watch --mode=development --env.env=local",
-    "translation-compile": "i18next-scanner --config i18next-scanner.config.js 'web/**/*.{ts,tsx}'"
+    "i18next-scanner": "i18next-scanner --config i18next-scanner.config.js --output web 'web/**/*.{ts,tsx}'"
   },
   "author": "luis@trois.io",
   "license": "UNLICENSED",

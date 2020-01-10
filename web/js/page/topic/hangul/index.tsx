@@ -4,9 +4,6 @@ import { Trans } from "react-i18next";
 
 import { Utterance } from "web/js/component/utterance";
 
-import { TopicRoute } from "common/routes";
-import { ArticlePage } from "web/js/component/article-page";
-import { NextPreviousAnchors } from "web/js/component/next-previous-anchors";
 import "./style.scss";
 
 export function Hangul() {

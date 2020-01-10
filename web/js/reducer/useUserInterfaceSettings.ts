@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 
-import { getLanguage } from "common/helpers";
+import { getLanguage } from "web/js/helper/language";
 import { reducer } from "web/js/helper/reducer";
 
 export function useUserInterfaceSettings() {

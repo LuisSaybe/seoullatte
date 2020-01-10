@@ -7,7 +7,8 @@ import {
   FetchDispatchContext,
   FetchStateContext,
 } from "web/js/context";
-import { DispatchFetchId, IKoreanDefinitionIdentifier } from "web/js/interface";
+import { DispatchFetchId } from "web/js/interface/fetch";
+import { IKoreanDefinitionIdentifier } from "web/js/interface/korean";
 
 import { Spinner } from "web/js/component/spinner";
 import "./style.scss";

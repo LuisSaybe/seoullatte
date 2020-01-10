@@ -19,7 +19,6 @@ module.exports = (env) => {
     resolve: {
       alias: {
         web: path.resolve(__dirname, "web"),
-        common: path.resolve(__dirname, "common"),
         settings: settingsPath,
       },
       extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],

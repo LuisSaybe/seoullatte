@@ -1,2 +1,2 @@
-import { Routes } from "common/routes";
+import { Routes } from "web/js/class/routes";
 export const routes = new Routes();
