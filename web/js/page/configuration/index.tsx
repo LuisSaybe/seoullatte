@@ -7,17 +7,18 @@ import {
   SpeechSynthesisSettingsContext,
 } from "web/js/context";
 
+import { Language } from "web/js/helper/language";
+import { useLastRouteOrHome } from "web/js/hook/useLastRouteOrHome";
+import { Operation } from "web/js/interface/reducer";
+
 import { Anchor } from "web/js/component/anchor";
 import { Button } from "web/js/component/button";
-import { Language } from "web/js/helper/language";
-import { Operation } from "web/js/interface/reducer";
-import { routes } from "web/js/routes";
 import "./style.scss";
 
 export function Configuration() {
   const DEFAULT_SPEAKING_RATE = -1;
   const { t } = useTranslation();
-  const locations = useContext(LocationsContext);
+  const toRoute = useLastRouteOrHome();
   const speechSynthesisSettings = useContext(SpeechSynthesisSettingsContext);
   const [rate, setRate] = useState(
     speechSynthesisSettings.rate
@@ -52,14 +53,6 @@ export function Configuration() {
       type: Operation.MERGE,
     });
   };
-
-  let backButtonTo;
-
-  if (locations.length > 1) {
-    backButtonTo = locations[locations.length - 2].pathname;
-  } else {
-    backButtonTo = routes.landing();
-  }
 
   useEffect(() => {
     if (speechSynthesisSettings.voiceURI) {
@@ -105,7 +98,7 @@ export function Configuration() {
         </div>
       )}
       <div styleName="buttons">
-        <Anchor button to={backButtonTo}>
+        <Anchor button to={toRoute}>
           {t("back")}
         </Anchor>
         <Button>{t("save")}</Button>

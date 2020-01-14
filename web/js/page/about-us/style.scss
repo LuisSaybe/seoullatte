@@ -1,10 +1,18 @@
 @use '~web/sass/layout';
+@use "~web/sass/media";
+@use "~web/sass/page";
 
-.content {
-  max-width: 300px;
-  margin: 0 auto;
+.anchor {
+  display: block;
+  @include page.verticalMarginTopMedium();
 }
 
 .root {
   @include layout.defaultLayout();
+}
+
+@include media.not_phone() {
+  .root {
+    max-width: 400px;
+  }
 }
