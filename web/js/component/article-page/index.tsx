@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import { ArticleTitle } from "web/js/component/article-title";
+import { Footer } from "web/js/component/footer";
 import { Navigation } from "web/js/component/navigation";
 import { NextPreviousAnchors } from "web/js/component/next-previous-anchors";
 import "./style.scss";
@@ -31,11 +32,14 @@ export function ArticlePage(props: IInterface) {
             {props.children}
           </div>
         </article>
-        <NextPreviousAnchors
-          styleName="anchors"
-          next={next}
-          previous={previous}
-        ></NextPreviousAnchors>
+        <div>
+          <NextPreviousAnchors
+            styleName="anchors"
+            next={next}
+            previous={previous}
+          ></NextPreviousAnchors>
+          <Footer styleName="footer" />
+        </div>
       </div>
     </div>
   );

@@ -9,12 +9,12 @@ export class Routes {
     return `${this.prefix}/configuration`;
   }
 
-  public home() {
-    return `${this.prefix}/home`;
-  }
-
   public landing() {
     return `${this.prefix}/`;
+  }
+
+  public aboutUs() {
+    return `${this.prefix}/about-us`;
   }
 }
 

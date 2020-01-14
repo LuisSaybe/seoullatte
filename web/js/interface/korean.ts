@@ -12,6 +12,10 @@ export interface IKoreanDefinitionIdentifier {
   q: string;
 }
 
+export interface IDefinitionDisplayOptions {
+  senses?: number[];
+}
+
 export interface IDefinition {
   getDefinition(): string;
 }

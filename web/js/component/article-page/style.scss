@@ -10,6 +10,10 @@
   @include layout.defaultLayout();
 }
 
+.footer {
+  margin-top: 16px;
+}
+
 .root {
   min-height: 100%;
   display: grid;

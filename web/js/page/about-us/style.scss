@@ -1,0 +1,10 @@
+@use '~web/sass/layout';
+
+.content {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.root {
+  @include layout.defaultLayout();
+}

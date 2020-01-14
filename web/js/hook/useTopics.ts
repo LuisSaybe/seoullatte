@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 
 import { ITopic } from "web/js/interface/korean";
 import { TopicRoute } from "web/js/interface/route";
-import { Affixes } from "web/js/page/topic/affixes";
 import { DeferentialSpeech } from "web/js/page/topic/deferential-speech";
 import { Endings } from "web/js/page/topic/endings";
 import { FormalAndInformalSpeech } from "web/js/page/topic/formal-and-informal-speech";
@@ -11,10 +10,12 @@ import { Hangul } from "web/js/page/topic/hangul";
 import { IntimateSpeech } from "web/js/page/topic/intimate-speech";
 import { IrregularPredicate } from "web/js/page/topic/irregular-predicate";
 import { Noun } from "web/js/page/topic/noun";
+import { PastTense } from "web/js/page/topic/past-tense";
 import { PlainSpeech } from "web/js/page/topic/plain-speech";
 import { PoliteSpeech } from "web/js/page/topic/polite-speech";
 import { Predicate } from "web/js/page/topic/predicate";
 import { SpeechLevel } from "web/js/page/topic/speech-level";
+import { Suffixes } from "web/js/page/topic/suffixes";
 import { Syllable } from "web/js/page/topic/syllable";
 
 export function useTopics(): ITopic[] {
@@ -75,13 +76,11 @@ export function useTopics(): ITopic[] {
         searchTerms: "",
       },
       {
-        component: Affixes,
-        description: t(
-          "Learn how to add grammatical items to predicate stems.",
-        ),
-        name: t("Affixes"),
-        path: TopicRoute.addingToStem,
-        searchTerms: "",
+        component: Suffixes,
+        description: t("Learn how to add suffixes to predicate stems."),
+        name: t("Suffixes"),
+        path: TopicRoute.suffixes,
+        searchTerms: "suffix",
       },
       {
         component: DeferentialSpeech,
@@ -119,6 +118,13 @@ export function useTopics(): ITopic[] {
         name: t("Irregular Predicates"),
         path: TopicRoute.irregularPredicate,
         searchTerms: "",
+      },
+      {
+        component: PastTense,
+        description: t("Learn about the past tense in Korean"),
+        name: t("Paste Tense"),
+        path: TopicRoute.pastTense,
+        searchTerms: "었 았 었었 았었 past tense",
       },
     ],
     [t],

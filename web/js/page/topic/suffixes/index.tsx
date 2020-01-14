@@ -1,21 +1,23 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
 
+import { Anchor } from "web/js/component/anchor";
 import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import { Subsection } from "web/js/component/subsection";
+import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
-export function Affixes() {
+export function Suffixes() {
   const { t } = useTranslation();
 
   return (
     <>
       <ArticleSection>
         {t(
-          "It is often required to add an affix to a predicate in order to change the meaning of a predicate, to change the meaning of the sentence or to connect two clauses.",
+          "It is often required to add an affix to a predicate or ending in order to change the meaning of a predicate, to change the meaning of the sentence or to connect two clauses.",
         )}
         &nbsp;
         {t("We discuss two types of affixes and their rules.")}
@@ -53,6 +55,12 @@ export function Affixes() {
               "If the stem has a 받침 then 어 or 아 is added as a new syllable based on the aforementioned rules.",
             )}
           </div>
+          <Trans>
+            If the predicate is&nbsp;
+            <Anchor to={TopicRoute.irregularPredicate}>ㅅ-irregular</Anchor>
+            &nbsp;어 or 아 is added as a new syllable based on the
+            aforementioned rules.
+          </Trans>
           <div>
             {t(
               "If the final syllable of a stem is 오, the final syllable becomes 와.",
@@ -74,11 +82,11 @@ export function Affixes() {
       </ArticleSection>
       <ArticleSection>
         <SectionTitle>{t("Examples")}</SectionTitle>
-        <div>{t("먹 + (ㅏ or ㅓ) becomes 먹어 ")}</div>
-        <div>{t("기다리 + (ㅏ or ㅓ) becomes 기다려")}</div>
-        <div>{t("기다리 + (ㅏ or ㅓ) becomes 기다려")}</div>
-        <div>{t("쓰 + (ㅏ or ㅓ) becomes 써")}</div>
-        <div>{t("ㄲ + (ㅏ or ㅓ) becomes 꺼 ")}</div>
+        <div>{t("먹 + (ㅓ or ㅏ) becomes 먹어 ")}</div>
+        <div>{t("낫 + (ㅓ or ㅏ) becomes 나아. 낫다 is ㅅ-irregular")}</div>
+        <div>{t("기다리 + (ㅓ or ㅏ) becomes 기다려")}</div>
+        <div>{t("쓰 + (ㅓ or ㅏ) becomes 써")}</div>
+        <div>{t("ㄲ + (ㅓ or ㅏ) becomes 꺼 ")}</div>
         <Section>
           {t(
             "In the last example, notice that ㄲ was not written with a vowel, certain irregular conjugations can remove vowels from stems before adding ㅓ or ㅏ.",

@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
+import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import "./style.scss";
 
@@ -39,6 +40,9 @@ export function DeferentialSpeech() {
         <span>ㅂ시오</span>
         <span>ㅂ시다</span>
       </div>
+      <Section>
+        {t("ㅂ becomes the 받침 of the last syllable in the predicate.")}
+      </Section>
       <SectionTitle>{t("Examples")}</SectionTitle>
       <div styleName="table-example">
         <span>{t("Predicate")}</span>

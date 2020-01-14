@@ -19,6 +19,7 @@ import { BurgerMenu } from "web/js/component/burger-menu";
 import { getLanguage, Language } from "web/js/helper/language";
 import { Configuration } from "web/js/page/configuration";
 import { NotFound } from "web/js/page/not-found";
+import { AboutUs } from "../page/about-us";
 
 export function Application() {
   useGoogleAnalyticsPageHit();
@@ -108,6 +109,7 @@ export function Application() {
       <Switch>
         <Route path={routes.configuration()} component={Configuration} />
         {articleRoutes}
+        <Route path={routes.aboutUs()} component={AboutUs} />
         <Route component={NotFound} />
       </Switch>
     </LocationsContext.Provider>

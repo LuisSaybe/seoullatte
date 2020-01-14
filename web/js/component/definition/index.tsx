@@ -8,17 +8,21 @@ import {
   FetchStateContext,
 } from "web/js/context";
 import { DispatchFetchId } from "web/js/interface/fetch";
-import { IKoreanDefinitionIdentifier } from "web/js/interface/korean";
+import {
+  IDefinitionDisplayOptions,
+  IKoreanDefinitionIdentifier,
+} from "web/js/interface/korean";
 
 import { Spinner } from "web/js/component/spinner";
 import "./style.scss";
 
 type Interface = IKoreanDefinitionIdentifier &
+  IDefinitionDisplayOptions &
   React.HTMLAttributes<HTMLDivElement>;
 
 export function Definition(props: Interface) {
   const { t } = useTranslation();
-  const { children, q, ...rest } = props;
+  const { children, senses, q, ...rest } = props;
   const [dispatchFetch] = useContext(FetchDispatchContext);
   const fetchState = useContext(FetchStateContext);
   const viewWordState = fetchState[DispatchFetchId.VIEW_WORD];
@@ -53,6 +57,14 @@ export function Definition(props: Interface) {
             const definitionText = sense.querySelector(
               "translation > trans_dfn",
             ).childNodes[0].nodeValue;
+
+            if (senses) {
+              if (!senses.includes(index)) {
+                return null;
+              }
+            } else if (index > 0) {
+              return null;
+            }
 
             return (
               <div key={index} styleName="sense">
