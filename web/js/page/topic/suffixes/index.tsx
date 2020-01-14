@@ -17,7 +17,7 @@ export function Suffixes() {
     <>
       <ArticleSection>
         {t(
-          "It is often required to add an affix to a predicate or ending in order to change the meaning of a predicate, to change the meaning of the sentence or to connect two clauses.",
+          "It is often required to add a suffix to a predicate or ending in order to change the meaning of a predicate, to change the meaning of the sentence or to connect two clauses.",
         )}
         &nbsp;
         {t("We discuss two types of affixes and their rules.")}

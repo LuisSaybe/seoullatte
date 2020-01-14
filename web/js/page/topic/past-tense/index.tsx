@@ -18,7 +18,7 @@ export function PastTense() {
         )}
         &nbsp;
         {t(
-          "For predicates ending in a vowel, ㅆ becomes the conjugated predicate's 반침.",
+          "For predicates ending in a vowel, ㅆ becomes the conjugated predicate's 받침.",
         )}
       </ArticleSection>
       <ArticleSection>
