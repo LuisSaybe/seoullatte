@@ -16,4 +16,5 @@ export enum TopicRoute {
   syllable = "/syllable",
   speechLevel = "/speech-level",
   pastTense = "/past-tense",
+  predicateAsModifiers = "/predicate-as-modifiers",
 }

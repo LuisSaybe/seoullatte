@@ -17,6 +17,7 @@ import { Predicate } from "web/js/page/topic/predicate";
 import { SpeechLevel } from "web/js/page/topic/speech-level";
 import { Suffixes } from "web/js/page/topic/suffixes";
 import { Syllable } from "web/js/page/topic/syllable";
+import { PredicateAsModifier } from "../page/topic/predicates-as-modifiers";
 
 export function useTopics(): ITopic[] {
   const { t } = useTranslation();
@@ -125,6 +126,20 @@ export function useTopics(): ITopic[] {
         name: t("Paste Tense"),
         path: TopicRoute.pastTense,
         searchTerms: "었 았 었었 았었 past tense",
+      },
+      {
+        component: PastTense,
+        description: t("Learn about the past tense in Korean"),
+        name: t("Paste Tense"),
+        path: TopicRoute.pastTense,
+        searchTerms: "었 았 었었 았었 past tense",
+      },
+      {
+        component: PredicateAsModifier,
+        description: t("Changing verb and adjectives to modifiers in Korean"),
+        name: t("Predicates as Modifiers"),
+        path: TopicRoute.predicateAsModifiers,
+        searchTerms: "는 은 을",
       },
     ],
     [t],
