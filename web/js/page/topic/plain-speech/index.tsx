@@ -54,11 +54,11 @@ export function PlainSpeech() {
         </Section>
         <Section>
           <SectionTitle>{t("For imperative sentences")}</SectionTitle>
-          {t("아라 or 어라 is added to the verb stems.")}
+          {t("아라 or 어라 is added to the verb stem.")}
         </Section>
         <Section>
           <SectionTitle>{t("For proposotive sentences")}</SectionTitle>
-          {t("자 is added to the verb stems.")}
+          {t("자 is added to the verb stem.")}
         </Section>
         <Section>
           {t(

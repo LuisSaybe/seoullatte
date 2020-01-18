@@ -3,6 +3,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
 import { ArticleTitle } from "web/js/component/article-title";
+import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Utterance } from "web/js/component/utterance";
 import "./style.scss";
 
@@ -23,8 +24,8 @@ export function FormalAndInformalSpeech() {
       <ArticleSection>
         <ArticleTitle>{t("Informal Speech")}</ArticleTitle>
         <Trans>
-          <Utterance text="반말">반말</Utterance> is a type of speech used in
-          one of two cases.
+          <DefinitionPopup q="15843">반말</DefinitionPopup> is a type of speech
+          used in one of two cases.
         </Trans>
         <div>
           &bull;&nbsp;
@@ -40,7 +41,7 @@ export function FormalAndInformalSpeech() {
       <ArticleSection>
         <ArticleTitle>{t("Formal Speech")}</ArticleTitle>
         <Trans>
-          <Utterance text="존댓말">존댓말</Utterance> is a form used in
+          <DefinitionPopup q="24607">존댓말</DefinitionPopup> is a form used in
           referring to a person or thing in order to convey respect.
         </Trans>
       </ArticleSection>

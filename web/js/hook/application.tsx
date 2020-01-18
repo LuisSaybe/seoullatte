@@ -41,16 +41,21 @@ export function Application() {
 
   useEffect(() => {
     dispatchFetch(
-      "https://luissaybe.nyc3.digitaloceanspaces.com/seoul-latte/words/english/1-0-500.json",
+      "https://luissaybe.nyc3.digitaloceanspaces.com/seoul-latte/words/english/1-0-2000.json.gz",
       {},
       DispatchFetchId.GET_WORDS,
     );
 
-    dispatchFetch(
-      "https://luissaybe.nyc3.digitaloceanspaces.com/seoul-latte/words/english/1-500-1000.json",
-      {},
-      DispatchFetchId.GET_WORDS,
-    );
+    /* TODO, put into english import */
+    const cache = ["92101", "15843", "24607", "24506"];
+
+    for (const id of cache) {
+      dispatchFetch(
+        `api/view?q=${id}&method=target_code&translated=y&trans_lang=1`,
+        {},
+        DispatchFetchId.VIEW_WORD,
+      );
+    }
   }, [dispatchFetch]);
 
   useEffect(() => {

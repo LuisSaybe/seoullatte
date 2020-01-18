@@ -137,8 +137,10 @@ export function useTopics(): ITopic[] {
       },
       {
         component: SubjectAndTopicMarker,
-        description: t("Learn how to mark the topic or subject of a sentence"),
-        name: t("The subject and topic marker"),
+        description: t(
+          "Learn how to indicate the topic or subject of a sentence",
+        ),
+        name: t("The subject and topic particle"),
         path: TopicRoute.subjectAndTopicMarker,
         searchTerms: "는 은 을",
       },

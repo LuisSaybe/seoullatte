@@ -1,6 +1,14 @@
-.table {
-  display: grid;
+.column-table-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.column-table-3 {
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.column-table-2,
+.column-table-3 {
+  display: grid;
   gap: 2px;
   justify-items: flex-start;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
+import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Utterance } from "web/js/component/utterance";
 import "./style.scss";
 
@@ -31,19 +32,15 @@ export function Predicate() {
         <div styleName="table">
           <strong>{t("Stem")}</strong>
           <strong>{t("Uninflected predicate")}</strong>
-          <strong>{t("Translation")}</strong>
           <strong>{t("Part of Speech")}</strong>
-          <Utterance text="이">이</Utterance>
-          <Utterance text="이다">이다</Utterance>
-          <span>{t("to be")}</span>
+          <span>이</span>
+          <DefinitionPopup q="92101">이다</DefinitionPopup>
           <span>{t("Copula")}</span>
-          <Utterance text="가">가</Utterance>
-          <Utterance text="가다">가다</Utterance>
-          <span>{t("to go")}</span>
+          <span>가</span>
+          <DefinitionPopup q="27500">가다</DefinitionPopup>
           <span>{t("Verb")}</span>
-          <Utterance text="재미있">재미있</Utterance>
-          <Utterance text="재미있다">재미있다</Utterance>
-          <span>{t("to be funny or interesting")}</span>
+          <span>재미있</span>
+          <DefinitionPopup q="71212">재미있다</DefinitionPopup>
           <span>{t("Adjective")}</span>
         </div>
       </div>

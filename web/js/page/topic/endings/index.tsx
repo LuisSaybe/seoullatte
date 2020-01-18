@@ -30,7 +30,7 @@ export function Endings() {
       <ArticleSection>
         <SectionTitle>{t("Examples")}</SectionTitle>
         <Section>
-          <div styleName="predicate">&bull; Conjugated Predicate</div>
+          <div styleName="predicate">&bull; Conjugated Predicate Stem</div>
           <div styleName="pre-final-ending">&bull; Pre-final Ending</div>
           <div styleName="final-ending">&bull; Final Ending</div>
         </Section>

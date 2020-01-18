@@ -4,6 +4,7 @@ import { Trans } from "react-i18next";
 
 import { Utterance } from "web/js/component/utterance";
 
+import { DefinitionPopup } from "web/js/component/definition-popup";
 import "./style.scss";
 
 export function Hangul() {
@@ -14,17 +15,18 @@ export function Hangul() {
       <section styleName="section">
         <Trans>
           The modern Korean writing system is called{" "}
-          <Utterance text="한글">한글</Utterance> in South Korea while the name
-          is <Utterance text="조선글">조선글</Utterance> in North Korea.
+          <DefinitionPopup q="91525">한글</DefinitionPopup> in South Korea while
+          the name is <DefinitionPopup q="67949">조선</DefinitionPopup>
+          <DefinitionPopup q="59226">글</DefinitionPopup> in North Korea.
         </Trans>
         &nbsp;
         <Trans>
           The writing system was introduced and promoted in 1446 CE by Sejong
           the Great. The original name was{" "}
-          <Utterance text="훈민정음">훈민정음</Utterance>. Prior to the
-          widespread usage of 한굴, <Utterance text="한자">한자</Utterance>, a
-          system composed of Chinese characters was used to write Korean
-          language.
+          <DefinitionPopup q="69716">훈민정음</DefinitionPopup>. Prior to the
+          widespread usage of 한굴,{" "}
+          <DefinitionPopup q="72461">한자</DefinitionPopup>, a system composed
+          of Chinese characters was used to write Korean language.
         </Trans>
       </section>
       <section styleName="section">
