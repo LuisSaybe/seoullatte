@@ -13,7 +13,7 @@ import {
   IKoreanDefinitionIdentifier,
 } from "web/js/interface/korean";
 
-import { Spinner } from "web/js/component/spinner";
+import { NaturalSpinner } from "web/js/component/natural-spinner";
 import "./style.scss";
 
 type Interface = IKoreanDefinitionIdentifier &
@@ -22,11 +22,11 @@ type Interface = IKoreanDefinitionIdentifier &
 
 export function Definition(props: Interface) {
   const { t } = useTranslation();
-  const { children, senses, q, ...rest } = props;
   const [dispatchFetch] = useContext(FetchDispatchContext);
   const fetchState = useContext(FetchStateContext);
-  const viewWordState = fetchState[DispatchFetchId.VIEW_WORD];
   const definitions = useContext(DefinitionContext);
+  const { children, senseIndexes, q, ...rest } = props;
+  const viewWordState = fetchState[DispatchFetchId.VIEW_WORD];
   const definition = definitions[props.q];
 
   useEffect(() => {
@@ -39,8 +39,10 @@ export function Definition(props: Interface) {
     }
   }, [dispatchFetch, definition]);
 
+  const loading = !definition && (viewWordState?.fetching ?? false);
+
   return (
-    <div styleName="root" {...rest}>
+    <div {...rest} styleName={loading ? "root loading" : "root"}>
       {definition && (
         <>
           <div styleName="title">
@@ -51,35 +53,29 @@ export function Definition(props: Interface) {
           <div styleName="section title">
             <strong>{t("Definitions")}</strong>
           </div>
-          {Array.from(definition.getSenses()).map((sense: Element, index) => {
-            const word = sense.querySelector("translation > trans_word")
-              .childNodes[0].nodeValue;
-            const definitionText = sense.querySelector(
-              "translation > trans_dfn",
-            ).childNodes[0].nodeValue;
+          {Array.from(definition.getSenses())
+            .filter(
+              (_, index) =>
+                senseIndexes?.includes(Number(index)) ?? index === 0,
+            )
+            .map((sense: Element, index) => {
+              const word = sense.querySelector("translation > trans_word")
+                .childNodes[0].nodeValue;
 
-            if (senses) {
-              if (!senses.includes(index)) {
-                return null;
-              }
-            } else if (index > 0) {
-              return null;
-            }
+              const definitionText = sense.querySelector(
+                "translation > trans_dfn",
+              ).childNodes[0].nodeValue;
 
-            return (
-              <div key={index} styleName="sense">
-                <div>
-                  <strong>{index + 1}.</strong>
-                  &nbsp;
-                  {word}
+              return (
+                <div key={index} styleName="sense">
+                  <div>{word}</div>
+                  <div styleName="definition">{definitionText}</div>
                 </div>
-                <div styleName="definition">{definitionText}</div>
-              </div>
-            );
-          })}
+              );
+            })}
         </>
       )}
-      {(viewWordState?.fetching ?? true) && <Spinner />}
+      {loading && <NaturalSpinner />}
       {(!(viewWordState?.response?.ok ?? true) || viewWordState?.error) && (
         <div styleName="error">
           {t("Sorry, we are not able to load this definition")}

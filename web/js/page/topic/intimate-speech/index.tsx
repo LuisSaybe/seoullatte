@@ -1,12 +1,10 @@
 import React from "react";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
 import { Section } from "web/js/component/section";
 
-import { Anchor } from "web/js/component/anchor";
 import { ArticleTitle } from "web/js/component/article-title";
-import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
 export function IntimateSpeech() {
@@ -15,11 +13,9 @@ export function IntimateSpeech() {
   return (
     <ArticleSection>
       <Section>
-        <Trans>
-          The intimate speech level is formed identically to the&nbsp;
-          <Anchor to={TopicRoute.politeSpeech}>polite speech level</Anchor> with
-          the exception that 요 is not added to the conjugated stem.
-        </Trans>
+        {t(
+          "The intimate speech level has 1 conjugation for all sentence types. Declarative, Interrogative, Imperative, Propositive.",
+        )}
       </Section>
       <ArticleSection>
         <ArticleTitle>{t("Examples")}</ArticleTitle>

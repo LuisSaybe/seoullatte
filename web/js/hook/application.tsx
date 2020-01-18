@@ -5,6 +5,8 @@ import { Route, Switch } from "react-router-dom";
 import {
   DispatchSpeechSynthesisSettingsContext,
   DispatchUserInterfaceSettingsContext,
+  FetchDispatchContext,
+  FetchStateContext,
   LocationsContext,
   SpeechSynthesisSettingsContext,
   UserInterfaceSettingsContext,
@@ -19,6 +21,7 @@ import { BurgerMenu } from "web/js/component/burger-menu";
 import { getLanguage, Language } from "web/js/helper/language";
 import { Configuration } from "web/js/page/configuration";
 import { NotFound } from "web/js/page/not-found";
+import { DispatchFetchId } from "../interface/fetch";
 import { AboutUs } from "../page/about-us";
 
 export function Application() {
@@ -34,6 +37,21 @@ export function Application() {
   const dispatchUserInterfaceSettings = useContext(
     DispatchUserInterfaceSettingsContext,
   );
+  const [dispatchFetch] = useContext(FetchDispatchContext);
+
+  useEffect(() => {
+    dispatchFetch(
+      "https://luissaybe.nyc3.digitaloceanspaces.com/seoul-latte/words/english/1-0-500.json",
+      {},
+      DispatchFetchId.GET_WORDS,
+    );
+
+    dispatchFetch(
+      "https://luissaybe.nyc3.digitaloceanspaces.com/seoul-latte/words/english/1-500-1000.json",
+      {},
+      DispatchFetchId.GET_WORDS,
+    );
+  }, [dispatchFetch]);
 
   useEffect(() => {
     if (!speechSynthesisSettings.voiceURI && speechSynthesisSettings.voices) {

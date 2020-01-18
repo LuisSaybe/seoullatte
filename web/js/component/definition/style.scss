@@ -15,6 +15,11 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   background-color: color.$white;
+
+  &.loading {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .title,

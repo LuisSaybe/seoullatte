@@ -51,6 +51,7 @@ export type DispatchFetch = (
 
 export enum DispatchFetchId {
   VIEW_WORD = "VIEW_WORD",
+  GET_WORDS = "GET_WORDS",
 }
 
 export interface IRequestInitCustom {

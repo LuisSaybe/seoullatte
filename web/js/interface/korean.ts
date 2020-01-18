@@ -13,7 +13,7 @@ export interface IKoreanDefinitionIdentifier {
 }
 
 export interface IDefinitionDisplayOptions {
-  senses?: number[];
+  senseIndexes?: number[];
 }
 
 export interface IDefinition {

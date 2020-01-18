@@ -30,7 +30,7 @@ export function PlainSpeech() {
           <SectionTitle>{t("For declarative sentences")}</SectionTitle>
           <div>
             {t(
-              "If the predicate is an adjective or a copular then 다 is added to the stem.",
+              "If the predicate is an adjective or a copular, then 다 is added to the stem or to the past tense marker.",
             )}
           </div>
           <div>
@@ -42,7 +42,7 @@ export function PlainSpeech() {
             <Trans>
               If the predicate is conjugated in the&nbsp;
               <Anchor to={TopicRoute.pastTense}>past tense</Anchor> then 다 is
-              added to the stem.
+              added to the past tense marker.
             </Trans>
           </div>
         </Section>

@@ -20,6 +20,8 @@ docker run -it --rm -p 80:80 -v $(pwd):/root/project luissaybe/joseon
 
 Korean Dictionary provided by https://krdict.korean.go.kr/openApi/openApiInfo
 
+Common words from: https://www.korean.go.kr
+
 ### Get Certbot Certs
 
 ```sh

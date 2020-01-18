@@ -140,6 +140,11 @@ export function useFetch(
                   });
                 },
               );
+            } else {
+              dispatch({
+                data: { ...nextData },
+                type: FetchActionType.UPDATE,
+              });
             }
           } else {
             dispatch({ type: FetchActionType.UPDATE, data: nextData });

@@ -14,14 +14,15 @@ import { PastTense } from "web/js/page/topic/past-tense";
 import { PlainSpeech } from "web/js/page/topic/plain-speech";
 import { PoliteSpeech } from "web/js/page/topic/polite-speech";
 import { Predicate } from "web/js/page/topic/predicate";
+import { PredicateAsModifier } from "web/js/page/topic/predicates-as-modifiers";
 import { SpeechLevel } from "web/js/page/topic/speech-level";
+import { SubjectAndTopicMarker } from "web/js/page/topic/subject-and-topic-marker";
 import { Suffixes } from "web/js/page/topic/suffixes";
 import { Syllable } from "web/js/page/topic/syllable";
-import { PredicateAsModifier } from "../page/topic/predicates-as-modifiers";
 
 export function useTopics(): ITopic[] {
   const { t } = useTranslation();
-  const topics = useMemo<ITopic[]>(
+  const topics = useMemo(
     () => [
       {
         component: Hangul,
@@ -93,17 +94,17 @@ export function useTopics(): ITopic[] {
         searchTerms: "",
       },
       {
-        component: PoliteSpeech,
-        description: t("Learn about the The Polite Speech Level in Korean"),
-        name: t("The Polite Speech Level"),
-        path: TopicRoute.politeSpeech,
-        searchTerms: "",
-      },
-      {
         component: IntimateSpeech,
         description: t("Learn about the The Intimate Speech Level in Korean"),
         name: t("The Intimate Speech Level"),
         path: TopicRoute.intimateSpeech,
+        searchTerms: "",
+      },
+      {
+        component: PoliteSpeech,
+        description: t("Learn about the The Polite Speech Level in Korean"),
+        name: t("The Polite Speech Level"),
+        path: TopicRoute.politeSpeech,
         searchTerms: "",
       },
       {
@@ -128,17 +129,17 @@ export function useTopics(): ITopic[] {
         searchTerms: "었 았 었었 았었 past tense",
       },
       {
-        component: PastTense,
-        description: t("Learn about the past tense in Korean"),
-        name: t("Paste Tense"),
-        path: TopicRoute.pastTense,
-        searchTerms: "었 았 었었 았었 past tense",
-      },
-      {
         component: PredicateAsModifier,
         description: t("Changing verb and adjectives to modifiers in Korean"),
         name: t("Predicates as Modifiers"),
         path: TopicRoute.predicateAsModifiers,
+        searchTerms: "는 은 을",
+      },
+      {
+        component: SubjectAndTopicMarker,
+        description: t("Learn how to mark the topic or subject of a sentence"),
+        name: t("The subject and topic marker"),
+        path: TopicRoute.subjectAndTopicMarker,
         searchTerms: "는 은 을",
       },
     ],

@@ -1,5 +1,5 @@
 export class Definition {
-  private xml;
+  private xml: Document;
 
   constructor(xml) {
     this.xml = xml;

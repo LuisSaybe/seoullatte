@@ -1,10 +1,12 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
 import { Section } from "web/js/component/section";
 
+import { Anchor } from "web/js/component/anchor";
 import { ArticleTitle } from "web/js/component/article-title";
+import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
 export function PoliteSpeech() {
@@ -13,28 +15,13 @@ export function PoliteSpeech() {
   return (
     <ArticleSection>
       <Section>
-        {t(
-          "The polite speech level has 1 conjugation for all sentence types. Declarative, Interrogative, Imperative, Propositive.",
-        )}
-      </Section>
-      <Section>
-        <div>
-          {t(
-            "Below we describe how to conjugate a predicate in the polite speech level.",
-          )}
-        </div>
-        <div>
-          {t(
-            "1. If the predicate is irregular, change the stem according to its irregular rule.",
-          )}
-        </div>
-        <div>
-          {t(
-            "2. Find the vowel pronounced closest to the end of the word. If there is no vowel, add 어요. If this vowel is ㅏ or ㅗ, add 아요 to the stem.",
-          )}
-          &nbsp;
-          {t("In all other cases add 어요 to stem.")}
-        </div>
+        <Trans>
+          The polite speech level is formed identically to the&nbsp;
+          <Anchor to={TopicRoute.intimateSpeech}>
+            intimate speech level
+          </Anchor>{" "}
+          with the exception that 요 is added to the conjugated stem.
+        </Trans>
       </Section>
       <ArticleSection>
         <ArticleTitle>{t("Examples")}</ArticleTitle>
@@ -46,7 +33,7 @@ export function PoliteSpeech() {
               "2. The stem does not contain a vowel, and so 어요 is added to the stem.",
             )}
           </div>
-          <div>{t("Conjugated preciate")} 꺼요</div>
+          <div>{t("Conjugated preciate")} 꺼</div>
         </Section>
         <Section>
           <div>{t("Predicate")} 먹다</div>

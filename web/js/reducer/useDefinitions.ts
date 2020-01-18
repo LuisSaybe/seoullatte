@@ -4,6 +4,20 @@ import { DispatchFetchId } from "web/js/interface/fetch";
 
 function reducer(state, action) {
   switch (action.id) {
+    case DispatchFetchId.GET_WORDS: {
+      const entries = Object.keys(action.body).map((key) => [
+        key,
+        new Definition(
+          new DOMParser().parseFromString(action.body[key], "application/xml"),
+        ),
+      ]);
+
+      return {
+        ...state,
+        ...Object.fromEntries(entries),
+      };
+    }
+
     case DispatchFetchId.VIEW_WORD: {
       return {
         ...state,
@@ -19,6 +33,6 @@ function reducer(state, action) {
 }
 
 export const useDefinitions = getEntityStoreHook(
-  [DispatchFetchId.VIEW_WORD],
+  [DispatchFetchId.VIEW_WORD, DispatchFetchId.GET_WORDS],
   reducer,
 );

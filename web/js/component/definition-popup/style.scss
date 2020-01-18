@@ -1,4 +1,10 @@
 @use '~web/sass/color';
+@use '~web/sass/media';
+
+.popup {
+  min-height: 100px;
+  min-width: 200px;
+}
 
 .root {
   border: 0;
@@ -9,4 +15,10 @@
 
 .text {
   color: color.$main;
+}
+
+@include media.not_phone() {
+  .popup {
+    max-width: 300px;
+  }
 }

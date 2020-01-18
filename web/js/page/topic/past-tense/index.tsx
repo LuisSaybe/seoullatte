@@ -14,12 +14,23 @@ export function PastTense() {
     <>
       <ArticleSection>
         {t(
-          "To conjugate a predicate in the past tense, either 았어 or 었어 is added to the predicate stem.",
+          "To conjugate a predicate in the past tense, a past tense marker is added to a predicate.",
         )}
-        &nbsp;
-        {t(
-          "For predicates ending in a vowel, ㅆ becomes the conjugated predicate's 받침.",
-        )}
+        <div>
+          {t(
+            "For predicate stems ending in a vowel, ㅆ is added as the stem's 받침.",
+          )}
+        </div>
+        <div>
+          {t(
+            "For predicates ending in a consonant, 었 or 았 is added to the predicate's stem.",
+          )}
+        </div>
+        <div>
+          {t(
+            "When an additional 었 is added to the first paste tense marker, the predicate's meaning is becomes more remote than the recent past. For example, 갔었다 or 이었었어요",
+          )}
+        </div>
       </ArticleSection>
       <ArticleSection>
         <ArticleTitle>{t("Examples")}</ArticleTitle>
