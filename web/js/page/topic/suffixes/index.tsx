@@ -21,7 +21,7 @@ export function Suffixes() {
           "It is often required to add a suffix to a predicate or ending in order to change the meaning of a predicate, to change the meaning of the sentence or to connect two clauses.",
         )}
         &nbsp;
-        {t("We discuss two types of affixes and their rules.")}
+        {t("We discuss two types of added and their rules.")}
       </ArticleSection>
       <ArticleSection>
         <SectionTitle>{t("받침 based changes")}</SectionTitle>
@@ -125,7 +125,7 @@ export function Suffixes() {
         <div styleName="table">
           <span>Predicate</span>
           <span></span>
-          <DefinitionPopup q="73270">먹다</DefinitionPopup>
+          <DefinitionPopup q="58272">먹다</DefinitionPopup>
           <span>먹어</span>
           <DefinitionPopup q="62354">낫다</DefinitionPopup>
           <span>나아</span>

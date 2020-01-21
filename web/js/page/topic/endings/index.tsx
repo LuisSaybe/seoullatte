@@ -14,17 +14,17 @@ export function Endings() {
     <>
       <ArticleSection>
         {t(
-          "Korean predicates combine with endings to form sentences. Endings are affixed to a predicate in a particular order and changes the meaning of a sentence when added. Below we cover two categories of endings and give examples.",
+          "Korean predicates combine with endings to form sentences. Endings are added to a predicate in a particular order and changes the meaning of a sentence when added. Below we cover two categories of endings and give examples.",
         )}
       </ArticleSection>
       <ArticleSection>
         <SectionTitle>{t("Pre-Final Endings")}</SectionTitle>
-        {t("Pre-final ending are affixed directly to a predicate.")}
+        {t("Pre-final ending are added directly to a predicate.")}
       </ArticleSection>
       <ArticleSection>
         <SectionTitle>{t("Final Endings")}</SectionTitle>
         {t(
-          "If a predicate contains a pre-final ending, the final ending is placed after the pre-final ending. Otherwise the final-ending is affixed to the predicate.",
+          "If a predicate contains a pre-final ending, the final ending is placed after the pre-final ending. Otherwise the final-ending is added to the predicate.",
         )}
       </ArticleSection>
       <ArticleSection>

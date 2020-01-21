@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useMemo } from "react";
 import { Helmet } from "react-helmet";
 import { Route } from "react-router-dom";
 

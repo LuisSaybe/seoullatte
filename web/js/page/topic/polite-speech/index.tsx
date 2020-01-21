@@ -20,7 +20,7 @@ export function PoliteSpeech() {
           <Anchor to={TopicRoute.intimateSpeech}>
             intimate speech level
           </Anchor>{" "}
-          with the exception that 요 is added to the conjugated stem.
+          followed by a 요.
         </Trans>
       </Section>
       <ArticleSection>

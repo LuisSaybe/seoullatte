@@ -1,26 +1,24 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { SectionTitle } from "web/js/component/section-title";
 import "./style.scss";
 
-export function BoundNoun() {
+export function ExistenceAndPosession() {
   const { t } = useTranslation();
 
   return (
     <>
       <ArticleSection>
-        {t(
-          "A bound noun always appears in combination with a modifier which appears before the noun.",
-        )}
+        <Trans>
+          The verb <DefinitionPopup q="68796">있다</DefinitionPopup> describes
+          either existence or posession.
+        </Trans>
       </ArticleSection>
       <ArticleSection>
         <SectionTitle>{t("Examples")}</SectionTitle>
-        <DefinitionPopup q="73277">할</DefinitionPopup>
-        <DefinitionPopup q="15615">수</DefinitionPopup>
-        <DefinitionPopup q="89917">없어요</DefinitionPopup>
       </ArticleSection>
     </>
   );

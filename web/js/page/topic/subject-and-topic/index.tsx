@@ -7,7 +7,7 @@ import { DefinitionPopup } from "web/js/component/definition-popup";
 import { SectionTitle } from "web/js/component/section-title";
 import "./style.scss";
 
-export function SubjectAndTopicMarker() {
+export function SubjectAndTopic() {
   const { t } = useTranslation();
 
   return (

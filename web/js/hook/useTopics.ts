@@ -3,7 +3,11 @@ import { useTranslation } from "react-i18next";
 
 import { ITopic } from "web/js/interface/korean";
 import { TopicRoute } from "web/js/interface/route";
+import { BoundNoun } from "web/js/page/topic/bound-noun";
+import { Copula } from "web/js/page/topic/copula";
+import { Counting } from "web/js/page/topic/counting";
 import { DeferentialSpeech } from "web/js/page/topic/deferential-speech";
+import { Desire } from "web/js/page/topic/desire";
 import { Endings } from "web/js/page/topic/endings";
 import { FormalAndInformalSpeech } from "web/js/page/topic/formal-and-informal-speech";
 import { Hangul } from "web/js/page/topic/hangul";
@@ -15,10 +19,12 @@ import { PlainSpeech } from "web/js/page/topic/plain-speech";
 import { PoliteSpeech } from "web/js/page/topic/polite-speech";
 import { Predicate } from "web/js/page/topic/predicate";
 import { PredicateAsModifier } from "web/js/page/topic/predicates-as-modifiers";
+import { Prenoun } from "web/js/page/topic/prenoun";
 import { SpeechLevel } from "web/js/page/topic/speech-level";
-import { SubjectAndTopicMarker } from "web/js/page/topic/subject-and-topic-marker";
+import { SubjectAndTopic } from "web/js/page/topic/subject-and-topic";
 import { Suffixes } from "web/js/page/topic/suffixes";
 import { Syllable } from "web/js/page/topic/syllable";
+import { ExistenceAndPosession } from "../page/topic/existence-and-posession";
 
 export function useTopics(): ITopic[] {
   const { t } = useTranslation();
@@ -82,7 +88,7 @@ export function useTopics(): ITopic[] {
         description: t("Learn how to add suffixes to predicate stems."),
         name: t("Suffixes"),
         path: TopicRoute.suffixes,
-        searchTerms: "suffix",
+        searchTerms: "받침",
       },
       {
         component: DeferentialSpeech,
@@ -105,7 +111,7 @@ export function useTopics(): ITopic[] {
         description: t("Learn about the The Polite Speech Level in Korean"),
         name: t("The Polite Speech Level"),
         path: TopicRoute.politeSpeech,
-        searchTerms: "",
+        searchTerms: "아요 어요 요",
       },
       {
         component: PlainSpeech,
@@ -122,6 +128,20 @@ export function useTopics(): ITopic[] {
         searchTerms: "",
       },
       {
+        component: Copula,
+        description: t("Learn about the predicate 이다 and 아니다"),
+        name: t("이다 and 아니다"),
+        path: TopicRoute.copular,
+        searchTerms: "이다 아니다",
+      },
+      {
+        component: ExistenceAndPosession,
+        description: t("Learn about the verb of existence and posession"),
+        name: t("있다 and 없다"),
+        path: TopicRoute.existenceAndPosession,
+        searchTerms: "있다 없다",
+      },
+      {
         component: PastTense,
         description: t("Learn about the past tense in Korean"),
         name: t("Paste Tense"),
@@ -136,13 +156,41 @@ export function useTopics(): ITopic[] {
         searchTerms: "는 은 을",
       },
       {
-        component: SubjectAndTopicMarker,
+        component: SubjectAndTopic,
         description: t(
           "Learn how to indicate the topic or subject of a sentence",
         ),
         name: t("The subject and topic particle"),
-        path: TopicRoute.subjectAndTopicMarker,
+        path: TopicRoute.subjectAndTopicParticle,
+        searchTerms: "는 은 가 이",
+      },
+      {
+        component: BoundNoun,
+        description: t("Learn about Korean bound nounds"),
+        name: t("Bound Nouns"),
+        path: TopicRoute.boundNoun,
+        searchTerms: "는 은 을 수 지",
+      },
+      {
+        component: Prenoun,
+        description: t("Learn about Korean prenouns"),
+        name: t("Prenouns"),
+        path: TopicRoute.prenoun,
         searchTerms: "는 은 을",
+      },
+      {
+        component: Desire,
+        description: t("Learn how to express desire"),
+        name: t("Desire"),
+        path: TopicRoute.desire,
+        searchTerms: "고 싶다",
+      },
+      {
+        component: Counting,
+        description: t("Learn how to count in Korean"),
+        name: t("Counting"),
+        path: TopicRoute.desire,
+        searchTerms: "",
       },
     ],
     [t],

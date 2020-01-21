@@ -7,9 +7,7 @@ function reducer(state, action) {
     case DispatchFetchId.GET_WORDS: {
       const entries = Object.keys(action.body).map((key) => [
         key,
-        new Definition(
-          new DOMParser().parseFromString(action.body[key], "application/xml"),
-        ),
+        new Definition(action.body[key]),
       ]);
 
       return {
@@ -21,9 +19,7 @@ function reducer(state, action) {
     case DispatchFetchId.VIEW_WORD: {
       return {
         ...state,
-        [action.searchParams.get("q")]: new Definition(
-          new DOMParser().parseFromString(action.body, "application/xml"),
-        ),
+        [action.searchParams.get("q")]: new Definition(action.body),
       };
     }
 

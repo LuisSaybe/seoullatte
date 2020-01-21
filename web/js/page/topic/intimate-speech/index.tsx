@@ -16,6 +16,10 @@ export function IntimateSpeech() {
         {t(
           "The intimate speech level has 1 conjugation for all sentence types. Declarative, Interrogative, Imperative, Propositive.",
         )}
+        &nbsp;
+        {t(
+          "To conjugate predicates in the intimate speech level a ㅓ or ㅏ is added to the verb stem.",
+        )}
       </Section>
       <ArticleSection>
         <ArticleTitle>{t("Examples")}</ArticleTitle>
