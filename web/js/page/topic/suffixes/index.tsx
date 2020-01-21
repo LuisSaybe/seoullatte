@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
@@ -8,11 +8,19 @@ import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import { Subsection } from "web/js/component/subsection";
+import { useNavigateToHash } from "web/js/hook/useNavigateToHash";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
+export const SUFFIX_ADD_DOM_ID = "add";
+
 export function Suffixes() {
   const { t } = useTranslation();
+  const navigate = useNavigateToHash();
+
+  useEffect(() => {
+    navigate();
+  }, [navigate]);
 
   return (
     <>
@@ -45,7 +53,7 @@ export function Suffixes() {
           "If the vowel pronounced closest to the end of the predicate stem is ㅏ or ㅗ then ㅏ is added to the stem, othwerwise ㅓ is added to the stem. In the case of irregular predicates, the irregular rules must be applied before.",
         )}
       </ArticleSection>
-      <ArticleSection>
+      <ArticleSection id={SUFFIX_ADD_DOM_ID}>
         <SectionTitle>{t("Placement of ㅓ or ㅏ")}</SectionTitle>
         {t(
           "After determining whether ㅓ or ㅏ is added to the predicate's stem, the new letter may be added in one of 3 ways.",

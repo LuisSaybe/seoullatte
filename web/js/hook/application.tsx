@@ -6,7 +6,6 @@ import {
   DispatchSpeechSynthesisSettingsContext,
   DispatchUserInterfaceSettingsContext,
   FetchDispatchContext,
-  FetchStateContext,
   LocationsContext,
   SpeechSynthesisSettingsContext,
   UserInterfaceSettingsContext,
@@ -17,12 +16,12 @@ import { useLocations } from "web/js/hook/useLocations";
 import { Operation } from "web/js/interface/reducer";
 import { routes } from "web/js/routes";
 
+import { DispatchFetchId } from "web/js//interface/fetch";
 import { BurgerMenu } from "web/js/component/burger-menu";
 import { getLanguage, Language } from "web/js/helper/language";
+import { AboutUs } from "web/js/page/about-us";
 import { Configuration } from "web/js/page/configuration";
 import { NotFound } from "web/js/page/not-found";
-import { DispatchFetchId } from "../interface/fetch";
-import { AboutUs } from "../page/about-us";
 
 export function Application() {
   useGoogleAnalyticsPageHit();
