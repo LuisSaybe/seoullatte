@@ -44,17 +44,6 @@ export function Application() {
       {},
       DispatchFetchId.GET_WORDS,
     );
-
-    /* TODO, put into english import */
-    const cache = ["92101", "15843", "24607", "24506"];
-
-    for (const id of cache) {
-      dispatchFetch(
-        `api/view?q=${id}&method=target_code&translated=y&trans_lang=1`,
-        {},
-        DispatchFetchId.VIEW_WORD,
-      );
-    }
   }, [dispatchFetch]);
 
   useEffect(() => {

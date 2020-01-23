@@ -29,12 +29,21 @@ export function Suffixes() {
           "It is often required to add a suffix to a predicate or ending in order to change the meaning of a predicate, to change the meaning of the sentence or to connect two clauses.",
         )}
         &nbsp;
-        {t("We discuss two types of added and their rules.")}
+        {t("We discuss two types of suffixes and their rules.")}
       </ArticleSection>
       <ArticleSection>
         <SectionTitle>{t("받침 based changes")}</SectionTitle>
+        <Trans>
+          If a word's final letter is a consonant this letter is reffered to as
+          a&nbsp;
+          <DefinitionPopup senseIndexes={[1]} q="56544">
+            받침
+          </DefinitionPopup>
+          .
+        </Trans>
+        &nbsp;
         {t(
-          "If a word's final letter is a consonant this letter is reffered to as a 받침. For example, the word 방 has a 받침 since it ends in the consonant ㅇ while 여자 does not have a 받침 since the final letter ㅏ is a vowel.",
+          "For example, the word 방 has a 받침 since it ends in the consonant ㅇ while 여자 does not have a 받침 since the final letter ㅏ is a vowel.",
         )}
         &nbsp;
         {t("Some suffixes change based on whether a word has a 받침 or not.")}
@@ -43,17 +52,21 @@ export function Suffixes() {
           "Usually, in these cases a 받침 will be added to the final syllable if it does not contain one.",
         )}
       </ArticleSection>
-      <ArticleSection>
+      <ArticleSection id={SUFFIX_ADD_DOM_ID}>
         <SectionTitle>{t("Adding ㅓ or ㅏ to a predicate stem")}</SectionTitle>
         {t(
           "Some suffixes require adding ㅓ or ㅏ to a predicate stem. We discuss how to determine which is added.",
         )}
         &nbsp;
         {t(
-          "If the vowel pronounced closest to the end of the predicate stem is ㅏ or ㅗ then ㅏ is added to the stem, othwerwise ㅓ is added to the stem. In the case of irregular predicates, the irregular rules must be applied before.",
+          "Firstly, modify the predicate stem by it's irregular rules, if any.",
+        )}
+        &nbsp;
+        {t(
+          "If the vowel closest to the end of the  modified predicate stem is ㅏ or ㅗ then ㅏ is added to the stem, othwerwise ㅓ is added to the stem.",
         )}
       </ArticleSection>
-      <ArticleSection id={SUFFIX_ADD_DOM_ID}>
+      <ArticleSection>
         <SectionTitle>{t("Placement of ㅓ or ㅏ")}</SectionTitle>
         {t(
           "After determining whether ㅓ or ㅏ is added to the predicate's stem, the new letter may be added in one of 3 ways.",

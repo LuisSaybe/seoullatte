@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2px;
+  justify-items: flex-start;
 }
 
 .table-example {

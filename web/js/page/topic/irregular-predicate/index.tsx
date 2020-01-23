@@ -119,7 +119,7 @@ export function IrregularPredicate() {
       <ArticleSection>
         <ArticleTitle>{t("으 Irregular Predicates")}</ArticleTitle>
         {t(
-          "If a predicate final letter is ㅡ then ㅡ is removed when a suffix which begins with a vowel is added.",
+          "If the final letter of a predicate is ㅡ then ㅡ is removed when a suffix which begins with a vowel is added.",
         )}
         <Section styleName="column-table-2">
           <span>{t("Predicate")}</span>

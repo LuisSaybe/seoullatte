@@ -36,7 +36,9 @@ export function Counting() {
       <ArticleSection>
         <SectionTitle>{t("Examples")}</SectionTitle>
         <DefinitionPopup q="73277">할</DefinitionPopup>
+        &nbsp;
         <DefinitionPopup q="15615">수</DefinitionPopup>
+        &nbsp;
         <DefinitionPopup q="89917">없어요</DefinitionPopup>
       </ArticleSection>
     </>

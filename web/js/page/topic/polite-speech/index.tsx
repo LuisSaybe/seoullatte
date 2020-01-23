@@ -2,6 +2,7 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
+import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
 
 import { Anchor } from "web/js/component/anchor";
@@ -17,16 +18,17 @@ export function PoliteSpeech() {
       <Section>
         <Trans>
           The polite speech level is formed identically to the&nbsp;
-          <Anchor to={TopicRoute.intimateSpeech}>
-            intimate speech level
-          </Anchor>{" "}
-          followed by a 요.
+          <Anchor to={TopicRoute.intimateSpeech}>intimate speech level</Anchor>
+          &nbsp; followed by a <DefinitionPopup q="86116">요</DefinitionPopup>.
         </Trans>
       </Section>
       <ArticleSection>
         <ArticleTitle>{t("Examples")}</ArticleTitle>
         <Section>
-          <div>{t("Predicate")} 끄다</div>
+          <div>
+            {t("Predicate")}&nbsp;
+            <DefinitionPopup q="73443">끄다</DefinitionPopup>
+          </div>
           <div>{t("1. The predicate 끄다 is irregular and becomes ㄲ")}</div>
           <div>
             {t(
@@ -36,7 +38,10 @@ export function PoliteSpeech() {
           <div>{t("Conjugated preciate")} 꺼</div>
         </Section>
         <Section>
-          <div>{t("Predicate")} 먹다</div>
+          <div>
+            {t("Predicate")}&nbsp;
+            <DefinitionPopup q="58272">먹다</DefinitionPopup>
+          </div>
           <div>
             {t("1. The predicate 먹다 is regular and does not change.")}
           </div>
@@ -48,7 +53,10 @@ export function PoliteSpeech() {
           <div>{t("Conjugated predicate")} 먹어요</div>
         </Section>
         <Section>
-          <div>{t("Predicate")} 아름답다</div>
+          <div>
+            {t("Predicate")}&nbsp;
+            <DefinitionPopup q="71290">아름답다</DefinitionPopup>
+          </div>
           <div>
             {t("1. The predicate 아름답다 is irregular and becomes 아름다우.")}
           </div>
@@ -60,7 +68,10 @@ export function PoliteSpeech() {
           <div>{t("Conjugated preciate")} 아름다워요</div>
         </Section>
         <Section>
-          <div>{t("Predicate")} 나쁘다</div>
+          <div>
+            {t("Predicate")}&nbsp;
+            <DefinitionPopup q="26816">나쁘다</DefinitionPopup>
+          </div>
           <div>
             {t("1. The predicate 나쁘다 is irregular and becomes 나ㅃ.")}
           </div>

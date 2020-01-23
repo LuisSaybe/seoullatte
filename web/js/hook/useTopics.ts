@@ -8,7 +8,9 @@ import { Copula } from "web/js/page/topic/copula";
 import { Counting } from "web/js/page/topic/counting";
 import { DeferentialSpeech } from "web/js/page/topic/deferential-speech";
 import { Desire } from "web/js/page/topic/desire";
+import { EParticle } from "web/js/page/topic/e-particle";
 import { Endings } from "web/js/page/topic/endings";
+import { ExistenceAndPosession } from "web/js/page/topic/existence-and-posession";
 import { FormalAndInformalSpeech } from "web/js/page/topic/formal-and-informal-speech";
 import { Hangul } from "web/js/page/topic/hangul";
 import { IntimateSpeech } from "web/js/page/topic/intimate-speech";
@@ -20,11 +22,11 @@ import { PoliteSpeech } from "web/js/page/topic/polite-speech";
 import { Predicate } from "web/js/page/topic/predicate";
 import { PredicateAsModifier } from "web/js/page/topic/predicates-as-modifiers";
 import { Prenoun } from "web/js/page/topic/prenoun";
+import { Questions } from "web/js/page/topic/questions";
 import { SpeechLevel } from "web/js/page/topic/speech-level";
 import { SubjectAndTopic } from "web/js/page/topic/subject-and-topic";
 import { Suffixes } from "web/js/page/topic/suffixes";
 import { Syllable } from "web/js/page/topic/syllable";
-import { ExistenceAndPosession } from "../page/topic/existence-and-posession";
 
 export function useTopics(): ITopic[] {
   const { t } = useTranslation();
@@ -189,8 +191,22 @@ export function useTopics(): ITopic[] {
         component: Counting,
         description: t("Learn how to count in Korean"),
         name: t("Counting"),
-        path: TopicRoute.desire,
+        path: TopicRoute.counting,
         searchTerms: "",
+      },
+      {
+        component: Questions,
+        description: t("Learn how to pose questions in Korean"),
+        name: t("Questions"),
+        path: TopicRoute.questions,
+        searchTerms: "무엇 뭐 무슨 어떻게 언제 어디",
+      },
+      {
+        component: EParticle,
+        description: t("Learn about the particle 에"),
+        name: t("The Particle 에"),
+        path: TopicRoute.particleLocationGoal,
+        searchTerms: "에",
       },
     ],
     [t],

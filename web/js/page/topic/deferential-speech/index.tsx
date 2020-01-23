@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
+import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import "./style.scss";
@@ -24,10 +25,10 @@ export function DeferentialSpeech() {
         <span>{t("Interrogative")}</span>
         <span>{t("Imperative")}</span>
         <span>{t("Proposotive")}</span>
-        <span>습니다</span>
-        <span>습니까</span>
-        <span>십시오</span>
-        <span>읍시다</span>
+        <DefinitionPopup q="79398">습니다</DefinitionPopup>
+        <DefinitionPopup q="79402">습니까</DefinitionPopup>
+        <DefinitionPopup q="66884">십시오</DefinitionPopup>
+        <DefinitionPopup q="68880">읍시다</DefinitionPopup>
       </div>
       <SectionTitle>{t("For predicates stems ending in a vowel")}</SectionTitle>
       <div styleName="table">
@@ -50,12 +51,12 @@ export function DeferentialSpeech() {
         <span></span>
         <span></span>
         <span></span>
-        <span>먹다</span>
+        <DefinitionPopup q="58272">먹다</DefinitionPopup>
         <span>먹습니다</span>
         <span>먹습니까</span>
         <span>먹읍시오</span>
         <span>먹읍시다</span>
-        <span>이다</span>
+        <DefinitionPopup q="92101">이다</DefinitionPopup>
         <span>입니다</span>
         <span>입니까</span>
         <span>입시오</span>
