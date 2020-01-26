@@ -52,9 +52,6 @@ module.exports = {
           plugins: [{ name: "typescript-tslint-plugin" }],
         },
       }).outputText;
-
-      console.log("output text");
-      console.log(content);
     }
 
     this.parser.parseTransFromString(content);

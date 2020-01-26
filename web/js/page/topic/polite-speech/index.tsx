@@ -19,7 +19,7 @@ export function PoliteSpeech() {
         <Trans>
           The polite speech level is formed identically to the&nbsp;
           <Anchor to={TopicRoute.intimateSpeech}>intimate speech level</Anchor>
-          &nbsp; followed by a <DefinitionPopup q="86116">요</DefinitionPopup>.
+          &nbsp;followed by a <DefinitionPopup q="86116">요</DefinitionPopup>.
         </Trans>
       </Section>
       <ArticleSection>

@@ -10,11 +10,11 @@ export function FormingSentences() {
 
   return (
     <>
-      <ArticleSection>{t(".")}</ArticleSection>
       <ArticleSection>
-        <SectionTitle>{t("Location")}</SectionTitle>
+        {t("A Korean clause contains a subject and an inflected predicate.")}
+        &nbsp;
         {t(
-          "The particle 에 attaches to a noun to indicate that the target noun is the location of interest related to the following predicate which follows it.",
+          "In the case of transitive verb, a direct object will also be present.",
         )}
       </ArticleSection>
     </>

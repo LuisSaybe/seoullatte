@@ -8,6 +8,8 @@ import { useGermanVoice } from "web/js/hook/useGermanVoice";
 
 import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
+import { Section } from "web/js/component/section";
+import { Table } from "web/js/component/table";
 import { TopicTitleMedium } from "web/js/component/topic-title-medium";
 import { Utterance } from "web/js/component/utterance";
 import "./style.scss";
@@ -38,9 +40,9 @@ export function Noun() {
       </ArticleSection>
       <ArticleSection>
         {t("Below are examples of each")}
-        <div styleName="table-section">
+        <Section>
           <TopicTitleMedium>{t("Sino-Korean nouns")}</TopicTitleMedium>
-          <div styleName="hangul-hanja-table">
+          <Table columns={3}>
             <strong>{t("written in 한글")}</strong>
             <strong>{t("written in Chinese")}</strong>
             <strong>{t("translation")}</strong>
@@ -59,11 +61,11 @@ export function Noun() {
               冬
             </Utterance>
             <span>{t("east")}</span>
-          </div>
-        </div>
-        <div styleName="table-section">
+          </Table>
+        </Section>
+        <Section>
           <TopicTitleMedium>{t("Native Korean Nouns")}</TopicTitleMedium>
-          <div styleName="hangul-hanja-table">
+          <Table columns={3}>
             <strong>{t("written in 한글")}</strong>
             <strong>{t("written in 한자")}</strong>
             <strong>{t("translation")}</strong>
@@ -76,11 +78,11 @@ export function Noun() {
             <DefinitionPopup q="26802">곧</DefinitionPopup>
             <Utterance text="곧">卽</Utterance>
             <span>{t("soon, immediately")}</span>
-          </div>
-        </div>
-        <div styleName="table-section">
+          </Table>
+        </Section>
+        <Section>
           <TopicTitleMedium>{t("Loan words")}</TopicTitleMedium>
-          <div styleName="hangul-hanja-table">
+          <Table columns={3}>
             <strong>{t("written in 한글")}</strong>
             <strong>{t("Corresponding foreign word")}</strong>
             <strong>{t("meaning in Korean")}</strong>
@@ -99,8 +101,8 @@ export function Noun() {
               cheese
             </Utterance>
             <span>{t("cheese")}</span>
-          </div>
-        </div>
+          </Table>
+        </Section>
       </ArticleSection>
     </>
   );

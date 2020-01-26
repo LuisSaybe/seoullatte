@@ -2,8 +2,8 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
-
 import { DefinitionPopup } from "web/js/component/definition-popup";
+import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import "./style.scss";
 
@@ -19,12 +19,52 @@ export function SubjectAndTopic() {
         )}
         &nbsp;
         {t(
-          "This may be used to re-introduce a new topic or a topic that was previously mentioned in conversation.",
+          "When added to a particle or noun that has a 받침, 은 is added to the word otherwise 는 is added to the word.",
         )}
         &nbsp;
         {t(
-          "When added to a particle or noun that has a 받침, 은 is added to the word otherwise 는 is added to the word.",
+          "This may be used to re-introduce a new topic or a topic that was previously mentioned in conversation.",
         )}
+        &nbsp;
+        {t("Considering the following conversation.")}
+        <Section>
+          <div>
+            A: 선영은 <DefinitionPopup q="70029">한국</DefinitionPopup>
+            <DefinitionPopup q="86572">에</DefinitionPopup>
+            &nbsp;
+            <DefinitionPopup q="69579" senseIndexes={[9]}>
+              사
+            </DefinitionPopup>
+            <DefinitionPopup q="79402">십니까</DefinitionPopup>
+          </div>
+          <div>
+            B: <DefinitionPopup q="17189">아니요</DefinitionPopup>.&nbsp;
+            <DefinitionPopup q="70019">일본</DefinitionPopup>
+            <DefinitionPopup q="86572">에</DefinitionPopup>
+            &nbsp;
+            <DefinitionPopup q="69579" senseIndexes={[9]}>
+              사
+            </DefinitionPopup>
+            <DefinitionPopup q="79398">습니다</DefinitionPopup>
+          </div>
+        </Section>
+        <Section>
+          {t(
+            "In the first sentence, the topic of the conversation is established as 선영.",
+          )}
+          &nbsp;
+          {t(
+            "The response to the question does not introduce a topic or subject marker.",
+          )}
+          &nbsp;
+          {t(
+            "It is clear from context that B's response is referring to the topic previously established.",
+          )}
+          &nbsp;
+          {t(
+            "Consequently, to introduce a new topic the topic particle will be employed again.",
+          )}
+        </Section>
       </ArticleSection>
       <ArticleSection>
         <SectionTitle>{t("The Subject Particle")}</SectionTitle>
@@ -68,9 +108,7 @@ export function SubjectAndTopic() {
           </div>
           <div>
             <DefinitionPopup q="15689">강아지</DefinitionPopup>
-            <DefinitionPopup q="66341" senseIndexes={[0, 1, 2]}>
-              가
-            </DefinitionPopup>
+            <DefinitionPopup q="66341">가</DefinitionPopup>
             &nbsp;
             <DefinitionPopup q="79033">좋아</DefinitionPopup>
           </div>

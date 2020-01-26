@@ -5,13 +5,11 @@ import { routes } from "web/js/routes";
 import { Anchor } from "../anchor";
 import "./style.scss";
 
-export interface IIinterface {
+export interface IIinterface extends React.HTMLAttributes<HTMLDivElement> {
   styleName?: string;
 }
 
-export function Footer(
-  props: React.HTMLAttributes<HTMLDivElement> & IIinterface,
-) {
+export function Footer(props: IIinterface) {
   const { t } = useTranslation();
   const { children, ...rest } = props;
   return (

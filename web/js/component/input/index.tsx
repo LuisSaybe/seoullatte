@@ -2,12 +2,12 @@ import React from "react";
 
 import "./style.scss";
 
-interface IInterface {
+interface IInterface extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: boolean;
 }
 
-export function Input(props: IInterface & React.InputHTMLAttributes<HTMLInputElement>) {
+export function Input(props: IInterface) {
   const { error, ...rest } = props;
   const inputStylename = error ? "root error" : "root";
-  return <input styleName={inputStylename} { ...rest } />;
+  return <input styleName={inputStylename} {...rest} />;
 }

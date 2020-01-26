@@ -8,6 +8,7 @@ import { Anchor } from "web/js/component/anchor";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { SectionTitle } from "web/js/component/section-title";
+import { Table } from "web/js/component/table";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
@@ -20,10 +21,6 @@ export function PlainSpeech() {
         <Section>
           {t(
             "The plain speech level is conjugated differently for declarative, interrogative, imperative and proposotive sentences.",
-          )}
-          &nbsp;
-          {t(
-            "The plain speech level is also conjugated based on whether the predicate is a copula, adjective or verb.",
           )}
         </Section>
         <Section>
@@ -42,7 +39,7 @@ export function PlainSpeech() {
             <Trans>
               If the predicate is conjugated in the&nbsp;
               <Anchor to={TopicRoute.pastTense}>past tense</Anchor> then 다 is
-              added to the past tense marker.
+              added to the past tense ending.
             </Trans>
           </div>
         </Section>
@@ -68,14 +65,13 @@ export function PlainSpeech() {
       </ArticleSection>
       <ArticleSection>
         <ArticleTitle>{t("Examples")}</ArticleTitle>
-        <SectionTitle>{t("Declarative")}</SectionTitle>
         <Section>
-          <div styleName="table">
+          <Table columns={5}>
             <span>{t("Predicate")}</span>
-            <span>{t("Declarative")}</span>
-            <span>{t("Interrogative")}</span>
-            <span>{t("Imperative")}</span>
-            <span>{t("Propositive")}</span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
             <DefinitionPopup q="58272">먹다</DefinitionPopup>
             <span>먹는다</span>
             <span>먹니, 먹으냐, 먹냐</span>
@@ -91,7 +87,7 @@ export function PlainSpeech() {
             <span>가니, 가냐</span>
             <span>가라</span>
             <span>가자</span>
-          </div>
+          </Table>
         </Section>
       </ArticleSection>
     </>

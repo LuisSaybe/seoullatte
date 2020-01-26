@@ -107,13 +107,22 @@ export function IrregularPredicate() {
         {t(
           "If a suffix beginning with ㄴ, ㅂ, or ㅅ is added to a predicate stem with a ㄹ 반침, then the ㄹ is removed.",
         )}
+        &nbsp;
+        {t("This behaviour applies to all predicate stems ending in ㄹ.")}
         <Section styleName="column-table-2">
           <span>{t("Predicate")}</span>
           <span>{t("Conjugation")}</span>
           <DefinitionPopup q="60317">만들다</DefinitionPopup>
-          <span>만드는다</span>
+          <div>
+            <DefinitionPopup q="60317">만드</DefinitionPopup>
+            <DefinitionPopup q="85037">는다</DefinitionPopup>
+          </div>
           <DefinitionPopup q="69579">살다</DefinitionPopup>
-          <span>사세요</span>
+          <div>
+            <DefinitionPopup q="69579">사</DefinitionPopup>
+            <DefinitionPopup q="80330">세</DefinitionPopup>
+            <DefinitionPopup q="80330">요</DefinitionPopup>
+          </div>
         </Section>
       </ArticleSection>
       <ArticleSection>
@@ -121,6 +130,8 @@ export function IrregularPredicate() {
         {t(
           "If the final letter of a predicate is ㅡ then ㅡ is removed when a suffix which begins with a vowel is added.",
         )}
+        &nbsp;
+        {t("This behaviour applies to all predicate stems ending in ㅡ.")}
         <Section styleName="column-table-2">
           <span>{t("Predicate")}</span>
           <span>{t("Conjugation")}</span>

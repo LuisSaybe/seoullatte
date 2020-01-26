@@ -12,6 +12,7 @@ import { EParticle } from "web/js/page/topic/e-particle";
 import { Endings } from "web/js/page/topic/endings";
 import { ExistenceAndPosession } from "web/js/page/topic/existence-and-posession";
 import { FormalAndInformalSpeech } from "web/js/page/topic/formal-and-informal-speech";
+import { FormingSentences } from "web/js/page/topic/forming-sentences";
 import { Hangul } from "web/js/page/topic/hangul";
 import { IntimateSpeech } from "web/js/page/topic/intimate-speech";
 import { IrregularPredicate } from "web/js/page/topic/irregular-predicate";
@@ -167,11 +168,11 @@ export function useTopics(): ITopic[] {
         searchTerms: "는 은 가 이",
       },
       {
-        component: BoundNoun,
-        description: t("Learn about Korean bound nounds"),
-        name: t("Bound Nouns"),
-        path: TopicRoute.boundNoun,
-        searchTerms: "는 은 을 수 지",
+        component: FormingSentences,
+        description: t("Learn about how to form Korean sentences"),
+        name: t("Forming a Sentence"),
+        path: TopicRoute.formingSentences,
+        searchTerms: "sentence clause predicate",
       },
       {
         component: Prenoun,
@@ -179,6 +180,13 @@ export function useTopics(): ITopic[] {
         name: t("Prenouns"),
         path: TopicRoute.prenoun,
         searchTerms: "는 은 을",
+      },
+      {
+        component: BoundNoun,
+        description: t("Learn about Korean bound nounds"),
+        name: t("Bound Nouns"),
+        path: TopicRoute.boundNoun,
+        searchTerms: "는 은 을 수 지",
       },
       {
         component: Desire,

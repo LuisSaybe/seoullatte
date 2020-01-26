@@ -46,6 +46,12 @@ export function useFetch(
   token?: string,
 ): [IFetchStateType, DispatchFetch, DispatchFetchDelete] {
   const [state, dispatch] = useReducer(reducer, {});
+  const deleteDispatch = useCallback((ids: string[]) => {
+    dispatch({
+      data: { ids },
+      type: FetchActionType.DELETE,
+    });
+  }, []);
   const resultDispatch = useCallback(
     (
       url: DispatchFetchURL,
@@ -157,13 +163,6 @@ export function useFetch(
     },
     [],
   );
-
-  const deleteDispatch = (ids: string[]) => {
-    dispatch({
-      data: { ids },
-      type: FetchActionType.DELETE,
-    });
-  };
 
   return [state, resultDispatch, deleteDispatch];
 }

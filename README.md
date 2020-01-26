@@ -20,7 +20,17 @@ docker run -it --rm -p 80:80 -v $(pwd):/root/project luissaybe/joseon
 
 Korean Dictionary provided by https://krdict.korean.go.kr/openApi/openApiInfo
 
-Common words from: https://www.korean.go.kr
+Common korean words excel file derived from https://www.korean.go.kr/front_eng/down/down_02.do and then searching `한국어 학습용 어휘 목록`
+
+### get common words file
+
+```sh
+node node/import-common-words \
+  --key=API_KEY \
+  --file=PATH_TO_IMPORT_FILE \
+  --trans_lang=1 \
+  --end=2000
+```
 
 ### Get Certbot Certs
 

@@ -118,10 +118,6 @@ export function Suffixes() {
             </div>
             <div>
               &bull;&nbsp;
-              {t("If the final letter of a word is ㅡ, ㅡ is replaced by ㅓ.")}
-            </div>
-            <div>
-              &bull;&nbsp;
               {t(
                 "If the final letter of a word is ㅣ, ㅣ is replaced by ㅕ or 어 is added as a new syllable.",
               )}
@@ -146,6 +142,12 @@ export function Suffixes() {
         <div styleName="table">
           <span>Predicate</span>
           <span></span>
+          <DefinitionPopup q="73277">하다</DefinitionPopup>
+          <span>해</span>
+          <DefinitionPopup q="89858" senseIndexes={[1]}>
+            되다
+          </DefinitionPopup>
+          <span>돼</span>
           <DefinitionPopup q="58272">먹다</DefinitionPopup>
           <span>먹어</span>
           <DefinitionPopup q="62354">낫다</DefinitionPopup>

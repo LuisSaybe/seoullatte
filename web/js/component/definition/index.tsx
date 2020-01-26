@@ -22,12 +22,18 @@ type Interface = IKoreanDefinitionIdentifier &
 
 export function Definition(props: Interface) {
   const { t } = useTranslation();
-  const [dispatchFetch] = useContext(FetchDispatchContext);
+  const [dispatchFetch, dispatchFetchDelete] = useContext(FetchDispatchContext);
   const fetchState = useContext(FetchStateContext);
   const definitions = useContext(DefinitionContext);
   const { children, senseIndexes, q, ...rest } = props;
   const viewWordState = fetchState[DispatchFetchId.VIEW_WORD];
   const definition = definitions[props.q];
+
+  useEffect(() => {
+    return () => {
+      dispatchFetchDelete([DispatchFetchId.VIEW_WORD]);
+    };
+  }, [dispatchFetchDelete]);
 
   useEffect(() => {
     if (!definition) {
