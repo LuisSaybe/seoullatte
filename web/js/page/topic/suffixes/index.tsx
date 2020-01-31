@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-import { ArticleSection } from "web/js/component/article-section";
-
 import { Anchor } from "web/js/component/anchor";
+import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import { Subsection } from "web/js/component/subsection";
 import { useNavigateToHash } from "web/js/hook/useNavigateToHash";
 import { TopicRoute } from "web/js/interface/route";
+import { S_IRREGULAR } from "web/js/page/topic/irregular-predicate";
 import "./style.scss";
 
 export const SUFFIX_ADD_DOM_ID = "add";
@@ -58,9 +58,11 @@ export function Suffixes() {
           "Some suffixes require adding ㅓ or ㅏ to a predicate stem. We discuss how to determine which is added.",
         )}
         &nbsp;
-        {t(
-          "Firstly, modify the predicate stem by it's irregular rules, if any.",
-        )}
+        <Trans>
+          1. If the predicate has any&nbsp;
+          <Anchor to={TopicRoute.irregularPredicate}>irregular rules</Anchor>,
+          apply them.
+        </Trans>
         &nbsp;
         {t(
           "If the vowel closest to the end of the  modified predicate stem is ㅏ or ㅗ then ㅏ is added to the stem, othwerwise ㅓ is added to the stem.",
@@ -99,7 +101,9 @@ export function Suffixes() {
               &bull;&nbsp;
               <Trans>
                 If the predicate is&nbsp;
-                <Anchor to={TopicRoute.irregularPredicate}>ㅅ-irregular</Anchor>
+                <Anchor to={`${TopicRoute.irregularPredicate}#${S_IRREGULAR}`}>
+                  ㅅ-irregular
+                </Anchor>
                 &nbsp;어 or 아 is added as a new syllable based on the
                 aforementioned rules.
               </Trans>

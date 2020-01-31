@@ -11,6 +11,7 @@ import { routes } from "web/js/routes";
 export function useArticleRoutes() {
   const topics = useTopics();
   const origin = useOrigin();
+
   return useMemo(
     () =>
       topics.map((topic, index) => {

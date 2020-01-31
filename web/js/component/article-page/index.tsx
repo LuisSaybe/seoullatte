@@ -12,7 +12,6 @@ interface IInterface extends React.HTMLAttributes<HTMLElement> {
   articleTitle: React.ReactNode;
   next: string;
   previous: string;
-  styleName?: string;
 }
 
 export function ArticlePage(props: IInterface) {
@@ -69,7 +68,7 @@ export function ArticlePage(props: IInterface) {
             styleName="anchors"
             next={next}
             previous={previous}
-          ></NextPreviousAnchors>
+          />
           <Footer styleName="footer" />
         </div>
       </div>

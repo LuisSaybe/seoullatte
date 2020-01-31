@@ -1,19 +1,6 @@
-import Ajv from "ajv";
-
 const key = "joseonstorage";
 
-const ajv = new Ajv();
-const validateUserSchema = ajv.compile({
-  type: "object",
-  properties: {
-    token: {
-      type: "string",
-    },
-  },
-});
-const DEFAULT_LOCAL_STORAGE = {
-  token: null,
-};
+const DEFAULT_LOCAL_STORAGE = {};
 
 export const writeLocalStorage = (item = DEFAULT_LOCAL_STORAGE) => {
   localStorage.setItem(key, JSON.stringify(item));
@@ -21,15 +8,9 @@ export const writeLocalStorage = (item = DEFAULT_LOCAL_STORAGE) => {
 };
 
 export const getLocalStorage = () => {
-  let item;
-
   try {
-    item = JSON.parse(localStorage.getItem(key));
-  } catch (e) {
-    item = null;
-  }
+    return JSON.parse(localStorage.getItem(key));
+  } catch {}
 
-  return item === null || !validateUserSchema(item)
-    ? writeLocalStorage()
-    : item;
+  return writeLocalStorage();
 };

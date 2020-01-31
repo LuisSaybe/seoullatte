@@ -1,20 +1,67 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
+import React, { useEffect } from "react";
+import { Trans, useTranslation } from "react-i18next";
 
+import { Anchor } from "web/js/component/anchor";
 import { ArticleSection } from "web/js/component/article-section";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
+import { useNavigateToHash } from "web/js/hook/useNavigateToHash";
+import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
+
+export const S_IRREGULAR = "s-irregular";
 
 export function IrregularPredicate() {
   const { t } = useTranslation();
+  const navigate = useNavigateToHash();
+
+  useEffect(() => {
+    navigate();
+  }, [navigate]);
 
   return (
     <>
       {t(
-        "Some predicates conjugate irregularly depending on their suffixes, we go through all irregular conjugations in this section.",
+        "Some predicates have irregular conjugations. Irregular predicates may conjugate based on patterns or only in specific situations.",
       )}
+      <ArticleSection>
+        <ArticleTitle>{t("Rules not based on patterns")}</ArticleTitle>
+        {t("We show some of these examples below.")}
+        <Section>
+          <Trans>
+            The predicate&nbsp;
+            <DefinitionPopup q="92101">이다</DefinitionPopup> and&nbsp;
+            <DefinitionPopup q="26878">이니다</DefinitionPopup> both are
+            conjugated in the same manner.
+          </Trans>
+          &nbsp;
+          {t("In the polite speech level, 에요 is added to the stem.")}&nbsp;
+          {t(
+            "In the intimate speech level, 이다 becomes 이야 when added to a noun with a 받침, otherwise 이다 becomes 야.",
+          )}
+          &nbsp;
+          {t("In the intimate speech level, 이니다 becomes 아니야.")}
+        </Section>
+        <Section>
+          <Trans>
+            The predicate&nbsp;
+            <DefinitionPopup q="69296">말다</DefinitionPopup> conjugates
+            irregular in the&nbsp;
+            <Anchor to={TopicRoute.politeSpeech}>polite</Anchor>
+            &nbsp;imperative and the&nbsp;
+            <Anchor to={TopicRoute.intimateSpeech}>intimate</Anchor> imperative.
+          </Trans>
+          <Section>
+            <div>
+              {t("Polite imperative")}: {t("마요 or 말아요")}
+            </div>
+            <div>
+              {t("Intimate imperative")}: {t("마")}
+            </div>
+          </Section>
+        </Section>
+      </ArticleSection>
       <ArticleSection>
         <ArticleTitle>{t("ㄷ Irregular Predicates")}</ArticleTitle>
         {t(
@@ -51,7 +98,7 @@ export function IrregularPredicate() {
           <span>no</span>
         </Section>
       </ArticleSection>
-      <ArticleSection>
+      <ArticleSection id={S_IRREGULAR}>
         <ArticleTitle>{t("ㅅ Irregular Predicates")}</ArticleTitle>
         {t(
           "If a predicate is ㅅ irregular, then ㅅ will be deleted when joined with a suffix that starts with a vowel.",

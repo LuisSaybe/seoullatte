@@ -17,7 +17,7 @@ export function DeviceNotSupported() {
       {!supportsGridLayout && (
         <Trans>
           Sorry, your device does not support grid layout, please use any of the
-          devices listed{" "}
+          devices listed&nbsp;
           <Anchor href="https://caniuse.com/#feat=css-grid">here</Anchor>
         </Trans>
       )}

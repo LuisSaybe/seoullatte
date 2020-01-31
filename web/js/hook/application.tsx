@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Route, Switch } from "react-router-dom";
 
@@ -16,9 +16,9 @@ import { useLocations } from "web/js/hook/useLocations";
 import { Operation } from "web/js/interface/reducer";
 import { routes } from "web/js/routes";
 
-import { DispatchFetchId } from "web/js//interface/fetch";
 import { BurgerMenu } from "web/js/component/burger-menu";
 import { getLanguage, Language } from "web/js/helper/language";
+import { DispatchFetchId } from "web/js/interface/fetch";
 import { AboutUs } from "web/js/page/about-us";
 import { Configuration } from "web/js/page/configuration";
 import { NotFound } from "web/js/page/not-found";
@@ -119,8 +119,8 @@ export function Application() {
       <BurgerMenu />
       <Switch>
         <Route path={routes.configuration()} component={Configuration} />
-        {articleRoutes}
         <Route path={routes.aboutUs()} component={AboutUs} />
+        {articleRoutes}
         <Route component={NotFound} />
       </Switch>
     </LocationsContext.Provider>

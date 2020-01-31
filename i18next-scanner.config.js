@@ -20,7 +20,7 @@ module.exports = {
     trans: {
       component: "Trans",
       defaultsKey: "defaults",
-      extensions: [".ts", ".tsx"],
+      extensions: [".tsx"],
       fallbackKey: (_, value) => value,
     },
     resource: {
@@ -32,11 +32,13 @@ module.exports = {
     const extension = path.extname(file.path);
     let content = fs.readFileSync(file.path, enc);
 
-    if (extension == ".ts" || extension == ".tsx") {
+    if (extension === ".ts" || extension === ".tsx") {
       content = typescript.transpileModule(content, {
         compilerOptions: {
           target: "es5",
           sourceMap: true,
+          inlineSources: true,
+          sourceRoot: "/",
           jsx: "preserve",
           baseUrl: ".",
           lib: ["dom", "esnext"],
@@ -51,6 +53,7 @@ module.exports = {
           typeRoots: ["node_modules/@types"],
           plugins: [{ name: "typescript-tslint-plugin" }],
         },
+        exclude: ["node_modules"],
       }).outputText;
     }
 

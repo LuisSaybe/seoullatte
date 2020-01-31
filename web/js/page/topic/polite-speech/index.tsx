@@ -21,6 +21,10 @@ export function PoliteSpeech() {
           <Anchor to={TopicRoute.intimateSpeech}>intimate speech level</Anchor>
           &nbsp;followed by a <DefinitionPopup q="86116">요</DefinitionPopup>.
         </Trans>
+        &nbsp;
+        {t(
+          "The predicate 이다 and 아니다 are formed irregularly in the polite speech level. 이다 becomes 이에요. 아니다 becomes 아니에요",
+        )}
       </Section>
       <ArticleSection>
         <ArticleTitle>{t("Examples")}</ArticleTitle>

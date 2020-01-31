@@ -13,6 +13,18 @@ const range = xlsx.utils.decode_range(sheet["!ref"]);
 const regex = new RegExp("[0-9 ]", "g");
 const timeout = 5000;
 const batchSize = 8;
+const start = yargs.argv.start || 0;
+const end = Number(yargs.argv.end) || range.e.r;
+
+const get = (uri, qs) =>
+  request({
+    qs: {
+      key: yargs.argv.key,
+      ...qs,
+    },
+    timeout,
+    uri,
+  });
 
 const ADDITIONAL_WORDS = [
   "이다",
@@ -46,6 +58,11 @@ const ADDITIONAL_WORDS = [
   "훈민정음",
   "을",
   "조선",
+  "것",
+  "학교",
+  "어요",
+  "아요",
+  "를",
 ];
 
 const arrayToGroups = (array, size) => {
@@ -79,12 +96,7 @@ const getWordsWithScore = () => {
 
   result.sort((first, second) => {
     const rank = first.rank - second.rank;
-
-    if (rank === 0) {
-      return first.text.localeCompare(second.text);
-    }
-
-    return rank;
+    return rank === 0 ? first.text.localeCompare(second.text) : rank;
   });
 
   return result;
@@ -92,14 +104,7 @@ const getWordsWithScore = () => {
 
 const getTargetCodes = async (q) => {
   const codes = {};
-  const searchRequest = request({
-    qs: {
-      key: yargs.argv.key,
-      q,
-    },
-    timeout,
-    uri: SEARCH_URL,
-  });
+  const searchRequest = get(SEARCH_URL, q);
 
   let body;
 
@@ -114,16 +119,11 @@ const getTargetCodes = async (q) => {
     element.window.document.querySelectorAll("target_code"),
   ).map(({ innerHTML }) => ({
     code: innerHTML,
-    request: request({
-      qs: {
-        key: yargs.argv.key,
-        method: "target_code",
-        q: innerHTML,
-        trans_lang: yargs.argv.trans_lang,
-        translated: "y",
-      },
-      timeout,
-      uri: VIEW_URL,
+    request: get(VIEW_URL, {
+      method: "target_code",
+      q: innerHTML,
+      trans_lang: yargs.argv.trans_lang,
+      translated: "y",
     }),
   }));
 
@@ -142,10 +142,8 @@ const getTargetCodes = async (q) => {
   return codes;
 };
 
-const getWords = async () => {
+const getWords = async (start, end) => {
   const targetCodes = {};
-  const start = yargs.argv.start || 0;
-  const end = Number(yargs.argv.end) || range.e.r;
   const wordsAndScore = [
     ...ADDITIONAL_WORDS.map((text) => ({ text })),
     ...getWordsWithScore().slice(start, end),
@@ -165,15 +163,17 @@ const getWords = async () => {
     index++;
   }
 
-  fs.writeFileSync(
-    `${yargs.argv.trans_lang}-${start}-${end}.json`,
-    JSON.stringify(targetCodes),
-  );
+  return targetCodes;
 };
 
 const startTime = new Date();
 
-getWords().then(() => {
+getWords(start, end).then((codes) => {
+  fs.writeFileSync(
+    `${yargs.argv.trans_lang}-${start}-${end}.json`,
+    JSON.stringify(codes),
+  );
+
   const endTime = new Date();
 
   console.log(

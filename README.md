@@ -1,4 +1,4 @@
-### build image
+### build
 
 ```sh
 npm -g install yarn
@@ -42,5 +42,5 @@ certbot certonly --dns-digitalocean --dns-digitalocean-credentials ~/digitalocea
 ### run with ssl
 
 ```
-docker run -dit -p 80:80 -p 443:443 -v /root/certs:/root/certs luissaybe/joseon nginx -c /root/project/docker/nginx-https.conf
+docker run -dit --rm -p 80:80 -p 443:443 -v /root/certs:/root/certs luissaybe/joseon nginx -c /root/project/docker/nginx-https.conf
 ```

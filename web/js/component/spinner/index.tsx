@@ -1,6 +1,5 @@
 import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import _ from "lodash";
 import React from "react";
 
 import "./style.scss";

@@ -29,9 +29,9 @@ import { SubjectAndTopic } from "web/js/page/topic/subject-and-topic";
 import { Suffixes } from "web/js/page/topic/suffixes";
 import { Syllable } from "web/js/page/topic/syllable";
 
-export function useTopics(): ITopic[] {
+export function useTopics() {
   const { t } = useTranslation();
-  const topics = useMemo(
+  return useMemo(
     () => [
       {
         component: Hangul,
@@ -219,6 +219,4 @@ export function useTopics(): ITopic[] {
     ],
     [t],
   );
-
-  return topics;
 }

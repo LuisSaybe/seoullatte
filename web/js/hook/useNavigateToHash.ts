@@ -1,9 +1,9 @@
+import { useCallback } from "react";
 import { useLocation } from "react-router-dom";
 
 export function useNavigateToHash() {
   const { hash } = useLocation();
-
-  return () => {
+  const navigateToHash = useCallback(() => {
     const element = document.getElementById(hash.slice(1));
 
     if (element) {
@@ -11,5 +11,7 @@ export function useNavigateToHash() {
         behavior: "smooth",
       });
     }
-  };
+  }, [hash]);
+
+  return navigateToHash;
 }

@@ -1,5 +1,3 @@
-import _ from "lodash";
-import PropTypes from "prop-types";
 import React from "react";
 
 import "./style.scss";
@@ -11,22 +9,17 @@ export class MessageBlockType {
   public static warning = "warning";
 }
 
-export function MessageBlock(props) {
+interface IInterface extends React.HTMLAttributes<HTMLDivElement> {
+  type: MessageBlockType;
+}
+
+export function MessageBlock(props: IInterface) {
   const styleName = "root " + props.type;
-  const propsCopy = _.omit(props, ["type"]);
+  const { type, children, ...rest } = props;
 
   return (
-    <div styleName={styleName} {...propsCopy}>
-      {props.children}
+    <div styleName={styleName} {...rest}>
+      {children}
     </div>
   );
 }
-
-MessageBlock.propTypes = {
-  children: PropTypes.node.isRequired,
-  type: PropTypes.string,
-};
-
-MessageBlock.defaultProps = {
-  type: MessageBlockType.main,
-};

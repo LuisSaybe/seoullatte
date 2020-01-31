@@ -1,11 +1,13 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
 import { Section } from "web/js/component/section";
 
+import { Anchor } from "web/js/component/anchor";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
+import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
 export function IntimateSpeech() {
@@ -18,9 +20,11 @@ export function IntimateSpeech() {
           "The intimate speech level has 1 conjugation for all sentence types. Declarative, Interrogative, Imperative, Propositive.",
         )}
         &nbsp;
-        {t(
-          "To conjugate predicates in the intimate speech level a ㅓ or ㅏ is added to the verb stem.",
-        )}
+        <Trans>
+          To conjugate predicates in the intimate speech level a&nbsp;
+          <Anchor to={TopicRoute.suffixes}>ㅓ or ㅏ is added</Anchor> to the
+          verb stem.
+        </Trans>
       </Section>
       <ArticleSection>
         <ArticleTitle>{t("Examples")}</ArticleTitle>

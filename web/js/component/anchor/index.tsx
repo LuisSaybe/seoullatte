@@ -1,22 +1,17 @@
-import _ from "lodash";
 import React from "react";
 import { Link } from "react-router-dom";
 
 import "./style.scss";
 
-interface IInterface {
+interface IInterface extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
   to?: string;
-  styleName?: string;
   button?: boolean;
-  href?: string;
   icon?: boolean;
   box?: boolean;
 }
 
-export function Anchor(
-  props: IInterface & React.AnchorHTMLAttributes<HTMLAnchorElement>,
-) {
+export function Anchor(props: IInterface) {
   const { box, children, to, className, button, icon, ...rest } = props;
   let styleName = "root";
 

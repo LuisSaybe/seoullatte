@@ -1,15 +1,11 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+import { Anchor } from "web/js/component/anchor";
 import { routes } from "web/js/routes";
-import { Anchor } from "../anchor";
 import "./style.scss";
 
-export interface IIinterface extends React.HTMLAttributes<HTMLDivElement> {
-  styleName?: string;
-}
-
-export function Footer(props: IIinterface) {
+export function Footer(props: React.HTMLAttributes<HTMLDivElement>) {
   const { t } = useTranslation();
   const { children, ...rest } = props;
   return (

@@ -21,7 +21,7 @@ export function PastTense() {
         <Trans>
           To conjugate a predicate in the past tense, a&nbsp;
           <Anchor to={TopicRoute.ending}>pre-final ending</Anchor>
-          &nbsp; past tense ending is added to a predicate.
+          &nbsp;past tense ending is added to a predicate.
         </Trans>
         <div>
           {t("Conjugating the predicate in the past tense follows these steps")}
