@@ -41,13 +41,13 @@ export function IrregularPredicate() {
             "In the intimate speech level, 이다 becomes 이야 when added to a noun with a 받침, otherwise 이다 becomes 야.",
           )}
           &nbsp;
-          {t("In the intimate speech level, 이니다 becomes 아니야.")}
+          {t("In the intimate speech level, 아니다 becomes 아니야.")}
         </Section>
         <Section>
           <Trans>
             The predicate&nbsp;
             <DefinitionPopup q="69296">말다</DefinitionPopup> conjugates
-            irregular in the&nbsp;
+            irregularly in the&nbsp;
             <Anchor to={TopicRoute.politeSpeech}>polite</Anchor>
             &nbsp;imperative and the&nbsp;
             <Anchor to={TopicRoute.intimateSpeech}>intimate</Anchor> imperative.

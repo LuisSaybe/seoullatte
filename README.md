@@ -26,10 +26,8 @@ Common korean words excel file derived from https://www.korean.go.kr/front_eng/d
 
 ```sh
 node node/import-common-words \
-  --key=API_KEY \
-  --file=PATH_TO_IMPORT_FILE \
-  --trans_lang=1 \
-  --end=2000
+  --key=KEY \
+  --trans_lang=1
 ```
 
 ### Get Certbot Certs

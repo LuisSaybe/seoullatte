@@ -40,7 +40,7 @@ export function Application() {
 
   useEffect(() => {
     dispatchFetch(
-      "https://luissaybe.nyc3.digitaloceanspaces.com/seoul-latte/words/english/1-0-2000.json.gz",
+      "https://luissaybe.nyc3.digitaloceanspaces.com/seoul-latte/words/1.json.gz",
       {},
       DispatchFetchId.GET_WORDS,
     );

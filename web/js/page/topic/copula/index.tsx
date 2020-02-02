@@ -14,8 +14,8 @@ export function Copula() {
       <ArticleSection>
         <Trans>
           The copula <DefinitionPopup q="92101">이다</DefinitionPopup> and&nbsp;
-          <DefinitionPopup q="26878">아니다</DefinitionPopup> attache directly
-          to a noun.
+          <DefinitionPopup q="26878">아니다</DefinitionPopup> attach directly to
+          a noun.
         </Trans>
         &nbsp;
         {t("이다 and 아니다 are antonyms.")}

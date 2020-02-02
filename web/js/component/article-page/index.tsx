@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import { useSwipeable } from "react-swipeable";
 
 import { ArticleTitle } from "web/js/component/article-title";
 import { Footer } from "web/js/component/footer";
@@ -18,18 +17,6 @@ export function ArticlePage(props: IInterface) {
   const location = useLocation();
   const history = useHistory();
   const { children, articleTitle, next, previous, ...rest } = props;
-  const handlers = useSwipeable({
-    onSwipedLeft: () => {
-      if (next) {
-        history.push(next);
-      }
-    },
-    onSwipedRight: () => {
-      if (previous) {
-        history.push(previous);
-      }
-    },
-  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -56,7 +43,7 @@ export function ArticlePage(props: IInterface) {
   }, [previous, next, history]);
 
   return (
-    <div styleName="root" {...handlers} {...rest}>
+    <div styleName="root" {...rest}>
       <Navigation />
       <div styleName="content">
         <article>

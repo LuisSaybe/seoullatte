@@ -52,7 +52,7 @@ export function ExistenceAndPosession() {
           <div>
             A:&nbsp;
             <DefinitionPopup q="17371">잔</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="663748901">안</DefinitionPopup>
+            <DefinitionPopup q="74890">안</DefinitionPopup>
             <DefinitionPopup q="86572">에</DefinitionPopup>&nbsp;
             <DefinitionPopup q="27372">커피</DefinitionPopup>
             <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
