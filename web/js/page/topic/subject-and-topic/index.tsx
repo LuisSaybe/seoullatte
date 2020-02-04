@@ -62,7 +62,7 @@ export function SubjectAndTopic() {
           )}
           &nbsp;
           {t(
-            "Consequently, to introduce a new topic the topic particle will be employed again.",
+            "Consequently, to introduce a new topic the topic particle will be used again.",
           )}
         </Section>
       </ArticleSection>

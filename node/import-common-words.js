@@ -4,7 +4,7 @@ const fs = require("fs");
 const glob = require("glob");
 
 const VIEW_URL = "https://krdict.korean.go.kr/api/view";
-const timeout = 5000;
+const timeout = 10000;
 
 const get = (uri, qs) =>
   request({
@@ -37,7 +37,7 @@ const getTargetCodes = () => {
           .match(new RegExp('q="[0-9]+', "g"))
           .map((content) => content.match(new RegExp("[0-9]+", "g"))[0]);
 
-        resolve(codes);
+        resolve([...new Set(codes)]);
       }
     });
   });
@@ -64,9 +64,9 @@ const getWords = async () => {
   const codes = await getTargetCodes();
   const groups = arrayToGroups(codes, 10);
 
-  let index = 0;
-
-  for (const group of groups) {
+  for (let index = 0; index < groups.length; index++) {
+    console.log(`${index} / ${groups.length}`);
+    const group = groups[index];
     const promises = group.map((code) =>
       getDefinition(code).then((body) => {
         targetCodes[code] = body;
@@ -74,9 +74,6 @@ const getWords = async () => {
     );
 
     await Promise.all(promises);
-
-    console.log(`${index} / ${groups.length}`);
-    index++;
   }
 
   fs.writeFileSync(

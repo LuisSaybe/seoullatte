@@ -43,11 +43,52 @@ export function PastTense() {
             </div>
           </Subsection>
         </Section>
-        <div>
+        <Section>
+          <Trans>
+            If the predicate is conjugated in the&nbsp;
+            <Anchor to={TopicRoute.intimateSpeech}>
+              intimate speech level
+            </Anchor>
+            &nbsp;then 어 is added as the final syllable.
+          </Trans>
+          &nbsp;
+          <Trans>
+            If the predicate is conjugated in the&nbsp;
+            <Anchor to={TopicRoute.politeSpeech}>polite speech level</Anchor>
+            &nbsp;then 어요 is added as the final syllable.
+          </Trans>
+        </Section>
+        <Section>
           {t(
-            "When an additional 었 is added to the first paste tense marker, the predicate's meaning is becomes more remote than the recent past. For example, 갔었다 or 이었었어요",
+            "The past tense may also be used to describe a recently completed action.",
           )}
-        </div>
+          &nbsp;
+          {t(
+            "For example, if an office worker is already inside the office after arriving, this office worker say the following phrase.",
+          )}
+          <Section>
+            <DefinitionPopup q="61202">사무실</DefinitionPopup>
+            <DefinitionPopup q="86572">에</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="69514">왔</DefinitionPopup>
+            <DefinitionPopup q="86094">어</DefinitionPopup>
+          </Section>
+        </Section>
+        <Section>
+          <Trans>
+            When an additional 었 is added to the first paste tense marker, the
+            predicate's meaning is becomes more remote than the recent past. For
+            example, <DefinitionPopup q="27500">갔</DefinitionPopup>
+            <DefinitionPopup q="68838">었</DefinitionPopup>
+            <DefinitionPopup q="85041">다</DefinitionPopup>&nbsp;or&nbsp;
+            <DefinitionPopup q="92101">이</DefinitionPopup>
+            <DefinitionPopup q="68838">었었</DefinitionPopup>
+            <DefinitionPopup q="86571">어요</DefinitionPopup>
+          </Trans>
+          &nbsp;
+          {t(
+            "This can be used when recounting events which are in the distant past and no longer immediately relevant.",
+          )}
+        </Section>
       </ArticleSection>
       <ArticleSection>
         <ArticleTitle>{t("Examples")}</ArticleTitle>

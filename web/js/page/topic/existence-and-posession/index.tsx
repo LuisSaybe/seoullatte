@@ -6,7 +6,6 @@ import { ArticleSection } from "web/js/component/article-section";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
-import { SectionTitle } from "web/js/component/section-title";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
@@ -82,7 +81,7 @@ export function ExistenceAndPosession() {
           <DefinitionPopup q="71353">표</DefinitionPopup>
           <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
           <DefinitionPopup q="68796">있</DefinitionPopup>
-          <DefinitionPopup q="86571">는다</DefinitionPopup>
+          <DefinitionPopup q="85037">는다</DefinitionPopup>
         </Section>
         <Section>
           <DefinitionPopup q="24147">편지</DefinitionPopup>
@@ -93,7 +92,7 @@ export function ExistenceAndPosession() {
           </DefinitionPopup>
         </Section>
         {t(
-          "The verbs 있다 and 없다 are used to indicate that an entity possesses or does not posses a quality.",
+          "Some adjectives contains 있다 and 없다 to indicate a subject has or lacks a quality.",
         )}
         <Section>
           <div>
@@ -104,8 +103,27 @@ export function ExistenceAndPosession() {
             {t("?")}
           </div>
           <div>
-            B:&nbsp;
+            B:&nbsp;ㄴ
             <DefinitionPopup q="71212">재미있다</DefinitionPopup>
+          </div>
+        </Section>
+        <Section>
+          <div>
+            A:&nbsp;
+            <DefinitionPopup q="20198">눈</DefinitionPopup>
+            <DefinitionPopup q="86289">이</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="69514">올</DefinitionPopup>
+            <DefinitionPopup q="71355">거</DefinitionPopup>
+            <DefinitionPopup q="80806">야</DefinitionPopup>
+            {t("?")}
+          </div>
+          <div>
+            B:&nbsp;
+            <DefinitionPopup q="17294">네</DefinitionPopup>.&nbsp;
+            <DefinitionPopup q="71301">틀림없</DefinitionPopup>
+            <DefinitionPopup q="86094" senseIndexes={[3]}>
+              어
+            </DefinitionPopup>
           </div>
         </Section>
       </ArticleSection>

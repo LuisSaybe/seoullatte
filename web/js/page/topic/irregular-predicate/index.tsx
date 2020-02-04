@@ -6,6 +6,7 @@ import { ArticleSection } from "web/js/component/article-section";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
+import { SectionTitle } from "web/js/component/section-title";
 import { useNavigateToHash } from "web/js/hook/useNavigateToHash";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
@@ -27,13 +28,17 @@ export function IrregularPredicate() {
       )}
       <ArticleSection>
         <ArticleTitle>{t("Rules not based on patterns")}</ArticleTitle>
-        {t("We show some of these examples below.")}
+        <Section>
+          {t(
+            "While not exhausitive we show examples of irregular predicates which are not based on patterns.",
+          )}
+        </Section>
         <Section>
           <Trans>
             The predicate&nbsp;
             <DefinitionPopup q="92101">이다</DefinitionPopup> and&nbsp;
             <DefinitionPopup q="26878">이니다</DefinitionPopup> both are
-            conjugated in the same manner.
+            conjugated in a similar manner.
           </Trans>
           &nbsp;
           {t("In the polite speech level, 에요 is added to the stem.")}&nbsp;
@@ -43,6 +48,17 @@ export function IrregularPredicate() {
           &nbsp;
           {t("In the intimate speech level, 아니다 becomes 아니야.")}
         </Section>
+        <SectionTitle>{t("Examples")}</SectionTitle>
+        <div>
+          <DefinitionPopup q="23402">빵</DefinitionPopup>
+          <DefinitionPopup q="26878">아니</DefinitionPopup>
+          <DefinitionPopup q="80806">야</DefinitionPopup>
+        </div>
+        <div>
+          <DefinitionPopup q="73448">여우</DefinitionPopup>
+          <DefinitionPopup q="92101">이</DefinitionPopup>
+          <DefinitionPopup q="86106">에요</DefinitionPopup>
+        </div>
         <Section>
           <Trans>
             The predicate&nbsp;
