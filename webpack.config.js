@@ -15,6 +15,7 @@ module.exports = (env) => {
     ],
     output: {
       path: path.resolve(__dirname, "dist"),
+      filename: "[contenthash].js",
     },
     resolve: {
       alias: {

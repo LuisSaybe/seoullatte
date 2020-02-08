@@ -11,11 +11,31 @@ export function FormingSentences() {
   return (
     <>
       <ArticleSection>
-        {t("A Korean clause contains a subject and an inflected predicate.")}
+        {t(
+          "There are two ideas which are prevalent throughout the Korean language.",
+        )}
         &nbsp;
         {t(
-          "In the case of transitive verb, a direct object will also be present.",
+          "Firstly, communication is largely context based. Information can be omitted when such information is understood from the context of the communication.",
         )}
+        &nbsp;
+        {t(
+          "Secondly, the order of information is organized from general to specific.",
+        )}
+      </ArticleSection>
+      <ArticleSection>
+        <SectionTitle>{t("Word order")}</SectionTitle>
+        {t(
+          "A simple Korean sentence is composed of a subject, an object and a predicate.",
+        )}
+        &nbsp;
+        {t("The order in which they appear is subject, object and then verb.")}
+      </ArticleSection>
+      <ArticleSection>
+        <SectionTitle>{t("Context based omission")}</SectionTitle>
+      </ArticleSection>
+      <ArticleSection>
+        <SectionTitle>{t("Predicates")}</SectionTitle>
       </ArticleSection>
     </>
   );
