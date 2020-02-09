@@ -59,13 +59,13 @@ export function Suffixes() {
         )}
         &nbsp;
         <Trans>
-          1. If the predicate has any&nbsp;
+          First, if the predicate has any&nbsp;
           <Anchor to={TopicRoute.irregularPredicate}>irregular rules</Anchor>,
           apply them.
         </Trans>
         &nbsp;
         {t(
-          "If the vowel closest to the end of the  modified predicate stem is ㅏ or ㅗ then ㅏ is added to the stem, othwerwise ㅓ is added to the stem.",
+          "Then if the vowel closest to the end of the  modified predicate stem is ㅏ or ㅗ then ㅏ is added to the stem, othwerwise ㅓ is added to the stem.",
         )}
       </ArticleSection>
       <ArticleSection>
@@ -99,17 +99,6 @@ export function Suffixes() {
             </div>
             <div>
               &bull;&nbsp;
-              <Trans>
-                If the predicate is&nbsp;
-                <Anchor to={`${TopicRoute.irregularPredicate}#${S_IRREGULAR}`}>
-                  ㅅ-irregular
-                </Anchor>
-                &nbsp;어 or 아 is added as a new syllable based on the
-                aforementioned rules.
-              </Trans>
-            </div>
-            <div>
-              &bull;&nbsp;
               {t(
                 "If the final syllable of a stem is 오, the final syllable becomes 와.",
               )}
@@ -137,6 +126,17 @@ export function Suffixes() {
               {t(
                 "If a predicate stem ends in ㅚ the stem undergoes no change or ㅚ becomes ㅙ.",
               )}
+            </div>
+            <div>
+              &bull;&nbsp;
+              <Trans>
+                If the predicate is&nbsp;
+                <Anchor to={`${TopicRoute.irregularPredicate}#${S_IRREGULAR}`}>
+                  ㅅ-irregular
+                </Anchor>
+                &nbsp;어 or 아 is added as a new syllable based on the
+                aforementioned rules.
+              </Trans>
             </div>
           </Subsection>
         </Section>

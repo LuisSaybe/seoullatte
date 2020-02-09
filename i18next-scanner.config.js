@@ -11,7 +11,7 @@ module.exports = {
     },
     lngs: ["fr"],
     defaultValue: "",
-    nsSeparator: false, // namespace separator
+    nsSeparator: "::",
     keySeparator: false, // key separator
     interpolation: {
       prefix: "{{",

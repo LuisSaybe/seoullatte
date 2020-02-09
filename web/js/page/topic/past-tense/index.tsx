@@ -64,7 +64,7 @@ export function PastTense() {
           )}
           &nbsp;
           {t(
-            "For example, if an office worker is already inside the office after arriving, this office worker say the following phrase.",
+            "For example, if an office worker is already inside the office after arriving, this office worker can say the following phrase.",
           )}
           <Section>
             <DefinitionPopup q="61202">사무실</DefinitionPopup>

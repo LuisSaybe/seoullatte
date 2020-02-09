@@ -23,7 +23,7 @@ export function BoundNoun() {
         </Trans>
         &nbsp;
         {t(
-          "Below we give examplㄷs of the some of the most commonly used bound nouns.",
+          "Below we give examples of the some of the most commonly used bound nouns.",
         )}
         &nbsp;
       </ArticleSection>

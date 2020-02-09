@@ -51,7 +51,10 @@ export function PlainSpeech() {
         </Section>
         <Section>
           <SectionTitle>{t("For imperative sentences")}</SectionTitle>
-          {t("아라 or 어라 is added to the verb stem.")}
+          <Trans>
+            <Anchor to={TopicRoute.suffixes}>ㅓ or ㅏ is added</Anchor> to the
+            verb stem followed by 라
+          </Trans>
         </Section>
         <Section>
           <SectionTitle>{t("For proposotive sentences")}</SectionTitle>

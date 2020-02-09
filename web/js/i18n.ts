@@ -6,8 +6,9 @@ import { SUPPORTED_LANGUAGE_IDS } from "web/js/helper/language";
 
 i18n.use(initReactI18next).init({
   initImmediate: false,
-  keySeparator: "___",
+  keySeparator: false,
   lng: "en",
+  nsSeparator: false,
   preload: SUPPORTED_LANGUAGE_IDS,
   resources: {
     fr: {

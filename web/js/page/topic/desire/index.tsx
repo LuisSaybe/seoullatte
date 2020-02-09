@@ -14,18 +14,37 @@ export function Desire() {
     <>
       <ArticleSection>
         <Trans>
-          Desire is acheived in the by the usage of the auxiliary adjecive&nbsp;
+          Expressinh desire is acheived in the by the usage of the auxiliary
+          adjecive&nbsp;
           <DefinitionPopup q="62657">싶다</DefinitionPopup>
         </Trans>
         .&nbsp;
         {t(
-          "고 싶다 is added to a verb stem when to indicate desire to execute the verb in.",
+          "고 싶다 is added to a verb stem to indicate desire to execute the verb.",
         )}
         &nbsp;
-        {t("This clause can only be used in the first person.")}
+        {t(
+          "This construction can not be used in the second-person or third person declarative sentences.",
+        )}
       </ArticleSection>
       <ArticleSection>
         <SectionTitle>{t("Examples")}</SectionTitle>
+        <Section>
+          <DefinitionPopup q="72128">초콜릿</DefinitionPopup>
+          <DefinitionPopup q="69058">을</DefinitionPopup>&nbsp;
+          <DefinitionPopup q="49419">사</DefinitionPopup>
+          <DefinitionPopup q="75269">고 싶다</DefinitionPopup>
+        </Section>
+        <Section>
+          <DefinitionPopup q="71358">집</DefinitionPopup>
+          <DefinitionPopup q="85784">으로</DefinitionPopup>&nbsp;
+          <DefinitionPopup q="66268">돌아오</DefinitionPopup>
+          <DefinitionPopup q="75269">고 싶</DefinitionPopup>
+          <DefinitionPopup q="72587">지 않</DefinitionPopup>
+          <DefinitionPopup q="86093" senseIndexes={[3]}>
+            아
+          </DefinitionPopup>
+        </Section>
       </ArticleSection>
     </>
   );
