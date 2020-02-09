@@ -31,7 +31,9 @@ module.exports = (env) => {
           gaTrackingId: settings.ga && settings.ga.trackingId,
         },
       }),
-      new MiniCssExtractPlugin({}),
+      new MiniCssExtractPlugin({
+        filename: "[contenthash].css",
+      }),
     ],
     module: {
       rules: [
