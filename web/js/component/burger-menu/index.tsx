@@ -66,7 +66,11 @@ export function BurgerMenu() {
       customCrossIcon={false}
       customBurgerIcon={false}
     >
+      <label htmlFor="search-input" styleName="label">
+        {t("search for a topic")}
+      </label>
       <Input
+        id="search-input"
         onChange={(e) => setSearchValue(e.target.value)}
         value={searchValue}
         styleName="input"

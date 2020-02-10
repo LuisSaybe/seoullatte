@@ -1,6 +1,10 @@
 @use '~web/sass/color';
 @use '~web/sass/page';
 
+.label {
+  display: none;
+}
+
 .item-list {
   display: flex;
   flex-direction: column;

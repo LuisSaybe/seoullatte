@@ -15,7 +15,7 @@
 }
 
 .text {
-  color: color.$main;
+  color: color.$definition;
 }
 
 @include media.not_phone() {
