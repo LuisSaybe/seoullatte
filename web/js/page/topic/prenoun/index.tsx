@@ -17,7 +17,7 @@ export function Prenoun() {
       <ArticleSection>
         {t("A prenoun is a noun which is always used to modify another noun.")}
         &nbsp;
-        {t("Recall there are two other ways to modify a noun.")}
+        {t("Recall there is another way to modify a noun.")}
         &nbsp;
         <Trans>
           We can&nbsp;
@@ -25,26 +25,12 @@ export function Prenoun() {
             change a predicate into a modifier
           </Anchor>
         </Trans>
-        .&nbsp;
-        {t("Or we can directly use an adjective.")}
         &nbsp;
         {t("Unlike adjectives, prenouns can not inflect or be conjugated.")}
         &nbsp;
         {t(
           "A prenoun is a delimiter, a number, a demonstrative or a question noun.",
         )}
-        &nbsp;
-        {t("Some counters are exclusively used with Sino-Korean numbers.")}
-        &nbsp;
-        {t(
-          " Some counters are used exclusively with Korean numbers when the number of objects is less than or equal to 20",
-        )}
-        &nbsp;
-        {t(
-          "Usually, if the number exceends 20, then a Sino-Korean number may be used",
-        )}
-        &nbsp; &nbsp;
-        {t("We give examples of each below.")}
       </ArticleSection>
       <ArticleSection>
         <ArticleTitle>{t("Examples")}</ArticleTitle>

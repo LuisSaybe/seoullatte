@@ -126,6 +126,18 @@ export function Counting() {
         {t(
           "Associated with each type of object is the a name for that type of object when counting them.",
         )}
+        &nbsp;
+        {t("Some counters are exclusively used with Sino-Korean numbers.")}
+        &nbsp;
+        {t(
+          " Some counters are used exclusively with Korean numbers when the number of objects is less than or equal to 20",
+        )}
+        &nbsp;
+        {t(
+          "Usually, if the number exceends 20, then a Sino-Korean number may be used",
+        )}
+        &nbsp; &nbsp;
+        {t("We give examples of each below.")}
         <Section>
           {t("Certain numbers are modified when used with a counter.")}
         </Section>
