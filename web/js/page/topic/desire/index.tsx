@@ -14,7 +14,7 @@ export function Desire() {
     <>
       <ArticleSection>
         <Trans>
-          Expressinh desire is acheived in the by the usage of the auxiliary
+          Expressing desire is acheived in the by the usage of the auxiliary
           adjecive&nbsp;
           <DefinitionPopup q="62657">싶다</DefinitionPopup>
         </Trans>

@@ -5,6 +5,10 @@ import {
   FetchStateContextType,
 } from "web/js/interface/fetch";
 import { IDefinitionContextType } from "web/js/interface/korean";
+import {
+  DispatchLocalStorageContextType,
+  LocalStorageContextType,
+} from "web/js/interface/local-storage";
 import { LocationsContextType } from "web/js/interface/route";
 import {
   DispatchSpeechSynthesisSettingsContextType,
@@ -15,10 +19,6 @@ import {
   IClickEventContextType,
   UserInterfaceSettingsContextType,
 } from "web/js/interface/user-interface";
-import {
-  DispatchLocalStorageContextType,
-  LocalStorageContextType,
-} from "../interface/local-storage";
 
 export const UserInterfaceSettingsContext = React.createContext<
   UserInterfaceSettingsContextType

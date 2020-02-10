@@ -3,7 +3,7 @@
 ```sh
 npm -g install yarn
 yarn
-docker build --rm -f docker/Dockerfile -t luissaybe/joseon .
+docker build --rm -f docker/Dockerfile -t luissaybe/seoullatte .
 ```
 
 ### watch for changes
@@ -15,7 +15,7 @@ yarn watch
 ### run project
 
 ```sh
-docker run -it --rm -p 80:80 -v $(pwd):/root/project luissaybe/joseon
+docker run -it --rm -p 80:80 -v $(pwd):/root/project luissaybe/seoullatte
 ```
 
 Korean Dictionary provided by https://krdict.korean.go.kr/openApi/openApiInfo

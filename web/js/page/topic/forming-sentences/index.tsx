@@ -76,14 +76,6 @@ export function FormingSentences() {
           <DefinitionPopup q="86116">요</DefinitionPopup>.
         </Section>
         <Section>
-          김덕수{t(":")}&nbsp;
-          <DefinitionPopup q="44506">저</DefinitionPopup>
-          <DefinitionPopup q="86258">도</DefinitionPopup>
-          &nbsp;
-          <DefinitionPopup q="85126">허기져</DefinitionPopup>
-          <DefinitionPopup q="86116">요</DefinitionPopup>.
-        </Section>
-        <Section>
           {t(
             "Note that 신선미 did not restate the subject of the sentence, since the subject (신선미) was implicitly understood in the conversation.",
           )}
