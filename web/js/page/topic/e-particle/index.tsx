@@ -3,6 +3,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
+import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import "./style.scss";
 
@@ -12,16 +13,38 @@ export function EParticle() {
   return (
     <>
       <ArticleSection>
-        <Trans>
-          The particle <DefinitionPopup q="86572">에</DefinitionPopup> attaches
-          to nouns and can have several meanings.
-        </Trans>
+        {t("The particle 에 attaches to nouns and can have several meanings.")}
       </ArticleSection>
       <ArticleSection>
         <SectionTitle>{t("Location")}</SectionTitle>
         {t(
-          "The particle 에 attaches to a noun to indicate that the target noun is the location of interest related to the following predicate which follows it.",
+          "The particle 에 attaches to a noun to indicate that the target noun is the location of interest related to the predicate which follows it.",
         )}
+        <Section>
+          <DefinitionPopup q="60319">어디</DefinitionPopup>
+          <DefinitionPopup q="86572">에</DefinitionPopup>
+          &nbsp;
+          <DefinitionPopup q="68796">있</DefinitionPopup>
+          <DefinitionPopup q="86571">어요</DefinitionPopup>?
+        </Section>
+      </ArticleSection>
+      <ArticleSection>
+        <SectionTitle>{t("Objective")}</SectionTitle>
+        {t(
+          "The particle 에 attaches to a noun which indicates that the noun was the objective of the predicate.",
+        )}
+        <Section>
+          <DefinitionPopup q="60931">나</DefinitionPopup>
+          <DefinitionPopup q="85853">는</DefinitionPopup>
+          &nbsp;
+          <DefinitionPopup q="20233">시험</DefinitionPopup>
+          <DefinitionPopup q="86572" senseIndexes={[6]}>
+            에
+          </DefinitionPopup>
+          &nbsp;
+          <DefinitionPopup q="85306">합격하</DefinitionPopup>
+          <DefinitionPopup q="85037">는다</DefinitionPopup>
+        </Section>
       </ArticleSection>
     </>
   );

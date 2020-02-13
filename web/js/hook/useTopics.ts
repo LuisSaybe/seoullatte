@@ -38,7 +38,7 @@ export function useTopics() {
         description: t("Learn about Hangul, Hanja and how to write in Korean"),
         name: t("The Korean Writing System"),
         path: TopicRoute.hangul,
-        searchTerms: "한글 한자",
+        searchTerms: "한글 한자 글",
       },
       {
         component: Syllable,
@@ -131,6 +131,22 @@ export function useTopics() {
         searchTerms: "",
       },
       {
+        component: SubjectAndTopic,
+        description: t(
+          "Learn how to indicate the topic or subject of a sentence",
+        ),
+        name: t("The subject and topic particle"),
+        path: TopicRoute.subjectAndTopicParticle,
+        searchTerms: "는 은 가 이",
+      },
+      {
+        component: FormingSentences,
+        description: t("Learn about how to form Korean sentences"),
+        name: t("Forming a Sentence"),
+        path: TopicRoute.formingSentences,
+        searchTerms: "sentence clause predicate",
+      },
+      {
         component: Copula,
         description: t("Learn about the predicate 이다 and 아니다"),
         name: t("이다 and 아니다"),
@@ -157,22 +173,6 @@ export function useTopics() {
         name: t("Predicates as Modifiers"),
         path: TopicRoute.predicateAsModifiers,
         searchTerms: "는 은 을",
-      },
-      {
-        component: SubjectAndTopic,
-        description: t(
-          "Learn how to indicate the topic or subject of a sentence",
-        ),
-        name: t("The subject and topic particle"),
-        path: TopicRoute.subjectAndTopicParticle,
-        searchTerms: "는 은 가 이",
-      },
-      {
-        component: FormingSentences,
-        description: t("Learn about how to form Korean sentences"),
-        name: t("Forming a Sentence"),
-        path: TopicRoute.formingSentences,
-        searchTerms: "sentence clause predicate",
       },
       {
         component: Prenoun,

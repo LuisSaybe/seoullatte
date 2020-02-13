@@ -124,19 +124,19 @@ export function Counting() {
         )}
         &nbsp;
         {t(
-          "Associated with each type of object is the a name for that type of object when counting them.",
+          "Associated with each type of object is the name for that type of object when counting them.",
         )}
         &nbsp;
         {t("Some counters are exclusively used with Sino-Korean numbers.")}
         &nbsp;
         {t(
-          " Some counters are used exclusively with Korean numbers when the number of objects is less than or equal to 20",
+          " Some counters are used exclusively with Korean numbers when the number of objects is less than or equal to 20.",
         )}
         &nbsp;
         {t(
-          "Usually, if the number exceends 20, then a Sino-Korean number may be used",
+          "Usually, if the number exceends 20, then a Sino-Korean number may be used.",
         )}
-        &nbsp; &nbsp;
+        &nbsp;
         {t("We give examples of each below.")}
         <Section>
           {t("Certain numbers are modified when used with a counter.")}
@@ -172,7 +172,9 @@ export function Counting() {
           &nbsp;
           <DefinitionPopup q="72469">해</DefinitionPopup>
         </Section>
-        {t("In formal cases, the format is [number] + [counter]의 + [noun].")}
+        <Section>
+          {t("In formal cases, the format is [number] + [counter]의 + [noun].")}
+        </Section>
         <Section>
           <DefinitionPopup q="17284">여덟</DefinitionPopup>
           &nbsp;
@@ -183,7 +185,7 @@ export function Counting() {
           &nbsp;
           <DefinitionPopup q="20195">노래</DefinitionPopup>
         </Section>
-        {t("Below we show examples of common counters.")}
+        <Section>{t("Below we show examples of common counters.")}</Section>
         <ArticleSection>
           <ArticleTitle>{t("Examples")}</ArticleTitle>
           <Section>

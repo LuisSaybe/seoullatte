@@ -113,6 +113,7 @@ export function Questions() {
           When one inquires about a quantity the numeral&nbsp;
           <DefinitionPopup q="66235">몇</DefinitionPopup> is used.
         </Trans>
+        &nbsp;
         <Trans>
           몇 is placed before a&nbsp;
           <Anchor to={TopicRoute.counting}>counter</Anchor>

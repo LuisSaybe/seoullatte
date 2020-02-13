@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { Route, Switch } from "react-router-dom";
 
@@ -115,14 +116,23 @@ export function Application() {
   }, [dispatchUserInterfaceSettings]);
 
   return (
-    <LocationsContext.Provider value={locations}>
-      <BurgerMenu />
-      <Switch>
-        <Route path={routes.configuration()} component={Configuration} />
-        <Route path={routes.aboutUs()} component={AboutUs} />
-        {articleRoutes}
-        <Route component={NotFound} />
-      </Switch>
-    </LocationsContext.Provider>
+    <>
+      <Helmet>
+        <link
+          href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+          rel="stylesheet"
+          type="text/css"
+        />
+      </Helmet>
+      <LocationsContext.Provider value={locations}>
+        <BurgerMenu />
+        <Switch>
+          <Route path={routes.configuration()} component={Configuration} />
+          <Route path={routes.aboutUs()} component={AboutUs} />
+          {articleRoutes}
+          <Route component={NotFound} />
+        </Switch>
+      </LocationsContext.Provider>
+    </>
   );
 }

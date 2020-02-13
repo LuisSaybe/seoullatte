@@ -67,14 +67,14 @@ export function BurgerMenu() {
       customBurgerIcon={false}
     >
       <label htmlFor="search-input" styleName="label">
-        {t("search for a topic")}
+        {t("Search for a topic")}
       </label>
       <Input
         id="search-input"
         onChange={(e) => setSearchValue(e.target.value)}
         value={searchValue}
         styleName="input"
-        placeholder={t("Search...")}
+        placeholder={t("search...")}
       />
       <Hr styleName="hr" />
       {topics.filter(filterTopics).map((topic) => (
