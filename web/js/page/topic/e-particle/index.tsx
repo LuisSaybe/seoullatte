@@ -42,8 +42,8 @@ export function EParticle() {
             에
           </DefinitionPopup>
           &nbsp;
-          <DefinitionPopup q="85306">합격하</DefinitionPopup>
-          <DefinitionPopup q="85037">는다</DefinitionPopup>
+          <DefinitionPopup q="85306">합격한</DefinitionPopup>
+          <DefinitionPopup q="85033">다</DefinitionPopup>
         </Section>
       </ArticleSection>
     </>

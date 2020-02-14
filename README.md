@@ -30,12 +30,9 @@ node node/import-common-words \
   --trans_lang=1
 ```
 
-### Get Certbot Certs
+### Get SSL Certs
 
-```sh
-sudo apt-get install python3-certbot-dns-digitalocean
-certbot certonly --dns-digitalocean --dns-digitalocean-credentials ~/digitalocean.ini -d seoullatte.com -d *.seoullatte.com
-```
+https://www.digitalocean.com/community/tutorials/how-to-use-certbot-standalone-mode-to-retrieve-let-s-encrypt-ssl-certificates-on-ubuntu-1804
 
 ### run with ssl
 
