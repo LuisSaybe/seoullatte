@@ -24,7 +24,7 @@ export function Hangul() {
           The writing system was introduced and promoted in 1446 CE by Sejong
           the Great. The original name was{" "}
           <DefinitionPopup q="69716">훈민정음</DefinitionPopup>. Prior to the
-          widespread usage of 한굴,{" "}
+          widespread usage of 한글,{" "}
           <DefinitionPopup q="72461">한자</DefinitionPopup>, a system composed
           of Chinese characters was used to write Korean language.
         </Trans>
