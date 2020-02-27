@@ -37,5 +37,5 @@ https://www.digitalocean.com/community/tutorials/how-to-use-certbot-standalone-m
 ### run with ssl
 
 ```
-docker run -dit --rm -p 80:80 -p 443:443 -v /root/certs:/root/certs luissaybe/joseon nginx -c /root/project/docker/nginx-https.conf
+docker run -dit --rm -p 80:80 -p 443:443 -v /root/certs:/root/certs luissaybe/seoullatte nginx -c /root/project/docker/nginx-https.conf
 ```
