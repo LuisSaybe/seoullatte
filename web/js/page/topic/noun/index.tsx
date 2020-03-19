@@ -43,9 +43,9 @@ export function Noun() {
         <Section>
           <TopicTitleMedium>{t("Sino-Korean nouns")}</TopicTitleMedium>
           <Table columns={3}>
-            <strong>{t("written in 한글")}</strong>
-            <strong>{t("written in Chinese")}</strong>
-            <strong>{t("translation")}</strong>
+            <span>{t("written in 한글")}</span>
+            <span>{t("written in Chinese")}</span>
+            <span>{t("translation")}</span>
             <DefinitionPopup q="63663">질문</DefinitionPopup>
             <Utterance voice={chineseVoice} text="質問">
               質問
@@ -66,9 +66,9 @@ export function Noun() {
         <Section>
           <TopicTitleMedium>{t("Native Korean Nouns")}</TopicTitleMedium>
           <Table columns={3}>
-            <strong>{t("written in 한글")}</strong>
-            <strong>{t("written in 한자")}</strong>
-            <strong>{t("translation")}</strong>
+            <span>{t("written in 한글")}</span>
+            <span>{t("written in 한자")}</span>
+            <span>{t("translation")}</span>
             <DefinitionPopup q="64367">겨울</DefinitionPopup>
             <Utterance text="겨울">冬</Utterance>
             <span>{t("winter")}</span>
@@ -83,9 +83,9 @@ export function Noun() {
         <Section>
           <TopicTitleMedium>{t("Loan words")}</TopicTitleMedium>
           <Table columns={3}>
-            <strong>{t("written in 한글")}</strong>
-            <strong>{t("Corresponding foreign word")}</strong>
-            <strong>{t("meaning in Korean")}</strong>
+            <span>{t("written in 한글")}</span>
+            <span>{t("Corresponding foreign word")}</span>
+            <span>{t("meaning in Korean")}</span>
             <DefinitionPopup q="24506">아르바이트</DefinitionPopup>
             <Utterance voice={germanVoice} text="arbeit">
               arbeit
