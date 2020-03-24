@@ -28,6 +28,7 @@ import { SpeechLevel } from "web/js/page/topic/speech-level";
 import { SubjectAndTopic } from "web/js/page/topic/subject-and-topic";
 import { Suffixes } from "web/js/page/topic/suffixes";
 import { Syllable } from "web/js/page/topic/syllable";
+import { Negation } from "web/js/page/topic/negation";
 
 export function useTopics() {
   const { t } = useTranslation();
@@ -159,6 +160,13 @@ export function useTopics() {
         name: t("있다 and 없다"),
         path: TopicRoute.existenceAndPosession,
         searchTerms: "있다 없다",
+      },
+      {
+        component: Negation,
+        description: t("Learn how to negate verbs and adjectives in Korean"),
+        name: t("Negation"),
+        path: TopicRoute.negation,
+        searchTerms: "안 지 않 negation negative",
       },
       {
         component: PastTense,

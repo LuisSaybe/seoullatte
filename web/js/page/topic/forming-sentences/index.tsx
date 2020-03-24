@@ -35,9 +35,10 @@ export function FormingSentences() {
         <Section>
           <DefinitionPopup q="71002">여동생</DefinitionPopup>
           <DefinitionPopup q="86289">이</DefinitionPopup>&nbsp;
-          <DefinitionPopup q="73276">학교</DefinitionPopup>
-          <DefinitionPopup q="86572">에</DefinitionPopup>&nbsp;
           <DefinitionPopup q="27500">가</DefinitionPopup>
+        </Section>
+        <Section>
+          <i>{t("Litte sister goes")}</i>
         </Section>
         <Section>
           {t(
@@ -52,11 +53,18 @@ export function FormingSentences() {
           <DefinitionPopup q="58272">먹</DefinitionPopup>
           <DefinitionPopup q="86571">어요</DefinitionPopup>
         </Section>
+        <Section>
+          <i>{t("I eat rice")}</i>
+        </Section>
       </ArticleSection>
       <ArticleSection>
         <SectionTitle>{t("Context based omission")}</SectionTitle>
         {t(
           "The subject or topic of a sentence is not added to Korean sentences when the topic or subject is implicitly understood.",
+        )}
+        &nbsp;
+        {t(
+          "Pronouns are the most commonly omitted parts of speech in Korean communication.",
         )}
         <Section>
           김덕수{t(":")}&nbsp; 신선미
@@ -65,6 +73,9 @@ export function FormingSentences() {
           <DefinitionPopup q="68719">었</DefinitionPopup>
           <DefinitionPopup q="86571">어요</DefinitionPopup>
           {t("?")}
+        </Section>
+        <Section>
+          <i>{t("Duksu Kim: Has Sunmi Sin eaten?")}</i>
         </Section>
         <Section>
           신선미{t(":")}&nbsp;
@@ -76,8 +87,11 @@ export function FormingSentences() {
           <DefinitionPopup q="86116">요</DefinitionPopup>.
         </Section>
         <Section>
+          <i>{t("Sunmi Sin: I have not eaten. I am hungry.")}</i>
+        </Section>
+        <Section>
           {t(
-            "Note that 신선미 did not restate the subject of the sentence, since the subject (신선미) was implicitly understood in the conversation.",
+            "As for Sunmi Sin's response, notice that neither the first sentence (안 먹었어요) nor the second sentence (배고파요) has an explicit subject, since the subject was already implicily understood.",
           )}
         </Section>
       </ArticleSection>

@@ -27,4 +27,5 @@ export enum TopicRoute {
   predicateAsModifiers = "/predicate-as-modifiers",
   subjectAndTopicParticle = "/subject-and-topic",
   formingSentences = "/forming-sentences",
+  negation = "/negation",
 }

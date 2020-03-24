@@ -5,6 +5,7 @@ import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { SectionTitle } from "web/js/component/section-title";
 import "./style.scss";
+import { Section } from "web/js/component/section";
 
 export function Copula() {
   const { t } = useTranslation();
@@ -30,18 +31,24 @@ export function Copula() {
       </ArticleSection>
       <ArticleSection>
         <SectionTitle>{t("Examples")}</SectionTitle>
-        <div>
+        <Section>
           <DefinitionPopup q="15689">깅아지</DefinitionPopup>
           <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
           <DefinitionPopup q="18779">고양이</DefinitionPopup>
           <DefinitionPopup q="26878">아니다</DefinitionPopup>
-        </div>
-        <div>
+        </Section>
+        <Section>
+          <i>{t("A dog is not a cat.")}</i>
+        </Section>
+        <Section>
           <DefinitionPopup q="17182">우리</DefinitionPopup>
           <DefinitionPopup q="30210">딸</DefinitionPopup>&nbsp;
           <DefinitionPopup q="62521">중학생</DefinitionPopup>
           <DefinitionPopup q="92101">이에요</DefinitionPopup>
-        </div>
+        </Section>
+        <Section>
+          <i>{t("Our daughter is a student.")}</i>
+        </Section>
       </ArticleSection>
     </>
   );

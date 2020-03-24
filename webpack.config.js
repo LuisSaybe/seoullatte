@@ -2,7 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = (env) => {
+module.exports = (env, argv) => {
   const settingsPath = path.resolve(__dirname, `web/js/settings/${env.env}`);
   const settings = require(settingsPath);
 
@@ -13,6 +13,7 @@ module.exports = (env) => {
       path.resolve(__dirname, "web/js/index.tsx"),
       path.resolve(__dirname, "web/sass/index.scss"),
     ],
+    devtool: argv.mode === "production" ? false : "inline-source-map",
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: "[contenthash].js",

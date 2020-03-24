@@ -54,6 +54,7 @@
     "react-router-dom": "^5.1.2",
     "react-toastify": "^5.5.0",
     "regenerator-runtime": "^0.13.5",
+    "request": "^2.88.2",
     "request-promise-native": "^1.0.8",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",

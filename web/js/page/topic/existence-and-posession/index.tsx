@@ -16,8 +16,9 @@ export function ExistenceAndPosession() {
     <>
       <ArticleSection>
         <Trans>
-          We explore the verbs <DefinitionPopup q="68796">있다</DefinitionPopup>
-          &nbsp; and <DefinitionPopup q="68796">없다</DefinitionPopup>.
+          We explore the adjectives&nbsp;
+          <DefinitionPopup q="68796">있다</DefinitionPopup>
+          &nbsp; and <DefinitionPopup q="89917">없다</DefinitionPopup>.
         </Trans>
         &nbsp;
         {t(
@@ -103,7 +104,7 @@ export function ExistenceAndPosession() {
             {t("?")}
           </div>
           <div>
-            B:&nbsp;ㄴ
+            B:&nbsp;
             <DefinitionPopup q="71212">재미있다</DefinitionPopup>
           </div>
         </Section>
