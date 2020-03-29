@@ -171,7 +171,7 @@ export function useTopics() {
       {
         component: PastTense,
         description: t("Learn about the past tense in Korean"),
-        name: t("Paste Tense"),
+        name: t("Past Tense"),
         path: TopicRoute.pastTense,
         searchTerms: "었 았 었었 았었 past tense",
       },

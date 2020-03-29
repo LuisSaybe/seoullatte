@@ -1,26 +1,11 @@
-### build
+### install, run project on port 80, watch files
 
 ```sh
-npm -g install yarn
-yarn
-docker build --rm -f docker/Dockerfile -t luissaybe/seoullatte .
-```
-
-### watch for changes
-
-```sh
-yarn watch
-```
-
-### run project
-
-```sh
-docker run -it --rm -p 80:80 -v $(pwd):/root/project luissaybe/seoullatte
+docker-compose up
 ```
 
 Korean Dictionary provided by https://krdict.korean.go.kr/openApi/openApiInfo
-
-Common korean words excel file derived from https://www.korean.go.kr/front_eng/down/down_02.do and then searching `한국어 학습용 어휘 목록`
+Downloadable files https://www.korean.go.kr/front_eng/down/down_01.do
 
 ### get common words file
 

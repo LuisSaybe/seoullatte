@@ -75,7 +75,7 @@ export function PastTense() {
         </Section>
         <Section>
           <Trans>
-            When an additional 었 is added to the first paste tense marker, the
+            When an additional 었 is added to the first past tense marker, the
             predicate's meaning is becomes more remote than the recent past. For
             example, <DefinitionPopup q="27500">갔</DefinitionPopup>
             <DefinitionPopup q="68838">었</DefinitionPopup>

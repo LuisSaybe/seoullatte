@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - ".:/root/project"
+  watch:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    entrypoint: yarn
+    command: yarn watch
+    volumes:
+      - ".:/root/project"

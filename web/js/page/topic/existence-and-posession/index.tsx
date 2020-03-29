@@ -16,20 +16,26 @@ export function ExistenceAndPosession() {
     <>
       <ArticleSection>
         <Trans>
-          We explore the adjectives&nbsp;
+          We explore the words&nbsp;
           <DefinitionPopup q="68796">있다</DefinitionPopup>
           &nbsp; and <DefinitionPopup q="89917">없다</DefinitionPopup>.
         </Trans>
         &nbsp;
         {t(
-          "These verbs are antonyms and are used in many ways in the Korean language.",
+          "있다 is either a verb or an adjective depending on its meaning while 없다 is an adjective.",
         )}
       </ArticleSection>
       <ArticleSection>
         <ArticleTitle>{t("Existence")}</ArticleTitle>
-        {t(
-          "The verbs 있다 and 없다 are used to describe the existence or non-existence of an object or event in physical space.",
-        )}
+        <Trans>
+          The adjectives&nbsp;
+          <DefinitionPopup senseIndexes={[12]} q="68797">
+            있다
+          </DefinitionPopup>
+          &nbsp; and <DefinitionPopup q="89917">없다</DefinitionPopup> are used
+          to describe the existence or non-existence of an object, event or
+          quality.
+        </Trans>
         <Section>
           <div>
             A:&nbsp;
@@ -47,6 +53,14 @@ export function ExistenceAndPosession() {
             <DefinitionPopup q="68796">있</DefinitionPopup>
             <DefinitionPopup q="86571">어요</DefinitionPopup>
           </div>
+          <Section>
+            <div>
+              A: <i>{t("Where is (the) school?")}</i>
+            </div>
+            <div>
+              B: <i>{t("(It) is in Busan.")}</i>
+            </div>
+          </Section>
         </Section>
         <Section>
           <div>
@@ -65,6 +79,14 @@ export function ExistenceAndPosession() {
             <DefinitionPopup q="68796">없</DefinitionPopup>
             <DefinitionPopup q="86571">어요</DefinitionPopup>
           </div>
+          <Section>
+            <div>
+              A: <i>{t("Is there coffee in (the) cup?")}</i>
+            </div>
+            <div>
+              B: <i>{t("There is not.")}</i>
+            </div>
+          </Section>
         </Section>
       </ArticleSection>
       <ArticleSection>

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./style.scss";
 
 interface IInterface extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  children: React.ReactNode;
   to?: string;
   button?: boolean;
   icon?: boolean;

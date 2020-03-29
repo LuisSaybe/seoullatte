@@ -9,6 +9,7 @@ import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import { useNavigateToHash } from "web/js/hook/useNavigateToHash";
 import { TopicRoute } from "web/js/interface/route";
+import { Table } from "web/js/component/table";
 import "./style.scss";
 
 export const S_IRREGULAR = "s-irregular";
@@ -37,16 +38,50 @@ export function IrregularPredicate() {
           <Trans>
             The predicate&nbsp;
             <DefinitionPopup q="92101">이다</DefinitionPopup> and&nbsp;
-            <DefinitionPopup q="26878">이니다</DefinitionPopup> both are
-            conjugated in a similar manner.
+            <DefinitionPopup q="26878">이니다</DefinitionPopup> are both
+            conjugated irregularly in the&nbsp;
+            <Anchor to={TopicRoute.politeSpeech}>polite</Anchor> and&nbsp;
+            <Anchor to={TopicRoute.intimateSpeech}>intimate</Anchor>&nbsp;
+            speech level.
           </Trans>
           &nbsp;
-          {t("In the polite speech level, 에요 is added to the stem.")}&nbsp;
           {t(
-            "In the intimate speech level, 이다 becomes 이야 when added to a noun with a 받침, otherwise 이다 becomes 야.",
+            "If the noun that 이다 attaches to ends in a consonant then the conjugation is 이에요 or 이야 is used otherwise 예요 or 야 is used.",
           )}
-          &nbsp;
-          {t("In the intimate speech level, 아니다 becomes 아니야.")}
+          <Section>
+            <Table columns={3}>
+              <span>{t("Predicate")}</span>
+              <Anchor to={TopicRoute.politeSpeech}>
+                {t("Polite Speech Level")}
+              </Anchor>
+              <Anchor to={TopicRoute.intimateSpeech}>
+                {t("Intimate Speech Level")}
+              </Anchor>
+              <DefinitionPopup q="92101">이다</DefinitionPopup>
+              <span>이에요</span>
+              <span>이야</span>
+              <DefinitionPopup q="92101">이다</DefinitionPopup>
+              <span>예요</span>
+              <span>야</span>
+              <DefinitionPopup q="26878">이니다</DefinitionPopup>
+              <span>아니에요</span>
+              <span>아니야</span>
+            </Table>
+          </Section>
+          <Section>
+            <Table columns={3}>
+              <span>{t("Predicate")}</span>
+              <Anchor to={TopicRoute.politeSpeech}>
+                {t("Polite Imperative")}
+              </Anchor>
+              <Anchor to={TopicRoute.intimateSpeech}>
+                {t("Intimate Imperative")}
+              </Anchor>
+              <DefinitionPopup q="69296">말다</DefinitionPopup>
+              <span>{t("마요 or 말아요")}</span>
+              <span>마</span>
+            </Table>
+          </Section>
         </Section>
         <SectionTitle>{t("Examples")}</SectionTitle>
         <div>
@@ -54,28 +89,16 @@ export function IrregularPredicate() {
           <DefinitionPopup q="26878">아니</DefinitionPopup>
           <DefinitionPopup q="80806">야</DefinitionPopup>
         </div>
-        <div>
+        <Section>
+          <i>{t("(It) is not bread")}</i>
+        </Section>
+        <Section>
           <DefinitionPopup q="73448">여우</DefinitionPopup>
           <DefinitionPopup q="92101">이</DefinitionPopup>
           <DefinitionPopup q="86106">에요</DefinitionPopup>
-        </div>
+        </Section>
         <Section>
-          <Trans>
-            The predicate&nbsp;
-            <DefinitionPopup q="69296">말다</DefinitionPopup> conjugates
-            irregularly in the&nbsp;
-            <Anchor to={TopicRoute.politeSpeech}>polite</Anchor>
-            &nbsp;imperative and the&nbsp;
-            <Anchor to={TopicRoute.intimateSpeech}>intimate</Anchor> imperative.
-          </Trans>
-          <Section>
-            <div>
-              {t("Polite imperative")}: {t("마요 or 말아요")}
-            </div>
-            <div>
-              {t("Intimate imperative")}: {t("마")}
-            </div>
-          </Section>
+          <i>{t("(It) is a fox")}</i>
         </Section>
       </ArticleSection>
       <ArticleSection>
@@ -168,7 +191,7 @@ export function IrregularPredicate() {
       <ArticleSection>
         <ArticleTitle>{t("ㄹ Irregular Predicates")}</ArticleTitle>
         {t(
-          "If a suffix beginning with ㄴ, ㅂ, or ㅅ is added to a predicate stem with a ㄹ 반침, then the ㄹ is removed.",
+          "If a suffix beginning with ㄴ, ㅂ, or ㅅ is added to a predicate stem with a ㄹ 받침, then the ㄹ is removed.",
         )}
         &nbsp;
         {t("This behaviour applies to all predicate stems ending in ㄹ.")}
