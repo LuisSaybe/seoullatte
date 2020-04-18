@@ -40,6 +40,9 @@ export function Questions() {
           {"?"}
         </Section>
         <Section>
+          <i>{t("What do (you) eat?")}</i>
+        </Section>
+        <Section>
           <Trans>
             In the same fashion, the pronouns&nbsp;
             <DefinitionPopup q="62078">누구</DefinitionPopup>,&nbsp;
@@ -47,6 +50,46 @@ export function Questions() {
             <DefinitionPopup q="17860">언제</DefinitionPopup> can be used to ask
             questions.
           </Trans>
+        </Section>
+        <Section>
+          <DefinitionPopup q="62078">누구</DefinitionPopup>
+          <DefinitionPopup q="80330">세</DefinitionPopup>
+          <DefinitionPopup q="86116">요</DefinitionPopup>
+          {"?"}
+        </Section>
+        <Section>
+          <i>{t("Who are you?")}</i>
+        </Section>
+        <Section>
+          <DefinitionPopup q="20250">요즘</DefinitionPopup>
+          <DefinitionPopup q="86111">은</DefinitionPopup>&nbsp;
+          <DefinitionPopup q="60319">어디</DefinitionPopup>
+          <DefinitionPopup q="85764">를</DefinitionPopup>&nbsp;
+          <DefinitionPopup q="27500">가</DefinitionPopup>
+          <DefinitionPopup q="86258">도</DefinitionPopup>&nbsp;
+          <DefinitionPopup q="78368">집값</DefinitionPopup>
+          <DefinitionPopup q="86289">이</DefinitionPopup>&nbsp;
+          <DefinitionPopup q="66318">비싸</DefinitionPopup>
+          <DefinitionPopup q="77333" senseIndexes={[1]}>
+            네
+          </DefinitionPopup>
+        </Section>
+        <Section>
+          <i>
+            {t(
+              "Nowadays house prices are expensive no matter where (one) goes.",
+            )}
+          </i>
+        </Section>
+        <Section>
+          <DefinitionPopup q="17860">언제</DefinitionPopup>
+          <DefinitionPopup q="70055">부터</DefinitionPopup>&nbsp;
+          <DefinitionPopup q="66567">시작할</DefinitionPopup>
+          <DefinitionPopup q="86120">까</DefinitionPopup>
+          {"?"}
+        </Section>
+        <Section>
+          <i>{t("From when shall (I) start?")}</i>
         </Section>
       </ArticleSection>
       <ArticleSection>
@@ -65,6 +108,9 @@ export function Questions() {
           <DefinitionPopup q="87438">나요</DefinitionPopup>
           {t("?")}
         </Section>
+        <Section>
+          <i>{t("How can I go to Incheon?")}</i>
+        </Section>
       </ArticleSection>
       <ArticleSection>
         <SectionTitle>{t("Asking about reasons or motives")}</SectionTitle>
@@ -80,9 +126,11 @@ export function Questions() {
           <DefinitionPopup q="86572">에</DefinitionPopup>&nbsp;
           <DefinitionPopup q="61181">늦</DefinitionPopup>
           <DefinitionPopup q="77326">게</DefinitionPopup>&nbsp;
-          <DefinitionPopup q="69514">오</DefinitionPopup>
-          <DefinitionPopup q="73807">구나</DefinitionPopup>
+          <DefinitionPopup q="69514">와</DefinitionPopup>
           {t("?")}
+        </Section>
+        <Section>
+          <i>{t("Why (do they) always come late (for) practice?")}</i>
         </Section>
       </ArticleSection>
       <ArticleSection>
@@ -90,14 +138,18 @@ export function Questions() {
         <Trans>
           When one wishes to ask which category or kind an object may belong to,
           the <Anchor to={TopicRoute.prenoun}>prenoun</Anchor>&nbsp;
-          <DefinitionPopup q="66237">무슨</DefinitionPopup> is used.
+          <DefinitionPopup q="66237">슨</DefinitionPopup> is used.
         </Trans>
         <Section>
+          <DefinitionPopup q="64390">너</DefinitionPopup>
+          <DefinitionPopup q="85853">는</DefinitionPopup>&nbsp;
           <DefinitionPopup q="66237">무슨</DefinitionPopup>&nbsp;
-          <DefinitionPopup q="60198">과목</DefinitionPopup>
-          <DefinitionPopup q="86111">은</DefinitionPopup>&nbsp;
+          <DefinitionPopup q="60198">과목</DefinitionPopup>&nbsp;
           <DefinitionPopup q="92032">제일</DefinitionPopup>&nbsp;
           <DefinitionPopup q="15317">무관심해</DefinitionPopup>?
+        </Section>
+        <Section>
+          <i>{t("Which subject are your most indifferent to?")}</i>
         </Section>
         <Section>
           <Trans>
@@ -132,6 +184,9 @@ export function Questions() {
           <DefinitionPopup q="86571">어요</DefinitionPopup>
           {t("?")}
         </Section>
+        <Section>
+          <i>{t("How many months did you spend?")}</i>
+        </Section>
         <SectionTitle>{t("Degree and extent")}</SectionTitle>
         <Trans>
           When one inquires about the degree to which something occurs, the
@@ -142,6 +197,9 @@ export function Questions() {
           <DefinitionPopup q="64682">마실</DefinitionPopup>
           <DefinitionPopup q="81065">래</DefinitionPopup>
           {t("?")}
+        </Section>
+        <Section>
+          <i>{t("How much would you like to drink?")}</i>
         </Section>
       </ArticleSection>
     </>
