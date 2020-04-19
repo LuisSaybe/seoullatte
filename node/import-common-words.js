@@ -3,6 +3,8 @@ const request = require("request-promise-native");
 const fs = require("fs");
 const glob = require("glob");
 
+const LOADED_WORDS_URL =
+  "https://luissaybe.nyc3.digitaloceanspaces.com/seoul-latte/words/1.json.gz";
 const VIEW_URL = "https://krdict.korean.go.kr/api/view";
 const timeout = 10000;
 
@@ -60,9 +62,18 @@ const arrayToGroups = (array, size) => {
 };
 
 const getWords = async () => {
-  const targetCodes = {};
-  const codes = await getTargetCodes();
-  const groups = arrayToGroups(codes, 10);
+  const targetCodes = JSON.parse(
+    await request({
+      uri: LOADED_WORDS_URL,
+      gzip: true,
+    }),
+  );
+  const codesToWrite = (await getTargetCodes()).filter(
+    (code) => !targetCodes.hasOwnProperty(code),
+  );
+  const groups = arrayToGroups(codesToWrite, 10);
+
+  console.log("fetching", codesToWrite.length);
 
   for (let index = 0; index < groups.length; index++) {
     console.log(`${index} / ${groups.length}`);
@@ -75,6 +86,8 @@ const getWords = async () => {
 
     await Promise.all(promises);
   }
+
+  console.log("writing", Object.keys(targetCodes).length, "codes");
 
   fs.writeFileSync(
     `${yargs.argv.trans_lang}.json`,

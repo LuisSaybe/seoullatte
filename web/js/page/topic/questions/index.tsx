@@ -138,7 +138,7 @@ export function Questions() {
         <Trans>
           When one wishes to ask which category or kind an object may belong to,
           the <Anchor to={TopicRoute.prenoun}>prenoun</Anchor>&nbsp;
-          <DefinitionPopup q="66237">슨</DefinitionPopup> is used.
+          <DefinitionPopup q="66237">무슨</DefinitionPopup> is used.
         </Trans>
         <Section>
           <DefinitionPopup q="64390">너</DefinitionPopup>

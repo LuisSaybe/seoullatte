@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+
+import { setClickEvent } from "web/js/redux/user-interface-event/action";
 
 export function useClickListener() {
-  const [event, setEvent] = useState();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const listener = (e) => {
-      setEvent(e);
+      dispatch(setClickEvent(e));
     };
 
     document.addEventListener("click", listener);
@@ -14,6 +17,4 @@ export function useClickListener() {
       document.removeEventListener("click", listener);
     };
   }, []);
-
-  return event;
 }

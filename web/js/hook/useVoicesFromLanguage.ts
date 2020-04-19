@@ -1,10 +1,12 @@
-import { useContext } from "react";
+import { useSelector } from "react-redux";
 
-import { SpeechSynthesisSettingsContext } from "web/js/context";
+import { RootState } from "web/js/redux/reducer";
 
 export function useVoicesFromLanguage(target: string) {
-  const speechSynthesisSettings = useContext(SpeechSynthesisSettingsContext);
-  return speechSynthesisSettings.voices?.filter(({ lang }) =>
+  const speechSynthesisSettings = useSelector(
+    (state: RootState) => state.userInterface.speechSynthesisSettings,
+  );
+  return speechSynthesisSettings?.voices?.filter(({ lang }) =>
     lang.includes(target),
   );
 }

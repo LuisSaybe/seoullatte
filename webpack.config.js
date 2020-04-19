@@ -7,13 +7,13 @@ module.exports = (env, argv) => {
   const settings = require(settingsPath);
 
   return {
+    devtool: env.mode === "development" ? "inline-source-map" : false,
     entry: [
       "core-js/stable",
       "regenerator-runtime/runtime",
       path.resolve(__dirname, "web/js/index.tsx"),
       path.resolve(__dirname, "web/sass/index.scss"),
     ],
-    devtool: argv.mode === "production" ? false : "inline-source-map",
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: "[contenthash].js",

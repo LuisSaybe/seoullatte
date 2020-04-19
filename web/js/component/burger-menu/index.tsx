@@ -1,45 +1,41 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Menu from "react-burger-menu/lib/menus/slide";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
 
 import { useTopics } from "web/js/hook/useTopics";
-import { ITopic } from "web/js/interface/korean";
-import { Operation } from "web/js/interface/reducer";
+import { Topic } from "web/js/interface/korean";
 
 import { Anchor } from "web/js/component/anchor";
 import { Hr } from "web/js/component/hr";
 import { Input } from "web/js/component/input";
-import {
-  DispatchUserInterfaceSettingsContext,
-  UserInterfaceSettingsContext,
-} from "web/js/context";
+import { RootState } from "web/js/redux/reducer";
+import { update } from "web/js/redux/user-interface/action";
 import styles from "./style.scss";
 
 export function BurgerMenu() {
   const { t } = useTranslation();
   const topics = useTopics();
-  const dispatchUserInterfaceSettings = useContext(
-    DispatchUserInterfaceSettingsContext,
+  const dispatch = useDispatch();
+  const burgerMenuOpen = useSelector<RootState>(
+    (state) => state.userInterface.burgerMenuOpen,
   );
-  const { burgerMenuOpen } = useContext(UserInterfaceSettingsContext);
   const [searchValue, setSearchValue] = useState("");
   const onLinkClick = () => {
-    dispatchUserInterfaceSettings({
-      data: {
+    dispatch(
+      update({
         burgerMenuOpen: false,
-      },
-      type: Operation.MERGE,
-    });
+      }),
+    );
   };
   const onStateChange = (state) => {
-    dispatchUserInterfaceSettings({
-      data: {
+    dispatch(
+      update({
         burgerMenuOpen: state.isOpen,
-      },
-      type: Operation.MERGE,
-    });
+      }),
+    );
   };
-  const filterTopics = (topic: ITopic) => {
+  const filterTopics = (topic: Topic) => {
     const includesName = topic.name
       .toLocaleLowerCase()
       .includes(searchValue.toLocaleLowerCase());

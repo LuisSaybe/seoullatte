@@ -5,8 +5,5 @@
   "sentry": {
     "dsn": "$SENTRY_DSN",
     "environment": "production"
-  },
-  "api": {
-    "uri": "https://api.seoullatte.com"
   }
 }

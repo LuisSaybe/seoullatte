@@ -1,28 +1,7 @@
-import { Operation } from "web/js/interface/reducer";
+import { SpeechSynthesisSettings } from "web/js/interface/speech-synthesis";
 
-export interface IUserInterface {
+export interface UserInterface {
   language?: string;
   burgerMenuOpen: boolean;
+  speechSynthesisSettings?: SpeechSynthesisSettings;
 }
-
-export interface IUserInterfaceSeetAction {
-  type: Operation.SET;
-  data: IUserInterface;
-}
-
-export interface IUserInterfaceUpdateAction {
-  type: Operation.MERGE;
-  data: Partial<IUserInterface>;
-}
-
-export type DispatchUserInterfaceSettingsContextType = (
-  action: IUserInterfaceSeetAction | IUserInterfaceUpdateAction,
-) => void;
-
-export type UserInterfaceSettingsContextType = IUserInterface;
-
-export type DisatchBurgerMenuContextType = ({
-  data: IBurgerMenuSettings,
-}) => void;
-
-export type IClickEventContextType = MouseEvent;

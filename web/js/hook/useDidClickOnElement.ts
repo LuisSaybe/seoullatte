@@ -1,8 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
-import { ClickEventContext } from "web/js/context";
+import { RootState } from "web/js/redux/reducer";
 
 export function useDidClickOnElement(element: Element) {
-  const event = useContext(ClickEventContext);
-  return element?.contains(event?.target as Element);
+  const event = useSelector(
+    (state: RootState) => state.userInterfaceEvent.clickEvent,
+  );
+  return element?.contains(event?.target as Node);
 }

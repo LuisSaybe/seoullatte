@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { ITopic } from "web/js/interface/korean";
+import { Topic } from "web/js/interface/korean";
 import { TopicRoute } from "web/js/interface/route";
 import { BoundNoun } from "web/js/page/topic/bound-noun";
 import { Copula } from "web/js/page/topic/copula";
@@ -30,7 +30,7 @@ import { Suffixes } from "web/js/page/topic/suffixes";
 import { Syllable } from "web/js/page/topic/syllable";
 import { Negation } from "web/js/page/topic/negation";
 
-export function useTopics() {
+export function useTopics(): Topic[] {
   const { t } = useTranslation();
   return useMemo(
     () => [

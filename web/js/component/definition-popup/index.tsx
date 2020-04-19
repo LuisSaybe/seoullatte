@@ -3,18 +3,17 @@ import { Manager, Popper, Reference } from "react-popper";
 
 import { useDidClickOnElement } from "web/js/hook/useDidClickOnElement";
 import {
-  IDefinitionDisplayOptions,
-  IKoreanDefinitionIdentifier,
+  DefinitionDisplayOptions,
+  KoreanDefinitionIdentifier,
 } from "web/js/interface/korean";
-
 import { Definition } from "web/js/component/definition";
 import "./style.scss";
 
-type Interface = IKoreanDefinitionIdentifier &
-  IDefinitionDisplayOptions &
+type Props = KoreanDefinitionIdentifier &
+  DefinitionDisplayOptions &
   React.HTMLAttributes<HTMLDivElement>;
 
-export function DefinitionPopup(props: Interface) {
+export function DefinitionPopup(props: Props) {
   const [showDefinition, setShowDefinition] = useState(false);
   const rootRef = useRef<HTMLButtonElement>();
   const didClickOnElement = useDidClickOnElement(rootRef.current);

@@ -47,7 +47,7 @@ export function Negation() {
           <DefinitionPopup q="66574" senseIndexes={[1]}>
             엽
           </DefinitionPopup>
-          <DefinitionPopup q="79402">니까</DefinitionPopup>
+          <DefinitionPopup q="79401">니까</DefinitionPopup>
         </Section>
         <Section>
           <i>{t("The meeting is not starting?")}</i>

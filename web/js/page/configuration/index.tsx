@@ -1,39 +1,32 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-
-import {
-  DispatchSpeechSynthesisSettingsContext,
-  LocationsContext,
-  SpeechSynthesisSettingsContext,
-} from "web/js/context";
+import { useDispatch, useSelector } from "react-redux";
 
 import { Language } from "web/js/helper/language";
 import { useLastRouteOrHome } from "web/js/hook/useLastRouteOrHome";
-import { Operation } from "web/js/interface/reducer";
-
 import { Anchor } from "web/js/component/anchor";
 import { Button } from "web/js/component/button";
+import { update } from "web/js/redux/user-interface/action";
+import { RootState } from "web/js/redux/reducer";
 import "./style.scss";
 
 export function Configuration() {
   const DEFAULT_SPEAKING_RATE = -1;
+  const dispatch = useDispatch();
   const { t } = useTranslation();
   const toRoute = useLastRouteOrHome();
-  const speechSynthesisSettings = useContext(SpeechSynthesisSettingsContext);
+  const speechSynthesisSettings = useSelector(
+    (state: RootState) => state.userInterface.speechSynthesisSettings,
+  );
   const [rate, setRate] = useState(
-    speechSynthesisSettings.rate
-      ? speechSynthesisSettings.rate
-      : DEFAULT_SPEAKING_RATE,
+    speechSynthesisSettings.rate ?? DEFAULT_SPEAKING_RATE,
   );
   const [voiceURI, setVoiceURI] = useState(
-    speechSynthesisSettings.voiceURI ? speechSynthesisSettings.voiceURI : null,
+    speechSynthesisSettings.voiceURI ?? null,
   );
 
   const onChange = (e) => setRate(Number(e.target.value));
   const onVoiceURIChange = (e) => setVoiceURI(e.target.value);
-  const dispatchSpeechSynthesisSettings = useContext(
-    DispatchSpeechSynthesisSettingsContext,
-  );
   const onSubmit = (e) => {
     e.preventDefault();
     const data = { ...speechSynthesisSettings };
@@ -48,17 +41,18 @@ export function Configuration() {
       data.rate = rate;
     }
 
-    dispatchSpeechSynthesisSettings({
-      data,
-      type: Operation.MERGE,
-    });
+    dispatch(
+      update({
+        speechSynthesisSettings: data,
+      }),
+    );
   };
 
   useEffect(() => {
-    if (speechSynthesisSettings.voiceURI) {
+    if (speechSynthesisSettings?.voiceURI) {
       setVoiceURI(speechSynthesisSettings.voiceURI);
     }
-  }, [speechSynthesisSettings.voiceURI]);
+  }, [speechSynthesisSettings?.voiceURI]);
 
   return (
     <form onSubmit={onSubmit} styleName="root">
@@ -78,7 +72,7 @@ export function Configuration() {
           ))}
         </select>
       </div>
-      {speechSynthesisSettings.voices && voiceURI && (
+      {voiceURI && (
         <div styleName="field">
           <label htmlFor="voice-uri">{t("Text-to-Speech Voice")}</label>
           <select

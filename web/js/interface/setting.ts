@@ -1,7 +1,4 @@
 export interface ISettings {
-  api: {
-    uri: string;
-  };
   ga?: {
     trackingId: string;
   };

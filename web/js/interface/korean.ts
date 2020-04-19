@@ -1,6 +1,4 @@
-export type IDefinitionContextType = [{ [id: string]: IDefinition }];
-
-export interface ITopic {
+export interface Topic {
   description: string;
   name: string;
   path: string;
@@ -8,14 +6,10 @@ export interface ITopic {
   component: React.ComponentType;
 }
 
-export interface IKoreanDefinitionIdentifier {
+export interface KoreanDefinitionIdentifier {
   q: string;
 }
 
-export interface IDefinitionDisplayOptions {
+export interface DefinitionDisplayOptions {
   senseIndexes?: number[];
-}
-
-export interface IDefinition {
-  getDefinition(): string;
 }

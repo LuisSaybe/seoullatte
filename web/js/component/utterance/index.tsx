@@ -1,11 +1,10 @@
-import PropTypes from "prop-types";
-import React, { useContext } from "react";
+import React from "react";
 
-import { SpeechSynthesisSettingsContext } from "web/js/context";
-
+import { useSelector } from "react-redux";
+import { RootState } from "web/js/redux/reducer";
 import "./style.scss";
 
-interface IIinterface extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   styleName?: string;
   text?: string;
@@ -13,9 +12,11 @@ interface IIinterface extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   voice?: SpeechSynthesisVoice;
 }
 
-export function Utterance(props: IIinterface) {
+export function Utterance(props: Props) {
   const { children, text, className } = props;
-  const speechSynthesisSettings = useContext(SpeechSynthesisSettingsContext);
+  const speechSynthesisSettings = useSelector(
+    (state: RootState) => state.userInterface.speechSynthesisSettings,
+  );
   const voice = speechSynthesisSettings?.voices?.find(
     ({ voiceURI }) => speechSynthesisSettings.voiceURI === voiceURI,
   );
