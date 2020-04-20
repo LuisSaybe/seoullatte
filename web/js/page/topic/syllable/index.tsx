@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { ArticleSection } from "web/js/component/article-section";
 import { Utterance } from "web/js/component/utterance";
 import "./style.scss";
+import { DefinitionPopup } from "web/js/component/definition-popup";
 
 export function Syllable() {
   const { t } = useTranslation();
@@ -20,25 +21,25 @@ export function Syllable() {
       <ArticleSection>
         <div>&bull; {t("One vowel.")}</div>
         <div>
-          {t("For example:")} <Utterance text="웨">웨</Utterance>
+          {t("For example:")} <DefinitionPopup q="31635">오</DefinitionPopup>
         </div>
       </ArticleSection>
       <ArticleSection>
         <div>&bull; {t("A vowel followed by a consonant.")}</div>
         <div>
-          {t("For example:")} <Utterance text="안">안</Utterance>
+          {t("For example:")} <DefinitionPopup q="74890">안</DefinitionPopup>
         </div>
       </ArticleSection>
       <ArticleSection>
         <div>&bull; {t("A consonant followed by a vowel.")}</div>
         <div>
-          {t("For example:")} <Utterance text="코">코</Utterance>
+          {t("For example:")} <DefinitionPopup q="46814">코</DefinitionPopup>
         </div>
       </ArticleSection>
       <ArticleSection>
         <div>&bull; {t("A consonant, a vowel and then a consonant.")}</div>
         <div>
-          {t("For example:")} <Utterance text="들">들</Utterance>
+          {t("For example:")} <DefinitionPopup q="86264">들</DefinitionPopup>
         </div>
       </ArticleSection>
       <ArticleSection>
@@ -47,7 +48,7 @@ export function Syllable() {
           {t("A consonant, a vowel, a consonant, and another consonant.")}
         </div>
         <div>
-          {t("For example:")} <Utterance text="젊">젊</Utterance>
+          {t("For example:")} <DefinitionPopup q="20178">값</DefinitionPopup>
         </div>
       </ArticleSection>
       <ArticleSection>
@@ -55,7 +56,7 @@ export function Syllable() {
           "The order in which a syllable is pronounced is from top to bottom and then left to right.",
         )}
         &nbsp;
-        {t("The syllable 젊 is read ㅈ ㅓ ㄹ ㅁ.")}
+        {t("The syllable 값 is read ㄱ ㅏ ㄹ ㅅ.")}
         &nbsp;
         {t("It is not guaranteed that a syllable pronunced how it is spelled.")}
         &nbsp;

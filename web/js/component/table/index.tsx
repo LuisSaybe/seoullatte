@@ -13,7 +13,7 @@ export function Table(props: IInterface) {
       ? { gridTemplateColumns: new Array(props.columns).fill("1fr").join(" ") }
       : {};
   return (
-    <div style={style} {...rest} styleName="root">
+    <div {...rest} style={style} styleName="root">
       {children}
     </div>
   );

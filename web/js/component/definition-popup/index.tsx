@@ -7,6 +7,7 @@ import {
   KoreanDefinitionIdentifier,
 } from "web/js/interface/korean";
 import { Definition } from "web/js/component/definition";
+import { UnstyledTextButton } from "web/js/component/unstyled-text-button";
 import "./style.scss";
 
 type Props = KoreanDefinitionIdentifier &
@@ -15,11 +16,11 @@ type Props = KoreanDefinitionIdentifier &
 
 export function DefinitionPopup(props: Props) {
   const [showDefinition, setShowDefinition] = useState(false);
-  const rootRef = useRef<HTMLButtonElement>();
+  const rootRef = useRef();
   const didClickOnElement = useDidClickOnElement(rootRef.current);
   const { children, q, senseIndexes } = props;
   const onClick = () => {
-    setShowDefinition(true);
+    setShowDefinition(!showDefinition);
   };
 
   useEffect(() => {
@@ -29,13 +30,13 @@ export function DefinitionPopup(props: Props) {
   }, [didClickOnElement]);
 
   return (
-    <button ref={rootRef} styleName="root" onClick={onClick}>
+    <span ref={rootRef}>
       <Manager>
         <Reference>
           {({ ref }) => (
-            <span styleName="text" ref={ref}>
+            <UnstyledTextButton onClick={onClick} styleName="text" ref={ref}>
               {children}
-            </span>
+            </UnstyledTextButton>
           )}
         </Reference>
         {showDefinition && (
@@ -50,6 +51,6 @@ export function DefinitionPopup(props: Props) {
           </Popper>
         )}
       </Manager>
-    </button>
+    </span>
   );
 }

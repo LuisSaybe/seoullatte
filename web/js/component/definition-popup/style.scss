@@ -1,4 +1,5 @@
 @use '~web/sass/color';
+@use '~web/sass/font';
 @use '~web/sass/media';
 
 .popup {
@@ -6,20 +7,12 @@
   min-width: 200px;
 }
 
-.root {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  background: none;
-  font-size: 1rem;
-}
-
-.text {
-  color: color.$definition;
-}
-
 @include media.not_phone() {
   .popup {
     max-width: 300px;
   }
+}
+
+.text {
+  color: color.$definition;
 }

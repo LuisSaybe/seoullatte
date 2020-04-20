@@ -42,65 +42,53 @@ export function Noun() {
         {t("Below are examples of each")}
         <Section>
           <TopicTitleMedium>{t("Sino-Korean nouns")}</TopicTitleMedium>
-          <Table columns={3}>
+          <Table columns={2}>
             <span>{t("written in 한글")}</span>
             <span>{t("written in Chinese")}</span>
-            <span>{t("translation")}</span>
             <DefinitionPopup q="63663">질문</DefinitionPopup>
             <Utterance voice={chineseVoice} text="質問">
               質問
             </Utterance>
-            <span>{t("question")}</span>
             <DefinitionPopup q="40295">도서관</DefinitionPopup>
             <Utterance voice={chineseVoice} text="图书馆">
               图书馆
             </Utterance>
-            <span>{t("library")}</span>
             <DefinitionPopup q="65504">동</DefinitionPopup>
             <Utterance voice={chineseVoice} text="東">
               冬
             </Utterance>
-            <span>{t("east")}</span>
           </Table>
         </Section>
         <Section>
           <TopicTitleMedium>{t("Native Korean Nouns")}</TopicTitleMedium>
-          <Table columns={3}>
+          <Table columns={2}>
             <span>{t("written in 한글")}</span>
             <span>{t("written in 한자")}</span>
-            <span>{t("translation")}</span>
             <DefinitionPopup q="64367">겨울</DefinitionPopup>
             <Utterance text="겨울">冬</Utterance>
-            <span>{t("winter")}</span>
             <DefinitionPopup q="27289">거북</DefinitionPopup>
             <Utterance text="거북">龜</Utterance>
-            <span>{t("turtle")}</span>
             <DefinitionPopup q="26802">곧</DefinitionPopup>
             <Utterance text="곧">卽</Utterance>
-            <span>{t("soon, immediately")}</span>
           </Table>
         </Section>
         <Section>
           <TopicTitleMedium>{t("Loan words")}</TopicTitleMedium>
-          <Table columns={3}>
+          <Table columns={2}>
             <span>{t("written in 한글")}</span>
             <span>{t("Corresponding foreign word")}</span>
-            <span>{t("meaning in Korean")}</span>
             <DefinitionPopup q="24506">아르바이트</DefinitionPopup>
             <Utterance voice={germanVoice} text="arbeit">
               arbeit
             </Utterance>
-            <span>{t("part time job")}</span>
             <DefinitionPopup q="51329">망토</DefinitionPopup>
             <Utterance voice={frenchVoice} text="monteau">
               monteau
             </Utterance>
-            <span>{t("cape")}</span>
             <DefinitionPopup q="72155">치즈</DefinitionPopup>
             <Utterance voice={englishVoice} text="cheese">
               cheese
             </Utterance>
-            <span>{t("cheese")}</span>
           </Table>
         </Section>
       </ArticleSection>

@@ -17,9 +17,11 @@ export function EParticle() {
       </ArticleSection>
       <ArticleSection>
         <SectionTitle>{t("Location")}</SectionTitle>
-        {t(
-          "The particle 에 attaches to a noun to indicate that the target noun is the location of interest related to the predicate which follows it.",
-        )}
+        <span styleName="text">
+          {t(
+            "The particle 에 attaches to a noun to indicate that the target noun is the location of interest related to the predicate which follows it.",
+          )}
+        </span>
         <Section>
           <DefinitionPopup q="60319">어디</DefinitionPopup>
           <DefinitionPopup q="86572">에</DefinitionPopup>

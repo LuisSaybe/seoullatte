@@ -77,11 +77,11 @@ export function Suffixes() {
           <Subsection>
             <div>
               &bull;&nbsp;
-              {t("The letter may be added alone as a new syllable 어 or 아.")}
+              {t("The letter may be added as a new syllable 어 or 아.")}
             </div>
             <div>
               &bull;&nbsp;
-              {t("The final vowel (if any) will change to another vowel.")}
+              {t("The final vowel (if any) may change to another vowel.")}
             </div>
             <div>&bull;&nbsp;{t("The letter may not be added at all.")}</div>
           </Subsection>

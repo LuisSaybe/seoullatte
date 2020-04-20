@@ -1,4 +1,5 @@
 @use '~web/sass/color';
+@use '~web/sass/layout';
 @use '~web/sass/media';
 
 .actions {
@@ -38,11 +39,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+
+  @include media.phone() {
+    padding: 10px layout.$horizontal-page-padding + 4px;
+  }
 }
 
 @include media.not_phone() {
   .root {
-    padding: 15px 30px;
+    padding: 16px layout.$horizontal-page-padding;
   }
 }

@@ -1,6 +1,7 @@
 ### install, run project on port 80, watch files
 
 ```sh
+# will need to run a 2nd time on your first install
 docker-compose up
 ```
 

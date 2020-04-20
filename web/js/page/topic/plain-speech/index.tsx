@@ -3,7 +3,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
 import { Section } from "web/js/component/section";
-
+import { SUFFIX_ADD_DOM_ID } from "web/js/page/topic/suffixes";
 import { Anchor } from "web/js/component/anchor";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
@@ -52,8 +52,10 @@ export function PlainSpeech() {
         <Section>
           <SectionTitle>{t("For imperative sentences")}</SectionTitle>
           <Trans>
-            <Anchor to={TopicRoute.suffixes}>ㅓ or ㅏ is added</Anchor> to the
-            verb stem followed by 라
+            <Anchor to={`${TopicRoute.suffixes}#${SUFFIX_ADD_DOM_ID}`}>
+              ㅓ or ㅏ is added
+            </Anchor>{" "}
+            to the verb stem followed by 라
           </Trans>
         </Section>
         <Section>
@@ -62,7 +64,7 @@ export function PlainSpeech() {
         </Section>
         <Section>
           {t(
-            "The imperative and proposotive conjugations are only valid for verbs and can not be conjugated with a tense marker.",
+            "The imperative and proposotive conjugations are only valid for verbs and can not be conjugated for tense.",
           )}
         </Section>
       </ArticleSection>

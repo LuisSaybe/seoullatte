@@ -1,12 +1,15 @@
+@use '~web/sass/font';
+
 html {
   font-size: 18px;
   height: 100%;
+  font-family: font.$default-font-family;
+  -webkit-text-size-adjust: none;
 }
 
 body {
   margin: 0;
   height: 100%;
-  font-family: "Open Sans", sans-serif;
 }
 
 :global {

@@ -29,6 +29,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^8.1.0",
     "babel-plugin-react-css-modules": "^5.2.6",
+    "copy-webpack-plugin": "^5.1.1",
     "core-js": "^3.6.5",
     "css-loader": "^3.5.2",
     "glob": "^7.1.6",

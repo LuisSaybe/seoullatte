@@ -94,8 +94,7 @@ export function IrregularPredicate() {
         </Section>
         <Section>
           <DefinitionPopup q="73448">여우</DefinitionPopup>
-          <DefinitionPopup q="92101">이</DefinitionPopup>
-          <DefinitionPopup q="86106">에요</DefinitionPopup>
+          <DefinitionPopup q="92101">예요</DefinitionPopup>
         </Section>
         <Section>
           <i>{t("(It) is a fox")}</i>

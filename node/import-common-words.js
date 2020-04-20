@@ -68,7 +68,8 @@ const getWords = async () => {
       gzip: true,
     }),
   );
-  const codesToWrite = (await getTargetCodes()).filter(
+  const searchedCodes = await getTargetCodes();
+  const codesToWrite = searchedCodes.filter(
     (code) => !targetCodes.hasOwnProperty(code),
   );
   const groups = arrayToGroups(codesToWrite, 10);
@@ -86,6 +87,12 @@ const getWords = async () => {
 
     await Promise.all(promises);
   }
+
+  Object.keys(targetCodes)
+    .filter((key) => !searchedCodes.includes(key))
+    .forEach((key) => {
+      delete targetCodes[key];
+    });
 
   console.log("writing", Object.keys(targetCodes).length, "codes");
 

@@ -1,12 +1,11 @@
 @use "~web/sass/media";
 
+$horizontal-page-padding: 12px;
+
 @mixin defaultLayout() {
-  @include media.phone() {
-    padding: 6px 12px;
-  }
+  padding: 6px $horizontal-page-padding;
 
   @include media.not_phone() {
-    padding: 16px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;

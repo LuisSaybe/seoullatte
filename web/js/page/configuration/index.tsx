@@ -18,23 +18,12 @@ export function Configuration() {
   const speechSynthesisSettings = useSelector(
     (state: RootState) => state.userInterface.speechSynthesisSettings,
   );
-  const [rate, setRate] = useState(
-    speechSynthesisSettings.rate ?? DEFAULT_SPEAKING_RATE,
-  );
   const [voiceURI, setVoiceURI] = useState(
     speechSynthesisSettings.voiceURI ?? null,
   );
-
-  const onChange = (e) => setRate(Number(e.target.value));
-  const onVoiceURIChange = (e) => setVoiceURI(e.target.value);
-  const onSubmit = (e) => {
-    e.preventDefault();
+  const onChange = (e) => {
+    const rate = Number(e.target.value);
     const data = { ...speechSynthesisSettings };
-
-    if (voiceURI) {
-      data.voiceURI = voiceURI;
-    }
-
     if (rate === DEFAULT_SPEAKING_RATE) {
       delete data.rate;
     } else {
@@ -47,6 +36,16 @@ export function Configuration() {
       }),
     );
   };
+  const onVoiceURIChange = (e) => {
+    dispatch(
+      update({
+        speechSynthesisSettings: {
+          ...speechSynthesisSettings,
+          voiceURI: e.target.value,
+        },
+      }),
+    );
+  };
 
   useEffect(() => {
     if (speechSynthesisSettings?.voiceURI) {
@@ -55,12 +54,15 @@ export function Configuration() {
   }, [speechSynthesisSettings?.voiceURI]);
 
   return (
-    <form onSubmit={onSubmit} styleName="root">
+    <div styleName="root">
       <div styleName="field">
-        <label htmlFor="speaking-rate">{t("Text-to-Speech Speed")}</label>
+        <label styleName="label" htmlFor="speaking-rate">
+          {t("Text-to-Speech Speed")}
+        </label>
         <select
+          styleName="select"
           id="speaking-rate"
-          value={rate}
+          value={speechSynthesisSettings.rate ?? DEFAULT_SPEAKING_RATE}
           onChange={onChange}
           onBlur={onChange}
         >
@@ -74,8 +76,11 @@ export function Configuration() {
       </div>
       {voiceURI && (
         <div styleName="field">
-          <label htmlFor="voice-uri">{t("Text-to-Speech Voice")}</label>
+          <label styleName="label" htmlFor="voice-uri">
+            {t("Text-to-Speech Voice")}
+          </label>
           <select
+            styleName="label"
             id="voice-uri"
             value={voiceURI}
             onChange={onVoiceURIChange}
@@ -95,8 +100,7 @@ export function Configuration() {
         <Anchor button to={toRoute}>
           {t("back")}
         </Anchor>
-        <Button>{t("save")}</Button>
       </div>
-    </form>
+    </div>
   );
 }

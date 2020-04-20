@@ -1,6 +1,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = (env, argv) => {
   const settingsPath = path.resolve(__dirname, `web/js/settings/${env.env}`);
@@ -26,6 +27,9 @@ module.exports = (env, argv) => {
       extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
     },
     plugins: [
+      new CopyWebpackPlugin([
+        { from: path.resolve(__dirname, "web/robots.txt"), to: "robots.txt" },
+      ]),
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, "web/index-template.html"),
         templateParameters: {

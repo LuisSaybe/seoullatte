@@ -1,12 +1,21 @@
 @use '~web/sass/color';
 @use '~web/sass/media';
 
+.article-anchor {
+  display: block;
+  margin-top: 12px;
+}
+
 .definition {
   margin-top: 6px;
 }
 
 .error {
   color: color.$error;
+}
+
+.speak-button {
+  color: color.$main;
 }
 
 .root {
@@ -22,7 +31,11 @@
   }
 }
 
-.title,
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+
 .sense {
   text-align: left;
 }
