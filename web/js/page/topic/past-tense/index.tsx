@@ -8,7 +8,6 @@ import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
 import { Subsection } from "web/js/component/subsection";
 import { TopicRoute } from "web/js/interface/route";
-import { SUFFIX_ADD_DOM_ID } from "web/js/page/topic/suffixes";
 
 import "./style.scss";
 
@@ -31,7 +30,7 @@ export function PastTense() {
             <div>
               &bull;&nbsp;
               <Trans>
-                <Anchor to={`${TopicRoute.suffixes}#${SUFFIX_ADD_DOM_ID}`}>
+                <Anchor to={TopicRoute.addingVowelToPredicateStem}>
                   Add ㅓ or ㅏ
                 </Anchor>
                 &nbsp; to the predicate stem.

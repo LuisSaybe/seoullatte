@@ -7,15 +7,14 @@ import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import "./style.scss";
 
-export function SubjectAndTopic() {
+export function TopicParticle() {
   const { t } = useTranslation();
 
   return (
     <>
       <ArticleSection>
-        <SectionTitle>{t("The Topic Particle")}</SectionTitle>
         {t(
-          "The topic particle can be added to a noun to or another particle to indicate that the marked word is the topic of the sentence.",
+          "The topic particle can be added to a noun to or another particle to indicate that the marked word is the topic of the clause.",
         )}
         &nbsp;
         {t(
@@ -62,41 +61,13 @@ export function SubjectAndTopic() {
           )}
           &nbsp;
           {t(
-            "Consequently, to introduce a new topic the topic particle will be used again.",
+            "Consequently, to introduce a new topic the topic particle can be used again.",
           )}
         </Section>
       </ArticleSection>
       <ArticleSection>
-        <SectionTitle>{t("The Subject Particle")}</SectionTitle>
-        {t(
-          "The subject particle is added to a word to indicate that it is the subject of a sentence.",
-        )}
-        &nbsp;
-        {t(
-          "If the predicate at the end of the clause is a verb the subject is the executor of the verb.",
-        )}
-        &nbsp;
-        {t(
-          "If the predicate at the end of the clause is an adjective then the subject has this quality described by the adjective.",
-        )}
-        &nbsp;
-        {t(
-          "If the predicate at the end of the clause is a copular then the copular describes the relationship directly between the subject and the noun which the copular accepts.",
-        )}
-        &nbsp;
-        {t(
-          "When added to a particle or noun, 이 is added for a word which has a 받침, otherwise 가 is added.",
-        )}
         <SectionTitle>{t("Examples")}</SectionTitle>
         <Trans>
-          <div>
-            <DefinitionPopup q="89180">네</DefinitionPopup>
-            <DefinitionPopup q="66341">가</DefinitionPopup>
-            &nbsp;
-            <DefinitionPopup senseIndexes={[1]} q="15186">
-              똑똑해
-            </DefinitionPopup>
-          </div>
           <div>
             <DefinitionPopup q="44506">저</DefinitionPopup>
             <DefinitionPopup q="85851" senseIndexes={[0, 1, 2]}>
@@ -105,12 +76,6 @@ export function SubjectAndTopic() {
             &nbsp;
             <DefinitionPopup q="58161">사람</DefinitionPopup>
             <DefinitionPopup q="92101">이에요</DefinitionPopup>
-          </div>
-          <div>
-            <DefinitionPopup q="15689">강아지</DefinitionPopup>
-            <DefinitionPopup q="66341">가</DefinitionPopup>
-            &nbsp;
-            <DefinitionPopup q="79033">좋아</DefinitionPopup>
           </div>
         </Trans>
       </ArticleSection>

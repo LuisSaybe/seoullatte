@@ -12,9 +12,7 @@ import { TopicRoute } from "web/js/interface/route";
 import { S_IRREGULAR } from "web/js/page/topic/irregular-predicate";
 import "./style.scss";
 
-export const SUFFIX_ADD_DOM_ID = "add";
-
-export function Suffixes() {
+export function AddingVowelsToPredicateStems() {
   const { t } = useTranslation();
   const navigate = useNavigateToHash();
 
@@ -26,36 +24,7 @@ export function Suffixes() {
     <>
       <ArticleSection>
         {t(
-          "It is often required to add a suffix to a predicate or ending in order to change the meaning of a predicate, to change the meaning of the sentence or to connect two clauses.",
-        )}
-        &nbsp;
-        {t("We discuss two types of suffixes and their rules.")}
-      </ArticleSection>
-      <ArticleSection>
-        <SectionTitle>{t("받침 based changes")}</SectionTitle>
-        <Trans>
-          If a word's final letter is a consonant this letter is reffered to as
-          a&nbsp;
-          <DefinitionPopup senseIndexes={[1]} q="56544">
-            받침
-          </DefinitionPopup>
-          .
-        </Trans>
-        &nbsp;
-        {t(
-          "For example, the word 방 has a 받침 since it ends in the consonant ㅇ while 여자 does not have a 받침 since the final letter ㅏ is a vowel.",
-        )}
-        &nbsp;
-        {t("Some suffixes change based on whether a word has a 받침 or not.")}
-        &nbsp;
-        {t(
-          "Usually, in these cases a 받침 will be added to the final syllable if it does not contain one.",
-        )}
-      </ArticleSection>
-      <ArticleSection id={SUFFIX_ADD_DOM_ID}>
-        <SectionTitle>{t("Adding ㅓ or ㅏ to a predicate stem")}</SectionTitle>
-        {t(
-          "Some suffixes require adding ㅓ or ㅏ to a predicate stem. We discuss how to determine which is added.",
+          "Some endings require adding ㅓ or ㅏ to a predicate stem. We discuss how to determine which is added.",
         )}
         &nbsp;
         <Trans>
@@ -145,7 +114,7 @@ export function Suffixes() {
         <SectionTitle>{t("Examples")}</SectionTitle>
         <div styleName="table">
           <span>Predicate</span>
-          <span></span>
+          <span>Modified Stem</span>
           <DefinitionPopup q="73277">하다</DefinitionPopup>
           <span>해</span>
           <DefinitionPopup q="89858" senseIndexes={[1]}>
@@ -169,11 +138,6 @@ export function Suffixes() {
           <DefinitionPopup q="27500">가다</DefinitionPopup>
           <span>가</span>
         </div>
-        <Section>
-          {t(
-            "In the last example, notice that ㄲ was not written with a vowel, certain irregular conjugations can remove vowels from stems before adding ㅓ or ㅏ.",
-          )}
-        </Section>
       </ArticleSection>
     </>
   );

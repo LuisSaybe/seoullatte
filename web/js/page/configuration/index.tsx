@@ -67,7 +67,7 @@ export function Configuration() {
           onBlur={onChange}
         >
           <option value={DEFAULT_SPEAKING_RATE}>{t("default")}</option>
-          {[0.5, 1].map((defaultRate) => (
+          {[0.5, 0.7, 1].map((defaultRate) => (
             <option key={defaultRate} value={defaultRate}>
               {defaultRate}
             </option>

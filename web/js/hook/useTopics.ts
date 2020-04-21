@@ -25,10 +25,12 @@ import { PredicateAsModifier } from "web/js/page/topic/predicates-as-modifiers";
 import { Prenoun } from "web/js/page/topic/prenoun";
 import { Questions } from "web/js/page/topic/questions";
 import { SpeechLevel } from "web/js/page/topic/speech-level";
-import { SubjectAndTopic } from "web/js/page/topic/subject-and-topic";
-import { Suffixes } from "web/js/page/topic/suffixes";
 import { Syllable } from "web/js/page/topic/syllable";
 import { Negation } from "web/js/page/topic/negation";
+import { BatchimSuffix } from "web/js/page/topic/batchim-suffix";
+import { AddingVowelsToPredicateStems } from "web/js/page/topic/adding-vowels-to-predicate-stems";
+import { SubjectParticle } from "web/js/page/topic/subject-particle";
+import { TopicParticle } from "web/js/page/topic/topic-particle";
 
 export function useTopics(): Topic[] {
   const { t } = useTranslation();
@@ -88,11 +90,18 @@ export function useTopics(): Topic[] {
         searchTerms: "",
       },
       {
-        component: Suffixes,
-        description: t("Learn how to add suffixes to predicate stems."),
-        name: t("Suffixes"),
-        path: TopicRoute.suffixes,
-        searchTerms: "받침",
+        component: AddingVowelsToPredicateStems,
+        description: t("Adding 어 or 아 to a predicate stem"),
+        name: t("Adding ㅓ or ㅏ to a predicate stem"),
+        path: TopicRoute.addingVowelToPredicateStem,
+        searchTerms: "ㅓ ㅏ 어 아",
+      },
+      {
+        component: BatchimSuffix,
+        description: t("Learn adding 으 to predicates stems."),
+        name: t("Adding 으 to Predicates Stems"),
+        path: TopicRoute.addingUToPredicates,
+        searchTerms: "으 받침 batchim",
       },
       {
         component: DeferentialSpeech,
@@ -132,13 +141,18 @@ export function useTopics(): Topic[] {
         searchTerms: "",
       },
       {
-        component: SubjectAndTopic,
-        description: t(
-          "Learn how to indicate the topic or subject of a sentence",
-        ),
-        name: t("The subject and topic particle"),
-        path: TopicRoute.subjectAndTopicParticle,
-        searchTerms: "는 은 가 이",
+        component: SubjectParticle,
+        description: t("Learn how to use the subject particle 이 and 가"),
+        name: t("The Subject Particle"),
+        path: TopicRoute.subjectParticle,
+        searchTerms: "가 이 subject",
+      },
+      {
+        component: TopicParticle,
+        description: t("Learn how to use the subject particle 는 and 은"),
+        name: t("The Topic Particle"),
+        path: TopicRoute.topicParticle,
+        searchTerms: t("는 은 topic"),
       },
       {
         component: FormingSentences,

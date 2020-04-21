@@ -56,7 +56,7 @@ export function Syllable() {
           "The order in which a syllable is pronounced is from top to bottom and then left to right.",
         )}
         &nbsp;
-        {t("The syllable 값 is read ㄱ ㅏ ㄹ ㅅ.")}
+        {t("The syllable 값 is read ㄱ ㅏ ㅂ ㅅ.")}
         &nbsp;
         {t("It is not guaranteed that a syllable pronunced how it is spelled.")}
         &nbsp;

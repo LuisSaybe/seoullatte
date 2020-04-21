@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { Anchor } from "web/js/component/anchor";
@@ -7,7 +7,6 @@ import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
-import { useNavigateToHash } from "web/js/hook/useNavigateToHash";
 import { TopicRoute } from "web/js/interface/route";
 import { Table } from "web/js/component/table";
 import "./style.scss";
@@ -16,11 +15,6 @@ export const S_IRREGULAR = "s-irregular";
 
 export function IrregularPredicate() {
   const { t } = useTranslation();
-  const navigate = useNavigateToHash();
-
-  useEffect(() => {
-    navigate();
-  }, [navigate]);
 
   return (
     <>
@@ -38,7 +32,7 @@ export function IrregularPredicate() {
           <Trans>
             The predicate&nbsp;
             <DefinitionPopup q="92101">이다</DefinitionPopup> and&nbsp;
-            <DefinitionPopup q="26878">이니다</DefinitionPopup> are both
+            <DefinitionPopup q="26878">아니다</DefinitionPopup> are both
             conjugated irregularly in the&nbsp;
             <Anchor to={TopicRoute.politeSpeech}>polite</Anchor> and&nbsp;
             <Anchor to={TopicRoute.intimateSpeech}>intimate</Anchor>&nbsp;
@@ -46,7 +40,7 @@ export function IrregularPredicate() {
           </Trans>
           &nbsp;
           {t(
-            "If the noun that 이다 attaches to ends in a consonant then the conjugation is 이에요 or 이야 is used otherwise 예요 or 야 is used.",
+            "이에요 and 이야 are affixed to a noun ending in a vowel. 예요 and 야 are affixed to a noun ending in a consonant.",
           )}
           <Section>
             <Table columns={3}>
@@ -63,7 +57,7 @@ export function IrregularPredicate() {
               <DefinitionPopup q="92101">이다</DefinitionPopup>
               <span>예요</span>
               <span>야</span>
-              <DefinitionPopup q="26878">이니다</DefinitionPopup>
+              <DefinitionPopup q="26878">아니다</DefinitionPopup>
               <span>아니에요</span>
               <span>아니야</span>
             </Table>
