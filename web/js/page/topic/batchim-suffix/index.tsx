@@ -3,11 +3,10 @@ import { Trans, useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
-import { SectionTitle } from "web/js/component/section-title";
+import { UtteranceButton } from "web/js/component/utterance-button";
 import { useNavigateToHash } from "web/js/hook/useNavigateToHash";
-import "./style.scss";
 import { Section } from "web/js/component/section";
-import { Utterance } from "web/js/component/utterance";
+import "./style.scss";
 
 export function BatchimSuffix() {
   const { t } = useTranslation();
@@ -35,38 +34,42 @@ export function BatchimSuffix() {
         &nbsp;
         {t("Some suffixes change based on whether a word has a 받침 or not.")}
         &nbsp;
+        {t(
+          "The honorific suffix 시 will become 으시 when added to a predicate stem that has a 받침.",
+        )}
+        &nbsp;
         <Section>
           {t(
-            "The predicate stem 괜찮 has a 받침 and so when combined with the honorifix suffix 시, a 으시 will be placed after them stem.",
+            "The predicate stem 괜찮 has a 받침 and so when combined with the honorific suffix 시, a 으시 will be placed after them stem.",
           )}
         </Section>
-        <Section>
-          <DefinitionPopup q="60097">괜찮</DefinitionPopup>
-          <DefinitionPopup q="80329">으세</DefinitionPopup>
-          <DefinitionPopup q="86116">요</DefinitionPopup>
-          {t("?")}
-        </Section>
-        <Section>
+        <Section styleName="dialog-grid">
+          <div>
+            <DefinitionPopup q="60097">괜찮</DefinitionPopup>
+            <DefinitionPopup q="80329">으세</DefinitionPopup>
+            <DefinitionPopup q="86116">요</DefinitionPopup>
+            {t("?")}
+          </div>
+          <UtteranceButton text="괜찮으세요?" />
           <i>{t("Are (you) ok?")}</i>
-        </Section>
-        <Section>
-          {t(
-            "In contrast the predicate stem 하 does not have a 받침 when the same ending is added.",
-          )}
-        </Section>
-        <Section>
-          <DefinitionPopup q="32205">누나</DefinitionPopup>
-          <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
-          <DefinitionPopup q="73277">하</DefinitionPopup>
-          <DefinitionPopup q="80330">시</DefinitionPopup>
-          <DefinitionPopup q="80259">면</DefinitionPopup>&nbsp;
-          <DefinitionPopup q="62841">시간</DefinitionPopup>
-          <DefinitionPopup q="86289">이</DefinitionPopup>&nbsp;
-          <DefinitionPopup q="26902">천천히</DefinitionPopup>&nbsp;
-          <DefinitionPopup q="82142">지나</DefinitionPopup>
-          <DefinitionPopup q="86116">요</DefinitionPopup>
-        </Section>
-        <Section>
+          <span></span>
+          <span>
+            {t("In contrast the predicate stem 하 does not have a 받침.")}
+          </span>
+          <span></span>
+          <div>
+            <DefinitionPopup q="32205">누나</DefinitionPopup>
+            <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="73277">하</DefinitionPopup>
+            <DefinitionPopup q="80330">시</DefinitionPopup>
+            <DefinitionPopup q="80259">면</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="62841">시간</DefinitionPopup>
+            <DefinitionPopup q="86289">이</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="26902">천천히</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="82142">지나</DefinitionPopup>
+            <DefinitionPopup q="86116">요</DefinitionPopup>
+          </div>
+          <UtteranceButton text="누나가 하시면 시간이 천천히 지나요" />
           <i>{t("When (my) older sister does (it) time passes slowly.")}</i>
         </Section>
       </ArticleSection>

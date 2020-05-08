@@ -82,9 +82,7 @@ export function useTopics(): Topic[] {
       },
       {
         component: SpeechLevel,
-        description: t(
-          "Learn about the different levels of Speech in the Korean language.",
-        ),
+        description: t("Learn about the different levels of speech in Korean"),
         name: t("Speech Level"),
         path: TopicRoute.speechLevel,
         searchTerms: "",
@@ -98,7 +96,7 @@ export function useTopics(): Topic[] {
       },
       {
         component: BatchimSuffix,
-        description: t("Learn adding 으 to predicates stems."),
+        description: t("Adding 으 to predicate stems"),
         name: t("Adding 으 to Predicates Stems"),
         path: TopicRoute.addingUToPredicates,
         searchTerms: "으 받침 batchim",
@@ -114,14 +112,14 @@ export function useTopics(): Topic[] {
       },
       {
         component: IntimateSpeech,
-        description: t("Learn about the The Intimate Speech Level in Korean"),
+        description: t("Learn about the the Intimate Speech Level in Korean"),
         name: t("The Intimate Speech Level"),
         path: TopicRoute.intimateSpeech,
         searchTerms: "",
       },
       {
         component: PoliteSpeech,
-        description: t("Learn about the The Polite Speech Level in Korean"),
+        description: t("Learn about the Polite Speech Level in Korean"),
         name: t("The Polite Speech Level"),
         path: TopicRoute.politeSpeech,
         searchTerms: "아요 어요 요",

@@ -5,6 +5,7 @@ import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
+import { UtteranceButton } from "web/js/component/utterance-button";
 import "./style.scss";
 
 export function FormingSentences() {
@@ -60,38 +61,39 @@ export function FormingSentences() {
       <ArticleSection>
         <SectionTitle>{t("Context based omission")}</SectionTitle>
         {t(
-          "The subject or topic of a sentence is not added to Korean sentences when the topic or subject is implicitly understood.",
+          "The subject or topic of a sentence can be omitted when the subject or topic is implicitly understood.",
         )}
         &nbsp;
         {t(
           "Pronouns are the most commonly omitted parts of speech in Korean communication.",
         )}
-        <Section>
-          김덕수{t(":")}&nbsp; 신선미
-          <DefinitionPopup q="85853">는</DefinitionPopup>&nbsp;
-          <DefinitionPopup q="58272">먹</DefinitionPopup>
-          <DefinitionPopup q="68719">었</DefinitionPopup>
-          <DefinitionPopup q="86571">어요</DefinitionPopup>
-          {t("?")}
-        </Section>
-        <Section>
+        <Section styleName="dialog-grid">
+          <div>
+            김덕수{t(":")}&nbsp; 신선미
+            <DefinitionPopup q="85853">는</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="58272">먹</DefinitionPopup>
+            <DefinitionPopup q="68719">었</DefinitionPopup>
+            <DefinitionPopup q="86571">어요</DefinitionPopup>
+            {t("?")}
+          </div>
+          <UtteranceButton text="신선미는 먹었어요?" />
           <i>{t("Duksu Kim: Has Sunmi Sin eaten?")}</i>
-        </Section>
-        <Section>
-          신선미{t(":")}&nbsp;
-          <DefinitionPopup q="71372">안</DefinitionPopup>&nbsp;
-          <DefinitionPopup q="58272">먹</DefinitionPopup>
-          <DefinitionPopup q="68719">었</DefinitionPopup>
-          <DefinitionPopup q="86571">어요</DefinitionPopup>.&nbsp;
-          <DefinitionPopup q="29316">배고파</DefinitionPopup>
-          <DefinitionPopup q="86116">요</DefinitionPopup>.
-        </Section>
-        <Section>
-          <i>{t("Sunmi Sin: I have not eaten. I am hungry.")}</i>
+          <span></span>
+          <div>
+            신선미{t(":")}&nbsp;
+            <DefinitionPopup q="71372">안</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="58272">먹</DefinitionPopup>
+            <DefinitionPopup q="68719">었</DefinitionPopup>
+            <DefinitionPopup q="86571">어요</DefinitionPopup>.&nbsp;
+            <DefinitionPopup q="29316">배고파</DefinitionPopup>
+            <DefinitionPopup q="86116">요</DefinitionPopup>.
+          </div>
+          <UtteranceButton text="안 먹었어요. 배고파요." />
+          <i>{t("Sunmi Sin: (I) have not eaten. (I) am hungry.")}</i>
         </Section>
         <Section>
           {t(
-            "As for Sunmi Sin's response, notice that neither the first sentence (안 먹었어요) nor the second sentence (배고파요) has an explicit subject, since the subject was already implicily understood.",
+            "As for Sunmi Sin's response, notice that neither the first sentence (안 먹었어요) nor the second sentence (배고파요) has an explicit subject.",
           )}
         </Section>
       </ArticleSection>

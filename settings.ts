@@ -1,3 +1,3 @@
-import { ISettings } from "web/js/interface/setting";
+import { Settings } from "web/js/interface/setting";
 
-export default {} as ISettings;
+export default {} as Settings;

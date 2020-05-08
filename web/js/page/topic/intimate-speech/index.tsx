@@ -47,7 +47,7 @@ export function IntimateSpeech() {
               "2. The stem does not contain a vowel, and so 어 is added to the stem.",
             )}
           </div>
-          <div>{t("Conjugated preciate")} 꺼</div>
+          <div>{t("Conjugated predicate")} 꺼</div>
         </Section>
         <Section>
           <div>
@@ -77,7 +77,7 @@ export function IntimateSpeech() {
               "2. The vowel pronounced closest to the end of the word is ㅜ and so 어 is added to the stem.",
             )}
           </div>
-          <div>{t("Conjugated preciate")} 아름다워</div>
+          <div>{t("Conjugated predicate")} 아름다워</div>
         </Section>
         <Section>
           <div>

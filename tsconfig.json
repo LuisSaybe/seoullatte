@@ -10,7 +10,8 @@
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
-      "settings": ["settings"]
+      "settings": ["settings"],
+      "web": ["web"]
     },
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,

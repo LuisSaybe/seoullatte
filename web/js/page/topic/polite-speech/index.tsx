@@ -23,7 +23,9 @@ export function PoliteSpeech() {
         </Trans>
         &nbsp;
         <Trans>
-          The predicate 이다 and 아니다 are formed <Anchor to={TopicRoute.irregularPredicate}>irregularly</Anchor> in the polite speech level.
+          The predicate 이다 and 아니다 are formed{" "}
+          <Anchor to={TopicRoute.irregularPredicate}>irregularly</Anchor> in the
+          polite speech level.
         </Trans>
       </Section>
       <ArticleSection>
@@ -39,7 +41,7 @@ export function PoliteSpeech() {
               "2. The stem does not contain a vowel, and so 어요 is added to the stem.",
             )}
           </div>
-          <div>{t("Conjugated preciate")} 꺼</div>
+          <div>{t("Conjugated predicate")} 꺼</div>
         </Section>
         <Section>
           <div>
@@ -69,7 +71,7 @@ export function PoliteSpeech() {
               "2. The vowel pronounced closest to the end of the word is ㅜ and so 어요 is added to the stem.",
             )}
           </div>
-          <div>{t("Conjugated preciate")} 아름다워요</div>
+          <div>{t("Conjugated predicate")} 아름다워요</div>
         </Section>
         <Section>
           <div>

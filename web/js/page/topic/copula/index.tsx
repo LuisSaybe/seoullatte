@@ -4,8 +4,9 @@ import { Trans, useTranslation } from "react-i18next";
 import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { SectionTitle } from "web/js/component/section-title";
-import "./style.scss";
+import { UtteranceButton } from "web/js/component/utterance-button";
 import { Section } from "web/js/component/section";
+import "./style.scss";
 
 export function Copula() {
   const { t } = useTranslation();
@@ -30,23 +31,24 @@ export function Copula() {
         )}
       </ArticleSection>
       <ArticleSection>
-        <SectionTitle>{t("Examples")}</SectionTitle>
-        <Section>
-          <DefinitionPopup q="15689">깅아지</DefinitionPopup>
-          <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
-          <DefinitionPopup q="18779">고양이</DefinitionPopup>
-          <DefinitionPopup q="26878">아니다</DefinitionPopup>
-        </Section>
-        <Section>
+        <Section styleName="dialog-grid">
+          <div>
+            <DefinitionPopup q="15689">강아지</DefinitionPopup>
+            <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="18779">고양이</DefinitionPopup>
+            <DefinitionPopup q="26878">아니다</DefinitionPopup>
+          </div>
+          <UtteranceButton text="강아지가 고양이아니다" />
           <i>{t("A dog is not a cat.")}</i>
-        </Section>
-        <Section>
-          <DefinitionPopup q="17182">우리</DefinitionPopup>
-          <DefinitionPopup q="30210">딸</DefinitionPopup>&nbsp;
-          <DefinitionPopup q="62521">중학생</DefinitionPopup>
-          <DefinitionPopup q="92101">이에요</DefinitionPopup>
-        </Section>
-        <Section>
+          <span></span>
+          <div>
+            <DefinitionPopup q="17182">우리</DefinitionPopup>
+            <DefinitionPopup q="30210">딸</DefinitionPopup>
+            <DefinitionPopup q="86289">이</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="62521">중학생</DefinitionPopup>
+            <DefinitionPopup q="92101">이에요</DefinitionPopup>
+          </div>
+          <UtteranceButton text="우리딸이 중학생이에요" />
           <i>{t("Our daughter is a student.")}</i>
         </Section>
       </ArticleSection>

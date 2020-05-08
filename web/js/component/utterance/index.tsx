@@ -4,8 +4,6 @@ import { useKoreanUtterance } from "web/js/hook/useKoreanUtterance";
 import "./style.scss";
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  className?: string;
-  styleName?: string;
   text?: string;
   children: string;
   voice?: SpeechSynthesisVoice;

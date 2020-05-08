@@ -9,6 +9,7 @@ import { useKoreanUtterance } from "web/js/hook/useKoreanUtterance";
 import { useEntryMetaInformation } from "web/js/hook/useEntryMetaInformation";
 import "./style.scss";
 import { Anchor } from "../anchor";
+import { UtteranceButton } from "../utterance-button";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   q: string;
@@ -34,9 +35,7 @@ export function Definition(props: Props) {
         <div styleName="title">
           <div>{entry.getDictionaryForm()}</div>
           {speechSynthesis && (
-            <UnstyledTextButton styleName="speak-button" onClick={speak}>
-              speak
-            </UnstyledTextButton>
+            <UtteranceButton text={entry.getDictionaryForm()} />
           )}
         </div>
         <div styleName="section title">
