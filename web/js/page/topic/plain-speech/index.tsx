@@ -21,6 +21,10 @@ export function PlainSpeech() {
           {t(
             "The plain speech level is conjugated differently for declarative, interrogative, imperative and proposotive sentences.",
           )}
+          &nbsp;
+          {t(
+            "Only verbs can be conjugated for proposotive or imperative sentences.",
+          )}
         </Section>
         <Section>
           <SectionTitle>{t("For declarative sentences")}</SectionTitle>
@@ -59,36 +63,32 @@ export function PlainSpeech() {
         </Section>
         <Section>
           <SectionTitle>{t("For proposotive sentences")}</SectionTitle>
-          {t("자 is added to the verb stem.")}
-        </Section>
-        <Section>
-          {t(
-            "The imperative and proposotive conjugations are only valid for verbs and can not be conjugated for tense.",
-          )}
+          {t("자 is added to a verb stem.")}
         </Section>
       </ArticleSection>
       <ArticleSection>
         <ArticleTitle>{t("Examples")}</ArticleTitle>
         <Section>
-          <Table columns={5}>
-            <span>{t("Predicate")}</span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <DefinitionPopup q="58272">먹다</DefinitionPopup>
-            <span>먹는다</span>
+          <Table columns={4}>
+            <span>
+              <DefinitionPopup q="58272">먹</DefinitionPopup>는다
+            </span>
             <span>먹니, 먹으냐, 먹냐</span>
             <span>먹아라</span>
             <span>먹자</span>
-            <DefinitionPopup q="92405">이쁘다</DefinitionPopup>
-            <span>이쁘다</span>
-            <span>이쁘니, 이쁘냐</span>
+            <span>
+              <DefinitionPopup q="92405">이쁘</DefinitionPopup>다
+            </span>
+            <span>
+              <DefinitionPopup q="92405">이쁘</DefinitionPopup>니,&nbsp;
+              <DefinitionPopup q="92405">이쁘</DefinitionPopup>냐
+            </span>
             <span></span>
             <span></span>
-            <DefinitionPopup q="27500">가다</DefinitionPopup>
             <span>간다</span>
-            <span>가니, 가냐</span>
+            <span>
+              <DefinitionPopup q="27500">가다</DefinitionPopup>니, 가냐
+            </span>
             <span>가라</span>
             <span>가자</span>
           </Table>

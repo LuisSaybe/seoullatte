@@ -12,7 +12,11 @@ export function useKoreanUtterance(text: string) {
     ({ voiceURI }) => speechSynthesisSettings.voiceURI === voiceURI,
   );
 
-  if (voice && utterance) {
+  if (!voice) {
+    return null;
+  }
+
+  if (utterance) {
     utterance.voice = voice;
   }
 

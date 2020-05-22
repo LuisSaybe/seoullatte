@@ -5,11 +5,13 @@ import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { SectionTitle } from "web/js/component/section-title";
 import { UtteranceButton } from "web/js/component/utterance-button";
+import { useCanUseKoreanUtterance } from "web/js/hook/useCanUseKoreanUtterance";
 import { Section } from "web/js/component/section";
 import "./style.scss";
 
 export function Copula() {
   const { t } = useTranslation();
+  const canUseKoreanUtterance = useCanUseKoreanUtterance();
 
   return (
     <>
@@ -38,7 +40,11 @@ export function Copula() {
             <DefinitionPopup q="18779">고양이</DefinitionPopup>
             <DefinitionPopup q="26878">아니다</DefinitionPopup>
           </div>
-          <UtteranceButton text="강아지가 고양이아니다" />
+          {canUseKoreanUtterance ? (
+            <UtteranceButton text="강아지가 고양이아니다" />
+          ) : (
+            <div></div>
+          )}
           <i>{t("A dog is not a cat.")}</i>
           <span></span>
           <div>
@@ -48,7 +54,11 @@ export function Copula() {
             <DefinitionPopup q="62521">중학생</DefinitionPopup>
             <DefinitionPopup q="92101">이에요</DefinitionPopup>
           </div>
-          <UtteranceButton text="우리딸이 중학생이에요" />
+          {canUseKoreanUtterance ? (
+            <UtteranceButton text="우리딸이 중학생이에요" />
+          ) : (
+            <div></div>
+          )}
           <i>{t("Our daughter is a student.")}</i>
         </Section>
       </ArticleSection>

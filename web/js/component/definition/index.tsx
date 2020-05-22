@@ -34,9 +34,7 @@ export function Definition(props: Props) {
       <>
         <div styleName="title">
           <div>{entry.getDictionaryForm()}</div>
-          {speechSynthesis && (
-            <UtteranceButton text={entry.getDictionaryForm()} />
-          )}
+          {utterance && <UtteranceButton text={entry.getDictionaryForm()} />}
         </div>
         <div styleName="section title">
           <strong>{t("Definition")}</strong>

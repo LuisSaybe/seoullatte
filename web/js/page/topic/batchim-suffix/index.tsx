@@ -5,12 +5,14 @@ import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { useNavigateToHash } from "web/js/hook/useNavigateToHash";
+import { useCanUseKoreanUtterance } from "web/js/hook/useCanUseKoreanUtterance";
 import { Section } from "web/js/component/section";
 import "./style.scss";
 
 export function BatchimSuffix() {
   const { t } = useTranslation();
   const navigate = useNavigateToHash();
+  const canUseKoreanUtterance = useCanUseKoreanUtterance();
 
   useEffect(() => {
     navigate();
@@ -50,7 +52,9 @@ export function BatchimSuffix() {
             <DefinitionPopup q="86116">요</DefinitionPopup>
             {t("?")}
           </div>
-          <UtteranceButton text="괜찮으세요?" />
+          {(canUseKoreanUtterance && (
+            <UtteranceButton text="괜찮으세요?" />
+          )) || <div></div>}
           <i>{t("Are (you) ok?")}</i>
           <span></span>
           <span>
@@ -69,7 +73,9 @@ export function BatchimSuffix() {
             <DefinitionPopup q="82142">지나</DefinitionPopup>
             <DefinitionPopup q="86116">요</DefinitionPopup>
           </div>
-          <UtteranceButton text="누나가 하시면 시간이 천천히 지나요" />
+          {(canUseKoreanUtterance && (
+            <UtteranceButton text="누나가 하시면 시간이 천천히 지나요" />
+          )) || <div></div>}
           <i>{t("When (my) older sister does (it) time passes slowly.")}</i>
         </Section>
       </ArticleSection>

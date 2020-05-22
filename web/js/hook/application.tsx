@@ -5,9 +5,6 @@ import { Route, Switch } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { useArticleRoutes } from "web/js/hook/useArticleRoutes";
-import { useGoogleAnalyticsPageHit } from "web/js/hook/useGoogleAnalyticsPageHit";
-import { useLocations } from "web/js/hook/useLocations";
-import { useClickListener } from "web/js/hook/useClickListener";
 import { routes } from "web/js/routes";
 import { BurgerMenu } from "web/js/component/burger-menu";
 import { getLanguage, Language } from "web/js/helper/language";
@@ -18,14 +15,7 @@ import { RootState } from "web/js/redux/reducer";
 import { useFetch } from "web/js/hook/useFetch";
 import { Action } from "web/js/redux/entry/action";
 import { update } from "web/js/redux/user-interface/action";
-
-function Subscribers() {
-  useGoogleAnalyticsPageHit();
-  useLocations();
-  useClickListener();
-
-  return null;
-}
+import { Subscribers } from "web/js/component/subscribers";
 
 export function Application() {
   const { i18n } = useTranslation();
@@ -37,7 +27,7 @@ export function Application() {
   );
 
   useEffect(() => {
-    if (!window.speechSynthesis) {
+    if (!window.speechSynthesis?.getVoices) {
       return;
     }
 
