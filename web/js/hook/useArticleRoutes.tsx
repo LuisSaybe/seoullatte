@@ -2,15 +2,14 @@ import React, { useMemo } from "react";
 import { Helmet } from "react-helmet";
 import { Route } from "react-router-dom";
 
-import { useOrigin } from "web/js/hook/useOrigin";
 import { useTopics } from "web/js/hook/useTopics";
-
 import { ArticlePage } from "web/js/component/article-page";
 import { routes } from "web/js/routes";
+import { getOrigin } from "web/js/helper/location";
 
 export function useArticleRoutes() {
   const topics = useTopics();
-  const origin = useOrigin();
+  const origin = getOrigin();
 
   return useMemo(
     () =>

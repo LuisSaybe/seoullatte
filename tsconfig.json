@@ -10,7 +10,6 @@
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
-      "settings": ["settings"],
       "web": ["web"]
     },
     "resolveJsonModule": true,

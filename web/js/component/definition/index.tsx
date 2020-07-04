@@ -2,14 +2,13 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import { UnstyledTextButton } from "web/js/component/unstyled-text-button";
 import { RootState } from "web/js/redux/reducer";
 import { Entry } from "web/js/class/entry";
 import { useKoreanUtterance } from "web/js/hook/useKoreanUtterance";
 import { useEntryMetaInformation } from "web/js/hook/useEntryMetaInformation";
+import { Anchor } from "web/js/component/anchor";
+import { UtteranceButton } from "web/js/component/utterance-button";
 import "./style.scss";
-import { Anchor } from "../anchor";
-import { UtteranceButton } from "../utterance-button";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   q: string;
