@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
+import { Action } from "web/js/redux/entry/action";
 import { RootState } from "web/js/redux/reducer";
+import { useFetch } from "web/js/hook/useFetch";
 import { Entry } from "web/js/class/entry";
 import { useKoreanUtterance } from "web/js/hook/useKoreanUtterance";
 import { useEntryMetaInformation } from "web/js/hook/useEntryMetaInformation";
@@ -17,11 +19,20 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 export function Definition(props: Props) {
   const { t } = useTranslation();
+  const [dispatchGetWords] = useFetch(Action.getWords);
   const entryXML = useSelector((state: RootState) => state.entry[props.q]);
   const entry = entryXML ? new Entry(entryXML) : null;
   const utterance = useKoreanUtterance(entry?.getDictionaryForm());
   const { children, senseIndexes, q, ...rest } = props;
   const information = useEntryMetaInformation(q);
+
+  useEffect(() => {
+    if (!entryXML) {
+      dispatchGetWords(
+        "https://luissaybe.nyc3.digitaloceanspaces.com/seoul-latte/words/1.json.gz",
+      );
+    }
+  }, [dispatchGetWords, entryXML]);
 
   let content;
 
@@ -57,7 +68,7 @@ export function Definition(props: Props) {
       </>
     );
   } else {
-    content = t("Unable to find definition");
+    content = t("Loading...");
   }
 
   return (

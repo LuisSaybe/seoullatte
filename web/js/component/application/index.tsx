@@ -12,8 +12,6 @@ import { AboutUs } from "web/js/page/about-us";
 import { Configuration } from "web/js/page/configuration";
 import { NotFound } from "web/js/page/not-found";
 import { RootState } from "web/js/redux/reducer";
-import { useFetch } from "web/js/hook/useFetch";
-import { Action } from "web/js/redux/entry/action";
 import { updateUserInterface } from "web/js/redux/user-interface/action";
 import { Subscribers } from "web/js/component/subscribers";
 import "./style.scss";
@@ -22,7 +20,6 @@ export function Application() {
   const { i18n } = useTranslation();
   const dispatch = useDispatch();
   const articleRoutes = useArticleRoutes();
-  const [dispatchGetWords] = useFetch(Action.getWords);
   const { language, speechSynthesisSettings } = useSelector(
     (state: RootState) => state.userInterface,
   );
@@ -76,12 +73,6 @@ export function Application() {
       window.removeEventListener(languagechangeEvent, onLanguageChange);
     };
   }, []);
-
-  useEffect(() => {
-    dispatchGetWords(
-      "https://luissaybe.nyc3.digitaloceanspaces.com/seoul-latte/words/1.json.gz",
-    );
-  }, [dispatchGetWords]);
 
   useEffect(() => {
     if (!speechSynthesisSettings.voiceURI && speechSynthesisSettings.voices) {
