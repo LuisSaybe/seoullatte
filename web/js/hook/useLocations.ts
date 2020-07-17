@@ -11,5 +11,6 @@ export function useLocations() {
 
   useEffect(() => {
     dispatch(appendLocation(location));
+    window.scrollTo(0, 0);
   }, [location]);
 }

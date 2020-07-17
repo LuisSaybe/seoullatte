@@ -36,8 +36,6 @@ export function ArticlePage(props: IInterface) {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-
     const element = document.getElementById(location.hash.substring(1));
     element?.scrollIntoView();
   }, [location.pathname]);
