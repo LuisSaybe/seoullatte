@@ -4,10 +4,9 @@ export enum Action {
   update = "user-interface-configuration/update",
 }
 
-export function update(data : Partial<UserInterface>) {
+export function updateUserInterface(data: Partial<UserInterface>) {
   return {
     type: Action.update,
     data,
   };
 }
-  

@@ -1,4 +1,4 @@
-@use '~web/sass/page';
+@use '~web/sass/size';
 
 .table {
   display: grid;
@@ -8,5 +8,5 @@
 }
 
 .table-section {
-  @include page.verticalMarginTopSmall();
+  margin-top: size.$margin-small;
 }

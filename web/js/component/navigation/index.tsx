@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
-import { update } from "web/js/redux/user-interface/action";
+import { updateUserInterface } from "web/js/redux/user-interface/action";
 import { routes } from "web/js/routes";
 import { Anchor } from "web/js/component/anchor";
 import { Button } from "web/js/component/button";
@@ -17,7 +17,7 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
   );
   const onClick = () => {
     dispatch(
-      update({
+      updateUserInterface({
         burgerMenuOpen: !burgerMenuOpen,
       }),
     );

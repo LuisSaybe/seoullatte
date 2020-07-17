@@ -29,8 +29,10 @@ export function AddingVowelsToPredicateStems() {
         &nbsp;
         <Trans>
           First, if the predicate has any&nbsp;
-          <Anchor to={TopicRoute.irregularPredicate}>irregular rules</Anchor>,
-          apply them.
+          <Anchor canReturn to={TopicRoute.irregularPredicate}>
+            irregular rules
+          </Anchor>
+          , apply them.
         </Trans>
         &nbsp;
         {t(
@@ -100,7 +102,10 @@ export function AddingVowelsToPredicateStems() {
               &bull;&nbsp;
               <Trans>
                 If the predicate is&nbsp;
-                <Anchor to={`${TopicRoute.irregularPredicate}#${S_IRREGULAR}`}>
+                <Anchor
+                  canReturn
+                  to={`${TopicRoute.irregularPredicate}#${S_IRREGULAR}`}
+                >
                   ㅅ-irregular
                 </Anchor>
                 &nbsp;어 or 아 is added as a new syllable based on the

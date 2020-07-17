@@ -1,28 +1,38 @@
 @use '~web/sass/layout';
+@use '~web/sass/media';
 
-.buttons {
-  display: flex;
+.back-button {
+  margin-top: 24px;
 
-  > *:not(:first-child) {
-    margin-left: 12px;
+  @include media.phone() {
+    display: block;
+  }
+
+  @include media.not-phone() {
+    display: inline-block;
   }
 }
 
 .field {
   display: flex;
   flex-direction: column;
+  margin-top: 24px;
 
   > *:not(:first-child) {
     margin-top: 12px;
   }
 }
 
-.root {
+.content {
   @include layout.defaultLayout();
 
-  > *:not(:first-child) {
-    margin-top: 12px;
+  @include media.not-phone() {
+    width: 800px;
   }
+}
+
+.root {
+  @include layout.navigationAndContentLayout();
 }
 
 .label,

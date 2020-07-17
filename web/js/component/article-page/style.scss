@@ -1,7 +1,13 @@
 @use '~web/sass/layout';
+@use '~web/sass/size';
+
+.returnTo {
+  font-style: italic;
+  margin-bottom: size.$margin-small;
+}
 
 .anchors {
-  margin-top: 24px;
+  margin-top: size.$margin-medium;
 }
 
 .content {
@@ -11,11 +17,9 @@
 }
 
 .footer {
-  margin-top: 16px;
+  margin: size.$margin-medium 0;
 }
 
 .root {
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: 60px 1fr;
+  @include layout.navigationAndContentLayout();
 }

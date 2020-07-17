@@ -1,9 +1,9 @@
-@use '~web/sass/page';
+@use '~web/sass/size';
 
 .table {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-items: flex-start;
-  gap: 12px;
-  @include page.verticalMarginTopSmall();
+  gap: size.$margin-small;
+  margin-top: size.$margin-small;
 }

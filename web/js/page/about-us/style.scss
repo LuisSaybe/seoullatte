@@ -1,18 +1,38 @@
 @use '~web/sass/layout';
 @use "~web/sass/media";
-@use "~web/sass/page";
+@use "~web/sass/size";
 
 .anchor {
   display: block;
-  @include page.verticalMarginTopMedium();
+  @include media.not-phone() {
+    margin-top: size.$margin-medium;
+  }
+}
+
+.email {
+  margin-top: size.$margin-medium;
+}
+
+.text {
+  @include media.phone() {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: size.$margin-medium;
+  }
+}
+
+.content {
+  display: grid;
+  gap: 24px;
+
+  @include layout.defaultLayout();
+  @include media.not-phone() {
+    grid-template-columns: 1fr 400px;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .root {
-  @include layout.defaultLayout();
-}
-
-@include media.not_phone() {
-  .root {
-    max-width: 400px;
-  }
+  @include layout.navigationAndContentLayout();
 }

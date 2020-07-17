@@ -22,7 +22,10 @@ export function SpeechLevel() {
         &nbsp;
         <Trans>
           The speech level is determined by a&nbsp;
-          <Anchor to={TopicRoute.ending}>sentence ending</Anchor>.
+          <Anchor canReturn to={TopicRoute.ending}>
+            sentence ending
+          </Anchor>
+          .
         </Trans>
         &nbsp;
         {t(

@@ -22,16 +22,18 @@ export function IntimateSpeech() {
         &nbsp;
         <Trans>
           The predicate 이다 and 아니다 are formed&nbsp;
-          <Anchor to={TopicRoute.irregularPredicate}>irregularly</Anchor> in the
-          intimate speech level.
+          <Anchor canReturn to={TopicRoute.irregularPredicate}>
+            irregularly
+          </Anchor>
+          &nbsp;in the intimate speech level.
         </Trans>
         &nbsp;
         <Trans>
           To conjugate predicates in the intimate speech level a&nbsp;
-          <Anchor to={TopicRoute.addingVowelToPredicateStem}>
+          <Anchor canReturn to={TopicRoute.addingVowelToPredicateStem}>
             ㅓ or ㅏ is added
-          </Anchor>{" "}
-          to the verb stem.
+          </Anchor>
+          &nbsp;to the verb stem.
         </Trans>
       </Section>
       <ArticleSection>

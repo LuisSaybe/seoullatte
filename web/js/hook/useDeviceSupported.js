@@ -1,5 +1,5 @@
 import { useSupportsGridLayout } from "web/js/hook/useSupportsGridLayout";
 
 export function useDeviceSupported() {
-  return useSupportsGridLayout();
+  return useSupportsGridLayout() && window.fetch;
 }

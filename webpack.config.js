@@ -12,7 +12,6 @@ module.exports = (env) => {
     entry: [
       "core-js/stable",
       "regenerator-runtime/runtime",
-      "whatwg-fetch",
       path.resolve(__dirname, "web/js/index.tsx"),
       path.resolve(__dirname, "web/sass/index.scss"),
     ],

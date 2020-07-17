@@ -8,18 +8,6 @@
   font-size: 1.3rem;
 }
 
-@mixin horizontalMarginSmallLeft() {
-  margin-left: 12px;
-}
-
-@mixin verticalMarginTopSmall() {
-  margin-top: 12px;
-}
-
-@mixin verticalMarginTopMedium() {
-  margin-top: 24px;
-}
-
 @mixin dialogGrid() {
   display: grid;
   grid-template-rows: auto auto;

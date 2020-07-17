@@ -10,7 +10,7 @@ import { Anchor } from "web/js/component/anchor";
 import { Hr } from "web/js/component/hr";
 import { Input } from "web/js/component/input";
 import { RootState } from "web/js/redux/reducer";
-import { update } from "web/js/redux/user-interface/action";
+import { updateUserInterface } from "web/js/redux/user-interface/action";
 import styles from "./style.scss";
 
 export function BurgerMenu() {
@@ -23,14 +23,14 @@ export function BurgerMenu() {
   const [searchValue, setSearchValue] = useState("");
   const onLinkClick = () => {
     dispatch(
-      update({
+      updateUserInterface({
         burgerMenuOpen: false,
       }),
     );
   };
   const onStateChange = (state) => {
     dispatch(
-      update({
+      updateUserInterface({
         burgerMenuOpen: state.isOpen,
       }),
     );

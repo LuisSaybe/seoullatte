@@ -18,14 +18,18 @@ export function PoliteSpeech() {
       <Section>
         <Trans>
           The polite speech level is formed identically to the&nbsp;
-          <Anchor to={TopicRoute.intimateSpeech}>intimate speech level</Anchor>
+          <Anchor canReturn to={TopicRoute.intimateSpeech}>
+            intimate speech level
+          </Anchor>
           &nbsp;followed by a <DefinitionPopup q="86116">요</DefinitionPopup>.
         </Trans>
         &nbsp;
         <Trans>
           The predicate 이다 and 아니다 are formed{" "}
-          <Anchor to={TopicRoute.irregularPredicate}>irregularly</Anchor> in the
-          polite speech level.
+          <Anchor canReturn to={TopicRoute.irregularPredicate}>
+            irregularly
+          </Anchor>
+          &nbsp;in the polite speech level.
         </Trans>
       </Section>
       <ArticleSection>

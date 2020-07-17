@@ -19,7 +19,9 @@ export function PastTense() {
       <ArticleSection>
         <Trans>
           To conjugate a predicate in the past tense, a&nbsp;
-          <Anchor to={TopicRoute.ending}>pre-final ending</Anchor>
+          <Anchor canReturn to={TopicRoute.ending}>
+            pre-final ending
+          </Anchor>
           &nbsp;past tense ending is added to a predicate.
         </Trans>
         <div>
@@ -30,7 +32,7 @@ export function PastTense() {
             <div>
               &bull;&nbsp;
               <Trans>
-                <Anchor to={TopicRoute.addingVowelToPredicateStem}>
+                <Anchor canReturn to={TopicRoute.addingVowelToPredicateStem}>
                   Add ㅓ or ㅏ
                 </Anchor>
                 &nbsp; to the predicate stem.
@@ -45,7 +47,7 @@ export function PastTense() {
         <Section>
           <Trans>
             If the predicate is conjugated in the&nbsp;
-            <Anchor to={TopicRoute.intimateSpeech}>
+            <Anchor canReturn to={TopicRoute.intimateSpeech}>
               intimate speech level
             </Anchor>
             &nbsp;then 어 is added as the final syllable.
@@ -53,7 +55,9 @@ export function PastTense() {
           &nbsp;
           <Trans>
             If the predicate is conjugated in the&nbsp;
-            <Anchor to={TopicRoute.politeSpeech}>polite speech level</Anchor>
+            <Anchor canReturn to={TopicRoute.politeSpeech}>
+              polite speech level
+            </Anchor>
             &nbsp;then 어요 is added as the final syllable.
           </Trans>
         </Section>

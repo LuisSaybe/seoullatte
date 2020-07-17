@@ -41,8 +41,10 @@ export function PlainSpeech() {
           <div>
             <Trans>
               If the predicate is conjugated in the&nbsp;
-              <Anchor to={TopicRoute.pastTense}>past tense</Anchor> then 다 is
-              added to the past tense ending.
+              <Anchor canReturn to={TopicRoute.pastTense}>
+                past tense
+              </Anchor>
+              &nbsp;then 다 is added to the past tense ending.
             </Trans>
           </div>
         </Section>
@@ -55,10 +57,10 @@ export function PlainSpeech() {
         <Section>
           <SectionTitle>{t("For imperative sentences")}</SectionTitle>
           <Trans>
-            <Anchor to={TopicRoute.addingVowelToPredicateStem}>
+            <Anchor canReturn to={TopicRoute.addingVowelToPredicateStem}>
               ㅓ or ㅏ is added
             </Anchor>
-            &nbsp; to the verb stem followed by 라
+            &nbsp;to the verb stem followed by 라
           </Trans>
         </Section>
         <Section>

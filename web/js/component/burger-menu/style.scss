@@ -1,5 +1,5 @@
 @use '~web/sass/color';
-@use '~web/sass/page';
+@use '~web/sass/size';
 
 .label {
   display: none;
@@ -19,7 +19,7 @@
 }
 
 .hr {
-  @include page.verticalMarginTopSmall();
+  margin-top: size.$margin-small;
 }
 
 .link {

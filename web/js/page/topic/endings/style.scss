@@ -1,5 +1,5 @@
 @use "~web/sass/color";
-@use "~web/sass/page";
+@use "~web/sass/size";
 
 .final-ending {
   color: color.$main;
@@ -14,5 +14,5 @@
 }
 
 .sentence {
-  @include page.horizontalMarginSmallLeft();
+  margin-left: size.$margin-small;
 }

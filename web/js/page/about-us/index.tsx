@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 
-import { Anchor } from "web/js/component/anchor";
-import { Section } from "web/js/component/section";
 import { useLastRouteOrHome } from "web/js/hook/useLastRouteOrHome";
-
+import { Navigation } from "web/js/component/navigation";
+import { Anchor } from "web/js/component/anchor";
 import "./style.scss";
 
 export function AboutUs() {
@@ -18,17 +18,29 @@ export function AboutUs() {
   }, []);
 
   return (
-    <div styleName="root">
-      <div dangerouslySetInnerHTML={{ __html }}></div>
-      <Section>
-        {t(
-          "Luis Saybe is programmer and foreign language student currently residing in Florida.",
-        )}
-      </Section>
-      <Section>{t("luis@trois.io")}</Section>
-      <Anchor styleName="anchor" button to={to}>
-        {t("back")}
-      </Anchor>
-    </div>
+    <>
+      <div styleName="root">
+        <Navigation />
+        <div styleName="content">
+          <div styleName="text">
+            <div>
+              {t(
+                "Luis Saybe is programmer and foreign language student currently residing in Florida.",
+              )}
+              <div styleName="email">{t("luis@trois.io")}</div>
+            </div>
+            <Anchor styleName="anchor" to={to}>
+              {t("back")}
+            </Anchor>
+          </div>
+          <div dangerouslySetInnerHTML={{ __html }} />
+        </div>
+      </div>
+      <Helmet>
+        <title>About Us</title>
+        <link rel="canonical" href={window.location.href} />
+        <meta name="description" content="About us" />
+      </Helmet>
+    </>
   );
 }

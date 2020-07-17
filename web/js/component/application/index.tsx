@@ -14,8 +14,9 @@ import { NotFound } from "web/js/page/not-found";
 import { RootState } from "web/js/redux/reducer";
 import { useFetch } from "web/js/hook/useFetch";
 import { Action } from "web/js/redux/entry/action";
-import { update } from "web/js/redux/user-interface/action";
+import { updateUserInterface } from "web/js/redux/user-interface/action";
 import { Subscribers } from "web/js/component/subscribers";
+import "./style.scss";
 
 export function Application() {
   const { i18n } = useTranslation();
@@ -39,7 +40,7 @@ export function Application() {
 
       if (didChange) {
         dispatch(
-          update({
+          updateUserInterface({
             speechSynthesisSettings: {
               ...speechSynthesisSettings,
               voices,
@@ -64,7 +65,7 @@ export function Application() {
     const languagechangeEvent = "languagechange";
     const onLanguageChange = () => {
       dispatch(
-        update({
+        updateUserInterface({
           language: getLanguage(window.navigator),
         }),
       );
@@ -90,7 +91,7 @@ export function Application() {
 
       if (voices.length > 0) {
         dispatch(
-          update({
+          updateUserInterface({
             speechSynthesisSettings: {
               ...speechSynthesisSettings,
               voiceURI: voices[0].voiceURI,

@@ -3,3 +3,5 @@ export interface SpeechSynthesisSettings {
   voiceURI?: SpeechSynthesisVoice["voiceURI"];
   rate?: SpeechSynthesisUtterance["rate"];
 }
+
+export const DEFAULT_SPEAKING_RATE = -1;

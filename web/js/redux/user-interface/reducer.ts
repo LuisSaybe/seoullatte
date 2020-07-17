@@ -4,6 +4,7 @@ import { UserInterface } from "web/js/interface/user-interface";
 import { Action } from "web/js/redux/user-interface/action";
 
 const initialState = {
+  returnTo: null,
   burgerMenuOpen: false,
   language: getLanguage(window.navigator),
   speechSynthesisSettings: {

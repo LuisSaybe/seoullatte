@@ -21,9 +21,10 @@ export function Prenoun() {
         &nbsp;
         <Trans>
           We can&nbsp;
-          <Anchor to={TopicRoute.predicateAsModifiers}>
+          <Anchor canReturn to={TopicRoute.predicateAsModifiers}>
             change a predicate into a modifier
-          </Anchor>.
+          </Anchor>
+          .
         </Trans>
         &nbsp;
         {t("Unlike adjectives, prenouns can not inflect or be conjugated.")}
