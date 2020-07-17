@@ -27,6 +27,13 @@ export function DeviceNotSupported() {
           <Anchor href="https://caniuse.com/#feat=fetch">here</Anchor>
         </Trans>
       )}
+      {!window.fetch && (
+        <Trans>
+          Sorry, your device does not support URLSearchParams, please use any of
+          the devices listed&nbsp;
+          <Anchor href="https://caniuse.com/#feat=urlsearchparams">here</Anchor>
+        </Trans>
+      )}
     </div>
   );
 }
