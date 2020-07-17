@@ -3,7 +3,8 @@
 
 .root {
   @include button.button();
-  @include button.buttonColors(color.$main);
+  @include button.buttonColors(color.$white);
+  color: color.$anchor;
   padding: 8px 10px;
   margin: 0;
 }

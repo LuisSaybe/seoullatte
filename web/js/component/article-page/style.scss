@@ -2,7 +2,6 @@
 @use '~web/sass/size';
 
 .returnTo {
-  font-style: italic;
   margin-bottom: size.$margin-small;
 }
 
@@ -22,4 +21,8 @@
 
 .root {
   @include layout.navigationAndContentLayout();
+}
+
+.topic-name {
+  font-style: italic;
 }

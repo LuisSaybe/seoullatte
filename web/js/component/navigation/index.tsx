@@ -26,9 +26,9 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
   return (
     <nav className={props.className} styleName="root" {...props}>
       <Button aria-label={t("hamburger menu")} onClick={onClick} type="button">
-        <div styleName="bar"></div>
-        <div styleName="bar"></div>
-        <div styleName="bar"></div>
+        <div styleName="bar" />
+        <div styleName="bar" />
+        <div styleName="bar" />
       </Button>
       <Anchor button={true} to={routes.configuration()}>
         {t("Settings")}

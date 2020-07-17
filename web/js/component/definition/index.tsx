@@ -22,9 +22,6 @@ export function Definition(props: Props) {
   const utterance = useKoreanUtterance(entry?.getDictionaryForm());
   const { children, senseIndexes, q, ...rest } = props;
   const information = useEntryMetaInformation(q);
-  const speak = () => {
-    speechSynthesis.speak(utterance);
-  };
 
   let content;
 

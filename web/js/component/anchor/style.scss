@@ -9,19 +9,17 @@
 .root {
   text-decoration: none;
 
-  &:not(.button) {
-    &:hover {
-      color: darken(color.$anchor, 10%);
-    }
+  &:hover {
+    color: darken(color.$anchor, 10%);
+  }
 
-    &:not(:hover) {
-      color: color.$anchor;
-    }
+  &:not(:hover) {
+    color: color.$anchor;
   }
 
   &.button {
     @include button.button();
-    @include button.buttonColors(color.$main);
+    @include button.buttonColors(color.$white);
     text-align: center;
 
     &:not(.icon) {

@@ -81,7 +81,7 @@ export function ArticlePage(props: IInterface) {
             to={returnToTopic.path}
             styleName="returnTo"
           >
-            back to {returnToTopic.name}
+            return to <span styleName="topic-name">{returnToTopic.name}</span>
           </Anchor>
         )}
         <article>
