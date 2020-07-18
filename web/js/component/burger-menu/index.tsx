@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { useTopics } from "web/js/hook/useTopics";
 import { Topic } from "web/js/interface/korean";
-
 import { Anchor } from "web/js/component/anchor";
 import { Hr } from "web/js/component/hr";
 import { Input } from "web/js/component/input";
@@ -25,6 +24,7 @@ export function BurgerMenu() {
     dispatch(
       updateUserInterface({
         burgerMenuOpen: false,
+        returnTo: null,
       }),
     );
   };

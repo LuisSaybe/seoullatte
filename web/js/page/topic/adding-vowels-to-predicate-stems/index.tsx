@@ -9,7 +9,10 @@ import { SectionTitle } from "web/js/component/section-title";
 import { Subsection } from "web/js/component/subsection";
 import { useNavigateToHash } from "web/js/hook/useNavigateToHash";
 import { TopicRoute } from "web/js/interface/route";
-import { S_IRREGULAR } from "web/js/page/topic/irregular-predicate";
+import {
+  S_IRREGULAR_ID,
+  U_IRREGULAR_ID,
+} from "web/js/page/topic/irregular-predicate";
 import "./style.scss";
 
 export function AddingVowelsToPredicateStems() {
@@ -24,7 +27,7 @@ export function AddingVowelsToPredicateStems() {
     <>
       <ArticleSection>
         {t(
-          "Some endings require adding ㅓ or ㅏ to a predicate stem. We discuss how to determine which is added.",
+          "Some endings adding ㅓ or ㅏ to a predicate stem in order to be used. We discuss how to determine which is added.",
         )}
         &nbsp;
         <Trans>
@@ -36,9 +39,53 @@ export function AddingVowelsToPredicateStems() {
         </Trans>
         &nbsp;
         {t(
-          "Then if the vowel closest to the end of the  modified predicate stem is ㅏ or ㅗ then ㅏ is added to the stem, othwerwise ㅓ is added to the stem.",
+          "Then if the vowel closest to the end of the modified predicate stem is ㅏ or ㅗ then ㅏ is added to the stem, othwerwise ㅓ is added to the stem.",
         )}
       </ArticleSection>
+      <Section>
+        <div>
+          Example predicate:&nbsp;
+          <DefinitionPopup q="64743">바라보다</DefinitionPopup>
+        </div>
+        <div>
+          {t(
+            "First, we apply any irregular rules to 바라보다. 바라보다 is not irregular so we observe the stem 바라보.",
+          )}
+          &nbsp;
+          {t(
+            "The vowel closest to the end of the modified predicate stem 바라보 is ㅗ and so ㅏ will be added to the predicate stem.",
+          )}
+          &nbsp;
+          {t("바라보 becomes 바라봐.")}
+        </div>
+      </Section>
+      <Section>
+        <div>
+          Example predicate: <DefinitionPopup q="66248">바쁘다</DefinitionPopup>
+        </div>
+        <div>
+          {t("First, we apply any irregular rules to 바쁘다.")}
+          &nbsp;
+          <Trans>
+            바쁘다 is&nbsp;
+            <Anchor
+              canReturn
+              to={`${TopicRoute.irregularPredicate}#${U_IRREGULAR_ID}`}
+            >
+              으 irregular
+            </Anchor>
+            &nbsp;so ㅡ is removed from the predicate stem.
+          </Trans>
+          &nbsp;
+          {t("바쁘 becomes 바ㅃ.")}
+          &nbsp;
+          {t(
+            "The vowel closest to the end of the modified predicate stem 바ㅃ is ㅏ so ㅏ is added to the stem.",
+          )}
+          &nbsp;
+          {t("바ㅃ becomes 바빠.")}
+        </div>
+      </Section>
       <ArticleSection>
         <SectionTitle>{t("Placement of ㅓ or ㅏ")}</SectionTitle>
         {t(
@@ -104,7 +151,7 @@ export function AddingVowelsToPredicateStems() {
                 If the predicate is&nbsp;
                 <Anchor
                   canReturn
-                  to={`${TopicRoute.irregularPredicate}#${S_IRREGULAR}`}
+                  to={`${TopicRoute.irregularPredicate}#${S_IRREGULAR_ID}`}
                 >
                   ㅅ-irregular
                 </Anchor>
@@ -120,6 +167,8 @@ export function AddingVowelsToPredicateStems() {
         <div styleName="table">
           <span>Predicate</span>
           <span>Modified Stem</span>
+          <DefinitionPopup q="67048">어울리다</DefinitionPopup>
+          <span>어울려</span>
           <DefinitionPopup q="73277">하다</DefinitionPopup>
           <span>해</span>
           <DefinitionPopup q="89858" senseIndexes={[1]}>

@@ -11,7 +11,8 @@ import { TopicRoute } from "web/js/interface/route";
 import { Table } from "web/js/component/table";
 import "./style.scss";
 
-export const S_IRREGULAR = "s-irregular";
+export const S_IRREGULAR_ID = "s-irregular";
+export const U_IRREGULAR_ID = "u-irregular";
 
 export function IrregularPredicate() {
   const { t } = useTranslation();
@@ -135,7 +136,7 @@ export function IrregularPredicate() {
           <span>no</span>
         </Section>
       </ArticleSection>
-      <ArticleSection id={S_IRREGULAR}>
+      <ArticleSection id={S_IRREGULAR_ID}>
         <ArticleTitle>{t("ㅅ Irregular Predicates")}</ArticleTitle>
         {t(
           "If a predicate is ㅅ irregular, then ㅅ will be deleted when joined with a suffix that starts with a vowel.",
@@ -209,7 +210,7 @@ export function IrregularPredicate() {
           </div>
         </Section>
       </ArticleSection>
-      <ArticleSection>
+      <ArticleSection id={S_IRREGULAR_ID}>
         <ArticleTitle>{t("으 Irregular Predicates")}</ArticleTitle>
         {t(
           "If the final letter of a predicate is ㅡ then ㅡ is removed when a suffix which begins with a vowel is added.",

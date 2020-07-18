@@ -1,12 +1,17 @@
 import React from "react";
 
+import { MarginSizeName } from "web/js/interface/size";
 import "./style.scss";
 
-export function Section(props: React.HTMLAttributes<HTMLDivElement>) {
-  const { children, ...rest } = props;
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
+  marginSize?: MarginSizeName;
+}
+
+export function Section(props: Props) {
+  const { children, marginSize, ...rest } = props;
 
   return (
-    <div {...rest} styleName="root">
+    <div {...rest} styleName={`root ${marginSize ?? ""}`}>
       {children}
     </div>
   );
