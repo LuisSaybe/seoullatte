@@ -5,11 +5,9 @@ import { Route } from "react-router-dom";
 import { useTopics } from "web/js/hook/useTopics";
 import { ArticlePage } from "web/js/component/article-page";
 import { routes } from "web/js/routes";
-import { getOrigin } from "web/js/helper/location";
 
 export function useArticleRoutes() {
   const topics = useTopics();
-  const origin = getOrigin();
 
   return useMemo(
     () =>
@@ -24,10 +22,15 @@ export function useArticleRoutes() {
           >
             <Helmet>
               <title>{topic.name}</title>
-              {origin && (
-                <link rel="canonical" href={`${origin}${topic.path}`} />
-              )}
+              <link rel="canonical" href={window.location.href} />
               <meta name="description" content={topic.description} />
+              <meta property="og:title" content={topic.name} />
+              <meta property="og:url" content={window.location.href} />
+              <meta property="og:description" content={topic.description} />
+              <meta
+                property="og:image"
+                content="https://luissaybe.nyc3.digitaloceanspaces.com/seoul-latte/images/icon/192x192.png"
+              />
             </Helmet>
             <topic.component />
           </ArticlePage>

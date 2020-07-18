@@ -3,26 +3,20 @@ version: "3.7"
 services:
   nginx:
     command: ["nginx", "-c", "/root/project/docker/nginx.conf"]
-    build:
-      context: .
-      dockerfile: docker/Dockerfile
+    image: luissaybe/seoullatte
     ports:
       - 80:80
     volumes:
       - ".:/root/project"
   install:
-    build:
-      context: .
-      dockerfile: docker/Dockerfile
+    image: luissaybe/seoullatte
     command: yarn
     volumes:
       - ".:/root/project"
   watch:
     depends_on:
       - install
-    build:
-      context: .
-      dockerfile: docker/Dockerfile
+    image: luissaybe/seoullatte
     command: yarn watch
     volumes:
       - ".:/root/project"
