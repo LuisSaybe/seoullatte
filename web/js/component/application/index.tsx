@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { Route, Switch } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -102,13 +101,6 @@ export function Application() {
   return (
     <>
       <Subscribers />
-      <Helmet>
-        <link
-          href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-          rel="stylesheet"
-          type="text/css"
-        />
-      </Helmet>
       <BurgerMenu />
       <Switch>
         <Route path={routes.configuration()} component={Configuration} />
