@@ -1,14 +1,18 @@
-import { Entry } from "web/js/class/entry";
-
 import { Action } from "web/js/redux/entry/action";
 
-type State = Record<string, string>;
-
-export function entry(state: State = {}, action): State {
+export function entry(
+  state: Record<string, string> = {},
+  action,
+): Record<string, string> {
   switch (action.type) {
     case Action.getWords: {
-      if (action.body) {
-        return { ...state, ...action.body };
+      if (action.body && action.body.length > 0) {
+        const parts = new URL(action.response.url).pathname.split("/");
+        const q = parts[parts.length - 1];
+        return {
+          ...state,
+          [q]: action.body[0]._source.xml,
+        };
       }
     }
     default:

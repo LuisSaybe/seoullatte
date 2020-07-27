@@ -28,11 +28,9 @@ export function Definition(props: Props) {
 
   useEffect(() => {
     if (!entryXML) {
-      dispatchGetWords(
-        "https://luissaybe.nyc3.digitaloceanspaces.com/seoul-latte/words/1.json.gz",
-      );
+      dispatchGetWords(`https://api.seoullatte.com/entry/${q}`);
     }
-  }, [dispatchGetWords, entryXML]);
+  }, [dispatchGetWords, entryXML, q]);
 
   let content;
 

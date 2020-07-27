@@ -1,0 +1,28 @@
+name: "build and deploy"
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@master
+        with:
+          node-version: "14.x"
+      - run: yarn
+      - run: envsubst < web/js/settings/production.json > web/js/settings/production-copy.json
+        env:
+          GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+      - run: cat web/js/settings/production-copy.json > web/js/settings/production.json
+      - run: yarn build
+      - name: push docker
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: luissaybe/seoullatte
+          tags: latest

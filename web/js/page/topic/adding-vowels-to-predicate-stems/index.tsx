@@ -27,7 +27,7 @@ export function AddingVowelsToPredicateStems() {
     <>
       <ArticleSection>
         {t(
-          "Some endings adding ㅓ or ㅏ to a predicate stem in order to be used. We discuss how to determine which is added.",
+          "Some endings require adding ㅓ or ㅏ to a predicate stem in order to be used. We discuss how to determine which is added.",
         )}
         &nbsp;
         <Trans>
@@ -43,21 +43,19 @@ export function AddingVowelsToPredicateStems() {
         )}
       </ArticleSection>
       <Section>
-        <div>
-          Example predicate:&nbsp;
-          <DefinitionPopup q="64743">바라보다</DefinitionPopup>
-        </div>
-        <div>
-          {t(
-            "First, we apply any irregular rules to 바라보다. 바라보다 is not irregular so we observe the stem 바라보.",
-          )}
-          &nbsp;
-          {t(
-            "The vowel closest to the end of the modified predicate stem 바라보 is ㅗ and so ㅏ will be added to the predicate stem.",
-          )}
-          &nbsp;
-          {t("바라보 becomes 바라봐.")}
-        </div>
+        Example predicate:&nbsp;
+        <DefinitionPopup q="64743">바라보다</DefinitionPopup>
+      </Section>
+      <Section>
+        {t(
+          "First, we apply any irregular rules to 바라보다. 바라보다 is not irregular so we observe the stem 바라보.",
+        )}
+        &nbsp;
+        {t(
+          "The vowel closest to the end of the modified predicate stem 바라보 is ㅗ and so ㅏ will be added to the predicate stem.",
+        )}
+        &nbsp;
+        {t("바라보 becomes 바라봐.")}
       </Section>
       <Section>
         <div>

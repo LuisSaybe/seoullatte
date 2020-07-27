@@ -8,15 +8,3 @@ services:
       - 80:80
     volumes:
       - ".:/root/project"
-  install:
-    image: luissaybe/seoullatte
-    command: yarn
-    volumes:
-      - ".:/root/project"
-  watch:
-    depends_on:
-      - install
-    image: luissaybe/seoullatte
-    command: yarn watch
-    volumes:
-      - ".:/root/project"

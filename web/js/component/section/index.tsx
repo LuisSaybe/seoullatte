@@ -8,11 +8,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function Section(props: Props) {
-  const { children, marginSize, ...rest } = props;
+  const { marginSize, ...rest } = props;
 
-  return (
-    <div {...rest} styleName={`root ${marginSize ?? ""}`}>
-      {children}
-    </div>
-  );
+  return <div {...rest} styleName={`root ${marginSize ?? ""}`} />;
 }

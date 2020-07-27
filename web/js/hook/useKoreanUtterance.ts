@@ -7,10 +7,10 @@ export function useKoreanUtterance(text: string) {
   const speechSynthesisSettings = useSelector(
     (state: RootState) => state.userInterface.speechSynthesisSettings,
   );
-  const utterance = useUtterance(text);
   const voice = speechSynthesisSettings?.voices?.find(
     ({ voiceURI }) => speechSynthesisSettings.voiceURI === voiceURI,
   );
+  const utterance = useUtterance(text, voice?.voiceURI);
 
   if (!voice) {
     return null;
