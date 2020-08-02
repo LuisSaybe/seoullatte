@@ -1,3 +1,5 @@
+import { LanguageNames } from "../interface/korean";
+
 export class Entry {
   private xml: Document;
 
@@ -17,5 +19,23 @@ export class Entry {
     return this.xml.querySelector(
       `:root > item > word_info > sense_info:nth-of-type(${index})`,
     );
+  }
+
+  public getTargetCode() {
+    return this.xml.querySelector(`:root target_code`).textContent;
+  }
+
+  public getSenseTranslation(index: number, language: LanguageNames) {
+    const sense = this.xml.querySelector(
+      `:root > item > word_info > sense_info:nth-of-type(${index})`,
+    );
+
+    for (const translation of sense.querySelectorAll("translation") as any) {
+      if (translation.querySelector("trans_lang").textContent === language) {
+        return translation.querySelector("trans_dfn").textContent;
+      }
+    }
+
+    return null;
   }
 }

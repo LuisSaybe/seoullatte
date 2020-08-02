@@ -1,0 +1,43 @@
+.dictionary-form {
+  font-weight: 700;
+}
+
+.sense {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.suggestionsContainerOpen {
+  border: 1px solid #aaa;
+  background-color: #fff;
+  border-radius: 0 0 4px 4px;
+  position: absolute;
+  width: 100%;
+}
+
+.suggestionHighlighted {
+  background-color: #eaeaea;
+  font-weight: 600;
+}
+
+.suggestionsList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.suggestion {
+  padding: 6px;
+  cursor: pointer;
+}
+
+.input {
+  padding: 4px 8px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+}
+
+.root {
+  position: relative;
+}

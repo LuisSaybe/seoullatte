@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import { Trans } from "react-i18next";
 
 import { useLastRouteOrHome } from "web/js/hook/useLastRouteOrHome";
 import { Navigation } from "web/js/component/navigation";
@@ -27,8 +28,16 @@ export function AboutUs() {
               {t(
                 "Luis Saybe is programmer and foreign language student currently residing in Florida.",
               )}
-              <div styleName="email">{t("luis@trois.io")}</div>
             </div>
+            <div styleName="dictionary">
+              <Trans>
+                Dictionary provided by&nbsp;
+                <Anchor href="https://krdict.korean.go.kr">
+                  National Institute of Korean Language
+                </Anchor>
+              </Trans>
+            </div>
+            <div styleName="email">{t("luis@trois.io")}</div>
             <Anchor styleName="anchor" to={to}>
               {t("back")}
             </Anchor>

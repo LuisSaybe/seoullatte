@@ -35,9 +35,20 @@
   color: color.$logo;
 }
 
+.hamburger-menu {
+  @include media.phone() {
+    margin-right: 16px;
+  }
+}
+
+.settings {
+  @include media.phone() {
+    margin-left: 16px;
+  }
+}
+
 .root {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 
   @include media.phone() {
@@ -45,8 +56,28 @@
   }
 }
 
+.searchInput {
+  height: 32px;
+  width: calc(100% - 16px);
+
+  @include media.phone() {
+    display: block;
+  }
+}
+
+.search-bar {
+  @include media.phone() {
+    flex: 1 0 0;
+  }
+
+  @include media.not-phone() {
+    width: 380px;
+    margin: 0 auto;
+  }
+}
+
 @include media.not_phone() {
   .root {
-    padding: 16px layout.$horizontal-page-padding;
+    padding: 0 layout.$horizontal-page-padding;
   }
 }
