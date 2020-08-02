@@ -12,4 +12,10 @@ export class Entry {
   public getSenses() {
     return this.xml.querySelectorAll(":root > item > word_info > sense_info");
   }
+
+  public getSense(index: number) {
+    return this.xml.querySelector(
+      `:root > item > word_info > sense_info:nth-of-type(${index})`,
+    );
+  }
 }

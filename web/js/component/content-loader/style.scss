@@ -1,0 +1,20 @@
+.root {
+  animation: fading 1.5s infinite;
+  background-color: #444;
+  opacity: 0.1;
+  border-radius: 8px;
+}
+
+@keyframes fading {
+  0% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
+}

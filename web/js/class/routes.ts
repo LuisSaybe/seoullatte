@@ -16,6 +16,10 @@ export class Routes {
   public aboutUs() {
     return `${this.prefix}/about-us`;
   }
+
+  public entry(q: string) {
+    return `${this.prefix}/dictionary/${q}`;
+  }
 }
 
 export enum TopicRoute {

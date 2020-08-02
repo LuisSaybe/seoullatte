@@ -1,0 +1,49 @@
+@use "~web/sass/layout";
+@use "~web/sass/size";
+
+.back-anchor {
+  display: block;
+  margin-top: size.$margin-large;
+}
+
+.content {
+  @include layout.defaultLayout();
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.root {
+  @include layout.navigationAndContentLayout();
+}
+
+.returnTo {
+  display: block;
+  margin-top: size.$margin-medium;
+}
+
+.content-loader-title {
+  height: 48px;
+  width: 400px;
+}
+
+.content-loader-body {
+  height: 24px;
+  width: 800px;
+  margin-top: size.$margin-medium;
+}
+
+.senses {
+  margin-top: size.$margin-large;
+}
+
+.sense {
+  margin-top: size.$margin-medium;
+}
+
+.topic-name {
+  font-style: italic;
+}

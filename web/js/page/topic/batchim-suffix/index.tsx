@@ -40,10 +40,6 @@ export function BatchimSuffix() {
           since the final letter ㅏ is a vowel.
         </Trans>
         &nbsp;
-        {t(
-          "For example, the word 방 has a 받침 since it ends in the consonant ㅇ while 여자 does not have a 받침 since the final letter ㅏ is a vowel.",
-        )}
-        &nbsp;
         {t("Some suffixes change based on whether a word has a 받침 or not.")}
         &nbsp;
         {t(

@@ -13,6 +13,7 @@ import { NotFound } from "web/js/page/not-found";
 import { RootState } from "web/js/redux/reducer";
 import { updateUserInterface } from "web/js/redux/user-interface/action";
 import { Subscribers } from "web/js/component/subscribers";
+import { DictionaryEntry } from "web/js/page/dictionary-entry";
 import "./style.scss";
 
 export function Application() {
@@ -105,6 +106,7 @@ export function Application() {
       <Switch>
         <Route path={routes.configuration()} component={Configuration} />
         <Route path={routes.aboutUs()} component={AboutUs} />
+        <Route path={routes.entry(":q(\\d+)")} component={DictionaryEntry} />
         {articleRoutes}
         <Route component={NotFound} />
       </Switch>

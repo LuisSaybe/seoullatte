@@ -1,15 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
 
-import { Action } from "web/js/redux/entry/action";
-import { RootState } from "web/js/redux/reducer";
-import { useFetch } from "web/js/hook/useFetch";
-import { Entry } from "web/js/class/entry";
-import { useKoreanUtterance } from "web/js/hook/useKoreanUtterance";
 import { useEntryMetaInformation } from "web/js/hook/useEntryMetaInformation";
 import { Anchor } from "web/js/component/anchor";
 import { UtteranceButton } from "web/js/component/utterance-button";
+import { useEntry } from "web/js/hook/useEntry";
+import { DictionaryIcon } from "web/js/component/dictionary-icon";
+import { routes } from "web/js/routes";
 import "./style.scss";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
@@ -19,27 +16,29 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 export function Definition(props: Props) {
   const { t } = useTranslation();
-  const [dispatchGetWords] = useFetch(Action.getWords);
-  const entryXML = useSelector((state: RootState) => state.entry[props.q]);
-  const entry = entryXML ? new Entry(entryXML) : null;
-  const utterance = useKoreanUtterance(entry?.getDictionaryForm());
+  const entry = useEntry(props.q);
   const { children, senseIndexes, q, ...rest } = props;
   const information = useEntryMetaInformation(q);
 
-  useEffect(() => {
-    if (!entryXML) {
-      dispatchGetWords(`https://api.seoullatte.com/entry/${q}`);
-    }
-  }, [dispatchGetWords, entryXML, q]);
-
   let content;
 
-  if (entryXML) {
+  if (entry) {
     content = (
       <>
         <div styleName="title">
           <div>{entry.getDictionaryForm()}</div>
-          {utterance && <UtteranceButton text={entry.getDictionaryForm()} />}
+          <div styleName="buttons">
+            <UtteranceButton text={entry.getDictionaryForm()} />
+            <Anchor
+              canReturn
+              styleName="to-dictionary-anchor"
+              to={routes.entry(props.q)}
+              button
+              type="button"
+            >
+              <DictionaryIcon styleName="book-icon" />
+            </Anchor>
+          </div>
         </div>
         <div styleName="section title">
           <strong>{t("Definition")}</strong>

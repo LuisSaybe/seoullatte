@@ -1,7 +1,10 @@
 @use "~web/sass/layout";
+@use "~web/sass/size";
+
+.content {
+  @include layout.defaultLayout();
+}
 
 .root {
-  display: flex;
-  justify-content: center;
-  @include layout.defaultLayout();
+  @include layout.navigationAndContentLayout();
 }

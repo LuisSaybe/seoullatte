@@ -1,9 +1,23 @@
 @use '~web/sass/color';
 @use '~web/sass/media';
+@use '~web/sass/size';
 
 .article-anchor {
   display: block;
   margin-top: 12px;
+}
+
+.to-dictionary-anchor {
+  padding: 2px 8px !important;
+}
+
+.book-icon {
+  height: 18px;
+  width: 18px;
+}
+
+.buttons > *:not(:first-child) {
+  margin-left: size.$margin-small;
 }
 
 .definition {

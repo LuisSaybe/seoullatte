@@ -7,7 +7,7 @@ export enum Language {
 
 export const SUPPORTED_LANGUAGE_IDS = [Language.en, Language.fr];
 
-export const getLanguage = (navigator: Navigator) => {
+export const getLanguage = (navigator: Navigator): string => {
   let result;
 
   if (navigator && !result) {
