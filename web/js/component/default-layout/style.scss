@@ -1,0 +1,8 @@
+@use "~web/sass/layout";
+
+.content {
+  @include layout.defaultLayout();
+}
+.root {
+  @include layout.navigationAndContentLayout();
+}

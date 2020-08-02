@@ -9,9 +9,9 @@ import { Anchor } from "web/js/component/anchor";
 import { updateUserInterface } from "web/js/redux/user-interface/action";
 import { RootState } from "web/js/redux/reducer";
 import { DEFAULT_SPEAKING_RATE } from "web/js/interface/speech-synthesis";
-import { Navigation } from "web/js/component/navigation";
 import { ArticleTitle } from "web/js/component/article-title";
 import "./style.scss";
+import { DefaultLayout } from "web/js/component/default-layout";
 
 export function Configuration() {
   const dispatch = useDispatch();
@@ -57,56 +57,53 @@ export function Configuration() {
 
   return (
     <>
-      <div styleName="root">
-        <Navigation />
-        <div styleName="content">
-          <ArticleTitle>Settings</ArticleTitle>
+      <DefaultLayout>
+        <ArticleTitle>Settings</ArticleTitle>
+        <div styleName="field">
+          <label styleName="label" htmlFor="speaking-rate">
+            {t("Text-to-Speech Speed")}
+          </label>
+          <select
+            styleName="select"
+            id="speaking-rate"
+            value={speechSynthesisSettings.rate ?? DEFAULT_SPEAKING_RATE}
+            onChange={onChange}
+            onBlur={onChange}
+          >
+            <option value={DEFAULT_SPEAKING_RATE}>{t("default")}</option>
+            {[0.5, 0.7, 1].map((defaultRate) => (
+              <option key={defaultRate} value={defaultRate}>
+                {defaultRate}
+              </option>
+            ))}
+          </select>
+        </div>
+        {voiceURI && (
           <div styleName="field">
-            <label styleName="label" htmlFor="speaking-rate">
-              {t("Text-to-Speech Speed")}
+            <label styleName="label" htmlFor="voice-uri">
+              {t("Text-to-Speech Voice")}
             </label>
             <select
-              styleName="select"
-              id="speaking-rate"
-              value={speechSynthesisSettings.rate ?? DEFAULT_SPEAKING_RATE}
-              onChange={onChange}
-              onBlur={onChange}
+              styleName="label"
+              id="voice-uri"
+              value={voiceURI}
+              onChange={onVoiceURIChange}
+              onBlur={onVoiceURIChange}
             >
-              <option value={DEFAULT_SPEAKING_RATE}>{t("default")}</option>
-              {[0.5, 0.7, 1].map((defaultRate) => (
-                <option key={defaultRate} value={defaultRate}>
-                  {defaultRate}
-                </option>
-              ))}
+              {speechSynthesisSettings.voices
+                .filter((voice) => voice.lang.includes(Language.ko))
+                .map((voice) => (
+                  <option key={voice.voiceURI} value={voice.voiceURI}>
+                    {voice.name}
+                  </option>
+                ))}
             </select>
           </div>
-          {voiceURI && (
-            <div styleName="field">
-              <label styleName="label" htmlFor="voice-uri">
-                {t("Text-to-Speech Voice")}
-              </label>
-              <select
-                styleName="label"
-                id="voice-uri"
-                value={voiceURI}
-                onChange={onVoiceURIChange}
-                onBlur={onVoiceURIChange}
-              >
-                {speechSynthesisSettings.voices
-                  .filter((voice) => voice.lang.includes(Language.ko))
-                  .map((voice) => (
-                    <option key={voice.voiceURI} value={voice.voiceURI}>
-                      {voice.name}
-                    </option>
-                  ))}
-              </select>
-            </div>
-          )}
-          <Anchor styleName="back-button" button to={toRoute}>
-            {t("back")}
-          </Anchor>
-        </div>
-      </div>
+        )}
+        <Anchor styleName="back-button" button to={toRoute}>
+          {t("back")}
+        </Anchor>
+      </DefaultLayout>
       <Helmet>
         <title>Settings</title>
         <link rel="canonical" href={window.location.href} />

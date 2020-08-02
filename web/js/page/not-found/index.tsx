@@ -1,20 +1,17 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+import { DefaultLayout } from "web/js/component/default-layout";
 import "./style.scss";
-import { Navigation } from "web/js/component/navigation";
 
 export function NotFound() {
   const { t } = useTranslation();
 
   return (
-    <div styleName="root">
-      <Navigation />
-      <div styleName="content">
-        {t(
-          "Sorry, the page you are looking for does not exist or you do not have permission to see it",
-        )}
-      </div>
-    </div>
+    <DefaultLayout>
+      {t(
+        "Sorry, the page you are looking for does not exist or you do not have permission to see it",
+      )}
+    </DefaultLayout>
   );
 }

@@ -1,4 +1,3 @@
-@use "~web/sass/layout";
 @use "~web/sass/size";
 
 .back-anchor {
@@ -6,8 +5,12 @@
   margin-top: size.$margin-large;
 }
 
-.content {
-  @include layout.defaultLayout();
+.content-loader-body {
+  margin-top: size.$margin-medium;
+}
+
+.content-loader-title {
+  width: 50%;
 }
 
 .header {
@@ -16,23 +19,8 @@
   justify-content: space-between;
 }
 
-.root {
-  @include layout.navigationAndContentLayout();
-}
-
 .returnTo {
   display: block;
-  margin-top: size.$margin-medium;
-}
-
-.content-loader-title {
-  height: 48px;
-  width: 400px;
-}
-
-.content-loader-body {
-  height: 24px;
-  width: 800px;
   margin-top: size.$margin-medium;
 }
 

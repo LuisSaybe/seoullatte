@@ -1,4 +1,4 @@
-import React from "react";
+import React, { AnchorHTMLAttributes } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -12,6 +12,7 @@ interface IInterface extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   icon?: boolean;
   box?: boolean;
   canReturn?: boolean;
+  resetReturnTo?: boolean;
 }
 
 export function Anchor(props: IInterface) {
@@ -23,17 +24,32 @@ export function Anchor(props: IInterface) {
     className,
     button,
     icon,
+    resetReturnTo,
     ...rest
   } = props;
   const dispatch = useDispatch();
   const locations = useSelector((state: RootState) => state.location);
-  const onClick = () => {
+  const onClick: React.AnchorHTMLAttributes<HTMLAnchorElement>["onClick"] = (
+    e,
+  ) => {
     if (canReturn) {
       dispatch(
         updateUserInterface({
           returnTo: locations[locations.length - 1].pathname,
         }),
       );
+    }
+
+    if (resetReturnTo) {
+      dispatch(
+        updateUserInterface({
+          returnTo: null,
+        }),
+      );
+    }
+
+    if (props.onClick) {
+      props.onClick(e);
     }
   };
   let styleName = "root";
@@ -53,11 +69,11 @@ export function Anchor(props: IInterface) {
   if (props.to) {
     return (
       <Link
-        onClick={onClick}
         className={props.className}
         styleName={styleName}
         to={props.to}
         {...rest}
+        onClick={onClick}
       >
         {props.children}
       </Link>

@@ -27,10 +27,6 @@ export function useArticleRoutes() {
               <meta property="og:title" content={topic.name} />
               <meta property="og:url" content={window.location.href} />
               <meta property="og:description" content={topic.description} />
-              <meta
-                property="og:image"
-                content="https://luissaybe.nyc3.digitaloceanspaces.com/seoul-latte/images/icon/192x192.png"
-              />
             </Helmet>
             <topic.component />
           </ArticlePage>

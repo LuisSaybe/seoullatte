@@ -135,7 +135,17 @@
     <title>Seoul Latte</title>
   </head>
   <body>
-    <div class="seoullatte-project-root"></div>
+    <div class="seoullatte-project-root">
+      <div class="seoullattte-loader-body">
+        <div class="seoullattte-content-loader-title"></div>
+        <div class="seoullattte-content-loader-text"></div>
+        <div class="seoullattte-content-loader-text"></div>
+        <div class="seoullattte-content-loader-text"></div>
+        <div class="seoullattte-content-loader-text"></div>
+        <div class="seoullattte-content-loader-text"></div>
+        <div class="seoullattte-content-loader-text"></div>
+      </div>
+    </div>
     <% if (gaTrackingId) { %>
     <script
       type="text/javascript"
@@ -152,6 +162,46 @@
     <% } %>
     <script async src="https://www.instagram.com/embed.js"></script>
     <style>
+      .seoullattte-loader-body {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin: 0 auto;
+      }
+
+      .seoullattte-content-loader-title,
+      .seoullattte-content-loader-text {
+        animation: seoullattte-fading 1.5s infinite;
+        background-color: #444;
+        opacity: 0.1;
+        border-radius: 8px;
+        margin-top: 24px;
+        display: inline-block;
+      }
+
+      .seoullattte-content-loader-text {
+        height: 32px;
+      }
+
+      .seoullattte-content-loader-title {
+        width: 30%;
+        height: 42px;
+      }
+
+      @keyframes seoullattte-fading {
+        0% {
+          opacity: 0.1;
+        }
+
+        50% {
+          opacity: 0.2;
+        }
+
+        100% {
+          opacity: 0.1;
+        }
+      }
+
       /* cyrillic-ext */
       @font-face {
         font-family: "Open Sans";

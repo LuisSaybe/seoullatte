@@ -9,18 +9,8 @@
   margin-top: size.$margin-medium;
 }
 
-.content {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  @include layout.defaultLayout();
-}
-
 .footer {
   margin: size.$margin-medium 0;
-}
-
-.root {
-  @include layout.navigationAndContentLayout();
 }
 
 .topic-name {

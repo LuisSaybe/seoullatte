@@ -23,18 +23,6 @@
   }
 }
 
-.content {
-  @include layout.defaultLayout();
-
-  @include media.not-phone() {
-    width: 800px;
-  }
-}
-
-.root {
-  @include layout.navigationAndContentLayout();
-}
-
 .label,
 .select {
   font-size: 1rem;

@@ -7,7 +7,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { ArticleTitle } from "web/js/component/article-title";
 import { useEntry } from "web/js/hook/useEntry";
 import { ContentLoader } from "web/js/component/content-loader";
-import { Navigation } from "web/js/component/navigation";
 import { EntrySense } from "web/js/component/entry-sense";
 import { useLastRouteOrHome } from "web/js/hook/useLastRouteOrHome";
 import { Anchor } from "web/js/component/anchor";
@@ -15,6 +14,7 @@ import { RootState } from "web/js/redux/reducer";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { useTopics } from "web/js/hook/useTopics";
 import { updateUserInterface } from "web/js/redux/user-interface/action";
+import { DefaultLayout } from "web/js/component/default-layout";
 import "./style.scss";
 
 export function DictionaryEntry() {
@@ -68,10 +68,6 @@ export function DictionaryEntry() {
             property="og:description"
             content={t(`Definition of ${entry.getDictionaryForm()}`)}
           />
-          <meta
-            property="og:image"
-            content="https://luissaybe.nyc3.digitaloceanspaces.com/seoul-latte/images/icon/192x192.png"
-          />
         </Helmet>
       </>
     );
@@ -79,21 +75,10 @@ export function DictionaryEntry() {
     content = (
       <>
         <ContentLoader styleName="content-loader-title" />
-        <ContentLoader styleName="content-loader-body" />
-        <ContentLoader styleName="content-loader-body" />
-        <ContentLoader styleName="content-loader-body" />
-        <ContentLoader styleName="content-loader-body" />
-        <ContentLoader styleName="content-loader-body" />
+        <ContentLoader styleName="content-loader-body" textBlocks={4} />
       </>
     );
   }
 
-  return (
-    <>
-      <div styleName="root">
-        <Navigation />
-        <div styleName="content">{content}</div>
-      </div>
-    </>
-  );
+  return <DefaultLayout>{content}</DefaultLayout>;
 }

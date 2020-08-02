@@ -4,12 +4,12 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { ArticleTitle } from "web/js/component/article-title";
 import { Footer } from "web/js/component/footer";
-import { Navigation } from "web/js/component/navigation";
 import { NextPreviousAnchors } from "web/js/component/next-previous-anchors";
 import { RootState } from "web/js/redux/reducer";
 import { Anchor } from "../anchor";
 import { updateUserInterface } from "web/js/redux/user-interface/action";
 import { useTopics } from "web/js/hook/useTopics";
+import { DefaultLayout } from "../default-layout";
 import "./style.scss";
 
 interface IInterface extends React.HTMLAttributes<HTMLElement> {
@@ -72,31 +72,28 @@ export function ArticlePage(props: IInterface) {
   }, [previous, next, history]);
 
   return (
-    <div styleName="root" {...rest}>
-      <Navigation />
-      <div styleName="content">
-        {returnToTopic && (
-          <Anchor
-            onClick={onBackClick}
-            to={returnToTopic.path}
-            styleName="returnTo"
-          >
-            return to <span styleName="topic-name">{returnToTopic.name}</span>
-          </Anchor>
-        )}
-        <article>
-          <ArticleTitle>{articleTitle}</ArticleTitle>
-          {props.children}
-        </article>
-        <div>
-          <NextPreviousAnchors
-            styleName="anchors"
-            next={next}
-            previous={previous}
-          />
-          <Footer styleName="footer" />
-        </div>
+    <DefaultLayout {...rest}>
+      {returnToTopic && (
+        <Anchor
+          onClick={onBackClick}
+          to={returnToTopic.path}
+          styleName="returnTo"
+        >
+          return to <span styleName="topic-name">{returnToTopic.name}</span>
+        </Anchor>
+      )}
+      <article>
+        <ArticleTitle>{articleTitle}</ArticleTitle>
+        {props.children}
+      </article>
+      <div>
+        <NextPreviousAnchors
+          styleName="anchors"
+          next={next}
+          previous={previous}
+        />
+        <Footer styleName="footer" />
       </div>
-    </div>
+    </DefaultLayout>
   );
 }
