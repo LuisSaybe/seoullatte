@@ -4,10 +4,9 @@ import { Trans, useTranslation } from "react-i18next";
 import { ArticleSection } from "web/js/component/article-section";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
-import { Utterance } from "web/js/component/utterance";
 import "./style.scss";
 
-export function FormalAndInformalSpeech() {
+export default function FormalAndInformalSpeech() {
   const { t } = useTranslation();
 
   return (

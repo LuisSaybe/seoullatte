@@ -1,6 +1,7 @@
 @use '~web/sass/color';
 @use '~web/sass/layout';
 @use '~web/sass/media';
+@use '~web/sass/size';
 
 .actions {
   > *:not(:first-child) {
@@ -14,6 +15,28 @@
   height: 4px;
   width: 18px;
   margin: 2px 0;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 size.$margin-medium;
+
+  @include media.phone() {
+    flex: 1 0 0;
+  }
+
+  @include media.not_phone() {
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+  }
+}
+
+.search-input-container {
+  margin-left: size.$margin-medium;
+  flex: 1 0 0;
 }
 
 .title-link {
@@ -35,18 +58,6 @@
   color: color.$logo;
 }
 
-.hamburger-menu {
-  @include media.phone() {
-    margin-right: 16px;
-  }
-}
-
-.settings {
-  @include media.phone() {
-    margin-left: 16px;
-  }
-}
-
 .root {
   display: flex;
   align-items: center;
@@ -62,17 +73,6 @@
 
   @include media.phone() {
     display: block;
-  }
-}
-
-.search-bar {
-  @include media.phone() {
-    flex: 1 0 0;
-  }
-
-  @include media.not-phone() {
-    width: 380px;
-    margin: 0 auto;
   }
 }
 

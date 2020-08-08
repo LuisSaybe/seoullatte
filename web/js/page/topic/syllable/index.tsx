@@ -2,11 +2,10 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
-import { Utterance } from "web/js/component/utterance";
-import "./style.scss";
 import { DefinitionPopup } from "web/js/component/definition-popup";
+import "./style.scss";
 
-export function Syllable() {
+export default function Syllable() {
   const { t } = useTranslation();
 
   return (

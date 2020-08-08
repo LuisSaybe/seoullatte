@@ -7,7 +7,7 @@ import { SectionTitle } from "web/js/component/section-title";
 import { Section } from "web/js/component/section";
 import "./style.scss";
 
-export function Endings() {
+export default function Endings() {
   const { t } = useTranslation();
 
   return (

@@ -18,6 +18,7 @@ module.exports = (env) => {
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: "[contenthash].js",
+      chunkFilename: '[contenthash].bundle.js',
     },
     resolve: {
       alias: {

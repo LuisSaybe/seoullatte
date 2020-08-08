@@ -7,7 +7,7 @@ import { Utterance } from "web/js/component/utterance";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import "./style.scss";
 
-export function Hangul() {
+export default function Hangul() {
   const { t } = useTranslation();
 
   return (

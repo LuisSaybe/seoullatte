@@ -3,12 +3,10 @@ import { Trans, useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
-import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import "./style.scss";
-import { Utterance } from "web/js/component/utterance";
 
-export function SubjectParticle() {
+export default function SubjectParticle() {
   const { t } = useTranslation();
 
   return (

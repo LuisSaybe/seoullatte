@@ -11,7 +11,7 @@ import { Table } from "web/js/component/table";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
-export function PlainSpeech() {
+export default function PlainSpeech() {
   const { t } = useTranslation();
 
   return (

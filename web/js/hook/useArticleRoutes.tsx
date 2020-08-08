@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, Suspense } from "react";
 import { Helmet } from "react-helmet";
 import { Route } from "react-router-dom";
 
@@ -28,7 +28,9 @@ export function useArticleRoutes() {
               <meta property="og:url" content={window.location.href} />
               <meta property="og:description" content={topic.description} />
             </Helmet>
-            <topic.component />
+            <Suspense fallback={null}>
+              <topic.component />
+            </Suspense>
           </ArticlePage>
         );
 

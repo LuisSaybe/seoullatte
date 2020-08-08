@@ -1,25 +1,8 @@
 @use '~web/sass/color';
-@use '~web/sass/size';
-
-.label {
-  display: none;
-}
 
 .item-list {
   display: flex;
   flex-direction: column;
-}
-
-.input {
-  margin-top: 12px;
-  border: none;
-  background: none;
-  padding: 4px 2px;
-  font-size: 1.2rem;
-}
-
-.hr {
-  margin-top: size.$margin-small;
 }
 
 .link {

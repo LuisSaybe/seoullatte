@@ -3,11 +3,11 @@ import { Trans, useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
 import { ArticleTitle } from "web/js/component/article-title";
-import "./style.scss";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
+import "./style.scss";
 
-export function Negation() {
+export default function Negation() {
   const { t } = useTranslation();
 
   return (

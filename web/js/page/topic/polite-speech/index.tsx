@@ -10,7 +10,7 @@ import { ArticleTitle } from "web/js/component/article-title";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
-export function PoliteSpeech() {
+export default function PoliteSpeech() {
   const { t } = useTranslation();
 
   return (

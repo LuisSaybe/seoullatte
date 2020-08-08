@@ -51,6 +51,11 @@ export function DictionarySearchInput(props: Props) {
       search(`https://api.seoullatte.com/entry?query=${value}`);
     }
   };
+  const renderSuggestionsContainer = ({ containerProps, children }) => {
+    return (
+      <div {...containerProps} children={children} aria-label={t("search")} />
+    );
+  };
 
   React.useEffect(() => {
     setSuggestions(entries);
@@ -64,6 +69,7 @@ export function DictionarySearchInput(props: Props) {
         suggestionsList: styles.suggestionsList,
         suggestionHighlighted: styles.suggestionHighlighted,
       }}
+      renderSuggestionsContainer={renderSuggestionsContainer}
       onSuggestionSelected={onSuggestionSelected}
       onSuggestionsFetchRequested={onSuggestionsFetchRequested}
       suggestions={suggestions}
@@ -73,7 +79,6 @@ export function DictionarySearchInput(props: Props) {
       inputProps={{
         ...rest,
         className: `${styles.input} ${inputClassname || ""}`,
-        placeholder: t("Search..."),
       }}
     />
   );

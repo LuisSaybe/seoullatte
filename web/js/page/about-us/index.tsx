@@ -1,6 +1,6 @@
+import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
 import { Trans } from "react-i18next";
 
 import { useLastRouteOrHome } from "web/js/hook/useLastRouteOrHome";
@@ -20,6 +20,9 @@ export function AboutUs() {
 
   return (
     <>
+      <Helmet>
+        <script async src="https://www.instagram.com/embed.js"></script>
+      </Helmet>
       <div styleName="root">
         <Navigation />
         <div styleName="content">

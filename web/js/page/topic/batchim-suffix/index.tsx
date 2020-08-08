@@ -12,7 +12,7 @@ import { Anchor } from "web/js/component/anchor";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
-export function BatchimSuffix() {
+export default function BatchimSuffix() {
   const { t } = useTranslation();
   const navigate = useNavigateToHash();
   const canUseKoreanUtterance = useCanUseKoreanUtterance();

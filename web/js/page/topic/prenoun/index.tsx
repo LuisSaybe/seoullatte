@@ -9,7 +9,7 @@ import { Table } from "web/js/component/table";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
-export function Prenoun() {
+export default function Prenoun() {
   const { t } = useTranslation();
 
   return (

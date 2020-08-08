@@ -29,32 +29,31 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
 
   return (
     <nav className={props.className} styleName="root" {...props}>
-      <Button
-        styleName="hamburger-menu"
-        aria-label={t("hamburger menu")}
-        onClick={onClick}
-        type="button"
-      >
+      <Button aria-label={t("hamburger menu")} onClick={onClick} type="button">
         <div styleName="bar" />
         <div styleName="bar" />
         <div styleName="bar" />
       </Button>
-      <DictionarySearchInput
-        inputClassname={styles.searchInput}
-        value={searchValue}
-        onChange={(_, value) => {
-          if (value.method === "type") {
-            setSearchValue(value.newValue);
-          } else if (value.method === "click") {
-            history.push(routes.entry(value.newValue));
-          }
-        }}
-        onSuggestionSelected={() => {
-          setSearchValue("");
-        }}
-        styleName="search-bar"
-      />
-      <Anchor styleName="settings" button={true} to={routes.configuration()}>
+      <div styleName="search-section">
+        <label htmlFor="dictionary-search">Search</label>
+        <DictionarySearchInput
+          id="dictionary-search"
+          inputClassname={styles.searchInput}
+          value={searchValue}
+          onChange={(_, value) => {
+            if (value.method === "type") {
+              setSearchValue(value.newValue);
+            } else if (value.method === "click") {
+              history.push(routes.entry(value.newValue));
+            }
+          }}
+          onSuggestionSelected={() => {
+            setSearchValue("");
+          }}
+          styleName="search-input-container"
+        />
+      </div>
+      <Anchor button={true} to={routes.configuration()}>
         {t("Settings")}
       </Anchor>
     </nav>

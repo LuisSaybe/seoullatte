@@ -8,7 +8,7 @@ import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import "./style.scss";
 
-export function Counting() {
+export default function Counting() {
   const { t } = useTranslation();
 
   return (

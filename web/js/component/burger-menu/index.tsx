@@ -6,8 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useTopics } from "web/js/hook/useTopics";
 import { Topic } from "web/js/interface/korean";
 import { Anchor } from "web/js/component/anchor";
-import { Hr } from "web/js/component/hr";
-import { Input } from "web/js/component/input";
 import { RootState } from "web/js/redux/reducer";
 import { updateUserInterface } from "web/js/redux/user-interface/action";
 import styles from "./style.scss";
@@ -62,17 +60,6 @@ export function BurgerMenu() {
       customCrossIcon={false}
       customBurgerIcon={false}
     >
-      <label htmlFor="search-input" styleName="label">
-        {t("Search for a topic")}
-      </label>
-      <Input
-        id="search-input"
-        onChange={(e) => setSearchValue(e.target.value)}
-        value={searchValue}
-        styleName="input"
-        placeholder={t("search...")}
-      />
-      <Hr styleName="hr" />
       {topics.filter(filterTopics).map((topic) => (
         <Anchor
           onClick={onLinkClick}

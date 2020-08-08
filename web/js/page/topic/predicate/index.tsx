@@ -3,10 +3,9 @@ import { useTranslation } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
-import { Utterance } from "web/js/component/utterance";
 import "./style.scss";
 
-export function Predicate() {
+export default function Predicate() {
   const { t } = useTranslation();
 
   return (

@@ -14,7 +14,7 @@ import { TopicTitleMedium } from "web/js/component/topic-title-medium";
 import { Utterance } from "web/js/component/utterance";
 import "./style.scss";
 
-export function Noun() {
+export default function Noun() {
   const { t } = useTranslation();
   const chineseVoice = useChineseVoice();
   const germanVoice = useGermanVoice();

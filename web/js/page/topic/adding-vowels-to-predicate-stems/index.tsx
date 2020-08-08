@@ -15,7 +15,7 @@ import {
 } from "web/js/page/topic/irregular-predicate";
 import "./style.scss";
 
-export function AddingVowelsToPredicateStems() {
+export default function AddingVowelsToPredicateStems() {
   const { t } = useTranslation();
   const navigate = useNavigateToHash();
 

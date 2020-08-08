@@ -7,7 +7,7 @@ import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import "./style.scss";
 
-export function PredicateAsModifier() {
+export default function PredicateAsModifier() {
   const { t } = useTranslation();
 
   return (

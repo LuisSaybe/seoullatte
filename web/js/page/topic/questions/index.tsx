@@ -9,7 +9,7 @@ import { SectionTitle } from "web/js/component/section-title";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
-export function Questions() {
+export default function Questions() {
   const { t } = useTranslation();
 
   return (

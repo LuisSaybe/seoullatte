@@ -10,7 +10,7 @@ import { DefinitionPopup } from "web/js/component/definition-popup";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
-export function IntimateSpeech() {
+export default function IntimateSpeech() {
   const { t } = useTranslation();
 
   return (

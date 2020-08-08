@@ -9,7 +9,7 @@ import { Section } from "web/js/component/section";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
-export function ExistenceAndPosession() {
+export default function ExistenceAndPosession() {
   const { t } = useTranslation();
 
   return (

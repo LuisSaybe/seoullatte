@@ -11,7 +11,7 @@ import { TopicRoute } from "web/js/interface/route";
 
 import "./style.scss";
 
-export function PastTense() {
+export default function PastTense() {
   const { t } = useTranslation();
 
   return (

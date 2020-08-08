@@ -7,7 +7,7 @@ import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import "./style.scss";
 
-export function TopicParticle() {
+export default function TopicParticle() {
   const { t } = useTranslation();
 
   return (

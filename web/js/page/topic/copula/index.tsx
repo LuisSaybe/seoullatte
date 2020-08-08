@@ -9,7 +9,7 @@ import { useCanUseKoreanUtterance } from "web/js/hook/useCanUseKoreanUtterance";
 import { Section } from "web/js/component/section";
 import "./style.scss";
 
-export function Copula() {
+export default function Copula() {
   const { t } = useTranslation();
   const canUseKoreanUtterance = useCanUseKoreanUtterance();
 

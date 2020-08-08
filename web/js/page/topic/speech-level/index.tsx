@@ -7,10 +7,9 @@ import { Anchor } from "web/js/component/anchor";
 import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { TopicTitleMedium } from "web/js/component/topic-title-medium";
-import { Utterance } from "web/js/component/utterance";
 import "./style.scss";
 
-export function SpeechLevel() {
+export default function SpeechLevel() {
   const { t } = useTranslation();
 
   return (
