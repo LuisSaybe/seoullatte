@@ -10,15 +10,13 @@ module.exports = (env) => {
   return {
     devtool: env.mode === "development" ? "inline-source-map" : false,
     entry: [
-      "core-js/stable",
-      "regenerator-runtime/runtime",
       path.resolve(__dirname, "web/js/index.tsx"),
       path.resolve(__dirname, "web/sass/index.scss"),
     ],
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: "[contenthash].js",
-      chunkFilename: '[contenthash].bundle.js',
+      chunkFilename: "[contenthash].bundle.js",
     },
     resolve: {
       alias: {
