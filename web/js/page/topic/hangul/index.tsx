@@ -34,31 +34,31 @@ export default function Hangul() {
       </section>
       <section styleName="section consonants">
         {[
-          ["ㄱ", "기역"],
-          ["ㄲ", "쌍기역"],
-          ["ㄴ", "니은"],
-          ["ㄷ", "디귿"],
-          ["ㄸ", "쌍디귿"],
-          ["ㄹ", "리을"],
-          ["ㅁ", "미음"],
-          ["ㅂ", "비읍"],
-          ["ㅃ", "쌍비읍"],
-          ["ㅅ", "시옷"],
-          ["ㅆ", "쌍시옷"],
-          ["ㅇ", "이응"],
-          ["ㅈ", "지읒"],
-          ["ㅉ", "쌍지읒"],
-          ["ㅊ", "치읓"],
-          ["ㅋ", "키읔"],
-          ["ㅌ", "티읕"],
-          ["ㅍ", "피읖"],
-          ["ㅎ", "히읗"],
-        ].map(([character, name], index) => (
+          ["ㄱ", "기역", "69070"],
+          ["ㄲ", "쌍기역", "69072"],
+          ["ㄴ", "니은", "24397"],
+          ["ㄷ", "디귿", "69076"],
+          ["ㄸ", "쌍디귿", "69078"],
+          ["ㄹ", "리을", "69080"],
+          ["ㅁ", "미음", "69082"],
+          ["ㅂ", "비읍", "69085"],
+          ["ㅃ", "쌍비읍", "69087"],
+          ["ㅅ", "시옷", "69089"],
+          ["ㅆ", "쌍시옷", "69091"],
+          ["ㅇ", "이응", "69093"],
+          ["ㅈ", "지읒", "70072"],
+          ["ㅉ", "쌍지읒", "69097"],
+          ["ㅊ", "치읓", "69099"],
+          ["ㅋ", "키읔", "69101"],
+          ["ㅌ", "티읕", "69103"],
+          ["ㅍ", "피읖", "69105"],
+          ["ㅎ", "히읗", "69107"],
+        ].map(([character, name, q], index) => (
           <div key={index}>
             <span styleName="character consonant">{character}</span>
-            <Utterance text={name} styleName="character">
+            <DefinitionPopup q={q} styleName="character">
               {name}
-            </Utterance>
+            </DefinitionPopup>
           </div>
         ))}
       </section>
@@ -69,28 +69,26 @@ export default function Hangul() {
       </section>
       <section styleName="section vowels">
         {[
-          "ㅏ",
-          "ㅓ",
-          "ㅗ",
-          "ㅜ",
-          "ㅡ",
-          "ㅣ",
-          "ㅐ",
-          "ㅔ",
-          "ㅒ",
-          "ㅖ",
-          "ㅚ",
-          "ㅙ",
-          "ㅟ",
-          "ㅞ",
-        ].map((character) => (
-          <Utterance key={character} text={character} styleName="character">
+          ["ㅏ", "68847"],
+          ["ㅓ", "68854"],
+          ["ㅗ", "68872"],
+          ["ㅜ", "68874"],
+          ["ㅡ", "68876"],
+          ["ㅣ", "68877"],
+          ["ㅐ", "68848"],
+          ["ㅔ", "68855"],
+          ["ㅒ", "68852"],
+          ["ㅖ", "68857"],
+          ["ㅚ", "68861"],
+          ["ㅙ", "68860"],
+          ["ㅟ", "68865"],
+          ["ㅞ", "68863"],
+          ["ㅢ", "68868"],
+        ].map(([character, q]) => (
+          <DefinitionPopup q={q} key={q} styleName="character">
             {character}
-          </Utterance>
+          </DefinitionPopup>
         ))}
-        <Utterance styleName="character" text="으이">
-          ㅢ
-        </Utterance>
       </section>
     </>
   );

@@ -28,14 +28,16 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
   };
 
   return (
-    <nav className={props.className} styleName="root" {...props}>
+    <nav {...props} styleName="root">
       <Button aria-label={t("hamburger menu")} onClick={onClick} type="button">
         <div styleName="bar" />
         <div styleName="bar" />
         <div styleName="bar" />
       </Button>
       <div styleName="search-section">
-        <label htmlFor="dictionary-search">Search</label>
+        <label styleName="label" htmlFor="dictionary-search">
+          {t("Search")}
+        </label>
         <DictionarySearchInput
           id="dictionary-search"
           inputClassname={styles.searchInput}

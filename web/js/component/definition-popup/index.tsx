@@ -24,10 +24,14 @@ export function DefinitionPopup(props: Props) {
   };
 
   useEffect(() => {
-    if (didClickOnElement === false) {
+    if (didClickOnElement === true && !showDefinition) {
+      setShowDefinition(true);
+    }
+
+    if (didClickOnElement === false && showDefinition) {
       setShowDefinition(false);
     }
-  }, [didClickOnElement]);
+  }, [didClickOnElement, showDefinition]);
 
   return (
     <span ref={rootRef}>

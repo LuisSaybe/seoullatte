@@ -17,11 +17,20 @@
   margin: 2px 0;
 }
 
+.label {
+  font-size: 16px;
+  position: absolute;
+  top: -10px;
+  z-index: 1;
+  left: 40px;
+  background-color: white;
+  padding: 0 2px;
+}
+
 .search-section {
   display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 0 size.$margin-medium;
+  position: relative;
 
   @include media.phone() {
     flex: 1 0 0;
@@ -35,7 +44,6 @@
 }
 
 .search-input-container {
-  margin-left: size.$margin-medium;
   flex: 1 0 0;
 }
 
