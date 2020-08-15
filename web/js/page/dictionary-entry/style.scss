@@ -9,6 +9,11 @@
   margin-top: size.$margin-medium;
 }
 
+.part-of-speech {
+  display: block;
+  margin-top: size.$margin-medium;
+}
+
 .content-loader-title {
   width: 50%;
 }
@@ -25,7 +30,7 @@
 }
 
 .senses {
-  margin-top: size.$margin-large;
+  margin-top: size.$margin-medium;
 }
 
 .sense {

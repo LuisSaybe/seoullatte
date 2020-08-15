@@ -16,6 +16,7 @@ import { useTopics } from "web/js/hook/useTopics";
 import { updateUserInterface } from "web/js/redux/user-interface/action";
 import { DefaultLayout } from "web/js/component/default-layout";
 import "./style.scss";
+import { EntryPartOfSpeech } from "web/js/component/entry-part-of-speech";
 
 export function DictionaryEntry() {
   const { t } = useTranslation();
@@ -50,6 +51,7 @@ export function DictionaryEntry() {
           <UtteranceButton text={entry.getDictionaryForm()} />
         </div>
         {returnToAnchor}
+        <EntryPartOfSpeech styleName="part-of-speech" q={Number(q)} />
         <div styleName="senses">
           {Array.from(entry.getSenses()).map((_, index) => (
             <EntrySense styleName="sense" key={index} q={q} index={index + 1} />

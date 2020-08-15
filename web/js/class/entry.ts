@@ -38,4 +38,8 @@ export class Entry {
 
     return null;
   }
+
+  public getPartOfSpeech() {
+    return this.xml.querySelector(`:root > item > word_info > pos`).textContent;
+  }
 }

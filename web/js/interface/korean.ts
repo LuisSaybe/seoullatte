@@ -14,6 +14,20 @@ export interface DefinitionDisplayOptions {
   senseIndexes?: number[];
 }
 
+export enum KoreaPartOfSpeech {
+  noun = "명사",
+  verb = "동사",
+  adjective = "형용사",
+  ending = "어미",
+  determiner = "관형사",
+  number = "수사",
+  boundNoun = "의존 명사",
+  affix = "접사",
+  adverb = "부사",
+  interjection = "감탄사",
+  none = "품사 없음",
+}
+
 export enum LanguageNames {
   english = "영어",
   japanese = "일본어",
