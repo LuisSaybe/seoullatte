@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -13,6 +13,8 @@ import styles from "./style.scss";
 
 export function Navigation(props: React.HTMLProps<HTMLElement>) {
   const { t } = useTranslation();
+  const [shouldBlur, setShouldBlur] = React.useState(false);
+  const ref = useRef<HTMLInputElement>();
   const dispatch = useDispatch();
   const history = useHistory();
   const [searchValue, setSearchValue] = useState("");
@@ -27,6 +29,13 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
     );
   };
 
+  useEffect(() => {
+    if (shouldBlur) {
+      ref.current.blur();
+      setShouldBlur(false);
+    }
+  }, [shouldBlur, ref.current]);
+
   return (
     <nav {...props} styleName="root">
       <Button aria-label={t("hamburger menu")} onClick={onClick} type="button">
@@ -39,18 +48,20 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
           {t("Search")}
         </label>
         <DictionarySearchInput
+          ref={ref}
           id="dictionary-search"
           inputClassname={styles.searchInput}
           value={searchValue}
           onChange={(_, value) => {
             if (value.method === "type") {
               setSearchValue(value.newValue);
-            } else if (value.method === "click") {
+            } else if (value.method === "click" || value.method === "enter") {
               history.push(routes.entry(value.newValue));
             }
           }}
           onSuggestionSelected={() => {
             setSearchValue("");
+            setShouldBlur(true);
           }}
           styleName="search-input-container"
         />

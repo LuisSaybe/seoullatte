@@ -11,75 +11,78 @@ import styles from "./style.scss";
 
 interface Props
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange"> {
-  onSuggestionSelected: (e, information) => void;
+  onSuggestionSelected: () => void;
   inputClassname?: React.InputHTMLAttributes<HTMLInputElement>["className"];
   onChange?: (event: React.ChangeEvent, information) => void;
 }
 
-export function DictionarySearchInput(props: Props) {
-  const { t } = useTranslation();
-  const { className, onSuggestionSelected, inputClassname, ...rest } = props;
-  const [search] = useFetch(Action.search);
-  const [suggestions, setSuggestions] = React.useState([]);
-  const entries = useSelector((state: RootState) => {
-    const ids = state.entrySearch[props.value.toString()] ?? [];
-    return ids.map((id) => state.entry[id]);
-  });
-  const entriesHash = entries.map((entry) => entry.getTargetCode()).join();
-  const renderSuggestion = (suggestion) => {
-    const firstSenseTranslation = suggestion.getSenseTranslation(
-      1,
-      LanguageNames.english,
-    );
+export const DictionarySearchInput = React.forwardRef<HTMLInputElement, Props>(
+  (props, ref) => {
+    const { t } = useTranslation();
+    const { className, inputClassname, onSuggestionSelected, ...rest } = props;
+    const [search] = useFetch(Action.search);
+    const [suggestions, setSuggestions] = React.useState([]);
+    const entries = useSelector((state: RootState) => {
+      const ids = state.entrySearch[props.value.toString()] ?? [];
+      return ids.map((id) => state.entry[id]);
+    });
+    const entriesHash = entries.map((entry) => entry.getTargetCode()).join();
+    const renderSuggestion = (suggestion) => {
+      const firstSenseTranslation = suggestion.getSenseTranslation(
+        1,
+        LanguageNames.english,
+      );
+
+      return (
+        <div className={styles.suggestion}>
+          <span styleName="dictionary-form">
+            {suggestion.getDictionaryForm()}
+          </span>
+          {firstSenseTranslation && (
+            <>
+              <div styleName="sense">{firstSenseTranslation}</div>
+            </>
+          )}
+        </div>
+      );
+    };
+    const getSuggestionValue = (suggestion) => suggestion.getTargetCode();
+    const onSuggestionsFetchRequested = ({ value }) => {
+      if (value) {
+        search(`https://api.seoullatte.com/entry?query=${value}`);
+      }
+    };
+    const renderSuggestionsContainer = ({ containerProps, children }) => {
+      return (
+        <div {...containerProps} children={children} aria-label={t("search")} />
+      );
+    };
+
+    React.useEffect(() => {
+      setSuggestions(entries);
+    }, [entriesHash]);
 
     return (
-      <div className={styles.suggestion}>
-        <span styleName="dictionary-form">
-          {suggestion.getDictionaryForm()}
-        </span>
-        {firstSenseTranslation && (
-          <>
-            <div styleName="sense">{firstSenseTranslation}</div>
-          </>
-        )}
-      </div>
+      <Autosuggest
+        theme={{
+          container: `${styles.root} ${className ?? ""}`,
+          suggestionsContainerOpen: styles.suggestionsContainerOpen,
+          suggestionsList: styles.suggestionsList,
+          suggestionHighlighted: styles.suggestionHighlighted,
+        }}
+        onSuggestionSelected={onSuggestionSelected}
+        renderSuggestionsContainer={renderSuggestionsContainer}
+        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+        suggestions={suggestions}
+        onSuggestionsClearRequested={() => setSuggestions([])}
+        getSuggestionValue={getSuggestionValue}
+        renderSuggestion={renderSuggestion}
+        inputProps={{
+          ...rest,
+          className: `${styles.input} ${inputClassname || ""}`,
+          ref,
+        }}
+      />
     );
-  };
-  const getSuggestionValue = (suggestion) => suggestion.getTargetCode();
-  const onSuggestionsFetchRequested = ({ value }) => {
-    if (value) {
-      search(`https://api.seoullatte.com/entry?query=${value}`);
-    }
-  };
-  const renderSuggestionsContainer = ({ containerProps, children }) => {
-    return (
-      <div {...containerProps} children={children} aria-label={t("search")} />
-    );
-  };
-
-  React.useEffect(() => {
-    setSuggestions(entries);
-  }, [entriesHash]);
-
-  return (
-    <Autosuggest
-      theme={{
-        container: `${styles.root} ${className ?? ""}`,
-        suggestionsContainerOpen: styles.suggestionsContainerOpen,
-        suggestionsList: styles.suggestionsList,
-        suggestionHighlighted: styles.suggestionHighlighted,
-      }}
-      renderSuggestionsContainer={renderSuggestionsContainer}
-      onSuggestionSelected={onSuggestionSelected}
-      onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-      suggestions={suggestions}
-      onSuggestionsClearRequested={() => setSuggestions([])}
-      getSuggestionValue={getSuggestionValue}
-      renderSuggestion={renderSuggestion}
-      inputProps={{
-        ...rest,
-        className: `${styles.input} ${inputClassname || ""}`,
-      }}
-    />
-  );
-}
+  },
+);
