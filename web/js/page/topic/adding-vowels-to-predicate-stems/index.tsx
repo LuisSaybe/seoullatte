@@ -122,7 +122,7 @@ export default function AddingVowelsToPredicateStems() {
             <div>
               &bull;&nbsp;
               {t(
-                "If the final syllable of a stem is 우 the final syllable becomes 워.",
+                "If the final syllable of a stem is 우 the final syllable becomes 워 or 어 is added to the stem.",
               )}
             </div>
             <div>
@@ -175,6 +175,8 @@ export default function AddingVowelsToPredicateStems() {
           <span>돼</span>
           <DefinitionPopup q="58272">먹다</DefinitionPopup>
           <span>먹어</span>
+          <DefinitionPopup q="66315">이루다</DefinitionPopup>
+          <span>이루어</span>
           <DefinitionPopup q="62354">낫다</DefinitionPopup>
           <span>나아</span>
           <DefinitionPopup q="62264">기다리다</DefinitionPopup>

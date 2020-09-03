@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const WorkboxPlugin = require("workbox-webpack-plugin");
 
 module.exports = (env) => {
   const settingsPath = path.resolve(__dirname, `web/js/settings/${env.env}`);
@@ -41,6 +42,10 @@ module.exports = (env) => {
       }),
       new MiniCssExtractPlugin({
         filename: "[contenthash].css",
+      }),
+      new WorkboxPlugin.GenerateSW({
+        clientsClaim: true,
+        skipWaiting: true,
       }),
     ],
     module: {
