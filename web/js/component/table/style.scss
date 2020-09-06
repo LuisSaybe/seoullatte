@@ -1,6 +1,6 @@
 .root {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2px;
+  gap: 4px 2px;
   justify-items: flex-start;
 }

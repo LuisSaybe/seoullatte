@@ -9,7 +9,7 @@ import { DefinitionPopup } from "web/js/component/definition-popup";
 import { SectionTitle } from "web/js/component/section-title";
 import { Table } from "web/js/component/table";
 import { TopicRoute } from "web/js/interface/route";
-import "./style.scss";
+import style from "./style.scss";
 
 export default function PlainSpeech() {
   const { t } = useTranslation();
@@ -72,27 +72,31 @@ export default function PlainSpeech() {
         <ArticleTitle>{t("Examples")}</ArticleTitle>
         <Section>
           <Table columns={4}>
-            <span>
-              <DefinitionPopup q="58272">먹</DefinitionPopup>는다
+            <span styleName='table-entry'>{t("Declarative")}</span>
+            <span styleName='table-entry'>{t("Interrogative")}</span>
+            <span styleName='table-entry'>{t("Imperative")}</span>
+            <span styleName='table-entry'>{t("Proposotive")}</span>
+            <span styleName='table-entry'>
+              <DefinitionPopup buttonClassname={style['table-entry']} q="58272">먹</DefinitionPopup>는다
             </span>
-            <span>먹니, 먹으냐, 먹냐</span>
-            <span>먹아라</span>
-            <span>먹자</span>
-            <span>
-              <DefinitionPopup q="92405">이쁘</DefinitionPopup>다
+            <span styleName='table-entry'>먹니, 먹으냐, 먹냐</span>
+            <span styleName='table-entry'>먹아라</span>
+            <span styleName='table-entry'>먹자</span>
+            <span styleName='table-entry'>
+              <DefinitionPopup buttonClassname={style['table-entry']} q="92405">이쁘</DefinitionPopup>다
             </span>
-            <span>
-              <DefinitionPopup q="92405">이쁘</DefinitionPopup>니,&nbsp;
-              <DefinitionPopup q="92405">이쁘</DefinitionPopup>냐
+            <span styleName='table-entry'>
+              <DefinitionPopup buttonClassname={style['table-entry']} q="92405">이쁘</DefinitionPopup>니,&nbsp;
+              <DefinitionPopup buttonClassname={style['table-entry']} q="92405">이쁘</DefinitionPopup>냐
             </span>
             <span></span>
             <span></span>
-            <span>간다</span>
-            <span>
-              <DefinitionPopup q="27500">가다</DefinitionPopup>니, 가냐
+            <span styleName='table-entry'>간다</span>
+            <span styleName='table-entry'>
+              <DefinitionPopup buttonClassname={style['table-entry']} q="27500">가</DefinitionPopup>니, 가냐
             </span>
-            <span>가라</span>
-            <span>가자</span>
+            <span styleName='table-entry'>가라</span>
+            <span styleName='table-entry'>가자</span>
           </Table>
         </Section>
       </ArticleSection>
