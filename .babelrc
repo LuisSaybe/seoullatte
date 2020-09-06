@@ -3,7 +3,7 @@
 	"plugins": [
 		[
 			"react-css-modules", {
-				"generateScopedName": "[name]__[local]___[hash:base64:5]",
+				"generateScopedName": "[path]_[name]_[local]",
 				"filetypes": {
 					".scss": {
 						"syntax": "postcss-scss",

@@ -15,6 +15,7 @@ export function useTopics(): Topic[] {
         name: t("The Korean Writing System"),
         path: TopicRoute.hangul,
         searchTerms: "한글 한자 글",
+        relatedEntries: [91525, 72461, 69716],
       },
       {
         component: lazy(() => import("web/js/page/topic/syllable")),
@@ -22,6 +23,7 @@ export function useTopics(): Topic[] {
         name: t("Syllables"),
         path: TopicRoute.syllable,
         searchTerms: "",
+        relatedEntries: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/noun")),
@@ -29,6 +31,7 @@ export function useTopics(): Topic[] {
         name: t("Nouns"),
         path: TopicRoute.noun,
         searchTerms: "",
+        relatedEntries: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/predicate")),
@@ -36,6 +39,7 @@ export function useTopics(): Topic[] {
         name: t("Predicates"),
         path: TopicRoute.predicate,
         searchTerms: "",
+        relatedEntries: [],
       },
       {
         component: lazy(() =>
@@ -45,6 +49,7 @@ export function useTopics(): Topic[] {
         name: t("Formal and Informal Speech"),
         path: TopicRoute.formalAndInformalSpeech,
         searchTerms: "존댓말 반말",
+        relatedEntries: [24607, 15843],
       },
       {
         component: lazy(() => import("web/js/page/topic/endings")),
@@ -54,6 +59,7 @@ export function useTopics(): Topic[] {
         name: t("Pre-Final and Final Endings"),
         path: TopicRoute.ending,
         searchTerms: "",
+        relatedEntries: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/speech-level")),
@@ -61,6 +67,7 @@ export function useTopics(): Topic[] {
         name: t("Speech Level"),
         path: TopicRoute.speechLevel,
         searchTerms: "",
+        relatedEntries: [],
       },
       {
         component: lazy(() =>
@@ -70,6 +77,7 @@ export function useTopics(): Topic[] {
         name: t("Adding ㅓ or ㅏ to a predicate stem"),
         path: TopicRoute.addingVowelToPredicateStem,
         searchTerms: "ㅓ ㅏ 어 아",
+        relatedEntries: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/batchim-suffix")),
@@ -77,6 +85,7 @@ export function useTopics(): Topic[] {
         name: t("Adding 으 to Predicates Stems"),
         path: TopicRoute.addingUToPredicates,
         searchTerms: "으 받침 batchim",
+        relatedEntries: [56544],
       },
       {
         component: lazy(() => import("web/js/page/topic/deferential-speech")),
@@ -86,6 +95,7 @@ export function useTopics(): Topic[] {
         name: t("The Deferential Speech Level"),
         path: TopicRoute.deferentialSpeech,
         searchTerms: "",
+        relatedEntries: [79398, 79397, 79402, 79401, 66884, 68880, 68883],
       },
       {
         component: lazy(() => import("web/js/page/topic/intimate-speech")),
@@ -93,6 +103,7 @@ export function useTopics(): Topic[] {
         name: t("The Intimate Speech Level"),
         path: TopicRoute.intimateSpeech,
         searchTerms: "",
+        relatedEntries: [86094, 86093],
       },
       {
         component: lazy(() => import("web/js/page/topic/polite-speech")),
@@ -100,6 +111,7 @@ export function useTopics(): Topic[] {
         name: t("The Polite Speech Level"),
         path: TopicRoute.politeSpeech,
         searchTerms: "아요 어요 요",
+        relatedEntries: [86568, 86571, 86116],
       },
       {
         component: lazy(() => import("web/js/page/topic/plain-speech")),
@@ -107,6 +119,7 @@ export function useTopics(): Topic[] {
         name: t("The Plain Speech Level"),
         path: TopicRoute.plainSpeech,
         searchTerms: "",
+        relatedEntries: [76426],
       },
       {
         component: lazy(() => import("web/js/page/topic/irregular-predicate")),
@@ -114,6 +127,7 @@ export function useTopics(): Topic[] {
         name: t("Irregular Predicates"),
         path: TopicRoute.irregularPredicate,
         searchTerms: "",
+        relatedEntries: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/subject-particle")),
@@ -121,6 +135,7 @@ export function useTopics(): Topic[] {
         name: t("The Subject Particle"),
         path: TopicRoute.subjectParticle,
         searchTerms: "가 이 subject",
+        relatedEntries: [66341, 86289],
       },
       {
         component: lazy(() => import("web/js/page/topic/topic-particle")),
@@ -128,6 +143,7 @@ export function useTopics(): Topic[] {
         name: t("The Topic Particle"),
         path: TopicRoute.topicParticle,
         searchTerms: t("는 은 topic"),
+        relatedEntries: [85851, 86111],
       },
       {
         component: lazy(() => import("web/js/page/topic/forming-sentences")),
@@ -135,6 +151,7 @@ export function useTopics(): Topic[] {
         name: t("Forming a Sentence"),
         path: TopicRoute.formingSentences,
         searchTerms: "sentence clause predicate",
+        relatedEntries: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/copula")),
@@ -142,6 +159,7 @@ export function useTopics(): Topic[] {
         name: t("이다 and 아니다"),
         path: TopicRoute.copular,
         searchTerms: "이다 아니다",
+        relatedEntries: [92101, 26878],
       },
       {
         component: lazy(() =>
@@ -151,6 +169,7 @@ export function useTopics(): Topic[] {
         name: t("있다 and 없다"),
         path: TopicRoute.existenceAndPosession,
         searchTerms: "있다 없다",
+        relatedEntries: [68796, 68797, 89917],
       },
       {
         component: lazy(() => import("web/js/page/topic/negation")),
@@ -158,6 +177,7 @@ export function useTopics(): Topic[] {
         name: t("Negation"),
         path: TopicRoute.negation,
         searchTerms: "안 지 않 negation negative",
+        relatedEntries: [71372, 72587],
       },
       {
         component: lazy(() => import("web/js/page/topic/past-tense")),
@@ -165,6 +185,7 @@ export function useTopics(): Topic[] {
         name: t("Past Tense"),
         path: TopicRoute.pastTense,
         searchTerms: "었 았 었었 았었 past tense",
+        relatedEntries: [68719, 66954, 68838, 68836],
       },
       {
         component: lazy(() =>
@@ -174,6 +195,7 @@ export function useTopics(): Topic[] {
         name: t("Predicates as Modifiers"),
         path: TopicRoute.predicateAsModifiers,
         searchTerms: "는 은 을",
+        relatedEntries: [85853, 80344, 69058],
       },
       {
         component: lazy(() => import("web/js/page/topic/prenoun")),
@@ -181,6 +203,7 @@ export function useTopics(): Topic[] {
         name: t("Prenouns"),
         path: TopicRoute.prenoun,
         searchTerms: "는 은 을",
+        relatedEntries: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/bound-noun")),
@@ -188,6 +211,7 @@ export function useTopics(): Topic[] {
         name: t("Bound Nouns"),
         path: TopicRoute.boundNoun,
         searchTerms: "는 은 을 수 지",
+        relatedEntries: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/desire")),
@@ -195,6 +219,7 @@ export function useTopics(): Topic[] {
         name: t("Desire"),
         path: TopicRoute.desire,
         searchTerms: "고 싶다",
+        relatedEntries: [75269],
       },
       {
         component: lazy(() => import("web/js/page/topic/counting")),
@@ -202,6 +227,7 @@ export function useTopics(): Topic[] {
         name: t("Counting"),
         path: TopicRoute.counting,
         searchTerms: "",
+        relatedEntries: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/questions")),
@@ -209,6 +235,7 @@ export function useTopics(): Topic[] {
         name: t("Questions"),
         path: TopicRoute.questions,
         searchTerms: "무엇 뭐 무슨 어떻게 언제 어디",
+        relatedEntries: [17199, 84991, 66237, 17860, 17856, 60319],
       },
       {
         component: lazy(() => import("web/js/page/topic/e-particle")),
@@ -216,6 +243,7 @@ export function useTopics(): Topic[] {
         name: t("The Particle 에"),
         path: TopicRoute.particleLocationGoal,
         searchTerms: "에",
+        relatedEntries: [86572],
       },
     ],
     [t],

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect } from "react";
 import Autosuggest from "react-autosuggest";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
@@ -58,7 +59,7 @@ export const DictionarySearchInput = React.forwardRef<HTMLInputElement, Props>(
       );
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
       setSuggestions(entries);
     }, [entriesHash]);
 

@@ -4,6 +4,7 @@ export interface Topic {
   path: string;
   searchTerms: string;
   component: React.ComponentType;
+  relatedEntries: number[];
 }
 
 export interface KoreanDefinitionIdentifier {

@@ -3,12 +3,21 @@
 @use '~web/sass/size';
 
 .article-anchor {
-  display: block;
   margin-top: 12px;
 }
 
 .to-dictionary-anchor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 2px 8px !important;
+}
+
+.to-article-anchor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 6px !important;
 }
 
 .book-icon {
@@ -16,8 +25,12 @@
   width: 18px;
 }
 
-.buttons > *:not(:first-child) {
-  margin-left: size.$margin-small;
+.buttons {
+  display: flex;
+
+  > *:not(:first-child) {
+    margin-left: size.$margin-small;
+  }
 }
 
 .definition {
@@ -56,6 +69,10 @@
 
 .sense {
   margin-top: 6px;
+}
+
+.teacher-icon {
+  height: 22px;
 }
 
 @include media.phone() {

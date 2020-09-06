@@ -5,6 +5,7 @@ import { Route } from "react-router-dom";
 import { useTopics } from "web/js/hook/useTopics";
 import { ArticlePage } from "web/js/component/article-page";
 import { routes } from "web/js/routes";
+import { LoadingArticle } from "../component/loading-article";
 
 export function useArticleRoutes() {
   const topics = useTopics();
@@ -28,7 +29,7 @@ export function useArticleRoutes() {
               <meta property="og:url" content={window.location.href} />
               <meta property="og:description" content={topic.description} />
             </Helmet>
-            <Suspense fallback={null}>
+            <Suspense fallback={<LoadingArticle />}>
               <topic.component />
             </Suspense>
           </ArticlePage>

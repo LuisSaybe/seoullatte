@@ -71,7 +71,7 @@
   align-items: center;
 
   @include media.phone() {
-    padding: 10px layout.$horizontal-page-padding + 4px;
+    padding: 10px layout.$horizontal-page-padding;
   }
 }
 

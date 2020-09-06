@@ -11,6 +11,6 @@
 @mixin dialogGrid() {
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: auto 1fr;
   gap: 12px 18px;
 }

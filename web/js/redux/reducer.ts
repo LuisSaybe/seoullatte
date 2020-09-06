@@ -5,8 +5,10 @@ import { userInterfaceEvent } from "web/js/redux/user-interface-event/reducer";
 import { userInterface } from "web/js/redux/user-interface/reducer";
 import { location } from "web/js/redux/location/reducer";
 import { entrySearch } from "web/js/redux/entry-search/reducer";
+import { definitionPopup } from 'web/js/redux/definition-popup/reducer';
 
 export const reducers = combineReducers({
+  definitionPopup,
   entry,
   userInterfaceEvent,
   userInterface,

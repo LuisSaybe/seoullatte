@@ -45,7 +45,7 @@ export function AboutUs() {
               {t("back")}
             </Anchor>
           </div>
-          <div dangerouslySetInnerHTML={{ __html }} />
+          <div styleName='instagram-container' dangerouslySetInnerHTML={{ __html }} />
         </div>
       </div>
       <Helmet>

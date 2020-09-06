@@ -17,6 +17,7 @@ import { updateUserInterface } from "web/js/redux/user-interface/action";
 import { DefaultLayout } from "web/js/component/default-layout";
 import "./style.scss";
 import { EntryPartOfSpeech } from "web/js/component/entry-part-of-speech";
+import { BackSVG } from "web/js/component/back-svg";
 
 export function DictionaryEntry() {
   const { t } = useTranslation();
@@ -35,11 +36,6 @@ export function DictionaryEntry() {
       }),
     );
   };
-  const returnToAnchor = returnToTopic && (
-    <Anchor onClick={onBackClick} to={returnToTopic.path} styleName="returnTo">
-      return to <span styleName="topic-name">{returnToTopic.name}</span>
-    </Anchor>
-  );
 
   let content;
 
@@ -50,7 +46,11 @@ export function DictionaryEntry() {
           <ArticleTitle>{entry.getDictionaryForm()}</ArticleTitle>
           <UtteranceButton text={entry.getDictionaryForm()} />
         </div>
-        {returnToAnchor}
+        {returnToTopic && (
+          <Anchor button onClick={onBackClick} to={returnToTopic.path} styleName="returnTo">
+            <BackSVG styleName='return-svg' />
+          </Anchor>
+        )}
         <EntryPartOfSpeech styleName="part-of-speech" q={Number(q)} />
         <div styleName="senses">
           {Array.from(entry.getSenses()).map((_, index) => (

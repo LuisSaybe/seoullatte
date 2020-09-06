@@ -37,10 +37,6 @@ export default function SpeechLevel() {
           <strong>{t("Korean Name")}</strong>:&nbsp;
           <DefinitionPopup q="84623">합쇼체</DefinitionPopup>
         </div>
-        <div>
-          <strong>{t("Category")}</strong>:&nbsp;
-          <DefinitionPopup q="24607">존댓말</DefinitionPopup>
-        </div>
         {t(
           "The deferential speech level is the highest of the commonly used speech levels in Korean langauge. This speech level is used in highly formal situations, fixed formal expressions, public annnouncements or in social situations in which high deference is communicated to the listener.",
         )}
@@ -50,10 +46,6 @@ export default function SpeechLevel() {
         <div>
           <strong>{t("Korean Name")}</strong>:&nbsp;
           <DefinitionPopup q="84691">해요체</DefinitionPopup>
-        </div>
-        <div>
-          <strong>{t("Category")}</strong>:&nbsp;
-          <DefinitionPopup q="24607">존댓말</DefinitionPopup>
         </div>
         {t(
           "The polite speech level is the most common speech level used to communicate between strangers.",
@@ -65,10 +57,6 @@ export default function SpeechLevel() {
           <strong>{t("Korean Name")}</strong>:&nbsp;
           <DefinitionPopup q="84914">해체</DefinitionPopup>
         </div>
-        <div>
-          <strong>{t("Category")}</strong>:&nbsp;
-          <DefinitionPopup q="15843">반말</DefinitionPopup>
-        </div>
         {t(
           "The intimate speech level is often used between close friends or when the speaker is speaking to children. When neither of these two cases are true, this speech level may be used to belittle or disrespect the listener.",
         )}
@@ -78,10 +66,6 @@ export default function SpeechLevel() {
         <div>
           <strong>{t("Korean Name")}</strong>:&nbsp;
           <DefinitionPopup q="85165">해라체</DefinitionPopup>
-        </div>
-        <div>
-          <strong>{t("Category")}</strong>:&nbsp;
-          <DefinitionPopup q="15843">반말</DefinitionPopup>
         </div>
         {t("The plain speech level is used in specific cases.")}
         <div>&bull;&nbsp;In journal, book or magazine writing</div>

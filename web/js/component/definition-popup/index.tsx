@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Manager, Popper, Reference } from "react-popper";
+import { useDispatch, useSelector } from "react-redux";
 
 import { useDidClickOnElement } from "web/js/hook/useDidClickOnElement";
 import {
@@ -8,37 +9,52 @@ import {
 } from "web/js/interface/korean";
 import { Definition } from "web/js/component/definition";
 import { UnstyledTextButton } from "web/js/component/unstyled-text-button";
+import { setRefOpen } from "web/js/redux/definition-popup/action";
+import { RootState } from "web/js/redux/reducer";
 import "./style.scss";
 
-type Props = KoreanDefinitionIdentifier &
-  DefinitionDisplayOptions &
-  React.HTMLAttributes<HTMLDivElement>;
+interface Props extends React.HTMLAttributes<HTMLElement> {
+  q: string;
+  senseIndexes?: number[];
+  buttonClassname?: string;
+}
 
 export function DefinitionPopup(props: Props) {
-  const [showDefinition, setShowDefinition] = useState(false);
+  const dispatch = useDispatch();
   const rootRef = useRef();
+  const showDefinition = useSelector((state: RootState) => state.definitionPopup.openElements.has(rootRef.current));
   const didClickOnElement = useDidClickOnElement(rootRef.current);
-  const { children, q, senseIndexes } = props;
+  const { buttonClassname, children, q, senseIndexes, ...rest } = props;
   const onClick = () => {
-    setShowDefinition(!showDefinition);
+    dispatch(setRefOpen(rootRef.current, false));
   };
 
   useEffect(() => {
+   return () => {
+    dispatch(setRefOpen(rootRef.current, false));
+   };
+  }, [rootRef.current]);
+
+  useEffect(() => {
+    if (!rootRef.current) {
+      return;
+    }
+
     if (didClickOnElement === true && !showDefinition) {
-      setShowDefinition(true);
+      dispatch(setRefOpen(rootRef.current, true));
     }
 
     if (didClickOnElement === false && showDefinition) {
-      setShowDefinition(false);
+      dispatch(setRefOpen(rootRef.current, false));
     }
-  }, [didClickOnElement, showDefinition]);
+  }, [didClickOnElement, showDefinition, rootRef.current]);
 
   return (
-    <span ref={rootRef}>
+    <span {...rest} ref={rootRef}>
       <Manager>
         <Reference>
           {({ ref }) => (
-            <UnstyledTextButton onClick={onClick} styleName="text" ref={ref}>
+            <UnstyledTextButton className={buttonClassname ?? ''} onClick={onClick} styleName="text" ref={ref}>
               {children}
             </UnstyledTextButton>
           )}

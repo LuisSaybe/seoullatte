@@ -105,7 +105,7 @@ export function useFetch(type: string): [DispatchFetch, State] {
     return () => {
       isMounted.current = false;
     };
-  });
+  }, []);
 
   return [dispatchFetch, state];
 }

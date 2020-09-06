@@ -1,8 +1,12 @@
 @use '~web/sass/layout';
 @use '~web/sass/size';
 
-.returnTo {
-  margin-bottom: size.$margin-small;
+.return {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 4px !important;
+  width: 24px;
 }
 
 .anchors {
@@ -13,6 +17,6 @@
   margin: size.$margin-medium 0;
 }
 
-.topic-name {
-  font-style: italic;
+.return-svg {
+  width: 100%;
 }

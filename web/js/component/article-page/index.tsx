@@ -9,7 +9,8 @@ import { RootState } from "web/js/redux/reducer";
 import { Anchor } from "../anchor";
 import { updateUserInterface } from "web/js/redux/user-interface/action";
 import { useTopics } from "web/js/hook/useTopics";
-import { DefaultLayout } from "../default-layout";
+import { BackSVG } from "web/js/component/back-svg";
+import { DefaultLayout } from "web/js/component/default-layout";
 import "./style.scss";
 
 interface IInterface extends React.HTMLAttributes<HTMLElement> {
@@ -75,12 +76,13 @@ export function ArticlePage(props: IInterface) {
     <DefaultLayout {...rest}>
       {returnToTopic && (
         <Anchor
-          onClick={onBackClick}
-          to={returnToTopic.path}
-          styleName="returnTo"
-        >
-          return to <span styleName="topic-name">{returnToTopic.name}</span>
-        </Anchor>
+        button
+        onClick={onBackClick}
+        to={returnToTopic.path}
+        styleName="return"
+      >
+        <BackSVG styleName='return-svg' />
+      </Anchor>
       )}
       <article>
         <ArticleTitle>{articleTitle}</ArticleTitle>

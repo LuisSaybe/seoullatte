@@ -70,7 +70,7 @@ export default function FormingSentences() {
         <Section styleName="dialog-grid">
           <div>
             김덕수{t(":")}&nbsp; 신선미
-            <DefinitionPopup q="85853">는</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="85851">는</DefinitionPopup>&nbsp;
             <DefinitionPopup q="58272">먹</DefinitionPopup>
             <DefinitionPopup q="68719">었</DefinitionPopup>
             <DefinitionPopup q="86571">어요</DefinitionPopup>

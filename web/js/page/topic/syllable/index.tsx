@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 
 import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
@@ -10,9 +10,9 @@ export default function Syllable() {
 
   return (
     <>
-      {t(
-        "There are 5 ways in which 한글 characters can combine to form a syllable.",
-      )}
+    <Trans>
+      There are 5 ways in which <DefinitionPopup q='91525'>한글</DefinitionPopup> characters can combine to form a syllable.
+    </Trans>
       &nbsp;
       {t(
         "In all cases, if a syllable begins with a vowel, the character ㅇ is placed before the vowel. In this case, the character ㅇ is not pronounced.",

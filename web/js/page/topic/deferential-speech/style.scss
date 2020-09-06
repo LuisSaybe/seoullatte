@@ -1,3 +1,5 @@
+@use "~web/sass/media";
+
 .table {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -10,4 +12,10 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 2px;
   justify-items: flex-start;
+}
+
+.table-entry {
+  @include media.phone() {
+    font-size: 0.7rem;
+  }
 }

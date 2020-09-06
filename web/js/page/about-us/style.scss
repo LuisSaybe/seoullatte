@@ -14,6 +14,10 @@
   margin-top: size.$margin-medium;
 }
 
+.instagram-container {
+  width: 100%;
+}
+
 .text {
   @include media.phone() {
     display: flex;

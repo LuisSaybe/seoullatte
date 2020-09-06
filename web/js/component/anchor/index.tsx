@@ -70,10 +70,10 @@ export function Anchor(props: IInterface) {
     return (
       <Link
         className={props.className}
-        styleName={styleName}
         to={props.to}
         {...rest}
         onClick={onClick}
+        styleName={styleName}
       >
         {props.children}
       </Link>
