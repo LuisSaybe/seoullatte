@@ -10,6 +10,7 @@ import { SectionTitle } from "web/js/component/section-title";
 import { TopicRoute } from "web/js/interface/route";
 import { Table } from "web/js/component/table";
 import "./style.scss";
+import { MarginSizeName } from "web/js/interface/size";
 
 export const S_IRREGULAR_ID = "s-irregular";
 export const U_IRREGULAR_ID = "u-irregular";
@@ -48,7 +49,7 @@ export default function IrregularPredicate() {
           {t(
             "이에요 and 이야 are affixed to a noun ending in a vowel. 예요 and 야 are affixed to a noun ending in a consonant.",
           )}
-          <Section>
+          <Section marginSize={MarginSizeName.small}>
             <Table columns={3}>
               <span>{t("Predicate")}</span>
               <Anchor canReturn to={TopicRoute.politeSpeech}>
@@ -68,7 +69,10 @@ export default function IrregularPredicate() {
               <span>아니야</span>
             </Table>
           </Section>
-          <Section>
+          <Section marginSize={MarginSizeName.medium}>
+            {t("말다 is conjugated irregularly in the polite and intimate imperative.")}
+          </Section>
+          <Section marginSize={MarginSizeName.small}>
             <Table columns={3}>
               <span>{t("Predicate")}</span>
               <Anchor canReturn to={TopicRoute.politeSpeech}>

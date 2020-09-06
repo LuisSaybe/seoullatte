@@ -41,18 +41,20 @@ export function Definition(props: Props) {
     if (relatedTopics.length > 0) {
       const nextTopic = relatedTopics[0];
 
-      if (location.pathname === nextTopic.path) {
-        relatedTopic = (
-          <Button aria-label={t('Go to topic')} onClick={closeDefinitionPopups} styleName="to-article-anchor">
-            <TeachSVG styleName='teacher-icon' />
-          </Button>
-        );
-      } else {
-        relatedTopic = (
-          <Anchor onClick={closeDefinitionPopups} canReturn button styleName="to-article-anchor" to={relatedTopics[0].path}>
-            <TeachSVG styleName='teacher-icon' />
-          </Anchor>
-        );
+      if (nextTopic.path !== location.pathname) {
+        if (location.pathname === nextTopic.path) {
+          relatedTopic = (
+            <Button aria-label={t('Go to topic')} onClick={closeDefinitionPopups} styleName="to-article-anchor">
+              <TeachSVG styleName='teacher-icon' />
+            </Button>
+          );
+        } else {
+          relatedTopic = (
+            <Anchor onClick={closeDefinitionPopups} canReturn button styleName="to-article-anchor" to={relatedTopics[0].path}>
+              <TeachSVG styleName='teacher-icon' />
+            </Anchor>
+          );
+        }
       }
     }
 

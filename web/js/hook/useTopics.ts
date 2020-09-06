@@ -119,7 +119,7 @@ export function useTopics(): Topic[] {
         name: t("The Plain Speech Level"),
         path: TopicRoute.plainSpeech,
         searchTerms: "",
-        relatedEntries: [76426],
+        relatedEntries: [76426, 85037],
       },
       {
         component: lazy(() => import("web/js/page/topic/irregular-predicate")),
