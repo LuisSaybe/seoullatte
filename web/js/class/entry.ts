@@ -1,4 +1,4 @@
-import { LanguageNames } from "../interface/korean";
+import { LanguageNames, WordGrade } from "../interface/korean";
 
 export class Entry {
   private xml: Document;
@@ -13,6 +13,35 @@ export class Entry {
 
   public getSenses() {
     return this.xml.querySelectorAll(":root > item > word_info > sense_info");
+  }
+
+  public hasDisplayableWordGrade() {
+    const grades = this.getWordGrades();
+    return grades.length > 0 && grades.some(grade => grade !== '없음');
+  }
+
+  public getLowestWordGrade() {
+    let lowestGrade;
+
+    for (const grade of this.getWordGrades()) {
+      if (grade === WordGrade.beginner) {
+        return WordGrade.beginner;
+      }
+
+      if (grade === WordGrade.intermediate && (lowestGrade === WordGrade.advanced || !lowestGrade)) {
+        lowestGrade = WordGrade.intermediate;
+      }
+
+      if (grade === WordGrade.advanced && !lowestGrade) {
+        lowestGrade = WordGrade.advanced;
+      }
+    }
+
+    return lowestGrade;
+  }
+
+  public getWordGrades() {
+    return Array.from(this.xml.querySelectorAll(":root word_grade")).map(element => element.textContent);
   }
 
   public getSense(index: number) {

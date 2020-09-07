@@ -5,6 +5,7 @@ export interface Topic {
   searchTerms: string;
   component: React.ComponentType;
   relatedEntries: number[];
+  relatedPartOfSpeech: KoreaPartOfSpeech[];
 }
 
 export interface KoreanDefinitionIdentifier {
@@ -13,6 +14,13 @@ export interface KoreanDefinitionIdentifier {
 
 export interface DefinitionDisplayOptions {
   senseIndexes?: number[];
+}
+
+export enum WordGrade {
+  none = '없음',
+  beginner = '초급',
+  intermediate = '중급',
+  advanced = '고급'
 }
 
 export enum KoreaPartOfSpeech {

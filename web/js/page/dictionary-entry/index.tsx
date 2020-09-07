@@ -8,26 +8,26 @@ import { ArticleTitle } from "web/js/component/article-title";
 import { useEntry } from "web/js/hook/useEntry";
 import { ContentLoader } from "web/js/component/content-loader";
 import { EntrySense } from "web/js/component/entry-sense";
-import { useLastRouteOrHome } from "web/js/hook/useLastRouteOrHome";
 import { Anchor } from "web/js/component/anchor";
 import { RootState } from "web/js/redux/reducer";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { useTopics } from "web/js/hook/useTopics";
 import { updateUserInterface } from "web/js/redux/user-interface/action";
 import { DefaultLayout } from "web/js/component/default-layout";
-import "./style.scss";
 import { EntryPartOfSpeech } from "web/js/component/entry-part-of-speech";
 import { BackSVG } from "web/js/component/back-svg";
+import { EntryWordGrade } from "web/js/component/entry-word-grade";
+import "./style.scss";
+import { KoreaPartOfSpeech } from "web/js/interface/korean";
 
 export function DictionaryEntry() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const { q } = useParams();
   const entry = useEntry(q);
-  const to = useLastRouteOrHome();
   const topics = useTopics();
-  const returnToTopic = useSelector((state: RootState) =>
-    topics.find((topic) => topic.path === state.userInterface.returnTo),
+  const returnToPath = useSelector((state: RootState) =>
+    topics.find((topic) => topic.path === state.userInterface.returnTo)?.path,
   );
   const onBackClick = () => {
     dispatch(
@@ -40,25 +40,45 @@ export function DictionaryEntry() {
   let content;
 
   if (entry) {
+    const partOfSpeech = entry.getPartOfSpeech();
+    const relatedTopicIndex = topics.findIndex(topic => topic.relatedPartOfSpeech.includes(partOfSpeech as KoreaPartOfSpeech));
+    const partOfSpeechNode = <EntryPartOfSpeech styleName="part-of-speech" q={Number(q)} />;
+    let partOfSpeechSection;
+
+    if (relatedTopicIndex === -1) {
+      partOfSpeechSection = partOfSpeechNode;
+    } else {
+      partOfSpeechSection = (
+        <Anchor canReturn to={topics[relatedTopicIndex].path}>
+          {partOfSpeechNode}
+        </Anchor>
+      );
+    }
+
     content = (
       <>
         <div styleName="header">
           <ArticleTitle>{entry.getDictionaryForm()}</ArticleTitle>
           <UtteranceButton text={entry.getDictionaryForm()} />
         </div>
-        {returnToTopic && (
-          <Anchor button onClick={onBackClick} to={returnToTopic.path} styleName="returnTo">
+        {returnToPath && (
+          <Anchor button onClick={onBackClick} to={returnToPath} styleName="returnTo">
             <BackSVG styleName='return-svg' />
           </Anchor>
         )}
-        <EntryPartOfSpeech styleName="part-of-speech" q={Number(q)} />
+        {partOfSpeechSection}
+        {entry.hasDisplayableWordGrade() && (
+          <div>
+            <EntryWordGrade q={Number(q)} />
+          </div>
+        )}
         <div styleName="senses">
           {Array.from(entry.getSenses()).map((_, index) => (
             <EntrySense styleName="sense" key={index} q={q} index={index + 1} />
           ))}
         </div>
         <Helmet>
-          <title>Definition of {entry.getDictionaryForm()}</title>
+        <title>{t(`Definition of {{word}}`, { word: entry.getDictionaryForm() })}</title>
           <link rel="canonical" href={window.location.href} />
           <meta
             name="description"

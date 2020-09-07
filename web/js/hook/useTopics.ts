@@ -2,8 +2,9 @@ import { useMemo, lazy } from "react";
 import { useTranslation } from "react-i18next";
 
 import Hangul from "web/js/page/topic/hangul";
-import { Topic } from "web/js/interface/korean";
+import { Topic, KoreaPartOfSpeech } from "web/js/interface/korean";
 import { TopicRoute } from "web/js/interface/route";
+import { EntryPartOfSpeech } from "../component/entry-part-of-speech";
 
 export function useTopics(): Topic[] {
   const { t } = useTranslation();
@@ -16,6 +17,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.hangul,
         searchTerms: "한글 한자 글",
         relatedEntries: [91525, 72461, 69716],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/syllable")),
@@ -24,6 +26,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.syllable,
         searchTerms: "",
         relatedEntries: [],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/noun")),
@@ -32,6 +35,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.noun,
         searchTerms: "",
         relatedEntries: [],
+        relatedPartOfSpeech: [KoreaPartOfSpeech.none],
       },
       {
         component: lazy(() => import("web/js/page/topic/predicate")),
@@ -40,6 +44,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.predicate,
         searchTerms: "",
         relatedEntries: [],
+        relatedPartOfSpeech: [KoreaPartOfSpeech.verb, KoreaPartOfSpeech.adjective, KoreaPartOfSpeech.affix],
       },
       {
         component: lazy(() =>
@@ -50,6 +55,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.formalAndInformalSpeech,
         searchTerms: "존댓말 반말",
         relatedEntries: [24607, 15843],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/endings")),
@@ -60,6 +66,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.ending,
         searchTerms: "",
         relatedEntries: [],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/speech-level")),
@@ -68,6 +75,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.speechLevel,
         searchTerms: "",
         relatedEntries: [],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() =>
@@ -78,6 +86,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.addingVowelToPredicateStem,
         searchTerms: "ㅓ ㅏ 어 아",
         relatedEntries: [],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/batchim-suffix")),
@@ -86,6 +95,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.addingUToPredicates,
         searchTerms: "으 받침 batchim",
         relatedEntries: [56544],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/deferential-speech")),
@@ -96,6 +106,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.deferentialSpeech,
         searchTerms: "",
         relatedEntries: [79398, 79397, 79402, 79401, 66884, 68880, 68883],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/intimate-speech")),
@@ -104,6 +115,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.intimateSpeech,
         searchTerms: "",
         relatedEntries: [86094, 86093],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/polite-speech")),
@@ -112,6 +124,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.politeSpeech,
         searchTerms: "아요 어요 요",
         relatedEntries: [86568, 86571, 86116],
+        relatedPartOfSpeech: [KoreaPartOfSpeech.ending],
       },
       {
         component: lazy(() => import("web/js/page/topic/plain-speech")),
@@ -120,6 +133,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.plainSpeech,
         searchTerms: "",
         relatedEntries: [76426, 85037],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/irregular-predicate")),
@@ -128,6 +142,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.irregularPredicate,
         searchTerms: "",
         relatedEntries: [],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/subject-particle")),
@@ -136,6 +151,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.subjectParticle,
         searchTerms: "가 이 subject",
         relatedEntries: [66341, 86289],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/topic-particle")),
@@ -144,6 +160,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.topicParticle,
         searchTerms: t("는 은 topic"),
         relatedEntries: [85851, 86111],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/forming-sentences")),
@@ -152,6 +169,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.formingSentences,
         searchTerms: "sentence clause predicate",
         relatedEntries: [],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/copula")),
@@ -160,6 +178,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.copular,
         searchTerms: "이다 아니다",
         relatedEntries: [92101, 26878],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() =>
@@ -170,6 +189,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.existenceAndPosession,
         searchTerms: "있다 없다",
         relatedEntries: [68796, 68797, 89917],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/negation")),
@@ -178,6 +198,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.negation,
         searchTerms: "안 지 않 negation negative",
         relatedEntries: [71372, 72587],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/past-tense")),
@@ -186,6 +207,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.pastTense,
         searchTerms: "었 았 었었 았었 past tense",
         relatedEntries: [68719, 66954, 68838, 68836],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() =>
@@ -196,6 +218,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.predicateAsModifiers,
         searchTerms: "는 은 을",
         relatedEntries: [85853, 80344, 69058],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/prenoun")),
@@ -204,6 +227,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.prenoun,
         searchTerms: "는 은 을",
         relatedEntries: [],
+        relatedPartOfSpeech: [KoreaPartOfSpeech.determiner],
       },
       {
         component: lazy(() => import("web/js/page/topic/bound-noun")),
@@ -212,6 +236,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.boundNoun,
         searchTerms: "는 은 을 수 지",
         relatedEntries: [],
+        relatedPartOfSpeech: [KoreaPartOfSpeech.boundNoun],
       },
       {
         component: lazy(() => import("web/js/page/topic/desire")),
@@ -220,6 +245,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.desire,
         searchTerms: "고 싶다",
         relatedEntries: [75269],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/counting")),
@@ -228,6 +254,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.counting,
         searchTerms: "",
         relatedEntries: [],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/questions")),
@@ -236,6 +263,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.questions,
         searchTerms: "무엇 뭐 무슨 어떻게 언제 어디",
         relatedEntries: [17199, 84991, 66237, 17860, 17856, 60319],
+        relatedPartOfSpeech: [],
       },
       {
         component: lazy(() => import("web/js/page/topic/e-particle")),
@@ -244,6 +272,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.particleLocationGoal,
         searchTerms: "에",
         relatedEntries: [86572],
+        relatedPartOfSpeech: [],
       },
     ],
     [t],
