@@ -45,14 +45,16 @@ export function DictionaryEntry() {
     const partOfSpeechNode = <EntryPartOfSpeech styleName="part-of-speech" q={Number(q)} />;
     let partOfSpeechSection;
 
-    if (relatedTopicIndex === -1) {
-      partOfSpeechSection = partOfSpeechNode;
-    } else {
-      partOfSpeechSection = (
-        <Anchor canReturn to={topics[relatedTopicIndex].path}>
-          {partOfSpeechNode}
-        </Anchor>
-      );
+    if (partOfSpeech !== KoreaPartOfSpeech.none) {
+      if (relatedTopicIndex === -1) {
+        partOfSpeechSection = partOfSpeechNode;
+      } else {
+        partOfSpeechSection = (
+          <Anchor canReturn to={topics[relatedTopicIndex].path}>
+            {partOfSpeechNode}
+          </Anchor>
+        );
+      }
     }
 
     content = (
@@ -97,7 +99,7 @@ export function DictionaryEntry() {
     content = (
       <>
         <ContentLoader styleName="content-loader-title" />
-        <ContentLoader styleName="content-loader-body" textBlocks={4} />
+        <ContentLoader styleName="content-loader-body" textBlocks={8} />
       </>
     );
   }

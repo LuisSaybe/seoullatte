@@ -1,4 +1,7 @@
 export interface Settings {
+  api: {
+    url: string;
+  };
   ga?: {
     trackingId: string;
   };

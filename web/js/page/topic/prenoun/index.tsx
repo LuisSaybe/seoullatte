@@ -3,7 +3,6 @@ import { Trans, useTranslation } from "react-i18next";
 
 import { Anchor } from "web/js/component/anchor";
 import { ArticleSection } from "web/js/component/article-section";
-import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Table } from "web/js/component/table";
 import { TopicRoute } from "web/js/interface/route";
@@ -34,7 +33,6 @@ export default function Prenoun() {
         )}
       </ArticleSection>
       <ArticleSection>
-        <ArticleTitle>{t("Examples")}</ArticleTitle>
         <Table columns={3}>
           <strong>{t("Prenoun")}</strong>
           <strong>{t("Type")}</strong>

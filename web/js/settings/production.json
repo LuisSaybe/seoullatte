@@ -1,4 +1,7 @@
 {
+  "api": {
+    "url": "https://api.seoullatte.com"
+  },
   "ga": {
     "trackingId": "$GA_TRACKING_ID"
   },

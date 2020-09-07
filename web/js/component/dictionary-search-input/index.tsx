@@ -8,6 +8,7 @@ import { Action } from "web/js/redux/entry-search/action";
 import { useFetch } from "web/js/hook/useFetch";
 import { RootState } from "web/js/redux/reducer";
 import { LanguageNames } from "web/js/interface/korean";
+import { getSettings } from "web/js/helper/settings";
 import styles from "./style.scss";
 
 interface Props
@@ -27,6 +28,7 @@ export const DictionarySearchInput = React.forwardRef<HTMLInputElement, Props>(
       const ids = state.entrySearch[props.value.toString()] ?? [];
       return ids.map((id) => state.entry[id]);
     });
+    const settings = getSettings();
     const entriesHash = entries.map((entry) => entry.getTargetCode()).join();
     const renderSuggestion = (suggestion) => {
       const firstSenseTranslation = suggestion.getSenseTranslation(
@@ -50,7 +52,7 @@ export const DictionarySearchInput = React.forwardRef<HTMLInputElement, Props>(
     const getSuggestionValue = (suggestion) => suggestion.getTargetCode();
     const onSuggestionsFetchRequested = ({ value }) => {
       if (value) {
-        search(`https://api.seoullatte.com/entry?query=${value}`);
+        search(`${settings.api.url}/entry?query=${value}`);
       }
     };
     const renderSuggestionsContainer = ({ containerProps, children }) => {

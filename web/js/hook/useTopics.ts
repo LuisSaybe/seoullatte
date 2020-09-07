@@ -35,7 +35,7 @@ export function useTopics(): Topic[] {
         path: TopicRoute.noun,
         searchTerms: "",
         relatedEntries: [],
-        relatedPartOfSpeech: [KoreaPartOfSpeech.none],
+        relatedPartOfSpeech: [KoreaPartOfSpeech.noun],
       },
       {
         component: lazy(() => import("web/js/page/topic/predicate")),
