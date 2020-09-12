@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "web/js/redux/reducer";
 import { useDictionaryTranslationLanguage } from "web/js/hook/useDictionaryTranslationLanguage";
 import "./style.scss";
-import { useTranslation } from "react-i18next";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   q: string;
@@ -13,7 +12,6 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 export function EntrySense(props: Props) {
   const { q, index, ...rest } = props;
-  const { t } = useTranslation();
   const entry = useSelector((state: RootState) => state.entry[q]);
   const sense = entry.getSense(index);
   const dictionaryLanguage = useDictionaryTranslationLanguage();

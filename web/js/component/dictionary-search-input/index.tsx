@@ -9,6 +9,7 @@ import { useFetch } from "web/js/hook/useFetch";
 import { RootState } from "web/js/redux/reducer";
 import { LanguageNames } from "web/js/interface/korean";
 import { getSettings } from "web/js/helper/settings";
+import { useDictionaryTranslationLanguage } from "web/js/hook/useDictionaryTranslationLanguage";
 import styles from "./style.scss";
 
 interface Props
@@ -21,6 +22,7 @@ interface Props
 export const DictionarySearchInput = React.forwardRef<HTMLInputElement, Props>(
   (props, ref) => {
     const { t } = useTranslation();
+    const dictionaryLanguage = useDictionaryTranslationLanguage();
     const { className, inputClassname, onSuggestionSelected, ...rest } = props;
     const [search] = useFetch(Action.search);
     const [suggestions, setSuggestions] = React.useState([]);
@@ -35,17 +37,19 @@ export const DictionarySearchInput = React.forwardRef<HTMLInputElement, Props>(
         1,
         LanguageNames.english,
       );
+      const firstSenseInTranslationLanguage = suggestion.getSenseTranslation(
+        1,
+        dictionaryLanguage,
+      );
+      const translation =
+        firstSenseInTranslationLanguage ?? firstSenseTranslation;
 
       return (
         <div className={styles.suggestion}>
           <span styleName="dictionary-form">
             {suggestion.getDictionaryForm()}
           </span>
-          {firstSenseTranslation && (
-            <>
-              <div styleName="sense">{firstSenseTranslation}</div>
-            </>
-          )}
+          {translation && <div styleName="sense">{translation}</div>}
         </div>
       );
     };
