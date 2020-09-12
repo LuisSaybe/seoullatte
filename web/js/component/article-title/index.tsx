@@ -8,7 +8,7 @@ export function ArticleTitle(
   const { children, ...rest } = props;
 
   return (
-    <h1 styleName="root" {...rest}>
+    <h1 {...rest} styleName="root">
       {children}
     </h1>
   );

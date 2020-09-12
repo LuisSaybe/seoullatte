@@ -70,7 +70,12 @@ export default function IrregularPredicate() {
             </Table>
           </Section>
           <Section marginSize={MarginSizeName.medium}>
-            {t("말다 is conjugated irregularly in the polite and intimate imperative.")}
+            <Trans>
+              말다 is conjugated irregularly in the&nbsp;
+              <Anchor to={TopicRoute.politeSpeech}>polite</Anchor> and&nbsp;
+              <Anchor to={TopicRoute.intimateSpeech}>intimate</Anchor>
+              imperative
+            </Trans>
           </Section>
           <Section marginSize={MarginSizeName.small}>
             <Table columns={3}>

@@ -10,5 +10,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 export function Section(props: Props) {
   const { marginSize, ...rest } = props;
 
-  return <div {...rest} styleName={`root ${marginSize ?? ""}`} />;
+  return (
+    <div {...rest} styleName={`root ${marginSize ?? MarginSizeName.small}`} />
+  );
 }

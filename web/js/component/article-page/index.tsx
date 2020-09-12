@@ -3,7 +3,6 @@ import { useHistory, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { ArticleTitle } from "web/js/component/article-title";
-import { Footer } from "web/js/component/footer";
 import { NextPreviousAnchors } from "web/js/component/next-previous-anchors";
 import { RootState } from "web/js/redux/reducer";
 import { Anchor } from "../anchor";
@@ -76,26 +75,23 @@ export function ArticlePage(props: IInterface) {
     <DefaultLayout {...rest}>
       {returnToTopic && (
         <Anchor
-        button
-        onClick={onBackClick}
-        to={returnToTopic.path}
-        styleName="return"
-      >
-        <BackSVG styleName='return-svg' />
-      </Anchor>
+          button
+          onClick={onBackClick}
+          to={returnToTopic.path}
+          styleName="return"
+        >
+          <BackSVG styleName="return-svg" />
+        </Anchor>
       )}
       <article>
         <ArticleTitle>{articleTitle}</ArticleTitle>
         {props.children}
       </article>
-      <div>
-        <NextPreviousAnchors
-          styleName="anchors"
-          next={next}
-          previous={previous}
-        />
-        <Footer styleName="footer" />
-      </div>
+      <NextPreviousAnchors
+        styleName="anchors"
+        next={next}
+        previous={previous}
+      />
     </DefaultLayout>
   );
 }

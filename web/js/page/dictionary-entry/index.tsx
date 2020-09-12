@@ -17,8 +17,9 @@ import { DefaultLayout } from "web/js/component/default-layout";
 import { EntryPartOfSpeech } from "web/js/component/entry-part-of-speech";
 import { BackSVG } from "web/js/component/back-svg";
 import { EntryWordGrade } from "web/js/component/entry-word-grade";
-import "./style.scss";
 import { KoreaPartOfSpeech } from "web/js/interface/korean";
+import { Footer } from "web/js/component/footer";
+import "./style.scss";
 
 export function DictionaryEntry() {
   const { t } = useTranslation();
@@ -26,8 +27,9 @@ export function DictionaryEntry() {
   const { q } = useParams();
   const entry = useEntry(q);
   const topics = useTopics();
-  const returnToPath = useSelector((state: RootState) =>
-    topics.find((topic) => topic.path === state.userInterface.returnTo)?.path,
+  const returnToPath = useSelector(
+    (state: RootState) =>
+      topics.find((topic) => topic.path === state.userInterface.returnTo)?.path,
   );
   const onBackClick = () => {
     dispatch(
@@ -41,8 +43,12 @@ export function DictionaryEntry() {
 
   if (entry) {
     const partOfSpeech = entry.getPartOfSpeech();
-    const relatedTopicIndex = topics.findIndex(topic => topic.relatedPartOfSpeech.includes(partOfSpeech as KoreaPartOfSpeech));
-    const partOfSpeechNode = <EntryPartOfSpeech styleName="part-of-speech" q={Number(q)} />;
+    const relatedTopicIndex = topics.findIndex((topic) =>
+      topic.relatedPartOfSpeech.includes(partOfSpeech as KoreaPartOfSpeech),
+    );
+    const partOfSpeechNode = (
+      <EntryPartOfSpeech styleName="part-of-speech" q={Number(q)} />
+    );
     let partOfSpeechSection;
 
     if (partOfSpeech !== KoreaPartOfSpeech.none) {
@@ -64,8 +70,13 @@ export function DictionaryEntry() {
           <UtteranceButton text={entry.getDictionaryForm()} />
         </div>
         {returnToPath && (
-          <Anchor button onClick={onBackClick} to={returnToPath} styleName="returnTo">
-            <BackSVG styleName='return-svg' />
+          <Anchor
+            button
+            onClick={onBackClick}
+            to={returnToPath}
+            styleName="returnTo"
+          >
+            <BackSVG styleName="return-svg" />
           </Anchor>
         )}
         {partOfSpeechSection}
@@ -80,7 +91,9 @@ export function DictionaryEntry() {
           ))}
         </div>
         <Helmet>
-        <title>{t(`Definition of {{word}}`, { word: entry.getDictionaryForm() })}</title>
+          <title>
+            {t(`Definition of {{word}}`, { word: entry.getDictionaryForm() })}
+          </title>
           <link rel="canonical" href={window.location.href} />
           <meta
             name="description"

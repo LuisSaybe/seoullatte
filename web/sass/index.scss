@@ -1,10 +1,18 @@
 @use '~web/sass/font';
+@use '~web/sass/media';
 
 html {
-  font-size: 18px;
   height: 100%;
   font-family: font.$default-font-family;
   -webkit-text-size-adjust: none;
+
+  @include media.phone {
+    font-size: 18px;
+  }
+
+  @include media.not-phone {
+    font-size: 16px;
+  }
 }
 
 body {

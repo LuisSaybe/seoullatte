@@ -25,7 +25,7 @@ export default function PoliteSpeech() {
         </Trans>
         &nbsp;
         <Trans>
-          The predicate 이다 and 아니다 are formed{" "}
+          The predicate 이다 and 아니다 are formed&nbsp;
           <Anchor canReturn to={TopicRoute.irregularPredicate}>
             irregularly
           </Anchor>
@@ -45,7 +45,7 @@ export default function PoliteSpeech() {
               "2. The stem does not contain a vowel, and so 어요 is added to the stem.",
             )}
           </div>
-          <div>{t("Conjugated predicate")} 꺼</div>
+          <div>{t("Conjugated predicate")} 꺼요</div>
         </Section>
         <Section>
           <div>

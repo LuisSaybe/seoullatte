@@ -1,8 +1,14 @@
 @use "~web/sass/layout";
+@use "~web/sass/size";
 
 .content {
   @include layout.defaultLayout();
 }
+
+.footer {
+  margin-top: size.$margin-large;
+}
+
 .root {
   @include layout.navigationAndContentLayout();
 }
