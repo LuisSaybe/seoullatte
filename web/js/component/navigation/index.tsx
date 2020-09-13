@@ -6,13 +6,16 @@ import { useHistory } from "react-router-dom";
 import { updateUserInterface } from "web/js/redux/user-interface/action";
 import { routes } from "web/js/routes";
 import { Anchor } from "web/js/component/anchor";
-import { Button } from "web/js/component/button";
 import { RootState } from "web/js/redux/reducer";
 import { DictionarySearchInput } from "web/js/component/dictionary-search-input";
+import { BackSVG } from "web/js/component/back-svg";
+import { pop } from "web/js/redux/location/action";
 import styles from "./style.scss";
 
 export function Navigation(props: React.HTMLProps<HTMLElement>) {
   const { t } = useTranslation();
+  const locations = useSelector((state: RootState) => state.location);
+  const lastLocation = locations[locations.length - 2];
   const [shouldBlur, setShouldBlur] = React.useState(false);
   const ref = useRef<HTMLInputElement>();
   const dispatch = useDispatch();
@@ -28,6 +31,9 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
       }),
     );
   };
+  const onClickReturn = () => {
+    dispatch(pop());
+  };
 
   useEffect(() => {
     if (shouldBlur) {
@@ -38,11 +44,26 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
 
   return (
     <nav {...props} styleName="root">
-      <Button aria-label={t("hamburger menu")} onClick={onClick} type="button">
+      <button
+        styleName="hamburger-button"
+        aria-label={t("hamburger menu")}
+        onClick={onClick}
+        type="button"
+      >
         <div styleName="bar" />
         <div styleName="bar" />
         <div styleName="bar" />
-      </Button>
+      </button>
+      {lastLocation && (
+        <Anchor
+          onClick={onClickReturn}
+          pushLocation={false}
+          to={lastLocation}
+          styleName="return-button"
+        >
+          <BackSVG styleName="return-svg" />
+        </Anchor>
+      )}
       <div styleName="search-section">
         <label styleName="label" htmlFor="dictionary-search">
           {t("Search")}
@@ -66,7 +87,7 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
           styleName="search-input-container"
         />
       </div>
-      <Anchor button={true} to={routes.configuration()}>
+      <Anchor styleName="settings-button" to={routes.configuration()}>
         {t("Settings")}
       </Anchor>
     </nav>

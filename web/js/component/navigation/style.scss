@@ -1,3 +1,4 @@
+@use '~web/sass/button';
 @use '~web/sass/color';
 @use '~web/sass/layout';
 @use '~web/sass/media';
@@ -43,6 +44,38 @@
   }
 }
 
+.hamburger-button {
+  @include button.button();
+  @include button.buttonColors(color.$white);
+  padding: 0 11px;
+  height: calc(100% - 16px);
+}
+
+.settings-button {
+  @include button.button();
+  @include button.buttonColors(color.$white);
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  height: calc(100% - 24px);
+}
+
+.return-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 22px);
+  @include button.button();
+  @include button.buttonColors(color.$white);
+  padding: 0 6px;
+  margin-left: size.$margin-small;
+}
+
+.return-svg {
+  height: 80%;
+  min-width: 30px;
+}
+
 .search-input-container {
   flex: 1 0 0;
 }
@@ -69,10 +102,7 @@
 .root {
   display: flex;
   align-items: center;
-
-  @include media.phone() {
-    padding: 10px layout.$horizontal-page-padding;
-  }
+  padding: 0 layout.$horizontal-page-padding;
 }
 
 .searchInput {
@@ -81,11 +111,5 @@
 
   @include media.phone() {
     display: block;
-  }
-}
-
-@include media.not_phone() {
-  .root {
-    padding: 0 layout.$horizontal-page-padding;
   }
 }

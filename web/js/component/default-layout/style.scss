@@ -6,7 +6,8 @@
 }
 
 .footer {
-  margin-top: size.$margin-large;
+  margin: size.$margin-large 0 size.$margin-medium;
+  @include layout.defaultLayout();
 }
 
 .root {

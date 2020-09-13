@@ -54,10 +54,7 @@ export default function BatchimSuffix() {
             Note that <DefinitionPopup q="80329">으시</DefinitionPopup>&nbsp;
             becomes&nbsp;
             <DefinitionPopup q="86609">으세요</DefinitionPopup> in the&nbsp;
-            <Anchor canReturn to={TopicRoute.politeSpeech}>
-              polite speech level
-            </Anchor>
-            .
+            <Anchor to={TopicRoute.politeSpeech}>polite speech level</Anchor>.
           </Trans>
         </Section>
         <Section styleName="dialog-grid">

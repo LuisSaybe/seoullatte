@@ -41,17 +41,17 @@ export function AboutUs() {
               </Trans>
             </div>
             <div styleName="email">{t("luis@trois.io")}</div>
-            <Anchor styleName="anchor" to={to}>
-              {t("back")}
-            </Anchor>
           </div>
-          <div styleName='instagram-container' dangerouslySetInnerHTML={{ __html }} />
+          <div
+            styleName="instagram-container"
+            dangerouslySetInnerHTML={{ __html }}
+          />
         </div>
       </div>
       <Helmet>
-        <title>About Us</title>
+        <title>{t("About Us")}</title>
         <link rel="canonical" href={window.location.href} />
-        <meta name="description" content="About us" />
+        <meta name="description" content={t("About Us")} />
       </Helmet>
     </>
   );

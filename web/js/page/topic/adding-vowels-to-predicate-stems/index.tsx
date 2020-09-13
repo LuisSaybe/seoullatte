@@ -32,10 +32,8 @@ export default function AddingVowelsToPredicateStems() {
         &nbsp;
         <Trans>
           First, if the predicate has any&nbsp;
-          <Anchor canReturn to={TopicRoute.irregularPredicate}>
-            irregular rules
-          </Anchor>
-          , apply them.
+          <Anchor to={TopicRoute.irregularPredicate}>irregular rules</Anchor>,
+          apply them.
         </Trans>
         &nbsp;
         {t(
@@ -66,10 +64,7 @@ export default function AddingVowelsToPredicateStems() {
           &nbsp;
           <Trans>
             바쁘다 is&nbsp;
-            <Anchor
-              canReturn
-              to={`${TopicRoute.irregularPredicate}#${U_IRREGULAR_ID}`}
-            >
+            <Anchor to={`${TopicRoute.irregularPredicate}#${U_IRREGULAR_ID}`}>
               으 irregular
             </Anchor>
             &nbsp;so ㅡ is removed from the predicate stem.
@@ -148,7 +143,6 @@ export default function AddingVowelsToPredicateStems() {
               <Trans>
                 If the predicate is&nbsp;
                 <Anchor
-                  canReturn
                   to={`${TopicRoute.irregularPredicate}#${S_IRREGULAR_ID}`}
                 >
                   ㅅ-irregular

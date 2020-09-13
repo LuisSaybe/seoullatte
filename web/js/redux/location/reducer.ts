@@ -1,11 +1,15 @@
 import { Action } from "web/js/redux/location/action";
 
-export function location(state: Location[] = [], action): Location[] {
+export function location(state: string[] = [], action): string[] {
   switch (action.type) {
     case Action.appendLocation: {
-      const nextState = [...state, action.data];
-      return nextState.slice(nextState.length - 2);
+      return [...state, action.data];
+    }
+
+    case Action.popLocation: {
+      return state.slice(0, state.length - 1);
     }
   }
+
   return state;
 }

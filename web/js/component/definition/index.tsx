@@ -35,26 +35,25 @@ export function Definition(props: Props) {
   let content;
 
   if (entry) {
-    const relatedTopics = topics.filter(topic => topic.relatedEntries.includes(Number(q)))
+    const relatedTopics = topics.filter((topic) =>
+      topic.relatedEntries.includes(Number(q)),
+    );
     let relatedTopic;
 
     if (relatedTopics.length > 0) {
       const nextTopic = relatedTopics[0];
 
-      if (nextTopic.path !== location.pathname) {
-        if (location.pathname === nextTopic.path) {
-          relatedTopic = (
-            <Button aria-label={t('Go to topic')} onClick={closeDefinitionPopups} styleName="to-article-anchor">
-              <TeachSVG styleName='teacher-icon' />
-            </Button>
-          );
-        } else {
-          relatedTopic = (
-            <Anchor onClick={closeDefinitionPopups} canReturn button styleName="to-article-anchor" to={relatedTopics[0].path}>
-              <TeachSVG styleName='teacher-icon' />
-            </Anchor>
-          );
-        }
+      if (!nextTopic.paths.includes(location.pathname)) {
+        relatedTopic = (
+          <Anchor
+            onClick={closeDefinitionPopups}
+            button
+            styleName="to-article-anchor"
+            to={relatedTopics[0].paths[0]}
+          >
+            <TeachSVG styleName="teacher-icon" />
+          </Anchor>
+        );
       }
     }
 
@@ -65,7 +64,6 @@ export function Definition(props: Props) {
           <div styleName="buttons">
             <UtteranceButton text={entry.getDictionaryForm()} />
             <Anchor
-              canReturn
               styleName="to-dictionary-anchor"
               to={routes.entry(props.q)}
               button

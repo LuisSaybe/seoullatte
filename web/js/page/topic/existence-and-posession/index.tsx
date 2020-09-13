@@ -98,9 +98,7 @@ export default function ExistenceAndPosession() {
         <Trans>
           When used in this way the object which is possesed is marked with the
           particle&nbsp;
-          <Anchor canReturn to={TopicRoute.subjectParticle}>
-            이 or 가
-          </Anchor>
+          <Anchor to={TopicRoute.subjectParticle}>이 or 가</Anchor>
         </Trans>
         <Section>
           <DefinitionPopup q="71353">표</DefinitionPopup>

@@ -17,9 +17,7 @@ export default function Questions() {
       <ArticleSection>
         <Trans>
           Most question are formed by using&nbsp;
-          <Anchor canReturn to={TopicRoute.prenoun}>
-            prenouns
-          </Anchor>
+          <Anchor to={TopicRoute.prenoun}>prenouns</Anchor>
           &nbsp;and pronouns.
         </Trans>
         <SectionTitle>
@@ -141,9 +139,7 @@ export default function Questions() {
         <Trans>
           When one wishes to ask which category or kind an object may belong to,
           the&nbsp;
-          <Anchor canReturn to={TopicRoute.prenoun}>
-            prenoun
-          </Anchor>
+          <Anchor to={TopicRoute.prenoun}>prenoun</Anchor>
           &nbsp;
           <DefinitionPopup q="66237">무슨</DefinitionPopup> is used.
         </Trans>
@@ -175,9 +171,7 @@ export default function Questions() {
         &nbsp;
         <Trans>
           몇 is placed before a&nbsp;
-          <Anchor canReturn to={TopicRoute.counting}>
-            counter
-          </Anchor>
+          <Anchor to={TopicRoute.counting}>counter</Anchor>
         </Trans>
         .
         <Section>

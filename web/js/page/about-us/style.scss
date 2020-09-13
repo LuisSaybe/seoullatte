@@ -2,13 +2,6 @@
 @use "~web/sass/media";
 @use "~web/sass/size";
 
-.anchor {
-  display: block;
-  @include media.not-phone() {
-    margin-top: size.$margin-medium;
-  }
-}
-
 .dictionary,
 .email {
   margin-top: size.$margin-medium;

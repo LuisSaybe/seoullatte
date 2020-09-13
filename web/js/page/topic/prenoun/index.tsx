@@ -20,7 +20,7 @@ export default function Prenoun() {
         &nbsp;
         <Trans>
           We can&nbsp;
-          <Anchor canReturn to={TopicRoute.predicateAsModifiers}>
+          <Anchor to={TopicRoute.predicateAsModifiers}>
             change a predicate into a modifier
           </Anchor>
           .

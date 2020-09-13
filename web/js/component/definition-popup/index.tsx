@@ -1,12 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { Manager, Popper, Reference } from "react-popper";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useDidClickOnElement } from "web/js/hook/useDidClickOnElement";
-import {
-  DefinitionDisplayOptions,
-  KoreanDefinitionIdentifier,
-} from "web/js/interface/korean";
 import { Definition } from "web/js/component/definition";
 import { UnstyledTextButton } from "web/js/component/unstyled-text-button";
 import { setRefOpen } from "web/js/redux/definition-popup/action";
@@ -22,7 +18,9 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 export function DefinitionPopup(props: Props) {
   const dispatch = useDispatch();
   const rootRef = useRef();
-  const showDefinition = useSelector((state: RootState) => state.definitionPopup.openElements.has(rootRef.current));
+  const showDefinition = useSelector((state: RootState) =>
+    state.definitionPopup.openElements.has(rootRef.current),
+  );
   const didClickOnElement = useDidClickOnElement(rootRef.current);
   const { buttonClassname, children, q, senseIndexes, ...rest } = props;
   const onClick = () => {
@@ -30,9 +28,9 @@ export function DefinitionPopup(props: Props) {
   };
 
   useEffect(() => {
-   return () => {
-    dispatch(setRefOpen(rootRef.current, false));
-   };
+    return () => {
+      dispatch(setRefOpen(rootRef.current, false));
+    };
   }, [rootRef.current]);
 
   useEffect(() => {
@@ -54,7 +52,12 @@ export function DefinitionPopup(props: Props) {
       <Manager>
         <Reference>
           {({ ref }) => (
-            <UnstyledTextButton className={buttonClassname ?? ''} onClick={onClick} styleName="text" ref={ref}>
+            <UnstyledTextButton
+              className={buttonClassname ?? ""}
+              onClick={onClick}
+              styleName="text"
+              ref={ref}
+            >
               {children}
             </UnstyledTextButton>
           )}

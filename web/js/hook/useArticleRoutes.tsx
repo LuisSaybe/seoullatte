@@ -4,8 +4,7 @@ import { Route } from "react-router-dom";
 
 import { useTopics } from "web/js/hook/useTopics";
 import { ArticlePage } from "web/js/component/article-page";
-import { routes } from "web/js/routes";
-import { LoadingArticle } from "../component/loading-article";
+import { LoadingArticle } from "web/js/component/loading-article";
 
 export function useArticleRoutes() {
   const topics = useTopics();
@@ -18,8 +17,8 @@ export function useArticleRoutes() {
         const component = () => (
           <ArticlePage
             articleTitle={topic.name}
-            previous={prevousTopic?.path}
-            next={nextTopic?.path}
+            previous={prevousTopic?.paths[0]}
+            next={nextTopic?.paths[0]}
           >
             <Helmet>
               <title>{topic.name}</title>
@@ -38,8 +37,8 @@ export function useArticleRoutes() {
         return (
           <Route
             exact
-            key={topic.path}
-            path={index === 0 ? [topic.path, routes.landing()] : topic.path}
+            key={topic.paths[0]}
+            path={topic.paths}
             component={component}
           />
         );

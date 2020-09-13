@@ -22,7 +22,6 @@ export function BurgerMenu() {
     dispatch(
       updateUserInterface({
         burgerMenuOpen: false,
-        returnTo: null,
       }),
     );
   };
@@ -63,9 +62,9 @@ export function BurgerMenu() {
       {topics.filter(filterTopics).map((topic) => (
         <Anchor
           onClick={onLinkClick}
-          key={topic.path}
+          key={topic.paths[0]}
           styleName="link"
-          to={topic.path}
+          to={topic.paths[0]}
         >
           {topic.name}
         </Anchor>

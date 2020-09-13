@@ -1,39 +1,26 @@
 import React, { useEffect } from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { ArticleTitle } from "web/js/component/article-title";
 import { NextPreviousAnchors } from "web/js/component/next-previous-anchors";
 import { RootState } from "web/js/redux/reducer";
-import { Anchor } from "../anchor";
-import { updateUserInterface } from "web/js/redux/user-interface/action";
-import { useTopics } from "web/js/hook/useTopics";
-import { BackSVG } from "web/js/component/back-svg";
 import { DefaultLayout } from "web/js/component/default-layout";
+import { appendLocation } from "web/js/redux/location/action";
 import "./style.scss";
 
 interface IInterface extends React.HTMLAttributes<HTMLElement> {
   articleTitle: React.ReactNode;
-  next: string;
-  previous: string;
+  next?: string;
+  previous?: string;
 }
 
 export function ArticlePage(props: IInterface) {
   const location = useLocation();
   const history = useHistory();
   const dispatch = useDispatch();
-  const topics = useTopics();
-  const returnToTopic = useSelector((state: RootState) =>
-    topics.find((topic) => topic.path === state.userInterface.returnTo),
-  );
+  const locations = useSelector((state: RootState) => state.location);
   const { children, articleTitle, next, previous, ...rest } = props;
-  const onBackClick = () => {
-    dispatch(
-      updateUserInterface({
-        returnTo: null,
-      }),
-    );
-  };
 
   useEffect(() => {
     const element = document.getElementById(location.hash.substring(1));
@@ -46,23 +33,17 @@ export function ArticlePage(props: IInterface) {
         e.target instanceof HTMLInputElement ||
         e.target instanceof HTMLTextAreaElement;
 
-      if (!hasLeftRightControls) {
-        const isLeft = e.key === "ArrowLeft";
-        const isRight = e.key === "ArrowRight";
+      let nextLocation;
 
-        if (isLeft || isRight) {
-          dispatch(
-            updateUserInterface({
-              returnTo: null,
-            }),
-          );
-        }
+      if (previous && e.key === "ArrowLeft") {
+        nextLocation = previous;
+      } else if (next && e.key === "ArrowRight") {
+        nextLocation = next;
+      }
 
-        if (isLeft) {
-          history.push(previous);
-        } else if (isRight) {
-          history.push(next);
-        }
+      if (!hasLeftRightControls && nextLocation) {
+        history.push(nextLocation);
+        dispatch(appendLocation(nextLocation));
       }
     };
     document.addEventListener("keyup", keyup);
@@ -73,16 +54,6 @@ export function ArticlePage(props: IInterface) {
 
   return (
     <DefaultLayout {...rest}>
-      {returnToTopic && (
-        <Anchor
-          button
-          onClick={onBackClick}
-          to={returnToTopic.path}
-          styleName="return"
-        >
-          <BackSVG styleName="return-svg" />
-        </Anchor>
-      )}
       <article>
         <ArticleTitle>{articleTitle}</ArticleTitle>
         {props.children}

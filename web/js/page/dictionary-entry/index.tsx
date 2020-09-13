@@ -2,42 +2,27 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { ArticleTitle } from "web/js/component/article-title";
 import { useEntry } from "web/js/hook/useEntry";
 import { ContentLoader } from "web/js/component/content-loader";
 import { EntrySense } from "web/js/component/entry-sense";
 import { Anchor } from "web/js/component/anchor";
-import { RootState } from "web/js/redux/reducer";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { useTopics } from "web/js/hook/useTopics";
-import { updateUserInterface } from "web/js/redux/user-interface/action";
 import { DefaultLayout } from "web/js/component/default-layout";
 import { EntryPartOfSpeech } from "web/js/component/entry-part-of-speech";
 import { BackSVG } from "web/js/component/back-svg";
 import { EntryWordGrade } from "web/js/component/entry-word-grade";
 import { KoreaPartOfSpeech } from "web/js/interface/korean";
-import { Footer } from "web/js/component/footer";
 import "./style.scss";
 
 export function DictionaryEntry() {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
   const { q } = useParams();
   const entry = useEntry(q);
   const topics = useTopics();
-  const returnToPath = useSelector(
-    (state: RootState) =>
-      topics.find((topic) => topic.path === state.userInterface.returnTo)?.path,
-  );
-  const onBackClick = () => {
-    dispatch(
-      updateUserInterface({
-        returnTo: null,
-      }),
-    );
-  };
 
   let content;
 
@@ -56,7 +41,7 @@ export function DictionaryEntry() {
         partOfSpeechSection = partOfSpeechNode;
       } else {
         partOfSpeechSection = (
-          <Anchor canReturn to={topics[relatedTopicIndex].path}>
+          <Anchor to={topics[relatedTopicIndex].paths[0]}>
             {partOfSpeechNode}
           </Anchor>
         );
@@ -69,16 +54,6 @@ export function DictionaryEntry() {
           <ArticleTitle>{entry.getDictionaryForm()}</ArticleTitle>
           <UtteranceButton text={entry.getDictionaryForm()} />
         </div>
-        {returnToPath && (
-          <Anchor
-            button
-            onClick={onBackClick}
-            to={returnToPath}
-            styleName="returnTo"
-          >
-            <BackSVG styleName="return-svg" />
-          </Anchor>
-        )}
         {partOfSpeechSection}
         {entry.hasDisplayableWordGrade() && (
           <div>

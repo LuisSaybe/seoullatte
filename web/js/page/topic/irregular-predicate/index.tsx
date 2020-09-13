@@ -36,13 +36,9 @@ export default function IrregularPredicate() {
             <DefinitionPopup q="92101">이다</DefinitionPopup> and&nbsp;
             <DefinitionPopup q="26878">아니다</DefinitionPopup> are both
             conjugated irregularly in the&nbsp;
-            <Anchor canReturn to={TopicRoute.politeSpeech}>
-              polite
-            </Anchor>
+            <Anchor to={TopicRoute.politeSpeech}>polite</Anchor>
             &nbsp;and&nbsp;
-            <Anchor canReturn to={TopicRoute.intimateSpeech}>
-              intimate
-            </Anchor>
+            <Anchor to={TopicRoute.intimateSpeech}>intimate</Anchor>
             &nbsp; speech level.
           </Trans>
           &nbsp;
@@ -52,10 +48,10 @@ export default function IrregularPredicate() {
           <Section marginSize={MarginSizeName.small}>
             <Table columns={3}>
               <span>{t("Predicate")}</span>
-              <Anchor canReturn to={TopicRoute.politeSpeech}>
+              <Anchor to={TopicRoute.politeSpeech}>
                 {t("Polite Speech Level")}
               </Anchor>
-              <Anchor canReturn to={TopicRoute.intimateSpeech}>
+              <Anchor to={TopicRoute.intimateSpeech}>
                 {t("Intimate Speech Level")}
               </Anchor>
               <DefinitionPopup q="92101">이다</DefinitionPopup>
@@ -80,10 +76,10 @@ export default function IrregularPredicate() {
           <Section marginSize={MarginSizeName.small}>
             <Table columns={3}>
               <span>{t("Predicate")}</span>
-              <Anchor canReturn to={TopicRoute.politeSpeech}>
+              <Anchor to={TopicRoute.politeSpeech}>
                 {t("Polite Imperative")}
               </Anchor>
-              <Anchor canReturn to={TopicRoute.intimateSpeech}>
+              <Anchor to={TopicRoute.intimateSpeech}>
                 {t("Intimate Imperative")}
               </Anchor>
               <DefinitionPopup q="69296">말다</DefinitionPopup>

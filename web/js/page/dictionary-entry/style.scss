@@ -5,10 +5,6 @@
   margin-top: size.$margin-large;
 }
 
-.return-svg {
-  width: 100%;
-}
-
 .content-loader-body {
   margin-top: size.$margin-medium;
 }
@@ -26,15 +22,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.returnTo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: size.$margin-medium;
-  width: 24px;
-  padding: 2px 4px !important;
 }
 
 .senses {

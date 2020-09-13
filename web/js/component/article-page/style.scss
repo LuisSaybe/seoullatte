@@ -1,13 +1,4 @@
-@use '~web/sass/layout';
 @use '~web/sass/size';
-
-.return {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2px 4px !important;
-  width: 24px;
-}
 
 .anchors {
   margin-top: size.$margin-medium;
@@ -15,8 +6,4 @@
 
 .footer {
   margin: size.$margin-medium 0;
-}
-
-.return-svg {
-  width: 100%;
 }

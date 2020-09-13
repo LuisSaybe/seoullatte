@@ -37,22 +37,31 @@ export default function PlainSpeech() {
         &nbsp;
         <Trans>
           If the predicate is conjugated in the&nbsp;
-          <Anchor canReturn to={TopicRoute.pastTense}>
-            past tense
-          </Anchor>
+          <Anchor to={TopicRoute.pastTense}>past tense</Anchor>
           &nbsp;then 다 is added to the past tense ending.
         </Trans>
         <Section marginSize={MarginSizeName.small}>
           <Trans>
-            The verb <DefinitionPopup q="58272">먹다</DefinitionPopup> is conjugated as <DefinitionPopup q="58272">먹</DefinitionPopup>
-          <DefinitionPopup  q='85037'>는다</DefinitionPopup> while the verb <DefinitionPopup q="27500">가다</DefinitionPopup> is conjugated <DefinitionPopup q="27500">간</DefinitionPopup>
-          <DefinitionPopup q="85033">다</DefinitionPopup>.
+            The verb <DefinitionPopup q="58272">먹다</DefinitionPopup> is
+            conjugated as <DefinitionPopup q="58272">먹</DefinitionPopup>
+            <DefinitionPopup q="85037">는다</DefinitionPopup> while the
+            verb&nbsp;
+            <DefinitionPopup q="27500">가다</DefinitionPopup> is
+            conjugated&nbsp;
+            <DefinitionPopup q="27500">간</DefinitionPopup>
+            <DefinitionPopup q="85033">다</DefinitionPopup>.
           </Trans>
           &nbsp;
           <Trans>
-            In the <Anchor canReturn to={TopicRoute.pastTense}>past tense</Anchor>, <DefinitionPopup q="58272">먹다</DefinitionPopup> becomes <DefinitionPopup q="58272">먹</DefinitionPopup><DefinitionPopup q="68719">었</DefinitionPopup><DefinitionPopup q="85033">다</DefinitionPopup>&nbsp;
-          while the verb <DefinitionPopup q="27500">가다</DefinitionPopup> becomes <DefinitionPopup q="27500">갔</DefinitionPopup>
-          <DefinitionPopup q="85041">다</DefinitionPopup>.
+            In the <Anchor to={TopicRoute.pastTense}>past tense</Anchor>,&nbsp;
+            <DefinitionPopup q="58272">먹다</DefinitionPopup> becomes&nbsp;
+            <DefinitionPopup q="58272">먹</DefinitionPopup>
+            <DefinitionPopup q="68719">었</DefinitionPopup>
+            <DefinitionPopup q="85033">다</DefinitionPopup>&nbsp; while the
+            verb&nbsp;
+            <DefinitionPopup q="27500">가다</DefinitionPopup> becomes&nbsp;
+            <DefinitionPopup q="27500">갔</DefinitionPopup>
+            <DefinitionPopup q="85041">다</DefinitionPopup>.
           </Trans>
         </Section>
         <SectionTitle>{t("For interrogative sentences")}</SectionTitle>
@@ -61,31 +70,50 @@ export default function PlainSpeech() {
         )}
         <Section marginSize={MarginSizeName.small}>
           <Trans>
-            The verb <DefinitionPopup q="58272">먹다</DefinitionPopup> can be conjugated as <DefinitionPopup q="58272">먹</DefinitionPopup><DefinitionPopup q="76426">니</DefinitionPopup>, <DefinitionPopup q="58272">먹</DefinitionPopup><DefinitionPopup q="76235">으냐</DefinitionPopup>, <DefinitionPopup q="58272">먹</DefinitionPopup><DefinitionPopup q="76230">냐</DefinitionPopup>.
+            The verb <DefinitionPopup q="58272">먹다</DefinitionPopup> can be
+            conjugated as <DefinitionPopup q="58272">먹</DefinitionPopup>
+            <DefinitionPopup q="76426">니</DefinitionPopup>,{" "}
+            <DefinitionPopup q="58272">먹</DefinitionPopup>
+            <DefinitionPopup q="76235">으냐</DefinitionPopup>,{" "}
+            <DefinitionPopup q="58272">먹</DefinitionPopup>
+            <DefinitionPopup q="76230">냐</DefinitionPopup>.
           </Trans>
           <div>
             <Trans>
-              The verb <DefinitionPopup q="27500">가다</DefinitionPopup> can be conjugated as <DefinitionPopup q="27500">가</DefinitionPopup><DefinitionPopup q="76426">니</DefinitionPopup> or <DefinitionPopup q="27500">가</DefinitionPopup><DefinitionPopup q="76230">냐</DefinitionPopup>.
+              The verb <DefinitionPopup q="27500">가다</DefinitionPopup> can be
+              conjugated as <DefinitionPopup q="27500">가</DefinitionPopup>
+              <DefinitionPopup q="76426">니</DefinitionPopup> or{" "}
+              <DefinitionPopup q="27500">가</DefinitionPopup>
+              <DefinitionPopup q="76230">냐</DefinitionPopup>.
             </Trans>
           </div>
           <div>
-            The adjective <DefinitionPopup q="92405">이쁘다</DefinitionPopup> can be conjugated as <DefinitionPopup q="92405">이쁘</DefinitionPopup><DefinitionPopup q="76426">니</DefinitionPopup> or <DefinitionPopup q="92405">이쁘</DefinitionPopup><DefinitionPopup q="76230">냐</DefinitionPopup>
+            The adjective <DefinitionPopup q="92405">이쁘다</DefinitionPopup>{" "}
+            can be conjugated as{" "}
+            <DefinitionPopup q="92405">이쁘</DefinitionPopup>
+            <DefinitionPopup q="76426">니</DefinitionPopup> or{" "}
+            <DefinitionPopup q="92405">이쁘</DefinitionPopup>
+            <DefinitionPopup q="76230">냐</DefinitionPopup>
           </div>
         </Section>
         <SectionTitle>{t("For imperative sentences")}</SectionTitle>
         <Trans>
-          <Anchor canReturn to={TopicRoute.addingVowelToPredicateStem}>
+          <Anchor to={TopicRoute.addingVowelToPredicateStem}>
             ㅓ or ㅏ is added
           </Anchor>
           &nbsp;to a verb stem followed by 라.
         </Trans>
         <Section marginSize={MarginSizeName.small}>
           <Trans>
-            The verb <DefinitionPopup q="58272">먹다</DefinitionPopup> is conjugated as <DefinitionPopup q="58272">먹</DefinitionPopup><DefinitionPopup q="80682">어라</DefinitionPopup>.
+            The verb <DefinitionPopup q="58272">먹다</DefinitionPopup> is
+            conjugated as <DefinitionPopup q="58272">먹</DefinitionPopup>
+            <DefinitionPopup q="80682">어라</DefinitionPopup>.
           </Trans>
           <div>
             <Trans>
-              The verb <DefinitionPopup q="27500">가다</DefinitionPopup> is conjugated as <DefinitionPopup q="27500">가</DefinitionPopup><DefinitionPopup q="80698">라</DefinitionPopup>.
+              The verb <DefinitionPopup q="27500">가다</DefinitionPopup> is
+              conjugated as <DefinitionPopup q="27500">가</DefinitionPopup>
+              <DefinitionPopup q="80698">라</DefinitionPopup>.
             </Trans>
           </div>
         </Section>
@@ -93,11 +121,15 @@ export default function PlainSpeech() {
         {t("자 is added to a verb stem.")}
         <Section marginSize={MarginSizeName.small}>
           <Trans>
-            The verb <DefinitionPopup q="58272">먹다</DefinitionPopup> is conjugated as <DefinitionPopup q="58272">먹</DefinitionPopup><DefinitionPopup q="76236">자</DefinitionPopup>.
+            The verb <DefinitionPopup q="58272">먹다</DefinitionPopup> is
+            conjugated as <DefinitionPopup q="58272">먹</DefinitionPopup>
+            <DefinitionPopup q="76236">자</DefinitionPopup>.
           </Trans>
           <div>
             <Trans>
-              The verb <DefinitionPopup q="27500">가다</DefinitionPopup> is conjugated as <DefinitionPopup q="27500">가</DefinitionPopup><DefinitionPopup q="76236">자</DefinitionPopup>.
+              The verb <DefinitionPopup q="27500">가다</DefinitionPopup> is
+              conjugated as <DefinitionPopup q="27500">가</DefinitionPopup>
+              <DefinitionPopup q="76236">자</DefinitionPopup>.
             </Trans>
           </div>
         </Section>

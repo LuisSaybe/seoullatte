@@ -1,7 +1,7 @@
 export interface Topic {
   description: string;
   name: string;
-  path: string;
+  paths: string[];
   searchTerms: string;
   component: React.ComponentType;
   relatedEntries: number[];
@@ -17,10 +17,10 @@ export interface DefinitionDisplayOptions {
 }
 
 export enum WordGrade {
-  none = '없음',
-  beginner = '초급',
-  intermediate = '중급',
-  advanced = '고급'
+  none = "없음",
+  beginner = "초급",
+  intermediate = "중급",
+  advanced = "고급",
 }
 
 export enum KoreaPartOfSpeech {

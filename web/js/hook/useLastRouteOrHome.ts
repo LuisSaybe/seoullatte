@@ -7,6 +7,6 @@ export function useLastRouteOrHome() {
   const locations = useSelector((state: RootState) => state.location);
 
   return locations.length > 1
-    ? locations[locations.length - 2].pathname
+    ? locations[locations.length - 2]
     : routes.landing();
 }

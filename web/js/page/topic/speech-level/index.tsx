@@ -21,10 +21,7 @@ export default function SpeechLevel() {
         &nbsp;
         <Trans>
           The speech level is determined by a&nbsp;
-          <Anchor canReturn to={TopicRoute.ending}>
-            sentence ending
-          </Anchor>
-          .
+          <Anchor to={TopicRoute.ending}>sentence ending</Anchor>.
         </Trans>
         &nbsp;
         {t(

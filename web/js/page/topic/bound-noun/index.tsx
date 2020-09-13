@@ -17,14 +17,9 @@ export default function BoundNoun() {
       <ArticleSection>
         <Trans>
           A bound noun always appears before a&nbsp;
-          <Anchor canReturn to={TopicRoute.predicateAsModifiers}>
-            modifier
-          </Anchor>
+          <Anchor to={TopicRoute.predicateAsModifiers}>modifier</Anchor>
           &nbsp;or a&nbsp;
-          <Anchor canReturn to={TopicRoute.prenoun}>
-            prenoun
-          </Anchor>
-          .
+          <Anchor to={TopicRoute.prenoun}>prenoun</Anchor>.
         </Trans>
         &nbsp;
         {t(
