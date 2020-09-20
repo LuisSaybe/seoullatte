@@ -8,13 +8,15 @@ import { Table } from "web/js/component/table";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
-export default function Prenoun() {
+export default function Determiner() {
   const { t } = useTranslation();
 
   return (
     <>
       <ArticleSection>
-        {t("A prenoun is a noun which is always used to modify another noun.")}
+        {t(
+          "A determiner is a noun which is always used to modify another noun.",
+        )}
         &nbsp;
         {t("Recall there is another way to modify a noun.")}
         &nbsp;
@@ -26,15 +28,16 @@ export default function Prenoun() {
           .
         </Trans>
         &nbsp;
-        {t("Unlike adjectives, prenouns can not inflect or be conjugated.")}
+        {t("Unlike adjectives, determiners can not inflect or be conjugated.")}
         &nbsp;
-        {t(
-          "A prenoun is a delimiter, a number, a demonstrative or a question noun.",
-        )}
+        <Trans>
+          A determiner is a delimiter, a number, a demonstrative or a question
+          noun.
+        </Trans>
       </ArticleSection>
       <ArticleSection>
         <Table columns={3}>
-          <strong>{t("Prenoun")}</strong>
+          <strong>{t("Determiner")}</strong>
           <strong>{t("Type")}</strong>
           <strong>{t("Example")}</strong>
           <DefinitionPopup q="17884" senseIndexes={[2]}>

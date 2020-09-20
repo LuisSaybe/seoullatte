@@ -52,7 +52,7 @@ export default function DeferentialSpeech() {
           <div>
             <DefinitionPopup q="60630">날씨</DefinitionPopup>
             <DefinitionPopup q="66341">기</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="66030">많이</DefinitionPopup>
+            <DefinitionPopup q="66030">많이</DefinitionPopup>&nbsp;
             <DefinitionPopup q="44484">덥</DefinitionPopup>
             <DefinitionPopup q="79398">습니다</DefinitionPopup>
           </div>

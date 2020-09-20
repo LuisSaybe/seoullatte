@@ -9,14 +9,14 @@ import { Anchor } from "web/js/component/anchor";
 import { RootState } from "web/js/redux/reducer";
 import { DictionarySearchInput } from "web/js/component/dictionary-search-input";
 import { BackSVG } from "web/js/component/back-svg";
-import { pop } from "web/js/redux/location/action";
+import { appendLocation, pop } from "web/js/redux/location/action";
 import styles from "./style.scss";
 
 export function Navigation(props: React.HTMLProps<HTMLElement>) {
   const { t } = useTranslation();
   const locations = useSelector((state: RootState) => state.location);
   const lastLocation = locations[locations.length - 2];
-  const [shouldBlur, setShouldBlur] = React.useState(false);
+  const [shouldBlurTime, setShouldBlurTime] = React.useState(new Date());
   const ref = useRef<HTMLInputElement>();
   const dispatch = useDispatch();
   const history = useHistory();
@@ -36,11 +36,10 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
   };
 
   useEffect(() => {
-    if (shouldBlur) {
+    if (ref.current) {
       ref.current.blur();
-      setShouldBlur(false);
     }
-  }, [shouldBlur, ref.current]);
+  }, [shouldBlurTime, ref.current]);
 
   return (
     <nav {...props} styleName="root">
@@ -77,12 +76,14 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
             if (value.method === "type") {
               setSearchValue(value.newValue);
             } else if (value.method === "click" || value.method === "enter") {
-              history.push(routes.entry(value.newValue));
+              const pathname = routes.entry(value.newValue);
+              dispatch(appendLocation(pathname));
+              history.push(pathname);
             }
           }}
           onSuggestionSelected={() => {
             setSearchValue("");
-            setShouldBlur(true);
+            setShouldBlurTime(new Date());
           }}
           styleName="search-input-container"
         />

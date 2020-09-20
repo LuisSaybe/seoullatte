@@ -31,7 +31,7 @@ export default function IntimateSpeech() {
           <Anchor to={TopicRoute.addingVowelToPredicateStem}>
             ㅓ or ㅏ is added
           </Anchor>
-          &nbsp;to the verb stem.
+          &nbsp;to the predicate stem.
         </Trans>
       </Section>
       <ArticleSection>

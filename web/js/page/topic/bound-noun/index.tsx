@@ -19,7 +19,7 @@ export default function BoundNoun() {
           A bound noun always appears before a&nbsp;
           <Anchor to={TopicRoute.predicateAsModifiers}>modifier</Anchor>
           &nbsp;or a&nbsp;
-          <Anchor to={TopicRoute.prenoun}>prenoun</Anchor>.
+          <Anchor to={TopicRoute.determiner}>determiner</Anchor>.
         </Trans>
         &nbsp;
         {t(

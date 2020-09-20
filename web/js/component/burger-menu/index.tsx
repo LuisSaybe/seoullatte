@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Menu from "react-burger-menu/lib/menus/slide";
-import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useTopics } from "web/js/hook/useTopics";
-import { Topic } from "web/js/interface/korean";
 import { Anchor } from "web/js/component/anchor";
 import { RootState } from "web/js/redux/reducer";
 import { updateUserInterface } from "web/js/redux/user-interface/action";
 import styles from "./style.scss";
 
 export function BurgerMenu() {
-  const { t } = useTranslation();
   const topics = useTopics();
   const dispatch = useDispatch();
   const burgerMenuOpen = useSelector<RootState>(
     (state) => state.userInterface.burgerMenuOpen,
   );
-  const [searchValue, setSearchValue] = useState("");
   const onLinkClick = () => {
     dispatch(
       updateUserInterface({
@@ -32,22 +28,6 @@ export function BurgerMenu() {
       }),
     );
   };
-  const filterTopics = (topic: Topic) => {
-    const includesName = topic.name
-      .toLocaleLowerCase()
-      .includes(searchValue.toLocaleLowerCase());
-    const includesSearchTerms = topic.searchTerms
-      .toLocaleLowerCase()
-      .includes(searchValue.toLocaleLowerCase());
-
-    return includesName || includesSearchTerms;
-  };
-
-  useEffect(() => {
-    if (!burgerMenuOpen) {
-      setSearchValue("");
-    }
-  }, [burgerMenuOpen]);
 
   return (
     <Menu
@@ -59,7 +39,7 @@ export function BurgerMenu() {
       customCrossIcon={false}
       customBurgerIcon={false}
     >
-      {topics.filter(filterTopics).map((topic) => (
+      {topics.map((topic) => (
         <Anchor
           onClick={onLinkClick}
           key={topic.paths[0]}

@@ -19,12 +19,12 @@ export default function Endings() {
       </ArticleSection>
       <ArticleSection>
         <SectionTitle>{t("Pre-Final Endings")}</SectionTitle>
-        {t("Pre-final ending are added directly to a predicate.")}
+        {t("Pre-final ending are added directly to a predicate stem.")}
       </ArticleSection>
       <ArticleSection>
         <SectionTitle>{t("Final Endings")}</SectionTitle>
         {t(
-          "If a predicate contains a pre-final ending, the final ending is placed after the pre-final ending. Otherwise the final-ending is added to the predicate.",
+          "If a predicate contains a pre-final ending, the final ending is placed after the pre-final ending. Otherwise the final-ending is added to the predicate stem.",
         )}
       </ArticleSection>
       <ArticleSection>

@@ -12,7 +12,6 @@ import { routes } from "web/js/routes";
 import { useTopics } from "web/js/hook/useTopics";
 import { TeachSVG } from "web/js/component/teacher-svg";
 import { setAllRefsClosed } from "web/js/redux/definition-popup/action";
-import { Button } from "web/js/component/button";
 import "./style.scss";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {

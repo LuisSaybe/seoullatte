@@ -2,7 +2,6 @@ export interface Topic {
   description: string;
   name: string;
   paths: string[];
-  searchTerms: string;
   component: React.ComponentType;
   relatedEntries: number[];
   relatedPartOfSpeech: KoreaPartOfSpeech[];

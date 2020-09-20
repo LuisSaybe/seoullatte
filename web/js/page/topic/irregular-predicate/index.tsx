@@ -69,7 +69,7 @@ export default function IrregularPredicate() {
             <Trans>
               말다 is conjugated irregularly in the&nbsp;
               <Anchor to={TopicRoute.politeSpeech}>polite</Anchor> and&nbsp;
-              <Anchor to={TopicRoute.intimateSpeech}>intimate</Anchor>
+              <Anchor to={TopicRoute.intimateSpeech}>intimate</Anchor>&nbsp;
               imperative
             </Trans>
           </Section>
