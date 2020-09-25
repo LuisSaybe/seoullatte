@@ -17,7 +17,7 @@ export class Entry {
 
   public hasDisplayableWordGrade() {
     const grades = this.getWordGrades();
-    return grades.length > 0 && grades.some(grade => grade !== '없음');
+    return grades.some((grade) => grade !== WordGrade.none);
   }
 
   public getLowestWordGrade() {
@@ -28,7 +28,10 @@ export class Entry {
         return WordGrade.beginner;
       }
 
-      if (grade === WordGrade.intermediate && (lowestGrade === WordGrade.advanced || !lowestGrade)) {
+      if (
+        grade === WordGrade.intermediate &&
+        (lowestGrade === WordGrade.advanced || !lowestGrade)
+      ) {
         lowestGrade = WordGrade.intermediate;
       }
 
@@ -41,7 +44,9 @@ export class Entry {
   }
 
   public getWordGrades() {
-    return Array.from(this.xml.querySelectorAll(":root word_grade")).map(element => element.textContent);
+    return Array.from(this.xml.querySelectorAll(":root word_grade")).map(
+      (element) => element.textContent,
+    );
   }
 
   public getSense(index: number) {

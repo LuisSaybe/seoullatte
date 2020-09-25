@@ -8,13 +8,20 @@
 }
 
 .instagram-container {
-  width: 300px;
+  @include media.phone() {
+    max-width: calc(100% - #{layout.$horizontal-page-padding * 2});
+    margin: 0 auto;
+  }
+
+  @include media.not-phone() {
+    max-width: 300px;
+  }
 }
 
 .text {
   @include media.phone() {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin-top: size.$margin-medium;
   }
 }

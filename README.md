@@ -1,19 +1,40 @@
-### install, run project on port 80, watch files
+Source code for https://seoullatte.com
+
+### Required Software for Development
+
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [Visual Studio Code](https://code.visualstudio.com)
+- [Prettier VS Code](https://github.com/prettier/prettier)
+
+#### run with Docker. install, run project on port 80, watch files
 
 ```sh
 # will need to run a 2nd time on your first install
 docker-compose up
 ```
 
-Korean Dictionary provided by https://krdict.korean.go.kr/openApi/openApiInfo
-Downloadable files https://www.korean.go.kr/front_eng/down/down_01.do
+#### run without Docker
 
-### Get SSL Certs
+```sh
+# watch files
+yarn watch
+
+# run server
+yarn serve
+```
+
+#### Get SSL Certs
 
 https://www.digitalocean.com/community/tutorials/how-to-use-certbot-standalone-mode-to-retrieve-let-s-encrypt-ssl-certificates-on-ubuntu-1804
 
-### run with ssl
+#### run with ssl
 
 ```
-docker run -dit --rm -p 80:80 -p 443:443 -v /root/certs:/root/certs luissaybe/seoullatte nginx -c /root/project/docker/nginx-https.conf
+docker run \
+  -dit \
+  --rm \
+  -p 80:80 \
+  -p 443:443 \
+  -v /root/certs:/root/certs \
+  luissaybe/seoullatte nginx -c /root/project/docker/nginx-https.conf
 ```
