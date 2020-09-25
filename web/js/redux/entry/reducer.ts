@@ -16,6 +16,8 @@ export function entry(
           [q]: new Entry(action.body[0]._source.xml),
         };
       }
+
+      return state;
     }
 
     case SearchAction.search: {
@@ -23,7 +25,7 @@ export function entry(
         return {
           ...state,
           ...Object.fromEntries(
-            action.body.map((entry) => [
+            action.body.hits.map((entry) => [
               entry._id,
               new Entry(entry._source.xml),
             ]),

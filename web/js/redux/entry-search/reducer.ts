@@ -15,7 +15,7 @@ export function entrySearch(
 
         return {
           ...state,
-          [query]: action.body.map((entry) => entry._id),
+          [query]: action.body.hits.map((entry) => entry._id),
         };
       }
 
