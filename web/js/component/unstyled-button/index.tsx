@@ -4,7 +4,7 @@ import "./style.scss";
 
 export const UnstyledButton = forwardRef<
   HTMLButtonElement,
-  React.HTMLAttributes<HTMLButtonElement>
+  React.ButtonHTMLAttributes<HTMLButtonElement>
 >((props, ref) => {
   return (
     <button ref={ref} {...props} styleName="root">

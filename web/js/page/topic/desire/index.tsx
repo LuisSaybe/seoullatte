@@ -12,7 +12,7 @@ export default function Desire() {
 
   return (
     <>
-      <ArticleSection>
+      <Section>
         <Trans>
           Expressing desire is acheived in the by the usage of the auxiliary
           adjecive&nbsp;
@@ -26,8 +26,8 @@ export default function Desire() {
         {t(
           "This construction can not be used in the second-person or third person declarative sentences.",
         )}
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <SectionTitle>{t("Examples")}</SectionTitle>
         <Section>
           <DefinitionPopup q="72128">초콜릿</DefinitionPopup>
@@ -45,7 +45,7 @@ export default function Desire() {
             아
           </DefinitionPopup>
         </Section>
-      </ArticleSection>
+      </Section>
     </>
   );
 }

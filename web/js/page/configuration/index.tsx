@@ -100,9 +100,6 @@ export function Configuration() {
             </select>
           </div>
         )}
-        <Anchor styleName="back-button" button to={toRoute}>
-          {t("back")}
-        </Anchor>
       </DefaultLayout>
       <Helmet>
         <title>Settings</title>

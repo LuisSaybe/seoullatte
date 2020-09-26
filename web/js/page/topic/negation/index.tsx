@@ -1,10 +1,13 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
+import { Anchor } from "web/js/component/anchor";
 
 import { ArticleSection } from "web/js/component/article-section";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
+import { SectionTitle } from "web/js/component/section-title";
+import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
 export default function Negation() {
@@ -12,7 +15,11 @@ export default function Negation() {
 
   return (
     <>
-      <ArticleSection>
+      <Section>
+        <Trans>
+          Some <Anchor to={TopicRoute.predicate}>predicates</Anchor> have a
+          corresponding negated predicate.
+        </Trans>
         {t("Some predicates are defined as the negation of another predicate.")}
         &nbsp;
         <Trans>
@@ -28,38 +35,42 @@ export default function Negation() {
         {t(
           "Predicates not appearing in these pairs can be negated using the 안 and the 지 않다 construction.",
         )}
-      </ArticleSection>
-      <ArticleSection>
-        <ArticleTitle>{t("Negation with 안")}</ArticleTitle>
-        {t("Compound predicates are of the form noun + 하다.")}
-        &nbsp;
-        <Trans>
-          For example, <DefinitionPopup q="23394">공부하다</DefinitionPopup>.
-        </Trans>
-        &nbsp;
-        {t(
-          "If a predicate is not a compound predicate, it can be negated by placing 안 prior to the predicate. This construction can not be used for proposotive or imperative clauses.",
-        )}
+      </Section>
+      <Section>
+        <SectionTitle>{t("Negation with 안")}</SectionTitle>
         <Section>
-          <DefinitionPopup q="61306">대회</DefinitionPopup>
-          <DefinitionPopup q="85764">를</DefinitionPopup>&nbsp;
-          <DefinitionPopup q="71372">안</DefinitionPopup>&nbsp;
-          <DefinitionPopup q="66574" senseIndexes={[1]}>
-            엽
-          </DefinitionPopup>
-          <DefinitionPopup q="79401">니까</DefinitionPopup>
+          {t("Compound predicates are of the form noun + 하다.")}
+          &nbsp;
+          <Trans>
+            For example, <DefinitionPopup q="23394">공부하다</DefinitionPopup>.
+          </Trans>
+          &nbsp;
+          {t(
+            "If a predicate is not a compound predicate, it can be negated by placing 안 before to the predicate. This construction can not be used for proposotive or imperative clauses.",
+          )}
+          <Section>
+            <DefinitionPopup q="61306">대회</DefinitionPopup>
+            <DefinitionPopup q="85764">를</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="71372">안</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="66574" senseIndexes={[1]}>
+              엽
+            </DefinitionPopup>
+            <DefinitionPopup q="79401">니까</DefinitionPopup>
+          </Section>
+          <Section>
+            <i>{t("The meeting is not starting?")}</i>
+          </Section>
         </Section>
+      </Section>
+      <Section>
+        <SectionTitle>{t("Negation with -지 않다")}</SectionTitle>
         <Section>
-          <i>{t("The meeting is not starting?")}</i>
+          <Trans>
+            The <DefinitionPopup q="72587">-지 않다</DefinitionPopup>{" "}
+            construction can also be used to negate a predicate where 지 is
+            placed after the predicate stem.
+          </Trans>
         </Section>
-      </ArticleSection>
-      <ArticleSection>
-        <ArticleTitle>{t("Predicate Negation with 지 않다")}</ArticleTitle>
-        <Trans>
-          The <DefinitionPopup q="72587">-지 않다</DefinitionPopup> construction
-          can also be used to negate a predicate where 지 is placed after the
-          predicate stem.
-        </Trans>
         <Section>
           <DefinitionPopup q="72704">눈</DefinitionPopup>
           <DefinitionPopup q="86355">을</DefinitionPopup>&nbsp;
@@ -71,7 +82,7 @@ export default function Negation() {
         <Section>
           <i>{t("(I) will not close (my) eyes.")}</i>
         </Section>
-      </ArticleSection>
+      </Section>
     </>
   );
 }

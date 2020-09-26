@@ -10,6 +10,8 @@ import { RootState } from "web/js/redux/reducer";
 import { DictionarySearchInput } from "web/js/component/dictionary-search-input";
 import { BackSVG } from "web/js/component/back-svg";
 import { appendLocation, pop } from "web/js/redux/location/action";
+import { HamburgerButton } from "web/js/component/hamburger-button";
+import { Button } from "web/js/component/button";
 import styles from "./style.scss";
 
 export function Navigation(props: React.HTMLProps<HTMLElement>) {
@@ -43,25 +45,20 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
 
   return (
     <nav {...props} styleName="root">
-      <button
-        styleName="hamburger-button"
-        aria-label={t("hamburger menu")}
-        onClick={onClick}
-        type="button"
-      >
-        <div styleName="bar" />
-        <div styleName="bar" />
-        <div styleName="bar" />
-      </button>
-      {lastLocation && (
+      <HamburgerButton onClick={onClick} styleName="hamburger-button" />
+      {lastLocation ? (
         <Anchor
           onClick={onClickReturn}
           pushLocation={false}
           to={lastLocation}
-          styleName="return-button"
+          styleName="return-element"
         >
           <BackSVG styleName="return-svg" />
         </Anchor>
+      ) : (
+        <Button styleName="return-element" disabled>
+          <BackSVG styleName="return-svg" />
+        </Button>
       )}
       <div styleName="search-section">
         <label styleName="label" htmlFor="dictionary-search">
@@ -88,7 +85,7 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
           styleName="search-input-container"
         />
       </div>
-      <Anchor styleName="settings-button" to={routes.configuration()}>
+      <Anchor styleName="settings-anchor" to={routes.configuration()}>
         {t("Settings")}
       </Anchor>
     </nav>

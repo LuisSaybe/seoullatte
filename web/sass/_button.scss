@@ -1,10 +1,15 @@
 @use '~web/sass/color';
 
+$button-top-border-width: 2px;
+$button-left-border-width: 2px;
+$button-right-border-width: 2px;
+$button-bottom-border-width: 4px;
+
 @mixin button() {
   border-style: solid;
   border-radius: 6px;
-  font-size: 1rem;
-  border-width: 2px 2px 4px;
+  border-width: $button-top-border-width $button-right-border-width
+    $button-bottom-border-width $button-left-border-width;
   padding: 0;
 }
 

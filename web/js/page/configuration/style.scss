@@ -1,18 +1,6 @@
 @use '~web/sass/layout';
 @use '~web/sass/media';
 
-.back-button {
-  margin-top: 24px;
-
-  @include media.phone() {
-    display: block;
-  }
-
-  @include media.not-phone() {
-    display: inline-block;
-  }
-}
-
 .field {
   display: flex;
   flex-direction: column;

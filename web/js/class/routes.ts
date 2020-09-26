@@ -10,7 +10,7 @@ export class Routes {
   }
 
   public landing() {
-    return `${this.prefix}/`;
+    return `${this.prefix}`;
   }
 
   public aboutUs() {

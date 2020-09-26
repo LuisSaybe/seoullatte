@@ -3,8 +3,9 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Trans } from "react-i18next";
 
-import { Navigation } from "web/js/component/navigation";
 import { Anchor } from "web/js/component/anchor";
+import { DefaultLayout } from "web/js/component/default-layout";
+import { Section } from "web/js/component/section";
 import "./style.scss";
 
 export function AboutUs() {
@@ -17,36 +18,44 @@ export function AboutUs() {
 
   return (
     <>
-      <div styleName="root">
-        <Navigation />
+      <DefaultLayout>
         <div styleName="content">
-          <div styleName="text">
+          <div>
             <div>
               {t(
                 "Luis Saybe is programmer and foreign language student currently residing in Florida.",
               )}
             </div>
-            <div styleName="dictionary">
+            <Section styleName="dictionary">
               <Trans>
                 Dictionary provided by&nbsp;
                 <Anchor href="https://krdict.korean.go.kr">
                   National Institute of Korean Language
                 </Anchor>
+                .
               </Trans>
-            </div>
-            <div styleName="email">{t("luis@trois.io")}</div>
+            </Section>
+            <Section styleName="github">
+              <Trans>
+                Find us on&nbsp;
+                <Anchor href="https://github.com/LuisSaybe/seoullatte">
+                  github
+                </Anchor>
+                .
+              </Trans>
+            </Section>
           </div>
           <div
             styleName="instagram-container"
             dangerouslySetInnerHTML={{ __html }}
           />
         </div>
-      </div>
+      </DefaultLayout>
       <Helmet>
         <title>{t("About Us")}</title>
         <link rel="canonical" href={window.location.href} />
         <meta name="description" content={t("About Us")} />
-        <script async src="https://www.instagram.com/embed.js"></script>
+        <script async src="https://www.instagram.com/embed.js" />
       </Helmet>
     </>
   );

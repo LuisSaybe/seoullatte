@@ -3,41 +3,27 @@
 @use "~web/sass/size";
 
 .dictionary,
-.email {
+.github {
   margin-top: size.$margin-medium;
+}
+
+.content {
+  @include media.not-phone() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: size.$margin-large;
+  }
 }
 
 .instagram-container {
   @include media.phone() {
     max-width: calc(100% - #{layout.$horizontal-page-padding * 2});
-    margin: 0 auto;
+    margin: size.$margin-medium auto 0;
   }
 
   @include media.not-phone() {
     max-width: 300px;
+    margin-left: size.$margin-medium;
   }
-}
-
-.text {
-  @include media.phone() {
-    display: flex;
-    flex-direction: column;
-    margin-top: size.$margin-medium;
-  }
-}
-
-.content {
-  display: grid;
-  gap: 24px;
-
-  @include layout.defaultLayout();
-  @include media.not-phone() {
-    grid-template-columns: 1fr 400px;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-.root {
-  @include layout.navigationAndContentLayout();
 }

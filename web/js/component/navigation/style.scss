@@ -10,14 +10,6 @@
   }
 }
 
-.bar {
-  border-radius: 2px;
-  background-color: #29627b;
-  height: 4px;
-  width: 18px;
-  margin: 2px 0;
-}
-
 .label {
   font-size: 16px;
   position: absolute;
@@ -30,7 +22,6 @@
 
 .search-section {
   display: flex;
-  padding: 0 size.$margin-medium;
   position: relative;
 
   @include media.phone() {
@@ -41,34 +32,55 @@
     margin: 0 auto;
     max-width: 500px;
     width: 100%;
+    padding: 0 size.$margin-small;
   }
 }
 
 .hamburger-button {
-  @include button.button();
-  @include button.buttonColors(color.$white);
-  padding: 0 11px;
   height: calc(100% - 16px);
+
+  @include media.phone() {
+    display: none;
+  }
 }
 
-.settings-button {
+.settings-anchor {
   @include button.button();
   @include button.buttonColors(color.$white);
   display: flex;
   align-items: center;
   padding: 0 6px;
   height: calc(100% - 24px);
+
+  @include media.phone() {
+    display: none;
+  }
 }
 
-.return-button {
+a.return-element {
+  height: calc(100% - 22px);
+}
+
+button.return-element {
+  height: calc(100% - 16px);
+}
+
+.return-element {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100% - 22px);
   @include button.button();
   @include button.buttonColors(color.$white);
   padding: 0 6px;
   margin-left: size.$margin-small;
+
+  @include media.phone() {
+    display: none;
+  }
+
+  &:disabled {
+    background-color: color.$disabled;
+  }
 }
 
 .return-svg {
@@ -102,7 +114,6 @@
 .root {
   display: flex;
   align-items: center;
-  padding: 0 layout.$horizontal-page-padding;
 }
 
 .searchInput {
