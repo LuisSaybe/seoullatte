@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { useArticleRoutes } from "web/js/hook/useArticleRoutes";
 import { routes } from "web/js/routes";
-import { BurgerMenu } from "web/js/component/burger-menu";
 import { getLanguage, Language } from "web/js/helper/language";
 import { AboutUs } from "web/js/page/about-us";
 import { Configuration } from "web/js/page/configuration";
@@ -14,6 +13,7 @@ import { RootState } from "web/js/redux/reducer";
 import { updateUserInterface } from "web/js/redux/user-interface/action";
 import { Subscribers } from "web/js/component/subscribers";
 import { DictionaryEntry } from "web/js/page/dictionary-entry";
+import { HamburgerMenu } from "web/js/component/hamburger-menu";
 import "./style.scss";
 
 export function Application() {
@@ -102,7 +102,7 @@ export function Application() {
   return (
     <>
       <Subscribers />
-      <BurgerMenu />
+      <HamburgerMenu />
       <Switch>
         <Route path={routes.configuration()} component={Configuration} />
         <Route path={routes.aboutUs()} component={AboutUs} />
