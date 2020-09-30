@@ -2,7 +2,7 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { Anchor } from "web/js/component/anchor";
-import { ArticleSection } from "web/js/component/article-section";
+import { Section } from "web/js/component/section";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Table } from "web/js/component/table";
@@ -14,7 +14,7 @@ export default function BoundNoun() {
 
   return (
     <>
-      <ArticleSection>
+      <Section>
         <Trans>
           A bound noun always appears before a&nbsp;
           <Anchor to={TopicRoute.predicateAsModifiers}>modifier</Anchor>
@@ -26,8 +26,8 @@ export default function BoundNoun() {
           "Below we give examples of the some of the most commonly used bound nouns.",
         )}
         &nbsp;
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <ArticleTitle>{t("Examples")}</ArticleTitle>
         <Table>
           <strong>{t("Bound noun")}</strong>
@@ -63,7 +63,7 @@ export default function BoundNoun() {
             <DefinitionPopup q="71232">적</DefinitionPopup>
           </div>
         </Table>
-      </ArticleSection>
+      </Section>
     </>
   );
 }

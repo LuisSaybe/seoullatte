@@ -2,9 +2,8 @@ import React, { useEffect } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { Anchor } from "web/js/component/anchor";
-import { ArticleSection } from "web/js/component/article-section";
-import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
+import { DefinitionPopup } from "web/js/component/definition-popup";
 import { SectionTitle } from "web/js/component/section-title";
 import { Subsection } from "web/js/component/subsection";
 import { useNavigateToHash } from "web/js/hook/useNavigateToHash";
@@ -25,7 +24,7 @@ export default function AddingVowelsToPredicateStems() {
 
   return (
     <>
-      <ArticleSection>
+      <Section>
         {t(
           "Some endings require adding ㅓ or ㅏ to a predicate stem in order to be used. We discuss how to determine which is added.",
         )}
@@ -39,7 +38,7 @@ export default function AddingVowelsToPredicateStems() {
         {t(
           "Then if the vowel closest to the end of the modified predicate stem is ㅏ or ㅗ then ㅏ is added to the stem, othwerwise ㅓ is added to the stem.",
         )}
-      </ArticleSection>
+      </Section>
       <Section>
         Example predicate:&nbsp;
         <DefinitionPopup q="64743">바라보다</DefinitionPopup>
@@ -79,7 +78,7 @@ export default function AddingVowelsToPredicateStems() {
           {t("바ㅃ becomes 바빠.")}
         </div>
       </Section>
-      <ArticleSection>
+      <Section>
         <SectionTitle>{t("Placement of ㅓ or ㅏ")}</SectionTitle>
         {t(
           "After determining whether ㅓ or ㅏ is added to the predicate's stem, the new letter may be added in one of 3 ways.",
@@ -153,8 +152,8 @@ export default function AddingVowelsToPredicateStems() {
             </div>
           </Subsection>
         </Section>
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <SectionTitle>{t("Examples")}</SectionTitle>
         <div styleName="table">
           <span>Predicate</span>
@@ -173,6 +172,8 @@ export default function AddingVowelsToPredicateStems() {
           <span>이루어</span>
           <DefinitionPopup q="62354">낫다</DefinitionPopup>
           <span>나아</span>
+          <DefinitionPopup q="70482">어떻다</DefinitionPopup>
+          <span>어때</span>
           <DefinitionPopup q="62264">기다리다</DefinitionPopup>
           <span>기다려</span>
           <DefinitionPopup q="65172">쓰다</DefinitionPopup>
@@ -186,7 +187,7 @@ export default function AddingVowelsToPredicateStems() {
           <DefinitionPopup q="27500">가다</DefinitionPopup>
           <span>가</span>
         </div>
-      </ArticleSection>
+      </Section>
     </>
   );
 }

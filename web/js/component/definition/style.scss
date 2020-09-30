@@ -75,6 +75,12 @@
   height: 22px;
 }
 
+.loader {
+  display: block;
+  width: 80px;
+  margin: 0 auto;
+}
+
 @include media.phone() {
   .root {
     max-width: 280px;

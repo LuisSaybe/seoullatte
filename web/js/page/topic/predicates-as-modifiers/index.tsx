@@ -1,25 +1,23 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { ArticleSection } from "web/js/component/article-section";
-import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
+import { DefinitionPopup } from "web/js/component/definition-popup";
 import { SectionTitle } from "web/js/component/section-title";
 import { MarginSizeName } from "web/js/interface/size";
 import "./style.scss";
-import { LoadingArticle } from "web/js/component/loading-article";
 
 export default function PredicateAsModifier() {
   const { t } = useTranslation();
 
   return (
     <>
-      <ArticleSection>
+      <Section>
         {t(
           "A suffix can be added to a predicate in order to change it into a modifier.",
         )}
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <SectionTitle>
           {t("Verbs as modifiers in the present tense")}
         </SectionTitle>
@@ -37,8 +35,8 @@ export default function PredicateAsModifier() {
             <i>{t("The man who goes.")}</i>
           </div>
         </Section>
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <SectionTitle>{t("Verbs as modifiers in the past tense")}</SectionTitle>
         {t(
           "To change a verb to a modifier in the past tense, the suffix 은 is added to the verb stem when the verb ends in a consonant.",
@@ -55,8 +53,8 @@ export default function PredicateAsModifier() {
             <i>{t("The experience of having arrived")}</i>
           </div>
         </Section>
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <SectionTitle>
           {t("Verbs as modifiers in the prospective tense")}
         </SectionTitle>
@@ -79,8 +77,8 @@ export default function PredicateAsModifier() {
             <i>{t("A letter that may be sent")}</i>
           </div>
         </Section>
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <SectionTitle>{t("Adjectives as modifiers")}</SectionTitle>
         {t(
           "To change an adjective to a modifier, the suffix 은 is added to the verb stem when the verb ends in a consonant.",
@@ -128,7 +126,7 @@ export default function PredicateAsModifier() {
             <i>{t("A difficult day")}</i>
           </div>
         </Section>
-      </ArticleSection>
+      </Section>
     </>
   );
 }

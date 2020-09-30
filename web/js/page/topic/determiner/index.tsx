@@ -2,8 +2,8 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { Anchor } from "web/js/component/anchor";
-import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
+import { Section } from "web/js/component/section";
 import { Table } from "web/js/component/table";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
@@ -13,7 +13,7 @@ export default function Determiner() {
 
   return (
     <>
-      <ArticleSection>
+      <Section>
         {t(
           "A determiner is a noun which is always used to modify another noun.",
         )}
@@ -34,8 +34,8 @@ export default function Determiner() {
           A determiner is a delimiter, a number, a demonstrative or a question
           noun.
         </Trans>
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <Table columns={3}>
           <strong>{t("Determiner")}</strong>
           <strong>{t("Type")}</strong>
@@ -77,7 +77,7 @@ export default function Determiner() {
             </DefinitionPopup>
           </div>
         </Table>
-      </ArticleSection>
+      </Section>
     </>
   );
 }

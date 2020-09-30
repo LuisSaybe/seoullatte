@@ -2,7 +2,6 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { Anchor } from "web/js/component/anchor";
 
-import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { Section } from "web/js/component/section";
@@ -15,7 +14,7 @@ export default function DeferentialSpeech() {
   const { t } = useTranslation();
 
   return (
-    <ArticleSection>
+    <>
       <div>
         <Trans>
           The following <Anchor to={TopicRoute.ending}>endings</Anchor> are
@@ -125,6 +124,6 @@ export default function DeferentialSpeech() {
       <Section>
         {t("ㅂ becomes the 받침 of the last syllable in the predicate.")}
       </Section>
-    </ArticleSection>
+    </>
   );
 }

@@ -27,6 +27,7 @@ export enum TopicRoute {
   pastTense = "/past-tense",
   predicateAsModifiers = "/predicate-as-modifiers",
   subjectParticle = "/subject-particle",
+  objectParticle = "/object-particle",
   topicParticle = "/topic-particle",
   formingSentences = "/forming-sentences",
   negation = "/negation",

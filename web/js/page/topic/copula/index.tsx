@@ -1,12 +1,10 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-import { ArticleSection } from "web/js/component/article-section";
+import { Section } from "web/js/component/section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
-import { SectionTitle } from "web/js/component/section-title";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { useCanUseKoreanUtterance } from "web/js/hook/useCanUseKoreanUtterance";
-import { Section } from "web/js/component/section";
 import "./style.scss";
 
 export default function Copula() {
@@ -15,7 +13,7 @@ export default function Copula() {
 
   return (
     <>
-      <ArticleSection>
+      <Section>
         <Trans>
           The copula <DefinitionPopup q="92101">이다</DefinitionPopup> and&nbsp;
           <DefinitionPopup q="26878">아니다</DefinitionPopup> attach directly to
@@ -31,8 +29,8 @@ export default function Copula() {
         {t(
           "아니다 indicates that the subject of the clause is not equivalent to the noun it attaches to.",
         )}
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <Section styleName="dialog-grid">
           <div>
             <DefinitionPopup q="15689">강아지</DefinitionPopup>
@@ -61,7 +59,7 @@ export default function Copula() {
           )}
           <i>{t("Our daughter is a student.")}</i>
         </Section>
-      </ArticleSection>
+      </Section>
     </>
   );
 }

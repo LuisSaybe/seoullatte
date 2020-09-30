@@ -1,7 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { Section } from "web/js/component/section";
@@ -12,7 +11,7 @@ export default function SubjectParticle() {
   const { t } = useTranslation();
 
   return (
-    <ArticleSection>
+    <>
       {t(
         "The subject particle is added to a word to indicate that it is the subject of a clause.",
       )}
@@ -60,6 +59,6 @@ export default function SubjectParticle() {
           <i>The moon is truly bright tonight</i>
         </DialogGrid>
       </Section>
-    </ArticleSection>
+    </>
   );
 }

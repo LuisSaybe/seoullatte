@@ -1,7 +1,14 @@
 @use '~web/sass/size';
+@use '~web/sass/media';
 
 .anchors {
   margin-top: size.$margin-medium;
+}
+
+.article {
+  @include media.not-phone {
+    margin-top: size.$margin-medium;
+  }
 }
 
 .footer {

@@ -2,10 +2,9 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { Anchor } from "web/js/component/anchor";
-import { ArticleSection } from "web/js/component/article-section";
+import { Section } from "web/js/component/section";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
-import { Section } from "web/js/component/section";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
@@ -14,7 +13,7 @@ export default function ExistenceAndPosession() {
 
   return (
     <>
-      <ArticleSection>
+      <Section>
         <Trans>
           We explore the words&nbsp;
           <DefinitionPopup q="68796">있다</DefinitionPopup>
@@ -24,8 +23,8 @@ export default function ExistenceAndPosession() {
         {t(
           "있다 is either a verb or an adjective depending on its meaning while 없다 is an adjective.",
         )}
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <ArticleTitle>{t("Existence")}</ArticleTitle>
         <Trans>
           The adjectives&nbsp;
@@ -88,8 +87,8 @@ export default function ExistenceAndPosession() {
             </div>
           </Section>
         </Section>
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <ArticleTitle>{t("Posession")}</ArticleTitle>
         {t(
           "The verbs 있다 and 없다 are used to indicate that an entity possesses or does not posses a physical object.",
@@ -149,7 +148,7 @@ export default function ExistenceAndPosession() {
             </DefinitionPopup>
           </div>
         </Section>
-      </ArticleSection>
+      </Section>
     </>
   );
 }

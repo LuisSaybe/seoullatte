@@ -1,7 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { ArticleSection } from "web/js/component/article-section";
 import { Section } from "web/js/component/section";
 import "./style.scss";
 
@@ -9,7 +8,7 @@ export default function Numbers() {
   const { t } = useTranslation();
 
   return (
-    <ArticleSection>
+    <>
       {t(
         "Korean numbers use two different systems for counting. A number is either a native Korean number or a Sino-Korean number.",
       )}
@@ -112,6 +111,6 @@ export default function Numbers() {
         <span>조</span>
         <span>{10 ** 12}</span>
       </Section>
-    </ArticleSection>
+    </>
   );
 }

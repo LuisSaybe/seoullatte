@@ -1,7 +1,6 @@
 import React from "react";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
-import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
@@ -13,7 +12,7 @@ export default function FormingSentences() {
 
   return (
     <>
-      <ArticleSection>
+      <Section>
         {t(
           "There are two ideas which are prevalent throughout the Korean language.",
         )}
@@ -25,8 +24,8 @@ export default function FormingSentences() {
         {t(
           "Secondly, the order of information is organized from general to specific.",
         )}
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <SectionTitle>{t("Word order")}</SectionTitle>
         {t(
           "A simple Korean sentence is composed of a subject and a predicate.",
@@ -57,8 +56,8 @@ export default function FormingSentences() {
         <Section>
           <i>{t("I eat rice")}</i>
         </Section>
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <SectionTitle>{t("Context based omission")}</SectionTitle>
         {t(
           "The subject or topic of a sentence can be omitted when the subject or topic is implicitly understood.",
@@ -96,7 +95,7 @@ export default function FormingSentences() {
             "As for Sunmi Sin's response, notice that neither the first sentence (안 먹었어요) nor the second sentence (배고파요) has an explicit subject.",
           )}
         </Section>
-      </ArticleSection>
+      </Section>
     </>
   );
 }

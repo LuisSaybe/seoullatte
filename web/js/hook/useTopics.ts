@@ -122,7 +122,12 @@ export function useTopics(): Topic[] {
         description: t("Learn about the The Plain Speech Level in Korean"),
         name: t("The Plain Speech Level"),
         paths: [TopicRoute.plainSpeech],
-        relatedEntries: [76426, 85037],
+        relatedEntries: [
+          85041 /*다*/,
+          76235 /*으냐*/,
+          76426 /*니*/,
+          85037 /*는다*/,
+        ],
         relatedPartOfSpeech: [],
       },
       {
@@ -136,11 +141,21 @@ export function useTopics(): Topic[] {
       {
         component: lazy(() => import("web/js/page/topic/subject-particle")),
         description: t(
-          "The Subject Particle 가 and 이 are used to indicate the subject of the clause",
+          "The subject particle 가 and 이 are used to indicate the subject of a clause",
         ),
         name: t("The Subject Particle 가 and 이"),
         paths: [TopicRoute.subjectParticle],
         relatedEntries: [66341, 86289],
+        relatedPartOfSpeech: [],
+      },
+      {
+        component: lazy(() => import("web/js/page/topic/object-particle")),
+        description: t(
+          "The object particle 를 and 을 are used to indicate the object of a verb",
+        ),
+        name: t("The object particle 를 and 을"),
+        paths: [TopicRoute.objectParticle],
+        relatedEntries: [85764, 86355],
         relatedPartOfSpeech: [],
       },
       {
@@ -262,7 +277,7 @@ export function useTopics(): Topic[] {
         description: t("Learn about the particle 에"),
         name: t("The Particle 에"),
         paths: [TopicRoute.particleLocationGoal],
-        relatedEntries: [86572],
+        relatedEntries: [/*에*/ 86572, /*에는*/ 80294],
         relatedPartOfSpeech: [],
       },
     ],

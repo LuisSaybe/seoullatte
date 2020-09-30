@@ -2,8 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Trans } from "react-i18next";
 
-import { Utterance } from "web/js/component/utterance";
-
+import { Section } from "web/js/component/section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import "./style.scss";
 
@@ -12,9 +11,9 @@ export default function Hangul() {
 
   return (
     <>
-      <section styleName="section">
+      <Section>
         <Trans>
-          The modern Korean writing system is called{" "}
+          The modern Korean writing system is called&nbsp;
           <DefinitionPopup q="91525">한글</DefinitionPopup> in South Korea while
           the name is <DefinitionPopup q="67949">조선</DefinitionPopup>
           <DefinitionPopup q="59226">글</DefinitionPopup> in North Korea.
@@ -22,17 +21,17 @@ export default function Hangul() {
         &nbsp;
         <Trans>
           The writing system was introduced and promoted in 1446 CE by Sejong
-          the Great. The original name was{" "}
+          the Great. The original name was&nbsp;
           <DefinitionPopup q="69716">훈민정음</DefinitionPopup>. Prior to the
-          widespread usage of 한글,{" "}
+          widespread usage of 한글,&nbsp;
           <DefinitionPopup q="72461">한자</DefinitionPopup>, a system composed
           of Chinese characters was used to write Korean language.
         </Trans>
-      </section>
-      <section styleName="section">
+      </Section>
+      <Section>
         {t("Below are the consonants and their corresponding names")}
-      </section>
-      <section styleName="section consonants">
+      </Section>
+      <Section styleName="consonants">
         {[
           ["ㄱ", "기역", "69070"],
           ["ㄲ", "쌍기역", "69072"],
@@ -61,13 +60,13 @@ export default function Hangul() {
             </DefinitionPopup>
           </div>
         ))}
-      </section>
-      <section styleName="section">
+      </Section>
+      <Section>
         {t(
           "Below are the vowels whose names are represented by their respective sounds",
         )}
-      </section>
-      <section styleName="section vowels">
+      </Section>
+      <Section styleName="vowels">
         {[
           ["ㅏ", "68847"],
           ["ㅓ", "68854"],
@@ -89,7 +88,7 @@ export default function Hangul() {
             {character}
           </DefinitionPopup>
         ))}
-      </section>
+      </Section>
     </>
   );
 }

@@ -1,9 +1,7 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-import { ArticleSection } from "web/js/component/article-section";
 import { Section } from "web/js/component/section";
-
 import { Anchor } from "web/js/component/anchor";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
@@ -14,7 +12,7 @@ export default function IntimateSpeech() {
   const { t } = useTranslation();
 
   return (
-    <ArticleSection>
+    <>
       <Section>
         {t(
           "The intimate speech level has 1 conjugation for all sentence types. Declarative, Interrogative, Imperative, Propositive.",
@@ -34,7 +32,7 @@ export default function IntimateSpeech() {
           &nbsp;to the predicate stem.
         </Trans>
       </Section>
-      <ArticleSection>
+      <Section>
         <ArticleTitle>{t("Examples")}</ArticleTitle>
         <Section>
           <div>
@@ -94,7 +92,7 @@ export default function IntimateSpeech() {
           </div>
           <div>{t("Conjugated predicate")} 나빠</div>
         </Section>
-      </ArticleSection>
-    </ArticleSection>
+      </Section>
+    </>
   );
 }

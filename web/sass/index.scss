@@ -5,6 +5,8 @@ html {
   height: 100%;
   font-family: font.$default-font-family;
   -webkit-text-size-adjust: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
 
   @include media.phone {
     font-size: 18px;

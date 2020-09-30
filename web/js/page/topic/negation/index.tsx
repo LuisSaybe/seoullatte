@@ -2,8 +2,6 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { Anchor } from "web/js/component/anchor";
 
-import { ArticleSection } from "web/js/component/article-section";
-import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";

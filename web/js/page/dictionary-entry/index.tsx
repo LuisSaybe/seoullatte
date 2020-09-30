@@ -1,8 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { useDispatch } from "react-redux";
 
 import { ArticleTitle } from "web/js/component/article-title";
 import { useEntry } from "web/js/hook/useEntry";
@@ -13,10 +12,12 @@ import { UtteranceButton } from "web/js/component/utterance-button";
 import { useTopics } from "web/js/hook/useTopics";
 import { DefaultLayout } from "web/js/component/default-layout";
 import { EntryPartOfSpeech } from "web/js/component/entry-part-of-speech";
-import { BackSVG } from "web/js/component/back-svg";
 import { EntryWordGrade } from "web/js/component/entry-word-grade";
 import { KoreaPartOfSpeech } from "web/js/interface/korean";
 import "./style.scss";
+import { TopicRoute } from "web/js/interface/route";
+import { TeachSVG } from "web/js/component/teacher-svg";
+import { Section } from "web/js/component/section";
 
 export function DictionaryEntry() {
   const { t } = useTranslation();
@@ -29,6 +30,9 @@ export function DictionaryEntry() {
   if (entry) {
     const partOfSpeech = entry.getPartOfSpeech();
     const relatedTopicIndex = topics.findIndex((topic) =>
+      topic.relatedEntries.includes(Number(q)),
+    );
+    const relatedPartOfSpeechTopic = topics.findIndex((topic) =>
       topic.relatedPartOfSpeech.includes(partOfSpeech as KoreaPartOfSpeech),
     );
     const partOfSpeechNode = (
@@ -37,11 +41,11 @@ export function DictionaryEntry() {
     let partOfSpeechSection;
 
     if (partOfSpeech !== KoreaPartOfSpeech.none) {
-      if (relatedTopicIndex === -1) {
+      if (relatedPartOfSpeechTopic === -1) {
         partOfSpeechSection = partOfSpeechNode;
       } else {
         partOfSpeechSection = (
-          <Anchor to={topics[relatedTopicIndex].paths[0]}>
+          <Anchor to={topics[relatedPartOfSpeechTopic].paths[0]}>
             {partOfSpeechNode}
           </Anchor>
         );
@@ -52,7 +56,17 @@ export function DictionaryEntry() {
       <>
         <div styleName="header">
           <ArticleTitle>{entry.getDictionaryForm()}</ArticleTitle>
-          <UtteranceButton text={entry.getDictionaryForm()} />
+          <div styleName="buttons">
+            {relatedTopicIndex !== -1 && (
+              <Anchor
+                styleName="to-topic-anchor"
+                to={topics[relatedTopicIndex].paths[0]}
+              >
+                <TeachSVG styleName="teacher-icon" />
+              </Anchor>
+            )}
+            <UtteranceButton text={entry.getDictionaryForm()} />
+          </div>
         </div>
         {partOfSpeechSection}
         {entry.hasDisplayableWordGrade() && (
@@ -60,11 +74,13 @@ export function DictionaryEntry() {
             <EntryWordGrade q={Number(q)} />
           </div>
         )}
-        <div styleName="senses">
+        <Section>
           {Array.from(entry.getSenses()).map((_, index) => (
-            <EntrySense styleName="sense" key={index} q={q} index={index + 1} />
+            <Section key={index}>
+              <EntrySense q={q} index={index + 1} />
+            </Section>
           ))}
-        </div>
+        </Section>
         <Helmet>
           <title>
             {t(`Definition of {{word}}`, { word: entry.getDictionaryForm() })}

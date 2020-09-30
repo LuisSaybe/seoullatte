@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { ArticleSection } from "web/js/component/article-section";
+import { Section } from "web/js/component/section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import "./style.scss";
 
@@ -10,7 +10,7 @@ export default function Predicate() {
 
   return (
     <>
-      <ArticleSection>
+      <Section>
         {t("Every predicate in Korean is composed of a stem and an ending.")}
         &nbsp;
         {t(
@@ -26,7 +26,7 @@ export default function Predicate() {
         )}
         &nbsp;
         {t("A predicate can be a verb, an adjective or a copula.")}
-      </ArticleSection>
+      </Section>
       <div styleName="table-section">
         <div styleName="table">
           <strong>{t("Stem")}</strong>

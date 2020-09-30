@@ -9,17 +9,16 @@ import { DefaultLayout } from "web/js/component/default-layout";
 import { appendLocation } from "web/js/redux/location/action";
 import "./style.scss";
 
-interface IInterface extends React.HTMLAttributes<HTMLElement> {
+interface Props extends React.HTMLAttributes<HTMLElement> {
   articleTitle: React.ReactNode;
   next?: string;
   previous?: string;
 }
 
-export function ArticlePage(props: IInterface) {
+export function ArticlePage(props: Props) {
   const location = useLocation();
   const history = useHistory();
   const dispatch = useDispatch();
-  const locations = useSelector((state: RootState) => state.location);
   const { children, articleTitle, next, previous, ...rest } = props;
 
   useEffect(() => {
@@ -54,7 +53,7 @@ export function ArticlePage(props: IInterface) {
 
   return (
     <DefaultLayout {...rest}>
-      <article>
+      <article styleName="article">
         <ArticleTitle>{articleTitle}</ArticleTitle>
         {props.children}
       </article>

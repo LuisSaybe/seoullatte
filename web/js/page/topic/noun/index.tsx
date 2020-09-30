@@ -6,7 +6,6 @@ import { useEnglishVoice } from "web/js/hook/useEnglishVoice";
 import { useFrenchVoice } from "web/js/hook/useFrenchVoice";
 import { useGermanVoice } from "web/js/hook/useGermanVoice";
 
-import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
 import { Table } from "web/js/component/table";
@@ -23,7 +22,7 @@ export default function Noun() {
 
   return (
     <>
-      <ArticleSection>
+      <Section>
         {t("There are 3 types of nouns in the Korean language")}
         <div>
           &bull;&nbsp;<strong>{t("Sino-Korean nouns.")}</strong>&nbsp;
@@ -37,8 +36,8 @@ export default function Noun() {
           &nbsp;
           {t("Loan words are borrowed from other languages.")}
         </div>
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         {t("Below are examples of each")}
         <Section>
           <TopicTitleMedium>{t("Sino-Korean nouns")}</TopicTitleMedium>
@@ -91,7 +90,7 @@ export default function Noun() {
             </Utterance>
           </Table>
         </Section>
-      </ArticleSection>
+      </Section>
     </>
   );
 }

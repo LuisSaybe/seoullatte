@@ -2,7 +2,6 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { Anchor } from "web/js/component/anchor";
-import { ArticleSection } from "web/js/component/article-section";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
@@ -16,7 +15,7 @@ export default function PastTense() {
 
   return (
     <>
-      <ArticleSection>
+      <Section>
         <Trans>
           To conjugate a predicate in the past tense, a&nbsp;
           <Anchor to={TopicRoute.ending}>pre-final ending</Anchor>
@@ -88,8 +87,8 @@ export default function PastTense() {
             "This can be used when recounting events which are in the distant past and no longer immediately relevant.",
           )}
         </Section>
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <ArticleTitle>{t("Examples")}</ArticleTitle>
         <Section styleName="table">
           <span>{t("Predicate")}</span>
@@ -103,7 +102,7 @@ export default function PastTense() {
           <DefinitionPopup q="69514">오다</DefinitionPopup>
           <span>왔어요</span>
         </Section>
-      </ArticleSection>
+      </Section>
     </>
   );
 }

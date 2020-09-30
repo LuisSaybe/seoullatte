@@ -2,7 +2,6 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { Anchor } from "web/js/component/anchor";
-import { ArticleSection } from "web/js/component/article-section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
@@ -14,7 +13,7 @@ export default function Questions() {
 
   return (
     <>
-      <ArticleSection>
+      <Section>
         <Trans>
           Most question are formed by using&nbsp;
           <Anchor to={TopicRoute.determiner}>determiners</Anchor>
@@ -92,8 +91,8 @@ export default function Questions() {
         <Section>
           <i>{t("From when shall (I) start?")}</i>
         </Section>
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <SectionTitle>{t("Asking about methods")}</SectionTitle>
         <Trans>
           When one wishes to inquire about a method or manner the adverb&nbsp;
@@ -112,8 +111,8 @@ export default function Questions() {
         <Section>
           <i>{t("How can I go to Incheon?")}</i>
         </Section>
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <SectionTitle>{t("Asking about reasons or motives")}</SectionTitle>
         <Trans>
           When one wishes to inquire about a reason the adverb&nbsp;
@@ -133,8 +132,8 @@ export default function Questions() {
         <Section>
           <i>{t("Why (do they) always come late (for) practice?")}</i>
         </Section>
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <SectionTitle>{t("Categories and selections")}</SectionTitle>
         <Trans>
           When one wishes to ask which category or kind an object may belong to,
@@ -161,8 +160,8 @@ export default function Questions() {
             <DefinitionPopup q="62822">어느</DefinitionPopup> is used.
           </Trans>
         </Section>
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <SectionTitle>{t("Quantity")}</SectionTitle>
         <Trans>
           When one inquires about a quantity the numeral&nbsp;
@@ -204,7 +203,7 @@ export default function Questions() {
         <Section>
           <i>{t("How much would you like to drink?")}</i>
         </Section>
-      </ArticleSection>
+      </Section>
     </>
   );
 }

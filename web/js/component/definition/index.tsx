@@ -13,6 +13,7 @@ import { useTopics } from "web/js/hook/useTopics";
 import { TeachSVG } from "web/js/component/teacher-svg";
 import { setAllRefsClosed } from "web/js/redux/definition-popup/action";
 import "./style.scss";
+import { LoadingSVG } from "../loading-svg";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   q: string;
@@ -97,7 +98,7 @@ export function Definition(props: Props) {
       </>
     );
   } else {
-    content = t("Loading...");
+    content = <LoadingSVG styleName="loader" />;
   }
 
   return (

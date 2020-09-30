@@ -1,3 +1,5 @@
+@use "~web/sass/button";
+@use '~web/sass/color';
 @use "~web/sass/size";
 
 .back-anchor {
@@ -24,10 +26,19 @@
   justify-content: space-between;
 }
 
-.senses {
-  margin-top: size.$margin-medium;
+.buttons {
+  display: flex;
 }
 
-.sense {
-  margin-top: size.$margin-medium;
+.teacher-icon {
+  height: 22px;
+}
+
+.to-topic-anchor {
+  @include button.button();
+  @include button.buttonColors(color.$white);
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  margin-right: 8px;
 }

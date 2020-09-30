@@ -1,7 +1,7 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-import { ArticleSection } from "web/js/component/article-section";
+import { Section } from "web/js/component/section";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import "./style.scss";
@@ -11,7 +11,7 @@ export default function FormalAndInformalSpeech() {
 
   return (
     <>
-      <ArticleSection>
+      <Section>
         {t(
           "The Korean languages exhibits grammatical structures and sets of words which define who is the more senior person during communication.",
         )}
@@ -19,8 +19,8 @@ export default function FormalAndInformalSpeech() {
         {t(
           "We introduce two categories in which Korean speech may be categorized under.",
         )}
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <ArticleTitle>{t("Informal Speech")}</ArticleTitle>
         <Trans>
           <DefinitionPopup q="15843">반말</DefinitionPopup> is a type of speech
@@ -36,14 +36,14 @@ export default function FormalAndInformalSpeech() {
           &bull;&nbsp;
           {t("Used when talking down to a younger or inferior person.")}
         </div>
-      </ArticleSection>
-      <ArticleSection>
+      </Section>
+      <Section>
         <ArticleTitle>{t("Formal Speech")}</ArticleTitle>
         <Trans>
           <DefinitionPopup q="24607">존댓말</DefinitionPopup> is a form used in
           referring to a person or thing in order to convey respect.
         </Trans>
-      </ArticleSection>
+      </Section>
     </>
   );
 }
