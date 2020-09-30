@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Manager, Popper, Reference } from "react-popper";
 import { useDispatch, useSelector } from "react-redux";
 
+import { useEntry } from "web/js/hook/useEntry";
 import { useDidClickOnElement } from "web/js/hook/useDidClickOnElement";
 import { Definition } from "web/js/component/definition";
 import { UnstyledTextButton } from "web/js/component/unstyled-text-button";
@@ -26,6 +27,9 @@ export function DefinitionPopup(props: Props) {
   const onClick = () => {
     dispatch(setRefOpen(rootRef.current, false));
   };
+
+  /* prefetch the dictionary entry to avoid loading time */
+  useEntry(q);
 
   useEffect(() => {
     return () => {

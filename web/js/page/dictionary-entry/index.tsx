@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 import { ArticleTitle } from "web/js/component/article-title";
@@ -14,10 +14,9 @@ import { DefaultLayout } from "web/js/component/default-layout";
 import { EntryPartOfSpeech } from "web/js/component/entry-part-of-speech";
 import { EntryWordGrade } from "web/js/component/entry-word-grade";
 import { KoreaPartOfSpeech } from "web/js/interface/korean";
-import "./style.scss";
-import { TopicRoute } from "web/js/interface/route";
 import { TeachSVG } from "web/js/component/teacher-svg";
 import { Section } from "web/js/component/section";
+import "./style.scss";
 
 export function DictionaryEntry() {
   const { t } = useTranslation();
