@@ -12,8 +12,9 @@ import { routes } from "web/js/routes";
 import { useTopics } from "web/js/hook/useTopics";
 import { TeachSVG } from "web/js/component/teacher-svg";
 import { setAllRefsClosed } from "web/js/redux/definition-popup/action";
+import { LoadingSVG } from "web/js/component/loading-svg";
+import { Section } from "web/js/component/section";
 import "./style.scss";
-import { LoadingSVG } from "../loading-svg";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   q: string;
@@ -73,9 +74,9 @@ export function Definition(props: Props) {
             {relatedTopic}
           </div>
         </div>
-        <div styleName="section title">
+        <Section styleName="title">
           <strong>{t("Definition")}</strong>
-        </div>
+        </Section>
         {Array.from(entry.getSenses())
           .filter(
             (_, index) => senseIndexes?.includes(Number(index)) ?? index === 0,

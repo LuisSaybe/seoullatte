@@ -47,6 +47,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   background-color: color.$white;
+  font-size: 1rem;
 
   &.loading {
     display: flex;
@@ -61,10 +62,6 @@
 
 .sense {
   text-align: left;
-}
-
-.section {
-  margin-top: 12px;
 }
 
 .sense {
