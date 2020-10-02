@@ -8,12 +8,12 @@ export function entry(
 ): Record<string, Entry> {
   switch (action.type) {
     case Action.getWords: {
-      if (action.body && action.body.length > 0) {
-        const parts = new URL(action.response.url).pathname.split("/");
+      if (action.data.body && action.data.body.length > 0) {
+        const parts = new URL(action.data.response.url).pathname.split("/");
         const q = parts[parts.length - 1];
         return {
           ...state,
-          [q]: new Entry(action.body[0]._source.xml),
+          [q]: new Entry(action.data.body[0]._source.xml),
         };
       }
 
@@ -21,11 +21,11 @@ export function entry(
     }
 
     case SearchAction.search: {
-      if (action.body) {
+      if (action.data.body) {
         return {
           ...state,
           ...Object.fromEntries(
-            action.body.hits.map((entry) => [
+            action.data.body.hits.map((entry) => [
               entry._id,
               new Entry(entry._source.xml),
             ]),

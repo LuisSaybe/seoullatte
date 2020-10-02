@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { useEntryMetaInformation } from "web/js/hook/useEntryMetaInformation";
 import { Anchor } from "web/js/component/anchor";
@@ -15,6 +15,7 @@ import { setAllRefsClosed } from "web/js/redux/definition-popup/action";
 import { LoadingSVG } from "web/js/component/loading-svg";
 import { Section } from "web/js/component/section";
 import "./style.scss";
+import { RootState } from "web/js/redux/reducer";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   q: string;
@@ -22,12 +23,15 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function Definition(props: Props) {
+  const { children, senseIndexes, q, ...rest } = props;
   const dispatch = useDispatch();
   const location = useLocation();
   const { t } = useTranslation();
   const entry = useEntry(props.q);
-  const { children, senseIndexes, q, ...rest } = props;
   const information = useEntryMetaInformation(q);
+  const error = useSelector(
+    (state: RootState) => state.entityFetchState.entry[q]?.error,
+  );
   const topics = useTopics();
   const closeDefinitionPopups = () => {
     dispatch(setAllRefsClosed());
@@ -35,7 +39,13 @@ export function Definition(props: Props) {
 
   let content;
 
-  if (entry) {
+  if (error) {
+    content = (
+      <span styleName="error">
+        {t("Unable to load dictionary entry, please try again")}
+      </span>
+    );
+  } else if (entry) {
     const relatedTopics = topics.filter((topic) =>
       topic.relatedEntries.includes(Number(q)),
     );

@@ -8,14 +8,14 @@ export function entrySearch(
 ): Record<string, string[]> {
   switch (action.type) {
     case Action.search: {
-      if (action.response?.ok) {
+      if (action.data.response?.ok) {
         const query = new URLSearchParams(
           new URL(action.response.url).search,
         ).get("query");
 
         return {
           ...state,
-          [query]: action.body.hits.map((entry) => entry._id),
+          [query]: action.data.body.hits.map((entry) => entry._id),
         };
       }
 

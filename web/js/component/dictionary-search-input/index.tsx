@@ -24,7 +24,7 @@ export const DictionarySearchInput = React.forwardRef<HTMLInputElement, Props>(
     const { t } = useTranslation();
     const dictionaryLanguage = useDictionaryTranslationLanguage();
     const { className, inputClassname, onSuggestionSelected, ...rest } = props;
-    const [search] = useFetch(Action.search);
+    const search = useFetch(Action.search);
     const [suggestions, setSuggestions] = React.useState([]);
     const entries = useSelector((state: RootState) => {
       const ids = state.entrySearch[props.value.toString()] ?? [];

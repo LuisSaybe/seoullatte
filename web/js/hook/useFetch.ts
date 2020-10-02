@@ -1,42 +1,27 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useRef, useEffect, useCallback } from "react";
 import { useDispatch } from "react-redux";
 
-export type DispatchFetch = (params: RequestInfo, init?: RequestInit) => void;
+export type DispatchFetch = (
+  params: Parameters<typeof fetch>[0],
+  init?: Parameters<typeof fetch>[1],
+) => void;
 
-interface State {
-  loading: boolean;
-  error: any;
-  success: boolean;
-}
-
-export function useFetch(type: string): [DispatchFetch, State] {
+export function useFetch(type: string): DispatchFetch {
   const dispatch = useDispatch();
   const isMounted = useRef(true);
-  const [state, setState] = useState<State>({
-    loading: false,
-    error: null,
-    success: false,
-  });
   const dispatchFetch: DispatchFetch = useCallback(
     (params, init) => {
-      const safeSetState = (state) => {
-        if (isMounted.current) {
-          setState(state);
-        }
-      };
-      const state = {
-        loading: true,
-        error: null,
-        success: false,
+      const fetchArguments = {
+        params,
+        init,
       };
       dispatch({
         type,
         data: {
-          state,
+          fetchArguments,
         },
       });
 
-      safeSetState(state);
       let response;
 
       fetch(params, init)
@@ -50,50 +35,34 @@ export function useFetch(type: string): [DispatchFetch, State] {
             return isJson ? networkResponse.json() : networkResponse.text();
           },
           (error) => {
-            const nextState = {
-              ...state,
-              error,
-              loading: false,
-            };
             dispatch({
               type,
               data: {
-                state: nextState,
+                fetchArguments,
+                error,
               },
             });
-            safeSetState(nextState);
           },
         )
         .then(
           (body) => {
-            const nextState = {
-              ...state,
-              loading: false,
-              success: true,
-            };
             dispatch({
               type,
               data: {
-                state: nextState,
+                fetchArguments,
+                body,
+                response,
               },
-              body,
-              response,
             });
-            safeSetState(nextState);
           },
           (error) => {
-            const nextState = {
-              ...state,
-              error,
-              loading: false,
-            };
             dispatch({
               type,
               data: {
-                state: nextState,
+                fetchArguments,
+                error,
               },
             });
-            safeSetState(nextState);
           },
         );
     },
@@ -107,5 +76,5 @@ export function useFetch(type: string): [DispatchFetch, State] {
     };
   }, []);
 
-  return [dispatchFetch, state];
+  return dispatchFetch;
 }
