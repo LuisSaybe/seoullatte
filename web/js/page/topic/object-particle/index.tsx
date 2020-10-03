@@ -34,7 +34,7 @@ export default function ObjectParticle() {
             <DefinitionPopup q="86609">으세요</DefinitionPopup>
           </span>
           <UtteranceButton text="에스컬레이터에서는 손잡이를 꼭 잡으세요" />
-          <i>On the escalator, please grab the hand rail.</i>
+          <i>{t("On the escalator, please grab the hand rail.")}</i>
         </DialogGrid>
       </Section>
       <Section>
@@ -42,9 +42,6 @@ export default function ObjectParticle() {
           <DefinitionPopup q="85764">을</DefinitionPopup> is written after a
           noun ending in a consonant.
         </Trans>
-        {t(
-          "The object particle indicates that the noun it marks is the object of the verb in the clause.",
-        )}
       </Section>
       <Section>
         <DialogGrid>
@@ -57,7 +54,7 @@ export default function ObjectParticle() {
             <DefinitionPopup q="85037">는다</DefinitionPopup>
           </span>
           <UtteranceButton text="아침에는 빵을 먹는다" />
-          <i>In the morning bread is eaten.</i>
+          <i>{t("In the morning bread is eaten.")}</i>
           <span />
         </DialogGrid>
       </Section>
@@ -86,7 +83,7 @@ export default function ObjectParticle() {
             <DefinitionPopup q="85041">다</DefinitionPopup>
           </span>
           <UtteranceButton text="나는 해안가를 걸으며 바닷바람을 만끽했다" />
-          <i>As I walk along the coast I delight in the sea breeze.</i>
+          <i>{t("As I walk along the coast I delight in the sea breeze.")}</i>
         </DialogGrid>
       </Section>
       <Section>
@@ -109,7 +106,9 @@ export default function ObjectParticle() {
           </span>
           <UtteranceButton text="지수는 거리를 돌아다니면서 쇼핑도 하고 구경도 했다." />
           <i>
-            지수 went shopping and sightseeing while walking around the streets.
+            {t(
+              "지수 went shopping and sightseeing while walking around the streets.",
+            )}
           </i>
         </DialogGrid>
       </Section>

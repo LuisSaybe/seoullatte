@@ -10,7 +10,7 @@ export function entrySearch(
     case Action.search: {
       if (action.data.response?.ok) {
         const query = new URLSearchParams(
-          new URL(action.response.url).search,
+          new URL(action.data.response.url).search,
         ).get("query");
 
         return {
