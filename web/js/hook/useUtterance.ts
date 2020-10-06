@@ -13,7 +13,7 @@ export function useUtterance(
     ({ voiceURI }) => uri === voiceURI,
   );
 
-  if (!speechSynthesis) {
+  if (!window.speechSynthesis) {
     return null;
   }
 

@@ -15,9 +15,15 @@ export function Utterance(props: Props) {
   const utterance = useUtterance(text, voice?.voiceURI);
   const koreanUtterance = useKoreanUtterance(text);
 
-  if (speechSynthesis) {
+  if (window.speechSynthesis) {
     const onClick = () => {
-      speechSynthesis.speak(voice ? utterance : koreanUtterance);
+      if (voice) {
+        if (utterance) {
+          window.speechSynthesis.speak(utterance);
+        }
+      } else if (koreanUtterance) {
+        window.speechSynthesis.speak(koreanUtterance);
+      }
     };
 
     return (

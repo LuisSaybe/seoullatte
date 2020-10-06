@@ -13,20 +13,24 @@ export function UtteranceButton(props: Props) {
   const { text, ...rest } = props;
   const { t } = useTranslation();
   const utterance = useKoreanUtterance(text);
+  const disabled = !window.speechSynthesis || !utterance;
   const onClick = () => {
-    speechSynthesis.speak(utterance);
+    if (!disabled) {
+      window.speechSynthesis.speak(utterance);
+    }
   };
 
   return (
     <Button
       {...rest}
+      disabled={disabled}
       aria-label={t("Press to listen")}
       onClick={onClick}
       type="button"
       styleName="root"
     >
       <svg
-        styleName="svg"
+        styleName={`svg ${disabled ? "disabled" : ""}`}
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         x="0px"

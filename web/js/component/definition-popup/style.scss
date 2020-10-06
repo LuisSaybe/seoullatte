@@ -7,6 +7,10 @@
   min-width: 200px;
 }
 
+.popup-container {
+  z-index: 1;
+}
+
 @include media.not_phone() {
   .popup {
     max-width: 300px;

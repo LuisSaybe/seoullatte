@@ -69,7 +69,12 @@ export function DefinitionPopup(props: Props) {
         {showDefinition && (
           <Popper>
             {({ ref, style, placement, arrowProps }) => (
-              <div ref={ref} style={style} data-placement={placement}>
+              <div
+                ref={ref}
+                style={style}
+                data-placement={placement}
+                styleName="popup-container"
+              >
                 <Definition styleName="popup" senseIndexes={senseIndexes} q={q}>
                   <div ref={arrowProps.ref} style={arrowProps.style} />
                 </Definition>

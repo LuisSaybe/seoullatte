@@ -1,7 +1,6 @@
 import { useMemo, lazy } from "react";
 import { useTranslation } from "react-i18next";
 
-import Hangul from "web/js/page/topic/hangul";
 import { Topic, KoreaPartOfSpeech } from "web/js/interface/korean";
 import { TopicRoute } from "web/js/interface/route";
 
@@ -10,7 +9,7 @@ export function useTopics(): Topic[] {
   return useMemo(
     () => [
       {
-        component: Hangul,
+        component: lazy(() => import("web/js/page/topic/hangul")),
         description: t("Learn about Hangul, Hanja and how to write in Korean"),
         name: t("The Korean Writing System"),
         paths: ["/", TopicRoute.hangul],

@@ -47,13 +47,16 @@ export function Application() {
       }
     };
 
-    if (typeof speechSynthesis.onvoiceschanged === "undefined") {
+    if (typeof window.speechSynthesis.onvoiceschanged === "undefined") {
       voicesChanged();
     } else {
-      speechSynthesis.addEventListener("voiceschanged", voicesChanged);
+      window.speechSynthesis.addEventListener("voiceschanged", voicesChanged);
       voicesChanged();
       return () => {
-        speechSynthesis.removeEventListener("voiceschanged", voicesChanged);
+        window.speechSynthesis.removeEventListener(
+          "voiceschanged",
+          voicesChanged,
+        );
       };
     }
   }, [speechSynthesisSettings]);
