@@ -1,0 +1,48 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
+
+import { Section } from "../../components/section";
+import { DefinitionPopup } from "../../components/definition-popup";
+import styles from "./index.module.scss";
+
+export default function Predicate() {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <Section>
+        {t("Every predicate in Korean is composed of a stem and an ending.")}
+        &nbsp;
+        {t(
+          'The uninflected form of a Korean predicate is written "stem + 다".',
+        )}
+        &nbsp;
+        {t(
+          "A predicate can be inflected to add additional information such as tense or formality.",
+        )}
+        &nbsp;
+        {t(
+          'The uninflected form is also referred to as the "dictionary form" or "unconjugated form".',
+        )}
+        &nbsp;
+        {t("A predicate can be a verb, an adjective or a copula.")}
+      </Section>
+      <div className={styles["table-section"]}>
+        <div className={styles.table}>
+          <strong>{t("Stem")}</strong>
+          <strong>{t("Uninflected predicate")}</strong>
+          <strong>{t("Part of Speech")}</strong>
+          <span>이</span>
+          <DefinitionPopup q="92101">이다</DefinitionPopup>
+          <span>{t("Copula")}</span>
+          <span>가</span>
+          <DefinitionPopup q="27500">가다</DefinitionPopup>
+          <span>{t("Verb")}</span>
+          <span>재미있</span>
+          <DefinitionPopup q="71212">재미있다</DefinitionPopup>
+          <span>{t("Adjective")}</span>
+        </div>
+      </div>
+    </>
+  );
+}

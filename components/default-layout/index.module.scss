@@ -1,0 +1,40 @@
+@use "~sass/layout";
+@use "~sass/media";
+@use "~sass/size";
+
+.content {
+  @include layout.defaultLayout();
+
+  @include media.phone {
+    overflow-y: auto;
+  }
+}
+
+.footer {
+  @include media.phone {
+    padding: 6px layout.$horizontal-page-padding;
+    background-color: #f1f1f1;
+    border-top: 1px solid #848383;
+  }
+
+  @include media.not-phone {
+    max-width: 800px;
+    margin-bottom: size.$margin-medium;
+  }
+}
+
+.navigation {
+  height: 60px;
+}
+
+.root {
+  @include media.not-phone {
+    @include layout.navigationAndContentLayout();
+  }
+
+  @include media.phone {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 1fr 44px;
+  }
+}

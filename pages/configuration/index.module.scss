@@ -1,0 +1,17 @@
+@use '~sass/layout';
+@use '~sass/media';
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+
+  > *:not(:first-child) {
+    margin-top: 12px;
+  }
+}
+
+.label,
+.select {
+  font-size: 1rem;
+}

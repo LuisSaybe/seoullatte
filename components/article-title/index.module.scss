@@ -1,0 +1,7 @@
+@use '~sass/color';
+
+.root {
+  color: color.$title;
+  font-size: 1.5rem;
+  margin: 0;
+}

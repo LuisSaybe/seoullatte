@@ -1,0 +1,5 @@
+@use '~sass/page';
+
+.dialog-grid {
+  @include page.dialogGrid();
+}

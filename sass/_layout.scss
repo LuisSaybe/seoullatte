@@ -1,0 +1,24 @@
+@use "~sass/media";
+
+$horizontal-page-padding: 12px;
+
+@mixin defaultLayout() {
+  padding: 6px $horizontal-page-padding;
+
+  @include media.not_phone() {
+    max-width: 800px;
+    width: calc(100% - #{$horizontal-page-padding * 2});
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@mixin navigationAndContentLayout() {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+@mixin pageTitle() {
+  font-size: 1.5rem;
+}

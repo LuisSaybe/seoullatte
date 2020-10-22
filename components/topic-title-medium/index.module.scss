@@ -1,0 +1,5 @@
+@use '~sass/page';
+
+.root {
+  @include page.topicTitleMedium();
+}

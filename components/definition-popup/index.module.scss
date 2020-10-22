@@ -1,0 +1,22 @@
+@use '~sass/color';
+@use '~sass/font';
+@use '~sass/media';
+
+.popup {
+  min-height: 100px;
+  min-width: 200px;
+}
+
+.popup-container {
+  z-index: 1;
+}
+
+@include media.not_phone() {
+  .popup {
+    max-width: 300px;
+  }
+}
+
+.text {
+  color: color.$definition;
+}

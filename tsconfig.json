@@ -6,16 +6,40 @@
     "sourceRoot": "/",
     "jsx": "preserve",
     "baseUrl": ".",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
-      "web": ["web"]
+      "web": [
+        "web"
+      ]
     },
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["react", "react-css-modules"],
-    "typeRoots": ["node_modules/@types"]
+    "types": [
+      "react",
+      "react-css-modules"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "isolatedModules": true
   },
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }

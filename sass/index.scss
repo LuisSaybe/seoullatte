@@ -1,0 +1,29 @@
+@use '~sass/font';
+@use '~sass/media';
+
+html {
+  height: 100%;
+  font-family: font.$default-font-family;
+  -webkit-text-size-adjust: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+
+  @include media.phone {
+    font-size: 18px;
+  }
+
+  @include media.not-phone {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+:global {
+  .seoullatte-project-root {
+    height: 100%;
+  }
+}

@@ -1,8 +1,0 @@
-@use "~web/sass/media";
-
-.table {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px;
-  justify-items: flex-start;
-}

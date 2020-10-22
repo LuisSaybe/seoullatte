@@ -1,0 +1,21 @@
+@use "~sass/color";
+
+@mixin breakText() {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+@mixin note() {
+  font-size: 0.8rem;
+  color: color.$information;
+}
+
+@mixin ellipsisText() {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin label() {
+  color: color.$label;
+}

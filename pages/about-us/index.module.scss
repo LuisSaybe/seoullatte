@@ -1,0 +1,29 @@
+@use '~sass/layout';
+@use "~sass/media";
+@use "~sass/size";
+
+.dictionary,
+.github {
+  margin-top: size.$margin-medium;
+}
+
+.content {
+  @include media.not-phone() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: size.$margin-large;
+  }
+}
+
+.instagram-container {
+  @include media.phone() {
+    max-width: calc(100% - #{layout.$horizontal-page-padding * 2});
+    margin: size.$margin-medium auto 0;
+  }
+
+  @include media.not-phone() {
+    max-width: 300px;
+    margin-left: size.$margin-medium;
+  }
+}

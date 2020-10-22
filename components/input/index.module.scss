@@ -1,0 +1,18 @@
+@use '~sass/color';
+
+.root {
+  padding: 8px;
+  background-color: color.$fieldBackground;
+  border: 1px solid color.$fieldBorder;
+  border-radius: 3px;
+  color: color.$text;
+  font-size: 1rem;
+
+  &.error {
+    border-color: color.$error;
+  }
+}
+
+.label {
+  padding: 0;
+}
