@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.seoullatte.twa",
+      "sha256_cert_fingerprints": [
+        "BF:6C:2C:24:9A:82:26:96:EC:12:80:C7:A0:D9:16:57:89:0D:FE:A9:D7:18:78:45:F2:46:AD:01:D1:26:2A:AB"
+      ]
+    }
+  }
+]

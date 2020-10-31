@@ -32,6 +32,10 @@ module.exports = (env) => {
           {
             from: path.resolve(__dirname, "web/manifest.json"),
           },
+          {
+            from: path.resolve(__dirname, "web/.well-known"),
+            to: ".well-known",
+          },
         ],
       }),
       new HtmlWebpackPlugin({

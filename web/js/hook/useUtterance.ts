@@ -19,7 +19,7 @@ export function useUtterance(
 
   const utterance = new SpeechSynthesisUtterance(text);
 
-  if (utterance && voice) {
+  if (voice) {
     utterance.voice = voice;
     utterance.lang = voice.lang;
   }
