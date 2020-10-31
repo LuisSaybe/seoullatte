@@ -21,6 +21,7 @@ export function useUtterance(
 
   if (utterance && voice) {
     utterance.voice = voice;
+    utterance.lang = voice.lang;
   }
 
   if (typeof speechSynthesisSettings.rate !== "undefined") {
