@@ -22,10 +22,14 @@ export default function FormalAndInformalSpeech() {
       </Section>
       <Section>
         <ArticleTitle>{t("Informal Speech")}</ArticleTitle>
+      </Section>
+      <Section>
         <Trans>
           <DefinitionPopup q="15843">반말</DefinitionPopup> is a type of speech
           used in one of two cases.
         </Trans>
+      </Section>
+      <Section>
         <div>
           &bull;&nbsp;
           {t(
@@ -39,6 +43,8 @@ export default function FormalAndInformalSpeech() {
       </Section>
       <Section>
         <ArticleTitle>{t("Formal Speech")}</ArticleTitle>
+      </Section>
+      <Section>
         <Trans>
           <DefinitionPopup q="24607">존댓말</DefinitionPopup> is a form used in
           referring to a person or thing in order to convey respect.

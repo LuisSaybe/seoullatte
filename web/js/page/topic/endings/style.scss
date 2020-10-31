@@ -1,8 +1,12 @@
 @use "~web/sass/color";
 @use "~web/sass/size";
 
+.category {
+  font-weight: 600;
+}
+
 .final-ending {
-  color: color.$main;
+  color: #962098;
 }
 
 .predicate {

@@ -81,7 +81,7 @@ export default function PredicateAsModifier() {
       <Section>
         <SectionTitle>{t("Adjectives as modifiers")}</SectionTitle>
         {t(
-          "To change an adjective to a modifier, the suffix 은 is added to the verb stem when the verb ends in a consonant.",
+          "To change an adjective to a modifier, the suffix 은 is added to the adjective stem when the adjective ends in a consonant.",
         )}
         &nbsp;
         {t("If the verb stem ends in a vowel ㄴ becomes a suffix as a 받침.")}

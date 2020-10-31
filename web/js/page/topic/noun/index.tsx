@@ -24,18 +24,18 @@ export default function Noun() {
     <>
       <Section>
         {t("There are 3 types of nouns in the Korean language")}
-        <div>
-          &bull;&nbsp;<strong>{t("Sino-Korean nouns.")}</strong>&nbsp;
-          {t("Sino-Korean nouns are words of Chinese origin.")}
-        </div>
-        <div>
-          &bull;&nbsp;<strong>{t("Native Korean nouns.")}</strong>
-        </div>
-        <div>
-          &bull;&nbsp;<strong>{t("Loan words.")}</strong>
-          &nbsp;
-          {t("Loan words are borrowed from other languages.")}
-        </div>
+      </Section>
+      <Section>
+        &bull;&nbsp;<strong>{t("Native Korean nouns.")}</strong>
+      </Section>
+      <Section>
+        &bull;&nbsp;<strong>{t("Sino-Korean nouns.")}</strong>&nbsp;
+        {t("Sino-Korean nouns are words of Chinese origin.")}
+      </Section>
+      <Section>
+        &bull;&nbsp;<strong>{t("Loan words.")}</strong>
+        &nbsp;
+        {t("Loan words are borrowed from other languages.")}
       </Section>
       <Section>
         {t("Below are examples of each")}

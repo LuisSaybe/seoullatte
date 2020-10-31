@@ -10,11 +10,13 @@ export default function Syllable() {
 
   return (
     <>
-      <Trans>
-        There are 5 ways in which{" "}
-        <DefinitionPopup q="91525">한글</DefinitionPopup> characters can combine
-        to form a syllable.
-      </Trans>
+      <Section>
+        <Trans>
+          There are 5 ways in which&nbsp;
+          <DefinitionPopup q="91525">한글</DefinitionPopup> characters can
+          combine to form a syllable.
+        </Trans>
+      </Section>
       &nbsp;
       {t(
         "In all cases, if a syllable begins with a vowel, the character ㅇ is placed before the vowel. In this case, the character ㅇ is not pronounced.",
