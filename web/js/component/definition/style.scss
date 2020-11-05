@@ -46,12 +46,19 @@
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  background-color: color.$white;
   font-size: 1rem;
 
   &.loading {
     display: flex;
     justify-content: center;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: darken(#333, 5%);
+  }
+
+  @media (prefers-color-scheme: light) {
+    background-color: color.$white;
   }
 }
 

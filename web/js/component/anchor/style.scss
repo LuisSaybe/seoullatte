@@ -10,11 +10,23 @@
   text-decoration: none;
 
   &:hover {
-    color: darken(color.$anchor, 10%);
+    @media (prefers-color-scheme: light) {
+      color: darken(color.$anchor, 10%);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: color.$clickable-dark-mode;
+    }
   }
 
   &:not(:hover) {
-    color: color.$anchor;
+    @media (prefers-color-scheme: light) {
+      color: color.$anchor;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: color.$clickable-dark-mode;
+    }
   }
 
   &.button {

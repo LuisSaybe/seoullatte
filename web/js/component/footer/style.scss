@@ -7,6 +7,10 @@
   @include media.phone {
     display: none;
   }
+
+  @media (prefers-color-scheme: dark) {
+    color: color.$clickable-dark-mode !important;
+  }
 }
 
 a.back-element {

@@ -5,6 +5,12 @@
   margin-top: size.$margin-medium;
 }
 
+.article-title {
+  @media (prefers-color-scheme: dark) {
+    color: #fff;
+  }
+}
+
 .article {
   @include media.not-phone {
     margin-top: size.$margin-medium;

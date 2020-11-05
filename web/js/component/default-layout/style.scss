@@ -37,4 +37,9 @@
     height: 100%;
     grid-template-rows: 1fr 44px;
   }
+
+  @media (prefers-color-scheme: dark) {
+    color: white;
+    background: #333;
+  }
 }

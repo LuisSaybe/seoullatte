@@ -9,4 +9,8 @@ button.root {
 
 .root {
   font-size: 1rem;
+
+  @media (prefers-color-scheme: dark) {
+    color: color.$clickable-dark-mode !important;
+  }
 }

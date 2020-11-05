@@ -54,7 +54,7 @@ export function ArticlePage(props: Props) {
   return (
     <DefaultLayout {...rest}>
       <article styleName="article">
-        <ArticleTitle>{articleTitle}</ArticleTitle>
+        <ArticleTitle styleName="article-title">{articleTitle}</ArticleTitle>
         {props.children}
       </article>
       <NextPreviousAnchors
