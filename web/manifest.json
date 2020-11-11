@@ -8,6 +8,13 @@
   "theme_color": "#0084c9",
   "background_color": "#fff",
   "description": "A complete reference for the Korean language",
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.seoullatte.twa"
+    }
+  ],
   "icons": [
     {
       "src": "https://luissaybe.nyc3.digitaloceanspaces.com/seoul-latte/images/icon/48x48.png",

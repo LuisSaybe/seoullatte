@@ -6,7 +6,7 @@ import "./style.scss";
 
 export function DefaultLayout(props: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div styleName="root">
+    <div {...props} styleName="root">
       <div styleName="content">
         <Navigation styleName="navigation" />
         {props.children}

@@ -12,6 +12,7 @@ import { RootState } from "web/js/redux/reducer";
 import { routes } from "web/js/routes";
 import { Anchor } from "web/js/component/anchor";
 import { InformationSVG } from "web/js/component/information-svg";
+import { AndroidLogo } from "../android-logo";
 import "./style.scss";
 
 export function Footer(props: React.HTMLAttributes<HTMLElement>) {
@@ -37,6 +38,12 @@ export function Footer(props: React.HTMLAttributes<HTMLElement>) {
       <Anchor styleName="about-us-anchor" to={routes.aboutUs()}>
         {t("about us")}
       </Anchor>
+      <a
+        styleName="google-play-anchor"
+        href="https://play.google.com/store/apps/details?id=com.seoullatte.twa"
+      >
+        <AndroidLogo styleName="google-play-image" />
+      </a>
       {locations.length > 1 ? (
         <Link
           onClick={onClickReturn}
