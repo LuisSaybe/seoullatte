@@ -18,7 +18,7 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
   const { t } = useTranslation();
   const locations = useSelector((state: RootState) => state.location);
   const lastLocation = locations[locations.length - 2];
-  const [shouldBlurTime, setShouldBlurTime] = React.useState(new Date());
+  const [shouldBlurTime, setShouldBlurTime] = React.useState(null);
   const ref = useRef<HTMLInputElement>();
   const dispatch = useDispatch();
   const history = useHistory();
@@ -38,7 +38,7 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
   };
 
   useEffect(() => {
-    if (ref.current) {
+    if (ref.current && shouldBlurTime) {
       ref.current.blur();
     }
   }, [shouldBlurTime, ref.current]);

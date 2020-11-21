@@ -89,22 +89,6 @@ export default function IrregularPredicate() {
             </Table>
           </Section>
         </Section>
-        <SectionTitle>{t("Examples")}</SectionTitle>
-        <div>
-          <DefinitionPopup q="23402">빵</DefinitionPopup>
-          <DefinitionPopup q="26878">아니</DefinitionPopup>
-          <DefinitionPopup q="80806">야</DefinitionPopup>
-        </div>
-        <Section>
-          <i>{t("(It) is not bread")}</i>
-        </Section>
-        <Section>
-          <DefinitionPopup q="73448">여우</DefinitionPopup>
-          <DefinitionPopup q="92101">예요</DefinitionPopup>
-        </Section>
-        <Section>
-          <i>{t("(It) is a fox")}</i>
-        </Section>
       </Section>
       <SectionTitle>{t("ㄷ Irregular Predicates")}</SectionTitle>
       <Section>
