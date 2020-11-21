@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const WorkboxPlugin = require("workbox-webpack-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin");
 
 module.exports = (env) => {
   const settingsPath = path.resolve(__dirname, `web/js/settings/${env.env}`);
