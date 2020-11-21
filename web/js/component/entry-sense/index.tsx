@@ -16,6 +16,10 @@ export function EntrySense(props: Props) {
   const sense = entry.getSense(index);
   const dictionaryLanguage = useDictionaryTranslationLanguage();
 
+  if (!sense) {
+    return null;
+  }
+
   let translationNode;
 
   for (const translation of sense.querySelectorAll("translation") as any) {

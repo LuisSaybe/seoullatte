@@ -15,17 +15,16 @@ export function SearchPage() {
   const location = useLocation();
   const search = useFetch(Action.search);
   const settings = getSettings();
-  const urlSearchParams = new URLSearchParams(location.search);
-  const paramsAsString = urlSearchParams.toString();
-  const entries = useSelector(
-    (state: RootState) => state.entrySearch[paramsAsString],
-  );
+  const query = decodeURIComponent(location.search.substring(1));
+  const entries = useSelector((state: RootState) => state.entrySearch[query]);
+
+  console.log("query", query);
 
   useEffect(() => {
     if (!entries) {
-      search(`${settings.api.url}/entry?${paramsAsString}`);
+      search(`${settings.api.url}/entry?${query}`);
     }
-  }, [paramsAsString, settings, entries]);
+  }, [query, settings, entries]);
 
   return (
     <DefaultLayout>

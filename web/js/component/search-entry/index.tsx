@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import { useDictionaryTranslationLanguage } from "web/js/hook/useDictionaryTranslationLanguage";
 import { useEntry } from "web/js/hook/useEntry";
-import { LanguageNames } from "web/js/interface/korean";
 import { routes } from "web/js/routes";
+import { EntrySense } from "web/js/component/entry-sense";
+import { appendLocation } from "web/js/redux/location/action";
 import "./style.scss";
 
 interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -14,15 +16,18 @@ interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 export const SearchEntry = React.memo<Props>((props) => {
   const { q, ...rest } = props;
   const entry = useEntry(q);
+  const dispatch = useDispatch();
   const dictionaryLanguage = useDictionaryTranslationLanguage();
-  const senseInLanguage = entry.getSenseTranslation(1, dictionaryLanguage);
-  const senseInEnglish = entry.getSenseTranslation(1, LanguageNames.english);
-  const firstSense = senseInLanguage || senseInEnglish;
+  const to = routes.entry(q);
+  const onClick = () => {
+    dispatch(appendLocation(to));
+  };
 
   return (
-    <Link {...rest} to={routes.entry(q)} styleName="root">
+    <Link {...rest} onClick={onClick} to={to} styleName="root">
       <div styleName="dictionary-form">{entry.getDictionaryForm()}</div>
-      {firstSense && <div styleName="sense">{firstSense}</div>}
+      <EntrySense styleName="sense" q={q} index={1} />
+      <EntrySense styleName="sense" q={q} index={2} />
     </Link>
   );
 });
