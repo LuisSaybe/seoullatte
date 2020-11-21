@@ -11,7 +11,7 @@ export function entrySearch(
       if (action.data.response?.ok) {
         const query = new URLSearchParams(
           new URL(action.data.response.url).search,
-        ).get("query");
+        ).toString();
 
         return {
           ...state,

@@ -1,4 +1,4 @@
-import { useRef, useEffect, useCallback } from "react";
+import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 
 export type DispatchFetch = (
@@ -8,73 +8,44 @@ export type DispatchFetch = (
 
 export function useFetch(type: string): DispatchFetch {
   const dispatch = useDispatch();
-  const isMounted = useRef(true);
-  const dispatchFetch: DispatchFetch = useCallback(
-    (params, init) => {
-      const fetchArguments = {
-        params,
-        init,
-      };
+  return async (params, init) => {
+    const fetchArguments = {
+      params,
+      init,
+    };
+    dispatch({
+      type,
+      data: {
+        fetchArguments,
+      },
+    });
+
+    let response;
+
+    try {
+      response = await fetch(params, init);
+      const isJson = response.headers
+        .get("Content-Type")
+        ?.toLowerCase()
+        .includes("application/json");
+      const body = isJson ? await response.json() : await response.text();
       dispatch({
         type,
         data: {
           fetchArguments,
+          body,
+          response,
         },
       });
-
-      let response;
-
-      fetch(params, init)
-        .then(
-          (networkResponse) => {
-            const isJson = networkResponse.headers
-              .get("Content-Type")
-              ?.toLowerCase()
-              .includes("application/json");
-            response = networkResponse;
-            return isJson ? networkResponse.json() : networkResponse.text();
-          },
-          (error) => {
-            dispatch({
-              type,
-              data: {
-                fetchArguments,
-                error,
-              },
-            });
-          },
-        )
-        .then(
-          (body) => {
-            dispatch({
-              type,
-              data: {
-                fetchArguments,
-                body,
-                response,
-              },
-            });
-          },
-          (error) => {
-            dispatch({
-              type,
-              data: {
-                fetchArguments,
-                error,
-              },
-            });
-          },
-        );
-    },
-    [isMounted.current, type],
-  );
-
-  useEffect(() => {
-    isMounted.current = true;
-    return () => {
-      isMounted.current = false;
-    };
-  }, []);
-
-  return dispatchFetch;
+    } catch (error) {
+      dispatch({
+        type,
+        data: {
+          response,
+          fetchArguments,
+          error,
+        },
+      });
+    }
+  };
 }

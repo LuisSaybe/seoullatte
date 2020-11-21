@@ -14,6 +14,7 @@ import { updateUserInterface } from "web/js/redux/user-interface/action";
 import { Subscribers } from "web/js/component/subscribers";
 import { DictionaryEntry } from "web/js/page/dictionary-entry";
 import { HamburgerMenu } from "web/js/component/hamburger-menu";
+import { SearchPage } from "web/js/page/search";
 import "./style.scss";
 
 export function Application() {
@@ -107,6 +108,7 @@ export function Application() {
       <Subscribers />
       <HamburgerMenu />
       <Switch>
+        <Route path={routes.search()} component={SearchPage} />
         <Route path={routes.configuration()} component={Configuration} />
         <Route path={routes.aboutUs()} component={AboutUs} />
         <Route path={routes.entry(":q(\\d+)")} component={DictionaryEntry} />

@@ -9,6 +9,10 @@ export class Routes {
     return `${this.prefix}/configuration`;
   }
 
+  public search() {
+    return `${this.prefix}/search`;
+  }
+
   public landing() {
     return `${this.prefix}`;
   }
