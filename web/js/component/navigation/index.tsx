@@ -12,6 +12,7 @@ import { BackSVG } from "web/js/component/back-svg";
 import { appendLocation, pop } from "web/js/redux/location/action";
 import { HamburgerButton } from "web/js/component/hamburger-button";
 import { Button } from "web/js/component/button";
+import { LoaderLine } from "web/js/component/loader-line";
 import styles from "./style.scss";
 
 export function Navigation(props: React.HTMLProps<HTMLElement>) {
@@ -23,6 +24,11 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
   const dispatch = useDispatch();
   const history = useHistory();
   const [searchValue, setSearchValue] = useState("");
+  const isLoading = useSelector((state: RootState) => {
+    const result = state.entityFetchState.entrySearch[`query=${searchValue}`];
+    return result && !(result.body || result.error);
+  });
+
   const burgerMenuOpen = useSelector(
     (state: RootState) => state.userInterface.burgerMenuOpen,
   );
@@ -84,6 +90,7 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
           }}
           styleName="search-input-container"
         />
+        {isLoading && <LoaderLine styleName="loading-line" />}
       </div>
       <Anchor styleName="settings-anchor" to={routes.configuration()}>
         {t("Settings")}

@@ -22,6 +22,7 @@
 
 .search-section {
   display: flex;
+  flex-direction: column;
   position: relative;
 
   @include media.phone() {
@@ -63,6 +64,10 @@ a.return-element {
 
 button.return-element {
   height: calc(100% - 16px);
+}
+
+.loading-line {
+  margin-top: 2px;
 }
 
 .return-element {

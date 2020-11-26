@@ -10,4 +10,5 @@ interface FetchState {
 
 export interface EntityFetchState {
   entry: Record<string, FetchState>;
+  entrySearch: Record<string, FetchState>;
 }

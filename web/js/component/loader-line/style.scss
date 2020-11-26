@@ -1,0 +1,30 @@
+$horizontal-loader-padding: 2px;
+
+.root {
+  border-radius: 10px;
+  position: relative;
+}
+
+.blue-line {
+  background: #2057a5;
+  border-radius: 6px;
+  position: absolute;
+  left: 0;
+  width: 100px;
+  height: 2px;
+  animation: line-bounce 2s infinite;
+}
+
+@keyframes line-bounce {
+  0% {
+    left: $horizontal-loader-padding;
+  }
+
+  50% {
+    left: calc(100% - 100px - #{$horizontal-loader-padding});
+  }
+
+  100% {
+    left: $horizontal-loader-padding;
+  }
+}
