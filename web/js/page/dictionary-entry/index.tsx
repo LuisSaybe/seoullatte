@@ -17,6 +17,7 @@ import { KoreaPartOfSpeech } from "web/js/interface/korean";
 import { TeachSVG } from "web/js/component/teacher-svg";
 import { Section } from "web/js/component/section";
 import "./style.scss";
+import { Conjugations } from "web/js/component/conjugations";
 
 export function DictionaryEntry() {
   const { t } = useTranslation();
@@ -72,6 +73,12 @@ export function DictionaryEntry() {
           <div>
             <EntryWordGrade q={Number(q)} />
           </div>
+        )}
+        {entry.hasConjugations() && (
+          <>
+            <div styleName="conjugations-title">Conjugations</div>
+            <Conjugations styleName="conjugations" q={q} />
+          </>
         )}
         <Section>
           {Array.from(entry.getSenses()).map((_, index) => (

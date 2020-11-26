@@ -22,25 +22,19 @@ export function EntryWordGrade(props: Props) {
 
   if (grade === WordGrade.advanced) {
     content = (
-      <Anchor
-        to={`${routes.search()}?word_grades=고급&size=${DEFAULT_PAGE_SIZE}`}
-      >
+      <Anchor to={`${routes.search()}?word_grades=고급&page=0`}>
         {t("Advanced word")}
       </Anchor>
     );
   } else if (grade === WordGrade.beginner) {
     content = (
-      <Anchor
-        to={`${routes.search()}?word_grades=초급&size=${DEFAULT_PAGE_SIZE}`}
-      >
+      <Anchor to={`${routes.search()}?word_grades=초급&page=0`}>
         {t("Beginner word")}
       </Anchor>
     );
   } else if (grade === WordGrade.intermediate) {
     content = (
-      <Anchor
-        to={`${routes.search()}?word_grades=중급&size=${DEFAULT_PAGE_SIZE}`}
-      >
+      <Anchor to={`${routes.search()}?word_grades=중급&page=0`}>
         {t("Intermediate word")}
       </Anchor>
     );

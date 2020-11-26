@@ -1,7 +1,7 @@
 import { LanguageNames, WordGrade } from "../interface/korean";
 
 export class Entry {
-  private xml: Document;
+  public xml: Document;
 
   constructor(document: string) {
     this.xml = new DOMParser().parseFromString(document, "application/xml");
@@ -55,8 +55,20 @@ export class Entry {
     );
   }
 
+  public getPronunciation() {
+    return this.xml.querySelector(":root pronunciation").textContent;
+  }
+
   public getTargetCode() {
     return this.xml.querySelector(`:root target_code`).textContent;
+  }
+
+  public hasConjugations() {
+    return (
+      Array.from(this.xml.querySelectorAll(":root conju_info")).map(
+        (element) => element.textContent,
+      ).length > 0
+    );
   }
 
   public getSenseTranslation(index: number, language: LanguageNames) {
