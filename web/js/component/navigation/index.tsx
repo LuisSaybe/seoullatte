@@ -90,7 +90,7 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
           }}
           styleName="search-input-container"
         />
-        {isLoading && <LoaderLine styleName="loading-line" />}
+        <LoaderLine styleName={`loading-line ${isLoading ? "loading" : ""}`} />
       </div>
       <Anchor styleName="settings-anchor" to={routes.configuration()}>
         {t("Settings")}

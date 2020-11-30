@@ -68,6 +68,10 @@ button.return-element {
 
 .loading-line {
   margin-top: 2px;
+
+  &:not(.loading) {
+    display: none;
+  }
 }
 
 .return-element {

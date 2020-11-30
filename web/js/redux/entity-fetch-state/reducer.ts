@@ -30,8 +30,6 @@ export function entityFetchState(
         ).toString(),
       );
 
-      console.log("search", search);
-
       return {
         ...state,
         entrySearch: {

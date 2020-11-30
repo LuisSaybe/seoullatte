@@ -12,6 +12,6 @@ export function useLocations() {
   }, [location]);
 
   useEffect(() => {
-    dispatch(appendLocation(location.pathname));
+    dispatch(appendLocation(location.pathname + location.search));
   }, []);
 }

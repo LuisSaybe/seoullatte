@@ -7,23 +7,11 @@ import "./style.scss";
 
 interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   to?: string;
-  button?: boolean;
-  icon?: boolean;
-  box?: boolean;
   pushLocation?: boolean;
 }
 
-export function Anchor(props: Props) {
-  const {
-    box,
-    children,
-    to,
-    className,
-    button,
-    icon,
-    pushLocation,
-    ...rest
-  } = props;
+export function UnstyledAnchor(props: Props) {
+  const { children, to, pushLocation, ...rest } = props;
   const dispatch = useDispatch();
   const onClick: React.AnchorHTMLAttributes<HTMLAnchorElement>["onClick"] = (
     e,
@@ -36,41 +24,22 @@ export function Anchor(props: Props) {
       props.onClick(e);
     }
   };
-  let styleName = "root";
-
-  if (props.button) {
-    styleName += " button";
-  }
-
-  if (props.icon) {
-    styleName += " icon";
-  }
-
-  if (props.box) {
-    styleName += " box";
-  }
 
   if (props.to) {
     return (
-      <Link
-        className={props.className}
-        to={props.to}
-        {...rest}
-        onClick={onClick}
-        styleName={styleName}
-      >
+      <Link {...rest} to={props.to} onClick={onClick} styleName="root">
         {props.children}
       </Link>
     );
   }
 
   return (
-    <a className={props.className} styleName={styleName} {...rest}>
+    <a {...rest} onClick={onClick} styleName="root">
       {props.children}
     </a>
   );
 }
 
-Anchor.defaultProps = {
+UnstyledAnchor.defaultProps = {
   pushLocation: true,
 };

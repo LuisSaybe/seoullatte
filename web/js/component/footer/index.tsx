@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 
 import { BackSVG } from "web/js/component/back-svg";
 import { HamburgerButton } from "web/js/component/hamburger-button";
@@ -12,7 +11,8 @@ import { RootState } from "web/js/redux/reducer";
 import { routes } from "web/js/routes";
 import { Anchor } from "web/js/component/anchor";
 import { InformationSVG } from "web/js/component/information-svg";
-import { AndroidLogo } from "../android-logo";
+import { AndroidLogo } from "web/js/component/android-logo";
+import { UnstyledAnchor } from "web/js/component/unstyled-anchor";
 import "./style.scss";
 
 export function Footer(props: React.HTMLAttributes<HTMLElement>) {
@@ -45,13 +45,13 @@ export function Footer(props: React.HTMLAttributes<HTMLElement>) {
         <AndroidLogo styleName="google-play-image" />
       </a>
       {locations.length > 1 ? (
-        <Link
+        <UnstyledAnchor
           onClick={onClickReturn}
           styleName="back-element"
           to={locations[locations.length - 2]}
         >
           <BackSVG styleName="back-svg" />
-        </Link>
+        </UnstyledAnchor>
       ) : (
         <button
           disabled={locations.length < 2}
@@ -65,12 +65,12 @@ export function Footer(props: React.HTMLAttributes<HTMLElement>) {
         styleName="hamburger-button"
         onClick={onHamburgerMenuClick}
       />
-      <Link to={routes.aboutUs()} styleName="information-anchor">
+      <UnstyledAnchor to={routes.aboutUs()} styleName="information-anchor">
         <InformationSVG styleName="information-svg" />
-      </Link>
-      <Link to={routes.configuration()} styleName="settings-anchor">
+      </UnstyledAnchor>
+      <UnstyledAnchor to={routes.configuration()} styleName="settings-anchor">
         <SettingsSVG styleName="settings-svg" />
-      </Link>
+      </UnstyledAnchor>
     </footer>
   );
 }
