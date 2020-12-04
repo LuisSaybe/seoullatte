@@ -17,42 +17,33 @@ export default function Syllable() {
           combine to form a syllable.
         </Trans>
       </Section>
-      &nbsp;
-      {t(
-        "In all cases, if a syllable begins with a vowel, the character ㅇ is placed before the vowel. In this case, the character ㅇ is not pronounced.",
-      )}
       <Section>
-        <div>&bull; {t("One vowel.")}</div>
-        <div>
-          {t("For example:")} <DefinitionPopup q="31635">오</DefinitionPopup>
-        </div>
+        {t(
+          "In all cases, if a syllable begins with a vowel, the character ㅇ is placed before the vowel. In this case, the character ㅇ is not pronounced.",
+        )}
       </Section>
       <Section>
-        <div>&bull; {t("A vowel followed by a consonant.")}</div>
-        <div>
-          {t("For example:")} <DefinitionPopup q="74890">안</DefinitionPopup>
-        </div>
+        <Trans>
+          1 vowel as in <DefinitionPopup q="31635">오</DefinitionPopup>
+        </Trans>
       </Section>
       <Section>
-        <div>&bull; {t("A consonant followed by a vowel.")}</div>
-        <div>
-          {t("For example:")} <DefinitionPopup q="46814">코</DefinitionPopup>
-        </div>
+        <Trans>
+          A vowel followed by a consonant as in&nbsp;
+          <DefinitionPopup q="74890">안</DefinitionPopup>
+        </Trans>
       </Section>
       <Section>
-        <div>&bull; {t("A consonant, a vowel and then a consonant.")}</div>
-        <div>
-          {t("For example:")} <DefinitionPopup q="86264">들</DefinitionPopup>
-        </div>
+        <Trans>
+          A consonant followed by a vowel&nbsp;
+          <DefinitionPopup q="46814">코</DefinitionPopup>
+        </Trans>
       </Section>
       <Section>
-        <div>
-          &bull;{" "}
-          {t("A consonant, a vowel, a consonant, and another consonant.")}
-        </div>
-        <div>
-          {t("For example:")} <DefinitionPopup q="20178">값</DefinitionPopup>
-        </div>
+        <Trans>
+          A consonant, a vowel, and 2 consonants as in&nbsp;
+          <DefinitionPopup q="20178">값</DefinitionPopup>
+        </Trans>
       </Section>
       <Section>
         {t(

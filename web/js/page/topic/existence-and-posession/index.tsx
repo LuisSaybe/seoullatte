@@ -7,6 +7,8 @@ import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
+import { DialogGrid } from "web/js/component/dialog-grid";
+import { UtteranceButton } from "web/js/component/utterance-button";
 
 export default function ExistenceAndPosession() {
   const { t } = useTranslation();
@@ -19,119 +21,143 @@ export default function ExistenceAndPosession() {
           <DefinitionPopup q="68796">있다</DefinitionPopup>
           &nbsp; and <DefinitionPopup q="89917">없다</DefinitionPopup>.
         </Trans>
-        &nbsp;
-        {t(
-          "있다 is either a verb or an adjective depending on its meaning while 없다 is an adjective.",
-        )}
       </Section>
       <Section>
         <ArticleTitle>{t("Existence")}</ArticleTitle>
+      </Section>
+      <Section>
         <Trans>
           The adjectives&nbsp;
-          <DefinitionPopup senseIndexes={[12]} q="68797">
+          <DefinitionPopup q="68797" senseIndexes={[7]}>
             있다
           </DefinitionPopup>
-          &nbsp; and <DefinitionPopup q="89917">없다</DefinitionPopup> are used
-          to describe the existence or non-existence of an object, event or
-          quality.
+          &nbsp;and <DefinitionPopup q="89917">없다</DefinitionPopup> are used
+          to describe the existence or non-existence of an object in physical
+          space.
         </Trans>
         <Section>
-          <div>
-            A:&nbsp;
-            <DefinitionPopup q="73276">학교</DefinitionPopup>
-            <DefinitionPopup q="85853">는</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="60319">어디</DefinitionPopup>
-            <DefinitionPopup q="86572">에</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="68796">있</DefinitionPopup>
-            <DefinitionPopup q="86571">어요</DefinitionPopup>?
-          </div>
-          <div>
-            B:&nbsp;
-            <DefinitionPopup q="68895">부산</DefinitionPopup>
-            <DefinitionPopup q="86572">에</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="68796">있</DefinitionPopup>
-            <DefinitionPopup q="86571">어요</DefinitionPopup>
-          </div>
-          <Section>
+          <DialogGrid>
             <div>
-              A: <i>{t("Where is (the) school?")}</i>
+              <DefinitionPopup q="73276">학교</DefinitionPopup>
+              <DefinitionPopup q="85853">는</DefinitionPopup>&nbsp;
+              <DefinitionPopup q="60319">어디</DefinitionPopup>
+              <DefinitionPopup q="86572">에</DefinitionPopup>&nbsp;
+              <DefinitionPopup q="68796">있</DefinitionPopup>
+              <DefinitionPopup q="86571">어요</DefinitionPopup>?
             </div>
-            <div>
-              B: <i>{t("(It) is in Busan.")}</i>
-            </div>
-          </Section>
+            <UtteranceButton text="학교는 어디에 있어요?">
+              학교는 어디에 있어요?
+            </UtteranceButton>
+            <i>{t("Where is (the) school?")}</i>
+          </DialogGrid>
         </Section>
         <Section>
-          <div>
-            A:&nbsp;
-            <DefinitionPopup q="17371">잔</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="74890">안</DefinitionPopup>
-            <DefinitionPopup q="86572">에</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="27372">커피</DefinitionPopup>
-            <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="68796">있</DefinitionPopup>
-            <DefinitionPopup q="86571">어요</DefinitionPopup>
-            {t("?")}
-          </div>
-          <div>
-            B:&nbsp;
-            <DefinitionPopup q="68796">없</DefinitionPopup>
-            <DefinitionPopup q="86571">어요</DefinitionPopup>
-          </div>
-          <Section>
+          <DialogGrid>
             <div>
-              A: <i>{t("Is there coffee in (the) cup?")}</i>
+              <DefinitionPopup q="68895">부산</DefinitionPopup>
+              <DefinitionPopup q="86572">에</DefinitionPopup>&nbsp;
+              <DefinitionPopup q="68796">있</DefinitionPopup>
+              <DefinitionPopup q="86571">어요</DefinitionPopup>
             </div>
+            <UtteranceButton text="부산에 있어요">
+              부산에 있어요
+            </UtteranceButton>
+            <i>{t("(It) is in Busan.")}</i>
+          </DialogGrid>
+        </Section>
+        <Section>
+          <DialogGrid>
             <div>
-              B: <i>{t("There is not.")}</i>
+              <DefinitionPopup q="17371">잔</DefinitionPopup>&nbsp;
+              <DefinitionPopup q="74890">안</DefinitionPopup>
+              <DefinitionPopup q="86572">에</DefinitionPopup>&nbsp;
+              <DefinitionPopup q="27372">커피</DefinitionPopup>
+              <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
+              <DefinitionPopup q="68796">있</DefinitionPopup>
+              <DefinitionPopup q="86571">어요</DefinitionPopup>
             </div>
-          </Section>
+            <UtteranceButton text="잔 안에 커피가 있어요?">
+              잔 안에 커피가 있어요?
+            </UtteranceButton>
+            <div>
+              <DefinitionPopup q="68796">없</DefinitionPopup>
+              <DefinitionPopup q="86571">어요</DefinitionPopup>
+            </div>
+            <UtteranceButton text="없어요">없어요</UtteranceButton>
+            <i>{t("Is there coffee in (the) cup?")}</i>
+            <div />
+            <i>{t("There is no coffee.")}</i>
+            <div />
+          </DialogGrid>
         </Section>
       </Section>
       <Section>
         <ArticleTitle>{t("Posession")}</ArticleTitle>
+      </Section>
+      <Section>
         {t(
-          "The verbs 있다 and 없다 are used to indicate that an entity possesses or does not posses a physical object.",
+          "The adjective 있다 and 없다 indicate that subject of a sentence is possessed.",
         )}
-        &nbsp;
-        <Trans>
-          When used in this way the object which is possesed is marked with the
-          particle&nbsp;
-          <Anchor to={TopicRoute.subjectParticle}>이 or 가</Anchor>
-        </Trans>
-        <Section>
-          <DefinitionPopup q="71353">표</DefinitionPopup>
-          <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
-          <DefinitionPopup q="68796">있</DefinitionPopup>
-          <DefinitionPopup q="85037">는다</DefinitionPopup>
-        </Section>
-        <Section>
-          <DefinitionPopup q="24147">편지</DefinitionPopup>
-          <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
-          <DefinitionPopup q="68796">있</DefinitionPopup>
-          <DefinitionPopup q="86094" senseIndexes={[3]}>
-            어
-          </DefinitionPopup>
-        </Section>
+      </Section>
+      <Section>
+        <DialogGrid>
+          <div>
+            박규희
+            <DefinitionPopup q="85853">는</DefinitionPopup>
+            <DefinitionPopup q="71353">표</DefinitionPopup>
+            <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="68796">있</DefinitionPopup>
+            <DefinitionPopup q="85037">는다</DefinitionPopup>
+          </div>
+          <UtteranceButton text="표가 있는다">표가 있는다</UtteranceButton>
+          <i>Kyuhee Park has the ticket.</i>
+        </DialogGrid>
+      </Section>
+      <Section>
+        <DialogGrid>
+          <div>
+            <DefinitionPopup q="24147">편지</DefinitionPopup>
+            <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="68796">있</DefinitionPopup>
+            <DefinitionPopup q="86094" senseIndexes={[3]}>
+              어
+            </DefinitionPopup>
+          </div>
+          <UtteranceButton text="편지가 있어">편지가 있어</UtteranceButton>
+          <i>(They) have the letter.</i>
+        </DialogGrid>
+      </Section>
+      <Section>
+        <ArticleTitle>{t("Predicates with 있다 and 없다")}</ArticleTitle>
+      </Section>
+      <Section>
         {t(
           "Some adjectives contains 있다 and 없다 to indicate a subject has or lacks a quality.",
         )}
-        <Section>
+      </Section>
+      <Section>
+        <DialogGrid>
           <div>
-            A:&nbsp;
             <DefinitionPopup q="71115">음막</DefinitionPopup>
             <DefinitionPopup q="86289">이</DefinitionPopup>&nbsp;
             <DefinitionPopup q="70482">어때</DefinitionPopup>
             {t("?")}
           </div>
+          <UtteranceButton text="음막이 어때?">음막이 어때?</UtteranceButton>
           <div>
-            B:&nbsp;
-            <DefinitionPopup q="71212">재미있다</DefinitionPopup>
+            <DefinitionPopup q="71212">재미있</DefinitionPopup>
+            <DefinitionPopup q="85041">다</DefinitionPopup>
+            {t("!")}
           </div>
-        </Section>
-        <Section>
+          <UtteranceButton text="재미있다">재미있다</UtteranceButton>
+          <i>How's the music?</i>
+          <div />
+          <i>It's fun!</i>
+        </DialogGrid>
+      </Section>
+      <Section>
+        <DialogGrid>
           <div>
-            A:&nbsp;
             <DefinitionPopup q="20198">눈</DefinitionPopup>
             <DefinitionPopup q="86289">이</DefinitionPopup>&nbsp;
             <DefinitionPopup q="69514">올</DefinitionPopup>
@@ -139,15 +165,19 @@ export default function ExistenceAndPosession() {
             <DefinitionPopup q="80806">야</DefinitionPopup>
             {t("?")}
           </div>
+          <UtteranceButton text="눈이 올거야?">눈이 올거야?</UtteranceButton>
           <div>
-            B:&nbsp;
-            <DefinitionPopup q="17294">네</DefinitionPopup>.&nbsp;
+            어,&nbsp;
             <DefinitionPopup q="71301">틀림없</DefinitionPopup>
             <DefinitionPopup q="86094" senseIndexes={[3]}>
               어
             </DefinitionPopup>
           </div>
-        </Section>
+          <UtteranceButton text="어. 올거야?">어. 틀림없어</UtteranceButton>
+          <i>It's going to snow?</i>
+          <div />
+          <i>Yeah, definitely.</i>
+        </DialogGrid>
       </Section>
     </>
   );

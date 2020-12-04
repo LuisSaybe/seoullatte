@@ -34,7 +34,7 @@ export default function Copula() {
           "아니다 indicates that the subject of the clause is not equivalent to the noun it attaches to.",
         )}
       </Section>
-      <Section marginSize={MarginSizeName.large}>
+      <Section>
         <DialogGrid>
           <div>
             <DefinitionPopup q="15689">강아지</DefinitionPopup>
@@ -74,7 +74,7 @@ export default function Copula() {
           <Anchor to={TopicRoute.intimateSpeech}>intimate</Anchor> speech level.
         </Trans>
       </Section>
-      <Section marginSize={MarginSizeName.large}>
+      <Section>
         <Trans>
           <DefinitionPopup q="92101">이</DefinitionPopup>
           <DefinitionPopup q="80806">야</DefinitionPopup> follows a noun which
@@ -97,7 +97,7 @@ export default function Copula() {
           <i>I will introduce (him). He is my younger brother.</i>
         </DialogGrid>
       </Section>
-      <Section marginSize={MarginSizeName.medium}>
+      <Section>
         {t(
           "야 follows a noun which ends in a vowel in the intimate speech level.",
         )}

@@ -13,6 +13,8 @@ import {
   U_IRREGULAR_ID,
 } from "web/js/page/topic/irregular-predicate";
 import "./style.scss";
+import { DialogGrid } from "web/js/component/dialog-grid";
+import { UtteranceButton } from "web/js/component/utterance-button";
 
 export default function AddingVowelsToPredicateStems() {
   const { t } = useTranslation();
@@ -55,106 +57,93 @@ export default function AddingVowelsToPredicateStems() {
         {t("바라보 becomes 바라봐.")}
       </Section>
       <Section>
-        <div>
-          Example predicate: <DefinitionPopup q="66248">바쁘다</DefinitionPopup>
-        </div>
-        <div>
-          {t("First, we apply any irregular rules to 바쁘다.")}
-          &nbsp;
-          <Trans>
-            바쁘다 is&nbsp;
-            <Anchor to={`${TopicRoute.irregularPredicate}#${U_IRREGULAR_ID}`}>
-              으 irregular
-            </Anchor>
-            &nbsp;so ㅡ is removed from the predicate stem.
-          </Trans>
-          &nbsp;
-          {t("바쁘 becomes 바ㅃ.")}
-          &nbsp;
-          {t(
-            "The vowel closest to the end of the modified predicate stem 바ㅃ is ㅏ so ㅏ is added to the stem.",
-          )}
-          &nbsp;
-          {t("바ㅃ becomes 바빠.")}
-        </div>
+        <DialogGrid>
+          <div>
+            <DefinitionPopup q="60931">나</DefinitionPopup>
+            <DefinitionPopup q="85764">를</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="64743">보라봐</DefinitionPopup>
+            <DefinitionPopup q="80220">서</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="32539">긴장돼</DefinitionPopup>
+            <DefinitionPopup q="77247" senseIndexes={[2]}>
+              졌
+            </DefinitionPopup>
+            <DefinitionPopup q="86094">어</DefinitionPopup>
+          </div>
+          <UtteranceButton text="나를 보라봐서 긴장돼졌어">
+            나를 보라봐서 긴장돼졌어
+          </UtteranceButton>
+          <i>(They) stared at me so I became nervous.</i>
+        </DialogGrid>
+      </Section>
+      <Section>
+        Example predicate: <DefinitionPopup q="66248">바쁘다</DefinitionPopup>
+      </Section>
+      <Section>
+        {t("First, we apply any irregular rules to 바쁘다.")}
+        &nbsp;
+        <Trans>
+          바쁘다 is&nbsp;
+          <Anchor to={`${TopicRoute.irregularPredicate}#${U_IRREGULAR_ID}`}>
+            으 irregular
+          </Anchor>
+          &nbsp;so ㅡ is removed from the predicate stem.
+        </Trans>
+        &nbsp;
+        {t("바쁘 becomes 바ㅃ.")}
+        &nbsp;
+        {t(
+          "The vowel closest to the end of the modified predicate stem 바ㅃ is ㅏ so ㅏ is added to the stem.",
+        )}
+        &nbsp;
+        {t("바ㅃ becomes 바빠.")}
+      </Section>
+      <Section>
+        <DialogGrid>
+          <div>
+            <DefinitionPopup q="15982">먹고살</DefinitionPopup>
+            <DefinitionPopup q="84811">기에</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="66248">바빠</DefinitionPopup>
+          </div>
+          <UtteranceButton text="먹고살기에 바빠">
+            먹고 살기에 바빠.
+          </UtteranceButton>
+          <i>(I'm) busy making ends meet.</i>
+        </DialogGrid>
       </Section>
       <Section>
         <SectionTitle>{t("Placement of ㅓ or ㅏ")}</SectionTitle>
         {t(
-          "After determining whether ㅓ or ㅏ is added to the predicate's stem, the new letter may be added in one of 3 ways.",
+          "After determining whether ㅓ or ㅏ is added to the predicate's stem, the new letter may be added in one of 4 ways.",
         )}
-        <Section>
-          <Subsection>
-            <div>
-              &bull;&nbsp;
-              {t("The letter may be added as a new syllable 어 or 아.")}
-            </div>
-            <div>
-              &bull;&nbsp;
-              {t("The final vowel (if any) may change to another vowel.")}
-            </div>
-            <div>&bull;&nbsp;{t("The letter may not be added at all.")}</div>
-          </Subsection>
-        </Section>
-        <Section>
-          {t(
-            "There is no pattern based rule which determines which of the 3 occur, but the following rules are guaranteed.",
-          )}
-          <Subsection>
-            <div>
-              &bull;&nbsp;
-              {t(
-                "If the stem has a 받침 then 어 or 아 is added as a new syllable based on the aforementioned rules.",
-              )}
-            </div>
-            <div>
-              &bull;&nbsp;
-              {t(
-                "If the final syllable of a stem is 오, the final syllable becomes 와.",
-              )}
-            </div>
-            <div>
-              &bull;&nbsp;
-              {t(
-                "If the final syllable of a stem is 우 the final syllable becomes 워 or 어 is added to the stem.",
-              )}
-            </div>
-            <div>
-              &bull;&nbsp;
-              {t(
-                "If the final letter of a word is ㅣ, ㅣ is replaced by ㅕ or 어 is added as a new syllable.",
-              )}
-            </div>
-            <div>
-              &bull;&nbsp;
-              {t(
-                "If a predicate stem ends in ㅏ the stem undergoes no change or ㅏ becomes ㅐ.",
-              )}
-            </div>
-            <div>
-              &bull;&nbsp;
-              {t(
-                "If a predicate stem ends in ㅚ the stem undergoes no change or ㅚ becomes ㅙ.",
-              )}
-            </div>
-            <div>
-              &bull;&nbsp;
-              <Trans>
-                If the predicate is&nbsp;
-                <Anchor
-                  to={`${TopicRoute.irregularPredicate}#${S_IRREGULAR_ID}`}
-                >
-                  ㅅ-irregular
-                </Anchor>
-                &nbsp;어 or 아 is added as a new syllable based on the
-                aforementioned rules.
-              </Trans>
-            </div>
-          </Subsection>
-        </Section>
       </Section>
       <Section>
-        <SectionTitle>{t("Examples")}</SectionTitle>
+        <Subsection>
+          <Section>
+            {t("The letter may be added as a new syllable 어 or 아.")}
+          </Section>
+          <Subsection>
+            <DefinitionPopup q="58272">먹다</DefinitionPopup> + (ㅓ or ㅏ) =
+            먹어
+          </Subsection>
+          <Section>
+            {t("The final vowel (if any) may change to another vowel.")}
+          </Section>
+          <Subsection>
+            <DefinitionPopup q="65172">쓰다</DefinitionPopup> + (ㅓ or ㅏ) = 써
+          </Subsection>
+          <Section>
+            {t("Letters may be removed and added to the stem.")}
+          </Section>
+          <Subsection>
+            <DefinitionPopup q="57304">부르다</DefinitionPopup> + (ㅓ or ㅏ) =
+            불러
+          </Subsection>
+          <Section>{t("The letter may not be added at all.")}</Section>
+          <Section>가다 + (ㅓ or ㅏ) = 가</Section>
+        </Subsection>
+      </Section>
+      <Section>{t("We show examples here of common stem changes.")}</Section>
+      <Section>
         <div styleName="table">
           <span>Predicate</span>
           <span>Modified Stem</span>
@@ -166,8 +155,8 @@ export default function AddingVowelsToPredicateStems() {
             되다
           </DefinitionPopup>
           <span>돼</span>
-          <DefinitionPopup q="58272">먹다</DefinitionPopup>
-          <span>먹어</span>
+          <DefinitionPopup q="73274">하얗다</DefinitionPopup>
+          <span>하얘</span>
           <DefinitionPopup q="66315">이루다</DefinitionPopup>
           <span>이루어</span>
           <DefinitionPopup q="62354">낫다</DefinitionPopup>
