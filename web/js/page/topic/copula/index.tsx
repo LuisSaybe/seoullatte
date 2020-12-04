@@ -146,7 +146,10 @@ export default function Copula() {
             <DefinitionPopup q="15320">가려진</DefinitionPopup>&nbsp;
             <DefinitionPopup q="71687">이</DefinitionPopup>
             <DefinitionPopup q="65853">부분</DefinitionPopup>
-            <DefinitionPopup q="86111">은</DefinitionPopup>&nbsp;
+            <DefinitionPopup senseIndexes={[1]} q="86111">
+              은
+            </DefinitionPopup>
+            &nbsp;
             <DefinitionPopup q="84991">뭐</DefinitionPopup>예요
           </div>
           <UtteranceButton text="선생님, 종이로 가려진 이 부분은 뭐예요?" />

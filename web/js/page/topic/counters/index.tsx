@@ -12,25 +12,27 @@ export default function Counters() {
 
   return (
     <>
-      {t(
-        "Counters are used to express quantities for certain types of objects.",
-      )}
-      &nbsp;
-      {t(
-        "Associated with each type of object is the name for that type of object when counting them.",
-      )}
-      &nbsp;
-      {t("Some counters are exclusively used with Sino-Korean numbers.")}
-      &nbsp;
-      {t(
-        " Some counters are used exclusively with Korean numbers when the number of objects is less than or equal to 20.",
-      )}
-      &nbsp;
-      {t(
-        "Usually, if the number exceends 20, then a Sino-Korean number may be used.",
-      )}
-      &nbsp;
-      {t("We give examples of each below.")}
+      <Section>
+        {t(
+          "Counters are used to express quantities for certain types of objects.",
+        )}
+        &nbsp;
+        {t(
+          "Associated with each type of object is the name for that type of object when counting them.",
+        )}
+        &nbsp;
+        {t("Some counters are exclusively used with Sino-Korean numbers.")}
+        &nbsp;
+        {t(
+          " Some counters are used exclusively with Korean numbers when the number of objects is less than or equal to 20.",
+        )}
+        &nbsp;
+        {t(
+          "Usually, if the number exceends 20, then a Sino-Korean number may be used.",
+        )}
+        &nbsp;
+        {t("We give examples of each below.")}
+      </Section>
       <Section>
         {t("Certain numbers are modified when used with a counter.")}
       </Section>

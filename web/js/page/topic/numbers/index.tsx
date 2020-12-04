@@ -9,13 +9,15 @@ export default function Numbers() {
 
   return (
     <>
-      {t(
-        "Korean numbers use two different systems for counting. A number is either a native Korean number or a Sino-Korean number.",
-      )}
-      &nbsp;
-      {t(
-        "For counting every-day objects not exceeding 100 or age, Korean numbers are used. Sino Korean are used in academic settings and for unbounded measurements such as time duration, weight or distance.",
-      )}
+      <Section>
+        {t(
+          "Korean numbers use two different systems for counting. A number is either a native Korean number or a Sino-Korean number.",
+        )}
+        &nbsp;
+        {t(
+          "For counting every-day objects not exceeding 100 or age, Korean numbers are used. Sino Korean are used in academic settings and for unbounded measurements such as time duration, weight or distance.",
+        )}
+      </Section>
       <Section styleName="table">
         <span>Korean</span>
         <span>Sino-Korean</span>

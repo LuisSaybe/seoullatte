@@ -12,17 +12,21 @@ export default function SubjectParticle() {
 
   return (
     <>
-      {t(
-        "The subject particle is added to a word to indicate that it is the subject of a clause.",
-      )}
-      &nbsp;
-      {t(
-        "가 is added to a noun ending in vowel and 이 is added to a noun ending in a consonant.",
-      )}
-      &nbsp;
-      {t(
-        "If the predicate at the end of the clause is a verb the subject is the executor of the verb.",
-      )}
+      <Section>
+        {t(
+          "The subject particle is added to a word to indicate that it is the subject of a clause.",
+        )}
+        &nbsp;
+        {t(
+          "가 is added to a noun ending in vowel and 이 is added to a noun ending in a consonant.",
+        )}
+      </Section>
+      <Section>
+        {t(
+          "If the predicate at the end of the clause is a verb the subject is the executor of the verb.",
+        )}
+      </Section>
+
       <Section>
         <DialogGrid>
           <div>
@@ -48,7 +52,10 @@ export default function SubjectParticle() {
           <div>
             <DefinitionPopup q="68206">오늘 </DefinitionPopup>&nbsp;
             <DefinitionPopup q="74178">밤</DefinitionPopup>
-            <DefinitionPopup q="86111">은</DefinitionPopup>&nbsp;
+            <DefinitionPopup senseIndexes={[1]} q="86111">
+              은
+            </DefinitionPopup>
+            &nbsp;
             <DefinitionPopup q="62266">달</DefinitionPopup>
             <DefinitionPopup q="86289">이</DefinitionPopup>&nbsp;
             <DefinitionPopup q="71761">참</DefinitionPopup>&nbsp;

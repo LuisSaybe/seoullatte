@@ -18,6 +18,7 @@ export default function Negation() {
           Some <Anchor to={TopicRoute.predicate}>predicates</Anchor> have a
           corresponding negated predicate.
         </Trans>
+        &nbsp;
         {t("Some predicates are defined as the negation of another predicate.")}
         &nbsp;
         <Trans>

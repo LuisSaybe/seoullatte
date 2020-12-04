@@ -51,8 +51,8 @@ export default function BatchimSuffix() {
         )}
         &nbsp;
         <Trans>
-          Note that <DefinitionPopup q="80329">으시</DefinitionPopup>&nbsp;
-          becomes&nbsp;
+          Note that <DefinitionPopup q="80329">으시</DefinitionPopup>
+          &nbsp;becomes&nbsp;
           <DefinitionPopup q="86609">으세요</DefinitionPopup> in the&nbsp;
           <Anchor to={TopicRoute.politeSpeech}>polite speech level</Anchor>.
         </Trans>

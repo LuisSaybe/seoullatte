@@ -85,7 +85,7 @@ export function useTopics(): Topic[] {
       {
         component: lazy(() => import("web/js/page/topic/batchim-suffix")),
         description: t("Adding 으 to predicate stems"),
-        name: t("Adding 으 to Predicates Stems"),
+        name: t("Adding 으 to predicates stems"),
         paths: [TopicRoute.addingUToPredicates],
         relatedEntries: [56544],
         relatedPartOfSpeech: [],

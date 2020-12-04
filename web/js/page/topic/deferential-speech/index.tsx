@@ -15,14 +15,14 @@ export default function DeferentialSpeech() {
 
   return (
     <>
-      <div>
+      <Section>
         <Trans>
           The following <Anchor to={TopicRoute.ending}>endings</Anchor> are
           added to a <Anchor to={TopicRoute.predicate}>predicate</Anchor> stem
           depending on whether the clause is declarative, interrogative,
           imperative or proposotive.
         </Trans>
-      </div>
+      </Section>
       <SectionTitle>
         {t("For predicates stems ending in a consonant")}
       </SectionTitle>

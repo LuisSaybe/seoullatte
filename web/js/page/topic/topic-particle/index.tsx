@@ -13,21 +13,23 @@ export default function TopicParticle() {
 
   return (
     <>
-      {t(
-        "The topic particle can be added to a noun to or another particle to indicate that the marked word is the topic of the clause.",
-      )}
-      &nbsp;
-      <Trans>
-        When added to a particle or noun that has a&nbsp;
-        <DefinitionPopup senseIndexes={[1]} q="56544">
-          받침
-        </DefinitionPopup>
-        , 은 is added to the word otherwise 는 is added to the word.
-      </Trans>
-      &nbsp;
-      {t(
-        "This may be used to re-introduce a new topic or a topic that was previously mentioned in conversation.",
-      )}
+      <Section>
+        {t(
+          "The topic particle can be added to a noun to or another particle to indicate that the marked word is the topic of the clause.",
+        )}
+        &nbsp;
+        <Trans>
+          When added to a particle or noun that has a&nbsp;
+          <DefinitionPopup senseIndexes={[1]} q="56544">
+            받침
+          </DefinitionPopup>
+          , 은 is added to the word otherwise 는 is added to the word.
+        </Trans>
+        &nbsp;
+        {t(
+          "This may be used to re-introduce a new topic or a topic that was previously mentioned in conversation.",
+        )}
+      </Section>
       <Section>
         <DialogGrid>
           <div>
@@ -96,14 +98,16 @@ export default function TopicParticle() {
           <div />
           <div>
             <DefinitionPopup q="27368">아침</DefinitionPopup>
-            <DefinitionPopup q="86572">에</DefinitionPopup>
-            <DefinitionPopup q="85851">는</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="80294">에는</DefinitionPopup>&nbsp;
             <DefinitionPopup q="66030">많이</DefinitionPopup>&nbsp;
             <DefinitionPopup q="74179">불</DefinitionPopup>
             <DefinitionPopup q="68719">었</DefinitionPopup>
             <DefinitionPopup q="85135">는데</DefinitionPopup>&nbsp;
             <DefinitionPopup q="62522">지금</DefinitionPopup>
-            <DefinitionPopup q="86111">은</DefinitionPopup>&nbsp;
+            <DefinitionPopup senseIndexes={[1]} q="86111">
+              은
+            </DefinitionPopup>
+            &nbsp;
             <DefinitionPopup q="60097">괜찮</DefinitionPopup>
             <DefinitionPopup q="86568">아요</DefinitionPopup>
           </div>
