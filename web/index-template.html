@@ -140,77 +140,23 @@
     <title>Seoul Latte</title>
   </head>
   <body>
-    <div class="seoullatte-project-root">
-      <div class="seoullattte-loader-body">
-        <div class="seoullattte-content-loader-title"></div>
-        <div class="seoullattte-content-loader-text"></div>
-        <div class="seoullattte-content-loader-text"></div>
-        <div class="seoullattte-content-loader-text"></div>
-        <div class="seoullattte-content-loader-text"></div>
-        <div class="seoullattte-content-loader-text"></div>
-        <div class="seoullattte-content-loader-text"></div>
-        <div class="seoullattte-content-loader-text"></div>
-        <div class="seoullattte-content-loader-text"></div>
-        <div class="seoullattte-content-loader-text"></div>
-        <div class="seoullattte-content-loader-text"></div>
-      </div>
-    </div>
-    <% if (gaTrackingId) { %>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=<%=gaTrackingId%>"
-    ></script>
+    <div class="seoullatte-project-root"></div>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+      if (window.location.origin === "https://seoullatte.com") {
+        const node = document.createElement("script");
+        node.src = "https://www.googletagmanager.com/gtag/js?id=G-3G0FPD2JQ4";
+        node.async = true;
+        document.head.appendChild(node);
 
-      gtag("config", "<%=gaTrackingId%>");
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-3G0FPD2JQ4");
+      }
     </script>
-    <% } %>
     <style>
-      .seoullattte-loader-body {
-        display: flex;
-        flex-direction: column;
-        width: 70%;
-        margin: 0 auto;
-      }
-
-      .seoullattte-content-loader-title,
-      .seoullattte-content-loader-text {
-        animation: seoullattte-fading 1.5s infinite;
-        background-color: #444;
-        opacity: 0.1;
-        border-radius: 8px;
-        margin-top: 24px;
-        display: inline-block;
-      }
-
-      .seoullattte-content-loader-text {
-        height: 32px;
-      }
-
-      .seoullattte-content-loader-title {
-        width: 30%;
-        height: 42px;
-      }
-
-      @keyframes seoullattte-fading {
-        0% {
-          opacity: 0.1;
-        }
-
-        50% {
-          opacity: 0.2;
-        }
-
-        100% {
-          opacity: 0.1;
-        }
-      }
-
       /* cyrillic-ext */
       @font-face {
         font-family: "Open Sans";

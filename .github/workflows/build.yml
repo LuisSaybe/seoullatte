@@ -11,14 +11,20 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@master
         with:
-          node-version: "14.x"
+          node-version: "15.x"
+      - run: sudo apt-get update
+      - run: sudo apt-get install -y libgbm1
       - run: yarn
       - run: envsubst < web/js/settings/production.json > web/js/settings/production-copy.json
         env:
-          GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
       - run: cat web/js/settings/production-copy.json > web/js/settings/production.json
       - run: yarn build
+      - run: $(yarn bin)/serve dist --single -l 9000 &
+      - run: sleep 5
+      - run: node node/crawl-pages.js
+        env:
+          ORIGIN: http://localhost:9000
       - name: push docker
         uses: docker/build-push-action@v1
         with:

@@ -12,7 +12,7 @@ export function useGoogleAnalyticsPageHit() {
     if (gtag) {
       const settings = getSettings();
 
-      gtag("config", settings.ga.trackingId, {
+      gtag("config", "G-3G0FPD2JQ4", {
         page_path: location.pathname,
       });
     }

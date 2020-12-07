@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { ArticleTitle } from "web/js/component/article-title";
 import { NextPreviousAnchors } from "web/js/component/next-previous-anchors";
-import { RootState } from "web/js/redux/reducer";
 import { DefaultLayout } from "web/js/component/default-layout";
 import { appendLocation } from "web/js/redux/location/action";
 import "./style.scss";

@@ -6,9 +6,6 @@ const WorkboxPlugin = require("workbox-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
 
 module.exports = (env) => {
-  const settingsPath = path.resolve(__dirname, `web/js/settings/${env.env}`);
-  const settings = require(settingsPath);
-
   return {
     devtool: env.mode === "development" ? "inline-source-map" : false,
     entry: [
@@ -41,9 +38,6 @@ module.exports = (env) => {
       }),
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, "web/index-template.html"),
-        templateParameters: {
-          gaTrackingId: settings.ga && settings.ga.trackingId,
-        },
       }),
       new MiniCssExtractPlugin({
         filename: "[contenthash].css",
@@ -52,6 +46,7 @@ module.exports = (env) => {
         clientsClaim: true,
         skipWaiting: true,
       }),
+      new ESLintPlugin(),
     ],
     module: {
       rules: [

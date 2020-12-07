@@ -10,6 +10,6 @@ module.exports = {
     "plugin:jsx-a11y/recommended",
   ],
   rules: {
-    "@typescript-eslint/explicit-function-return-type": false,
+    "@typescript-eslint/explicit-function-return-type": 0,
   },
 };
