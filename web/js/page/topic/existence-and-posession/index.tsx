@@ -101,13 +101,15 @@ export function ExistenceAndPosession() {
         <DialogGrid>
           <div>
             박규희
-            <DefinitionPopup q="85853">는</DefinitionPopup>
+            <DefinitionPopup q="85853">는</DefinitionPopup>&nbsp;
             <DefinitionPopup q="71353">표</DefinitionPopup>
             <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
             <DefinitionPopup q="68796">있</DefinitionPopup>
             <DefinitionPopup q="85037">는다</DefinitionPopup>
           </div>
-          <UtteranceButton text="표가 있는다">표가 있는다</UtteranceButton>
+          <UtteranceButton text="박규희는 표가 있는다">
+            표가 있는다
+          </UtteranceButton>
           <i>Kyuhee Park has the ticket.</i>
         </DialogGrid>
       </Section>
@@ -171,7 +173,7 @@ export function ExistenceAndPosession() {
               어
             </DefinitionPopup>
           </div>
-          <UtteranceButton text="어. 올거야?">어. 틀림없어</UtteranceButton>
+          <UtteranceButton text="어. 틀림없어">어. 틀림없어</UtteranceButton>
           <i>It's going to snow?</i>
           <div />
           <i>Yeah, definitely.</i>

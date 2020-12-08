@@ -54,7 +54,7 @@ export function Desire() {
             </DefinitionPopup>
             .
           </div>
-          <UtteranceButton text="초콜릿을 사고 싶다">
+          <UtteranceButton text="집으로 돌아오고 싶지 않아">
             집으로 돌아오고 싶지 않아
           </UtteranceButton>
           <i>(I) do not want to return to home.</i>
