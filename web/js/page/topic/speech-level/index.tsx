@@ -9,7 +9,7 @@ import { DefinitionPopup } from "web/js/component/definition-popup";
 import { TopicTitleMedium } from "web/js/component/topic-title-medium";
 import "./style.scss";
 
-export default function SpeechLevel() {
+export function SpeechLevel() {
   const { t } = useTranslation();
 
   return (

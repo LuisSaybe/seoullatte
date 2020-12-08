@@ -7,7 +7,7 @@ import { Section } from "web/js/component/section";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import "./style.scss";
 
-export default function SubjectParticle() {
+export function SubjectParticle() {
   const { t } = useTranslation();
 
   return (

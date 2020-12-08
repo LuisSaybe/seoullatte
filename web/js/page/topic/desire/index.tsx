@@ -4,11 +4,10 @@ import { Trans, useTranslation } from "react-i18next";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { Section } from "web/js/component/section";
-import { SectionTitle } from "web/js/component/section-title";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import "./style.scss";
 
-export default function Desire() {
+export function Desire() {
   const { t } = useTranslation();
 
   return (

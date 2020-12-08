@@ -6,7 +6,7 @@ import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import "./style.scss";
 
-export default function FormalAndInformalSpeech() {
+export function FormalAndInformalSpeech() {
   const { t } = useTranslation();
 
   return (

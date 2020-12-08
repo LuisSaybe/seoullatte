@@ -8,7 +8,7 @@ import { UtteranceButton } from "web/js/component/utterance-button";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import styles from "./style.scss";
 
-export default function Endings() {
+export function Endings() {
   const { t } = useTranslation();
 
   return (

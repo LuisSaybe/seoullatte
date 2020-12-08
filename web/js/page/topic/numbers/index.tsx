@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Section } from "web/js/component/section";
 import "./style.scss";
 
-export default function Numbers() {
+export function Numbers() {
   const { t } = useTranslation();
 
   return (

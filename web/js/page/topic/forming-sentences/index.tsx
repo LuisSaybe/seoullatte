@@ -8,7 +8,7 @@ import { SectionTitle } from "web/js/component/section-title";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import "./style.scss";
 
-export default function FormingSentences() {
+export function FormingSentences() {
   const { t } = useTranslation();
 
   return (

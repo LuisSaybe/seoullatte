@@ -6,7 +6,7 @@ import { Section } from "web/js/component/section";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import "./style.scss";
 
-export default function Hangul() {
+export function Hangul() {
   const { t } = useTranslation();
 
   return (

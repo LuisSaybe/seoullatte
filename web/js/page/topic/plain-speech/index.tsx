@@ -5,12 +5,10 @@ import { Section } from "web/js/component/section";
 import { Anchor } from "web/js/component/anchor";
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { SectionTitle } from "web/js/component/section-title";
-import { Table } from "web/js/component/table";
 import { TopicRoute } from "web/js/interface/route";
 import { MarginSizeName } from "web/js/interface/size";
-import style from "./style.scss";
 
-export default function PlainSpeech() {
+export function PlainSpeech() {
   const { t } = useTranslation();
 
   return (

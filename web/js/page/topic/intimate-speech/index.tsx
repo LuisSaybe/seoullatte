@@ -8,7 +8,7 @@ import { DefinitionPopup } from "web/js/component/definition-popup";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
-export default function IntimateSpeech() {
+export function IntimateSpeech() {
   const { t } = useTranslation();
 
   return (

@@ -8,7 +8,7 @@ import { UtteranceButton } from "web/js/component/utterance-button";
 import { MarginSizeName } from "web/js/interface/size";
 import "./style.scss";
 
-export default function TopicParticle() {
+export function TopicParticle() {
   const { t } = useTranslation();
 
   return (

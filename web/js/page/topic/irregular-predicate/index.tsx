@@ -14,7 +14,7 @@ import "./style.scss";
 export const S_IRREGULAR_ID = "s-irregular";
 export const U_IRREGULAR_ID = "u-irregular";
 
-export default function IrregularPredicate() {
+export function IrregularPredicate() {
   const { t } = useTranslation();
 
   return (

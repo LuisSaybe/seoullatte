@@ -3,13 +3,43 @@ import { useTranslation } from "react-i18next";
 
 import { Topic, KoreaPartOfSpeech } from "web/js/interface/korean";
 import { TopicRoute } from "web/js/interface/route";
+import { Hangul } from "web/js/page/topic/hangul";
+import { Syllable } from "web/js/page/topic/syllable";
+import { Noun } from "web/js/page/topic/noun";
+import { Predicate } from "web/js/page/topic/predicate";
+import { FormalAndInformalSpeech } from "web/js/page/topic/formal-and-informal-speech";
+import { Endings } from "web/js/page/topic/endings";
+import { SpeechLevel } from "web/js/page/topic/speech-level";
+import { AddingVowelsToPredicateStems } from "web/js/page/topic/adding-vowels-to-predicate-stems";
+import { BatchimSuffix } from "web/js/page/topic/batchim-suffix";
+import { DeferentialSpeech } from "web/js/page/topic/deferential-speech";
+import { IntimateSpeech } from "web/js/page/topic/intimate-speech";
+import { PoliteSpeech } from "web/js/page/topic/polite-speech";
+import { PlainSpeech } from "web/js/page/topic/plain-speech";
+import { IrregularPredicate } from "web/js/page/topic/irregular-predicate";
+import { SubjectParticle } from "web/js/page/topic/subject-particle";
+import { ObjectParticle } from "web/js/page/topic/object-particle";
+import { TopicParticle } from "web/js/page/topic/topic-particle";
+import { FormingSentences } from "web/js/page/topic/forming-sentences";
+import { Copula } from "web/js/page/topic/copula";
+import { ExistenceAndPosession } from "web/js/page/topic/existence-and-posession";
+import { Negation } from "web/js/page/topic/negation";
+import { PastTense } from "web/js/page/topic/past-tense";
+import { PredicateAsModifier } from "web/js/page/topic/predicates-as-modifiers";
+import { Determiner } from "web/js/page/topic/determiner";
+import { BoundNoun } from "web/js/page/topic/bound-noun";
+import { Desire } from "web/js/page/topic/desire";
+import { Numbers } from "web/js/page/topic/numbers";
+import { Counters } from "web/js/page/topic/counters";
+import { Questions } from "web/js/page/topic/questions";
+import { EParticle } from "web/js/page/topic/e-particle";
 
 export function useTopics(): Topic[] {
   const { t } = useTranslation();
   return useMemo(
     () => [
       {
-        component: lazy(() => import("web/js/page/topic/hangul")),
+        component: Hangul,
         description: t("Learn about Hangul, Hanja and how to write in Korean"),
         name: t("The Korean Writing System"),
         paths: ["/", TopicRoute.hangul],
@@ -17,7 +47,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/syllable")),
+        component: Syllable,
         description: t("Learn about syllables in Korean are formed"),
         name: t("Syllables"),
         paths: [TopicRoute.syllable],
@@ -25,7 +55,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/noun")),
+        component: Noun,
         description: t("Learn about Sino-Korean and native Korean nouns"),
         name: t("Nouns"),
         paths: [TopicRoute.noun],
@@ -33,7 +63,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [KoreaPartOfSpeech.noun],
       },
       {
-        component: lazy(() => import("web/js/page/topic/predicate")),
+        component: Predicate,
         description: t("Learn about Korean adjectives, nouns and copulas."),
         name: t("Predicates"),
         paths: [TopicRoute.predicate],
@@ -45,9 +75,7 @@ export function useTopics(): Topic[] {
         ],
       },
       {
-        component: lazy(
-          () => import("web/js/page/topic/formal-and-informal-speech"),
-        ),
+        component: FormalAndInformalSpeech,
         description: t("The difference between 반말 and 존댓말"),
         name: t("Formal and Informal Speech"),
         paths: [TopicRoute.formalAndInformalSpeech],
@@ -55,7 +83,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/endings")),
+        component: Endings,
         description: t(
           "How predicate combine with endings to form a sentence.",
         ),
@@ -65,7 +93,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/speech-level")),
+        component: SpeechLevel,
         description: t("Learn about the different levels of speech in Korean"),
         name: t("Speech Level"),
         paths: [TopicRoute.speechLevel],
@@ -73,9 +101,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(
-          () => import("web/js/page/topic/adding-vowels-to-predicate-stems"),
-        ),
+        component: AddingVowelsToPredicateStems,
         description: t("Adding 어 or 아 to a predicate stem"),
         name: t("Adding ㅓ or ㅏ to a predicate stem"),
         paths: [TopicRoute.addingVowelToPredicateStem],
@@ -83,7 +109,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/batchim-suffix")),
+        component: BatchimSuffix,
         description: t("Adding 으 to predicate stems"),
         name: t("Adding 으 to predicates stems"),
         paths: [TopicRoute.addingUToPredicates],
@@ -91,7 +117,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/deferential-speech")),
+        component: DeferentialSpeech,
         description: t(
           "Learn about the The Deferential Speech Level in Korean",
         ),
@@ -101,7 +127,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/intimate-speech")),
+        component: IntimateSpeech,
         description: t("Learn about the the Intimate Speech Level in Korean"),
         name: t("The Intimate Speech Level"),
         paths: [TopicRoute.intimateSpeech],
@@ -109,7 +135,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/polite-speech")),
+        component: PoliteSpeech,
         description: t("Learn about the Polite Speech Level in Korean"),
         name: t("The Polite Speech Level"),
         paths: [TopicRoute.politeSpeech],
@@ -117,7 +143,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [KoreaPartOfSpeech.ending],
       },
       {
-        component: lazy(() => import("web/js/page/topic/plain-speech")),
+        component: PlainSpeech,
         description: t("Learn about the The Plain Speech Level in Korean"),
         name: t("The Plain Speech Level"),
         paths: [TopicRoute.plainSpeech],
@@ -130,7 +156,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/irregular-predicate")),
+        component: IrregularPredicate,
         description: t("Irregular predicates in Korean"),
         name: t("Irregular Predicates"),
         paths: [TopicRoute.irregularPredicate],
@@ -138,7 +164,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/subject-particle")),
+        component: SubjectParticle,
         description: t(
           "The subject particle 가 and 이 are used to indicate the subject of a clause",
         ),
@@ -148,7 +174,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/object-particle")),
+        component: ObjectParticle,
         description: t(
           "The object particle 를 and 을 are used to indicate the object of a verb",
         ),
@@ -158,7 +184,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/topic-particle")),
+        component: TopicParticle,
         description: t(
           "The topic particle 는 and 은 are used to indicate the subject of the current clause",
         ),
@@ -168,7 +194,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/forming-sentences")),
+        component: FormingSentences,
         description: t("Learn about how to form Korean sentences"),
         name: t("Forming a Sentence"),
         paths: [TopicRoute.formingSentences],
@@ -176,7 +202,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/copula")),
+        component: Copula,
         description: t("Learn about the predicate 이다 and 아니다"),
         name: t("이다 and 아니다"),
         paths: [TopicRoute.copular],
@@ -184,9 +210,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(
-          () => import("web/js/page/topic/existence-and-posession"),
-        ),
+        component: ExistenceAndPosession,
         description: t("Learn about the verb of existence and posession"),
         name: t("있다 and 없다"),
         paths: [TopicRoute.existenceAndPosession],
@@ -194,7 +218,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/negation")),
+        component: Negation,
         description: t("Learn how to negate verbs and adjectives in Korean"),
         name: t("Negation"),
         paths: [TopicRoute.negation],
@@ -202,7 +226,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/past-tense")),
+        component: PastTense,
         description: t("Learn about the past tense in Korean"),
         name: t("Past Tense"),
         paths: [TopicRoute.pastTense],
@@ -210,9 +234,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(
-          () => import("web/js/page/topic/predicates-as-modifiers"),
-        ),
+        component: PredicateAsModifier,
         description: t("Changing verb and adjectives to modifiers in Korean"),
         name: t("Predicates as Modifiers"),
         paths: [TopicRoute.predicateAsModifiers],
@@ -220,7 +242,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/determiner")),
+        component: Determiner,
         description: t("Learn about Korean determiners"),
         name: t("Determiners"),
         paths: [TopicRoute.determiner],
@@ -228,7 +250,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [KoreaPartOfSpeech.determiner],
       },
       {
-        component: lazy(() => import("web/js/page/topic/bound-noun")),
+        component: BoundNoun,
         description: t("Learn about Korean bound nounds"),
         name: t("Bound Nouns"),
         paths: [TopicRoute.boundNoun],
@@ -236,7 +258,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [KoreaPartOfSpeech.boundNoun],
       },
       {
-        component: lazy(() => import("web/js/page/topic/desire")),
+        component: Desire,
         description: t("Learn how to express desire"),
         name: t("Desire"),
         paths: [TopicRoute.desire],
@@ -244,7 +266,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/numbers")),
+        component: Numbers,
         description: t(
           "The Korean numebrs are made of 2 sets of numbers, native Korean numbers and Sino Korean numbers.",
         ),
@@ -254,7 +276,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/counters")),
+        component: Counters,
         description: t(
           "Korean counters are used to describe quantities of types of objects.",
         ),
@@ -264,7 +286,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/questions")),
+        component: Questions,
         description: t("Learn how to pose questions in Korean"),
         name: t("Questions"),
         paths: [TopicRoute.questions],
@@ -272,7 +294,7 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
-        component: lazy(() => import("web/js/page/topic/e-particle")),
+        component: EParticle,
         description: t("Learn about the particle 에"),
         name: t("The Particle 에"),
         paths: [TopicRoute.particleLocationGoal],

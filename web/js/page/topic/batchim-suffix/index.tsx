@@ -11,7 +11,7 @@ import { Anchor } from "web/js/component/anchor";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
-export default function BatchimSuffix() {
+export function BatchimSuffix() {
   const { t } = useTranslation();
   const navigate = useNavigateToHash();
   const canUseKoreanUtterance = useCanUseKoreanUtterance();

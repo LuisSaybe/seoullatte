@@ -1,16 +1,14 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-import { Anchor } from "web/js/component/anchor";
 import { Section } from "web/js/component/section";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefinitionPopup } from "web/js/component/definition-popup";
-import { TopicRoute } from "web/js/interface/route";
-import "./style.scss";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { UtteranceButton } from "web/js/component/utterance-button";
+import "./style.scss";
 
-export default function ExistenceAndPosession() {
+export function ExistenceAndPosession() {
   const { t } = useTranslation();
 
   return (

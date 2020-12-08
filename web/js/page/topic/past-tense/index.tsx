@@ -10,7 +10,7 @@ import { TopicRoute } from "web/js/interface/route";
 
 import "./style.scss";
 
-export default function PastTense() {
+export function PastTense() {
   const { t } = useTranslation();
 
   return (

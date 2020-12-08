@@ -8,15 +8,12 @@ import { SectionTitle } from "web/js/component/section-title";
 import { Subsection } from "web/js/component/subsection";
 import { useNavigateToHash } from "web/js/hook/useNavigateToHash";
 import { TopicRoute } from "web/js/interface/route";
-import {
-  S_IRREGULAR_ID,
-  U_IRREGULAR_ID,
-} from "web/js/page/topic/irregular-predicate";
-import "./style.scss";
+import { U_IRREGULAR_ID } from "web/js/page/topic/irregular-predicate";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { UtteranceButton } from "web/js/component/utterance-button";
+import "./style.scss";
 
-export default function AddingVowelsToPredicateStems() {
+export function AddingVowelsToPredicateStems() {
   const { t } = useTranslation();
   const navigate = useNavigateToHash();
 

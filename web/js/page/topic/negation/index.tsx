@@ -8,7 +8,7 @@ import { SectionTitle } from "web/js/component/section-title";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
-export default function Negation() {
+export function Negation() {
   const { t } = useTranslation();
 
   return (

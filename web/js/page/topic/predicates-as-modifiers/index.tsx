@@ -7,7 +7,7 @@ import { SectionTitle } from "web/js/component/section-title";
 import { MarginSizeName } from "web/js/interface/size";
 import "./style.scss";
 
-export default function PredicateAsModifier() {
+export function PredicateAsModifier() {
   const { t } = useTranslation();
 
   return (

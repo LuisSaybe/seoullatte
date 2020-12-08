@@ -8,7 +8,7 @@ import { Table } from "web/js/component/table";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
-export default function Determiner() {
+export function Determiner() {
   const { t } = useTranslation();
 
   return (

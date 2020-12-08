@@ -9,7 +9,7 @@ import { Table } from "web/js/component/table";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
-export default function BoundNoun() {
+export function BoundNoun() {
   const { t } = useTranslation();
 
   return (

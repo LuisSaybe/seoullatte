@@ -7,8 +7,8 @@ import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import "./style.scss";
-//86572
-export default function EParticle() {
+
+export function EParticle() {
   const { t } = useTranslation();
 
   return (

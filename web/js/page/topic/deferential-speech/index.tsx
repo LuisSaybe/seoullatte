@@ -10,7 +10,7 @@ import { UtteranceButton } from "web/js/component/utterance-button";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
-export default function DeferentialSpeech() {
+export function DeferentialSpeech() {
   const { t } = useTranslation();
 
   return (

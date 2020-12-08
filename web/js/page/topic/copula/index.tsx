@@ -6,12 +6,12 @@ import { DefinitionPopup } from "web/js/component/definition-popup";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { useCanUseKoreanUtterance } from "web/js/hook/useCanUseKoreanUtterance";
 import { DialogGrid } from "web/js/component/dialog-grid";
-import "./style.scss";
 import { MarginSizeName } from "web/js/interface/size";
 import { Anchor } from "web/js/component/anchor";
 import { TopicRoute } from "web/js/interface/route";
+import "./style.scss";
 
-export default function Copula() {
+export function Copula() {
   const { t } = useTranslation();
   const canUseKoreanUtterance = useCanUseKoreanUtterance();
 

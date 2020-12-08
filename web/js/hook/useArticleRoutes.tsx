@@ -1,10 +1,9 @@
-import React, { useMemo, Suspense } from "react";
+import React, { useMemo } from "react";
 import { Helmet } from "react-helmet";
 import { Route } from "react-router-dom";
 
 import { useTopics } from "web/js/hook/useTopics";
 import { ArticlePage } from "web/js/component/article-page";
-import { LoadingArticle } from "web/js/component/loading-article";
 
 export function useArticleRoutes() {
   const topics = useTopics();
@@ -28,9 +27,7 @@ export function useArticleRoutes() {
               <meta property="og:url" content={window.location.href} />
               <meta property="og:description" content={topic.description} />
             </Helmet>
-            <Suspense fallback={<LoadingArticle />}>
-              <topic.component />
-            </Suspense>
+            <topic.component />
           </ArticlePage>
         );
 
