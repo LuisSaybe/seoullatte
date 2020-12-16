@@ -55,7 +55,7 @@ export function HamburgerMenu(props: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <>
       <div {...props} styleName={`overlay ${burgerMenuOpen ? "open" : ""}`} />
-      <div ref={menuRef} styleName={`menu ${burgerMenuOpen ? "open" : ""}`}>
+      <div ref={menuRef} styleName={`root ${burgerMenuOpen ? "open" : ""}`}>
         {topics.map((topic) => (
           <Anchor
             onClick={onLinkClick}

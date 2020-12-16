@@ -1,3 +1,4 @@
+@use "~web/sass/color";
 @use "~web/sass/layout";
 @use "~web/sass/media";
 @use "~web/sass/size";
@@ -15,6 +16,10 @@
     padding: 6px layout.$horizontal-page-padding;
     background-color: #f1f1f1;
     border-top: 1px solid #848383;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: color.$dark-mode-background;
+    }
   }
 
   @include media.not-phone {
@@ -41,6 +46,6 @@
 
   @media (prefers-color-scheme: dark) {
     color: white;
-    background: #333;
+    background: color.$dark-mode-background;
   }
 }

@@ -1,3 +1,5 @@
+@use "~web/sass/color";
+
 .dictionary-form {
   font-weight: 700;
 }
@@ -10,6 +12,11 @@
 .suggestionsContainerOpen {
   border: 1px solid #aaa;
   background-color: #fff;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: color.$dark-mode-background;
+  }
+
   border-radius: 0 0 4px 4px;
   position: absolute;
   width: 100%;
@@ -18,6 +25,10 @@
 .suggestionHighlighted {
   background-color: #eaeaea;
   font-weight: 600;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: darken(color.$dark-mode-background, 5%);
+  }
 }
 
 .suggestionsList {

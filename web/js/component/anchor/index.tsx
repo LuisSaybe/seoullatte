@@ -9,13 +9,11 @@ interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   to?: string;
   button?: boolean;
   icon?: boolean;
-  box?: boolean;
   pushLocation?: boolean;
 }
 
 export function Anchor(props: Props) {
   const {
-    box,
     children,
     to,
     className,
@@ -44,10 +42,6 @@ export function Anchor(props: Props) {
 
   if (props.icon) {
     styleName += " icon";
-  }
-
-  if (props.box) {
-    styleName += " box";
   }
 
   if (props.to) {

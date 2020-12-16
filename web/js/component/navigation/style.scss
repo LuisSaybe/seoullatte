@@ -18,6 +18,10 @@
   left: 40px;
   background-color: white;
   padding: 0 2px;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: color.$dark-mode-background;
+  }
 }
 
 .search-section {
@@ -46,12 +50,10 @@
 }
 
 .settings-anchor {
-  @include button.button();
-  @include button.buttonColors(color.$white);
   display: flex;
   align-items: center;
-  padding: 0 6px;
   height: calc(100% - 24px);
+  padding: 0 6px !important; // override styles from Anchor component
 
   @include media.phone() {
     display: none;

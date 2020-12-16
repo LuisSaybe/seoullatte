@@ -92,7 +92,7 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
         />
         <LoaderLine styleName={`loading-line ${isLoading ? "loading" : ""}`} />
       </div>
-      <Anchor styleName="settings-anchor" to={routes.configuration()}>
+      <Anchor button styleName="settings-anchor" to={routes.configuration()}>
         {t("Settings")}
       </Anchor>
     </nav>
