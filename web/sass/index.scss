@@ -1,3 +1,4 @@
+@use '~web/sass/color';
 @use '~web/sass/font';
 @use '~web/sass/media';
 
@@ -14,6 +15,10 @@ html {
 
   @include media.not-phone {
     font-size: 16px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: color.$dark-mode-background;
   }
 }
 

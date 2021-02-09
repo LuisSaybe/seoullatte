@@ -22,9 +22,9 @@ export function Conjugations(props: Props) {
           )?.textContent;
 
           return (
-            <>
+            <React.Fragment key={conjugation}>
               {index > 0 && <>,&nbsp;</>}
-              <span styleName="conjugation" key={conjugation}>
+              <span styleName="conjugation">
                 <span>{conjugation}</span>
                 {abbreviation && (
                   <>
@@ -33,7 +33,7 @@ export function Conjugations(props: Props) {
                   </>
                 )}
               </span>
-            </>
+            </React.Fragment>
           );
         },
       )}

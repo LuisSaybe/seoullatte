@@ -28,9 +28,6 @@ export function DefinitionPopup(props: Props) {
     dispatch(setRefOpen(rootRef.current, false));
   };
 
-  /* prefetch the dictionary entry to avoid loading time */
-  useEntry(q);
-
   useEffect(() => {
     return () => {
       dispatch(setRefOpen(rootRef.current, false));
