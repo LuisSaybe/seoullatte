@@ -14,8 +14,8 @@ import { TeachSVG } from "web/js/component/teacher-svg";
 import { setAllRefsClosed } from "web/js/redux/definition-popup/action";
 import { LoadingSVG } from "web/js/component/loading-svg";
 import { Section } from "web/js/component/section";
-import "./style.scss";
 import { RootState } from "web/js/redux/reducer";
+import "./style.scss";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   q: string;

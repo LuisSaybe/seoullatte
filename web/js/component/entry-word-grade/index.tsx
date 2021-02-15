@@ -1,14 +1,12 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 
 import { Anchor } from "web/js/component/anchor";
 import { RootState } from "web/js/redux/reducer";
 import { WordGrade } from "web/js/interface/korean";
 import { routes } from "web/js/routes";
 import "./style.scss";
-import { DEFAULT_PAGE_SIZE } from "web/js/helper/paging";
 
 interface Props {
   q: number;

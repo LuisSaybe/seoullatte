@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Autosuggest from "react-autosuggest";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import debounce from "lodash/debounce";
 
 import { Action } from "web/js/redux/entry-search/action";
 import { useFetch } from "web/js/hook/useFetch";
@@ -10,6 +11,7 @@ import { RootState } from "web/js/redux/reducer";
 import { LanguageNames } from "web/js/interface/korean";
 import { getSettings } from "web/js/helper/settings";
 import { useDictionaryTranslationLanguage } from "web/js/hook/useDictionaryTranslationLanguage";
+import { useSearchEntry } from "web/js/hook/useSearchEntry";
 import styles from "./style.scss";
 
 interface Props
@@ -24,12 +26,16 @@ export const DictionarySearchInput = React.forwardRef<HTMLInputElement, Props>(
     const { t } = useTranslation();
     const dictionaryLanguage = useDictionaryTranslationLanguage();
     const { className, inputClassname, onSuggestionSelected, ...rest } = props;
-    const search = useFetch(Action.search);
+    const debouncedSearch = React.useCallback(
+      debounce(useFetch(Action.search), 300),
+      [],
+    );
     const [suggestions, setSuggestions] = React.useState([]);
-    const entries = useSelector((state: RootState) => {
-      const ids = state.entrySearch[`query=${props.value}`] ?? [];
-      return ids.map((id) => state.entry[id]);
-    });
+    const searchedEntries = useSearchEntry(`query=${props.value}`);
+    const ids = searchedEntries ?? [];
+    const entries = useSelector((state: RootState) =>
+      ids.map((id) => state.entry[id]),
+    );
     const settings = getSettings();
     const entriesHash = entries.map((entry) => entry.getTargetCode()).join();
     const renderSuggestion = (suggestion) => {
@@ -55,8 +61,8 @@ export const DictionarySearchInput = React.forwardRef<HTMLInputElement, Props>(
     };
     const getSuggestionValue = (suggestion) => suggestion.getTargetCode();
     const onSuggestionsFetchRequested = ({ value }) => {
-      if (value) {
-        search(`${settings.api.url}/entry?query=${value}`);
+      if (!searchedEntries) {
+        debouncedSearch(`${settings.api.url}/entry?query=${value}`);
       }
     };
     const renderSuggestionsContainer = ({ containerProps, children }) => {

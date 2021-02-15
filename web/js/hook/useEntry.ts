@@ -21,10 +21,6 @@ export function useEntry(q: string) {
       return;
     }
 
-    if (q === "17199") {
-      console.log(q, settings.api.url, entry, isFetching);
-    }
-
     getEntry(`${settings.api.url}/entry/${q}`);
   }, [q, settings.api.url, entry, isFetching]);
 

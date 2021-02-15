@@ -12,6 +12,7 @@ import { LoadingSVG } from "web/js/component/loading-svg";
 import { DEFAULT_PAGE_SIZE } from "web/js/helper/paging";
 import { Anchor } from "web/js/component/anchor";
 import { routes } from "web/js/routes";
+import { useSearchEntry } from "web/js/hook/useSearchEntry";
 import "./style.scss";
 
 export function SearchPage() {
@@ -28,7 +29,8 @@ export function SearchPage() {
   params.append("from", (DEFAULT_PAGE_SIZE * page).toString());
   params.append("size", DEFAULT_PAGE_SIZE.toString());
   const query = decodeURIComponent(params.toString());
-  const entries = useSelector((state: RootState) => state.entrySearch[query]);
+
+  const entries = useSearchEntry(params.toString());
 
   useEffect(() => {
     if (!entries) {
