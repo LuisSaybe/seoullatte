@@ -7,6 +7,8 @@ import { DefinitionPopup } from "web/js/component/definition-popup";
 import { SectionTitle } from "web/js/component/section-title";
 import { TopicRoute } from "web/js/interface/route";
 import { MarginSizeName } from "web/js/interface/size";
+import { DialogGrid } from "web/js/component/dialog-grid";
+import { UtteranceButton } from "web/js/component/utterance-button";
 
 export function PlainSpeech() {
   const { t } = useTranslation();
@@ -57,6 +59,27 @@ export function PlainSpeech() {
           <DefinitionPopup q="27500">갔</DefinitionPopup>
           <DefinitionPopup q="85041">다</DefinitionPopup>.
         </Trans>
+      </Section>
+      <Section marginSize={MarginSizeName.large}>
+        <DialogGrid>
+          <div>
+            <DefinitionPopup q="62522">지금</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="62843">아이</DefinitionPopup>
+            <DefinitionPopup q="86264">들</DefinitionPopup>
+            <DefinitionPopup q="86289">이</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="91162">모여</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="71463">앉</DefinitionPopup>
+            <DefinitionPopup q="86093">아</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="70703">간식</DefinitionPopup>
+            <DefinitionPopup q="69058">을</DefinitionPopup>&nbsp;
+            <DefinitionPopup q="58272">먹</DefinitionPopup>
+            <DefinitionPopup q="85037">는다</DefinitionPopup>
+          </div>
+          <UtteranceButton text="지금 아이들이 모여 앉아 간식을 먹는다">
+            지금 아이들이 모여 앉아 간식을 먹는다
+          </UtteranceButton>
+          <i>Now the children sit together and eat a snack.</i>
+        </DialogGrid>
       </Section>
       <SectionTitle>{t("For interrogative sentences")}</SectionTitle>
       {t(

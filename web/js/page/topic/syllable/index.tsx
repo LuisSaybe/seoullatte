@@ -47,12 +47,14 @@ export function Syllable() {
       </Section>
       <Section>
         {t(
-          "The order in which a syllable is pronounced is from top to bottom and then left to right.",
+          "A syllable is pronounced from top to bottom and then from left to right.",
         )}
         &nbsp;
         {t("The syllable 값 is read ㄱ ㅏ ㅂ ㅅ.")}
         &nbsp;
-        {t("It is not guaranteed that a syllable pronunced how it is spelled.")}
+        {t(
+          "It is not guaranteed that a syllable is pronunced how it is spelled.",
+        )}
         &nbsp;
         {t(
           "The pronounciation of Korean syllables may change depending on the preceeding syllable, the following syllable, or even based on the word's etymology.",

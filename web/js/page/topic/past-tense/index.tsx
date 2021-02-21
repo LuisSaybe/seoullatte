@@ -119,8 +119,9 @@ export function PastTense() {
       <Section marginSize={MarginSizeName.large}>
         <Trans>
           When an additional 었 is added to the first past tense ending, the
-          predicate's meaning is becomes more remote than the recent past. For
-          example, <DefinitionPopup q="27500">갔</DefinitionPopup>
+          predicate's meaning is more remote than the recent past. For
+          example,&nbsp;
+          <DefinitionPopup q="27500">갔</DefinitionPopup>
           <DefinitionPopup q="68838">었</DefinitionPopup>
           <DefinitionPopup q="85041">다</DefinitionPopup>&nbsp;or&nbsp;
           <DefinitionPopup q="92101">이</DefinitionPopup>

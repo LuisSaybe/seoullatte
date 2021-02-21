@@ -85,7 +85,7 @@ export function useTopics(): Topic[] {
       {
         component: Endings,
         description: t(
-          "How predicate combine with endings to form a sentence.",
+          "How predicates combine with endings to form a sentence.",
         ),
         name: t("Pre-Final and Final Endings"),
         paths: [TopicRoute.ending],

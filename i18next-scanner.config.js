@@ -12,7 +12,7 @@ module.exports = {
     lngs: ["fr"],
     defaultValue: "",
     nsSeparator: "::",
-    keySeparator: false, // key separator
+    keySeparator: false,
     interpolation: {
       prefix: "{{",
       suffix: "}}",
@@ -28,14 +28,14 @@ module.exports = {
       savePath: "i18n/{{lng}}/{{ns}}.json",
     },
   },
-  transform: function(file, enc, done) {
+  transform: function (file, enc, done) {
     const extension = path.extname(file.path);
     let content = fs.readFileSync(file.path, enc);
 
     if (extension === ".ts" || extension === ".tsx") {
-      content = typescript.transpileModule(content, {
+      const tsOptions = {
         compilerOptions: {
-          target: "es5",
+          target: "es6",
           sourceMap: true,
           inlineSources: true,
           sourceRoot: "/",
@@ -45,16 +45,16 @@ module.exports = {
           module: "esnext",
           moduleResolution: "node",
           paths: {
-            settings: ["settings"],
+            web: ["web"],
           },
           resolveJsonModule: true,
           allowSyntheticDefaultImports: true,
           types: ["react", "react-css-modules"],
           typeRoots: ["node_modules/@types"],
-          plugins: [{ name: "typescript-tslint-plugin" }],
         },
         exclude: ["node_modules"],
-      }).outputText;
+      };
+      content = typescript.transpileModule(content, tsOptions).outputText;
     }
 
     this.parser.parseTransFromString(content);
