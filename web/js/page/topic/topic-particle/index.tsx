@@ -1,10 +1,12 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
+import { Anchor } from "web/js/component/anchor";
 
 import { DefinitionPopup } from "web/js/component/definition-popup";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { Section } from "web/js/component/section";
 import { UtteranceButton } from "web/js/component/utterance-button";
+import { TopicRoute } from "web/js/interface/route";
 import { MarginSizeName } from "web/js/interface/size";
 import "./style.scss";
 
@@ -19,11 +21,9 @@ export function TopicParticle() {
         )}
         &nbsp;
         <Trans>
-          When added to a particle or noun that has a&nbsp;
-          <DefinitionPopup senseIndexes={[1]} q="56544">
-            받침
-          </DefinitionPopup>
-          , 은 is added to the word otherwise 는 is added to the word.
+          When added to a particle or noun that has ends in a&nbsp;
+          <Anchor to={TopicRoute.hangul}>consonant</Anchor>, 은 is added to the
+          word, otherwise 는 is added to the word.
         </Trans>
         &nbsp;
         {t(

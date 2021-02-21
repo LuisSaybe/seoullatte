@@ -136,7 +136,7 @@ export function AddingVowelsToPredicateStems() {
             불러
           </Subsection>
           <Section>{t("The letter may not be added at all.")}</Section>
-          <Section>가다 + (ㅓ or ㅏ) = 가</Section>
+          <Subsection>가다 + (ㅓ or ㅏ) = 가</Subsection>
         </Subsection>
       </Section>
       <Section>{t("We show examples here of common stem changes.")}</Section>

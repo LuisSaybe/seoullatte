@@ -19,11 +19,11 @@ export function FormingSentences() {
         )}
         &nbsp;
         {t(
-          "Firstly, implicitly understood information can be ommitted from communcation.",
+          "Firstly, the order of information is organized from general to specific.",
         )}
         &nbsp;
         {t(
-          "Secondly, the order of information is organized from general to specific.",
+          "Secondly, implicitly understood information can be ommitted from communcation.",
         )}
       </Section>
       <Section>

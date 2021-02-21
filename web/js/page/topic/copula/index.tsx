@@ -111,7 +111,7 @@ export function Copula() {
             <DefinitionPopup q="80806">야</DefinitionPopup>
           </div>
           <UtteranceButton text="너 지금 어디야?" />
-          <i>Where are you now?</i>
+          <i>{t("Where are you now?")}</i>
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.medium}>
