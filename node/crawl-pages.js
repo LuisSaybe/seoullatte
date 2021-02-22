@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const url = require("url");
 const fs = require("fs");
 
-const getContentAndURL = async (browser, target) => {
+const getContentAndURL = async (browser, language, target) => {
   const visitedPathnames = new Set();
   const toVisit = [target];
   const result = [];
@@ -37,18 +37,39 @@ const getContentAndURL = async (browser, target) => {
 const run = async (browser) => {
   console.log(`Crawling ${process.env.ORIGIN}`);
 
-  const results = await getContentAndURL(browser, process.env.ORIGIN);
+  for (const language of ["fr", "en"]) {
+    console.log(`Writing files for language ${language}`);
 
-  console.log(`Writing files`);
+    const browser = await new Promise((resolve, reject) => {
+      puppeteer
+        .launch({
+          headless: true,
+          args: [
+            "--no-sandbox",
+            "--disable-setuid-sandbox",
+            `--lang=${language}`,
+          ],
+        })
+        .then(resolve, reject);
+    });
 
-  for (const { pathname, html } of results) {
-    const name =
-      pathname === "/"
-        ? `dist/index.html`
-        : `dist/${pathname.substring(1)}.html`;
-    fs.writeFileSync(name, html);
+    const results = await getContentAndURL(
+      browser,
+      language,
+      process.env.ORIGIN,
+    );
 
-    console.log(`Wrote dist/${name}.html`);
+    for (const { pathname, html } of results) {
+      const name =
+        pathname === "/" ? `dist/index` : `dist/${pathname.substring(1)}`;
+      const suffix = language === "en" ? "" : `-${language}`;
+      const fileName = `${name}${suffix}.html`;
+      fs.writeFileSync(fileName, html);
+
+      console.log(`Wrote ${fileName}`);
+    }
+
+    browser.close();
   }
 
   // github action will hang if this is line is not here
@@ -56,9 +77,4 @@ const run = async (browser) => {
   process.exit(0);
 };
 
-puppeteer
-  .launch({
-    headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  })
-  .then(run, (e) => console.error(e));
+run();

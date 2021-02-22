@@ -1,3 +1,8 @@
+import {
+  LanguageNames,
+  USER_AGENT_LANGUAGE_LANGUAGE_MAP,
+} from "../interface/korean";
+
 export enum Language {
   en = "en",
   fr = "fr",
@@ -18,6 +23,24 @@ export const getLanguage = (navigator: Navigator): string => {
     if (navigator.language) {
       result = navigator.language;
     }
+  }
+
+  /* todo: refactor to exclude korean concepts */
+
+  const dictionaryLanguage = USER_AGENT_LANGUAGE_LANGUAGE_MAP.find(
+    ({ codes }) => codes.includes(result?.toLocaleLowerCase()),
+  );
+
+  if (dictionaryLanguage?.dictionaryLanguage === LanguageNames.english) {
+    return Language.en;
+  }
+
+  if (dictionaryLanguage?.dictionaryLanguage === LanguageNames.french) {
+    return Language.fr;
+  }
+
+  if (dictionaryLanguage?.dictionaryLanguage === LanguageNames.spanish) {
+    return Language.es;
   }
 
   return result || Language.en;

@@ -52,7 +52,7 @@ export function PlainSpeech() {
           <E q="58272">먹다</E> becomes&nbsp;
           <E q="58272">먹</E>
           <E q="68719">었</E>
-          <E q="85033">다</E>&nbsp; while the verb&nbsp;
+          <E q="85041">다</E>&nbsp; while the verb&nbsp;
           <E q="27500">가다</E> becomes&nbsp;
           <E q="27500">갔</E>
           <E q="85041">다</E>.
@@ -154,7 +154,7 @@ export function PlainSpeech() {
             <E q="69058">을</E>&nbsp;
             <E q="51510">마구</E>&nbsp;
             <E q="71285">쓰</E>
-            <E q="72584">지 말고</E>
+            <E q="72584">지 말고</E>&nbsp;
             <E q="75798" senseIndexes={[2]}>
               좀
             </E>

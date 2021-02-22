@@ -4,21 +4,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { Helmet } from "react-helmet";
 
 import { Language } from "web/js/helper/language";
-import { useLastRouteOrHome } from "web/js/hook/useLastRouteOrHome";
-import { Anchor } from "web/js/component/anchor";
 import { updateUserInterface } from "web/js/redux/user-interface/action";
 import { RootState } from "web/js/redux/reducer";
 import { DEFAULT_SPEAKING_RATE } from "web/js/interface/speech-synthesis";
 import { ArticleTitle } from "web/js/component/article-title";
-import "./style.scss";
 import { DefaultLayout } from "web/js/component/default-layout";
+import "./style.scss";
 
 export function Configuration() {
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const toRoute = useLastRouteOrHome();
   const speechSynthesisSettings = useSelector(
     (state: RootState) => state.userInterface.speechSynthesisSettings,
+  );
+  const language = useSelector(
+    (state: RootState) => state.userInterface.language,
   );
   const [voiceURI, setVoiceURI] = useState(
     speechSynthesisSettings.voiceURI ?? null,
@@ -48,6 +48,13 @@ export function Configuration() {
       }),
     );
   };
+  const onLanguageChange = (e) => {
+    dispatch(
+      updateUserInterface({
+        language: e.target.value,
+      }),
+    );
+  };
 
   useEffect(() => {
     if (speechSynthesisSettings?.voiceURI) {
@@ -58,7 +65,22 @@ export function Configuration() {
   return (
     <>
       <DefaultLayout>
-        <ArticleTitle>Settings</ArticleTitle>
+        <ArticleTitle>{t("Settings")}</ArticleTitle>
+        <div styleName="field">
+          <label styleName="label" htmlFor="display-language">
+            {t("Display Language")}
+          </label>
+          <select
+            styleName="select"
+            id="display-language"
+            value={language}
+            onChange={onLanguageChange}
+            onBlur={onLanguageChange}
+          >
+            <option value={Language.en}>{t("English")}</option>
+            <option value={Language.fr}>{t("French")}</option>
+          </select>
+        </div>
         <div styleName="field">
           <label styleName="label" htmlFor="speaking-rate">
             {t("Text-to-Speech Speed")}
@@ -102,7 +124,7 @@ export function Configuration() {
         )}
       </DefaultLayout>
       <Helmet>
-        <title>Settings</title>
+        <title>{t("Settings")}</title>
         <link rel="canonical" href={window.location.href} />
         <meta name="description" content="Settings" />
       </Helmet>

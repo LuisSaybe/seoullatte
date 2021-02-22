@@ -1,6 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export function InformationSVG(props: React.SVGAttributes<HTMLOrSVGElement>) {
+  const { t } = useTranslation();
+
   return (
     <svg
       {...props}
@@ -8,6 +11,7 @@ export function InformationSVG(props: React.SVGAttributes<HTMLOrSVGElement>) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 416.979 416.979"
     >
+      <title>{t("About Us")}</title>
       <g>
         <path
           fill="#29627b"

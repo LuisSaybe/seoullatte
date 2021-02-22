@@ -100,6 +100,7 @@ export function Application() {
   useEffect(() => {
     if (language && i18n.language !== language) {
       i18n.changeLanguage(language);
+      document.querySelector("html").setAttribute("lang", language);
     }
   }, [language, i18n]);
 

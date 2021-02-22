@@ -109,7 +109,7 @@ export function ExistenceAndPosession() {
           <UtteranceButton text="박규희는 표가 있는다">
             표가 있는다
           </UtteranceButton>
-          <i>Kyuhee Park has the ticket.</i>
+          <i>{t("Kyuhee Park has the ticket.")}</i>
         </DialogGrid>
       </Section>
       <Section>
