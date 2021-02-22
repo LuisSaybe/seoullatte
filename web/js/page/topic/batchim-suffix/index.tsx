@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { useNavigateToHash } from "web/js/hook/useNavigateToHash";
 import { useCanUseKoreanUtterance } from "web/js/hook/useCanUseKoreanUtterance";
@@ -26,17 +26,17 @@ export function BatchimSuffix() {
         <Trans>
           If a word's final letter is a consonant this letter is reffered to as
           a&nbsp;
-          <DefinitionPopup senseIndexes={[1]} q="56544">
+          <E senseIndexes={[1]} q="56544">
             받침
-          </DefinitionPopup>
+          </E>
           .
         </Trans>
         &nbsp;
         <Trans>
-          For example, the word <DefinitionPopup q="29724">방</DefinitionPopup>
+          For example, the word <E q="29724">방</E>
           &nbsp;has a 받침 since it ends in the consonant ㅇ while&nbsp;
-          <DefinitionPopup q="27369">여자</DefinitionPopup> does not have a 받침
-          since the final letter ㅏ is a vowel.
+          <E q="27369">여자</E> does not have a 받침 since the final letter ㅏ
+          is a vowel.
         </Trans>
         &nbsp;
         {t("Some suffixes change based on whether a word has a 받침 or not.")}
@@ -51,16 +51,16 @@ export function BatchimSuffix() {
         )}
         &nbsp;
         <Trans>
-          Note that <DefinitionPopup q="80329">으시</DefinitionPopup>
+          Note that <E q="80329">으시</E>
           &nbsp;becomes&nbsp;
-          <DefinitionPopup q="86609">으세요</DefinitionPopup> in the&nbsp;
+          <E q="86609">으세요</E> in the&nbsp;
           <Anchor to={TopicRoute.politeSpeech}>polite speech level</Anchor>.
         </Trans>
       </Section>
       <Section styleName="dialog-grid">
         <div>
-          <DefinitionPopup q="60097">괜찮</DefinitionPopup>
-          <DefinitionPopup q="86609">으세요</DefinitionPopup>
+          <E q="60097">괜찮</E>
+          <E q="86609">으세요</E>
           {t("?")}
         </div>
         {canUseKoreanUtterance ? (
@@ -78,19 +78,19 @@ export function BatchimSuffix() {
       </Section>
       <Section styleName="dialog-grid">
         <div>
-          <DefinitionPopup q="74121">할아버지</DefinitionPopup>
-          <DefinitionPopup q="73012">께서</DefinitionPopup>
-          <DefinitionPopup q="85851" senseIndexes={[1]}>
+          <E q="74121">할아버지</E>
+          <E q="73012">께서</E>
+          <E q="85851" senseIndexes={[1]}>
             는
-          </DefinitionPopup>
+          </E>
           &nbsp;
-          <DefinitionPopup q="17860">언제</DefinitionPopup>
+          <E q="17860">언제</E>
           &nbsp;
-          <DefinitionPopup q="66268">돌아오</DefinitionPopup>
-          <DefinitionPopup q="80330" senseIndexes={[1]}>
+          <E q="66268">돌아오</E>
+          <E q="80330" senseIndexes={[1]}>
             시
-          </DefinitionPopup>
-          <DefinitionPopup q="76426">니</DefinitionPopup>?
+          </E>
+          <E q="76426">니</E>?
         </div>
         {canUseKoreanUtterance ? (
           <UtteranceButton text="할아버지께서는 언제 돌아오시니?" />

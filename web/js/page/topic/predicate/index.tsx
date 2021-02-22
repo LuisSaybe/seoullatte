@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { Section } from "web/js/component/section";
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import "./style.scss";
 
 export function Predicate() {
@@ -33,13 +33,13 @@ export function Predicate() {
           <strong>{t("Uninflected predicate")}</strong>
           <strong>{t("Part of Speech")}</strong>
           <span>이</span>
-          <DefinitionPopup q="92101">이다</DefinitionPopup>
+          <E q="86232">이다</E>
           <span>{t("Copula")}</span>
           <span>가</span>
-          <DefinitionPopup q="27500">가다</DefinitionPopup>
+          <E q="27500">가다</E>
           <span>{t("Verb")}</span>
           <span>재미있</span>
-          <DefinitionPopup q="71212">재미있다</DefinitionPopup>
+          <E q="71212">재미있다</E>
           <span>{t("Adjective")}</span>
         </div>
       </div>

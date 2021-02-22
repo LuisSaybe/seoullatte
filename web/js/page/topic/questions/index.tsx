@@ -2,7 +2,7 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { Anchor } from "web/js/component/anchor";
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
@@ -25,10 +25,10 @@ export function Questions() {
       <SectionTitle>{t("Asking about the identity of an object")}</SectionTitle>
       <Section>
         <Trans>
-          <DefinitionPopup q="17199">무엇</DefinitionPopup> is a pronoun used a
-          placeholder for any object. 무엇 is often contracted to&nbsp;
-          <DefinitionPopup q="67416">뭣</DefinitionPopup> or&nbsp;
-          <DefinitionPopup q="84991">뭐</DefinitionPopup>.
+          <E q="17199">무엇</E> is a pronoun used a placeholder for any object.
+          무엇 is often contracted to&nbsp;
+          <E q="67416">뭣</E> or&nbsp;
+          <E q="84991">뭐</E>.
         </Trans>
         &nbsp;
         {t("For example, when inquiring what someone is eating:")}
@@ -36,10 +36,10 @@ export function Questions() {
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="17199">무엇</DefinitionPopup>
-            <DefinitionPopup q="86355">을</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="58272">먹</DefinitionPopup>
-            <DefinitionPopup q="76230">냐</DefinitionPopup>
+            <E q="17199">무엇</E>
+            <E q="86355">을</E>&nbsp;
+            <E q="58272">먹</E>
+            <E q="76230">냐</E>
             {"?"}
           </div>
           <UtteranceButton text="무엇을 먹냐?">무엇을 먹냐?</UtteranceButton>
@@ -49,18 +49,17 @@ export function Questions() {
       <Section>
         <Trans>
           In the same fashion, the pronouns&nbsp;
-          <DefinitionPopup q="62078">누구</DefinitionPopup>,&nbsp;
-          <DefinitionPopup q="60319">어디</DefinitionPopup>,&nbsp;
-          <DefinitionPopup q="17860">언제</DefinitionPopup> can be used to ask
-          questions.
+          <E q="62078">누구</E>,&nbsp;
+          <E q="60319">어디</E>,&nbsp;
+          <E q="17860">언제</E> can be used to ask questions.
         </Trans>
       </Section>
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="62078">누구</DefinitionPopup>
-            <DefinitionPopup q="80330">세</DefinitionPopup>
-            <DefinitionPopup q="86116">요</DefinitionPopup>
+            <E q="62078">누구</E>
+            <E q="80330">세</E>
+            <E q="86116">요</E>
             {"?"}
           </div>
           <UtteranceButton text="누구세요?">누구세요?</UtteranceButton>
@@ -70,10 +69,10 @@ export function Questions() {
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="60319">어디</DefinitionPopup>
-            <DefinitionPopup q="86572">에</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="27500">가</DefinitionPopup>
-            <DefinitionPopup q="86558">세요</DefinitionPopup>
+            <E q="60319">어디</E>
+            <E q="86572">에</E>&nbsp;
+            <E q="27500">가</E>
+            <E q="86558">세요</E>
             {t("?")}
           </div>
           <UtteranceButton text="어디에 가세요?">
@@ -85,10 +84,10 @@ export function Questions() {
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="17860">언제</DefinitionPopup>
-            <DefinitionPopup q="70055">부터</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="66567">시작할</DefinitionPopup>
-            <DefinitionPopup q="86120">까</DefinitionPopup>
+            <E q="17860">언제</E>
+            <E q="70055">부터</E>&nbsp;
+            <E q="66567">시작할</E>
+            <E q="86120">까</E>
             {"?"}
           </div>
           <UtteranceButton text="언제부터 시작할까?">
@@ -101,19 +100,19 @@ export function Questions() {
         <SectionTitle>{t("Asking about methods")}</SectionTitle>
         <Trans>
           When one wishes to inquire about a method or manner the adverb&nbsp;
-          <DefinitionPopup q="70482">어떻</DefinitionPopup>
-          <DefinitionPopup q="66938">게</DefinitionPopup> is used.
+          <E q="70482">어떻</E>
+          <E q="66938">게</E> is used.
         </Trans>
       </Section>
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="68898">인천</DefinitionPopup>
-            <DefinitionPopup q="86572">에</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="70482">어떻</DefinitionPopup>
-            <DefinitionPopup q="66938">게</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="27500">가</DefinitionPopup>
-            <DefinitionPopup q="87438">나요</DefinitionPopup>
+            <E q="68898">인천</E>
+            <E q="86572">에</E>&nbsp;
+            <E q="70482">어떻</E>
+            <E q="66938">게</E>&nbsp;
+            <E q="27500">가</E>
+            <E q="87438">나요</E>
             {t("?")}
           </div>
           <UtteranceButton text="인천에 어떻게 가나요?">
@@ -126,20 +125,20 @@ export function Questions() {
         <SectionTitle>{t("Asking about reasons or motives")}</SectionTitle>
         <Trans>
           When one wishes to inquire about a reason the adverb&nbsp;
-          <DefinitionPopup q="67848">왜</DefinitionPopup> is used.
+          <E q="67848">왜</E> is used.
         </Trans>
       </Section>
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="67848">왜</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="83162">항상</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="92041">연습</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="71729">기간</DefinitionPopup>
-            <DefinitionPopup q="86572">에</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="61181">늦</DefinitionPopup>
-            <DefinitionPopup q="77326">게</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="69514">와</DefinitionPopup>
+            <E q="67848">왜</E>&nbsp;
+            <E q="83162">항상</E>&nbsp;
+            <E q="92041">연습</E>&nbsp;
+            <E q="71729">기간</E>
+            <E q="86572">에</E>&nbsp;
+            <E q="61181">늦</E>
+            <E q="77326">게</E>&nbsp;
+            <E q="69514">와</E>
             {t("?")}
           </div>
           <UtteranceButton text="왜 항상 연습 기간에 늦게 와?">
@@ -155,20 +154,20 @@ export function Questions() {
           the&nbsp;
           <Anchor to={TopicRoute.determiner}>determiners</Anchor>
           &nbsp;
-          <DefinitionPopup q="66237">무슨</DefinitionPopup> is used.
+          <E q="66237">무슨</E> is used.
         </Trans>
       </Section>
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="64390">너</DefinitionPopup>
-            <DefinitionPopup q="85853">는</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="66237">무슨</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="71115">음악</DefinitionPopup>
-            <DefinitionPopup q="86355">을</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="91767">주로</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="74104">듣</DefinitionPopup>
-            <DefinitionPopup q="76426">니</DefinitionPopup>
+            <E q="64390">너</E>
+            <E q="85853">는</E>&nbsp;
+            <E q="66237">무슨</E>&nbsp;
+            <E q="71115">음악</E>
+            <E q="86355">을</E>&nbsp;
+            <E q="91767">주로</E>&nbsp;
+            <E q="74104">듣</E>
+            <E q="76426">니</E>
             {t("?")}
           </div>
           <UtteranceButton text="너는 무슨 음악을 주로 듣니?">
@@ -182,22 +181,22 @@ export function Questions() {
         <Trans>
           When one wishes to distinguish an object from a group of
           selections&nbsp;
-          <DefinitionPopup q="62822">어느</DefinitionPopup> is used.
+          <E q="62822">어느</E> is used.
         </Trans>
       </Section>
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="25620">공항</DefinitionPopup>
-            <DefinitionPopup q="86572">에</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="27500">가</DefinitionPopup>
-            <DefinitionPopup q="80311">려면</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="62822">어느</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="36678">버스</DefinitionPopup>
-            <DefinitionPopup q="85764">를</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="91122">타</DefinitionPopup>
-            <DefinitionPopup q="86255">야 하</DefinitionPopup>
-            <DefinitionPopup q="87438">나요</DefinitionPopup>
+            <E q="25620">공항</E>
+            <E q="86572">에</E>&nbsp;
+            <E q="27500">가</E>
+            <E q="80311">려면</E>&nbsp;
+            <E q="62822">어느</E>&nbsp;
+            <E q="36678">버스</E>
+            <E q="85764">를</E>&nbsp;
+            <E q="91122">타</E>
+            <E q="86255">야 하</E>
+            <E q="87438">나요</E>
             {t("?")}
           </div>
           <UtteranceButton text="공항에 가려면 어느 버스를 타야 하나요?">
@@ -211,7 +210,7 @@ export function Questions() {
       </Section>
       <Trans>
         When one inquires about a quantity the numeral&nbsp;
-        <DefinitionPopup q="66235">몇</DefinitionPopup> is used.
+        <E q="66235">몇</E> is used.
       </Trans>
       &nbsp;
       <Trans>
@@ -222,16 +221,16 @@ export function Questions() {
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="66235">몇</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="62266" senseIndexes={[1]}>
+            <E q="66235">몇</E>&nbsp;
+            <E q="62266" senseIndexes={[1]}>
               달
-            </DefinitionPopup>
-            <DefinitionPopup q="86355">을</DefinitionPopup>
+            </E>
+            <E q="86355">을</E>
             &nbsp;
-            <DefinitionPopup q="66375" senseIndexes={[6]}>
+            <E q="66375" senseIndexes={[6]}>
               보냈
-            </DefinitionPopup>
-            <DefinitionPopup q="86571">어요</DefinitionPopup>
+            </E>
+            <E q="86571">어요</E>
             {t("?")}
           </div>
           <UtteranceButton text="몇 달을 보냈어요?">
@@ -243,14 +242,14 @@ export function Questions() {
       <SectionTitle>{t("Degree and extent")}</SectionTitle>
       <Trans>
         When one inquires about the degree to which something occurs, the adverb{" "}
-        <DefinitionPopup q="67316">얼마나</DefinitionPopup> is used.
+        <E q="67316">얼마나</E> is used.
       </Trans>
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="67316">얼마나</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="64682">마실</DefinitionPopup>
-            <DefinitionPopup q="81065">래</DefinitionPopup>
+            <E q="67316">얼마나</E>&nbsp;
+            <E q="64682">마실</E>
+            <E q="81065">래</E>
             {t("?")}
           </div>
           <UtteranceButton text="얼마나 마실래?">

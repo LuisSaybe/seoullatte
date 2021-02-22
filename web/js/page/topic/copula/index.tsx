@@ -2,7 +2,7 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { Section } from "web/js/component/section";
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { useCanUseKoreanUtterance } from "web/js/hook/useCanUseKoreanUtterance";
 import { DialogGrid } from "web/js/component/dialog-grid";
@@ -14,14 +14,12 @@ import "./style.scss";
 export function Copula() {
   const { t } = useTranslation();
   const canUseKoreanUtterance = useCanUseKoreanUtterance();
-
   return (
     <>
       <Section>
         <Trans>
-          The copula <DefinitionPopup q="92101">이다</DefinitionPopup> and&nbsp;
-          <DefinitionPopup q="26878">아니다</DefinitionPopup> attach directly to
-          a noun.
+          The copula <E q="86232">이다</E> and&nbsp;
+          <E q="26878">아니다</E> attach directly to a noun.
         </Trans>
         &nbsp;
         {t("이다 and 아니다 are antonyms.")}
@@ -37,10 +35,10 @@ export function Copula() {
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="15689">강아지</DefinitionPopup>
-            <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="18779">고양이</DefinitionPopup>
-            <DefinitionPopup q="26878">아니다</DefinitionPopup>
+            <E q="15689">강아지</E>
+            <E q="66341">가</E>&nbsp;
+            <E q="18779">고양이</E>
+            <E q="26878">아니다</E>
           </div>
           {canUseKoreanUtterance ? (
             <UtteranceButton text="강아지가 고양이아니다" />
@@ -53,11 +51,11 @@ export function Copula() {
       <Section marginSize={MarginSizeName.medium}>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="17182">우리</DefinitionPopup>
-            <DefinitionPopup q="30210">딸</DefinitionPopup>
-            <DefinitionPopup q="86289">이</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="62521">중학생</DefinitionPopup>
-            <DefinitionPopup q="92101">이에요</DefinitionPopup>
+            <E q="17182">우리</E>
+            <E q="30210">딸</E>
+            <E q="86289">이</E>&nbsp;
+            <E q="62521">중학생</E>
+            <E q="86232">이에요</E>
           </div>
           {canUseKoreanUtterance ? (
             <UtteranceButton text="우리딸이 중학생이에요" />
@@ -76,25 +74,25 @@ export function Copula() {
       </Section>
       <Section>
         <Trans>
-          <DefinitionPopup q="92101">이</DefinitionPopup>
-          <DefinitionPopup q="80806">야</DefinitionPopup> follows a noun which
-          ends in a consonant in the intimate speech level.
+          <E q="86232">이</E>
+          <E q="80806">야</E> follows a noun which ends in a consonant in the
+          intimate speech level.
         </Trans>
       </Section>
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="84999">소개할</DefinitionPopup>
-            <DefinitionPopup q="80981">게</DefinitionPopup>.&nbsp;
-            <DefinitionPopup q="67258">얘</DefinitionPopup>
-            <DefinitionPopup q="85851">는</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="84426">내</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="70748">동생</DefinitionPopup>
-            <DefinitionPopup q="92101">이</DefinitionPopup>
-            <DefinitionPopup q="80806">야</DefinitionPopup>
+            <E q="84999">소개할</E>
+            <E q="80981">게</E>.&nbsp;
+            <E q="67258">얘</E>
+            <E q="85851">는</E>&nbsp;
+            <E q="84426">내</E>&nbsp;
+            <E q="70748">동생</E>
+            <E q="86232">이</E>
+            <E q="80806">야</E>
           </div>
           <UtteranceButton text="소개할게. 얘는 내 동생이야" />
-          <i>I will introduce (him). He is my younger brother.</i>
+          <i>{t("I will introduce (him). He is my younger brother.")}</i>
         </DialogGrid>
       </Section>
       <Section>
@@ -105,10 +103,10 @@ export function Copula() {
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="64390">너</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="62522">지금</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="60319">어디</DefinitionPopup>
-            <DefinitionPopup q="80806">야</DefinitionPopup>
+            <E q="64390">너</E>&nbsp;
+            <E q="62522">지금</E>&nbsp;
+            <E q="60319">어디</E>
+            <E q="80806">야</E>
           </div>
           <UtteranceButton text="너 지금 어디야?" />
           <i>{t("Where are you now?")}</i>
@@ -122,14 +120,14 @@ export function Copula() {
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="27364">고향</DefinitionPopup>
-            <DefinitionPopup q="86289">이</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="68893">대전</DefinitionPopup>
-            <DefinitionPopup q="92101">이</DefinitionPopup>
-            <DefinitionPopup q="86106">에요?</DefinitionPopup>
+            <E q="27364">고향</E>
+            <E q="86289">이</E>&nbsp;
+            <E q="68893">대전</E>
+            <E q="86232">이</E>
+            <E q="86106">에요?</E>
           </div>
           <UtteranceButton text="고향이 대전이에요?" />
-          <i>Is your hometown Daejon?</i>
+          <i>{t("Is your hometown Daejon?")}</i>
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.medium}>
@@ -140,20 +138,20 @@ export function Copula() {
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="62818">선생님</DefinitionPopup>,&nbsp;
-            <DefinitionPopup q="75802">종이</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="85761">로</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="15320">가려진</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="71687">이</DefinitionPopup>
-            <DefinitionPopup q="65853">부분</DefinitionPopup>
-            <DefinitionPopup senseIndexes={[1]} q="86111">
+            <E q="62818">선생님</E>,&nbsp;
+            <E q="75802">종이</E>&nbsp;
+            <E q="85761">로</E>&nbsp;
+            <E q="15320">가려진</E>&nbsp;
+            <E q="71687">이</E>
+            <E q="65853">부분</E>
+            <E senseIndexes={[1]} q="86111">
               은
-            </DefinitionPopup>
+            </E>
             &nbsp;
-            <DefinitionPopup q="84991">뭐</DefinitionPopup>예요
+            <E q="84991">뭐</E>예요
           </div>
           <UtteranceButton text="선생님, 종이로 가려진 이 부분은 뭐예요?" />
-          <i>Teacher, what's this part blocked by the paper?</i>
+          <i>{t("Teacher, what's this part blocked by the paper?")}</i>
         </DialogGrid>
       </Section>
     </>

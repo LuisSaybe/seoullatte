@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { Section } from "web/js/component/section";
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { SectionTitle } from "web/js/component/section-title";
 import { MarginSizeName } from "web/js/interface/size";
 import "./style.scss";
@@ -26,10 +26,10 @@ export function PredicateAsModifier() {
         )}
         <Section marginSize={MarginSizeName.medium}>
           <div>
-            <DefinitionPopup q="27500">가</DefinitionPopup>
-            <DefinitionPopup q="85853">는</DefinitionPopup>
+            <E q="27500">가</E>
+            <E q="85853">는</E>
             &nbsp;
-            <DefinitionPopup q="60865">남자</DefinitionPopup>
+            <E q="60865">남자</E>
           </div>
           <div>
             <i>{t("The man who goes.")}</i>
@@ -45,9 +45,9 @@ export function PredicateAsModifier() {
         {t("If the verb stem ends in a vowel ㄴ becomes a suffix as a 받침.")}
         <Section marginSize={MarginSizeName.medium}>
           <div>
-            <DefinitionPopup q="69514">온</DefinitionPopup>
+            <E q="69514">온</E>
             &nbsp;
-            <DefinitionPopup q="71232">적</DefinitionPopup>
+            <E q="71232">적</E>
           </div>
           <div>
             <i>{t("The experience of having arrived")}</i>
@@ -69,9 +69,9 @@ export function PredicateAsModifier() {
         )}
         <Section marginSize={MarginSizeName.medium}>
           <div>
-            <DefinitionPopup q="66375">보낼</DefinitionPopup>
+            <E q="66375">보낼</E>
             &nbsp;
-            <DefinitionPopup q="24147">편지</DefinitionPopup>
+            <E q="24147">편지</E>
           </div>
           <div>
             <i>{t("A letter that may be sent")}</i>
@@ -87,9 +87,9 @@ export function PredicateAsModifier() {
         {t("If the verb stem ends in a vowel ㄴ becomes a suffix as a 받침.")}
         <Section marginSize={MarginSizeName.medium}>
           <div>
-            <DefinitionPopup q="71290">아름다운</DefinitionPopup>
+            <E q="71290">아름다운</E>
             &nbsp;
-            <DefinitionPopup q="27369">여자</DefinitionPopup>
+            <E q="27369">여자</E>
           </div>
           <div>
             <i>{t("A beautiful woman")}</i>
@@ -97,9 +97,9 @@ export function PredicateAsModifier() {
         </Section>
         <Section marginSize={MarginSizeName.medium}>
           <div>
-            <DefinitionPopup q="66586">큰</DefinitionPopup>
+            <E q="66586">큰</E>
             &nbsp;
-            <DefinitionPopup q="28029">건물</DefinitionPopup>
+            <E q="28029">건물</E>
           </div>
           <div>
             <i>{t("A large building")}</i>
@@ -107,9 +107,9 @@ export function PredicateAsModifier() {
         </Section>
         <Section marginSize={MarginSizeName.medium}>
           <div>
-            <DefinitionPopup q="23143">느린</DefinitionPopup>
+            <E q="23143">느린</E>
             &nbsp;
-            <DefinitionPopup q="18779">고양이</DefinitionPopup>
+            <E q="18779">고양이</E>
           </div>
           <div>
             <i>{t("A slow cat")}</i>
@@ -117,10 +117,10 @@ export function PredicateAsModifier() {
         </Section>
         <Section marginSize={MarginSizeName.medium}>
           <div>
-            <DefinitionPopup q="91737">힘들</DefinitionPopup>
-            <DefinitionPopup q="80344">은</DefinitionPopup>
+            <E q="91737">힘들</E>
+            <E q="80344">은</E>
             &nbsp;
-            <DefinitionPopup q="62254">날</DefinitionPopup>
+            <E q="62254">날</E>
           </div>
           <div>
             <i>{t("A difficult day")}</i>

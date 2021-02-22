@@ -4,7 +4,7 @@ import { Trans, useTranslation } from "react-i18next";
 import { Anchor } from "web/js/component/anchor";
 import { Section } from "web/js/component/section";
 import { ArticleTitle } from "web/js/component/article-title";
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { SectionTitle } from "web/js/component/section-title";
 import { TopicRoute } from "web/js/interface/route";
 import { Table } from "web/js/component/table";
@@ -34,9 +34,8 @@ export function IrregularPredicate() {
         <Section>
           <Trans>
             The predicate&nbsp;
-            <DefinitionPopup q="92101">이다</DefinitionPopup> and&nbsp;
-            <DefinitionPopup q="26878">아니다</DefinitionPopup> are both
-            conjugated irregularly in the&nbsp;
+            <E q="86232">이다</E> and&nbsp;
+            <E q="26878">아니다</E> are both conjugated irregularly in the&nbsp;
             <Anchor to={TopicRoute.politeSpeech}>polite</Anchor>
             &nbsp;and&nbsp;
             <Anchor to={TopicRoute.intimateSpeech}>intimate</Anchor>
@@ -55,13 +54,13 @@ export function IrregularPredicate() {
               <Anchor to={TopicRoute.intimateSpeech}>
                 {t("Intimate Speech Level")}
               </Anchor>
-              <DefinitionPopup q="92101">이다</DefinitionPopup>
+              <E q="86232">이다</E>
               <span>이에요</span>
               <span>이야</span>
-              <DefinitionPopup q="92101">이다</DefinitionPopup>
+              <E q="86232">이다</E>
               <span>예요</span>
               <span>야</span>
-              <DefinitionPopup q="26878">아니다</DefinitionPopup>
+              <E q="26878">아니다</E>
               <span>아니에요</span>
               <span>아니야</span>
             </Table>
@@ -83,7 +82,7 @@ export function IrregularPredicate() {
               <Anchor to={TopicRoute.intimateSpeech}>
                 {t("Intimate Imperative")}
               </Anchor>
-              <DefinitionPopup q="69296">말다</DefinitionPopup>
+              <E q="69296">말다</E>
               <span>{t("마요 or 말아요")}</span>
               <span>마</span>
             </Table>
@@ -100,12 +99,12 @@ export function IrregularPredicate() {
             <span>{t("Predicate")}</span>
             <span>{t("Conjugation")}</span>
             <span>{t("Irregular")}</span>
-            <DefinitionPopup q="69471">묻다</DefinitionPopup>
+            <E q="69471">묻다</E>
             <span>물어</span>
-            <span>yes</span>
-            <DefinitionPopup q="57289">닫다</DefinitionPopup>
+            <span>{t("yes")}</span>
+            <E q="57289">닫다</E>
             <span>닫아</span>
-            <span>no</span>
+            <span>{t("no")}</span>
           </Section>
         </Section>
       </Section>
@@ -118,12 +117,12 @@ export function IrregularPredicate() {
           <span>{t("Predicate")}</span>
           <span>{t("Conjugation")}</span>
           <span>{t("Irregular")}</span>
-          <DefinitionPopup q="71290">아름답다</DefinitionPopup>
+          <E q="71290">아름답다</E>
           <span>아름다워</span>
-          <span>yes</span>
-          <DefinitionPopup q="17174">입다</DefinitionPopup>
+          <span>{t("yes")}</span>
+          <E q="17174">입다</E>
           <span>입어</span>
-          <span>no</span>
+          <span>{t("no")}</span>
         </Section>
       </Section>
       <SectionTitle>{t("ㅅ Irregular Predicates")}</SectionTitle>
@@ -135,12 +134,12 @@ export function IrregularPredicate() {
           <span>{t("Predicate")}</span>
           <span>{t("Conjugation")}</span>
           <span>{t("Irregular")}</span>
-          <DefinitionPopup q="62354">낫다</DefinitionPopup>
+          <E q="62354">낫다</E>
           <span>나아요</span>
-          <span>yes</span>
-          <DefinitionPopup q="71461">웃다</DefinitionPopup>
+          <span>{t("yes")}</span>
+          <E q="71461">웃다</E>
           <span>웃어요</span>
-          <span>no</span>
+          <span>{t("no")}</span>
         </Section>
       </Section>
       <SectionTitle>{t("ㅎ Irregular Predicates")}</SectionTitle>
@@ -152,12 +151,12 @@ export function IrregularPredicate() {
           <span>{t("Predicate")}</span>
           <span>{t("Conjugation")}</span>
           <span>{t("Irregular")}</span>
-          <DefinitionPopup q="71157">이렇다</DefinitionPopup>
+          <E q="71157">이렇다</E>
           <span>이래요</span>
-          <span>yes</span>
-          <DefinitionPopup q="79033">좋다</DefinitionPopup>
+          <span>{t("yes")}</span>
+          <E q="79033">좋다</E>
           <span>좋아요</span>
-          <span>no</span>
+          <span>{t("no")}</span>
         </Section>
       </Section>
       <SectionTitle>{t("르 Irregular Predicates")}</SectionTitle>
@@ -171,15 +170,15 @@ export function IrregularPredicate() {
           <span>{t("Predicate")}</span>
           <span>{t("Conjugation")}</span>
           <span>{t("Irregular")}</span>
-          <DefinitionPopup q="19935">고르다</DefinitionPopup>
+          <E q="19935">고르다</E>
           <span>골라요</span>
-          <span>yes</span>
-          <DefinitionPopup q="25022">저지르다</DefinitionPopup>
+          <span>{t("yes")}</span>
+          <E q="25022">저지르다</E>
           <span>저질러요</span>
-          <span>yes</span>
-          <DefinitionPopup q="64547">따르다</DefinitionPopup>
+          <span>{t("yes")}</span>
+          <E q="64547">따르다</E>
           <span>따라요</span>
-          <span>no</span>
+          <span>{t("no")}</span>
         </Section>
       </Section>
       <SectionTitle>{t("ㄹ Irregular Predicates")}</SectionTitle>
@@ -192,16 +191,16 @@ export function IrregularPredicate() {
         <Section styleName="column-table-2">
           <span>{t("Predicate")}</span>
           <span>{t("Conjugation")}</span>
-          <DefinitionPopup q="60317">만들다</DefinitionPopup>
+          <E q="60317">만들다</E>
           <div>
-            <DefinitionPopup q="60317">만드</DefinitionPopup>
-            <DefinitionPopup q="85037">는다</DefinitionPopup>
+            <E q="60317">만드</E>
+            <E q="85037">는다</E>
           </div>
-          <DefinitionPopup q="69579">살다</DefinitionPopup>
+          <E q="69579">살다</E>
           <div>
-            <DefinitionPopup q="69579">사</DefinitionPopup>
-            <DefinitionPopup q="80330">세</DefinitionPopup>
-            <DefinitionPopup q="80330">요</DefinitionPopup>
+            <E q="69579">사</E>
+            <E q="80330">세</E>
+            <E q="80330">요</E>
           </div>
         </Section>
       </Section>
@@ -216,9 +215,9 @@ export function IrregularPredicate() {
       <Section styleName="column-table-2">
         <span>{t("Predicate")}</span>
         <span>{t("Conjugation")}</span>
-        <DefinitionPopup q="89697">예쁘다</DefinitionPopup>
+        <E q="89697">예쁘다</E>
         <span>예뻐</span>
-        <DefinitionPopup q="18396">고프다</DefinitionPopup>
+        <E q="18396">고프다</E>
         <span>고파</span>
       </Section>
     </>

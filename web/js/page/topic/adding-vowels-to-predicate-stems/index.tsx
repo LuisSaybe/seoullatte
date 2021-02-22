@@ -3,7 +3,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 import { Anchor } from "web/js/component/anchor";
 import { Section } from "web/js/component/section";
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { SectionTitle } from "web/js/component/section-title";
 import { Subsection } from "web/js/component/subsection";
 import { useNavigateToHash } from "web/js/hook/useNavigateToHash";
@@ -39,8 +39,8 @@ export function AddingVowelsToPredicateStems() {
         )}
       </Section>
       <Section>
-        Example predicate:&nbsp;
-        <DefinitionPopup q="64743">바라보다</DefinitionPopup>
+        {t("Example predicate:")}&nbsp;
+        <E q="64743">바라보다</E>
       </Section>
       <Section>
         {t(
@@ -56,24 +56,24 @@ export function AddingVowelsToPredicateStems() {
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="60931">나</DefinitionPopup>
-            <DefinitionPopup q="85764">를</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="64743">보라봐</DefinitionPopup>
-            <DefinitionPopup q="80220">서</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="32539">긴장돼</DefinitionPopup>
-            <DefinitionPopup q="77247" senseIndexes={[2]}>
+            <E q="60931">나</E>
+            <E q="85764">를</E>&nbsp;
+            <E q="64743">보라봐</E>
+            <E q="80220">서</E>&nbsp;
+            <E q="32539">긴장돼</E>
+            <E q="77247" senseIndexes={[2]}>
               졌
-            </DefinitionPopup>
-            <DefinitionPopup q="86094">어</DefinitionPopup>
+            </E>
+            <E q="86094">어</E>
           </div>
           <UtteranceButton text="나를 보라봐서 긴장돼졌어">
             나를 보라봐서 긴장돼졌어
           </UtteranceButton>
-          <i>(They) stared at me so I became nervous.</i>
+          <i>{t("(They) stared at me so I became nervous.")}</i>
         </DialogGrid>
       </Section>
       <Section>
-        Example predicate: <DefinitionPopup q="66248">바쁘다</DefinitionPopup>
+        Example predicate: <E q="66248">바쁘다</E>
       </Section>
       <Section>
         {t("First, we apply any irregular rules to 바쁘다.")}
@@ -97,14 +97,14 @@ export function AddingVowelsToPredicateStems() {
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="15982">먹고살</DefinitionPopup>
-            <DefinitionPopup q="84811">기에</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="66248">바빠</DefinitionPopup>
+            <E q="15982">먹고살</E>
+            <E q="84811">기에</E>&nbsp;
+            <E q="66248">바빠</E>
           </div>
           <UtteranceButton text="먹고살기에 바빠">
             먹고 살기에 바빠.
           </UtteranceButton>
-          <i>(I'm) busy making ends meet.</i>
+          <i>{t("(I'm) busy making ends meet.")}</i>
         </DialogGrid>
       </Section>
       <Section>
@@ -119,21 +119,19 @@ export function AddingVowelsToPredicateStems() {
             {t("The letter may be added as a new syllable 어 or 아.")}
           </Section>
           <Subsection>
-            <DefinitionPopup q="58272">먹다</DefinitionPopup> + (ㅓ or ㅏ) =
-            먹어
+            <E q="58272">먹다</E> + (ㅓ or ㅏ) = 먹어
           </Subsection>
           <Section>
             {t("The final vowel (if any) may change to another vowel.")}
           </Section>
           <Subsection>
-            <DefinitionPopup q="65172">쓰다</DefinitionPopup> + (ㅓ or ㅏ) = 써
+            <E q="65172">쓰다</E> + (ㅓ or ㅏ) = 써
           </Subsection>
           <Section>
             {t("Letters may be removed and added to the stem.")}
           </Section>
           <Subsection>
-            <DefinitionPopup q="57304">부르다</DefinitionPopup> + (ㅓ or ㅏ) =
-            불러
+            <E q="57304">부르다</E> + (ㅓ or ㅏ) = 불러
           </Subsection>
           <Section>{t("The letter may not be added at all.")}</Section>
           <Subsection>가다 + (ㅓ or ㅏ) = 가</Subsection>
@@ -144,33 +142,33 @@ export function AddingVowelsToPredicateStems() {
         <div styleName="table">
           <span>Predicate</span>
           <span>Modified Stem</span>
-          <DefinitionPopup q="67048">어울리다</DefinitionPopup>
+          <E q="67048">어울리다</E>
           <span>어울려</span>
-          <DefinitionPopup q="73277">하다</DefinitionPopup>
+          <E q="73277">하다</E>
           <span>해</span>
-          <DefinitionPopup q="89858" senseIndexes={[1]}>
+          <E q="89858" senseIndexes={[1]}>
             되다
-          </DefinitionPopup>
+          </E>
           <span>돼</span>
-          <DefinitionPopup q="73274">하얗다</DefinitionPopup>
+          <E q="73274">하얗다</E>
           <span>하얘</span>
-          <DefinitionPopup q="66315">이루다</DefinitionPopup>
+          <E q="66315">이루다</E>
           <span>이루어</span>
-          <DefinitionPopup q="62354">낫다</DefinitionPopup>
+          <E q="62354">낫다</E>
           <span>나아</span>
-          <DefinitionPopup q="70482">어떻다</DefinitionPopup>
+          <E q="70482">어떻다</E>
           <span>어때</span>
-          <DefinitionPopup q="62264">기다리다</DefinitionPopup>
+          <E q="62264">기다리다</E>
           <span>기다려</span>
-          <DefinitionPopup q="65172">쓰다</DefinitionPopup>
+          <E q="65172">쓰다</E>
           <span>써</span>
-          <DefinitionPopup q="73443">끄다</DefinitionPopup>
+          <E q="73443">끄다</E>
           <span>꺼</span>
-          <DefinitionPopup senseIndexes={[1]} q="73270">
+          <E senseIndexes={[1]} q="73270">
             피다
-          </DefinitionPopup>
+          </E>
           <span>피어</span>
-          <DefinitionPopup q="27500">가다</DefinitionPopup>
+          <E q="27500">가다</E>
           <span>가</span>
         </div>
       </Section>

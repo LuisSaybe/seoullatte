@@ -2,7 +2,7 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { Anchor } from "web/js/component/anchor";
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
 import { Table } from "web/js/component/table";
 import { TopicRoute } from "web/js/interface/route";
@@ -40,41 +40,41 @@ export function Determiner() {
           <strong>{t("Determiner")}</strong>
           <strong>{t("Type")}</strong>
           <strong>{t("Example")}</strong>
-          <DefinitionPopup q="17884" senseIndexes={[2]}>
+          <E q="17884" senseIndexes={[2]}>
             새
-          </DefinitionPopup>
-          <span>delimiter</span>
+          </E>
+          <span>{t("delimiter")}</span>
           <div>
-            <DefinitionPopup q="17884" senseIndexes={[2]}>
+            <E q="17884" senseIndexes={[2]}>
               새
-            </DefinitionPopup>
+            </E>
             &nbsp;
-            <DefinitionPopup q="30213">신발</DefinitionPopup>
+            <E q="30213">신발</E>
           </div>
-          <DefinitionPopup q="73278">한</DefinitionPopup>
-          <span>number</span>
+          <E q="73278">한</E>
+          <span>{t("number")}</span>
           <div>
-            <DefinitionPopup q="73278">한</DefinitionPopup>
+            <E q="73278">한</E>
             &nbsp;
-            <DefinitionPopup q="26846" senseIndexes={[1]}>
+            <E q="26846" senseIndexes={[1]}>
               번
-            </DefinitionPopup>
+            </E>
           </div>
-          <DefinitionPopup q="71214">저</DefinitionPopup>
-          <span>demonstrative</span>
+          <E q="71214">저</E>
+          <span>{t("demonstrative")}</span>
           <div>
-            <DefinitionPopup q="71214">저</DefinitionPopup>
+            <E q="71214">저</E>
             &nbsp;
-            <DefinitionPopup q="29596">식사</DefinitionPopup>
+            <E q="29596">식사</E>
           </div>
-          <DefinitionPopup q="66237">무순</DefinitionPopup>
-          <span>question word</span>
+          <E q="66237">무순</E>
+          <span>{t("question word")}</span>
           <div>
-            <DefinitionPopup q="66237">무순</DefinitionPopup>
+            <E q="66237">무순</E>
             &nbsp;
-            <DefinitionPopup q="27260" senseIndexes={[1]}>
+            <E q="27260" senseIndexes={[1]}>
               말
-            </DefinitionPopup>
+            </E>
           </div>
         </Table>
       </Section>

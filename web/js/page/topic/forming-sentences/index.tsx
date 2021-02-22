@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
@@ -37,15 +37,15 @@ export function FormingSentences() {
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="56428">바닷가</DefinitionPopup>
-            <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="71290">아름답</DefinitionPopup>
-            <DefinitionPopup q="85041">다</DefinitionPopup>
+            <E q="56428">바닷가</E>
+            <E q="66341">가</E>&nbsp;
+            <E q="71290">아름답</E>
+            <E q="85041">다</E>
           </div>
           <UtteranceButton text="바닷가가 아름답다">
             바닷가가 아름답다
           </UtteranceButton>
-          <i>The beach is beautiful.</i>
+          <i>{t("The beach is beautiful.")}</i>
         </DialogGrid>
       </Section>
       <Section>
@@ -56,12 +56,12 @@ export function FormingSentences() {
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="75821">제</DefinitionPopup>
-            <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="62683">밥</DefinitionPopup>
-            <DefinitionPopup q="69058">을</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="58272">먹</DefinitionPopup>
-            <DefinitionPopup q="86571">어요</DefinitionPopup>
+            <E q="75821">제</E>
+            <E q="66341">가</E>&nbsp;
+            <E q="62683">밥</E>
+            <E q="69058">을</E>&nbsp;
+            <E q="58272">먹</E>
+            <E q="86571">어요</E>
           </div>
           <UtteranceButton text="제가 밥을 먹어요">
             제가 밥을 먹어요
@@ -81,10 +81,10 @@ export function FormingSentences() {
         <Section styleName="dialog-grid">
           <div>
             덕수{t(":")}&nbsp; 선미
-            <DefinitionPopup q="85851">는</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="58272">먹</DefinitionPopup>
-            <DefinitionPopup q="68719">었</DefinitionPopup>
-            <DefinitionPopup q="86571">어요</DefinitionPopup>
+            <E q="85851">는</E>&nbsp;
+            <E q="58272">먹</E>
+            <E q="68719">었</E>
+            <E q="86571">어요</E>
             {t("?")}
           </div>
           <UtteranceButton text="신선미는 먹었어요?" />
@@ -92,12 +92,12 @@ export function FormingSentences() {
           <span></span>
           <div>
             선미{t(":")}&nbsp;
-            <DefinitionPopup q="71372">안</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="58272">먹</DefinitionPopup>
-            <DefinitionPopup q="68719">었</DefinitionPopup>
-            <DefinitionPopup q="86571">어요</DefinitionPopup>.&nbsp;
-            <DefinitionPopup q="29316">배고파</DefinitionPopup>
-            <DefinitionPopup q="86116">요</DefinitionPopup>.
+            <E q="71372">안</E>&nbsp;
+            <E q="58272">먹</E>
+            <E q="68719">었</E>
+            <E q="86571">어요</E>.&nbsp;
+            <E q="29316">배고파</E>
+            <E q="86116">요</E>.
           </div>
           <UtteranceButton text="안 먹었어요. 배고파요." />
           <i>{t("Sunmi: (I) have not eaten. (I) am hungry.")}</i>

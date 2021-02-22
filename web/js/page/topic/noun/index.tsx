@@ -6,7 +6,7 @@ import { useEnglishVoice } from "web/js/hook/useEnglishVoice";
 import { useFrenchVoice } from "web/js/hook/useFrenchVoice";
 import { useGermanVoice } from "web/js/hook/useGermanVoice";
 
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
 import { Table } from "web/js/component/table";
 import { TopicTitleMedium } from "web/js/component/topic-title-medium";
@@ -44,15 +44,15 @@ export function Noun() {
           <Table columns={2}>
             <span>{t("written in 한글")}</span>
             <span>{t("written in Chinese")}</span>
-            <DefinitionPopup q="63663">질문</DefinitionPopup>
+            <E q="63663">질문</E>
             <Utterance voice={chineseVoice} text="質問">
               質問
             </Utterance>
-            <DefinitionPopup q="40295">도서관</DefinitionPopup>
+            <E q="40295">도서관</E>
             <Utterance voice={chineseVoice} text="图书馆">
               图书馆
             </Utterance>
-            <DefinitionPopup q="65504">동</DefinitionPopup>
+            <E q="65504">동</E>
             <Utterance voice={chineseVoice} text="東">
               冬
             </Utterance>
@@ -63,11 +63,11 @@ export function Noun() {
           <Table columns={2}>
             <span>{t("written in 한글")}</span>
             <span>{t("written in 한자")}</span>
-            <DefinitionPopup q="64367">겨울</DefinitionPopup>
+            <E q="64367">겨울</E>
             <Utterance text="겨울">冬</Utterance>
-            <DefinitionPopup q="27289">거북</DefinitionPopup>
+            <E q="27289">거북</E>
             <Utterance text="거북">龜</Utterance>
-            <DefinitionPopup q="26802">곧</DefinitionPopup>
+            <E q="26802">곧</E>
             <Utterance text="곧">卽</Utterance>
           </Table>
         </Section>
@@ -76,15 +76,15 @@ export function Noun() {
           <Table columns={2}>
             <span>{t("written in 한글")}</span>
             <span>{t("Corresponding foreign word")}</span>
-            <DefinitionPopup q="24506">아르바이트</DefinitionPopup>
+            <E q="24506">아르바이트</E>
             <Utterance voice={germanVoice} text="arbeit">
               arbeit
             </Utterance>
-            <DefinitionPopup q="51329">망토</DefinitionPopup>
+            <E q="51329">망토</E>
             <Utterance voice={frenchVoice} text="monteau">
               monteau
             </Utterance>
-            <DefinitionPopup q="72155">치즈</DefinitionPopup>
+            <E q="72155">치즈</E>
             <Utterance voice={englishVoice} text="cheese">
               cheese
             </Utterance>

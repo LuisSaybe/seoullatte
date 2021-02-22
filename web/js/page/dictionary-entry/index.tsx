@@ -16,8 +16,8 @@ import { EntryWordGrade } from "web/js/component/entry-word-grade";
 import { KoreaPartOfSpeech } from "web/js/interface/korean";
 import { TeachSVG } from "web/js/component/teacher-svg";
 import { Section } from "web/js/component/section";
-import "./style.scss";
 import { Conjugations } from "web/js/component/conjugations";
+import "./style.scss";
 
 export function DictionaryEntry() {
   const { t } = useTranslation();
@@ -100,7 +100,9 @@ export function DictionaryEntry() {
           <meta property="og:url" content={window.location.href} />
           <meta
             property="og:description"
-            content={t(`Definition of ${entry.getDictionaryForm()}`)}
+            content={t(`Definition of {{word}}`, {
+              word: entry.getDictionaryForm(),
+            })}
           />
         </Helmet>
       </>

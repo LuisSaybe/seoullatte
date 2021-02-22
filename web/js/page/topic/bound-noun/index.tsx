@@ -4,7 +4,7 @@ import { Trans, useTranslation } from "react-i18next";
 import { Anchor } from "web/js/component/anchor";
 import { Section } from "web/js/component/section";
 import { ArticleTitle } from "web/js/component/article-title";
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { Table } from "web/js/component/table";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
@@ -32,35 +32,35 @@ export function BoundNoun() {
         <Table>
           <strong>{t("Bound noun")}</strong>
           <strong>{t("Example")}</strong>
-          <DefinitionPopup q="62835">것</DefinitionPopup>
+          <E q="62835">것</E>
           <div>
-            <DefinitionPopup q="73277">하</DefinitionPopup>
-            <DefinitionPopup q="85853">는</DefinitionPopup>
+            <E q="73277">하</E>
+            <E q="85853">는</E>
             &nbsp;
-            <DefinitionPopup q="62835">것</DefinitionPopup>
+            <E q="62835">것</E>
           </div>
-          <DefinitionPopup q="15615">수</DefinitionPopup>
+          <E q="15615">수</E>
           <div>
-            <DefinitionPopup q="58272">먹</DefinitionPopup>
-            <DefinitionPopup q="69058">을</DefinitionPopup>
+            <E q="58272">먹</E>
+            <E q="69058">을</E>
             &nbsp;
-            <DefinitionPopup q="15615">수</DefinitionPopup>
+            <E q="15615">수</E>
           </div>
-          <DefinitionPopup q="74123" senseIndexes={[3]}>
+          <E q="74123" senseIndexes={[3]}>
             때
-          </DefinitionPopup>
+          </E>
           <div>
-            <DefinitionPopup q="43883">그</DefinitionPopup>
+            <E q="43883">그</E>
             &nbsp;
-            <DefinitionPopup q="74123" senseIndexes={[3]}>
+            <E q="74123" senseIndexes={[3]}>
               때
-            </DefinitionPopup>
+            </E>
           </div>
-          <DefinitionPopup q="71232">적</DefinitionPopup>
+          <E q="71232">적</E>
           <div>
-            <DefinitionPopup q="27500">간</DefinitionPopup>
+            <E q="27500">간</E>
             &nbsp;
-            <DefinitionPopup q="71232">적</DefinitionPopup>
+            <E q="71232">적</E>
           </div>
         </Table>
       </Section>

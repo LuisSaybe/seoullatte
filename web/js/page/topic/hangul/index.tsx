@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Trans } from "react-i18next";
 
 import { Section } from "web/js/component/section";
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import "./style.scss";
 
 export function Hangul() {
@@ -14,18 +14,18 @@ export function Hangul() {
       <Section>
         <Trans>
           The modern Korean writing system is called&nbsp;
-          <DefinitionPopup q="91525">한글</DefinitionPopup> in South Korea while
-          the name is <DefinitionPopup q="67949">조선</DefinitionPopup>
-          <DefinitionPopup q="59226">글</DefinitionPopup> in North Korea.
+          <E q="91525">한글</E> in South Korea while the name is{" "}
+          <E q="67949">조선</E>
+          <E q="59226">글</E> in North Korea.
         </Trans>
         &nbsp;
         <Trans>
           The writing system was introduced and promoted in 1446 CE by Sejong
           the Great. The original name was&nbsp;
-          <DefinitionPopup q="69716">훈민정음</DefinitionPopup>. Prior to the
-          widespread usage of 한글,&nbsp;
-          <DefinitionPopup q="72461">한자</DefinitionPopup>, a system composed
-          of Chinese characters was used to write Korean language.
+          <E q="69716">훈민정음</E>. Prior to the widespread usage of
+          한글,&nbsp;
+          <E q="72461">한자</E>, a system composed of Chinese characters was
+          used to write Korean language.
         </Trans>
       </Section>
       <Section>
@@ -55,9 +55,9 @@ export function Hangul() {
         ].map(([character, name, q], index) => (
           <div key={index}>
             <span styleName="character consonant">{character}</span>
-            <DefinitionPopup q={q} styleName="character">
+            <E q={q} styleName="character">
               {name}
-            </DefinitionPopup>
+            </E>
           </div>
         ))}
       </Section>
@@ -84,9 +84,9 @@ export function Hangul() {
           ["ㅞ", "68863"],
           ["ㅢ", "68868"],
         ].map(([character, q]) => (
-          <DefinitionPopup q={q} key={q} styleName="character">
+          <E q={q} key={q} styleName="character">
             {character}
-          </DefinitionPopup>
+          </E>
         ))}
       </Section>
     </>

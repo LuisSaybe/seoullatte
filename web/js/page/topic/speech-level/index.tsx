@@ -5,7 +5,7 @@ import { TopicRoute } from "web/js/interface/route";
 
 import { Anchor } from "web/js/component/anchor";
 import { Section } from "web/js/component/section";
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { TopicTitleMedium } from "web/js/component/topic-title-medium";
 import "./style.scss";
 
@@ -32,7 +32,7 @@ export function SpeechLevel() {
         <TopicTitleMedium>{t("The Deferential Speech level")}</TopicTitleMedium>
         <div>
           <strong>{t("Korean Name")}</strong>:&nbsp;
-          <DefinitionPopup q="84623">합쇼체</DefinitionPopup>
+          <E q="84623">합쇼체</E>
         </div>
         {t(
           "The deferential speech level is the highest of the commonly used speech levels in Korean langauge. This speech level is used in highly formal situations, fixed formal expressions, public annnouncements or in social situations in which high deference is communicated to the listener.",
@@ -42,7 +42,7 @@ export function SpeechLevel() {
         <TopicTitleMedium>{t("The Polite Speech level")}</TopicTitleMedium>
         <div>
           <strong>{t("Korean Name")}</strong>:&nbsp;
-          <DefinitionPopup q="84691">해요체</DefinitionPopup>
+          <E q="84691">해요체</E>
         </div>
         {t(
           "The polite speech level is the most common speech level used to communicate between strangers.",
@@ -52,7 +52,7 @@ export function SpeechLevel() {
         <TopicTitleMedium>{t("The Intimate Speech Level")}</TopicTitleMedium>
         <div>
           <strong>{t("Korean Name")}</strong>:&nbsp;
-          <DefinitionPopup q="84914">해체</DefinitionPopup>
+          <E q="84914">해체</E>
         </div>
         {t(
           "The intimate speech level is often used between close friends or when the speaker is speaking to children. When neither of these two cases are true, this speech level may be used to belittle or disrespect the listener.",
@@ -62,13 +62,13 @@ export function SpeechLevel() {
         <TopicTitleMedium>{t("The Plain Speech Level")}</TopicTitleMedium>
         <div>
           <strong>{t("Korean Name")}</strong>:&nbsp;
-          <DefinitionPopup q="85165">해라체</DefinitionPopup>
+          <E q="85165">해라체</E>
         </div>
         {t("The plain speech level is used in specific cases.")}
-        <div>&bull;&nbsp;In journal, book or magazine writing</div>
-        <div>&bull;&nbsp;Indirect quotations</div>
-        <div>&bull;&nbsp;Instructional writing</div>
-        <div>&bull;&nbsp;Exclamations</div>
+        <div>&bull;&nbsp;{t("In journal, book or magazine writing")}</div>
+        <div>&bull;&nbsp;{t("Indirect quotations")}</div>
+        <div>&bull;&nbsp;{t("Instructional writing")}</div>
+        <div>&bull;&nbsp;{t("Exclamations")}</div>
       </Section>
     </>
   );

@@ -21,7 +21,9 @@ module.exports = {
       component: "Trans",
       defaultsKey: "defaults",
       extensions: [".tsx"],
-      fallbackKey: (_, value) => value,
+      fallbackKey: (_, value) => {
+        return value;
+      },
     },
     resource: {
       loadPath: "i18n/{{lng}}/{{ns}}.json",

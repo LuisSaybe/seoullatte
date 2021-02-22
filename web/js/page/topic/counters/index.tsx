@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { Section } from "web/js/component/section";
 import { UtteranceButton } from "web/js/component/utterance-button";
@@ -37,8 +37,8 @@ export function Counters() {
         {t("Certain numbers are modified when used with a counter.")}
       </Section>
       <Section styleName="table-counter">
-        <span>Number</span>
-        <span>with counter</span>
+        <span>{t("Number")}</span>
+        <span>{t("with counter")}</span>
         <span>하나</span>
         <span>한</span>
         <span>둘</span>
@@ -58,19 +58,19 @@ export function Counters() {
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="81672">소주</DefinitionPopup>
+            <E q="81672">소주</E>
             &nbsp;
-            <DefinitionPopup q="71458">두</DefinitionPopup>
+            <E q="71458">두</E>
             &nbsp;
-            <DefinitionPopup q="62777">병</DefinitionPopup>
+            <E q="62777">병</E>
           </div>
           <UtteranceButton text="소주 두 병" />
-          <i>2 bottles of soju</i>
+          <i>{t("2 bottles of soju")}</i>
           <div />
           <div>
-            <DefinitionPopup q="17822">스무</DefinitionPopup>
+            <E q="17822">스무</E>
             &nbsp;
-            <DefinitionPopup q="72469">해</DefinitionPopup>
+            <E q="72469">해</E>
           </div>
           <UtteranceButton text="스무 해" />
           <i>20 years</i>
@@ -83,17 +83,17 @@ export function Counters() {
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="17284">여덟</DefinitionPopup>
+            <E q="17284">여덟</E>
             &nbsp;
-            <DefinitionPopup q="25581" senseIndexes={[2]}>
+            <E q="25581" senseIndexes={[2]}>
               곡
-            </DefinitionPopup>
-            <DefinitionPopup q="86290">의</DefinitionPopup>
+            </E>
+            <E q="86290">의</E>
             &nbsp;
-            <DefinitionPopup q="20195">노래</DefinitionPopup>
+            <E q="20195">노래</E>
           </div>
           <UtteranceButton text="여덟 곡의 노래" />
-          <i>8 pieces of music</i>
+          <i>{t("8 pieces of music")}</i>
         </DialogGrid>
       </Section>
       <Section>{t("Below we show examples of common counters.")}</Section>
@@ -101,43 +101,43 @@ export function Counters() {
         <DialogGrid>
           <div>
             이십사&nbsp;
-            <DefinitionPopup q="17304">개월</DefinitionPopup>
+            <E q="17304">개월</E>
           </div>
           <UtteranceButton text="이십사 개월" />
-          <i>24 months</i>
+          <i>{t("24 months")}</i>
           <div />
           <div>
-            <DefinitionPopup q="58161">사람</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="58111">다섯</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="70812">명</DefinitionPopup>
+            <E q="58161">사람</E>&nbsp;
+            <E q="58111">다섯</E>&nbsp;
+            <E q="70812">명</E>
           </div>
           <UtteranceButton text="사람 다섯 명" />
-          <i>5 people</i>
+          <i>{t("5 people")}</i>
           <div />
           <div>
-            <DefinitionPopup q="27303">거북이</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="58111">한</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="70812">마리</DefinitionPopup>
+            <E q="27303">거북이</E>&nbsp;
+            <E q="58111">한</E>&nbsp;
+            <E q="70812">마리</E>
           </div>
           <UtteranceButton text="거북이 한 마리" />
-          <i>1 turtle</i>
+          <i>{t("1 turtle")}</i>
           <div />
           <div>
             백삼십오&nbsp;
-            <DefinitionPopup q="20264" senseIndexes={[3]}>
+            <E q="20264" senseIndexes={[3]}>
               충
-            </DefinitionPopup>
+            </E>
           </div>
           <UtteranceButton text="백삼십오 충" />
-          <i>135 floors</i>
+          <i>{t("135 floors")}</i>
           <div />
           <div>
-            <DefinitionPopup q="72167">컴퓨터</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="67805">열</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="22784">개</DefinitionPopup>
+            <E q="72167">컴퓨터</E>&nbsp;
+            <E q="67805">열</E>&nbsp;
+            <E q="22784">개</E>
           </div>
           <UtteranceButton text="컴퓨터 열 개" />
-          <i>10 computers</i>
+          <i>{t("10 computers")}</i>
           <div />
         </DialogGrid>
       </Section>

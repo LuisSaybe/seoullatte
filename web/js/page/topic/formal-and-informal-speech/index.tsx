@@ -3,7 +3,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 import { Section } from "web/js/component/section";
 import { ArticleTitle } from "web/js/component/article-title";
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import "./style.scss";
 
 export function FormalAndInformalSpeech() {
@@ -25,8 +25,7 @@ export function FormalAndInformalSpeech() {
       </Section>
       <Section>
         <Trans>
-          <DefinitionPopup q="15843">반말</DefinitionPopup> is a type of speech
-          used in one of two cases.
+          <E q="15843">반말</E> is a type of speech used in one of two cases.
         </Trans>
       </Section>
       <Section>
@@ -46,8 +45,8 @@ export function FormalAndInformalSpeech() {
       </Section>
       <Section>
         <Trans>
-          <DefinitionPopup q="24607">존댓말</DefinitionPopup> is a form used in
-          referring to a person or thing in order to convey respect.
+          <E q="24607">존댓말</E> is a form used in referring to a person or
+          thing in order to convey respect.
         </Trans>
       </Section>
     </>

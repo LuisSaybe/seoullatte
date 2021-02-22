@@ -6,12 +6,9 @@ interface State {
 
 const initialState: State = {
   openElements: new Set(),
-}
+};
 
-export function definitionPopup(
-  state = initialState,
-  action,
-): State {
+export function definitionPopup(state = initialState, action): State {
   switch (action.type) {
     case Action.setRefOpen: {
       const openElements = new Set(state.openElements);
@@ -37,5 +34,5 @@ export function definitionPopup(
 
     default:
       return state;
-    }
+  }
 }

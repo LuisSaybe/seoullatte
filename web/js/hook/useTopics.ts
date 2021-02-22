@@ -152,6 +152,7 @@ export function useTopics(): Topic[] {
           76235 /*으냐*/,
           76426 /*니*/,
           85037 /*는다*/,
+          76230 /*냐*/,
         ],
         relatedPartOfSpeech: [],
       },
@@ -206,7 +207,7 @@ export function useTopics(): Topic[] {
         description: t("Learn about the predicate 이다 and 아니다"),
         name: t("이다 and 아니다"),
         paths: [TopicRoute.copular],
-        relatedEntries: [92101, 26878],
+        relatedEntries: [86232, 26878],
         relatedPartOfSpeech: [],
       },
       {

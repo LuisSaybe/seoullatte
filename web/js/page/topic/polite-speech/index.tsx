@@ -1,7 +1,7 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
 import { Anchor } from "web/js/component/anchor";
 import { ArticleTitle } from "web/js/component/article-title";
@@ -17,7 +17,7 @@ export function PoliteSpeech() {
         <Trans>
           The polite speech level is formed identically to the&nbsp;
           <Anchor to={TopicRoute.intimateSpeech}>intimate speech level</Anchor>
-          &nbsp;followed by a <DefinitionPopup q="86116">요</DefinitionPopup>.
+          &nbsp;followed by a <E q="86116">요</E>.
         </Trans>
         &nbsp;
         <Trans>
@@ -32,7 +32,7 @@ export function PoliteSpeech() {
       <Section>
         <div>
           {t("Predicate")}&nbsp;
-          <DefinitionPopup q="73443">끄다</DefinitionPopup>
+          <E q="73443">끄다</E>
         </div>
         <div>{t("1. The predicate 끄다 is irregular and becomes ㄲ")}</div>
         <div>
@@ -45,7 +45,7 @@ export function PoliteSpeech() {
       <Section>
         <div>
           {t("Predicate")}&nbsp;
-          <DefinitionPopup q="58272">먹다</DefinitionPopup>
+          <E q="58272">먹다</E>
         </div>
         <div>{t("1. The predicate 먹다 is regular and does not change.")}</div>
         <div>
@@ -58,7 +58,7 @@ export function PoliteSpeech() {
       <Section>
         <div>
           {t("Predicate")}&nbsp;
-          <DefinitionPopup q="71290">아름답다</DefinitionPopup>
+          <E q="71290">아름답다</E>
         </div>
         <div>
           {t("1. The predicate 아름답다 is irregular and becomes 아름다우.")}
@@ -73,7 +73,7 @@ export function PoliteSpeech() {
       <Section>
         <div>
           {t("Predicate")}&nbsp;
-          <DefinitionPopup q="26816">나쁘다</DefinitionPopup>
+          <E q="26816">나쁘다</E>
         </div>
         <div>{t("1. The predicate 나쁘다 is irregular and becomes 나ㅃ.")}</div>
         <div>

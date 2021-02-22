@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { Manager, Popper, Reference } from "react-popper";
 import { useDispatch, useSelector } from "react-redux";
 
-import { useEntry } from "web/js/hook/useEntry";
 import { useDidClickOnElement } from "web/js/hook/useDidClickOnElement";
 import { Definition } from "web/js/component/definition";
 import { UnstyledTextButton } from "web/js/component/unstyled-text-button";
@@ -16,7 +15,7 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
   buttonClassname?: string;
 }
 
-export function DefinitionPopup(props: Props) {
+export function E(props: Props) {
   const dispatch = useDispatch();
   const rootRef = useRef();
   const showDefinition = useSelector((state: RootState) =>

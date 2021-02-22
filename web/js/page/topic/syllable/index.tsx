@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation, Trans } from "react-i18next";
 
 import { Section } from "web/js/component/section";
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import "./style.scss";
 
 export function Syllable() {
@@ -13,8 +13,7 @@ export function Syllable() {
       <Section>
         <Trans>
           There are 5 ways in which&nbsp;
-          <DefinitionPopup q="91525">한글</DefinitionPopup> characters can
-          combine to form a syllable.
+          <E q="91525">한글</E> characters can combine to form a syllable.
         </Trans>
       </Section>
       <Section>
@@ -24,25 +23,25 @@ export function Syllable() {
       </Section>
       <Section>
         <Trans>
-          1 vowel as in <DefinitionPopup q="31635">오</DefinitionPopup>
+          1 vowel as in <E q="31635">오</E>
         </Trans>
       </Section>
       <Section>
         <Trans>
           A vowel followed by a consonant as in&nbsp;
-          <DefinitionPopup q="74890">안</DefinitionPopup>
+          <E q="74890">안</E>
         </Trans>
       </Section>
       <Section>
         <Trans>
           A consonant followed by a vowel&nbsp;
-          <DefinitionPopup q="46814">코</DefinitionPopup>
+          <E q="46814">코</E>
         </Trans>
       </Section>
       <Section>
         <Trans>
           A consonant, a vowel, and 2 consonants as in&nbsp;
-          <DefinitionPopup q="20178">값</DefinitionPopup>
+          <E q="20178">값</E>
         </Trans>
       </Section>
       <Section>

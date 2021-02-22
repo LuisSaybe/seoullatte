@@ -2,7 +2,7 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { Anchor } from "web/js/component/anchor";
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { Section } from "web/js/component/section";
 import { Subsection } from "web/js/component/subsection";
@@ -49,14 +49,14 @@ export function PastTense() {
       <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="49315">하루</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="91758">종일</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="29667">걸</DefinitionPopup>
-            <DefinitionPopup q="68719">었</DefinitionPopup>
-            <DefinitionPopup q="81522">더니</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="55175">무척</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="60291">피곤하</DefinitionPopup>
-            <DefinitionPopup q="85041">다</DefinitionPopup>
+            <E q="49315">하루</E>&nbsp;
+            <E q="91758">종일</E>&nbsp;
+            <E q="29667">걸</E>
+            <E q="68719">었</E>
+            <E q="81522">더니</E>&nbsp;
+            <E q="55175">무척</E>&nbsp;
+            <E q="60291">피곤하</E>
+            <E q="85041">다</E>
           </div>
           <UtteranceButton text="하루 종일 걸었더니 무척 피곤하다">
             하루 종일 걸었더니 무척 피곤하다
@@ -80,13 +80,13 @@ export function PastTense() {
       <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="67075">어제</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="61190">본</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="71624">영화</DefinitionPopup>
-            <DefinitionPopup q="85851">는</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="71212">재미있</DefinitionPopup>
-            <DefinitionPopup q="68719">었</DefinitionPopup>
-            <DefinitionPopup q="86094">어</DefinitionPopup>
+            <E q="67075">어제</E>&nbsp;
+            <E q="61190">본</E>&nbsp;
+            <E q="71624">영화</E>
+            <E q="85851">는</E>&nbsp;
+            <E q="71212">재미있</E>
+            <E q="68719">었</E>
+            <E q="86094">어</E>
             {t("?")}
           </div>
           <UtteranceButton text="어제 본 영화는 재미있었어?">
@@ -107,10 +107,10 @@ export function PastTense() {
       <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="61202">사무실</DefinitionPopup>
-            <DefinitionPopup q="86572">에</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="69514">왔</DefinitionPopup>
-            <DefinitionPopup q="86094">어</DefinitionPopup>
+            <E q="61202">사무실</E>
+            <E q="86572">에</E>&nbsp;
+            <E q="69514">왔</E>
+            <E q="86094">어</E>
           </div>
           <UtteranceButton text="사무실에 왔어">사무실에 왔어</UtteranceButton>
           <i>{t("I came to the office.")}</i>
@@ -121,12 +121,12 @@ export function PastTense() {
           When an additional 었 is added to the first past tense ending, the
           predicate's meaning is more remote than the recent past. For
           example,&nbsp;
-          <DefinitionPopup q="27500">갔</DefinitionPopup>
-          <DefinitionPopup q="68838">었</DefinitionPopup>
-          <DefinitionPopup q="85041">다</DefinitionPopup>&nbsp;or&nbsp;
-          <DefinitionPopup q="92101">이</DefinitionPopup>
-          <DefinitionPopup q="68838">었었</DefinitionPopup>
-          <DefinitionPopup q="86571">어요</DefinitionPopup>
+          <E q="27500">갔</E>
+          <E q="68838">었</E>
+          <E q="85041">다</E>&nbsp;or&nbsp;
+          <E q="86232">이</E>
+          <E q="68838">었었</E>
+          <E q="86571">어요</E>
         </Trans>
         &nbsp;
         {t(
@@ -137,14 +137,14 @@ export function PastTense() {
         <DialogGrid>
           <div>
             유민이
-            <DefinitionPopup q="85851">는</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="30212">중학교</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="74123">때</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="20269">키</DefinitionPopup>
-            <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="66586">컸</DefinitionPopup>
-            <DefinitionPopup q="68838">었</DefinitionPopup>
-            <DefinitionPopup q="85041">다</DefinitionPopup>
+            <E q="85851">는</E>&nbsp;
+            <E q="30212">중학교</E>&nbsp;
+            <E q="74123">때</E>&nbsp;
+            <E q="20269">키</E>
+            <E q="66341">가</E>&nbsp;
+            <E q="66586">컸</E>
+            <E q="68838">었</E>
+            <E q="85041">다</E>
           </div>
           <UtteranceButton text="유민이는 중학교 때 키가 컸었다">
             유민이는 중학교 때 키가 컸었다

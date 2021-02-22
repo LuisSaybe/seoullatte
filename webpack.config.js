@@ -53,7 +53,14 @@ module.exports = (env) => {
         {
           test: (path) => path.endsWith(".css"),
           include: /node_modules/,
-          loaders: [MiniCssExtractPlugin.loader, "css-loader"],
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+            },
+            {
+              loader: "css-loader",
+            },
+          ],
         },
         {
           test: (path) => path.endsWith(".scss"),
@@ -69,12 +76,6 @@ module.exports = (env) => {
                 modules: {
                   localIdentName: "[path]_[name]_[local]",
                 },
-              },
-            },
-            {
-              loader: "postcss-loader",
-              options: {
-                plugins: () => [require("autoprefixer")],
               },
             },
             {

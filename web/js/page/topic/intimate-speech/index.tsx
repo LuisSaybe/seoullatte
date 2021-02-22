@@ -4,7 +4,7 @@ import { Trans, useTranslation } from "react-i18next";
 import { Section } from "web/js/component/section";
 import { Anchor } from "web/js/component/anchor";
 import { ArticleTitle } from "web/js/component/article-title";
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { TopicRoute } from "web/js/interface/route";
 import "./style.scss";
 
@@ -37,7 +37,7 @@ export function IntimateSpeech() {
         <Section>
           <div>
             {t("Predicate")}&nbsp;
-            <DefinitionPopup q="73443">끄다</DefinitionPopup>
+            <E q="73443">끄다</E>
           </div>
           <div>{t("1. The predicate 끄다 is irregular and becomes ㄲ")}</div>
           <div>
@@ -50,7 +50,7 @@ export function IntimateSpeech() {
         <Section>
           <div>
             {t("Predicate")}&nbsp;
-            <DefinitionPopup q="58272">먹다</DefinitionPopup>
+            <E q="58272">먹다</E>
           </div>
           <div>
             {t("1. The predicate 먹다 is regular and does not change.")}
@@ -65,7 +65,7 @@ export function IntimateSpeech() {
         <Section>
           <div>
             {t("Predicate")}&nbsp;
-            <DefinitionPopup q="71290">아름답다</DefinitionPopup>
+            <E q="71290">아름답다</E>
           </div>
           <div>
             {t("1. The predicate 아름답다 is irregular and becomes 아름다우.")}
@@ -80,7 +80,7 @@ export function IntimateSpeech() {
         <Section>
           <div>
             {t("Predicate")}&nbsp;
-            <DefinitionPopup q="26816">나쁘다</DefinitionPopup>
+            <E q="26816">나쁘다</E>
           </div>
           <div>
             {t("1. The predicate 나쁘다 is irregular and becomes 나ㅃ.")}

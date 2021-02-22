@@ -2,7 +2,7 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { Anchor } from "web/js/component/anchor";
 
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
@@ -25,13 +25,12 @@ export function Negation() {
         {t("Some predicates are defined as the negation of another predicate.")}
         &nbsp;
         <Trans>
-          For example, <DefinitionPopup q="92101">이다</DefinitionPopup>&nbsp;
-          and&nbsp;
-          <DefinitionPopup q="26878">아니다</DefinitionPopup>.&nbsp;
-          <DefinitionPopup q="68796">있다</DefinitionPopup> and&nbsp;
-          <DefinitionPopup q="89917">없다</DefinitionPopup>.&nbsp;
-          <DefinitionPopup q="89445">알다</DefinitionPopup> and&nbsp;
-          <DefinitionPopup q="29712">모르다</DefinitionPopup>
+          For example, <E q="86232">이다</E>&nbsp; and&nbsp;
+          <E q="26878">아니다</E>.&nbsp;
+          <E q="68796">있다</E> and&nbsp;
+          <E q="89917">없다</E>.&nbsp;
+          <E q="89445">알다</E> and&nbsp;
+          <E q="29712">모르다</E>
         </Trans>
         .&nbsp;
         {t(
@@ -45,7 +44,7 @@ export function Negation() {
         {t("Compound predicates are of the form noun + 하다.")}
         &nbsp;
         <Trans>
-          For example, <DefinitionPopup q="23394">공부하다</DefinitionPopup>.
+          For example, <E q="23394">공부하다</E>.
         </Trans>
         &nbsp;
         {t(
@@ -54,22 +53,22 @@ export function Negation() {
         <Section marginSize={MarginSizeName.medium}>
           <DialogGrid>
             <div>
-              <DefinitionPopup q="36681">비</DefinitionPopup>
-              <DefinitionPopup q="66341">가</DefinitionPopup>&nbsp;
-              <DefinitionPopup q="71372">안</DefinitionPopup>&nbsp;
-              <DefinitionPopup q="69514">와</DefinitionPopup>
-              <DefinitionPopup q="80220" senseIndexes={[1]}>
+              <E q="36681">비</E>
+              <E q="66341">가</E>&nbsp;
+              <E q="71372">안</E>&nbsp;
+              <E q="69514">와</E>
+              <E q="80220" senseIndexes={[1]}>
                 서
-              </DefinitionPopup>
+              </E>
               &nbsp;
-              <DefinitionPopup q="88045">펼쳤</DefinitionPopup>
-              <DefinitionPopup q="86038">던</DefinitionPopup>&nbsp;
-              <DefinitionPopup q="71103">우산</DefinitionPopup>
-              <DefinitionPopup q="69058">을</DefinitionPopup>&nbsp;
-              <DefinitionPopup q="62539">다시</DefinitionPopup>&nbsp;
-              <DefinitionPopup q="31735">접</DefinitionPopup>
-              <DefinitionPopup q="68719">었</DefinitionPopup>
-              <DefinitionPopup q="85041">다</DefinitionPopup>
+              <E q="88045">펼쳤</E>
+              <E q="86038">던</E>&nbsp;
+              <E q="71103">우산</E>
+              <E q="69058">을</E>&nbsp;
+              <E q="62539">다시</E>&nbsp;
+              <E q="31735">접</E>
+              <E q="68719">었</E>
+              <E q="85041">다</E>
             </div>
             <UtteranceButton text="비가 안 와서 펼쳤던 우산을 다시 접었다">
               비가 안 와서 펼쳤던 우산을 다시 접었다
@@ -83,20 +82,19 @@ export function Negation() {
       </Section>
       <Section>
         <Trans>
-          The <DefinitionPopup q="72587">-지 않다</DefinitionPopup> construction
-          can also be used to negate a predicate where 지 is placed after the
-          predicate stem.
+          The <E q="72587">-지 않다</E> construction can also be used to negate
+          a predicate where 지 is placed after the predicate stem.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.medium}>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="72704">눈</DefinitionPopup>
-            <DefinitionPopup q="86355">을</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="57289">닫</DefinitionPopup>
-            <DefinitionPopup q="72587">지 않</DefinitionPopup>
-            <DefinitionPopup q="90137">겠</DefinitionPopup>
-            <DefinitionPopup q="86094">어</DefinitionPopup>
+            <E q="72704">눈</E>
+            <E q="86355">을</E>&nbsp;
+            <E q="57289">닫</E>
+            <E q="72587">지 않</E>
+            <E q="90137">겠</E>
+            <E q="86094">어</E>
           </div>
           <UtteranceButton text="눈을 닫지 않겠어">
             눈을 닫지 않겠어

@@ -19,9 +19,9 @@ export function Numbers() {
         )}
       </Section>
       <Section styleName="table">
-        <span>Korean</span>
-        <span>Sino-Korean</span>
-        <span>Arabic</span>
+        <span>{t("Korean")}</span>
+        <span>{t("Sino-Korean")}</span>
+        <span>{t("Arabic")}</span>
         <span></span>
         <span>공</span>
         <span>0</span>

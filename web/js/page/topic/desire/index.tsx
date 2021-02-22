@@ -1,7 +1,7 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-import { DefinitionPopup } from "web/js/component/definition-popup";
+import { E } from "web/js/component/definition-popup";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { Section } from "web/js/component/section";
 import { UtteranceButton } from "web/js/component/utterance-button";
@@ -16,7 +16,7 @@ export function Desire() {
         <Trans>
           Expressing desire is acheived in the by the usage of the auxiliary
           adjecive&nbsp;
-          <DefinitionPopup q="62657">싶다</DefinitionPopup>
+          <E q="62657">싶다</E>
         </Trans>
         .&nbsp;
         {t(
@@ -30,34 +30,34 @@ export function Desire() {
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="72128">초콜릿</DefinitionPopup>
-            <DefinitionPopup q="69058">을</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="49419">사</DefinitionPopup>
-            <DefinitionPopup q="75269">고 싶다</DefinitionPopup>.
+            <E q="72128">초콜릿</E>
+            <E q="69058">을</E>&nbsp;
+            <E q="49419">사</E>
+            <E q="75269">고 싶다</E>.
           </div>
           <UtteranceButton text="초콜릿을 사고 싶다">
             초콜릿을 사고 싶다
           </UtteranceButton>
-          <i>(I) want to buy chocolate.</i>
+          <i>{t("(I) want to buy chocolate.")}</i>
         </DialogGrid>
       </Section>
       <Section>
         <DialogGrid>
           <div>
-            <DefinitionPopup q="71358">집</DefinitionPopup>
-            <DefinitionPopup q="85784">으로</DefinitionPopup>&nbsp;
-            <DefinitionPopup q="66268">돌아오</DefinitionPopup>
-            <DefinitionPopup q="75269">고 싶</DefinitionPopup>
-            <DefinitionPopup q="72587">지 않</DefinitionPopup>
-            <DefinitionPopup q="86093" senseIndexes={[3]}>
+            <E q="71358">집</E>
+            <E q="85784">으로</E>&nbsp;
+            <E q="66268">돌아오</E>
+            <E q="75269">고 싶</E>
+            <E q="72587">지 않</E>
+            <E q="86093" senseIndexes={[3]}>
               아
-            </DefinitionPopup>
+            </E>
             .
           </div>
           <UtteranceButton text="집으로 돌아오고 싶지 않아">
             집으로 돌아오고 싶지 않아
           </UtteranceButton>
-          <i>(I) do not want to return to home.</i>
+          <i>{t("(I) do not want to return to home.")}</i>
         </DialogGrid>
       </Section>
     </>
