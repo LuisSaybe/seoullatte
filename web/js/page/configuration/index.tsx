@@ -10,6 +10,7 @@ import { DEFAULT_SPEAKING_RATE } from "web/js/interface/speech-synthesis";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefaultLayout } from "web/js/component/default-layout";
 import "./style.scss";
+import { Select } from "web/js/component/select";
 
 export function Configuration() {
   const dispatch = useDispatch();
@@ -70,8 +71,7 @@ export function Configuration() {
           <label styleName="label" htmlFor="display-language">
             {t("Display Language")}
           </label>
-          <select
-            styleName="select"
+          <Select
             id="display-language"
             value={language}
             onChange={onLanguageChange}
@@ -79,14 +79,13 @@ export function Configuration() {
           >
             <option value={Language.en}>{t("English")}</option>
             <option value={Language.fr}>{t("French")}</option>
-          </select>
+          </Select>
         </div>
         <div styleName="field">
           <label styleName="label" htmlFor="speaking-rate">
             {t("Text-to-Speech Speed")}
           </label>
-          <select
-            styleName="select"
+          <Select
             id="speaking-rate"
             value={speechSynthesisSettings.rate ?? DEFAULT_SPEAKING_RATE}
             onChange={onChange}
@@ -98,15 +97,14 @@ export function Configuration() {
                 {defaultRate}
               </option>
             ))}
-          </select>
+          </Select>
         </div>
         {voiceURI && (
           <div styleName="field">
             <label styleName="label" htmlFor="voice-uri">
               {t("Text-to-Speech Voice")}
             </label>
-            <select
-              styleName="label"
+            <Select
               id="voice-uri"
               value={voiceURI}
               onChange={onVoiceURIChange}
@@ -119,7 +117,7 @@ export function Configuration() {
                     {voice.name}
                   </option>
                 ))}
-            </select>
+            </Select>
           </div>
         )}
       </DefaultLayout>

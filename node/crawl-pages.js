@@ -34,9 +34,7 @@ const getContentAndURL = async (browser, language, target) => {
   return result;
 };
 
-const run = async (browser) => {
-  console.log(`Crawling ${process.env.ORIGIN}`);
-
+const run = async () => {
   for (const language of ["fr", "en"]) {
     console.log(`Writing files for language ${language}`);
 
@@ -62,7 +60,7 @@ const run = async (browser) => {
     for (const { pathname, html } of results) {
       const name =
         pathname === "/" ? `dist/index` : `dist/${pathname.substring(1)}`;
-      const suffix = language === "en" ? "" : `-${language}`;
+      const suffix = `-${language}`;
       const fileName = `${name}${suffix}.html`;
       fs.writeFileSync(fileName, html);
 

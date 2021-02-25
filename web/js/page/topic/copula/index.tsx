@@ -139,7 +139,7 @@ export function Copula() {
         <DialogGrid>
           <div>
             <E q="62818">선생님</E>,&nbsp;
-            <E q="75802">종이</E>&nbsp;
+            <E q="75802">종이</E>
             <E q="85761">로</E>&nbsp;
             <E q="15320">가려진</E>&nbsp;
             <E q="71687">이</E>

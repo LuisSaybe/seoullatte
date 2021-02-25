@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { useEntryMetaInformation } from "web/js/hook/useEntryMetaInformation";
 import { Anchor } from "web/js/component/anchor";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { useEntry } from "web/js/hook/useEntry";
@@ -28,7 +27,6 @@ export function Definition(props: Props) {
   const location = useLocation();
   const { t } = useTranslation();
   const entry = useEntry(props.q);
-  const information = useEntryMetaInformation(q);
   const error = useSelector(
     (state: RootState) => state.entityFetchState.entry[q]?.error,
   );
@@ -115,11 +113,6 @@ export function Definition(props: Props) {
   return (
     <div {...rest} styleName="root">
       {content}
-      {information?.routes.length > 0 && (
-        <Anchor styleName="article-anchor" to={information.routes[0]}>
-          go to article
-        </Anchor>
-      )}
     </div>
   );
 }
