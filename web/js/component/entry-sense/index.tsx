@@ -1,7 +1,8 @@
 import React from "react";
-
 import { useSelector } from "react-redux";
+
 import { RootState } from "web/js/redux/reducer";
+import { LanguageNames } from "web/js/interface/korean";
 import { useDictionaryTranslationLanguage } from "web/js/hook/useDictionaryTranslationLanguage";
 import "./style.scss";
 
@@ -13,40 +14,23 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 export function EntrySense(props: Props) {
   const { q, index, ...rest } = props;
   const entry = useSelector((state: RootState) => state.entry[q]);
-  const sense = entry.getSense(index);
+  const sense = entry.getSenses()[index];
   const dictionaryLanguage = useDictionaryTranslationLanguage();
-
-  if (!sense) {
-    return null;
-  }
-
-  let translationNode;
-
-  for (const translation of sense.querySelectorAll("translation") as any) {
-    if (
-      translation.querySelector("trans_lang").textContent === dictionaryLanguage
-    ) {
-      translationNode = translation;
-      break;
-    }
-  }
-
-  if (!translationNode) {
-    return null;
-  }
-
-  const word = translationNode.querySelector("trans_word");
-  const definition = translationNode.querySelector("trans_dfn");
+  const definition = sense.getDefinition(
+    dictionaryLanguage,
+    LanguageNames.english,
+  );
+  const word = sense.getWord(dictionaryLanguage, LanguageNames.english);
 
   return (
     <div {...rest}>
       {word && (
         <div>
           <span styleName="label">{index}.</span>&nbsp;
-          {word.textContent}
+          {word}
         </div>
       )}
-      {definition && <div styleName="definition">{definition.textContent}</div>}
+      {definition && <div styleName="definition">{definition}</div>}
     </div>
   );
 }

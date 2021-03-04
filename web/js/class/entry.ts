@@ -1,4 +1,5 @@
 import { LanguageNames, WordGrade } from "../interface/korean";
+import { Sense } from "./sense";
 
 export class Entry {
   public xml: Document;
@@ -12,7 +13,15 @@ export class Entry {
   }
 
   public getSenses() {
-    return this.xml.querySelectorAll(":root > item > word_info > sense_info");
+    const senses: Sense[] = [];
+
+    for (const root of this.xml.querySelectorAll(
+      ":root > item > word_info > sense_info",
+    )) {
+      senses.push(new Sense(root));
+    }
+
+    return senses;
   }
 
   public hasDisplayableWordGrade() {
@@ -50,8 +59,10 @@ export class Entry {
   }
 
   public getSense(index: number) {
-    return this.xml.querySelector(
-      `:root > item > word_info > sense_info:nth-of-type(${index})`,
+    return new Sense(
+      this.xml.querySelector(
+        `:root > item > word_info > sense_info:nth-of-type(${index})`,
+      ),
     );
   }
 

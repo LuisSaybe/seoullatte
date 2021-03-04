@@ -83,7 +83,7 @@ export function DictionaryEntry() {
         <Section>
           {Array.from(entry.getSenses()).map((_, index) => (
             <Section key={index}>
-              <EntrySense q={q} index={index + 1} />
+              <EntrySense q={q} index={index} />
             </Section>
           ))}
         </Section>

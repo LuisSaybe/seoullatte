@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -19,7 +19,6 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
   const { t } = useTranslation();
   const locations = useSelector((state: RootState) => state.location);
   const lastLocation = locations[locations.length - 2];
-  const [shouldBlurTime, setShouldBlurTime] = React.useState(null);
   const ref = useRef<HTMLInputElement>();
   const dispatch = useDispatch();
   const history = useHistory();
@@ -42,12 +41,6 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
   const onClickReturn = () => {
     dispatch(pop());
   };
-
-  useEffect(() => {
-    if (ref.current && shouldBlurTime) {
-      ref.current.blur();
-    }
-  }, [shouldBlurTime, ref.current]);
 
   return (
     <nav {...props} styleName="root">
@@ -86,7 +79,6 @@ export function Navigation(props: React.HTMLProps<HTMLElement>) {
           }}
           onSuggestionSelected={() => {
             setSearchValue("");
-            setShouldBlurTime(new Date());
           }}
           styleName="search-input-container"
         />

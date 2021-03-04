@@ -54,7 +54,7 @@ export function Endings() {
             </E>
           </div>
           <UtteranceButton text="수업이 벌써 끝났겠다" />
-          <i>Practice already ended.</i>
+          <i>{t("Practice already ended.")}</i>
         </DialogGrid>
       </Section>
       <Section>
@@ -87,7 +87,9 @@ export function Endings() {
           </div>
           <UtteranceButton text="자 다들 서 있지 말고 의자에 앉으세요" />
           <i>
-            Well, both of you do not continue standing and sit in your desk.
+            {t(
+              "Well, both of you do not continue standing and sit in your desk.",
+            )}
           </i>
         </DialogGrid>
       </Section>

@@ -60,16 +60,22 @@ export const DictionarySearchInput = React.forwardRef<HTMLInputElement, Props>(
       );
     };
     const getSuggestionValue = (suggestion) => suggestion.getTargetCode();
-    const onSuggestionsFetchRequested = ({ value }) => {
-      if (!searchedEntries) {
-        debouncedSearch(`${settings.api.url}/entry?query=${value}`);
-      }
-    };
     const renderSuggestionsContainer = ({ containerProps, children }) => {
       return (
         <div {...containerProps} children={children} aria-label={t("search")} />
       );
     };
+    const onSuggestionsFetchRequested = () => {
+      if (entries) {
+        setSuggestions(entries);
+      }
+    };
+
+    useEffect(() => {
+      if (!searchedEntries && (props.value as string).length > 0) {
+        debouncedSearch(`${settings.api.url}/entry?query=${props.value}`);
+      }
+    }, [props.value, searchedEntries]);
 
     useEffect(() => {
       setSuggestions(entries);
@@ -83,9 +89,10 @@ export const DictionarySearchInput = React.forwardRef<HTMLInputElement, Props>(
           suggestionsList: styles.suggestionsList,
           suggestionHighlighted: styles.suggestionHighlighted,
         }}
+        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+        focusInputOnSuggestionClick={false}
         onSuggestionSelected={onSuggestionSelected}
         renderSuggestionsContainer={renderSuggestionsContainer}
-        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
         suggestions={suggestions}
         onSuggestionsClearRequested={() => setSuggestions([])}
         getSuggestionValue={getSuggestionValue}

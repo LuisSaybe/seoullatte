@@ -17,7 +17,6 @@ export const SearchEntry = React.memo<Props>((props) => {
   const { q, ...rest } = props;
   const entry = useEntry(q);
   const dispatch = useDispatch();
-  const dictionaryLanguage = useDictionaryTranslationLanguage();
   const to = routes.entry(q);
   const onClick = () => {
     dispatch(appendLocation(to));
@@ -26,8 +25,8 @@ export const SearchEntry = React.memo<Props>((props) => {
   return (
     <Link {...rest} onClick={onClick} to={to} styleName="root">
       <div styleName="dictionary-form">{entry.getDictionaryForm()}</div>
+      <EntrySense styleName="sense" q={q} index={0} />
       <EntrySense styleName="sense" q={q} index={1} />
-      <EntrySense styleName="sense" q={q} index={2} />
     </Link>
   );
 });

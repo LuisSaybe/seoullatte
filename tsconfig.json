@@ -6,7 +6,7 @@
     "sourceRoot": "/",
     "jsx": "preserve",
     "baseUrl": ".",
-    "lib": ["dom", "esnext"],
+    "lib": ["dom", "esnext", "dom.iterable"],
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {

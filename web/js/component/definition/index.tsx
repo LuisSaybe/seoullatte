@@ -14,6 +14,8 @@ import { setAllRefsClosed } from "web/js/redux/definition-popup/action";
 import { LoadingSVG } from "web/js/component/loading-svg";
 import { Section } from "web/js/component/section";
 import { RootState } from "web/js/redux/reducer";
+import { LanguageNames } from "web/js/interface/korean";
+import { useDictionaryTranslationLanguage } from "web/js/hook/useDictionaryTranslationLanguage";
 import "./style.scss";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
@@ -26,6 +28,7 @@ export function Definition(props: Props) {
   const dispatch = useDispatch();
   const location = useLocation();
   const { t } = useTranslation();
+  const dictionaryLanguage = useDictionaryTranslationLanguage();
   const entry = useEntry(props.q);
   const error = useSelector(
     (state: RootState) => state.entityFetchState.entry[q]?.error,
@@ -85,22 +88,23 @@ export function Definition(props: Props) {
         <Section styleName="title">
           <strong>{t("Definition")}</strong>
         </Section>
-        {Array.from(entry.getSenses())
+        {entry
+          .getSenses()
           .filter(
             (_, index) => senseIndexes?.includes(Number(index)) ?? index === 0,
           )
-          .map((sense: Element, index) => {
-            const word = sense.querySelector("translation > trans_word")
-              .childNodes[0].nodeValue;
-
-            const definitionText = sense.querySelector(
-              "translation > trans_dfn",
-            ).childNodes[0].nodeValue;
+          .map((sense, index) => {
+            const definition = sense.getDefinition(
+              dictionaryLanguage,
+              LanguageNames.english,
+            );
 
             return (
               <div key={index} styleName="sense">
-                <div>{word}</div>
-                <div styleName="definition">{definitionText}</div>
+                <div>
+                  {sense.getWord(dictionaryLanguage, LanguageNames.english)}
+                </div>
+                {definition && <div styleName="definition">{definition}</div>}
               </div>
             );
           })}
