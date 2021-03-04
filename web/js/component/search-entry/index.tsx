@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { useDictionaryTranslationLanguage } from "web/js/hook/useDictionaryTranslationLanguage";
 import { useEntry } from "web/js/hook/useEntry";
 import { routes } from "web/js/routes";
 import { EntrySense } from "web/js/component/entry-sense";
@@ -25,8 +24,12 @@ export const SearchEntry = React.memo<Props>((props) => {
   return (
     <Link {...rest} onClick={onClick} to={to} styleName="root">
       <div styleName="dictionary-form">{entry.getDictionaryForm()}</div>
-      <EntrySense styleName="sense" q={q} index={0} />
-      <EntrySense styleName="sense" q={q} index={1} />
+      {entry
+        .getSenses()
+        .slice(0, 2)
+        .map((_, index) => (
+          <EntrySense key={index} q={q} index={index} />
+        ))}
     </Link>
   );
 });

@@ -26,7 +26,7 @@ export function EntrySense(props: Props) {
     <div {...rest}>
       {word && (
         <div>
-          <span styleName="label">{index}.</span>&nbsp;
+          <span styleName="label">{index + 1}.</span>&nbsp;
           {word}
         </div>
       )}
