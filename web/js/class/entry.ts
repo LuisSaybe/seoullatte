@@ -59,11 +59,10 @@ export class Entry {
   }
 
   public getSense(index: number) {
-    return new Sense(
-      this.xml.querySelector(
-        `:root > item > word_info > sense_info:nth-of-type(${index})`,
-      ),
+    const element = this.xml.querySelector(
+      `:root > item > word_info > sense_info:nth-of-type(${index})`,
     );
+    return element && new Sense(element);
   }
 
   public getPronunciation() {

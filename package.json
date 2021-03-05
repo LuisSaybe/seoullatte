@@ -6,7 +6,7 @@
     "build": "webpack --mode=production",
     "watch": "webpack --watch --mode=development",
     "serve": "serve dist --single -l 80",
-    "i18next-scanner": "i18next-scanner --config i18next-scanner.config.js --output web 'web/**/*.{ts,tsx}'"
+    "i18next-scanner": "i18next-scanner --config i18next-scanner.config.js 'web/**/*.{ts,tsx}'"
   },
   "author": "luis@trois.io",
   "license": "MIT",

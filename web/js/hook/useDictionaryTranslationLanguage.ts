@@ -14,7 +14,5 @@ export function useDictionaryTranslationLanguage() {
     ({ codes }) => codes.includes(langauge?.toLocaleLowerCase()),
   );
 
-  return dictionaryLanguage
-    ? dictionaryLanguage.dictionaryLanguage
-    : LanguageNames.english;
+  return dictionaryLanguage?.dictionaryLanguage ?? LanguageNames.english;
 }

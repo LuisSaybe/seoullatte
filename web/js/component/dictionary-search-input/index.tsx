@@ -12,6 +12,7 @@ import { LanguageNames } from "web/js/interface/korean";
 import { getSettings } from "web/js/helper/settings";
 import { useDictionaryTranslationLanguage } from "web/js/hook/useDictionaryTranslationLanguage";
 import { useSearchEntry } from "web/js/hook/useSearchEntry";
+import { Entry } from "web/js/class/entry";
 import styles from "./style.scss";
 
 interface Props
@@ -38,24 +39,19 @@ export const DictionarySearchInput = React.forwardRef<HTMLInputElement, Props>(
     );
     const settings = getSettings();
     const entriesHash = entries.map((entry) => entry.getTargetCode()).join();
-    const renderSuggestion = (suggestion) => {
-      const firstSenseTranslation = suggestion.getSenseTranslation(
-        1,
+    const renderSuggestion = (suggestion: Entry) => {
+      const sense = suggestion.getSense(1);
+      const definition = sense?.getDefinition(
+        dictionaryLanguage,
         LanguageNames.english,
       );
-      const firstSenseInTranslationLanguage = suggestion.getSenseTranslation(
-        1,
-        dictionaryLanguage,
-      );
-      const translation =
-        firstSenseInTranslationLanguage ?? firstSenseTranslation;
 
       return (
         <div className={styles.suggestion}>
           <span styleName="dictionary-form">
             {suggestion.getDictionaryForm()}
           </span>
-          {translation && <div styleName="sense">{translation}</div>}
+          {definition && <div styleName="sense">{definition}</div>}
         </div>
       );
     };

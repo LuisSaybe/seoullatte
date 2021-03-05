@@ -1,13 +1,14 @@
 const fs = require("fs");
 const path = require("path");
 const typescript = require("typescript");
+const tsOptions = require("./tsconfig.json");
 
 module.exports = {
   options: {
     debug: true,
     func: {
       list: ["t"],
-      extensions: [".ts", ".tsx"],
+      extensions: [".js", ".jsx"],
     },
     lngs: ["fr"],
     defaultValue: "",
@@ -20,14 +21,14 @@ module.exports = {
     trans: {
       component: "Trans",
       defaultsKey: "defaults",
-      extensions: [".tsx"],
+      extensions: [".jsx"],
       fallbackKey: (_, value) => {
         return value;
       },
     },
     resource: {
-      loadPath: "i18n/{{lng}}/{{ns}}.json",
-      savePath: "i18n/{{lng}}/{{ns}}.json",
+      loadPath: "web/i18n/{{lng}}/{{ns}}.json",
+      savePath: "web/i18n/{{lng}}/{{ns}}.json",
     },
   },
   transform: function (file, enc, done) {
@@ -35,27 +36,6 @@ module.exports = {
     let content = fs.readFileSync(file.path, enc);
 
     if (extension === ".ts" || extension === ".tsx") {
-      const tsOptions = {
-        compilerOptions: {
-          target: "es6",
-          sourceMap: true,
-          inlineSources: true,
-          sourceRoot: "/",
-          jsx: "preserve",
-          baseUrl: ".",
-          lib: ["dom", "esnext"],
-          module: "esnext",
-          moduleResolution: "node",
-          paths: {
-            web: ["web"],
-          },
-          resolveJsonModule: true,
-          allowSyntheticDefaultImports: true,
-          types: ["react", "react-css-modules"],
-          typeRoots: ["node_modules/@types"],
-        },
-        exclude: ["node_modules"],
-      };
       content = typescript.transpileModule(content, tsOptions).outputText;
     }
 

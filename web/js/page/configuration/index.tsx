@@ -9,8 +9,8 @@ import { RootState } from "web/js/redux/reducer";
 import { DEFAULT_SPEAKING_RATE } from "web/js/interface/speech-synthesis";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefaultLayout } from "web/js/component/default-layout";
-import "./style.scss";
 import { Select } from "web/js/component/select";
+import "./style.scss";
 
 export function Configuration() {
   const dispatch = useDispatch();

@@ -25,8 +25,8 @@
   transition: all 0.5s ease 0s;
   width: 300px;
   height: 100%;
-  z-index: 2;
   margin-bottom: 12px;
+  z-index: 3;
 
   &:not(.open) {
     transform: translate3d(-100%, 0px, 0px);
@@ -42,9 +42,9 @@
   position: fixed;
   height: 100%;
   width: 100%;
+  z-index: 2;
 
   &.open {
-    z-index: 2;
     opacity: 1;
     transition: opacity 0.3s ease 0s;
   }
