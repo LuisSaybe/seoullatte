@@ -100,10 +100,14 @@ export function IrregularPredicate() {
             <span>{t("Conjugation")}</span>
             <span>{t("Irregular")}</span>
             <E q="69471">묻다</E>
-            <span>물어</span>
+            <span>
+              물<E q="86094">어</E>
+            </span>
             <span>{t("yes")}</span>
             <E q="57289">닫다</E>
-            <span>닫아</span>
+            <span>
+              닫<E q="86093">아</E>
+            </span>
             <span>{t("no")}</span>
           </Section>
         </Section>
@@ -118,10 +122,14 @@ export function IrregularPredicate() {
           <span>{t("Conjugation")}</span>
           <span>{t("Irregular")}</span>
           <E q="71290">아름답다</E>
-          <span>아름다워</span>
+          <span>
+            아름다<E q="86094">워</E>
+          </span>
           <span>{t("yes")}</span>
           <E q="17174">입다</E>
-          <span>입어</span>
+          <span>
+            입<E q="86094">어</E>
+          </span>
           <span>{t("no")}</span>
         </Section>
       </Section>
@@ -135,10 +143,14 @@ export function IrregularPredicate() {
           <span>{t("Conjugation")}</span>
           <span>{t("Irregular")}</span>
           <E q="62354">낫다</E>
-          <span>나아요</span>
+          <span>
+            나<E q="86568">아요</E>
+          </span>
           <span>{t("yes")}</span>
           <E q="71461">웃다</E>
-          <span>웃어요</span>
+          <span>
+            웃<E q="86571">어요</E>
+          </span>
           <span>{t("no")}</span>
         </Section>
       </Section>
@@ -152,10 +164,14 @@ export function IrregularPredicate() {
           <span>{t("Conjugation")}</span>
           <span>{t("Irregular")}</span>
           <E q="71157">이렇다</E>
-          <span>이래요</span>
+          <span>
+            이래<E q="86116">요</E>
+          </span>
           <span>{t("yes")}</span>
           <E q="79033">좋다</E>
-          <span>좋아요</span>
+          <span>
+            좋<E q="86568">아요</E>
+          </span>
           <span>{t("no")}</span>
         </Section>
       </Section>
@@ -171,13 +187,19 @@ export function IrregularPredicate() {
           <span>{t("Conjugation")}</span>
           <span>{t("Irregular")}</span>
           <E q="19935">고르다</E>
-          <span>골라요</span>
+          <span>
+            골<E q="86568">라요</E>
+          </span>
           <span>{t("yes")}</span>
           <E q="25022">저지르다</E>
-          <span>저질러요</span>
+          <span>
+            저질<E q="86571">러요</E>
+          </span>
           <span>{t("yes")}</span>
           <E q="64547">따르다</E>
-          <span>따라요</span>
+          <span>
+            따<E q="86568">라요</E>
+          </span>
           <span>{t("no")}</span>
         </Section>
       </Section>
@@ -199,8 +221,7 @@ export function IrregularPredicate() {
           <E q="69579">살다</E>
           <div>
             <E q="69579">사</E>
-            <E q="80330">세</E>
-            <E q="80330">요</E>
+            <E q="86558">세요</E>
           </div>
         </Section>
       </Section>
@@ -216,9 +237,13 @@ export function IrregularPredicate() {
         <span>{t("Predicate")}</span>
         <span>{t("Conjugation")}</span>
         <E q="89697">예쁘다</E>
-        <span>예뻐</span>
+        <span>
+          예<E q="86094">뻐</E>
+        </span>
         <E q="18396">고프다</E>
-        <span>고파</span>
+        <span>
+          고<E q="86093">파</E>
+        </span>
       </Section>
     </>
   );

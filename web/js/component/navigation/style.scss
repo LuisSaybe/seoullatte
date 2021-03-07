@@ -68,11 +68,13 @@ button.return-element {
   height: calc(100% - 16px);
 }
 
-.loading-line {
-  margin-top: 2px;
+.loading-line-container {
+  margin-top: 4px;
 
   &:not(.loading) {
-    display: none;
+    .loading-line {
+      display: none;
+    }
   }
 }
 

@@ -7,6 +7,7 @@ import { E } from "web/js/component/definition-popup";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import "./style.scss";
+import { MarginSizeName } from "web/js/interface/size";
 
 export function ExistenceAndPosession() {
   const { t } = useTranslation();
@@ -32,7 +33,7 @@ export function ExistenceAndPosession() {
           &nbsp;and <E q="89917">없다</E> are used to describe the existence or
           non-existence of an object in physical space.
         </Trans>
-        <Section>
+        <Section marginSize={MarginSizeName.large}>
           <DialogGrid>
             <div>
               <E q="73276">학교</E>
@@ -62,7 +63,7 @@ export function ExistenceAndPosession() {
             <i>{t("(It) is in Busan.")}</i>
           </DialogGrid>
         </Section>
-        <Section>
+        <Section marginSize={MarginSizeName.large}>
           <DialogGrid>
             <div>
               <E q="17371">잔</E>&nbsp;
@@ -76,19 +77,18 @@ export function ExistenceAndPosession() {
             <UtteranceButton text="잔 안에 커피가 있어요?">
               잔 안에 커피가 있어요?
             </UtteranceButton>
+            <i>{t("Is there coffee in (the) cup?")}</i>
+            <div />
             <div>
               <E q="68796">없</E>
               <E q="86571">어요</E>
             </div>
             <UtteranceButton text="없어요">없어요</UtteranceButton>
-            <i>{t("Is there coffee in (the) cup?")}</i>
-            <div />
             <i>{t("There is no coffee.")}</i>
-            <div />
           </DialogGrid>
         </Section>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <ArticleTitle>{t("Posession")}</ArticleTitle>
       </Section>
       <Section>
@@ -96,7 +96,7 @@ export function ExistenceAndPosession() {
           "The adjective 있다 and 없다 indicate that subject of a sentence is possessed.",
         )}
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             박규희
@@ -112,7 +112,7 @@ export function ExistenceAndPosession() {
           <i>{t("Kyuhee Park has the ticket.")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="24147">편지</E>
@@ -126,7 +126,7 @@ export function ExistenceAndPosession() {
           <i>{t("(They) have the letter.")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <ArticleTitle>{t("Predicates with 있다 and 없다")}</ArticleTitle>
       </Section>
       <Section>
@@ -134,7 +134,7 @@ export function ExistenceAndPosession() {
           "Some adjectives contains 있다 and 없다 to indicate a subject has or lacks a quality.",
         )}
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="71115">음막</E>
@@ -143,18 +143,18 @@ export function ExistenceAndPosession() {
             {t("?")}
           </div>
           <UtteranceButton text="음막이 어때?">음막이 어때?</UtteranceButton>
+          <i>{t("How's the music?")}</i>
+          <div />
           <div>
             <E q="71212">재미있</E>
             <E q="85041">다</E>
             {t("!")}
           </div>
           <UtteranceButton text="재미있다">재미있다</UtteranceButton>
-          <i>{t("How's the music?")}</i>
-          <div />
           <i>{t("It's fun!")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="20198">눈</E>
@@ -165,6 +165,8 @@ export function ExistenceAndPosession() {
             {t("?")}
           </div>
           <UtteranceButton text="눈이 올거야?">눈이 올거야?</UtteranceButton>
+          <i>{t("It's going to snow?")}</i>
+          <div />
           <div>
             어,&nbsp;
             <E q="71301">틀림없</E>
@@ -173,8 +175,6 @@ export function ExistenceAndPosession() {
             </E>
           </div>
           <UtteranceButton text="어. 틀림없어">어. 틀림없어</UtteranceButton>
-          <i>{t("It's going to snow?")}</i>
-          <div />
           <i>{t("Yeah, definitely.")}</i>
         </DialogGrid>
       </Section>

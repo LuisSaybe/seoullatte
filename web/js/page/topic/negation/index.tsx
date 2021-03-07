@@ -78,6 +78,30 @@ export function Negation() {
         </Section>
       </Section>
       <Section marginSize={MarginSizeName.large}>
+        <DialogGrid>
+          <div>
+            승규
+            <E q="85851" senseIndexes={[1]}>
+              는
+            </E>
+            &nbsp;
+            <E q="16342">난방</E>
+            <E q="86289">이</E>&nbsp;
+            <E q="74105">들어와</E>
+            <E q="67026">서</E>&nbsp;
+            <E q="62522">지금</E>&nbsp;
+            <E q="72146">춥</E>
+            <E q="86278">다고</E>&nbsp;
+            <E q="62103">말했</E>
+            <E q="85041">다</E>
+          </div>
+          <UtteranceButton text="승규는 난방이 들어와서 지금은 안 춥다고 말했다">
+            승규는 난방이 들어와서 지금은 안 춥다고 말했다
+          </UtteranceButton>
+          <i>{t("승규 said the heat came in so now it is not cold.")}</i>
+        </DialogGrid>
+      </Section>
+      <Section marginSize={MarginSizeName.large}>
         <SectionTitle>{t("Negation with -지 않다")}</SectionTitle>
       </Section>
       <Section>
@@ -86,7 +110,7 @@ export function Negation() {
           a predicate where 지 is placed after the predicate stem.
         </Trans>
       </Section>
-      <Section marginSize={MarginSizeName.medium}>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="72704">눈</E>
@@ -100,6 +124,26 @@ export function Negation() {
             눈을 닫지 않겠어
           </UtteranceButton>
           <i>{t("(I) will not close (my) eyes.")}</i>
+        </DialogGrid>
+      </Section>
+      <Section marginSize={MarginSizeName.large}>
+        <DialogGrid>
+          <div>
+            <E q="62522">지금</E>
+            <E senseIndexes={[1]} q="86111">
+              은
+            </E>
+            &nbsp;
+            <E q="20211">배</E>
+            <E q="66341">가</E>&nbsp;
+            <E q="18396">고프</E>
+            <E q="72587">지 않</E>
+            <E q="86568">아요</E>
+          </div>
+          <UtteranceButton text="지금은 배가 고프지 않아요.">
+            지금은 배가 고프지 않아요.
+          </UtteranceButton>
+          <i>{t("(Right now, (I) am not hungry.")}</i>
         </DialogGrid>
       </Section>
     </>

@@ -5,6 +5,7 @@ import { E } from "web/js/component/definition-popup";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { Section } from "web/js/component/section";
 import { UtteranceButton } from "web/js/component/utterance-button";
+import { MarginSizeName } from "web/js/interface/size";
 import "./style.scss";
 
 export function ObjectParticle() {
@@ -18,7 +19,7 @@ export function ObjectParticle() {
           in a vowel.
         </Trans>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <span>
             <E q="67601">에스컬레이터</E>
@@ -37,12 +38,12 @@ export function ObjectParticle() {
           <i>{t("On the escalator, please grab the hand rail.")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <Trans>
           <E q="85764">을</E> is written after a noun ending in a consonant.
         </Trans>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <span>
             <E q="27368">아침</E>
@@ -57,7 +58,7 @@ export function ObjectParticle() {
           <span />
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         {t(
           "The object particle indicates that the noun it marks is the object of the verb in the clause.",
         )}
@@ -67,7 +68,7 @@ export function ObjectParticle() {
           "The 을/를 particle can also be used to indicate that noun marked is where an action starts, finishes or occurs.",
         )}
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <span>
             <E q="60931">나</E>
@@ -85,7 +86,7 @@ export function ObjectParticle() {
           <i>{t("As I walk along the coast I delight in the sea breeze.")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <span>
             지수

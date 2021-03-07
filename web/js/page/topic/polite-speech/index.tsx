@@ -15,13 +15,18 @@ export function PoliteSpeech() {
     <>
       <Section>
         <Trans>
-          The polite speech level is formed identically to the&nbsp;
-          <Anchor to={TopicRoute.intimateSpeech}>intimate speech level</Anchor>
-          &nbsp;followed by a <E q="86116">요</E>.
+          In order to to conjugate a&nbsp;
+          <Anchor to={TopicRoute.predicate}>predicate</Anchor> into the polite
+          speech level, first
+          <Anchor to={TopicRoute.addingVowelToPredicateStem}>
+            add ㅓ or ㅏ
+          </Anchor>
+          &nbsp; to the predicate's stem followed by <E q="86116">요</E>.
         </Trans>
         &nbsp;
         <Trans>
-          The predicate 이다 and 아니다 are formed&nbsp;
+          The predicate <E q="86232">이다</E> and <E q="26878">아나다</E> are
+          formed&nbsp;
           <Anchor to={TopicRoute.irregularPredicate}>irregularly</Anchor>
           &nbsp;in the polite speech level.
         </Trans>

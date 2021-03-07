@@ -12,6 +12,7 @@ import { U_IRREGULAR_ID } from "web/js/page/topic/irregular-predicate";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import "./style.scss";
+import { MarginSizeName } from "web/js/interface/size";
 
 export function AddingVowelsToPredicateStems() {
   const { t } = useTranslation();
@@ -53,7 +54,7 @@ export function AddingVowelsToPredicateStems() {
         &nbsp;
         {t("바라보 becomes 바라봐.")}
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="60931">나</E>
@@ -72,7 +73,7 @@ export function AddingVowelsToPredicateStems() {
           <i>{t("(They) stared at me so I became nervous.")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         Example predicate: <E q="66248">바쁘다</E>
       </Section>
       <Section>
@@ -94,7 +95,7 @@ export function AddingVowelsToPredicateStems() {
         &nbsp;
         {t("바ㅃ becomes 바빠.")}
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="15982">먹고살</E>
@@ -107,7 +108,7 @@ export function AddingVowelsToPredicateStems() {
           <i>{t("(I'm) busy making ends meet.")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <SectionTitle>{t("Placement of ㅓ or ㅏ")}</SectionTitle>
         {t(
           "After determining whether ㅓ or ㅏ is added to the predicate's stem, the new letter may be added in one of 4 ways.",
@@ -139,11 +140,18 @@ export function AddingVowelsToPredicateStems() {
           </Subsection>
         </Subsection>
       </Section>
-      <Section>{t("We show examples here of common stem changes.")}</Section>
+      <Section marginSize={MarginSizeName.medium}>
+        {t(
+          "A student may also find this conjugated form when searching for a predicate a Korean dictionary.",
+        )}
+      </Section>
       <Section>
+        {t("We show examples here of common predicate conjugations.")}
+      </Section>
+      <Section marginSize={MarginSizeName.medium}>
         <div styleName="table">
-          <span>Predicate</span>
-          <span>Modified Stem</span>
+          <strong styleName="table-column-title">Predicate</strong>
+          <strong styleName="table-column-title">Modified Stem</strong>
           <E q="67048">어울리다</E>
           <span>어울려</span>
           <E q="73277">하다</E>

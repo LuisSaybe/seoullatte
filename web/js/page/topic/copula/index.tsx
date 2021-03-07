@@ -4,7 +4,6 @@ import { Trans, useTranslation } from "react-i18next";
 import { Section } from "web/js/component/section";
 import { E } from "web/js/component/definition-popup";
 import { UtteranceButton } from "web/js/component/utterance-button";
-import { useCanUseKoreanUtterance } from "web/js/hook/useCanUseKoreanUtterance";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { MarginSizeName } from "web/js/interface/size";
 import { Anchor } from "web/js/component/anchor";
@@ -13,7 +12,6 @@ import "./style.scss";
 
 export function Copula() {
   const { t } = useTranslation();
-  const canUseKoreanUtterance = useCanUseKoreanUtterance();
   return (
     <>
       <Section>
@@ -32,7 +30,7 @@ export function Copula() {
           "아니다 indicates that the subject of the clause is not equivalent to the noun it attaches to.",
         )}
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="15689">강아지</E>
@@ -40,15 +38,11 @@ export function Copula() {
             <E q="18779">고양이</E>
             <E q="26878">아니다</E>
           </div>
-          {canUseKoreanUtterance ? (
-            <UtteranceButton text="강아지가 고양이아니다" />
-          ) : (
-            <div></div>
-          )}
+          <UtteranceButton text="강아지가 고양이아니다" />
           <i>{t("A dog is not a cat.")}</i>
         </DialogGrid>
       </Section>
-      <Section marginSize={MarginSizeName.medium}>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="17182">우리</E>
@@ -57,11 +51,7 @@ export function Copula() {
             <E q="62521">중학생</E>
             <E q="86232">이에요</E>
           </div>
-          {canUseKoreanUtterance ? (
-            <UtteranceButton text="우리딸이 중학생이에요" />
-          ) : (
-            <div></div>
-          )}
+          <UtteranceButton text="우리딸이 중학생이에요" />
           <i>{t("Our daughter is a student.")}</i>
         </DialogGrid>
       </Section>
@@ -79,7 +69,7 @@ export function Copula() {
           intimate speech level.
         </Trans>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="84999">소개할</E>
@@ -95,12 +85,12 @@ export function Copula() {
           <i>{t("I will introduce (him). He is my younger brother.")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         {t(
           "야 follows a noun which ends in a vowel in the intimate speech level.",
         )}
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="64390">너</E>&nbsp;
@@ -117,7 +107,7 @@ export function Copula() {
           "이에요 follows a noun which ends in a consonant in the polite speech level.",
         )}
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="27364">고향</E>
@@ -135,7 +125,7 @@ export function Copula() {
           "예요 follows a noun which ends in a vowel in the polite speech level.",
         )}
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="62818">선생님</E>,&nbsp;

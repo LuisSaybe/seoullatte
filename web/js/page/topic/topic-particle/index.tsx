@@ -30,7 +30,7 @@ export function TopicParticle() {
           "This may be used to re-introduce a new topic or a topic that was previously mentioned in conversation.",
         )}
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="44506">저</E>

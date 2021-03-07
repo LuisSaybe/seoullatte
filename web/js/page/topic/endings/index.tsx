@@ -7,6 +7,7 @@ import { DialogGrid } from "web/js/component/dialog-grid";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { E } from "web/js/component/definition-popup";
 import styles from "./style.scss";
+import { MarginSizeName } from "web/js/interface/size";
 
 export function Endings() {
   const { t } = useTranslation();
@@ -37,7 +38,7 @@ export function Endings() {
           <span styleName="final-ending category">final endings</span>.
         </Trans>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="64597">수업</E>
@@ -57,7 +58,7 @@ export function Endings() {
           <i>{t("Practice already ended.")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="25945">자</E>&nbsp;
