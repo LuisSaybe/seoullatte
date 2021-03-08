@@ -20,6 +20,7 @@ export enum TopicRoute {
   plainSpeech = "/plain-speech",
   intimateSpeech = "/intimate-speech",
   familiarSpeech = "/familiar-speech",
+  honorificEnding = "/honorific-ending",
   numbers = "/numbers",
   questions = "/questions",
   syllable = "/syllable",

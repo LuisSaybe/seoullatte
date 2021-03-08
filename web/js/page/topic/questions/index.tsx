@@ -8,6 +8,7 @@ import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { TopicRoute } from "web/js/interface/route";
+import { MarginSizeName } from "web/js/interface/size";
 import "./style.scss";
 
 export function Questions() {
@@ -33,7 +34,7 @@ export function Questions() {
         &nbsp;
         {t("For example, when inquiring what someone is eating:")}
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="17199">무엇</E>
@@ -46,7 +47,7 @@ export function Questions() {
           <i>{t("What do (you) eat?")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <Trans>
           In the same fashion, the pronouns&nbsp;
           <E q="62078">누구</E>,&nbsp;
@@ -54,7 +55,7 @@ export function Questions() {
           <E q="17860">언제</E> can be used to ask questions.
         </Trans>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="62078">누구</E>
@@ -66,7 +67,7 @@ export function Questions() {
           <i>{t("Who are (you)?")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="60319">어디</E>
@@ -81,13 +82,13 @@ export function Questions() {
           <i>{t("Where are (you) going?")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="17860">언제</E>
             <E q="70055">부터</E>&nbsp;
             <E q="66567">시작할</E>
-            <E q="86120">까</E>
+            <E q="86335">까</E>
             {"?"}
           </div>
           <UtteranceButton text="언제부터 시작할까?">
@@ -96,7 +97,7 @@ export function Questions() {
           <i>{t("From when shall (I) start?")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <SectionTitle>{t("Asking about methods")}</SectionTitle>
         <Trans>
           When one wishes to inquire about a method or manner the adverb&nbsp;
@@ -104,7 +105,7 @@ export function Questions() {
           <E q="66938">게</E> is used.
         </Trans>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="68898">인천</E>
@@ -121,14 +122,14 @@ export function Questions() {
           <i>{t("How can I go to Incheon?")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <SectionTitle>{t("Asking about reasons or motives")}</SectionTitle>
         <Trans>
           When one wishes to inquire about a reason the adverb&nbsp;
           <E q="67848">왜</E> is used.
         </Trans>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="67848">왜</E>&nbsp;
@@ -147,7 +148,7 @@ export function Questions() {
           <i>{t("Why (do they) always come late (for) practice?")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <SectionTitle>{t("Categories")}</SectionTitle>
         <Trans>
           When one wishes to ask which category or kind an object may belong to,
@@ -157,7 +158,7 @@ export function Questions() {
           <E q="66237">무슨</E> is used.
         </Trans>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="64390">너</E>
@@ -176,7 +177,7 @@ export function Questions() {
           <i>{t("What kind of music do you usually listen to?")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <SectionTitle>{t("Selections")}</SectionTitle>
         <Trans>
           When one wishes to distinguish an object from a group of
@@ -184,7 +185,7 @@ export function Questions() {
           <E q="62822">어느</E> is used.
         </Trans>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="25620">공항</E>
@@ -205,7 +206,7 @@ export function Questions() {
           <i>{t("Which bus do I need to take to get to the airport?")}</i>
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <SectionTitle>{t("Quantity")}</SectionTitle>
       </Section>
       <Trans>
@@ -218,7 +219,7 @@ export function Questions() {
         <Anchor to={TopicRoute.counters}>counter</Anchor>
       </Trans>
       .
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="66235">몇</E>&nbsp;
@@ -244,12 +245,12 @@ export function Questions() {
         When one inquires about the degree to which something occurs, the adverb{" "}
         <E q="67316">얼마나</E> is used.
       </Trans>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
             <E q="67316">얼마나</E>&nbsp;
             <E q="64682">마실</E>
-            <E q="81065">래</E>
+            <E q="81068">래</E>
             {t("?")}
           </div>
           <UtteranceButton text="얼마나 마실래?">

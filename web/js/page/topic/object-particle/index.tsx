@@ -40,7 +40,7 @@ export function ObjectParticle() {
       </Section>
       <Section marginSize={MarginSizeName.large}>
         <Trans>
-          <E q="85764">을</E> is written after a noun ending in a consonant.
+          <E q="86355">을</E> is written after a noun ending in a consonant.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.large}>
@@ -49,7 +49,7 @@ export function ObjectParticle() {
             <E q="27368">아침</E>
             <E q="80294">에는</E>&nbsp;
             <E q="23402">빵</E>
-            <E q="85764">을</E>&nbsp;
+            <E q="86355">을</E>&nbsp;
             <E q="58272">먹</E>
             <E q="85037">는다</E>
           </span>

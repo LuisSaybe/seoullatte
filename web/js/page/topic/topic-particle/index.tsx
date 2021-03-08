@@ -42,6 +42,10 @@ export function TopicParticle() {
           <UtteranceButton text="저는 학생입니다" />
           <i>{t("As for myself, I am a student.")}</i>
           <div />
+        </DialogGrid>
+      </Section>
+      <Section marginSize={MarginSizeName.large}>
+        <DialogGrid>
           <div>
             <E q="66371">사과</E>
             <E q="85851">는</E>&nbsp;

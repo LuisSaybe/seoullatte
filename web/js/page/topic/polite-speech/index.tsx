@@ -17,7 +17,7 @@ export function PoliteSpeech() {
         <Trans>
           In order to to conjugate a&nbsp;
           <Anchor to={TopicRoute.predicate}>predicate</Anchor> into the polite
-          speech level, first
+          speech level, first&nbsp;
           <Anchor to={TopicRoute.addingVowelToPredicateStem}>
             add ㅓ or ㅏ
           </Anchor>

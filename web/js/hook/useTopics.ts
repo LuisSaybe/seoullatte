@@ -33,6 +33,7 @@ import { Numbers } from "web/js/page/topic/numbers";
 import { Counters } from "web/js/page/topic/counters";
 import { Questions } from "web/js/page/topic/questions";
 import { EParticle } from "web/js/page/topic/e-particle";
+import { HonorificSuffix } from "../page/topic/honorific-suffix";
 
 export function useTopics(): Topic[] {
   const { t } = useTranslation();
@@ -153,6 +154,19 @@ export function useTopics(): Topic[] {
           76426 /*니*/,
           85037 /*는다*/,
           76230 /*냐*/,
+        ],
+        relatedPartOfSpeech: [],
+      },
+      {
+        component: HonorificSuffix,
+        description: t("Learn about the Honorifix Ending 시"),
+        name: t("The Honorific Ending 시"),
+        paths: [TopicRoute.honorificEnding],
+        relatedEntries: [
+          80330 /*시*/,
+          86609 /*으세요*/,
+          86558 /*세요*/,
+          80329 /*으시*/,
         ],
         relatedPartOfSpeech: [],
       },
