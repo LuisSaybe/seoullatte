@@ -253,7 +253,7 @@ export function useTopics(): Topic[] {
         description: t("Changing verb and adjectives to modifiers in Korean"),
         name: t("Predicates as Modifiers"),
         paths: [TopicRoute.predicateAsModifiers],
-        relatedEntries: [85853, 80344, 69058],
+        relatedEntries: [85853, 80344, 69058, 69057 /* ㄹ */],
         relatedPartOfSpeech: [],
       },
       {
@@ -274,8 +274,8 @@ export function useTopics(): Topic[] {
       },
       {
         component: Desire,
-        description: t("Learn how to express desire"),
-        name: t("Desire"),
+        description: t("Learn how to express desire with 고 싶다"),
+        name: t("Expressing desire with 고 싶다"),
         paths: [TopicRoute.desire],
         relatedEntries: [75269],
         relatedPartOfSpeech: [],

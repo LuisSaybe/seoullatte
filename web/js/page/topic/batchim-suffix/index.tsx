@@ -94,7 +94,8 @@ export function BatchimSuffix() {
             <E q="80330" senseIndexes={[1]}>
               시
             </E>
-            <E q="76426">니</E>?
+            <E q="76426">니</E>
+            {t("?")}
           </div>
           <UtteranceButton text="할아버지께서는 언제 돌아오시니?" />
           <i>{t("When does grandfather return?")}</i>

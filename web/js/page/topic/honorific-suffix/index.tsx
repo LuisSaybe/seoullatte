@@ -46,6 +46,29 @@ export function HonorificSuffix() {
       <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
+            <E q="71152">이분</E>
+            <E q="80344">은</E>&nbsp;승규
+            <E q="86290">의</E>&nbsp;
+            <E q="62818">선생님</E>
+            <E q="86232">이</E>
+            <E q="80330">십</E>
+            <E q="79397">니다</E>
+          </div>
+          <UtteranceButton text="이분은 승규 의 선생님이십니다">
+            이분은 승규 의 선생님이십니다
+          </UtteranceButton>
+          <i>{t("This person is 승규's teacher.")}</i>
+        </DialogGrid>
+      </Section>
+      <Section marginSize={MarginSizeName.large}>
+        <Trans>
+          The honorific suffix is addded as 세요 or 으세요 in the&nbsp;
+          <Anchor to={TopicRoute.politeSpeech}>polite speech level</Anchor>.
+        </Trans>
+      </Section>
+      <Section marginSize={MarginSizeName.large}>
+        <DialogGrid>
+          <div>
             <E q="61178">그런</E>&nbsp;
             <E q="62835">것</E>
             <E q="86355">을</E>&nbsp;
@@ -71,29 +94,6 @@ export function HonorificSuffix() {
       <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
-            <E q="71152">이분</E>
-            <E q="80344">은</E>&nbsp;승규
-            <E q="86290">의</E>&nbsp;
-            <E q="62818">선생님</E>
-            <E q="86232">이</E>
-            <E q="80330">십</E>
-            <E q="79397">니다</E>
-          </div>
-          <UtteranceButton text="이분은 승규 의 선생님이십니다">
-            이분은 승규 의 선생님이십니다
-          </UtteranceButton>
-          <i>{t("This person is 승규's teacher.")}</i>
-        </DialogGrid>
-      </Section>
-      <Section marginSize={MarginSizeName.large}>
-        <Trans>
-          The honorific suffix is addded as 세요 or 으세요 in the&nbsp;
-          <Anchor to={TopicRoute.politeSpeech}>polite speech level</Anchor>.
-        </Trans>
-      </Section>
-      <Section marginSize={MarginSizeName.large}>
-        <DialogGrid>
-          <div>
             <E q="74396">어머님</E>,&nbsp;
             <E q="60630">날씨</E>&nbsp;
             <E q="66341">가</E>
@@ -112,7 +112,7 @@ export function HonorificSuffix() {
       <Section marginSize={MarginSizeName.large}>
         <Trans>
           When the honorific suffix 시 precedes the&nbsp;
-          <Anchor to={TopicRoute.pastTense}>paste tense</Anchor> ending, the
+          <Anchor to={TopicRoute.pastTense}>past tense</Anchor> ending, the
           ending becomes 셨 or 으셨.
         </Trans>
       </Section>

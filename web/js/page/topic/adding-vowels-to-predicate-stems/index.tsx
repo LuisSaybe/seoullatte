@@ -142,11 +142,13 @@ export function AddingVowelsToPredicateStems() {
       </Section>
       <Section marginSize={MarginSizeName.medium}>
         {t(
-          "A student may also find this conjugated form when searching for a predicate a Korean dictionary.",
+          "A student may also find these conjugated forms when searching for a predicate in a Korean dictionary.",
         )}
       </Section>
       <Section>
-        {t("We show examples here of common predicate conjugations.")}
+        {t(
+          "We show examples here of various stem inflections after adding ㅓ or ㅏ.",
+        )}
       </Section>
       <Section marginSize={MarginSizeName.medium}>
         <div styleName="table">

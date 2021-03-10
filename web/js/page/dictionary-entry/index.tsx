@@ -76,7 +76,7 @@ export function DictionaryEntry() {
         )}
         {entry.hasConjugations() && (
           <>
-            <div styleName="conjugations-title">Conjugations</div>
+            <div styleName="conjugations-title">{t("Conjugations")}</div>
             <Conjugations styleName="conjugations" q={q} />
           </>
         )}

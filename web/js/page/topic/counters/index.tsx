@@ -5,6 +5,7 @@ import { E } from "web/js/component/definition-popup";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { Section } from "web/js/component/section";
 import { UtteranceButton } from "web/js/component/utterance-button";
+import { MarginSizeName } from "web/js/interface/size";
 import "./style.scss";
 
 export function Counters() {
@@ -50,7 +51,7 @@ export function Counters() {
         <span>스물</span>
         <span>스무</span>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
         {t(
           "When counting objects the format is written [noun] + [number] + [counter] or [noun] + [number].",
         )}
@@ -77,7 +78,7 @@ export function Counters() {
           <div />
         </DialogGrid>
       </Section>
-      <Section>
+      <Section marginSize={MarginSizeName.medium}>
         {t("In formal cases, the format is [number] + [counter]의 + [noun].")}
       </Section>
       <Section>
@@ -96,8 +97,10 @@ export function Counters() {
           <i>{t("8 pieces of music")}</i>
         </DialogGrid>
       </Section>
-      <Section>{t("Below we show examples of common counters.")}</Section>
-      <Section>
+      <Section marginSize={MarginSizeName.large}>
+        {t("Below we show examples of common counters.")}
+      </Section>
+      <Section marginSize={MarginSizeName.medium}>
         <DialogGrid>
           <div>
             이십사&nbsp;

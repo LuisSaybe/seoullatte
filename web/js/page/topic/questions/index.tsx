@@ -59,8 +59,7 @@ export function Questions() {
         <DialogGrid>
           <div>
             <E q="62078">누구</E>
-            <E q="80330">세</E>
-            <E q="86116">요</E>
+            <E q="86558">세요</E>
             {"?"}
           </div>
           <UtteranceButton text="누구세요?">누구세요?</UtteranceButton>
