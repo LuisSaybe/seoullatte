@@ -6,8 +6,8 @@ import { Section } from "web/js/component/section";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { E } from "web/js/component/definition-popup";
-import styles from "./style.scss";
 import { MarginSizeName } from "web/js/interface/size";
+import styles from "./style.scss";
 
 export function Endings() {
   const { t } = useTranslation();
@@ -16,17 +16,17 @@ export function Endings() {
     <>
       <Section>
         {t(
-          "Korean predicates combine with endings to form sentences. Endings are added to a predicate in a particular order and changes the meaning of a sentence when added. Below we cover two categories of endings and give examples.",
+          "Korean predicates combine with endings to form conjugations. Endings are added to a predicate in a particular order and changes the meaning of a sentence when added. Below we cover two categories of endings and give examples.",
         )}
       </Section>
       <SectionTitle>{t("Pre-Final Endings")}</SectionTitle>
       <Section>
-        {t("Pre-final ending are added directly to a predicate stem.")}
+        {t("Pre-final endings are added directly to a predicate stem.")}
       </Section>
       <SectionTitle>{t("Final Endings")}</SectionTitle>
       <Section>
         {t(
-          "If a predicate contains a pre-final ending, the final ending is placed after the pre-final ending. Otherwise the final-ending is added to the predicate stem.",
+          "If a predicate contains a pre-final ending, the final ending is placed after the pre-final ending. Otherwise the final ending is added to the predicate stem.",
         )}
       </Section>
       <Section>

@@ -16,7 +16,11 @@ export function PredicateAsModifier() {
     <>
       <Section>
         {t(
-          "A suffix can be added to a predicate in order to change it into a modifier.",
+          "A suffix can be added to a predicate stem in order to change it into a modifier.",
+        )}
+        &nbsp;
+        {t(
+          "Different kinds of modifier are added to a predicate stem to indicate tense.",
         )}
       </Section>
       <Section>
@@ -92,7 +96,7 @@ export function PredicateAsModifier() {
         {t("If the verb stem ends in a vowel ㄹ becomes a suffix as a 받침.")}
         &nbsp;
         {t(
-          "A modifier in the prospective tense does indicate that a verb is guaranteed to occur in the future.",
+          "A modifier in the prospective tense does not indicate that the action the verb describes is guaranteed to occur in the future.",
         )}
       </Section>
       <Section marginSize={MarginSizeName.large}>

@@ -92,7 +92,7 @@ export function PlainSpeech() {
             <UtteranceButton text="어제부터 계속 비가 온다">
               어제부터 계속 비가 온다
             </UtteranceButton>
-            <i>{t("Since yesterday it has been raining.")}</i>
+            <i>{t("It has been raining since yesterday.")}</i>
           </DialogGrid>
         </Section>
       </Section>

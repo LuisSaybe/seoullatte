@@ -33,7 +33,8 @@ import { Numbers } from "web/js/page/topic/numbers";
 import { Counters } from "web/js/page/topic/counters";
 import { Questions } from "web/js/page/topic/questions";
 import { EParticle } from "web/js/page/topic/e-particle";
-import { HonorificSuffix } from "../page/topic/honorific-suffix";
+import { HonorificSuffix } from "web/js/page/topic/honorific-suffix";
+import { PluralParticle } from "web/js/page/topic/plural-particle";
 
 export function useTopics(): Topic[] {
   const { t } = useTranslation();
@@ -314,6 +315,14 @@ export function useTopics(): Topic[] {
         name: t("The Particle 에"),
         paths: [TopicRoute.particleLocationGoal],
         relatedEntries: [/*에*/ 86572, /*에는*/ 80294],
+        relatedPartOfSpeech: [],
+      },
+      {
+        component: PluralParticle,
+        description: t("Learn about the plural particle 들"),
+        name: t("The Plural Particle 들"),
+        paths: [TopicRoute.pluralParticle],
+        relatedEntries: [/*들*/ 86264],
         relatedPartOfSpeech: [],
       },
     ],

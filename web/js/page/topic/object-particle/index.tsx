@@ -72,7 +72,10 @@ export function ObjectParticle() {
         <DialogGrid>
           <span>
             <E q="60931">나</E>
-            <E q="85851">는</E>&nbsp;
+            <E q="85851" senseIndexes={[1]}>
+              는
+            </E>
+            &nbsp;
             <E q="85798">해안가</E>
             <E q="85764">를</E>&nbsp;
             <E q="29667">걸</E>

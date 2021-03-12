@@ -1,5 +1,3 @@
-export type LocationsContextType = Array<{ pathname: string }>;
-
 export enum TopicRoute {
   hangul = "/hangul",
   noun = "/noun",
@@ -33,4 +31,5 @@ export enum TopicRoute {
   formingSentences = "/forming-sentences",
   negation = "/negation",
   addingUToPredicates = "/adding-u-to-predicates",
+  pluralParticle = "/plural-particle",
 }
