@@ -32,4 +32,9 @@ export enum TopicRoute {
   negation = "/negation",
   addingUToPredicates = "/adding-u-to-predicates",
   pluralParticle = "/plural-particle",
+  possessiveParticle = "/possessive-particle",
+  esoParticle = "/dynamic-location-particle",
+  doParticle = "/do-particle",
+  butoParticle = "/buto-particle",
+  kkajiParticle = "/kaji-particle",
 }

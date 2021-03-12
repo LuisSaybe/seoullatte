@@ -35,6 +35,11 @@ import { Questions } from "web/js/page/topic/questions";
 import { EParticle } from "web/js/page/topic/e-particle";
 import { HonorificSuffix } from "web/js/page/topic/honorific-suffix";
 import { PluralParticle } from "web/js/page/topic/plural-particle";
+import { PossessiveParticle } from "../page/topic/possessive-particle";
+import { ParticleESo } from "../page/topic/particle-e-so";
+import { DoParticle } from "../page/topic/do-particle";
+import { ParticleButo } from "../page/topic/particle-buto";
+import { KajiParticle } from "../page/topic/kaji-particle";
 
 export function useTopics(): Topic[] {
   const { t } = useTranslation();
@@ -155,6 +160,8 @@ export function useTopics(): Topic[] {
           76426 /*니*/,
           85037 /*는다*/,
           76230 /*냐*/,
+          85033 /* ㄴ다 */,
+          74141 /* 다니 */,
         ],
         relatedPartOfSpeech: [],
       },
@@ -311,7 +318,7 @@ export function useTopics(): Topic[] {
       },
       {
         component: EParticle,
-        description: t("Learn about the particle 에"),
+        description: t("Learn about the location particle 에"),
         name: t("The Particle 에"),
         paths: [TopicRoute.particleLocationGoal],
         relatedEntries: [/*에*/ 86572, /*에는*/ 80294],
@@ -323,6 +330,48 @@ export function useTopics(): Topic[] {
         name: t("The Plural Particle 들"),
         paths: [TopicRoute.pluralParticle],
         relatedEntries: [/*들*/ 86264],
+        relatedPartOfSpeech: [],
+      },
+      {
+        component: PossessiveParticle,
+        description: t("Learn about the possessive particle 의"),
+        name: t("The Possessive Particle 의"),
+        paths: [TopicRoute.possessiveParticle],
+        relatedEntries: [/*의*/ 86290],
+        relatedPartOfSpeech: [],
+      },
+      {
+        component: ParticleESo,
+        description: t(
+          "The Particle 에서 indicates a source or dynamic location.",
+        ),
+        name: t("The Particle 에서"),
+        paths: [TopicRoute.esoParticle],
+        relatedEntries: [/*에서*/ 68853],
+        relatedPartOfSpeech: [],
+      },
+      {
+        component: DoParticle,
+        description: t("The Particle 도 the inclusion of items in a clause."),
+        name: t("The Particle 도"),
+        paths: [TopicRoute.doParticle],
+        relatedEntries: [/*도*/ 86258],
+        relatedPartOfSpeech: [],
+      },
+      {
+        component: ParticleButo,
+        description: t("The Particle 부터 indicates a starting point."),
+        name: t("The Particle 부터"),
+        paths: [TopicRoute.butoParticle],
+        relatedEntries: [/*부터*/ 70055],
+        relatedPartOfSpeech: [],
+      },
+      {
+        component: KajiParticle,
+        description: t("The Particle 까지 indicates an ending point."),
+        name: t("The Particle 까지"),
+        paths: [TopicRoute.kkajiParticle],
+        relatedEntries: [/*까지*/ 69698],
         relatedPartOfSpeech: [],
       },
     ],

@@ -14,8 +14,8 @@ export function PluralParticle() {
     <>
       <Section>
         <Trans>
-          The plural particle <E q="86264">들</E> is added to a noun which
-          pluralizes the noun it attches to.
+          The particle <E q="86264">들</E> is added to a noun which pluralizes
+          the noun it attches to.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.large}>
@@ -37,14 +37,14 @@ export function PluralParticle() {
           <div>
             <E q="70029">한국</E>&nbsp;
             <E q="58161">사람</E>
-            <E q="86264">들</E>&nbsp;
-            <E q="86111">은</E>
+            <E q="86264">들</E>
+            <E q="86111">은</E>&nbsp;
             <E q="66237">무슨</E>&nbsp;
             <E q="68121">외국</E>&nbsp;
             <E q="71114">음식</E>
             <E q="86355">을</E>&nbsp;
-            <E q="27929">좋아하</E>
-            <E q="86558">세요</E>
+            <E q="27929">좋아해</E>
+            <E q="86116">요</E>
             {t("?")}
           </div>
           <UtteranceButton text="한국 사람들 은 무슨 외국 음식을 좋아하세요?" />
