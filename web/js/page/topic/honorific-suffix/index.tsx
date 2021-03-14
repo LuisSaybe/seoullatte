@@ -99,7 +99,8 @@ export function HonorificSuffix() {
             <E q="66341">가</E>
             <E q="72146">추우</E>
             <E q="80139">니까</E>&nbsp;
-            <E q="">따뜻하</E>게&nbsp;
+            <E q="57297">따뜻하</E>
+            <E q="77326">게</E>&nbsp;
             <E q="17174">입</E>
             <E q="86609">으세요</E>
           </div>

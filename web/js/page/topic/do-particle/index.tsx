@@ -19,7 +19,7 @@ export function DoParticle() {
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.large}>
-        {t("도 is to indicate an inclusion or addition.")}
+        {t("도 is used to indicate an inclusion or addition.")}
       </Section>
       <Section marginSize={MarginSizeName.medium}>
         <DialogGrid>
@@ -59,13 +59,11 @@ export function DoParticle() {
             <E q="76444">어 봐</E>
           </div>
           <UtteranceButton text="그거랑 같이 여기 있는 이것도 먹어 봐" />
-          <i>
-            {t("You should also try eating this one along with that that one.")}
-          </i>
+          <i>{t("You should also try eating this one along with that one.")}</i>
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.large}>
-        {t("A postpositional particle used to list multiple items.")}
+        {t("도 can be used to list multiple items.")}
       </Section>
       <Section marginSize={MarginSizeName.medium}>
         <DialogGrid>
@@ -99,7 +97,7 @@ export function DoParticle() {
             <E q="86568">아요</E>
           </div>
           <UtteranceButton text="아이스크림이 없으면 얼음물도 괜찮아요" />
-          <i>{t("If there is not ice cream, water will be fine.")}</i>
+          <i>{t("If there is not ice cream, water is fine.")}</i>
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.large}>
@@ -114,7 +112,11 @@ export function DoParticle() {
             <E q="26229">계산</E>
             <E q="86258">도</E>&nbsp;
             <E q="17254">못</E>&nbsp;
-            <E q="84120">한단</E>&nbsp;
+            <E q="73277" senseIndexes={[22]}>
+              한
+            </E>
+            &nbsp;
+            <E q="82216">단</E>
             <E q="27260">말</E>
             <E q="86232">이</E>
             <E q="80806">야</E>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useTopics } from "web/js/hook/useTopics";
@@ -7,12 +7,15 @@ import { Anchor } from "web/js/component/anchor";
 import { updateUserInterface } from "web/js/redux/user-interface/action";
 import "./style.scss";
 
-export function HamburgerMenu(props: React.HTMLAttributes<HTMLDivElement>) {
+export function HamburgerMenu() {
   const dispatch = useDispatch();
   const menuRef = useRef<HTMLDivElement>();
+  /* TODO: figure out css only solution */
+  const [menuWasEverOpened, setMenuWasEverOpened] = useState(false);
   const burgerMenuOpen = useSelector(
     (state: RootState) => state.userInterface.burgerMenuOpen,
   );
+  const openClassname = burgerMenuOpen ? "open" : "";
   const topics = useTopics();
   const onLinkClick = () => {
     dispatch(
@@ -21,6 +24,12 @@ export function HamburgerMenu(props: React.HTMLAttributes<HTMLDivElement>) {
       }),
     );
   };
+
+  useEffect(() => {
+    if (burgerMenuOpen) {
+      setMenuWasEverOpened(true);
+    }
+  }, [burgerMenuOpen]);
 
   useEffect(() => {
     if (!burgerMenuOpen) {
@@ -54,8 +63,11 @@ export function HamburgerMenu(props: React.HTMLAttributes<HTMLDivElement>) {
 
   return (
     <>
-      <div {...props} styleName={`overlay ${burgerMenuOpen ? "open" : ""}`} />
-      <div ref={menuRef} styleName={`root ${burgerMenuOpen ? "open" : ""}`}>
+      <div styleName={`overlay ${openClassname}`} />
+      <div
+        ref={menuRef}
+        styleName={`root ${openClassname}  ${menuWasEverOpened ? "dirty" : ""}`}
+      >
         {topics.map((topic) => (
           <Anchor
             onClick={onLinkClick}
