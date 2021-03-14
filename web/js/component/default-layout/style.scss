@@ -5,7 +5,6 @@
 
 .content {
   @include layout.defaultLayout();
-
   @include media.phone {
     overflow-y: auto;
   }
@@ -16,10 +15,6 @@
     padding: 6px layout.$horizontal-page-padding;
     background-color: #f1f1f1;
     border-top: 1px solid #848383;
-
-    @media (prefers-color-scheme: dark) {
-      background-color: color.$dark-mode-background;
-    }
   }
 
   @include media.not-phone {
@@ -43,9 +38,15 @@
     height: 100%;
     grid-template-rows: 1fr 44px;
   }
+}
 
-  @media (prefers-color-scheme: dark) {
+@include media.dark_mode {
+  .root {
     color: white;
     background: color.$dark-mode-background;
+  }
+
+  .footer {
+    background-color: color.$dark-mode-background;
   }
 }

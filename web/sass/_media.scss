@@ -11,3 +11,15 @@ $phoneWidth: 550px;
     @content;
   }
 }
+
+@mixin dark_mode() {
+  :global(.dark-color-scheme-root) {
+    @content;
+  }
+}
+
+@mixin light_mode() {
+  :global(.light-color-scheme-root) {
+    @content;
+  }
+}

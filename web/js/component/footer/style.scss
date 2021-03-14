@@ -7,10 +7,6 @@
   @include media.phone {
     display: none;
   }
-
-  @media (prefers-color-scheme: dark) {
-    color: color.$clickable-dark-mode !important;
-  }
 }
 
 .google-play-anchor {
@@ -105,5 +101,11 @@ button.back-element {
 
   @include media.not-phone {
     display: none;
+  }
+}
+
+@include media.dark_mode {
+  .about-us-anchor {
+    color: color.$clickable-dark-mode !important;
   }
 }

@@ -15,15 +15,64 @@ import { Subscribers } from "web/js/component/subscribers";
 import { DictionaryEntry } from "web/js/page/dictionary-entry";
 import { HamburgerMenu } from "web/js/component/hamburger-menu";
 import { SearchPage } from "web/js/page/search";
+import { ApplicationConstants } from "web/js/helper/application";
+import { PrefersColorSchemeSetting } from "web/js/interface/user-interface";
+import { Color } from "web/js/helper/color";
 import "./style.scss";
 
 export function Application() {
   const { i18n } = useTranslation();
   const dispatch = useDispatch();
   const articleRoutes = useArticleRoutes();
-  const { language, speechSynthesisSettings } = useSelector(
+  const { language, speechSynthesisSettings, prefersColorScheme } = useSelector(
     (state: RootState) => state.userInterface,
   );
+  const setGlobalDisplayMode = (type: PrefersColorSchemeSetting) => {
+    const element = document.querySelector(
+      `.${ApplicationConstants.rootClassname}`,
+    );
+
+    for (const key of Object.keys(PrefersColorSchemeSetting)) {
+      element.classList.remove(PrefersColorSchemeSetting[key]);
+    }
+
+    element.classList.add(type);
+
+    const htmlElement = document.querySelector("html");
+
+    if (type === PrefersColorSchemeSetting.dark) {
+      htmlElement.style.backgroundColor = Color.darkBackground;
+    } else {
+      htmlElement.style.removeProperty("background-color");
+    }
+  };
+
+  useEffect(() => {
+    const onChange: Parameters<
+      MediaQueryList["addEventListener"]
+    >["1"] = () => {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        setGlobalDisplayMode(PrefersColorSchemeSetting.dark);
+      }
+
+      if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+        setGlobalDisplayMode(PrefersColorSchemeSetting.light);
+      }
+    };
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", onChange);
+
+    return () => {
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .removeEventListener("change", onChange);
+    };
+  }, [prefersColorScheme]);
+
+  useEffect(() => {
+    setGlobalDisplayMode(prefersColorScheme);
+  }, [prefersColorScheme]);
 
   useEffect(() => {
     if (!window.speechSynthesis?.getVoices) {

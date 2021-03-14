@@ -10,6 +10,7 @@ import { DEFAULT_SPEAKING_RATE } from "web/js/interface/speech-synthesis";
 import { ArticleTitle } from "web/js/component/article-title";
 import { DefaultLayout } from "web/js/component/default-layout";
 import { Select } from "web/js/component/select";
+import { PrefersColorSchemeSetting } from "web/js/interface/user-interface";
 import "./style.scss";
 
 export function Configuration() {
@@ -20,6 +21,9 @@ export function Configuration() {
   );
   const language = useSelector(
     (state: RootState) => state.userInterface.language,
+  );
+  const prefersColorScheme = useSelector(
+    (state: RootState) => state.userInterface.prefersColorScheme,
   );
   const [voiceURI, setVoiceURI] = useState(
     speechSynthesisSettings.voiceURI ?? null,
@@ -56,6 +60,13 @@ export function Configuration() {
       }),
     );
   };
+  const onDisplayModeChange = (e) => {
+    dispatch(
+      updateUserInterface({
+        prefersColorScheme: e.target.value,
+      }),
+    );
+  };
 
   useEffect(() => {
     if (speechSynthesisSettings?.voiceURI) {
@@ -68,11 +79,26 @@ export function Configuration() {
       <DefaultLayout>
         <ArticleTitle>{t("Settings")}</ArticleTitle>
         <div styleName="field">
-          <label styleName="label" htmlFor="display-language">
+          <label styleName="label" htmlFor="display-mode">
             {t("Display Language")}
           </label>
           <Select
-            id="display-language"
+            id="display-mode"
+            value={prefersColorScheme}
+            onChange={onDisplayModeChange}
+            onBlur={onDisplayModeChange}
+          >
+            <option value={PrefersColorSchemeSetting.light}>
+              {t("Light")}
+            </option>
+            <option value={PrefersColorSchemeSetting.dark}>{t("Dark")}</option>
+          </Select>
+        </div>
+        <div styleName="field">
+          <label styleName="label" htmlFor="display-language">
+            {t("Display Mode")}
+          </label>
+          <Select
             value={language}
             onChange={onLanguageChange}
             onBlur={onLanguageChange}

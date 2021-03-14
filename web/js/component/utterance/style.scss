@@ -1,4 +1,5 @@
 @use '~web/sass/color';
+@use '~web/sass/media';
 
 button.root {
   color: color.$definition;
@@ -9,8 +10,10 @@ button.root {
 
 .root {
   font-size: 1rem;
+}
 
-  @media (prefers-color-scheme: dark) {
+@include media.dark_mode {
+  .root {
     color: color.$clickable-dark-mode !important;
   }
 }

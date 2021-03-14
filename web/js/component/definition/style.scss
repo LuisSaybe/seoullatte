@@ -52,14 +52,6 @@
     display: flex;
     justify-content: center;
   }
-
-  @media (prefers-color-scheme: dark) {
-    background-color: darken(#333, 5%);
-  }
-
-  @media (prefers-color-scheme: light) {
-    background-color: color.$white;
-  }
 }
 
 .title {
@@ -88,5 +80,17 @@
 @include media.phone() {
   .root {
     max-width: 280px;
+  }
+}
+
+@include media.dark_mode {
+  .root {
+    background-color: darken(#333, 5%);
+  }
+}
+
+@include media.light_mode {
+  .root {
+    background-color: color.$white;
   }
 }

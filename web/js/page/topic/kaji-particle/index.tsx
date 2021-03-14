@@ -59,7 +59,9 @@ export function KajiParticle() {
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.large}>
-        {t("A postpositional particle used to go beyond the normal degree.")}
+        {t(
+          "까지 can mean that something is an addition to normal expectations.",
+        )}
       </Section>
       <Section marginSize={MarginSizeName.medium}>
         <DialogGrid>
@@ -68,7 +70,8 @@ export function KajiParticle() {
             <E q="85851">는</E>&nbsp;
             <E q="89697">예쁘</E>
             <E q="78583">고</E>&nbsp;
-            <E q="71732">착하기</E>
+            <E q="71732">착하</E>
+            <E q="72222">기</E>
             <E q="69698">까지</E>&nbsp;
             <E q="73277">해</E>
             <E q="80220">서</E>&nbsp;
@@ -83,12 +86,12 @@ export function KajiParticle() {
           </div>
           <UtteranceButton text="지수는 예쁘고 착하기까지 해서 남자들에게 인기가 많았다." />
           <i>
-            {t("지수 was popular with men because she was pretty and nice.")}
+            {t("지수 was popular with men because she was so pretty and nice.")}
           </i>
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.large}>
-        {t("A postpositional particle used to go beyond the normal degree.")}
+        {t("까지 can mean that something goes beyond a normal degree.")}
       </Section>
       <Section marginSize={MarginSizeName.medium}>
         <DialogGrid>

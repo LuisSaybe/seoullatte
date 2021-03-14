@@ -13,8 +13,10 @@
 
 .text {
   color: color.$definition;
+}
 
-  @media (prefers-color-scheme: dark) {
+@include media.dark_mode {
+  .text {
     color: color.$clickable-dark-mode;
   }
 }

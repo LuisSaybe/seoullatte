@@ -1,28 +1,45 @@
 @use '~web/sass/button';
 @use '~web/sass/color';
+@use '~web/sass/media';
 
-.root {
-  text-decoration: none;
-
-  &:hover {
-    @media (prefers-color-scheme: light) {
+@include media.light_mode {
+  .root {
+    &:hover {
       color: darken(color.$anchor, 10%);
     }
 
-    @media (prefers-color-scheme: dark) {
-      color: color.$clickable-dark-mode;
-    }
-  }
-
-  &:not(:hover) {
-    @media (prefers-color-scheme: light) {
+    &:not(:hover) {
       color: color.$anchor;
     }
+  }
+}
 
-    @media (prefers-color-scheme: dark) {
-      color: color.$clickable-dark-mode;
+@include media.dark_mode {
+  .root {
+    &.button {
+      &:hover {
+        color: lighten(color.$dark-mode-button-text, 10%);
+      }
+
+      &:not(:hover) {
+        color: color.$dark-mode-button-text;
+      }
+    }
+
+    &:not(.button) {
+      &:hover {
+        color: darken(color.$clickable-dark-mode, 10%);
+      }
+
+      &:not(:hover) {
+        color: color.$clickable-dark-mode;
+      }
     }
   }
+}
+
+.root {
+  text-decoration: none;
 
   &.button {
     @include button.button();
@@ -31,10 +48,6 @@
 
     &:not(.icon) {
       padding: 8px;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      color: #435671;
     }
   }
 

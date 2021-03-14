@@ -1,6 +1,9 @@
 import { getLanguage } from "web/js/helper/language";
-
-import { UserInterface } from "web/js/interface/user-interface";
+import { getPrefersColorScheme } from "web/js/helper/user-interface";
+import {
+  PrefersColorSchemeSetting,
+  UserInterface,
+} from "web/js/interface/user-interface";
 import { Action } from "web/js/redux/user-interface/action";
 
 const initialState = {
@@ -9,6 +12,8 @@ const initialState = {
   speechSynthesisSettings: {
     voices: [],
   },
+  prefersColorScheme:
+    getPrefersColorScheme() ?? PrefersColorSchemeSetting.light,
 };
 
 export function userInterface(

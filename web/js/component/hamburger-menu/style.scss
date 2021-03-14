@@ -1,12 +1,9 @@
 @use '~web/sass/color';
+@use '~web/sass/media';
 
 .link {
   display: block;
   margin-top: 6px;
-
-  @media (prefers-color-scheme: dark) {
-    $clickable-dark-mode: #9dc6ff;
-  }
 
   &:last-child {
     margin-bottom: 32px;
@@ -31,10 +28,6 @@
   &:not(.open) {
     transform: translate3d(-100%, 0px, 0px);
   }
-
-  @media (prefers-color-scheme: dark) {
-    background-color: darken(color.$dark-mode-background, 5%);
-  }
 }
 
 .overlay {
@@ -53,5 +46,15 @@
     transform: translate3d(-100%, 0px, 0px);
     opacity: 0;
     transition: opacity 0.3s ease 0s, transform 0s ease 0.3s;
+  }
+}
+
+@include media.dark_mode {
+  .link {
+    $clickable-dark-mode: #9dc6ff;
+  }
+
+  .root {
+    background-color: darken(color.$dark-mode-background, 5%);
   }
 }

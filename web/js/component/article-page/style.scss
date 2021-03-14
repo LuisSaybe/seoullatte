@@ -5,12 +5,6 @@
   margin-top: size.$margin-medium;
 }
 
-.article-title {
-  @media (prefers-color-scheme: dark) {
-    color: #fff;
-  }
-}
-
 .article {
   @include media.not-phone {
     margin-top: size.$margin-medium;
@@ -19,4 +13,10 @@
 
 .footer {
   margin: size.$margin-medium 0;
+}
+
+@include media.dark_mode {
+  .article-title {
+    color: #fff;
+  }
 }
