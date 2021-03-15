@@ -9,10 +9,9 @@ export function setAllRefsClosed() {
   };
 }
 
-
 export function setRefOpen(element: HTMLElement, open: boolean) {
   return {
     type: Action.setRefOpen,
-    data: { element, open }
+    data: { element, open },
   };
 }

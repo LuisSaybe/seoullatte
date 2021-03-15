@@ -80,7 +80,7 @@ export function Configuration() {
         <ArticleTitle>{t("Settings")}</ArticleTitle>
         <div styleName="field">
           <label styleName="label" htmlFor="display-mode">
-            {t("Display Language")}
+            {t("Display Mode")}
           </label>
           <Select
             id="display-mode"
@@ -96,7 +96,7 @@ export function Configuration() {
         </div>
         <div styleName="field">
           <label styleName="label" htmlFor="display-language">
-            {t("Display Mode")}
+            {t("Display Language")}
           </label>
           <Select
             value={language}
