@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { appendLocation } from "../redux/location/action";
+
+import { appendLocation } from "web/js/redux/location/action";
 
 export function useLocations() {
   const location = useLocation();

@@ -23,8 +23,9 @@ export function PastTense() {
           <Anchor to={TopicRoute.ending}>pre-final ending</Anchor>
           &nbsp;ending is added to a predicate's stem.
         </Trans>
+        &nbsp;
+        {t("There are 2 steps to conjugate a predicate in the past tense.")}
       </Section>
-      <div>{t("There are 2 steps to conjugate a predicate.")}</div>
       <Section>
         <Subsection>
           <div>
@@ -44,6 +45,17 @@ export function PastTense() {
               &nbsp;to the final syllable.
             </Trans>
           </div>
+        </Subsection>
+      </Section>
+      <Section marginSize={MarginSizeName.medium}>
+        <Trans>
+          For example, in order to conjugate the verb&nbsp;
+          <Anchor to={TopicRoute.irregularPredicate}>ㄷ-irregular</Anchor>
+          &nbsp;verb&nbsp;
+          <E q="29667">걷다</E>&nbsp;in the past tense:
+        </Trans>
+        <Subsection>
+          걷다 + ({t("ㅓ or ㅏ")}) + ㅆ = 걸어 + ㅆ = 걸었
         </Subsection>
       </Section>
       <Section marginSize={MarginSizeName.large}>

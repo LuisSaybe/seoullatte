@@ -1,5 +1,5 @@
-import { LanguageNames, WordGrade } from "../interface/korean";
-import { Sense } from "./sense";
+import { LanguageNames, WordGrade } from "web/js/interface/korean";
+import { Sense } from "web/js/class/sense";
 
 export class Entry {
   public xml: Document;

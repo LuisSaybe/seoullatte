@@ -13,7 +13,6 @@ export function entityFetchState(
     case Action.getWords: {
       const url = new URL(action.data.fetchArguments.params);
       const q = url.pathname.split("/")[2];
-
       return {
         ...state,
         entry: {

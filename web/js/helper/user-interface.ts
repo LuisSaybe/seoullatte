@@ -1,4 +1,4 @@
-import { PrefersColorSchemeSetting } from "../interface/user-interface";
+import { PrefersColorSchemeSetting } from "web/js/interface/user-interface";
 
 export function getPrefersColorScheme() {
   const isDarkMode =

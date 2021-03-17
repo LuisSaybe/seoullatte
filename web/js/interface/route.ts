@@ -37,4 +37,5 @@ export enum TopicRoute {
   doParticle = "/do-particle",
   butoParticle = "/buto-particle",
   kkajiParticle = "/kaji-particle",
+  manParticle = "/man-particle",
 }

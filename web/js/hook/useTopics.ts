@@ -35,11 +35,12 @@ import { Questions } from "web/js/page/topic/questions";
 import { EParticle } from "web/js/page/topic/e-particle";
 import { HonorificSuffix } from "web/js/page/topic/honorific-suffix";
 import { PluralParticle } from "web/js/page/topic/plural-particle";
-import { PossessiveParticle } from "../page/topic/possessive-particle";
-import { ParticleESo } from "../page/topic/particle-e-so";
-import { DoParticle } from "../page/topic/do-particle";
-import { ParticleButo } from "../page/topic/particle-buto";
-import { KajiParticle } from "../page/topic/kaji-particle";
+import { PossessiveParticle } from "web/js/page/topic/possessive-particle";
+import { ParticleESo } from "web/js/page/topic/particle-e-so";
+import { DoParticle } from "web/js/page/topic/do-particle";
+import { ParticleButo } from "web/js/page/topic/particle-buto";
+import { KajiParticle } from "web/js/page/topic/kaji-particle";
+import { ParticleMan } from "web/js/page/topic/particle-man";
 
 export function useTopics(): Topic[] {
   const { t } = useTranslation();
@@ -372,6 +373,16 @@ export function useTopics(): Topic[] {
         name: t("The Particle 까지"),
         paths: [TopicRoute.kkajiParticle],
         relatedEntries: [/*까지*/ 69698],
+        relatedPartOfSpeech: [],
+      },
+      {
+        component: ParticleMan,
+        description: t(
+          "The Particle 만 indicates a limiting factor in discussion.",
+        ),
+        name: t("The Particle 만"),
+        paths: [TopicRoute.manParticle],
+        relatedEntries: [/*만*/ 86554],
         relatedPartOfSpeech: [],
       },
     ],

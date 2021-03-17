@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../redux/reducer";
+import { RootState } from "web/js/redux/reducer";
 
 export function useSearchEntry(search: string) {
   return useSelector(

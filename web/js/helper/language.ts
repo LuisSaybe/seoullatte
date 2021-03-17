@@ -1,7 +1,7 @@
 import {
   LanguageNames,
   USER_AGENT_LANGUAGE_LANGUAGE_MAP,
-} from "../interface/korean";
+} from "web/js/interface/korean";
 
 export enum Language {
   en = "en",

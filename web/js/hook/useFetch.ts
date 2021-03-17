@@ -40,9 +40,9 @@ export function useFetch(type: string): DispatchFetch {
       dispatch({
         type,
         data: {
-          response,
           fetchArguments,
-          error,
+          error: new Error(error),
+          ...(typeof response === "undefined" ? {} : { response }),
         },
       });
     }

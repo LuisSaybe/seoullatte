@@ -1,4 +1,4 @@
-import { LanguageNames } from "../interface/korean";
+import { LanguageNames } from "web/js/interface/korean";
 
 export class Sense {
   public root: Element;
