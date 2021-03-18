@@ -9,7 +9,6 @@ import { Section } from "web/js/component/section";
 import { MarginSizeName } from "web/js/interface/size";
 import { Anchor } from "web/js/component/anchor";
 import { TopicRoute } from "web/js/interface/route";
-import "./style.scss";
 import { DialogGrid } from "web/js/component/dialog-grid";
 
 export function BatchimSuffix() {
@@ -24,31 +23,25 @@ export function BatchimSuffix() {
   return (
     <>
       <Section>
-        <Trans>
-          If a word's final letter is a consonant this letter is reffered to as
-          a&nbsp;
-          <E senseIndexes={[1]} q="56544">
-            받침
-          </E>
-          .
-        </Trans>
-        &nbsp;
-        <Trans>
-          For example, the word <E q="29724">방</E>
-          &nbsp;has a 받침 since it ends in the consonant ㅇ while&nbsp;
-          <E q="27369">여자</E> does not have a 받침 since the final letter ㅏ
-          is a vowel.
-        </Trans>
-        &nbsp;
-        {t("Some suffixes change based on whether a word has a 받침 or not.")}
+        {t(
+          "Some suffixes change based on whether a word has ends in a consonant or vowel.",
+        )}
         &nbsp;
         {t(
-          "For example, the honorific suffix 시 will become 으시 when added to a predicate stem that has a 받침.",
+          "Many suffixes will add the syllable 으 if the word it attches to ends in a consonant.",
         )}
+        &nbsp;
+        <Trans>
+          For example, the honorific suffix <E q="80330">시</E> will
+          become&nbsp;
+          <E q="80329">으시</E>
+          &nbsp; when added to a predicate stem that&nbsp;
+          <Anchor to={TopicRoute.batchim}>ends in a consonant</Anchor>.
+        </Trans>
       </Section>
       <Section>
         {t(
-          "The predicate stem of 괜찮다 has a 받침 so when combined with the honorific suffix 시, a 으시 will be placed after the predicate stem.",
+          "The predicate stem of 괜찮다 ends in a consonant ㅎ so when combined with the honorific suffix 시, a 으시 will be placed after the predicate stem.",
         )}
         &nbsp;
         <Trans>

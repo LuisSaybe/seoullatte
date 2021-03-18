@@ -6,7 +6,6 @@ import { Anchor } from "web/js/component/anchor";
 import { E } from "web/js/component/definition-popup";
 import { TopicRoute } from "web/js/interface/route";
 import { MarginSizeName } from "web/js/interface/size";
-import "./style.scss";
 
 export function IntimateSpeech() {
   const { t } = useTranslation();

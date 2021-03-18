@@ -1,8 +1,10 @@
 @use "~web/sass/media";
+@use "~web/sass/size";
 
 .table {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4px;
   justify-items: flex-start;
+  margin-top: size.$margin-medium;
 }

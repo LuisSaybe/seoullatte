@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { Section } from "web/js/component/section";
 import { E } from "web/js/component/definition-popup";
-import "./style.scss";
+import { Table } from "web/js/component/table";
 
 export function Predicate() {
   const { t } = useTranslation();
@@ -27,8 +27,8 @@ export function Predicate() {
         &nbsp;
         {t("A predicate can be a verb, an adjective or a copula.")}
       </Section>
-      <div styleName="table-section">
-        <div styleName="table">
+      <Section>
+        <Table columns={3}>
           <strong>{t("Stem")}</strong>
           <strong>{t("Uninflected predicate")}</strong>
           <strong>{t("Part of Speech")}</strong>
@@ -41,8 +41,8 @@ export function Predicate() {
           <span>재미있</span>
           <E q="71212">재미있다</E>
           <span>{t("Adjective")}</span>
-        </div>
-      </div>
+        </Table>
+      </Section>
     </>
   );
 }

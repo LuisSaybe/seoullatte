@@ -9,7 +9,6 @@ import { SectionTitle } from "web/js/component/section-title";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { TopicRoute } from "web/js/interface/route";
 import { MarginSizeName } from "web/js/interface/size";
-import "./style.scss";
 
 export function Questions() {
   const { t } = useTranslation();
@@ -96,8 +95,10 @@ export function Questions() {
           <i>{t("From when shall (I) start?")}</i>
         </DialogGrid>
       </Section>
-      <Section marginSize={MarginSizeName.large}>
-        <SectionTitle>{t("Asking about methods")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("Asking about methods")}
+      </SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
         <Trans>
           When one wishes to inquire about a method or manner the adverb&nbsp;
           <E q="70482">어떻</E>
@@ -121,8 +122,10 @@ export function Questions() {
           <i>{t("How can I go to Incheon?")}</i>
         </DialogGrid>
       </Section>
-      <Section marginSize={MarginSizeName.large}>
-        <SectionTitle>{t("Asking about reasons or motives")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("Asking about reasons or motives")}
+      </SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
         <Trans>
           When one wishes to inquire about a reason the adverb&nbsp;
           <E q="67848">왜</E> is used.
@@ -147,8 +150,10 @@ export function Questions() {
           <i>{t("Why (do they) always come late (for) practice?")}</i>
         </DialogGrid>
       </Section>
-      <Section marginSize={MarginSizeName.large}>
-        <SectionTitle>{t("Categories")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("Categories")}
+      </SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
         <Trans>
           When one wishes to ask which category or kind an object may belong to,
           the&nbsp;
@@ -176,8 +181,10 @@ export function Questions() {
           <i>{t("What kind of music do you usually listen to?")}</i>
         </DialogGrid>
       </Section>
-      <Section marginSize={MarginSizeName.large}>
-        <SectionTitle>{t("Selections")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("Selections")}
+      </SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
         <Trans>
           When one wishes to distinguish an object from a group of
           selections&nbsp;
@@ -205,58 +212,64 @@ export function Questions() {
           <i>{t("Which bus do I need to take to get to the airport?")}</i>
         </DialogGrid>
       </Section>
-      <Section marginSize={MarginSizeName.large}>
-        <SectionTitle>{t("Quantity")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("Quantity")}
+      </SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
+        <Trans>
+          When one inquires about a quantity the numeral&nbsp;
+          <E q="66235">몇</E> is used.
+        </Trans>
+        &nbsp;
+        <Trans>
+          몇 is placed before a&nbsp;
+          <Anchor to={TopicRoute.counters}>counter</Anchor>
+        </Trans>
+        .
+        <Section marginSize={MarginSizeName.large}>
+          <DialogGrid>
+            <div>
+              <E q="66235">몇</E>&nbsp;
+              <E q="62266" senseIndexes={[1]}>
+                달
+              </E>
+              <E q="86355">을</E>
+              &nbsp;
+              <E q="66375" senseIndexes={[6]}>
+                보냈
+              </E>
+              <E q="86571">어요</E>
+              {t("?")}
+            </div>
+            <UtteranceButton text="몇 달을 보냈어요?">
+              몇 달을 보냈어요?
+            </UtteranceButton>
+            <i>{t("How many months did you spend?")}</i>
+          </DialogGrid>
+        </Section>
       </Section>
-      <Trans>
-        When one inquires about a quantity the numeral&nbsp;
-        <E q="66235">몇</E> is used.
-      </Trans>
-      &nbsp;
-      <Trans>
-        몇 is placed before a&nbsp;
-        <Anchor to={TopicRoute.counters}>counter</Anchor>
-      </Trans>
-      .
-      <Section marginSize={MarginSizeName.large}>
-        <DialogGrid>
-          <div>
-            <E q="66235">몇</E>&nbsp;
-            <E q="62266" senseIndexes={[1]}>
-              달
-            </E>
-            <E q="86355">을</E>
-            &nbsp;
-            <E q="66375" senseIndexes={[6]}>
-              보냈
-            </E>
-            <E q="86571">어요</E>
-            {t("?")}
-          </div>
-          <UtteranceButton text="몇 달을 보냈어요?">
-            몇 달을 보냈어요?
-          </UtteranceButton>
-          <i>{t("How many months did you spend?")}</i>
-        </DialogGrid>
-      </Section>
-      <SectionTitle>{t("Degree and extent")}</SectionTitle>
-      <Trans>
-        When one inquires about the degree to which something occurs, the adverb{" "}
-        <E q="67316">얼마나</E> is used.
-      </Trans>
-      <Section marginSize={MarginSizeName.large}>
-        <DialogGrid>
-          <div>
-            <E q="67316">얼마나</E>&nbsp;
-            <E q="64682">마실</E>
-            <E q="81068">래</E>
-            {t("?")}
-          </div>
-          <UtteranceButton text="얼마나 마실래?">
-            얼마나 마실래?
-          </UtteranceButton>
-          <i>{t("How much would you like to drink?")}</i>
-        </DialogGrid>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("Degree and extent")}
+      </SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
+        <Trans>
+          When one inquires about the degree to which something occurs, the
+          adverb <E q="67316">얼마나</E> is used.
+        </Trans>
+        <Section marginSize={MarginSizeName.large}>
+          <DialogGrid>
+            <div>
+              <E q="67316">얼마나</E>&nbsp;
+              <E q="64682">마실</E>
+              <E q="81068">래</E>
+              {t("?")}
+            </div>
+            <UtteranceButton text="얼마나 마실래?">
+              얼마나 마실래?
+            </UtteranceButton>
+            <i>{t("How much would you like to drink?")}</i>
+          </DialogGrid>
+        </Section>
       </Section>
     </>
   );

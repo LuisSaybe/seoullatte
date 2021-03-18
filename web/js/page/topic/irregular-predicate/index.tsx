@@ -89,7 +89,9 @@ export function IrregularPredicate() {
           </Section>
         </Section>
       </Section>
-      <SectionTitle>{t("ㄷ Irregular Predicates")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("ㄷ Irregular Predicates")}
+      </SectionTitle>
       <Section>
         {t(
           "If a predicate is ㄷ-irregular, then ㄷ will become ㄹ when joined with a suffix that starts with a vowel.",
@@ -112,7 +114,9 @@ export function IrregularPredicate() {
           </Section>
         </Section>
       </Section>
-      <SectionTitle>{t("ㅂ Irregular Predicates")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("ㅂ Irregular Predicates")}
+      </SectionTitle>
       <Section>
         {t(
           "If a predicate is ㅂ-irregular, then ㅂ will become 오 or 우 when joined with a suffix that starts with a vowel.",
@@ -133,7 +137,9 @@ export function IrregularPredicate() {
           <span>{t("no")}</span>
         </Section>
       </Section>
-      <SectionTitle>{t("ㅅ Irregular Predicates")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("ㅅ Irregular Predicates")}
+      </SectionTitle>
       <Section id={S_IRREGULAR_ID}>
         {t(
           "If a predicate is ㅅ irregular, then ㅅ will be deleted when joined with a suffix that starts with a vowel.",
@@ -154,7 +160,9 @@ export function IrregularPredicate() {
           <span>{t("no")}</span>
         </Section>
       </Section>
-      <SectionTitle>{t("ㅎ Irregular Predicates")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("ㅎ Irregular Predicates")}
+      </SectionTitle>
       <Section>
         {t(
           "If a predicate is ㅎ irregular then the ㅎ in the final syllable of the stem is removed when a suffix which begins with a vowel is added to the predicate stem.",
@@ -175,7 +183,9 @@ export function IrregularPredicate() {
           <span>{t("no")}</span>
         </Section>
       </Section>
-      <SectionTitle>{t("르 Irregular Predicates")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("르 Irregular Predicates")}
+      </SectionTitle>
       <Section>
         {t(
           "If a predicate is 르 irregular then ㅡ is removed from the stem and a ㄹ is added as a 받침 to the syllable before 르 when a suffix which begins with 어 or 아 is added.",
@@ -203,7 +213,9 @@ export function IrregularPredicate() {
           <span>{t("no")}</span>
         </Section>
       </Section>
-      <SectionTitle>{t("ㄹ Irregular Predicates")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("ㄹ Irregular Predicates")}
+      </SectionTitle>
       <Section>
         {t(
           "If a suffix beginning with ㄴ, ㅂ, or ㅅ is added to a predicate stem with a ㄹ 받침, then the ㄹ is removed.",
@@ -225,8 +237,10 @@ export function IrregularPredicate() {
           </div>
         </Section>
       </Section>
-      <Section id={S_IRREGULAR_ID}>
-        <ArticleTitle>{t("으 Irregular Predicates")}</ArticleTitle>
+      <SectionTitle id={S_IRREGULAR_ID} marginSize={MarginSizeName.large}>
+        {t("으 Irregular Predicates")}
+      </SectionTitle>
+      <Section>
         {t(
           "If the final letter of a predicate is ㅡ then ㅡ is removed when a suffix which begins with a vowel is added.",
         )}

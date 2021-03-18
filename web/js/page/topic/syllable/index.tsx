@@ -3,7 +3,6 @@ import { useTranslation, Trans } from "react-i18next";
 
 import { Section } from "web/js/component/section";
 import { E } from "web/js/component/definition-popup";
-import "./style.scss";
 
 export function Syllable() {
   const { t } = useTranslation();

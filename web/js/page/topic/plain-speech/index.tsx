@@ -24,20 +24,24 @@ export function PlainSpeech() {
           "Only verbs can be conjugated for proposotive or imperative sentences.",
         )}
       </Section>
-      <SectionTitle>{t("For declarative sentences")}</SectionTitle>
-      {t(
-        "If the predicate is an adjective or a copular, then 다 is added to the stem or to the past tense marker.",
-      )}
-      &nbsp;
-      {t(
-        "If the predicate is a verb, 는다 is add to stems ending in a consonant, otherwise ㄴ다 is added to the stem, ㄴ becomes the 받침.",
-      )}
-      &nbsp;
-      <Trans>
-        If the predicate is conjugated in the&nbsp;
-        <Anchor to={TopicRoute.pastTense}>past tense</Anchor>
-        &nbsp;then 다 is added to the past tense ending.
-      </Trans>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("For declarative sentences")}
+      </SectionTitle>
+      <Section>
+        {t(
+          "If the predicate is an adjective or a copular, then 다 is added to the stem or to the past tense marker.",
+        )}
+        &nbsp;
+        {t(
+          "If the predicate is a verb, 는다 is add to stems ending in a consonant, otherwise ㄴ다 is added to the stem, ㄴ becomes the 받침.",
+        )}
+        &nbsp;
+        <Trans>
+          If the predicate is conjugated in the&nbsp;
+          <Anchor to={TopicRoute.pastTense}>past tense</Anchor>
+          &nbsp;then 다 is added to the past tense ending.
+        </Trans>
+      </Section>
       <Section marginSize={MarginSizeName.small}>
         <Trans>
           The verb <E q="58272">먹다</E> is conjugated as <E q="58272">먹</E>
@@ -96,11 +100,13 @@ export function PlainSpeech() {
           </DialogGrid>
         </Section>
       </Section>
-      <SectionTitle>{t("For interrogative sentences")}</SectionTitle>
-      {t(
-        "니 or 냐 is added to predicate stems for spoken communication 으냐 can be added to stems that end in a consonants for written communication.",
-      )}
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("For interrogative sentences")}
+      </SectionTitle>
       <Section marginSize={MarginSizeName.small}>
+        {t(
+          "니 or 냐 is added to predicate stems for spoken communication 으냐 can be added to stems that end in a consonants for written communication.",
+        )}
         <Trans>
           The verb <E q="58272">먹다</E> can be conjugated as&nbsp;
           <E q="58272">먹</E>
@@ -140,13 +146,17 @@ export function PlainSpeech() {
           <i>{t("Is 민준이 your older brother?")}</i>
         </DialogGrid>
       </Section>
-      <SectionTitle>{t("For imperative sentences")}</SectionTitle>
-      <Trans>
-        <Anchor to={TopicRoute.addingVowelToPredicateStem}>
-          ㅓ or ㅏ is added
-        </Anchor>
-        &nbsp;to the verb stem followed by 라.
-      </Trans>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("For imperative sentences")}
+      </SectionTitle>
+      <Section>
+        <Trans>
+          <Anchor to={TopicRoute.addingVowelToPredicateStem}>
+            ㅓ or ㅏ is added
+          </Anchor>
+          &nbsp;to the verb stem followed by 라.
+        </Trans>
+      </Section>
       <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
@@ -170,8 +180,10 @@ export function PlainSpeech() {
           <i>{t("Do not waste water, please save it.")}</i>
         </DialogGrid>
       </Section>
-      <SectionTitle>{t("For proposotive sentences")}</SectionTitle>
-      {t("자 is added to the verb stem.")}
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("For proposotive sentences")}
+      </SectionTitle>
+      <Section>{t("자 is added to the verb stem.")}</Section>
       <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>

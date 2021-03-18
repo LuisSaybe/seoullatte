@@ -11,7 +11,6 @@ import { Section } from "web/js/component/section";
 import { Table } from "web/js/component/table";
 import { TopicTitleMedium } from "web/js/component/topic-title-medium";
 import { Utterance } from "web/js/component/utterance";
-import "./style.scss";
 
 export function Noun() {
   const { t } = useTranslation();

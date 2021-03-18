@@ -4,9 +4,7 @@ import { Trans, useTranslation } from "react-i18next";
 import { E } from "web/js/component/definition-popup";
 import { Section } from "web/js/component/section";
 import { Anchor } from "web/js/component/anchor";
-import { ArticleTitle } from "web/js/component/article-title";
 import { TopicRoute } from "web/js/interface/route";
-import "./style.scss";
 import { MarginSizeName } from "web/js/interface/size";
 
 export function PoliteSpeech() {

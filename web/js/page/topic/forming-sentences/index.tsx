@@ -7,7 +7,6 @@ import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { MarginSizeName } from "web/js/interface/size";
-import "./style.scss";
 
 export function FormingSentences() {
   const { t } = useTranslation();
@@ -27,8 +26,10 @@ export function FormingSentences() {
           "Secondly, implicitly understood information can be ommitted from communcation.",
         )}
       </Section>
-      <Section>
-        <SectionTitle>{t("Word order")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("Word order")}
+      </SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
         {t(
           "A simple Korean sentence is composed of a subject and a predicate.",
         )}
@@ -70,8 +71,10 @@ export function FormingSentences() {
           <i>{t("I eat rice.")}</i>
         </DialogGrid>
       </Section>
-      <Section marginSize={MarginSizeName.large}>
-        <SectionTitle>{t("Context based omission")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("Context based omission")}
+      </SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
         {t(
           "The subject or topic of a sentence can be omitted when the subject or topic is implicitly understood.",
         )}

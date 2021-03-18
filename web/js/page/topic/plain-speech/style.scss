@@ -1,7 +1,0 @@
-@use "~web/sass/media";
-
-.table-entry {
-  @include media.phone() {
-    font-size: 0.7rem;
-  }
-}

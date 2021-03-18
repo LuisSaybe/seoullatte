@@ -34,6 +34,7 @@ export enum KoreaPartOfSpeech {
   adverb = "부사",
   interjection = "감탄사",
   none = "품사 없음",
+  postpositionalParticle = "조사",
 }
 
 export enum LanguageNames {

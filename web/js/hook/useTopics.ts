@@ -41,6 +41,8 @@ import { DoParticle } from "web/js/page/topic/do-particle";
 import { ParticleButo } from "web/js/page/topic/particle-buto";
 import { KajiParticle } from "web/js/page/topic/kaji-particle";
 import { ParticleMan } from "web/js/page/topic/particle-man";
+import { Batchim } from "web/js/page/topic/batchim";
+import { Particles } from "web/js/page/topic/particles";
 
 export function useTopics(): Topic[] {
   const { t } = useTranslation();
@@ -117,6 +119,16 @@ export function useTopics(): Topic[] {
         relatedPartOfSpeech: [],
       },
       {
+        component: Batchim,
+        description: t(
+          "Learn about 받침s and how why they are relevant in Korean.",
+        ),
+        name: t("Words with 받침"),
+        paths: [TopicRoute.batchim],
+        relatedEntries: [/*받침*/ 56544],
+        relatedPartOfSpeech: [],
+      },
+      {
         component: BatchimSuffix,
         description: t("Adding 으 to predicate stems"),
         name: t("Adding 으 to predicates stems"),
@@ -186,6 +198,14 @@ export function useTopics(): Topic[] {
         paths: [TopicRoute.irregularPredicate],
         relatedEntries: [],
         relatedPartOfSpeech: [],
+      },
+      {
+        component: Particles,
+        description: t("Learn about Korean particles and how they are used."),
+        name: t("Particles"),
+        paths: [TopicRoute.particles],
+        relatedEntries: [],
+        relatedPartOfSpeech: [KoreaPartOfSpeech.postpositionalParticle],
       },
       {
         component: SubjectParticle,

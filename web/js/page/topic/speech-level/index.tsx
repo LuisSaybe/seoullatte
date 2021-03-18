@@ -7,7 +7,6 @@ import { Anchor } from "web/js/component/anchor";
 import { Section } from "web/js/component/section";
 import { E } from "web/js/component/definition-popup";
 import { TopicTitleMedium } from "web/js/component/topic-title-medium";
-import "./style.scss";
 
 export function SpeechLevel() {
   const { t } = useTranslation();

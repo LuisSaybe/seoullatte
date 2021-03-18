@@ -1,15 +1,18 @@
 import React from "react";
 
+import { MarginSizeName } from "web/js/interface/size";
 import "./style.scss";
 
-export function SectionTitle(
-  props: React.HtmlHTMLAttributes<HTMLHeadingElement>,
-) {
-  const { children, ...rest } = props;
+interface Props extends React.HtmlHTMLAttributes<HTMLHeadingElement> {
+  marginSize?: MarginSizeName;
+}
+
+export function SectionTitle(props: Props) {
+  const { children, marginSize, ...rest } = props;
 
   return (
-    <h3 styleName="root" {...rest}>
+    <div {...rest} styleName={`root ${marginSize ?? ""}`}>
       {children}
-    </h3>
+    </div>
   );
 }

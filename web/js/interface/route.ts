@@ -38,4 +38,6 @@ export enum TopicRoute {
   butoParticle = "/buto-particle",
   kkajiParticle = "/kaji-particle",
   manParticle = "/man-particle",
+  batchim = "/batchim",
+  particles = "/particles",
 }

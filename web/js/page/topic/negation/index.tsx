@@ -9,7 +9,6 @@ import { SectionTitle } from "web/js/component/section-title";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { TopicRoute } from "web/js/interface/route";
 import { MarginSizeName } from "web/js/interface/size";
-import "./style.scss";
 
 export function Negation() {
   const { t } = useTranslation();

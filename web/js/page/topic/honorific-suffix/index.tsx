@@ -8,7 +8,6 @@ import { Section } from "web/js/component/section";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { TopicRoute } from "web/js/interface/route";
 import { MarginSizeName } from "web/js/interface/size";
-import "./style.scss";
 
 export function HonorificSuffix() {
   const { t } = useTranslation();

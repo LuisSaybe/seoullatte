@@ -8,7 +8,6 @@ import { DialogGrid } from "web/js/component/dialog-grid";
 import { MarginSizeName } from "web/js/interface/size";
 import { Anchor } from "web/js/component/anchor";
 import { TopicRoute } from "web/js/interface/route";
-import "./style.scss";
 
 export function Copula() {
   const { t } = useTranslation();

@@ -8,7 +8,6 @@ import { TopicRoute } from "web/js/interface/route";
 import { MarginSizeName } from "web/js/interface/size";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { UtteranceButton } from "web/js/component/utterance-button";
-import "./style.scss";
 
 export function BoundNoun() {
   const { t } = useTranslation();

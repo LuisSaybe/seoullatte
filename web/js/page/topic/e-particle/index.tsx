@@ -1,12 +1,12 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { E } from "web/js/component/definition-popup";
 
+import { E } from "web/js/component/definition-popup";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import { UtteranceButton } from "web/js/component/utterance-button";
-import "./style.scss";
+import { MarginSizeName } from "web/js/interface/size";
 
 export function EParticle() {
   const { t } = useTranslation();
@@ -18,11 +18,11 @@ export function EParticle() {
           "The particle 에 attaches to nouns and particles and can have several meanings. While not exhaustive, we present the most common usages here.",
         )}
       </Section>
-      <Section>
-        <SectionTitle>{t("Location")}</SectionTitle>
-        <span styleName="text">
-          {t("The particle 에 attaches to a noun to indicate a location.")}
-        </span>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("Location")}
+      </SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
+        {t("The particle 에 attaches to a noun to indicate a location.")}
       </Section>
       <Section>
         <DialogGrid>
@@ -44,8 +44,8 @@ export function EParticle() {
           <i>That book is in our school library.</i>
         </DialogGrid>
       </Section>
-      <Section>
-        <SectionTitle>{t("Time")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>{t("Time")}</SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
         {t("The particle 에 attaches to a noun to indicate a time.")}
       </Section>
       <Section>
@@ -66,8 +66,10 @@ export function EParticle() {
           <i>{t("지수 married last year")}</i>
         </DialogGrid>
       </Section>
-      <Section>
-        <SectionTitle>{t("Destination")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("Destination")}
+      </SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
         {t("The particle 에 attaches to a noun to indicate a destination.")}
       </Section>
       <Section>
@@ -87,8 +89,10 @@ export function EParticle() {
           <i>{t("We decided to go to the park.")}</i>
         </DialogGrid>
       </Section>
-      <Section>
-        <SectionTitle>{t("Action subject")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("Action subject")}
+      </SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
         {t(
           "The particle 에 attaches to a noun to indicate that an action is applied to it.",
         )}
@@ -113,8 +117,8 @@ export function EParticle() {
           <i>{t("I watered the flowers.")}</i>
         </DialogGrid>
       </Section>
-      <Section>
-        <SectionTitle>{t("Goal")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>{t("Goal")}</SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
         {t(
           "The particle 에 attaches to a noun to indicate it is a goal or objective.",
         )}

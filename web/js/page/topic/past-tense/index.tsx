@@ -10,8 +10,6 @@ import { UtteranceButton } from "web/js/component/utterance-button";
 import { TopicRoute } from "web/js/interface/route";
 import { MarginSizeName } from "web/js/interface/size";
 
-import "./style.scss";
-
 export function PastTense() {
   const { t } = useTranslation();
 
@@ -41,7 +39,9 @@ export function PastTense() {
             &bull;&nbsp;
             <Trans>
               Then add ㅆ as a&nbsp;
-              <Anchor to={TopicRoute.addingUToPredicates}>받침</Anchor>
+              <E q="56544" senseIndexes={[1]}>
+                받침
+              </E>
               &nbsp;to the final syllable.
             </Trans>
           </div>

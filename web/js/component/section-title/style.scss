@@ -1,9 +1,23 @@
 @use '~web/sass/color';
 @use '~web/sass/media';
+@use '~web/sass/size';
 
 .root {
   color: color.$title;
   font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.small {
+  margin-top: size.$margin-small;
+}
+
+.medium {
+  margin-top: size.$margin-medium;
+}
+
+.large {
+  margin-top: size.$margin-large;
 }
 
 @include media.dark_mode {

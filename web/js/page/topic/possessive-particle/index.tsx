@@ -72,7 +72,8 @@ export function PossessiveParticle() {
             <E q="62276">입</E>&nbsp;
             <E q="74890">안</E>
             <E q="86572">에</E>&nbsp;
-            <E q="16271">감</E>돈<E q="85041">다</E>
+            <E q="16271">감돈</E>
+            <E q="18913">다</E>
           </div>
           <UtteranceButton text="커피의 향기가 입 안에 감돈다" />
           <i>{t("The scent of coffee is in my mouth.")}</i>

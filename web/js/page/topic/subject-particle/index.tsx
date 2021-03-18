@@ -6,7 +6,6 @@ import { DialogGrid } from "web/js/component/dialog-grid";
 import { Section } from "web/js/component/section";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { MarginSizeName } from "web/js/interface/size";
-import "./style.scss";
 
 export function SubjectParticle() {
   const { t } = useTranslation();

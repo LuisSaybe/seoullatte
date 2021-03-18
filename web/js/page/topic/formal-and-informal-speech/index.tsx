@@ -4,7 +4,6 @@ import { Trans, useTranslation } from "react-i18next";
 import { Section } from "web/js/component/section";
 import { ArticleTitle } from "web/js/component/article-title";
 import { E } from "web/js/component/definition-popup";
-import "./style.scss";
 
 export function FormalAndInformalSpeech() {
   const { t } = useTranslation();

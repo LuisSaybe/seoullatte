@@ -7,7 +7,6 @@ import { SectionTitle } from "web/js/component/section-title";
 import { MarginSizeName } from "web/js/interface/size";
 import { DialogGrid } from "web/js/component/dialog-grid";
 import { UtteranceButton } from "web/js/component/utterance-button";
-import "./style.scss";
 
 export function PredicateAsModifier() {
   const { t } = useTranslation();
@@ -23,10 +22,10 @@ export function PredicateAsModifier() {
           "Different kinds of modifier are added to a predicate stem to indicate tense.",
         )}
       </Section>
-      <Section>
-        <SectionTitle>
-          {t("Verbs as modifiers in the present tense")}
-        </SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("Verbs as modifiers in the present tense")}
+      </SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
         {t(
           "To change a verb to a modifier in the present tense, the suffix 는 is added.",
         )}
@@ -45,8 +44,10 @@ export function PredicateAsModifier() {
           </DialogGrid>
         </Section>
       </Section>
-      <Section>
-        <SectionTitle>{t("Verbs as modifiers in the past tense")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("Verbs as modifiers in the past tense")}
+      </SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
         {t(
           "To change a verb to a modifier in the past tense, the suffix 은 is added to the verb stem when the verb ends in a consonant.",
         )}
@@ -85,10 +86,10 @@ export function PredicateAsModifier() {
           <i>{t("(I) have lost several times.")}</i>
         </DialogGrid>
       </Section>
-      <Section>
-        <SectionTitle>
-          {t("Verbs as modifiers in the prospective tense")}
-        </SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("Verbs as modifiers in the prospective tense")}
+      </SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
         {t(
           "To change a verb to a modifier in the prospective tense, the suffix 을 is added to the verb stem when the verb ends in a consonant.",
         )}
@@ -141,8 +142,10 @@ export function PredicateAsModifier() {
           <i>{t("I'm planning to read a book on vacation.")}</i>
         </DialogGrid>
       </Section>
-      <Section marginSize={MarginSizeName.large}>
-        <SectionTitle>{t("Adjectives as modifiers")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("Adjectives as modifiers")}
+      </SectionTitle>
+      <Section marginSize={MarginSizeName.medium}>
         {t(
           "To change an adjective to a modifier, the suffix 은 is added to the adjective stem when the adjective ends in a consonant.",
         )}

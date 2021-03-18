@@ -8,6 +8,7 @@ import { Section } from "web/js/component/section";
 import { SectionTitle } from "web/js/component/section-title";
 import { UtteranceButton } from "web/js/component/utterance-button";
 import { TopicRoute } from "web/js/interface/route";
+import { MarginSizeName } from "web/js/interface/size";
 import "./style.scss";
 
 export function DeferentialSpeech() {
@@ -23,7 +24,7 @@ export function DeferentialSpeech() {
           imperative or proposotive.
         </Trans>
       </Section>
-      <SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
         {t("For predicates stems ending in a consonant")}
       </SectionTitle>
       <div styleName="table">
@@ -102,7 +103,9 @@ export function DeferentialSpeech() {
           <div />
         </DialogGrid>
       </Section>
-      <SectionTitle>{t("For predicates stems ending in a vowel")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.large}>
+        {t("For predicates stems ending in a vowel")}
+      </SectionTitle>
       <div styleName="table">
         <div>
           <div>{t("Declarative")}</div>
@@ -122,7 +125,13 @@ export function DeferentialSpeech() {
         </div>
       </div>
       <Section>
-        {t("ㅂ becomes the 받침 of the last syllable in the predicate.")}
+        <Trans>
+          ㅂ becomes the&nbsp;
+          <E q="56544" senseIndexes={[1]}>
+            받침
+          </E>
+          &nbsp;of the last syllable in the predicate.
+        </Trans>
       </Section>
     </>
   );
