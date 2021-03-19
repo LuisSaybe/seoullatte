@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const url = require("url");
 const fs = require("fs");
 
-const getContentAndURL = async (browser, language, target) => {
+const getContentAndURL = async (browser, target) => {
   const visitedPathnames = new Set();
   const toVisit = [target];
   const result = [];
@@ -36,7 +36,7 @@ const getContentAndURL = async (browser, language, target) => {
 
 const run = async () => {
   for (const language of ["fr", "en"]) {
-    console.log(`Writing files for language ${language}`);
+    console.log(`Launching pupeteer in language: ${language}`);
 
     const browser = await new Promise((resolve, reject) => {
       puppeteer
@@ -51,17 +51,14 @@ const run = async () => {
         .then(resolve, reject);
     });
 
-    const results = await getContentAndURL(
-      browser,
-      language,
-      process.env.ORIGIN,
-    );
+    console.log("Begin crawling", process.env.ORIGIN);
+
+    const results = await getContentAndURL(browser, process.env.ORIGIN);
 
     for (const { pathname, html } of results) {
       const name =
         pathname === "/" ? `dist/index` : `dist/${pathname.substring(1)}`;
-      const suffix = `-${language}`;
-      const fileName = `${name}${suffix}.html`;
+      const fileName = `${name}-${language}.html`;
       fs.writeFileSync(fileName, html);
 
       console.log(`Wrote ${fileName}`);
