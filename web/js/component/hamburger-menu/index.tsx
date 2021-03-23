@@ -11,7 +11,9 @@ export function HamburgerMenu() {
   const dispatch = useDispatch();
   const menuRef = useRef<HTMLDivElement>();
   /* TODO: figure out css only solution */
-  const [menuWasEverOpened, setMenuWasEverOpened] = useState(false);
+  const [menuStyle, setMenuStyle] = useState<React.CSSProperties>({
+    display: "none",
+  });
   const burgerMenuOpen = useSelector(
     (state: RootState) => state.userInterface.burgerMenuOpen,
   );
@@ -26,10 +28,10 @@ export function HamburgerMenu() {
   };
 
   useEffect(() => {
-    if (burgerMenuOpen) {
-      setMenuWasEverOpened(true);
-    }
-  }, [burgerMenuOpen]);
+    setTimeout(() => {
+      setMenuStyle({});
+    }, 500);
+  }, []);
 
   useEffect(() => {
     if (!burgerMenuOpen) {
@@ -64,10 +66,7 @@ export function HamburgerMenu() {
   return (
     <>
       <div styleName={`overlay ${openClassname}`} />
-      <div
-        ref={menuRef}
-        styleName={`root ${openClassname}  ${menuWasEverOpened ? "dirty" : ""}`}
-      >
+      <div ref={menuRef} style={menuStyle} styleName={`root ${openClassname}`}>
         {topics.map((topic) => (
           <Anchor
             onClick={onLinkClick}
