@@ -10,16 +10,19 @@
 }
 
 .google-play-anchor {
-  display: block;
-  margin-top: 12px;
+  margin-left: 24px;
 
   @include media.phone {
     display: none;
   }
 }
 
-.google-play-image {
-  height: 28px;
+.apple-anchor {
+  margin-left: 24px;
+
+  @include media.phone {
+    display: none;
+  }
 }
 
 a.back-element {

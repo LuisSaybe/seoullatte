@@ -11,7 +11,6 @@ import { RootState } from "web/js/redux/reducer";
 import { routes } from "web/js/routes";
 import { Anchor } from "web/js/component/anchor";
 import { InformationSVG } from "web/js/component/information-svg";
-import { AndroidLogo } from "web/js/component/android-logo";
 import { UnstyledAnchor } from "web/js/component/unstyled-anchor";
 import "./style.scss";
 
@@ -35,15 +34,19 @@ export function Footer(props: React.HTMLAttributes<HTMLElement>) {
 
   return (
     <footer {...props} styleName="root">
+      <div></div>
       <Anchor styleName="about-us-anchor" to={routes.aboutUs()}>
         {t("about us")}
       </Anchor>
-      <a
+      <Anchor
         styleName="google-play-anchor"
         href="https://play.google.com/store/apps/details?id=com.seoullatte.twa"
       >
-        <AndroidLogo styleName="google-play-image" />
-      </a>
+        android
+      </Anchor>
+      <Anchor styleName="apple-anchor" to={routes.useOniOS()}>
+        iOS
+      </Anchor>
       {locations.length > 1 ? (
         <UnstyledAnchor
           onClick={onClickReturn}

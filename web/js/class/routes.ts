@@ -13,6 +13,10 @@ export class Routes {
     return `${this.prefix}/search`;
   }
 
+  public useOniOS() {
+    return `${this.prefix}/iOS`;
+  }
+
   public landing() {
     return `${this.prefix}`;
   }

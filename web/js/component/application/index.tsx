@@ -19,6 +19,7 @@ import { ApplicationConstants } from "web/js/helper/application";
 import { PrefersColorSchemeSetting } from "web/js/interface/user-interface";
 import { Color } from "web/js/helper/color";
 import "./style.scss";
+import { UseOniOS } from "web/js/page/iOS";
 
 export function Application() {
   const { i18n } = useTranslation();
@@ -158,8 +159,10 @@ export function Application() {
       <Subscribers />
       <HamburgerMenu />
       <Switch>
+        <Route path={routes.useOniOS()} component={UseOniOS} />
         <Route path={routes.search()} component={SearchPage} />
         <Route path={routes.configuration()} component={Configuration} />
+        <Route path={routes.aboutUs()} component={AboutUs} />
         <Route path={routes.aboutUs()} component={AboutUs} />
         <Route path={routes.entry(":q(\\d+)")} component={DictionaryEntry} />
         {articleRoutes}

@@ -11,6 +11,8 @@ import { ArticleTitle } from "web/js/component/article-title";
 import { DefaultLayout } from "web/js/component/default-layout";
 import { Select } from "web/js/component/select";
 import { PrefersColorSchemeSetting } from "web/js/interface/user-interface";
+import { Section } from "web/js/component/section";
+import { MarginSizeName } from "web/js/interface/size";
 import "./style.scss";
 
 export function Configuration() {
@@ -77,7 +79,9 @@ export function Configuration() {
   return (
     <>
       <DefaultLayout>
-        <ArticleTitle>{t("Settings")}</ArticleTitle>
+        <Section marginSize={MarginSizeName.medium}>
+          <ArticleTitle>{t("Settings")}</ArticleTitle>
+        </Section>
         <div styleName="field">
           <label styleName="label" htmlFor="display-mode">
             {t("Display Mode")}
@@ -150,7 +154,7 @@ export function Configuration() {
       <Helmet>
         <title>{t("Settings")}</title>
         <link rel="canonical" href={window.location.href} />
-        <meta name="description" content="Settings" />
+        <meta name="description" content={t("Settings")} />
       </Helmet>
     </>
   );
