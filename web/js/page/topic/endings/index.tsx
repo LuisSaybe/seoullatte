@@ -34,12 +34,9 @@ export function Endings() {
         )}
       </Section>
       <Section>
+        {/* prettier-ignore */}
         <Trans>
-          Here are some example sentences demonstrating the placement of&nbsp;
-          <span styleName="predicate category">predicate stems</span>,&nbsp;
-          <span styleName="pre-final-ending category">pre-final endings</span>
-          &nbsp;and&nbsp;
-          <span styleName="final-ending category">final endings</span>.
+          Here are some example sentences demonstrating the placement of <span styleName="predicate category">predicate stems</span>, <span styleName="pre-final-ending category">pre-final endings</span> and <span styleName="final-ending category">final endings</span>.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.large}>

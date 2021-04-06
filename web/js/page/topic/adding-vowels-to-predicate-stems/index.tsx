@@ -74,7 +74,7 @@ export function AddingVowelsToPredicateStems() {
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.large}>
-        Example predicate: <E q="66248">바쁘다</E>
+        {t("Example predicate:")} <E q="66248">바쁘다</E>
       </Section>
       <Section>
         {t("First, we apply any irregular rules to 바쁘다.")}
