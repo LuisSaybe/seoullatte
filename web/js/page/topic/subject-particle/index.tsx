@@ -79,7 +79,7 @@ export function SubjectParticle() {
             <E q="85041">다</E>
           </div>
           <UtteranceButton text="오늘 밤은 달이 참 밝다" />
-          <i>{t("The moon is truly bright tonight")}</i>
+          <i>{t("The moon is truly bright tonight.")}</i>
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.large}>

@@ -19,11 +19,15 @@ export function Endings() {
           "Korean predicates combine with endings to form conjugations. Endings are added to a predicate in a particular order and changes the meaning of a sentence when added. Below we cover two categories of endings and give examples.",
         )}
       </Section>
-      <SectionTitle>{t("Pre-Final Endings")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.medium}>
+        {t("Pre-Final Endings")}
+      </SectionTitle>
       <Section>
         {t("Pre-final endings are added directly to a predicate stem.")}
       </Section>
-      <SectionTitle>{t("Final Endings")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.medium}>
+        {t("Final Endings")}
+      </SectionTitle>
       <Section>
         {t(
           "If a predicate contains a pre-final ending, the final ending is placed after the pre-final ending. Otherwise the final ending is added to the predicate stem.",

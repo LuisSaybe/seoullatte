@@ -18,7 +18,7 @@ export function Particles() {
         )}
         &nbsp;
         {t(
-          "Case particles attach only to noun while special particles may attach to a noun or another particle.",
+          "Case particles attach only to nouns while special particles may attach to a noun or another particle.",
         )}
         &nbsp;
         {t("Each particle does not have only 1 meaning but several.")}

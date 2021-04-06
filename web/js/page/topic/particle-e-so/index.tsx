@@ -28,8 +28,6 @@ export function ParticleESo() {
           <div>
             <E q="64390">너</E>
             <E q="85851">는</E>&nbsp;
-            <E q="20207">방학</E>
-            <E q="70075">이라고</E>&nbsp;
             <E q="71358">집</E>
             <E q="68853">에서</E>&nbsp;
             <E q="27373">텔레비전</E>
@@ -37,8 +35,8 @@ export function ParticleESo() {
             <E q="61190">보</E>
             <E q="76426">니</E>
           </div>
-          <UtteranceButton text="너는 방학이라고 집에서 텔레비전만 보니?" />
-          <i>{t("")}</i>
+          <UtteranceButton text="너는 집에서 텔레비전만 보니?" />
+          <i>{t("Do you only watch TV at home?")}</i>
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.large}>

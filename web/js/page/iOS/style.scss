@@ -1,12 +1,22 @@
 @use "~web/sass/size";
+@use "~web/sass/media";
 
 .image {
   display: block;
   width: 100%;
+  box-shadow: 0 10px 6px -6px #777;
+  border-radius: 6px;
 }
 
 .images {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 0 24px;
+  gap: 24px;
+
+  @include media.phone {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include media.not-phone {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
