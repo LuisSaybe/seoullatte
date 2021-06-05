@@ -40,6 +40,6 @@ export function useArticleRoutes() {
           />
         );
       }),
-    [topics, origin],
+    [topics],
   );
 }
