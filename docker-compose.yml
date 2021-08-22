@@ -8,3 +8,13 @@ services:
       - 80:80
     volumes:
       - ".:/root/project"
+  watch:
+    command: ["npm", "run", "watch"]
+    image: luissaybe/seoullatte
+    volumes:
+      - ".:/root/project"
+  install:
+    command: ["npm", "install"]
+    image: luissaybe/seoullatte
+    volumes:
+      - ".:/root/project"
