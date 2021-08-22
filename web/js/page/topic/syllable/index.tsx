@@ -51,7 +51,7 @@ export function Syllable() {
         {t("The syllable 값 is read ㄱ ㅏ ㅂ ㅅ.")}
         &nbsp;
         {t(
-          "It is not guaranteed that a syllable is pronunced how it is spelled.",
+          "It is not guaranteed that a syllable is pronounced how it is spelled.",
         )}
         &nbsp;
         {t(

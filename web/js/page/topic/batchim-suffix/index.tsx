@@ -31,12 +31,9 @@ export function BatchimSuffix() {
           "Many suffixes will add the syllable 으 if the word it attches to ends in a consonant.",
         )}
         &nbsp;
+        {/* prettier-ignore */}
         <Trans>
-          For example, the honorific suffix <E q="80330">시</E> will
-          become&nbsp;
-          <E q="80329">으시</E>
-          &nbsp; when added to a predicate stem that&nbsp;
-          <Anchor to={TopicRoute.batchim}>ends in a consonant</Anchor>.
+          For example, the honorific suffix <E q="80330">시</E> will become <E q="80329">으시</E> when added to a predicate stem that <Anchor to={TopicRoute.batchim}>ends in a consonant</Anchor>.
         </Trans>
       </Section>
       <Section>
@@ -44,11 +41,9 @@ export function BatchimSuffix() {
           "The predicate stem of 괜찮다 ends in a consonant ㅎ so when combined with the honorific suffix 시, a 으시 will be placed after the predicate stem.",
         )}
         &nbsp;
+        {/* prettier-ignore */}
         <Trans>
-          Note that <E q="80329">으시</E>
-          &nbsp;becomes&nbsp;
-          <E q="86609">으세요</E> in the&nbsp;
-          <Anchor to={TopicRoute.politeSpeech}>polite speech level</Anchor>.
+          Note that <E q="80329">으시</E> becomes <E q="86609">으세요</E> in the <Anchor to={TopicRoute.politeSpeech}>polite speech level</Anchor>.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.large}>

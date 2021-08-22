@@ -85,8 +85,8 @@ export function SubjectParticle() {
       <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
-            민준이
-            <E q="66341">가</E>&nbsp;
+            민준
+            <E q="86289">이</E>&nbsp;
             <E q="67869">용돈</E>
             <E q="86355">을</E>
             &nbsp;
@@ -104,10 +104,10 @@ export function SubjectParticle() {
             <E q="32042">걸어갔</E>
             <E q="85041">다</E>.
           </div>
-          <UtteranceButton text="민준이가 용돈을 다 써서 학교에서 집까지 걸어갔다" />
+          <UtteranceButton text="민준이 용돈을 다 써서 학교에서 집까지 걸어갔다" />
           <i>
             {t(
-              "민준 used up all his pocket money and walked home from school.",
+              "Minju used up all his pocket money and walked home from school.",
             )}
           </i>
         </DialogGrid>

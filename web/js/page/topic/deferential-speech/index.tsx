@@ -125,12 +125,9 @@ export function DeferentialSpeech() {
         </div>
       </div>
       <Section>
+        {/* prettier-ignore */}
         <Trans>
-          ㅂ becomes the&nbsp;
-          <E q="56544" senseIndexes={[1]}>
-            받침
-          </E>
-          &nbsp;of the last syllable in the predicate.
+          ㅂ becomes the <E q="56544" senseIndexes={[1]}>받침</E> of the last syllable in the predicate.
         </Trans>
       </Section>
     </>

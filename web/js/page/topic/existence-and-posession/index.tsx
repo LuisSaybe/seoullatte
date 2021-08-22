@@ -14,23 +14,18 @@ export function ExistenceAndPosession() {
   return (
     <>
       <Section>
+        {/* prettier-ignore */}
         <Trans>
-          We explore the words&nbsp;
-          <E q="68796">있다</E>
-          &nbsp; and <E q="89917">없다</E>.
+          We explore the words <E q="68796">있다</E> and <E q="89917">없다</E>.
         </Trans>
       </Section>
       <Section>
         <ArticleTitle>{t("Existence")}</ArticleTitle>
       </Section>
       <Section>
+        {/* prettier-ignore */}
         <Trans>
-          The adjectives&nbsp;
-          <E q="68797" senseIndexes={[7]}>
-            있다
-          </E>
-          &nbsp;and <E q="89917">없다</E> are used to describe the existence or
-          non-existence of an object in physical space.
+          The adjectives <E q="68797" senseIndexes={[7]}>있다</E> and <E q="89917">없다</E> are used to describe the existence or non-existence of an object in physical space.
         </Trans>
         <Section marginSize={MarginSizeName.large}>
           <DialogGrid>
@@ -42,9 +37,7 @@ export function ExistenceAndPosession() {
               <E q="68796">있</E>
               <E q="86571">어요</E>?
             </div>
-            <UtteranceButton text="학교는 어디에 있어요?">
-              학교는 어디에 있어요?
-            </UtteranceButton>
+            <UtteranceButton text="학교는 어디에 있어요?" />
             <i>{t("Where is (the) school?")}</i>
           </DialogGrid>
         </Section>
@@ -56,9 +49,7 @@ export function ExistenceAndPosession() {
               <E q="68796">있</E>
               <E q="86571">어요</E>
             </div>
-            <UtteranceButton text="부산에 있어요">
-              부산에 있어요
-            </UtteranceButton>
+            <UtteranceButton text="부산에 있어요" />
             <i>{t("(It) is in Busan.")}</i>
           </DialogGrid>
         </Section>
@@ -73,16 +64,14 @@ export function ExistenceAndPosession() {
               <E q="68796">있</E>
               <E q="86571">어요</E>
             </div>
-            <UtteranceButton text="잔 안에 커피가 있어요?">
-              잔 안에 커피가 있어요?
-            </UtteranceButton>
+            <UtteranceButton text="잔 안에 커피가 있어요?" />
             <i>{t("Is there coffee in (the) cup?")}</i>
             <div />
             <div>
               <E q="68796">없</E>
               <E q="86571">어요</E>
             </div>
-            <UtteranceButton text="없어요">없어요</UtteranceButton>
+            <UtteranceButton text="없어요" />
             <i>{t("There is no coffee.")}</i>
           </DialogGrid>
         </Section>
@@ -105,9 +94,7 @@ export function ExistenceAndPosession() {
             <E q="68796">있</E>
             <E q="85037">는다</E>
           </div>
-          <UtteranceButton text="박규희는 표가 있는다">
-            표가 있는다
-          </UtteranceButton>
+          <UtteranceButton text="박규희는 표가 있는다" />
           <i>{t("Kyuhee Park has the ticket.")}</i>
         </DialogGrid>
       </Section>
@@ -121,7 +108,7 @@ export function ExistenceAndPosession() {
               어
             </E>
           </div>
-          <UtteranceButton text="편지가 있어">편지가 있어</UtteranceButton>
+          <UtteranceButton text="편지가 있어" />
           <i>{t("(They) have the letter.")}</i>
         </DialogGrid>
       </Section>
@@ -163,7 +150,7 @@ export function ExistenceAndPosession() {
             <E q="80806">야</E>
             {t("?")}
           </div>
-          <UtteranceButton text="눈이 올거야?">눈이 올거야?</UtteranceButton>
+          <UtteranceButton text="눈이 올거야?" />
           <i>{t("It's going to snow?")}</i>
           <div />
           <div>
@@ -173,7 +160,7 @@ export function ExistenceAndPosession() {
               어
             </E>
           </div>
-          <UtteranceButton text="어. 틀림없어">어. 틀림없어</UtteranceButton>
+          <UtteranceButton text="어. 틀림없어" />
           <i>{t("Yeah, definitely.")}</i>
         </DialogGrid>
       </Section>

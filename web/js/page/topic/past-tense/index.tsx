@@ -16,10 +16,9 @@ export function PastTense() {
   return (
     <>
       <Section>
+        {/* prettier-ignore */}
         <Trans>
-          To conjugate a predicate in the past tense, a&nbsp;
-          <Anchor to={TopicRoute.ending}>pre-final ending</Anchor>
-          &nbsp;ending is added to a predicate's stem.
+          To conjugate a predicate in the past tense, a <Anchor to={TopicRoute.ending}>pre-final ending</Anchor> ending is added to a predicate's stem.
         </Trans>
         &nbsp;
         {t("There are 2 steps to conjugate a predicate in the past tense.")}
@@ -28,31 +27,24 @@ export function PastTense() {
         <Subsection>
           <div>
             &bull;&nbsp;
+            {/* prettier-ignore */}
             <Trans>
-              <Anchor to={TopicRoute.addingVowelToPredicateStem}>
-                Add ㅓ or ㅏ
-              </Anchor>
-              &nbsp; to the predicate stem.
+              <Anchor to={TopicRoute.addingVowelToPredicateStem}>Add ㅓ or ㅏ</Anchor> to the predicate stem.
             </Trans>
           </div>
           <div>
             &bull;&nbsp;
+            {/* prettier-ignore */}
             <Trans>
-              Then add ㅆ as a&nbsp;
-              <E q="56544" senseIndexes={[1]}>
-                받침
-              </E>
-              &nbsp;to the final syllable.
+              Then add ㅆ as a <E q="56544" senseIndexes={[1]}>받침</E> to the final syllable.
             </Trans>
           </div>
         </Subsection>
       </Section>
       <Section marginSize={MarginSizeName.medium}>
+        {/* prettier-ignore */}
         <Trans>
-          For example, in order to conjugate the verb&nbsp;
-          <Anchor to={TopicRoute.irregularPredicate}>ㄷ-irregular</Anchor>
-          &nbsp;verb&nbsp;
-          <E q="29667">걷다</E>&nbsp;in the past tense:
+          For example, in order to conjugate the verb <Anchor to={TopicRoute.irregularPredicate}>ㄷ-irregular</Anchor> verb <E q="29667">걷다</E>&nbsp;in the past tense:
         </Trans>
         <Subsection>
           걷다 + ({t("ㅓ or ㅏ")}) + ㅆ = 걸어 + ㅆ = 걸었
@@ -77,16 +69,14 @@ export function PastTense() {
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.large}>
+        {/* prettier-ignore */}
         <Trans>
-          If the predicate is conjugated in the&nbsp;
-          <Anchor to={TopicRoute.intimateSpeech}>intimate speech level</Anchor>
-          &nbsp;then 어 is added as the final syllable.
+          If the predicate is conjugated in the <Anchor to={TopicRoute.intimateSpeech}>intimate speech level</Anchor> then 어 is added as the final syllable.
         </Trans>
         &nbsp;
+        {/* prettier-ignore */}
         <Trans>
-          If the predicate is conjugated in the&nbsp;
-          <Anchor to={TopicRoute.politeSpeech}>polite speech level</Anchor>
-          &nbsp;then 어요 is added as the final syllable.
+          If the predicate is conjugated in the <Anchor to={TopicRoute.politeSpeech}>polite speech level</Anchor> then 어요 is added as the final syllable.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.large}>

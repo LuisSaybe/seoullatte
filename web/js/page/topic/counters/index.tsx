@@ -74,7 +74,7 @@ export function Counters() {
             <E q="72469">해</E>
           </div>
           <UtteranceButton text="스무 해" />
-          <i>20 years</i>
+          <i>{t("20 years")}</i>
           <div />
         </DialogGrid>
       </Section>

@@ -15,11 +15,9 @@ export function BoundNoun() {
   return (
     <>
       <Section>
+        {/* prettier-ignore */}
         <Trans>
-          A bound noun always appears before a&nbsp;
-          <Anchor to={TopicRoute.predicateAsModifiers}>modifier</Anchor>
-          &nbsp;or a&nbsp;
-          <Anchor to={TopicRoute.determiner}>determiner</Anchor>.
+          A bound noun always appears before a <Anchor to={TopicRoute.predicateAsModifiers}>modifier</Anchor> or a <Anchor to={TopicRoute.determiner}>determiner</Anchor>.
         </Trans>
         &nbsp;
         {t("Below we give examples of the some commonly used bound nouns.")}
@@ -86,7 +84,7 @@ export function BoundNoun() {
             <E q="85041">다</E>
           </div>
           <UtteranceButton text="친구를 보면 그 사람을 알 수 있다" />
-          <i>{t("A man is known by the company he keeps.")}</i>
+          <i>{t("A person is known by the company they keep.")}</i>
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.large}>

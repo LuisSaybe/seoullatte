@@ -2,9 +2,7 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { E } from "web/js/component/definition-popup";
-import { DialogGrid } from "web/js/component/dialog-grid";
 import { Section } from "web/js/component/section";
-import { UtteranceButton } from "web/js/component/utterance-button";
 import { MarginSizeName } from "web/js/interface/size";
 
 export function Particles() {
@@ -22,9 +20,10 @@ export function Particles() {
         )}
         &nbsp;
         {t("Each particle does not have only 1 meaning but several.")}
+        &nbsp;
+        {/* prettier-ignore */}
         <Trans>
-          For example the particle <E q="85761">로</E> has many meanings
-          including, methods, direction of movement or cause.
+          For example the particle <E q="85761">로</E> has many meanings including, methods, direction of movement or cause.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.medium}>

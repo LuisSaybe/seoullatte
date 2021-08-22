@@ -13,23 +13,14 @@ export function Batchim() {
   return (
     <>
       <Section>
+        {/* prettier-ignore */}
         <Trans>
-          A&nbsp;
-          <E q="56544" senseIndexes={[1]}>
-            받침
-          </E>
-          &nbsp;refers to the final consonant of a word.
+          A <E q="56544" senseIndexes={[1]}>받침</E> refers to the final consonant of a word.
         </Trans>
         &nbsp;
+        {/* prettier-ignore */}
         <Trans>
-          For example, the word <E q="29724">방</E>
-          &nbsp;has a&nbsp;
-          <E q="56544" senseIndexes={[1]}>
-            받침
-          </E>
-          &nbsp;since it ends in the consonant ㅇ while&nbsp;
-          <E q="27369">여자</E> does not have a 받침 since the final letter ㅏ
-          is a vowel.
+          For example, the word <E q="29724">방</E> has a <E q="56544" senseIndexes={[1]}>받침</E> since it ends in the consonant ㅇ while <E q="27369">여자</E> does not have a 받침 since the final letter ㅏ is a vowel.
         </Trans>
       </Section>
       <Section>
@@ -42,10 +33,9 @@ export function Batchim() {
         )}
       </Section>
       <Section marginSize={MarginSizeName.large}>
+        {/* prettier-ignore */}
         <Trans>
-          The ending <E q="80137">으니까</E> is added to a predicate stem ending
-          in a consonant while <E q="80139">니까</E> is added to a predicate
-          stem ending in a vowel.
+          The ending <E q="80137">으니까</E> is added to a predicate stem ending in a consonant while <E q="80139">니까</E> is added to a predicate stem ending in a vowel.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.large}>

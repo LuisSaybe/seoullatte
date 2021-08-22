@@ -41,7 +41,7 @@ export function EParticle() {
             <E q="85041">다</E>
           </div>
           <UtteranceButton text="그 책은 우리 학교 도서관에 있다." />
-          <i>That book is in our school library.</i>
+          {t("That book is in our school library.")}
         </DialogGrid>
       </Section>
       <SectionTitle marginSize={MarginSizeName.large}>{t("Time")}</SectionTitle>

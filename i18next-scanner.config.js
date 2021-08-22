@@ -22,9 +22,7 @@ module.exports = {
       component: "Trans",
       defaultsKey: "defaults",
       extensions: [".jsx"],
-      fallbackKey: (_, value) => {
-        return value;
-      },
+      fallbackKey: (_, value) => value,
     },
     resource: {
       loadPath: "web/i18n/{{lng}}/{{ns}}.json",

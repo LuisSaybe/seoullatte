@@ -16,13 +16,14 @@ export function Questions() {
   return (
     <>
       <Section>
+        {/* prettier-ignore */}
         <Trans>
-          Most question are formed by using&nbsp;
-          <Anchor to={TopicRoute.determiner}>determiners</Anchor>
-          &nbsp;and pronouns.
+          Most question are formed by using <Anchor to={TopicRoute.determiner}>determiners</Anchor> and pronouns.
         </Trans>
       </Section>
-      <SectionTitle>{t("Asking about the identity of an object")}</SectionTitle>
+      <SectionTitle marginSize={MarginSizeName.medium}>
+        {t("Asking about the identity of an object")}
+      </SectionTitle>
       <Section>
         <Trans>
           <E q="17199">무엇</E> is a pronoun used a placeholder for any object.

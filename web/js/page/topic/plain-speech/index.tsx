@@ -123,38 +123,38 @@ export function PlainSpeech() {
           </Trans>
         </div>
         <div>
-          The adjective <E q="92405">이쁘다</E> can be conjugated as&nbsp;
-          <E q="92405">이쁘</E>
-          <E q="76426">니</E> or <E q="92405">이쁘</E>
-          <E q="76230">냐</E>
+          {/* prettier-ignore */}
+          <Trans>
+            The adjective <E q="92405">이쁘다</E> can be conjugated as <E q="92405">이쁘</E><E q="76426">니</E> or <E q="92405">이쁘</E><E q="76230">냐</E>
+          </Trans>
         </div>
       </Section>
       <Section marginSize={MarginSizeName.large}>
         <DialogGrid>
           <div>
-            <E q="">민준이</E>
-            <E q="66341">가</E>&nbsp;
+            민준
+            <E q="86289">이</E>&nbsp;
             <E q="84427">네</E>&nbsp;
             <E q="20286">형</E>
             <E q="86232">이</E>
             <E q="76230">냐</E>
             {t("?")}
           </div>
-          <UtteranceButton text="민준이가 네 형이냐?">
-            민준이가 네 형이냐?
+          <UtteranceButton text="민준이 네 형이냐?">
+            민준이 네 형이냐?
           </UtteranceButton>
-          <i>{t("Is 민준이 your older brother?")}</i>
+          <i>{t("Is Minju your older brother?")}</i>
         </DialogGrid>
       </Section>
       <SectionTitle marginSize={MarginSizeName.large}>
         {t("For imperative sentences")}
       </SectionTitle>
       <Section>
+        {/* prettier-ignore */}
         <Trans>
           <Anchor to={TopicRoute.addingVowelToPredicateStem}>
             ㅓ or ㅏ is added
-          </Anchor>
-          &nbsp;to the verb stem followed by 라.
+          </Anchor> to the verb stem followed by 라.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.large}>

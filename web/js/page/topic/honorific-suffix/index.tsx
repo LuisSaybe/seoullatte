@@ -15,16 +15,14 @@ export function HonorificSuffix() {
   return (
     <>
       <Section>
+        {/* prettier-ignore */}
         <Trans>
-          The honorifix <Anchor to={TopicRoute.ending}>pre-final ending</Anchor>
-          &nbsp;
-          <E q="80330">시</E> is added to a predicate stem ending in a&nbsp;
-          <Anchor to={TopicRoute.hangul}>vowel</Anchor>.
+          The honorific <Anchor to={TopicRoute.ending}>pre-final ending</Anchor> <E q="80330">시</E> is added to a predicate stem ending in a <Anchor to={TopicRoute.hangul}>vowel</Anchor>.
         </Trans>
         &nbsp;
+        {/* prettier-ignore */}
         <Trans>
-          <E q="80329">으시</E> is added to a predicate stem ending in a&nbsp;
-          <Anchor to={TopicRoute.hangul}>consonant</Anchor>.
+          <E q="80329">으시</E> is added to a predicate stem ending in a <Anchor to={TopicRoute.hangul}>consonant</Anchor>.
         </Trans>
         &nbsp;
         {t(
@@ -35,10 +33,9 @@ export function HonorificSuffix() {
           "A subject will often be honored consistent with their age or rank in society.",
         )}
         &nbsp;
+        {/* prettier-ignore */}
         <Trans>
-          As a result, the suffix 시 is often colocated with&nbsp;
-          <Anchor to={TopicRoute.formalAndInformalSpeech}>formal speech</Anchor>
-          &nbsp; and honorific nouns.
+          As a result, the suffix 시 is often colocated with <Anchor to={TopicRoute.formalAndInformalSpeech}>formal speech</Anchor> and honorific nouns.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.large}>
@@ -55,13 +52,13 @@ export function HonorificSuffix() {
           <UtteranceButton text="이분은 승규 의 선생님이십니다">
             이분은 승규 의 선생님이십니다
           </UtteranceButton>
-          <i>{t("This person is 승규's teacher.")}</i>
+          <i>{t("This person is Sungyu's teacher.")}</i>
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.large}>
+        {/* prettier-ignore */}
         <Trans>
-          The honorific suffix is addded as 세요 or 으세요 in the&nbsp;
-          <Anchor to={TopicRoute.politeSpeech}>polite speech level</Anchor>.
+          The honorific suffix is addded as 세요 or 으세요 in the <Anchor to={TopicRoute.politeSpeech}>polite speech level</Anchor>.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.large}>
@@ -108,11 +105,10 @@ export function HonorificSuffix() {
           <i>{t("Mother, because the weather is cold please dress warmly.")}</i>
         </DialogGrid>
       </Section>
+      {/* prettier-ignore */}
       <Section marginSize={MarginSizeName.large}>
         <Trans>
-          When the honorific suffix 시 precedes the&nbsp;
-          <Anchor to={TopicRoute.pastTense}>past tense</Anchor> ending, the
-          ending becomes 셨 or 으셨.
+          When the honorific suffix 시 precedes the <Anchor to={TopicRoute.pastTense}>past tense</Anchor> ending, the ending becomes 셨 or 으셨.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.large}>
@@ -134,19 +130,14 @@ export function HonorificSuffix() {
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.large}>
+        {/* prettier-ignore */}
         <Trans>
-          Even though a subject may be honored, the predicate itself may be
-          conjugated in&nbsp;
-          <Anchor to={TopicRoute.formalAndInformalSpeech}>
-            informal speech
-          </Anchor>
-          .
+          Even though a subject may be honored, the predicate itself may be conjugated in <Anchor to={TopicRoute.formalAndInformalSpeech}>informal speech</Anchor>.
         </Trans>
         &nbsp;
+        {/* prettier-ignore */}
         <Trans>
-          In the following phrase, the predicate's subject is honored while the
-          predicate itself is conjugated in the&nbsp;
-          <Anchor to={TopicRoute.plainSpeech}>plain speech level</Anchor>.
+          In the following phrase, the predicate's subject is honored while the predicate itself is conjugated in the <Anchor to={TopicRoute.plainSpeech}>plain speech level</Anchor>.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.large}>

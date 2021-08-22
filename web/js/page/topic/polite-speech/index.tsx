@@ -13,21 +13,14 @@ export function PoliteSpeech() {
   return (
     <>
       <Section>
+        {/* prettier-ignore */}
         <Trans>
-          In order to to conjugate a&nbsp;
-          <Anchor to={TopicRoute.predicate}>predicate</Anchor> into the polite
-          speech level, first&nbsp;
-          <Anchor to={TopicRoute.addingVowelToPredicateStem}>
-            add ㅓ or ㅏ
-          </Anchor>
-          &nbsp; to the predicate's stem followed by <E q="86116">요</E>.
+          In order to to conjugate a <Anchor to={TopicRoute.predicate}>predicate</Anchor> into the polite speech level, first <Anchor to={TopicRoute.addingVowelToPredicateStem}>add ㅓ or ㅏ </Anchor> to the predicate's stem followed by <E q="86116">요</E>.
         </Trans>
         &nbsp;
+        {/* prettier-ignore */}
         <Trans>
-          The predicate <E q="86232">이다</E> and <E q="26878">아나다</E> are
-          formed&nbsp;
-          <Anchor to={TopicRoute.irregularPredicate}>irregularly</Anchor>
-          &nbsp;in the polite speech level.
+          The predicate <E q="86232">이다</E> and <E q="26878">아나다</E> are formed <Anchor to={TopicRoute.irregularPredicate}>irregularly</Anchor> in the polite speech level.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.large}>
@@ -36,10 +29,9 @@ export function PoliteSpeech() {
           <E q="73443">끄다</E>
         </div>
         <Section>
+          {/* prettier-ignore */}
           <Trans>
-            1. The predicate 끄다 is&nbsp;
-            <Anchor to={TopicRoute.irregularPredicate}>으 irregular</Anchor>
-            &nbsp;and becomes ㄲ.
+            1. The predicate 끄다 is <Anchor to={TopicRoute.irregularPredicate}>으 irregular</Anchor> and becomes ㄲ.
           </Trans>
         </Section>
         <div>
@@ -70,10 +62,9 @@ export function PoliteSpeech() {
           <E q="71290">아름답다</E>
         </div>
         <Section>
+          {/* prettier-ignore */}
           <Trans>
-            1. The predicate 아름답다 is&nbsp;
-            <Anchor to={TopicRoute.irregularPredicate}>ㅂ irregular</Anchor>
-            &nbsp;and becomes 아름다우.
+            1. The predicate 아름답다 is <Anchor to={TopicRoute.irregularPredicate}>ㅂ irregular</Anchor> and becomes 아름다우.
           </Trans>
         </Section>
         <div>
@@ -89,10 +80,9 @@ export function PoliteSpeech() {
           <E q="26816">나쁘다</E>
         </div>
         <Section>
+          {/* prettier-ignore */}
           <Trans>
-            1. The predicate 나쁘다 is&nbsp;
-            <Anchor to={TopicRoute.irregularPredicate}>으 irregular</Anchor>
-            &nbsp;and becomes 나ㅃ.
+            1. The predicate 나쁘다 is <Anchor to={TopicRoute.irregularPredicate}>으 irregular</Anchor> and becomes 나ㅃ.
           </Trans>
         </Section>
         <div>

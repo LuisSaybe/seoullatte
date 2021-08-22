@@ -94,10 +94,8 @@ export function Negation() {
             <E q="62103">말했</E>
             <E q="85041">다</E>
           </div>
-          <UtteranceButton text="승규는 난방이 들어와서 지금은 안 춥다고 말했다">
-            승규는 난방이 들어와서 지금은 안 춥다고 말했다
-          </UtteranceButton>
-          <i>{t("승규 said the heat came in so now it is not cold.")}</i>
+          <UtteranceButton text="승규는 난방이 들어와서 지금은 안 춥다고 말했다" />
+          <i>{t("Seungkyu said the heat came in so now it is not cold.")}</i>
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.large}>
