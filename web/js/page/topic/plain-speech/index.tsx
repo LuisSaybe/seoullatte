@@ -17,11 +17,11 @@ export function PlainSpeech() {
     <>
       <Section>
         {t(
-          "The plain speech level is conjugated differently for declarative, interrogative, imperative and proposotive sentences.",
+          "The plain speech level is conjugated differently for declarative, interrogative, imperative and propositive sentences.",
         )}
         &nbsp;
         {t(
-          "Only verbs can be conjugated for proposotive or imperative sentences.",
+          "Only verbs can be conjugated for propositive or imperative sentences.",
         )}
       </Section>
       <SectionTitle marginSize={MarginSizeName.large}>
@@ -36,10 +36,9 @@ export function PlainSpeech() {
           "If the predicate is a verb, 는다 is add to stems ending in a consonant, otherwise ㄴ다 is added to the stem, ㄴ becomes the 받침.",
         )}
         &nbsp;
+        {/* prettier-ignore */}
         <Trans>
-          If the predicate is conjugated in the&nbsp;
-          <Anchor to={TopicRoute.pastTense}>past tense</Anchor>
-          &nbsp;then 다 is added to the past tense ending.
+          If the predicate is conjugated in the <Anchor to={TopicRoute.pastTense}>past tense</Anchor> then 다 is added to the past tense ending.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.small}>
@@ -107,6 +106,7 @@ export function PlainSpeech() {
         {t(
           "니 or 냐 is added to predicate stems for spoken communication 으냐 can be added to stems that end in a consonants for written communication.",
         )}
+        &nbsp;
         <Trans>
           The verb <E q="58272">먹다</E> can be conjugated as&nbsp;
           <E q="58272">먹</E>
@@ -181,7 +181,7 @@ export function PlainSpeech() {
         </DialogGrid>
       </Section>
       <SectionTitle marginSize={MarginSizeName.large}>
-        {t("For proposotive sentences")}
+        {t("For propositive sentences")}
       </SectionTitle>
       <Section>{t("자 is added to the verb stem.")}</Section>
       <Section marginSize={MarginSizeName.large}>

@@ -15,7 +15,7 @@ export function Numbers() {
         )}
         &nbsp;
         {t(
-          "For counting every-day objects not exceeding 100 or age, Korean numbers are used. Sino Korean are used in academic settings and for unbounded measurements such as time duration, weight or distance.",
+          "For counting every-day objects not exceeding 100 or age, Korean numbers are used. Sino Korean numbers are used in academic settings and for unbounded measurements such as time duration, weight or distance.",
         )}
       </Section>
       <Section styleName="table">

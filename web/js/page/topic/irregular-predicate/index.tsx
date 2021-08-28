@@ -32,14 +32,9 @@ export function IrregularPredicate() {
           )}
         </Section>
         <Section>
+          {/* prettier-ignore */}
           <Trans>
-            The predicate&nbsp;
-            <E q="86232">이다</E> and&nbsp;
-            <E q="26878">아니다</E> are both conjugated irregularly in the&nbsp;
-            <Anchor to={TopicRoute.politeSpeech}>polite</Anchor>
-            &nbsp;and&nbsp;
-            <Anchor to={TopicRoute.intimateSpeech}>intimate</Anchor>
-            &nbsp; speech level.
+            The predicate <E q="86232">이다</E> and <E q="26878">아니다</E> are both conjugated irregularly in the <Anchor to={TopicRoute.politeSpeech}>polite</Anchor> and <Anchor to={TopicRoute.intimateSpeech}>intimate</Anchor> speech level.
           </Trans>
           &nbsp;
           {t(

@@ -47,7 +47,7 @@ export function Negation() {
         </Trans>
         &nbsp;
         {t(
-          "If a predicate is not a compound predicate, it can be negated by placing the adverb 안 before the predicate. This construction can not be used for proposotive or imperative clauses.",
+          "If a predicate is not a compound predicate, it can be negated by placing the adverb 안 before the predicate. This construction can not be used for propositive or imperative clauses.",
         )}
         <Section marginSize={MarginSizeName.medium}>
           <DialogGrid>

@@ -9,18 +9,9 @@ Source code for https://seoullatte.com
 #### run with Docker. install, run project on port 80, watch files
 
 ```sh
-# will need to run a 2nd time on your first install
-docker-compose up
-```
-
-#### run without Docker
-
-```sh
-# watch files
-yarn watch
-
-# run server
-yarn serve
+# will need to wait until the 'install' container has completed with exit code 0
+# and then run a second time
+docker compose up
 ```
 
 #### Get SSL Certs

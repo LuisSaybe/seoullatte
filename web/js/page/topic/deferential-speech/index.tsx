@@ -21,7 +21,7 @@ export function DeferentialSpeech() {
           The following <Anchor to={TopicRoute.ending}>endings</Anchor> are
           added to a <Anchor to={TopicRoute.predicate}>predicate</Anchor> stem
           depending on whether the clause is declarative, interrogative,
-          imperative or proposotive.
+          imperative or propositive.
         </Trans>
       </Section>
       <SectionTitle marginSize={MarginSizeName.large}>
@@ -41,7 +41,7 @@ export function DeferentialSpeech() {
           <E q="66348">으십시오</E>
         </div>
         <div>
-          <div>{t("Proposotive")}</div>
+          <div>{t("Propositive")}</div>
           <E q="68880">읍시다</E>
         </div>
       </div>

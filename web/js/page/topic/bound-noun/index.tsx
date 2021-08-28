@@ -24,15 +24,9 @@ export function BoundNoun() {
         &nbsp;
       </Section>
       <Section marginSize={MarginSizeName.large}>
+        {/* prettier-ignore */}
         <Trans>
-          The bound noun <E q="62835">것</E> is modified by&nbsp;
-          <E q="58272">먹</E>
-          <E q="69058">을</E>. 먹을 is the verb&nbsp;
-          <E q="58272">먹다</E> combined with the&nbsp;
-          <Anchor to={TopicRoute.predicateAsModifiers}>
-            prospective ending
-          </Anchor>
-          &nbsp;<E q="69058">을</E>
+          The bound noun <E q="62835">것</E> is modified by <E q="58272">먹</E> <E q="69058">을</E>. 먹을 is the verb <E q="58272">먹다</E> combined with the <Anchor to={TopicRoute.predicateAsModifiers}>prospective ending</Anchor> <E q="69058">을</E>.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.medium}>
@@ -59,13 +53,9 @@ export function BoundNoun() {
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.large}>
+        {/* prettier-ignore */}
         <Trans>
-          The bound noun 수 is modified by 알. 알 is the verb&nbsp;
-          <E q="89445">알다</E> combined with the&nbsp;
-          <Anchor to={TopicRoute.predicateAsModifiers}>
-            prospective ending
-          </Anchor>
-          &nbsp;<E q="69057">ㄹ</E>
+          The bound noun 수 is modified by 알. 알 is the verb <E q="89445">알다</E> combined with the <Anchor to={TopicRoute.predicateAsModifiers}>prospective ending</Anchor> <E q="69057">ㄹ</E>.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.medium}>
@@ -88,10 +78,9 @@ export function BoundNoun() {
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.large}>
+        {/* prettier-ignore */}
         <Trans>
-          The bound noun 번 is modified by the&nbsp;
-          <Anchor to={TopicRoute.determiner}>determiner</Anchor>&nbsp;
-          <E q="58109">둘째</E>
+          The bound noun 번 is modified by the <Anchor to={TopicRoute.determiner}>determiner</Anchor> <E q="58109">둘째</E>.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.medium}>
@@ -119,10 +108,9 @@ export function BoundNoun() {
         </DialogGrid>
       </Section>
       <Section marginSize={MarginSizeName.large}>
+        {/* prettier-ignore */}
         <Trans>
-          The bound noun <E q="27771">원</E> is modified by the&nbsp;
-          <Anchor to={TopicRoute.determiner}>determiner</Anchor>&nbsp;
-          <E q="17167">천</E>
+          The bound noun <E q="27771">원</E> is modified by the <Anchor to={TopicRoute.determiner}>determiner</Anchor> <E q="17167">천</E>.
         </Trans>
       </Section>
       <Section marginSize={MarginSizeName.large}>

@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack --mode=production",
     "watch": "webpack --watch --mode=development",
-    "i18next-scanner": "i18next-scanner --config i18next-scanner.config.js 'web/**/*.{ts,tsx}'"
+    "scan": "i18next-scanner --config i18next-scanner.config.js 'web/**/*.{ts,tsx}'"
   },
   "author": "luis@trois.io",
   "license": "MIT",
@@ -52,7 +52,6 @@
     "redux": "^4.1.1",
     "sass": "^1.38.0",
     "sass-loader": "^12.1.0",
-    "serve": "^12.0.0",
     "style-loader": "^3.2.1",
     "ts-loader": "^9.2.5",
     "tslint": "^6.1.3",

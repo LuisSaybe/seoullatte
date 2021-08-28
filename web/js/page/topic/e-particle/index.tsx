@@ -63,7 +63,7 @@ export function EParticle() {
             <E q="85041">다</E>
           </div>
           <UtteranceButton text="지수는 작년에 결혼을 했다" />
-          <i>{t("지수 married last year")}</i>
+          <i>{t("Jisoo married last year")}</i>
         </DialogGrid>
       </Section>
       <SectionTitle marginSize={MarginSizeName.large}>
