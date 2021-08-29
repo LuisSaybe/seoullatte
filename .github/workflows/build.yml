@@ -14,13 +14,13 @@ jobs:
           node-version: "15.x"
       - run: sudo apt-get update
       - run: sudo apt-get install -y libgbm1
-      - run: yarn
+      - run: npm install
       - run: envsubst < web/js/settings/production.json > web/js/settings/production-copy.json
         env:
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
       - run: cat web/js/settings/production-copy.json > web/js/settings/production.json
-      - run: yarn build
-      - run: $(yarn bin)/serve dist --single -l 9000 &
+      - run: npm run build
+      - run: $(npm bin)/serve dist --single -l 9000 &
       - run: sleep 5
       - run: node node/crawl-pages.js
         env:

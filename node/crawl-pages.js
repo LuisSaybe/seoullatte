@@ -6,11 +6,11 @@ const getContentAndURL = async (browser, target) => {
   const visitedPathnames = new Set();
   const toVisit = [target];
   const result = [];
-  const host = url.parse(target).host;
+  const host = new URL(target).host;
 
   while (toVisit.length > 0) {
     const next = toVisit.pop();
-    const nextParsed = url.parse(next);
+    const nextParsed = new URL(next);
     visitedPathnames.add(nextParsed.pathname);
     const page = await browser.newPage();
     await page.goto(next, { waitUntil: "networkidle0" });
@@ -18,7 +18,7 @@ const getContentAndURL = async (browser, target) => {
     const hrefs = (
       await page.$$eval("a", (links) => links.map((el) => el.href))
     ).filter((href) => {
-      const parts = url.parse(href);
+      const parts = new URL(href);
       return (
         !visitedPathnames.has(parts.pathname) &&
         parts.host === host &&
